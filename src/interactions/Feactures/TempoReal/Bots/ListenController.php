@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Bots;
+namespace SiInteractions\Feactures\TempoReal;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

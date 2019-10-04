@@ -9,7 +9,7 @@
  * - Seguir alvo !
  */
 
-namespace SiInteractions\Logic\Connections\Plugins\Actions;
+namespace SiInteractions\Actions;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

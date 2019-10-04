@@ -10,7 +10,7 @@
 ?>
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Analyser\Logging\Plugins;
+namespace SiInteractions\Actions\Worker\Analyser\Logging\Plugins;
 
 class Iis {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Connections\Plugins\Processing\Routines;
+namespace SiInteractions\Processing\Routines;
 
 use App\Logic\Connections\Plugins\Board;
 

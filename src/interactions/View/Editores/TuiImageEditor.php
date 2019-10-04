@@ -3,7 +3,7 @@
  * https://ui.toast.com/tui-image-editor/
  */
 
-namespace SiInteractions\Logic\Connections\Plugins\Editores;
+namespace SiInteractions\Editores;
 
 use Illuminate\Support\Facades\Log;
 

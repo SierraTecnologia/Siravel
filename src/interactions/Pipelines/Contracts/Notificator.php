@@ -1,5 +1,5 @@
 <?php
 
-namespace SiInteractions\Logic\Connections\Plugins\Pipelines\Contracts;
+namespace SiInteractions\Pipelines\Contracts;
 
 interface Notificator{}

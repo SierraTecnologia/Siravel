@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Util;
-
 /**
  * @param $value
  * @return bool

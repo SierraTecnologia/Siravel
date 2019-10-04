@@ -1,5 +1,5 @@
 <?php
-namespace SiInteractions\Logic\Actions\Worker\Analyser\Output\Filter;
+namespace SiInteractions\Actions\Worker\Analyser\Output\Filter;
 
 use SebastianBergmann\Diff\Line;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Reports;
+namespace SiInteractions\Actions\Worker\Reports;
 
 /**
  * CommitReport Class

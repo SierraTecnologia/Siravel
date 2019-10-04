@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Deploy;
+namespace SiInteractions\Actions\Worker\Deploy;
 
 use App\Models\Infra\Commit;
 

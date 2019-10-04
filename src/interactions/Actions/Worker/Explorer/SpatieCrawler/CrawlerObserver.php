@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Explorer\SpatieCrawler;
+namespace SiInteractions\Actions\Worker\Explorer\SpatieCrawler;
 
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;

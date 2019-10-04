@@ -1,8 +1,8 @@
 <?php
 
-namespace SiObject\Http\Bots\Personalidades;
+namespace SiInteractions\Feactures\TempoReal\Bots\Personalidades;
 
-use SiObject\Http\Bots\Bot;
+use SiInteractions\Feactures\TempoReal\Bots\Bot;
 
 class Safado extends Bot
 {

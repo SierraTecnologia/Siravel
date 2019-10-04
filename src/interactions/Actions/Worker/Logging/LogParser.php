@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Analyser\Logging;
+namespace SiInteractions\Actions\Worker\Analyser\Logging;
 
 class LogParser
 {

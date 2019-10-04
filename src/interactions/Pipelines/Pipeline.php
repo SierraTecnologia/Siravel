@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Connections\Plugins\Pipelines;
+namespace SiInteractions\Pipelines;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

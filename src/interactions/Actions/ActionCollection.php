@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Logic\Actions;
+namespace SiInteractions\Actions;
 
 use App\Models\Bot\Runner;
 use Illuminate\Support\Facades\Log;

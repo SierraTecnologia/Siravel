@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Util;
-
 use Exception;
 use Illuminate\Support\Str;
 use InvalidArgumentException;

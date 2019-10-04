@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Logic\Actions\Pipelines;
+namespace SiInteractions\Actions\Pipelines;
 
 use Illuminate\Support\Facades\Log;
 

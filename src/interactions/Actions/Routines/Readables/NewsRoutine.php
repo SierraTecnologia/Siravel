@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Logic\Actions\Routines\Readables;
+namespace SiInteractions\Actions\Routines\Readables;
 
 use Illuminate\Support\Facades\Log;
 use App\Logic\Entitys\Components\Pipeline as PipelineComponent;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Events\Routines;
+namespace SiInteractions\Actions\Models\Accounts;
 
 use App\Models\Code\Account;
 use Illuminate\Bus\Queueable;
@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use App\Notifications\PhoneActivate;
 use Illuminate\Support\Facades\Log;
 
-class AccountRoutine implements ShouldQueue
+class GetMedias implements ShouldQueue
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 

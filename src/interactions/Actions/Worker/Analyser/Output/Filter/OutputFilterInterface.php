@@ -1,5 +1,5 @@
 <?php
-namespace SiInteractions\Logic\Actions\Worker\Analyser\Output\Filter;
+namespace SiInteractions\Actions\Worker\Analyser\Output\Filter;
 
 /**
  * Output filters limit the data returned by a \App\Logic\Actions\Worker\Analyser\AnalysisResult object.

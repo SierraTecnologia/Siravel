@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Explorer\QueryList;
+namespace SiInteractions\Actions\Worker\Explorer\QueryList;
 
 class GoogleSearch
 {

@@ -3,7 +3,7 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace SiInteractions\Logic\Actions\Routines\Globals;
+namespace SiInteractions\Actions\Routines\Globals;
 
 use App\Logic\Actions\Routines\Tokens\ImportRoutine;
 

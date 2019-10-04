@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Bots\Atuacoes;
+namespace SiInteractions\Feactures\TempoReal\Bots\Atuacoes;
 
 class Vendedor
 {

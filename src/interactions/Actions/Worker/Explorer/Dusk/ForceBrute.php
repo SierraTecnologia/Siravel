@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Explorer\Dusk;
+namespace SiInteractions\Actions\Worker\Explorer\Dusk;
 
 use Laravel\Dusk\Page as BasePage;
 

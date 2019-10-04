@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Logic\Actions\Worker\Explorer;
+namespace SiInteractions\Actions\Worker\Explorer;
 
 /**
  * Crawler Class

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Bots\Sentimentos;
+namespace SiInteractions\Feactures\TempoReal\Bots\Sentimentos;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

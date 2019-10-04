@@ -1,5 +1,5 @@
 <?php
-namespace SiInteractions\Logic\Actions\Worker\Analyser\Language;
+namespace SiInteractions\Actions\Worker\Analyser\Language;
 
 use App\Logic\Actions\Worker\Analyser\Output\AbstractOutput;
 use App\Logic\Actions\Worker\Analyser\Output\Filter\OutputFilterInterface;
