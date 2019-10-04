@@ -1,9 +1,5 @@
 <?php
 
-use Exception;
-use Illuminate\Support\Str;
-use InvalidArgumentException;
-
 /**
  * Get a unique string (based on cryptographically secure pseudo-random function).
  *
@@ -21,7 +17,7 @@ function str_unique(int $length = 40, string $alphabet = 'ABCDEFGHIJKLMNOPQRSTUV
 
     $str = '';
 
-    $alphabetLength = Str::length($alphabet);
+    $alphabetLength = \Illuminate\Support\Str::length($alphabet);
 
     for ($i = 0; $i < $length; $i++) {
         $str .= $alphabet[random_int(0, $alphabetLength - 1)];

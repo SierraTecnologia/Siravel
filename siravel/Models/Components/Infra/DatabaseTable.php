@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Infra;
+namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
 
@@ -57,6 +57,6 @@ class DatabaseTable extends Model
 
     public function collection()
     {
-        return $this->belongsTo('App\Models\Infra\DatabaseCollection', 'collection_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Infra\DatabaseCollection', 'collection_id', 'id');
     }
 }

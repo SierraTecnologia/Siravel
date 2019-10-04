@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Infra\Computer;
+use Siravel\Models\Components\Infra\Computer;
 
 class ComputerController extends Controller
 {

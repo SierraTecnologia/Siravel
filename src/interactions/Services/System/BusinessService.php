@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\System;
 
-use App\Models\Business;
+use Siravel\Models\Identity\Business;
 use Illuminate\Support\Facades\Config;
 use App\Models\User;
 use App\Models\Order;
@@ -44,7 +44,7 @@ class BusinessService extends Service
             return $this->getDefault();
         }
 
-        if (!$business = \App\Models\Business::where('code', $domainSlug)->first()) {
+        if (!$business = \Siravel\Models\Identity\Business::where('code', $domainSlug)->first()) {
             // return $this->getDefault(); // @todo
             return false;
         }
@@ -56,7 +56,7 @@ class BusinessService extends Service
         if (!$default = CacheService::getUniversal('business-default')){
             $default = 'HotelByNow';
         }
-        if (!$business = \App\Models\Business::where('code', $default)->first()) {
+        if (!$business = \Siravel\Models\Identity\Business::where('code', $default)->first()) {
             return false;
         }
         return $business;

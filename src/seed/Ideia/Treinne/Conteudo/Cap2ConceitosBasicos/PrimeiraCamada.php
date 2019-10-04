@@ -12,13 +12,13 @@ use App\Models\FraudAnalysi;
 use App\Models\TrackingType;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Code\Project;
+use Siravel\Models\Components\Code\Project;
 
-use App\Models\Business\Business;
-use App\Models\Business\Collaborator;
+use Siravel\Models\Identity\Business\Business;
+use Siravel\Models\Identity\Business\Collaborator;
 
-use App\Models\Integrations\Token;
-use App\Models\Integrations\TokenAccess;
+use Siravel\Models\Components\Integrations\Token;
+use Siravel\Models\Components\Integrations\TokenAccess;
 
 use SiWeapons\Integrations\Cloudflare\Cloudflare;
 

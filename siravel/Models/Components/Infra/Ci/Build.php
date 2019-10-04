@@ -10,7 +10,7 @@ use SiUtils\Tools\Store\ProjectStore;
 use SiUtils\Tools\Store\BuildErrorStore;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Parser as YamlParser;
-use Siravel\Models\Infra\Ci\Base\Build as BaseBuild;
+use Siravel\Models\Components\Infra\Ci\Base\Build as BaseBuild;
 use SiUtils\Tools\Exception\InvalidArgumentException;
 
 /**

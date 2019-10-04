@@ -3,7 +3,7 @@
 namespace App\Console\Commands\Import;
 
 use App\Actions\Instagram\GetMidias;
-use App\Models\Identity\Account;
+use Siravel\Models\Identity\Account;
 use App\Models\Negocios\Business;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

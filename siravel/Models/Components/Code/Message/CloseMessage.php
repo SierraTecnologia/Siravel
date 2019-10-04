@@ -10,9 +10,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Code\Message;
+namespace Siravel\Models\Components\Code\Message;
 
-use Siravel\Models\Code\Message;
+use Siravel\Models\Components\Code\Message;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

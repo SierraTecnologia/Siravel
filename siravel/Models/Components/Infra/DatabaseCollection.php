@@ -3,7 +3,7 @@
  * Bancos dentro do Servidor do Database
  */
 
-namespace Siravel\Models\Infra;
+namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
 
@@ -61,7 +61,7 @@ class DatabaseCollection extends Model
 
     public function database()
     {
-        return $this->belongsTo('App\Models\Infra\Database', 'infra_database_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Infra\Database', 'infra_database_id', 'id');
     }
 
     public function user()

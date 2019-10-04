@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Infra;
+namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
 
@@ -46,7 +46,7 @@ class ServiceAccount extends Model
 
     public function service()
     {
-        return $this->belongsTo('App\Models\Infra\Service', 'infra_service_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Infra\Service', 'infra_service_id', 'id');
     }
 
     public function user()

@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Model;
 
 use SiUtils\Tools\Config;
-use Siravel\Models\Infra\Ci\Base\User as BaseUser;
+use Siravel\Models\Components\Infra\Ci\Base\User as BaseUser;
 
 /**
  * @author Ricardo Sierra <ricardo@sierratecnologia.com>

@@ -3,7 +3,7 @@
  * Armazena casas de cambios que aceitam trocar moedas
  */
 
-namespace Siravel\Models\Integrations;
+namespace Siravel\Models\Components\Integrations;
 
 use Siravel\Models\Model;
 

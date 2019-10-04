@@ -40,7 +40,7 @@ trait AsHuman
      */
     public function accounts()
     {
-        return $this->morphToMany('App\Models\Identity\Account', 'accountable');
+        return $this->morphToMany('Siravel\Models\Identity\Account', 'accountable');
     }
 
     /**
@@ -48,7 +48,7 @@ trait AsHuman
      */
     public function workers()
     {
-        return $this->morphMany('App\Models\Identity\Rotina\Worker', 'workerable');
+        return $this->morphMany('Siravel\Models\Identity\Rotina\Worker', 'workerable');
     }
 
     /**
@@ -67,19 +67,19 @@ trait AsHuman
      */
     public function skills()
     {
-        return $this->morphToMany('App\Models\Identity\Hability\Skill', 'skillable');
+        return $this->morphToMany('Siravel\Models\Identity\Hability\Skill', 'skillable');
     }
     public function gostos()
     {
-        return $this->morphToMany('App\Models\Identity\Hability\Gosto', 'gostoable');
+        return $this->morphToMany('Siravel\Models\Identity\Hability\Gosto', 'gostoable');
     }
     public function sitios()
     {
-        return $this->morphToMany('App\Models\Identity\Hability\Sitio', 'sitioable');
+        return $this->morphToMany('Siravel\Models\Identity\Hability\Sitio', 'sitioable');
     }
     public function itens()
     {
-        return $this->morphToMany('App\Models\Identity\Hability\Item', 'itemable');
+        return $this->morphToMany('Siravel\Models\Identity\Hability\Item', 'itemable');
     }
     public function productions()
     {
@@ -93,19 +93,19 @@ trait AsHuman
      */
     public function infos()
     {
-        return $this->morphMany('App\Models\Identity\Hability\Info', 'infoable');
+        return $this->morphMany('Siravel\Models\Identity\Hability\Info', 'infoable');
     }
     public function pircings()
     {
-        return $this->morphMany('App\Models\Identity\Hability\Pircing', 'pircingable');
+        return $this->morphMany('Siravel\Models\Identity\Hability\Pircing', 'pircingable');
     }
     public function pintinhas()
     {
-        return $this->morphMany('App\Models\Identity\Hability\Pintinha', 'pintinhable');
+        return $this->morphMany('Siravel\Models\Identity\Hability\Pintinha', 'pintinhable');
     }
     public function tatuages()
     {
-        return $this->morphMany('App\Models\Identity\Hability\Tatuage', 'tatuageable');
+        return $this->morphMany('Siravel\Models\Identity\Hability\Tatuage', 'tatuageable');
     }
     
     /**
@@ -137,7 +137,7 @@ trait AsHuman
 
     public function likes()
     {
-        return $this->morphToMany('App\Models\Identity\Person', 'personable');
+        return $this->morphToMany('Siravel\Models\Identity\Person', 'personable');
     }
 
     /**

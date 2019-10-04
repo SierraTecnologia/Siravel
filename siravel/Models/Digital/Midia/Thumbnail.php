@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Midia;
+namespace Siravel\Models\Digital\Midia;
 
 use Siravel\Models\Builders\ThumbnailBuilder;
 use Siravel\Features\Photos\Entities\ThumbnailEntity;

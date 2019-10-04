@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Code;
+namespace Siravel\Models\Components\Code;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;

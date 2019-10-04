@@ -3,9 +3,9 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use App\Models\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
-use App\Models\Infra\Ci\BuildError;
+use Siravel\Models\Components\Infra\Ci\BuildError;
 
 /**
  * Launch Phan.

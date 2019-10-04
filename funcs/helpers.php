@@ -1,8 +1,6 @@
 <?php
 
 use App\Models\Permissions\PermissionService;
-use App\Models\Book\Entity;
-use App\Models\Ownable;
 
 
 if (!function_exists('larametricUses')) {
@@ -91,14 +89,14 @@ function signedInUser()
  * @param Ownable $ownable
  * @return mixed
  */
-function userCan(string $permission, Ownable $ownable = null)
+function userCan(string $permission, \App\Models\Ownable $ownable = null)
 {
     if ($ownable === null) {
         return user() && user()->can($permission);
     }
 
     // Check permission on ownable item
-    $permissionService = app(PermissionService::class);
+    $permissionService = app(\App\Models\Permissions\PermissionService::class);
     return $permissionService->checkOwnableUserAccess($ownable, $permission);
 }
 
@@ -111,7 +109,7 @@ function userCan(string $permission, Ownable $ownable = null)
  */
 function userCanOnAny(string $permission, string $entityClass = null)
 {
-    $permissionService = app(PermissionService::class);
+    $permissionService = app(\App\Models\Permissions\PermissionService::class);
     return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Infra;
+namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
 use SiUtils\Tools\Ssh;
@@ -45,6 +45,6 @@ class Logger extends Model
 
     public function computer()
     {
-        return $this->belongsTo('App\Models\Infra\Computer', 'computer_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Infra\Computer', 'computer_id', 'id');
     }
 }

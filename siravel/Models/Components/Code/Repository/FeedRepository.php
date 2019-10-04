@@ -10,12 +10,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Code\Repository;
+namespace Siravel\Models\Components\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-use Siravel\Models\Code\Project;
-use Siravel\Models\Code\Feed;
+use Siravel\Models\Components\Code\Project;
+use Siravel\Models\Components\Code\Feed;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

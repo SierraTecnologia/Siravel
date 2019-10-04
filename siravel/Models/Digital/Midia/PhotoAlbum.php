@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Midia;
+namespace Siravel\Models\Digital\Midia;
 
 use Siravel\Models\Model;
 use Illuminate\Support\Facades\URL;

@@ -9,8 +9,8 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteraction\Actions\Worker\Sync\Database\BackupCollection;
 
-use App\Models\Infra\Database;
-use App\Models\Infra\Computer;
+use Siravel\Models\Components\Infra\Database;
+use Siravel\Models\Components\Infra\Computer;
 
 class ExploreComputer extends ActionCollection
 {

@@ -5,8 +5,8 @@
 
 namespace SiInteractions\Actions\Worker\Analyser\Event;
 
-use App\Models\Code\Commit;
-use App\Models\Infra\Pipeline;
+use Siravel\Models\Components\Code\Commit;
+use Siravel\Models\Components\Infra\Pipeline;
 
 class NewCommit
 {

@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Integrations\Service;
+use Siravel\Models\Components\Integrations\Service;
 
 class ServiceController extends Controller
 {

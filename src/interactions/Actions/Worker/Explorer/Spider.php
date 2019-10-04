@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Actions\Worker\Explorer;
 
-use App\Models\Infra\Domain;
+use Siravel\Models\Components\Infra\Domain;
 use App\Models\Bot\Internet\Url;
 use App\Models\Bot\Internet\UrlLink;
 

@@ -5,7 +5,7 @@ namespace SiUtils\Tools;
 use SiUtils\Helper\BuildInterpolator;
 use SiUtils\Helper\MailerFactory;
 use SiUtils\Tools\Logging\BuildLogger;
-use App\Models\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\Build;
 use SiUtils\Tools\Plugin\Util\Factory as PluginFactory;
 use SiUtils\Tools\Store\BuildErrorWriter;
 use SiUtils\Tools\Store\Factory;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Midia;
+namespace Siravel\Models\Digital\Midia;
 
 class File extends Traits\ArchiveTrait
 {

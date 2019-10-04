@@ -7,7 +7,7 @@ use SiUtils\Tools\Store\EnvironmentStore;
 use SiUtils\Tools\Store\ProjectGroupStore;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Symfony\Component\Yaml\Dumper as YamlDumper;
-use Siravel\Models\Infra\Ci\Base\Project as BaseProject;
+use Siravel\Models\Components\Infra\Ci\Base\Project as BaseProject;
 
 /**
  * @author Ricardo Sierra <ricardo@sierratecnologia.com>

@@ -55,7 +55,7 @@ class Item extends Person
      */
     public function slaves()
     {
-        return $this->morphedByMany('App\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
     }
 
     /**

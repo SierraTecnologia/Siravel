@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools\Model\Build;
 
-use Siravel\Models\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\Build;
 use SiUtils\Tools\Builder;
 
 /**

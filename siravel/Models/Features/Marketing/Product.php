@@ -62,7 +62,7 @@ class Product extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('App\Models\Identity\Girl', 'skillable');
+        return $this->morphedByMany('Siravel\Models\Identity\Girl', 'skillable');
     }
 
     /**

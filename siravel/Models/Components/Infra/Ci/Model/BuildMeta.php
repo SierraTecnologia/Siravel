@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools\Model;
 
-use Siravel\Models\Infra\Ci\Base\BuildMeta as BaseBuildMeta;
+use Siravel\Models\Components\Infra\Ci\Base\BuildMeta as BaseBuildMeta;
 use SiUtils\Tools\Store\BuildStore;
 use SiUtils\Tools\Store\Factory;
 

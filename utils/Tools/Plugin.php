@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools;
 
-use App\Models\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\Build;
 use SiUtils\Tools\Plugin\Codeception;
 
 /**

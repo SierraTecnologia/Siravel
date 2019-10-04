@@ -10,13 +10,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Code;
+namespace Siravel\Models\Components\Code;
 
 use Gitonomy\Bundle\CoreBundle\EventDispatcher\Event\PushReferenceEvent;
 
-use Siravel\Models\Code\Message\CloseMessage;
-use Siravel\Models\Code\Message\CommitMessage;
-use Siravel\Models\Code\Message\ForceMessage;
+use Siravel\Models\Components\Code\Message\CloseMessage;
+use Siravel\Models\Components\Code\Message\CommitMessage;
+use Siravel\Models\Components\Code\Message\ForceMessage;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

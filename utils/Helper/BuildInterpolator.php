@@ -2,7 +2,7 @@
 
 namespace SiUtils\Helper;
 
-use App\Models\Infra\Ci\Build as BaseBuild;
+use Siravel\Models\Components\Infra\Ci\Build as BaseBuild;
 
 /**
  * The BuildInterpolator class replaces variables in a string with build-specific information.

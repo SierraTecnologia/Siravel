@@ -4,8 +4,8 @@ namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools;
 use SiUtils\Tools\Builder;
-use App\Models\Infra\Ci\Build;
-use App\Models\Infra\Ci\BuildError;
+use Siravel\Models\Components\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\BuildError;
 use SiUtils\Tools\Plugin;
 
 /**

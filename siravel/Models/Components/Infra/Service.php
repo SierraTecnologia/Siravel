@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Infra;
+namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
 

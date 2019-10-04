@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Model\Build;
 
 use SiUtils\Tools\Builder;
-use Siravel\Models\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\Build;
 
 class BitbucketServerBuild extends GitBuild
 {

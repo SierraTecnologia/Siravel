@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Code;
+namespace Siravel\Models\Components\Code;
 
 use Siravel\Models\Model;
 
@@ -32,7 +32,7 @@ class Issue extends Model
 
     public function project()
     {
-        return $this->belongsTo('App\Models\Code\Project', 'code_project_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Code\Project', 'code_project_id', 'id');
     }
 
     

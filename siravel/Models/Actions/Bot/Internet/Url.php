@@ -44,6 +44,6 @@ class Url extends Model
 
     public function domain()
     {
-        return $this->belongsTo('App\Models\Infra\Domain', 'infra_domain_id', 'id');
+        return $this->belongsTo('Siravel\Models\Components\Infra\Domain', 'infra_domain_id', 'id');
     }
 }

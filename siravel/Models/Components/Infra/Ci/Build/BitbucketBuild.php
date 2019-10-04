@@ -6,8 +6,8 @@ use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;
 use Siravel\Helper\Bitbucket;
 use SiUtils\Tools\Config;
-use Siravel\Models\Infra\Ci\Build;
-use Siravel\Models\Infra\Ci\BuildError;
+use Siravel\Models\Components\Infra\Ci\Build;
+use Siravel\Models\Components\Infra\Ci\BuildError;
 use Siravel\Helper\Diff;
 
 /**

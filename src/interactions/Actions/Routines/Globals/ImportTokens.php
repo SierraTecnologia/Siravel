@@ -9,8 +9,8 @@ use SiInteraction\Actions\Routines\Tokens\ImportRoutine;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use App\Models\Integrations\Token;
-use App\Models\Integrations\TokenAccess;
+use Siravel\Models\Components\Integrations\Token;
+use Siravel\Models\Components\Integrations\TokenAccess;
 
 class ImportTokens extends ActionCollection
 {

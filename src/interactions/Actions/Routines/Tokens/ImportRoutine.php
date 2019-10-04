@@ -9,7 +9,7 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteraction\Actions\Worker\Sync\Database\ImportCollection;
 
-use App\Models\Integrations\Token;
+use Siravel\Models\Components\Integrations\Token;
 
 class ImportRoutine extends ActionCollection
 {
