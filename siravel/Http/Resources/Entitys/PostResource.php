@@ -2,8 +2,8 @@
 
 namespace SiObject\Http\Resources\Entitys;
 
-use App\Features\Photos\Entities\PostEntity;
-use App\Features\Photos\Entities\TagEntity;
+use SiObjects\Manipule\Entities\PostEntity;
+use SiObjects\Manipule\Entities\TagEntity;
 use function App\Util\to_object;
 
 /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Logic\Entitys\Components;
+namespace SiObjects\Entitys\Components;
 
 use App\Logic\Actions\Pipelines\Contracts\Registrator;
 use App\Logic\Actions\Pipelines\Contracts\Notificator;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Logic\Connections\Plugins\Components;
+namespace SiObjects\Components\Society;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

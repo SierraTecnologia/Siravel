@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Logic\Modules\Diagrams\Relations;
+namespace SiObjects\Components\Relations;
 
 /**
  * User Helper - Provides access to logged in user information in views.

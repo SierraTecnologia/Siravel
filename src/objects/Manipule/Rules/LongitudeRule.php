@@ -2,7 +2,7 @@
 
 namespace SiObject\Manipule\Rules;
 
-use App\Logic\ValueObjects\Longitude;
+use App\ValueObjects\Longitude;
 use Illuminate\Contracts\Validation\Rule;
 use InvalidArgumentException;
 

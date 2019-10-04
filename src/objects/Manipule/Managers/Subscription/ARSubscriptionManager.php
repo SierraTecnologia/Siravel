@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObjects\Managers\Subscription;
+namespace SiObjects\Manipule\Managers\Subscription;
 
 use App\Models\Builders\SubscriptionBuilder;
 use App\Models\Subscription;
-use App\Features\Photos\Contracts\SubscriptionManager;
-use App\Features\Photos\Entities\SubscriptionEntity;
+use SiObjects\Support\Contracts\SubscriptionManager;
+use SiObjects\Manipule\Entities\SubscriptionEntity;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;
 use function App\Util\str_unique;

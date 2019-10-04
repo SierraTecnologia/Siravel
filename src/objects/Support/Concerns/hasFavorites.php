@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Concerns;
+namespace Siravel\Support\Concerns;
 
 use Siravel\Models\Favorite;
 use Siravel\Models\Product;

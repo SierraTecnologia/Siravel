@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Managers\Location;
+namespace SiObjects\Manipule\Managers\Location;
 
 use SiObject\Manipule\Rules\LatitudeRule;
 use SiObject\Manipule\Rules\LongitudeRule;

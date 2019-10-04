@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Concerns;
+namespace SiObjects\Support\Concerns;
 
 use Laravel\Nova\Resource;
 use Laravel\Nova\Http\Requests\ActionRequest;

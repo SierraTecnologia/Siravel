@@ -5,8 +5,8 @@ namespace SiInteractions\Pipelines;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-use App\Logic\Connections\Plugins\Pipelines\Contracts\Registrator;
-use App\Logic\Connections\Plugins\Pipelines\Contracts\Notificator;
+use App\Pipelines\Contracts\Registrator;
+use App\Pipelines\Contracts\Notificator;
 
 class PostCreator extends Pipeline
 {

@@ -8,19 +8,19 @@ use SiWeapons\Integrations\Instagram\Instagram;
 use SiWeapons\Integrations\Instagram\Facebook;
 
 
-use App\Logic\Connections\Plugins\Actions\PublishPost;
-use App\Logic\Connections\Plugins\Actions\SearchFollows;
+use App\SiInteraction\Actions\PublishPost;
+use App\SiInteraction\Actions\SearchFollows;
 
 
 
-use App\Logic\Connections\Plugins\Routines\ForceNewRelations;
-use App\Logic\Connections\Plugins\Routines\GetNewData;
-use App\Logic\Connections\Plugins\Routines\SendNewData;
+use App\Routines\ForceNewRelations;
+use App\Routines\GetNewData;
+use App\Routines\SendNewData;
 
-use App\Logic\Connections\Plugins\Components\Comment;
-use App\Logic\Connections\Plugins\Components\Post;
-use App\Logic\Connections\Plugins\Components\Profile;
-use App\Logic\Connections\Plugins\Components\Relation;
+use SiObjects\Components\Comment;
+use SiObjects\Components\Post;
+use SiObjects\Components\Profile;
+use SiObjects\Components\Relation;
 
 class NewPhotoPipeline
 {

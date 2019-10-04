@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Interfaces;
+namespace SiObjects\Support\Interfaces;
 
 interface LogisticServiceInterface
 {

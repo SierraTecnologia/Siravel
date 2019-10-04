@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Traits;
+namespace SiObjects\Support\Traits\Services;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;

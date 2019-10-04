@@ -1,8 +1,8 @@
 <?php
 
-namespace SiInteractions\Processing\Routines;
+namespace SiInteractions\Processing;
 
-use App\Logic\Connections\Plugins\Board;
+use App\Board;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

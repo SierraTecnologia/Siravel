@@ -1,12 +1,12 @@
 <?php
 
-namespace SiObjects\Managers\Photo;
+namespace SiObjects\Manipule\Managers\Photo;
 
 use App\Models\Photo;
 use Siravel\Services\Image\Contracts\ImageProcessor;
-use App\Features\Photos\Contracts\LocationManager;
-use App\Features\Photos\Contracts\PhotoManager;
-use App\Features\Photos\Entities\PhotoEntity;
+use SiObjects\Support\Contracts\LocationManager;
+use SiObjects\Support\Contracts\PhotoManager;
+use SiObjects\Manipule\Entities\PhotoEntity;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Database\ConnectionInterface as Database;
 use function App\Util\str_unique;

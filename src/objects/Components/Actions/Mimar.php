@@ -2,8 +2,8 @@
 
 namespace SiObjects\Logic\RegrasDeNegocios\Fluxo\Actions;
 
-use App\Components\Steps\BasicRegister;
-use App\Components\Steps\BottomInfos;
+use SiObjects\Components\Steps\BasicRegister;
+use SiObjects\Components\Steps\BottomInfos;
 
 class Mimar
 {

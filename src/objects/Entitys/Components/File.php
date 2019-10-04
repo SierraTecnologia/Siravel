@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Logic\Entitys\Components;
+namespace SiObjects\Entitys\Components;
 
 use League\Flysystem\Vfs\VfsAdapter;
 use League\Flysystem\Filesystem;

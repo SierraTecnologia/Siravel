@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObjects\Managers\Post;
+namespace SiObjects\Manipule\Managers\Post;
 
 use App\Models\Builders\PostBuilder;
 use App\Models\Photo;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Features\Photos\Contracts\PostManager;
-use App\Features\Photos\Entities\PostEntity;
+use SiObjects\Support\Contracts\PostManager;
+use SiObjects\Manipule\Entities\PostEntity;
 use Illuminate\Contracts\Auth\Guard as Auth;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;

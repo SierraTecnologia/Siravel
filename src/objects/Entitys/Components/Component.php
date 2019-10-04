@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiObjects\Logic\Entitys\Components;
+namespace SiObjects\Entitys\Components;
 
 use Illuminate\Support\Facades\Log;
 
@@ -128,7 +128,7 @@ class Component
         $components[] = self::insertComponent(
             'scanDomain',
             \App\Models\Infra\Domain::class, // Ou Url
-            \App\Components\Worker\Explorer\Spider::class,
+            \SiObjects\Components\Worker\Explorer\Spider::class,
             self::$spider
         );
 
@@ -138,7 +138,7 @@ class Component
         $components[] = self::insertComponent(
             'whoisDomain',
             \App\Models\Infra\Domain::class, // Ou Url
-            \App\Components\Worker\Explorer\Whois::class,
+            \SiObjects\Components\Worker\Explorer\Whois::class,
             self::$spider
         );
 
@@ -153,7 +153,7 @@ class Component
         $components[] = self::insertComponent(
             'backupDatabase',
             \App\Models\Infra\DatabaseCollection::class,
-            \App\Components\Worker\Sync\Keys\BackupCollection::class,
+            \SiObjects\Components\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
 
@@ -163,7 +163,7 @@ class Component
         $components[] = self::insertComponent(
             'searchLog',
             \App\Models\Infra\Computer::class,
-            \App\Components\Worker\Logging\Logging::class,
+            \SiObjects\Components\Worker\Logging\Logging::class,
             self::$routine
         );
 
@@ -179,7 +179,7 @@ class Component
         $components[] = self::insertComponent(
             'analyseComit',
             \App\Models\Code\Commit::class,
-            \App\Components\Worker\Analyser\Analyser::class,
+            \SiObjects\Components\Worker\Analyser\Analyser::class,
             self::$hook
         );
 
@@ -189,7 +189,7 @@ class Component
         $components[] = self::insertComponent(
             'deployCommit',
             \App\Models\Code\Commit::class,
-            \App\Components\Worker\Deploy\Deploy::class,
+            \SiObjects\Components\Worker\Deploy\Deploy::class,
             self::$hook
         );
 
@@ -203,7 +203,7 @@ class Component
         $components[] = self::insertComponent(
             'importIntegrationToken',
             \App\Models\Integrations\Token::class,
-            \App\Components\Worker\Sync\Keys\ImportFromToken::class,
+            \SiObjects\Components\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );
 
@@ -213,7 +213,7 @@ class Component
         $components[] = self::insertComponent(
             'syncProject',
             \App\Models\Code\Project::class,
-            \App\Components\Worker\Sync\Project::class,
+            \SiObjects\Components\Worker\Sync\Project::class,
             self::$hook
         );
 

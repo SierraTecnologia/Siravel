@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Managers\Subscription;
+namespace SiObjects\Manipule\Managers\Subscription;
 
 use App\Contants\Tables;
 use Illuminate\Validation\Factory as ValidatorFactory;

@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObjects\Managers\Location;
+namespace SiObjects\Manipule\Managers\Location;
 
 use App\Models\Location;
-use App\Features\Photos\Contracts\LocationManager;
-use App\Features\Photos\Entities\LocationEntity;
-use App\Features\Photos\ValueObjects\Coordinates;
-use App\Features\Photos\ValueObjects\Latitude;
-use App\Features\Photos\ValueObjects\Longitude;
+use SiObjects\Support\Contracts\LocationManager;
+use SiObjects\Manipule\Entities\LocationEntity;
+use SiObjects\ValueObjects\Coordinates;
+use SiObjects\ValueObjects\Latitude;
+use SiObjects\ValueObjects\Longitude;
 use Illuminate\Database\ConnectionInterface as Database;
 
 /**

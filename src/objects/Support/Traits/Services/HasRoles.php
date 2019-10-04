@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Traits;
+namespace SiObjects\Support\Traits\Services;
 
 trait HasRoles
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace SiInteractions\Processing\Routines;
+namespace SiInteractions\Processing;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class Import extends PhotoAcompanhante
+class PushData
 {
     
     public function __construct()

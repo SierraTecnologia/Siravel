@@ -2,10 +2,10 @@
 
 namespace SiObjects\Components\Actions;
 
-use App\Components\Actions\Fisico;
+use SiObjects\Components\Actions\Fisico;
 
-use App\Components\Steps\BasicRegister;
-use App\Components\Steps\BottomInfos;
+use SiObjects\Components\Steps\BasicRegister;
+use SiObjects\Components\Steps\BottomInfos;
 
 class Castigar
 {

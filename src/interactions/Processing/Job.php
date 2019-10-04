@@ -3,7 +3,7 @@
  * Procura trampos
  */
 
-namespace SiInteractions\Processing\Stat;
+namespace SiInteractions\Processing;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

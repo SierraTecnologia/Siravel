@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Models\Traits;
+namespace SiObjects\Support\Traits\Support\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

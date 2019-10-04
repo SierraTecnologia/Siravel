@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiObjects\Logic\Boards\Views;
+namespace SiObjects\Entitys\Views;
 
 use Illuminate\Support\Facades\Log;
 use App\Logic\Modules\Programs\FilePrograms;

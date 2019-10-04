@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Models\Builders;
+namespace SiObjects\Manipule\Builders;
 
 use App\Contants\Tables;
 use Illuminate\Database\Eloquent\Builder;

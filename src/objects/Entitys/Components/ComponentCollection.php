@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiObjects\Logic\Entitys\Components;
+namespace SiObjects\Entitys\Components;
 
 use App\Models\Bot\Runner;
 use Illuminate\Support\Facades\Log;

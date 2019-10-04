@@ -2,13 +2,13 @@
 
 namespace SiInteractions\Routines;
 
-use App\Logic\Connections\Plugins\Components\Pipeline;
-use App\Logic\Connections\Plugins\Components\Post as PostComponent;
+use SiObjects\Components\Pipeline;
+use SiObjects\Components\Post as PostComponent;
 
-use App\Logic\Connections\Plugins\Pipelines\PostCreator;
-use App\Logic\Connections\Plugins\Pipelines\RegistratorLog;
-use App\Logic\Connections\Plugins\Pipelines\NotificationSms;
-use App\Logic\Connections\Plugins\Pipelines\NotificationEmail;
+use App\Pipelines\PostCreator;
+use App\Pipelines\RegistratorLog;
+use App\Pipelines\NotificationSms;
+use App\Pipelines\NotificationEmail;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObjects\Managers\User;
+namespace SiObjects\Manipule\Managers\User;
 
 use App\Models\Role;
 use App\Models\User;
-use App\Features\Photos\Contracts\UserManager;
-use App\Features\Photos\Entities\UserEntity;
+use SiObjects\Support\Contracts\UserManager;
+use SiObjects\Manipule\Entities\UserEntity;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Database\ConnectionInterface as Database;
 

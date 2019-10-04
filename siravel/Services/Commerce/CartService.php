@@ -9,7 +9,7 @@ use Siravel\Models\Variant;
 use Siravel\Repositories\CartRepository;
 use Siravel\Repositories\CartSessionRepository;
 use Siravel\Repositories\TransactionRepository;
-use Siravel\Services\Concerns\CartHtmlGenerator;
+use Siravel\Support\Concerns\CartHtmlGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 

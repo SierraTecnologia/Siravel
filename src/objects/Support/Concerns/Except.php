@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Concerns;
+namespace SiObjects\Support\Concerns;
 
 trait Except
 {

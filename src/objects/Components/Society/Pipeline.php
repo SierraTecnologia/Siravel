@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObjects\Logic\Connections\Plugins\Components;
+namespace SiObjects\Components\Society;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use SiWeapons\Integrations\Instagram;
 
-use App\Logic\Connections\Plugins\Pipelines\Contracts\Registrator;
-use App\Logic\Connections\Plugins\Pipelines\Contracts\Notificator;
+use App\Pipelines\Contracts\Registrator;
+use App\Pipelines\Contracts\Notificator;
 
 class Pipeline
 {

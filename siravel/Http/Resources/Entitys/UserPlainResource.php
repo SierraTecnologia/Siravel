@@ -2,7 +2,7 @@
 
 namespace SiObject\Http\Resources\Entitys;
 
-use App\Features\Photos\Entities\UserEntity;
+use SiObjects\Manipule\Entities\UserEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function App\Util\html_purify;
 use function App\Util\to_int;

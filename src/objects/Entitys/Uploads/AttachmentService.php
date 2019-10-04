@@ -1,4 +1,4 @@
-<?php namespace SiObjects\Logic\Entitys\Uploads;
+<?php namespace SiObjects\Entitys\Uploads;
 
 use SiUtils\Exceptions\FileUploadException;
 use Exception;

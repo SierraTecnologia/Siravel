@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Traits\Models;
+namespace SiObjects\Support\Traits\Models;
 
 use App\Models\System\Translation;
 use Siravel\Services\CmsService;

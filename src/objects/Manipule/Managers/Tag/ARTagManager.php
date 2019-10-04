@@ -1,9 +1,9 @@
 <?php
 
-namespace SiObjects\Managers\Tag;
+namespace SiObjects\Manipule\Managers\Tag;
 
 use App\Models\Tag;
-use App\Features\Photos\Contracts\TagManager;
+use SiObjects\Support\Contracts\TagManager;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;
 

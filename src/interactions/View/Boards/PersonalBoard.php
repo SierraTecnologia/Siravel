@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Logic\Boards;
+namespace SiInteractions\View\Boards;
 
 use Illuminate\Support\Facades\Log;
 

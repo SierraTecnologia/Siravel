@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Logic\ValueObjects;
+namespace SiObjects\ValueObjects;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;

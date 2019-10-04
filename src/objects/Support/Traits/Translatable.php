@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Traits;
+namespace SiObjects\Support\Traits;
 
 use App\Models\System\Translation;
 use Siravel\Services\GpowerService;

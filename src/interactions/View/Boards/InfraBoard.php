@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Logic\Boards;
+namespace SiInteractions\View\Boards;
 
 use Illuminate\Support\Facades\Log;
 
@@ -34,7 +34,7 @@ class InfraBoard extends Board
     public function getTools()
     {
         return [
-            \App\Logic\Modules\Diagrams::class,
+            \SiObjects\Components::class,
         ];
     }
 

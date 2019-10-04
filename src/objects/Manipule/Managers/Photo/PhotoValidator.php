@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Managers\Photo;
+namespace SiObjects\Manipule\Managers\Photo;
 
 use App\Contants\Tables;
 use SiObject\Manipule\Rules\LatitudeRule;

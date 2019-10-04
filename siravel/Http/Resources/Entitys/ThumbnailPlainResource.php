@@ -2,7 +2,7 @@
 
 namespace SiObject\Http\Resources\Entitys;
 
-use App\Features\Photos\Entities\ThumbnailEntity;
+use SiObjects\Manipule\Entities\ThumbnailEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Storage;
 use function App\Util\html_purify;

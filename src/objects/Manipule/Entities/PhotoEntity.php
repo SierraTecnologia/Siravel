@@ -1,9 +1,9 @@
 <?php
 
-namespace SiObjects\Models\Entities;
+namespace SiObjects\Manipule\Entities;
 
 use Carbon\Carbon;
-use App\Components\ValueObjects\ImageMetadata;
+use SiObjects\Components\ValueObjects\ImageMetadata;
 use Illuminate\Support\Collection;
 
 /**

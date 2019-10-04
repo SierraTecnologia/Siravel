@@ -3,7 +3,7 @@
 namespace Siravel\Console\Commands\PhotoApp;
 
 use App\Models\Role;
-use App\Features\Photos\Entities\UserEntity;
+use SiObjects\Manipule\Entities\UserEntity;
 use Illuminate\Console\Command;
 
 /**

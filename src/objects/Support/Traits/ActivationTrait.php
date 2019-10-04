@@ -1,8 +1,8 @@
 <?php
 
-namespace SiObjects\Traits;
+namespace SiObjects\Support\Traits;
 
-use App\Components\Activation\ActivationRepository;
+use SiObjects\Components\Activation\ActivationRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 

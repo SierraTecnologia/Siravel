@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Models\Builders;
+namespace SiObjects\Manipule\Builders;
 
 use App\Models\Question;
 use App\Contants\Tables;

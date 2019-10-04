@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Routines;
 
-use App\Logic\Connections\Plugins\Board;
+use App\Board;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Contracts;
+namespace SiObjects\Support\Contracts;
 
 interface Component{
     public function prepare();

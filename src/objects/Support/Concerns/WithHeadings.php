@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Concerns;
+namespace SiObjects\Support\Concerns;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Query\Builder;

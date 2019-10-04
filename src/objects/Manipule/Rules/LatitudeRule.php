@@ -2,7 +2,7 @@
 
 namespace SiObject\Manipule\Rules;
 
-use App\Logic\ValueObjects\Latitude;
+use App\ValueObjects\Latitude;
 use Illuminate\Contracts\Validation\Rule;
 use InvalidArgumentException;
 
