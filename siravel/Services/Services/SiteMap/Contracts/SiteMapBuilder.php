@@ -2,7 +2,7 @@
 
 namespace App\Services\SiteMap\Contracts;
 
-use Lib\SiteMap\Contracts\Builder;
+use SiObject\Mount\SiteMap\Contracts\Builder;
 
 /**
  * Interface SiteMapBuilderService.

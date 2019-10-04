@@ -65,13 +65,13 @@ class HomeServiceProvider extends ServiceProvider
     protected function registerLibServices(): void
     {
         $this->app->bind(
-            \Lib\Rss\Contracts\Builder::class,
-            \Lib\Rss\Builder::class
+            \SiObject\Mount\Rss\Contracts\Builder::class,
+            \SiObject\Mount\Rss\Builder::class
         );
 
         $this->app->bind(
-            \Lib\SiteMap\Contracts\Builder::class,
-            \Lib\SiteMap\Builder::class
+            \SiObject\Mount\SiteMap\Contracts\Builder::class,
+            \SiObject\Mount\SiteMap\Builder::class
         );
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Services\Rss\Contracts;
 
-use Lib\Rss\Contracts\Builder;
+use SiObject\Mount\Rss\Contracts\Builder;
 
 /**
  * Interface RssBuilder.
