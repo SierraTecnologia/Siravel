@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity;
+namespace Siravel\Models\Identity\Rotina;
 
 use Siravel\Models\Model;
 
