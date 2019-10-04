@@ -15,16 +15,18 @@
     },
     "autoload": {
         "psr-4": {
-            "SiTools\\App\\": "laravel/",
-            "SiTools\\Interactions\\": "src/interactions/",
-            "SiTools\\Libs\\": "src/libs/",
-            "SiTools\\Logic\\": "src/logic/",
-            "SiTools\\Objects\\": "src/objects/",
-            "SiTools\\Recursos\\": "src/recursos/",
-            "SiTools\\Seed\\": "src/seed/"
+            "SiUtils\\": "utils/",
+            "Siravel\\": "siravel/",
+            "SiInteractions\\": "src/interactions/",
+            "SiLogic\\": "src/logic/",
+            "SiObjects\\": "src/objects/",
+            "SiWepons\\": "src/recursos/",
+            "SiSeed\\": "src/seed/"
         },
         "files": [
-          "src/libs/helpers.php"
+            "utils/functions.php",
+            "utils/helpers.php",
+            "utils/types.php"
         ]
     },
     "scripts": {
@@ -37,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SiTools\\App\\SiToolsProvider"
+                "Siravel\\SiravelProvider"
             ],
             "dont-discover": [
                 "laravel/cashier"

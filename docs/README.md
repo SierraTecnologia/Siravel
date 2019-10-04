@@ -1,17 +1,29 @@
-# Modules
-
-## Apoio com Recursos Exporadicos
-
-Integrações com Terceiros, Helpers, Serviços e Utilitários
-
-## Seed
-
-Mapeamentos
-
-## Actions
 
 
-## Actions
+# Packages
 
-## Lógicas e Regras de Négocios
+## SiUtils
 
+## Siravel
+
+Arquivos Compativeis com o Laravel
+
+## SiInteractions
+
+Integracoes
+
+## SiLogic
+
+Logica
+
+## SiObjects
+
+Components
+
+## SiWepons
+
+Recursos de Integração com Terceiros
+
+## SiSeed
+
+Inclusao de Informações
