@@ -1,8 +1,8 @@
 <?php namespace SiObjects\Logic\Entitys\Uploads;
 
 use App\Models\User;
-use App\Exceptions\HttpFetchException;
-use App\Exceptions\ImageUploadException;
+use SiUtils\Exceptions\HttpFetchException;
+use SiUtils\Exceptions\ImageUploadException;
 use DB;
 use Exception;
 use Illuminate\Contracts\Cache\Repository as Cache;

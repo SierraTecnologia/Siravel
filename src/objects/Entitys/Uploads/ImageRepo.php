@@ -127,7 +127,7 @@ class ImageRepo
      * @param  string $type
      * @param int $uploadedTo
      * @return Image
-     * @throws \App\Exceptions\ImageUploadException
+     * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
      */
     public function saveNew(UploadedFile $uploadFile, $type, $uploadedTo = 0)
@@ -142,7 +142,7 @@ class ImageRepo
      * @param string $base64Uri
      * @param int $uploadedTo
      * @return Image
-     * @throws \App\Exceptions\ImageUploadException
+     * @throws \SiUtils\Exceptions\ImageUploadException
      */
     public function saveDrawing(string $base64Uri, int $uploadedTo)
     {
@@ -157,7 +157,7 @@ class ImageRepo
      * @param Image $image
      * @param array $updateDetails
      * @return Image
-     * @throws \App\Exceptions\ImageUploadException
+     * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
      */
     public function updateImageDetails(Image $image, $updateDetails)
@@ -185,7 +185,7 @@ class ImageRepo
     /**
      * Load thumbnails onto an image object.
      * @param Image $image
-     * @throws \App\Exceptions\ImageUploadException
+     * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
      */
     protected function loadThumbs(Image $image)
@@ -205,7 +205,7 @@ class ImageRepo
      * @param int $height
      * @param bool $keepRatio
      * @return string
-     * @throws \App\Exceptions\ImageUploadException
+     * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
      */
     public function getThumbnail(Image $image, $width = 220, $height = 220, $keepRatio = false)

@@ -1,6 +1,6 @@
 <?php namespace SiObjects\Logic\Entitys\Uploads;
 
-use App\Exceptions\FileUploadException;
+use SiUtils\Exceptions\FileUploadException;
 use Exception;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

@@ -235,7 +235,7 @@ class RegisterController extends Controller
      * @param $socialDriver
      * @return mixed
      * @throws UserRegistrationException
-     * @throws \App\Exceptions\SocialDriverNotConfigured
+     * @throws \SiUtils\Exceptions\SocialDriverNotConfigured
      */
     public function socialRegister($socialDriver)
     {
@@ -251,7 +251,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @throws SocialSignInException
      * @throws UserRegistrationException
-     * @throws \App\Exceptions\SocialDriverNotConfigured
+     * @throws \SiUtils\Exceptions\SocialDriverNotConfigured
      */
     public function socialCallback($socialDriver, Request $request)
     {

@@ -89,7 +89,7 @@ class BookshelfController extends Controller
      * Display the specified bookshelf.
      * @param String $slug
      * @return Response
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function show(string $slug)
     {
@@ -111,7 +111,7 @@ class BookshelfController extends Controller
      * Show the form for editing the specified bookshelf.
      * @param $slug
      * @return Response
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function edit(string $slug)
     {
@@ -139,7 +139,7 @@ class BookshelfController extends Controller
      * @param  Request $request
      * @param string $slug
      * @return Response
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function update(Request $request, string $slug)
     {
@@ -162,7 +162,7 @@ class BookshelfController extends Controller
      * Shows the page to confirm deletion
      * @param $slug
      * @return \Illuminate\View\View
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function showDelete(string $slug)
     {
@@ -177,7 +177,7 @@ class BookshelfController extends Controller
      * Remove the specified bookshelf from storage.
      * @param string $slug
      * @return Response
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      * @throws \Throwable
      */
     public function destroy(string $slug)
@@ -193,7 +193,7 @@ class BookshelfController extends Controller
      * Show the Restrictions view.
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function showRestrict(string $slug)
     {
@@ -212,7 +212,7 @@ class BookshelfController extends Controller
      * @param $slug
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function restrict(string $slug, Request $request)
     {
@@ -228,7 +228,7 @@ class BookshelfController extends Controller
      * Copy the permissions of a bookshelf to the child books.
      * @param string $slug
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function copyPermissions(string $slug)
     {

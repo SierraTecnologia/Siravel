@@ -41,7 +41,7 @@ class CreateAdmin extends Command
      * Execute the console command.
      *
      * @return mixed
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function handle()
     {

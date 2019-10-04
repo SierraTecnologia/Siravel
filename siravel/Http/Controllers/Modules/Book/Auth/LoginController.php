@@ -70,7 +70,7 @@ class LoginController extends Controller
      * @param Authenticatable $user
      * @return \Illuminate\Http\RedirectResponse
      * @throws AuthException
-     * @throws \App\Exceptions\LdapException
+     * @throws \SiUtils\Exceptions\LdapException
      */
     protected function authenticated(Request $request, Authenticatable $user)
     {
@@ -135,7 +135,7 @@ class LoginController extends Controller
      * Redirect to the relevant social site.
      * @param $socialDriver
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     * @throws \App\Exceptions\SocialDriverNotConfigured
+     * @throws \SiUtils\Exceptions\SocialDriverNotConfigured
      */
     public function getSocialLogin($socialDriver)
     {

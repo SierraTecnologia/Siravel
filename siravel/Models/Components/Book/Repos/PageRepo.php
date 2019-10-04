@@ -17,7 +17,7 @@ class PageRepo extends EntityRepo
      * @param string $pageSlug
      * @param string $bookSlug
      * @return Page
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function getPageBySlug(string $pageSlug, string $bookSlug)
     {

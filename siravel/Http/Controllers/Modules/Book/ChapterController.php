@@ -107,7 +107,7 @@ class ChapterController extends Controller
      * @param          $bookSlug
      * @param          $chapterSlug
      * @return Response
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function update(Request $request, $bookSlug, $chapterSlug)
     {
@@ -154,7 +154,7 @@ class ChapterController extends Controller
      * @param $bookSlug
      * @param $chapterSlug
      * @return mixed
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function showMove($bookSlug, $chapterSlug)
     {
@@ -174,7 +174,7 @@ class ChapterController extends Controller
      * @param $chapterSlug
      * @param Request $request
      * @return mixed
-     * @throws \App\Exceptions\NotFoundException
+     * @throws \SiUtils\Exceptions\NotFoundException
      */
     public function move($bookSlug, $chapterSlug, Request $request)
     {

@@ -1,4 +1,4 @@
-<?php namespace App\Exceptions;
+<?php namespace SiUtils\Exceptions;
 
 class NotFoundException extends PrettyException
 {

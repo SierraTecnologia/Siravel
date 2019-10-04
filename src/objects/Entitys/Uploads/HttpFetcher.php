@@ -1,6 +1,6 @@
 <?php namespace SiObjects\Logic\Entitys\Uploads;
 
-use App\Exceptions\HttpFetchException;
+use SiUtils\Exceptions\HttpFetchException;
 
 class HttpFetcher
 {
