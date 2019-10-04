@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Entities;
+namespace SiObjects\Models\Entities;
 
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;

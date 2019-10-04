@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Conversations;
+namespace SiObject\Http\Conversations;
 
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;

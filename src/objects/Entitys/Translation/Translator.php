@@ -1,4 +1,4 @@
-<?php namespace App\Logic\Entitys\Translation;
+<?php namespace SiObjects\Logic\Entitys\Translation;
 
 class Translator extends \Illuminate\Translation\Translator
 {

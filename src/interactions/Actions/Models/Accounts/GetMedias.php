@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events\Routines;
+namespace SiInteractions\Events\Routines;
 
 use App\Models\Code\Account;
 use Illuminate\Bus\Queueable;

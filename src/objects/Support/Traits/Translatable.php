@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Traits;
+namespace SiObjects\Traits;
 
 use App\Models\System\Translation;
-use App\Services\GpowerService;
+use Siravel\Services\GpowerService;
 use Stichoza\GoogleTranslate\TranslateClient;
 use App\Repositories\TranslationRepository;
 

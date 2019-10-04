@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Traits;
+namespace SiObjects\Models\Traits;
 
 use InvalidArgumentException;
 use Illuminate\Database\Eloquent\Model;

@@ -3,7 +3,7 @@
  * Importar, exportar, converter e migrar imagens.
  */
 
-namespace App\Services\Midia;
+namespace Siravel\Services\Midia;
 
 use CryptoService as CryptoServiceForFiles;
 use Exception;

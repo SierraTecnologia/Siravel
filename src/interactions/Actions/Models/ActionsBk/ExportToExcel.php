@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace SiInteractions\Actions;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Resource;
@@ -23,10 +23,10 @@ use App\Concerns\WithHeadings;
 use App\Concerns\WithChunkCount;
 use App\Concerns\WithWriterType;
 use App\Interactions\AskForFilename;
-use App\Http\Requests\Excel\ExportActionRequest;
+use SiObject\Http\Requests\Excel\ExportActionRequest;
 use App\Interactions\AskForWriterType;
 use Maatwebsite\Excel\Concerns\WithHeadings as WithHeadingsConcern;
-use App\Http\Requests\Excel\ExportActionRequestFactory;
+use SiObject\Http\Requests\Excel\ExportActionRequestFactory;
 
 class ExportToExcel extends Action implements FromQuery, WithCustomChunkSize, WithHeadingsConcern, WithMapping
 {

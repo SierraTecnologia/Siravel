@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces;
+namespace SiObjects\Interfaces;
 
 use Illuminate\Database\Eloquent\Builder;
 

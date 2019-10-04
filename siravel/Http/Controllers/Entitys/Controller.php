@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Response;
-use App\Http\Controllers\Controller as BaseController;
+use SiObject\Http\Controllers\Controller as BaseController;
 use Illuminate\Support\Facades\Log;
 
 class Controller extends BaseController

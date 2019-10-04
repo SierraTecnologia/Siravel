@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Entities;
+namespace SiObjects\Models\Entities;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;

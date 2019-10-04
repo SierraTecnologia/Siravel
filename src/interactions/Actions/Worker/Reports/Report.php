@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Actions\Worker\Reports;
+namespace SiInteractions\Logic\Actions\Worker\Reports;
 
 
 /**

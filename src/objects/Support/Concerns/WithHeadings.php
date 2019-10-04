@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Concerns;
+namespace SiObjects\Concerns;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Requests\Excel\ExportActionRequest;
+use SiObject\Http\Requests\Excel\ExportActionRequest;
 
 trait WithHeadings
 {

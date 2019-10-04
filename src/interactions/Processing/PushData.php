@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Plugins\Processing\Routines;
+namespace SiInteractions\Logic\Connections\Plugins\Processing\Routines;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

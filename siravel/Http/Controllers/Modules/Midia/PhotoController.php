@@ -1,5 +1,5 @@
 <?php 
-namespace App\Http\Controllers\Midia;
+namespace SiObject\Http\Controllers\Midia;
 
 use App\Models\Midia\Photo;
 use App\Models\Midia\PhotoAlbum;

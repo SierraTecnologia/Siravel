@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Book;
+namespace SiInteractions\Actions\Book;
 
 use App\Models\User;
 use App\Models\Model;

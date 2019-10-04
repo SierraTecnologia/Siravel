@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\Entities;
+namespace SiObjects\Models\Entities;
 
-use App\Logic\Info\ValueObjects\Coordinates;
-use App\Logic\Info\ValueObjects\Latitude;
-use App\Logic\Info\ValueObjects\Longitude;
+use App\Components\ValueObjects\Coordinates;
+use App\Components\ValueObjects\Latitude;
+use App\Components\ValueObjects\Longitude;
 
 /**
  * Class LocationEntity.

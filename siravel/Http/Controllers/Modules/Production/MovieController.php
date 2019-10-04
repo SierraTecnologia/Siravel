@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Production;
+namespace SiObject\Http\Controllers\Production;
 
-use App\Http\Controllers\Controller;
+use SiObject\Http\Controllers\Controller;
 use App\Movie;
 use App\MovieCategory;
 use App\Language;
 use Illuminate\Support\Facades\Input;
-use App\Http\Requests\Admin\MovieRequest;
+use SiObject\Http\Requests\Admin\MovieRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

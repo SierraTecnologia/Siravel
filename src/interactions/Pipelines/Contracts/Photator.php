@@ -1,5 +1,5 @@
 <?php
 
-namespace App\Logic\Connections\Plugins\Pipelines\Contracts;
+namespace SiInteractions\Logic\Connections\Plugins\Pipelines\Contracts;
 
 interface Photator{}

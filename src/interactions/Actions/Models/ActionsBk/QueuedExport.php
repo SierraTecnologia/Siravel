@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Actions;
+namespace SiInteractions\Actions;
 
 use Laravel\Nova\Nova;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Http\Requests\Excel\SerializedRequest;
+use SiObject\Http\Requests\Excel\SerializedRequest;
 
 class QueuedExport extends ExportToExcel implements ShouldQueue
 {

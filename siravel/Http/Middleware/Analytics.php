@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace SiObject\Http\Middleware;
 
 use Closure;
-use App\Services\System\AnalyticsService;
+use Siravel\Services\System\AnalyticsService;
 
 class Analytics
 {

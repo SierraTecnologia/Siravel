@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Managers\Photo;
+namespace SiObjects\Managers\Photo;
 
 use App\Models\Photo;
-use App\Services\Image\Contracts\ImageProcessor;
+use Siravel\Services\Image\Contracts\ImageProcessor;
 use App\Features\Photos\Contracts\LocationManager;
 use App\Features\Photos\Contracts\PhotoManager;
 use App\Features\Photos\Entities\PhotoEntity;

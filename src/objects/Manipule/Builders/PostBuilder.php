@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Builders;
+namespace SiObjects\Models\Builders;
 
 use App\Models\Post;
 use App\Contants\Tables;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Commands;
+namespace SiObjects\Components\Commands;
 
 class Fisico
 {

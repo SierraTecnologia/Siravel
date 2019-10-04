@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions;
+namespace SiInteractions\Actions;
 
 use Laravel\Nova\Actions\Action;
 use Maatwebsite\Excel\Facades\Excel;

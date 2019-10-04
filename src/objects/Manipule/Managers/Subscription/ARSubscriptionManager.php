@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Managers\Subscription;
+namespace SiObjects\Managers\Subscription;
 
 use App\Models\Builders\SubscriptionBuilder;
 use App\Models\Subscription;

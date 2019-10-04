@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Managers\User;
+namespace SiObjects\Managers\User;
 
 use App\Contants\Tables;
 use App\Models\User;

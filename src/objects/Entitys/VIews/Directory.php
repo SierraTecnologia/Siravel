@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Modules\Navegador\Views;
+namespace SiObjects\Logic\Modules\Navegador\Views;
 
 /**
  * User Helper - Provides access to logged in user information in views.

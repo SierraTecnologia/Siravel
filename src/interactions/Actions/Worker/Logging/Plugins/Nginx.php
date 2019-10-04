@@ -10,7 +10,7 @@
 ?>
 <?php
 
-namespace App\Logic\Actions\Worker\Analyser\Logging\Plugins;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Logging\Plugins;
 
 class Nginx {
 

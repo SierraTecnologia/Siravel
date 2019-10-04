@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Bots\Actions;
+namespace SiObject\Http\Bots\Actions;
 
 class QuestionBot extends Bot
 {

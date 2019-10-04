@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Actions\Worker\Sync;
+namespace SiInteractions\Logic\Actions\Worker\Sync;
 
 use App\Logic\Tools\Databases\Mysql\Mysql as MysqlTool;
 use App\Models\Infra\Token;

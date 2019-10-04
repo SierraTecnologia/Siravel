@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use App\Features\Photos\Entities\ThumbnailEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -13,7 +13,7 @@ use function App\Util\url_storage;
 /**
  * Class ThumbnailPlainResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class ThumbnailPlainResource extends Resource
 {

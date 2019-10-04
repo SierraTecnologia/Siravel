@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Actions\People;
+namespace SiInteractions\Logic\Actions\People;
 
 use App\Models\Model;
 

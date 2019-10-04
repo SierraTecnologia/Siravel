@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Conversations;
+namespace SiObject\Http\Conversations;
 
 use Validator;
 use BotMan\BotMan\Messages\Incoming\Answer;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Pointable\Mapeamento;
+namespace SiLogic\Pointable\Mapeamento;
 
 use App\Logic\Info\Pointable\Pointable;
 

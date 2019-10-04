@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Logic\Actions\Worker\Analyser\Event;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Event;
 
 use App\Models\Code\Commit;
 use App\Models\Infra\Pipeline;

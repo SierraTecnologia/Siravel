@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Concerns;
+namespace SiObjects\Concerns;
 
 trait WithDisk
 {

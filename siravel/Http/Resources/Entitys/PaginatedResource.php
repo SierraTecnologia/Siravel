@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * Class PaginatedResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class PaginatedResource extends ResourceCollection
 {

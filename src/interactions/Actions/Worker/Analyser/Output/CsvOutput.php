@@ -1,5 +1,5 @@
 <?php
-namespace App\Logic\Actions\Worker\Analyser\Output;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Output;
 
 use League\Csv\Writer;
 use App\Logic\Actions\Worker\Analyser\AnalysisResult;

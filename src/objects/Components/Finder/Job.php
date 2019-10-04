@@ -3,7 +3,7 @@
  * Busca alguem parecido contigo que tenha mts seguidores
  */
 
-namespace App\Logic\Connections\Plugins\Finder;
+namespace SiObjects\Logic\Connections\Plugins\Finder;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

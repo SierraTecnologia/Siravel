@@ -10,7 +10,7 @@
 ?>
 <?php
 
-namespace App\Logic\Actions\Worker\Analyser\Logging;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Logging;
 
 use App\Logic\Actions\Worker\Logging\Plugins\Apache;
 use App\Logic\Actions\Worker\Logging\Plugins\Iis;

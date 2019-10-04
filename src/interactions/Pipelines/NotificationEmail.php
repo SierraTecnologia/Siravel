@@ -1,5 +1,5 @@
 <?php
-namespace App\Logic\Connections\Plugins\Pipelines;
+namespace SiInteractions\Logic\Connections\Plugins\Pipelines;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Plugins\Routines;
+namespace SiInteractions\Logic\Connections\Plugins\Routines;
 
 use App\Logic\Connections\Plugins\Components\Pipeline;
 use App\Logic\Connections\Plugins\Components\Post as PostComponent;

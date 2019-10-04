@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Managers\Location;
+namespace SiObjects\Managers\Location;
 
-use App\Http\Rules\LatitudeRule;
-use App\Http\Rules\LongitudeRule;
+use SiObject\Manipule\Rules\LatitudeRule;
+use SiObject\Manipule\Rules\LongitudeRule;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\ValidationException;

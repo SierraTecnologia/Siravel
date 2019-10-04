@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Traits;
+namespace Siravel\Services\Traits;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Repositories\WidgetRepository;
-use App\Services\Midia\FileService;
+use Siravel\Services\Midia\FileService;
 
 trait DefaultModuleServiceTrait
 {

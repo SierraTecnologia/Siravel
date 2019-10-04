@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Bots\Atuacoes;
+namespace SiObject\Http\Bots\Atuacoes;
 
 class Vendedor
 {

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class LdapService
  * Handles any app-specific LDAP tasks.
- * @package App\Services
+ * @package Siravel\Services
  */
 class LdapService
 {

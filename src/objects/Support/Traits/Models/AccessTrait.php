@@ -3,7 +3,7 @@
  * CLasse criada para controlar os acessos dentro de determinado modelo
  */
 
-namespace App\Models\Traits;
+namespace SiObjects\Models\Traits;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\Model;

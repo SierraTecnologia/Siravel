@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use App\Features\Photos\Entities\UserEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -11,7 +11,7 @@ use function App\Util\to_string;
 /**
  * Class UserPlainResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class UserPlainResource extends Resource
 {

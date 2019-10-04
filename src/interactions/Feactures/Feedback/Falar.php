@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Feedback;
+namespace SiInteractions\Logic\Info\Feedback;
 
 class Falar
 {

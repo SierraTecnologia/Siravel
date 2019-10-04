@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Traits;
+namespace SiObjects\Models\Traits;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\Model;
@@ -13,7 +13,7 @@ trait BusinessTrait
 
     protected static function bootBusinessTrait()                                                                                                                                                             
     {
-        if ($business = \App\Services\System\BusinessService::getSingleton()->getBusiness()){
+        if ($business = \Siravel\Services\System\BusinessService::getSingleton()->getBusiness()){
 
             static::creating(function ($model) use ($business) {
                 $model->business_code = $business->code;

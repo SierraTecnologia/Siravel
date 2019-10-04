@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Entitys\Components;
+namespace SiObjects\Logic\Entitys\Components;
 
 use Illuminate\Support\Facades\Log;
 

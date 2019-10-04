@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Actions\Worker\Life;
+namespace SiInteractions\Logic\Actions\Worker\Life;
 
 use App\Models\Infra\Domain;
 use App\Models\Infra\Url;

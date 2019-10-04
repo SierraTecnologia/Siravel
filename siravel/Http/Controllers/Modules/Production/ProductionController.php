@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Production;
+namespace SiObject\Http\Controllers\Production;
 
-use App\Http\Controllers\Controller;
+use SiObject\Http\Controllers\Controller;
 use App\Models\Production;
 use App\Language;
 use Illuminate\Support\Facades\Input;
-use App\Http\Requests\Admin\ProductionRequest;
+use SiObject\Http\Requests\Admin\ProductionRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

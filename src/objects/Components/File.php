@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Modules\Diagrams\Components;
+namespace SiObjects\Logic\Modules\Diagrams\Components;
 
 /**
  * User Helper - Provides access to logged in user information in views.

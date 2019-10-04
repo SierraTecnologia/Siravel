@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Rules;
+namespace SiObject\Manipule\Rules;
 
 use App\Logic\ValueObjects\Latitude;
 use Illuminate\Contracts\Validation\Rule;
@@ -9,7 +9,7 @@ use InvalidArgumentException;
 /**
  * Class LatitudeRule.
  *
- * @package App\Http\Rules
+ * @package SiObject\Manipule\Rules
  */
 class LatitudeRule implements Rule
 {

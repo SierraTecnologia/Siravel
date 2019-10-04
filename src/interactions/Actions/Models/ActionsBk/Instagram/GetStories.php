@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Instagram;
+namespace SiInteractions\Actions\Instagram;
 
 use Illuminate\Support\Facades\Facade;
 

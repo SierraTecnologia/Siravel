@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Logic\InteligenciaArtificial\Questions;
+namespace SiLogic\InteligenciaArtificial\Questions;
 
 class AboutVideoIa
 {

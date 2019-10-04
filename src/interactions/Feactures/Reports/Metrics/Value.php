@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Metrics;
+namespace SiInteractions\Logic\Metrics;
 
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Metrics\Value as BaseValue;

@@ -3,7 +3,7 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace App\Logic\Actions\Routines\Hook;
+namespace SiInteractions\Logic\Actions\Routines\Hook;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;

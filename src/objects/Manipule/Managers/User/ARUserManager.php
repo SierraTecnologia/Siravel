@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Managers\User;
+namespace SiObjects\Managers\User;
 
 use App\Models\Role;
 use App\Models\User;

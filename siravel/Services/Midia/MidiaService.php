@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Midia;
+namespace Siravel\Services\Midia;
 
 use App;
 use Exception;

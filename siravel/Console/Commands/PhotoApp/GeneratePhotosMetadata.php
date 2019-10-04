@@ -3,7 +3,7 @@
 namespace Siravel\Console\Commands\PhotoApp;
 
 use App\Models\Photo;
-use App\Services\Image\Contracts\ImageProcessor;
+use Siravel\Services\Image\Contracts\ImageProcessor;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Throwable;

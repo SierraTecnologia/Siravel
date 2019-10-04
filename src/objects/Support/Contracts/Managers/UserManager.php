@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Contracts;
+namespace SiObjects\Models\Contracts;
 
 use App\Models\Entities\UserEntity;
 

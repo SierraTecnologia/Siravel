@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Services\Manifest;
+namespace Siravel\Services\Manifest;
 
-use App\Services\Manifest\Contracts\Manifest;
+use Siravel\Services\Manifest\Contracts\Manifest;
 use Illuminate\Config\Repository as Config;
 
 /**
  * Class AppManifest.
  *
- * @package App\Services\Rss
+ * @package Siravel\Services\Rss
  */
 class AppManifest implements Manifest
 {

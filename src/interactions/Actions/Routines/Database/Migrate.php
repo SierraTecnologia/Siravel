@@ -3,7 +3,7 @@
  * Migrando um banco de dados de Banco
  */
 
-namespace App\Logic\Actions\Routines\Database;
+namespace SiInteractions\Logic\Actions\Routines\Database;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;

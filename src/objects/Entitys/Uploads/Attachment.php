@@ -1,4 +1,4 @@
-<?php namespace App\Logic\Entitys\Uploads;
+<?php namespace SiObjects\Logic\Entitys\Uploads;
 
 use App\Models\Book\Page;
 use App\Models\Ownable;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Traits;
+namespace Siravel\Services\Traits;
 
 use App\Logic\Activation\ActivationRepository;
 use App\Models\User;

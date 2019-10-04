@@ -1,5 +1,5 @@
 <?php
-namespace App\Logic\Actions\Worker\Analyser\Tools;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Tools;
 
 use App\Logic\Actions\Worker\Analyser\AnalysisResult;
 use App\Helps\ArrayHelper;

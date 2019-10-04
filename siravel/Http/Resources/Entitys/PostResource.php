@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use App\Features\Photos\Entities\PostEntity;
 use App\Features\Photos\Entities\TagEntity;
@@ -9,7 +9,7 @@ use function App\Util\to_object;
 /**
  * Class PostResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class PostResource extends PostPlainResource
 {

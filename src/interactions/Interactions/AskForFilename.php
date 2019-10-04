@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interactions;
+namespace SiInteractions\Interactions;
 
 use Laravel\Nova\Fields\Text;
 

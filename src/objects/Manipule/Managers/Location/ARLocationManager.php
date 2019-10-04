@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Managers\Location;
+namespace SiObjects\Managers\Location;
 
 use App\Models\Location;
 use App\Features\Photos\Contracts\LocationManager;

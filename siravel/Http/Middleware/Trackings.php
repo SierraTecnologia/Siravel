@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace SiObject\Http\Middleware;
 
 use Closure;
-use App\Services\System\TrackingsService;
+use Siravel\Services\System\TrackingsService;
 
 class Trackings
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Bots\Decisoes;
+namespace SiObject\Http\Bots\Decisoes;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

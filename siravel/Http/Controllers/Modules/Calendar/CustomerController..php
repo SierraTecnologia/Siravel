@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Gp;
+namespace SiObject\Http\Controllers\Gp;
 
-use App\Http\Controllers\Controller;
+use SiObject\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use App\Http\Requests\Admin\ArticleRequest;
+use SiObject\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Traits\Models;
+namespace SiObjects\Traits\Models;
 
 use App\Models\System\Translation;
-use App\Services\CmsService;
+use Siravel\Services\CmsService;
 use RicardoSierra\Translation\GoogleTranslate;
 use App\Repositories\TranslationRepository;
 use Exception;

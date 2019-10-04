@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace Siravel\Services;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;

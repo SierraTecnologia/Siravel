@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Actions;
+namespace SiInteractions\Logic\Actions;
 
 use Illuminate\Support\Facades\Log;
 

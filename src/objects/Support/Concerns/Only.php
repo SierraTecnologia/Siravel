@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Concerns;
+namespace SiObjects\Concerns;
 
 use Laravel\Nova\Http\Requests\ActionRequest;
-use App\Http\Requests\Excel\ExportActionRequest;
+use SiObject\Http\Requests\Excel\ExportActionRequest;
 
 trait Only
 {

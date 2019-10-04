@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Info\Actions;
+namespace SiObjects\Components\Actions;
 
-use App\Logic\Info\Actions\Fisico;
+use App\Components\Actions\Fisico;
 
-use App\Logic\Info\Steps\BasicRegister;
-use App\Logic\Info\Steps\BottomInfos;
+use App\Components\Steps\BasicRegister;
+use App\Components\Steps\BottomInfos;
 
 class Cuidar
 {

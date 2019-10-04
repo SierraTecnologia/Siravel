@@ -1,4 +1,4 @@
-<?php namespace App\Logic\Entitys\Uploads;
+<?php namespace SiObjects\Logic\Entitys\Uploads;
 
 use App\Models\User;
 use App\Exceptions\HttpFetchException;

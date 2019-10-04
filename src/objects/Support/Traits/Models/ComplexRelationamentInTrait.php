@@ -6,7 +6,7 @@
  * model
  */
 
-namespace App\Models\Traits;
+namespace SiObjects\Models\Traits;
 
 trait ComplexRelationamentInTrait
 {

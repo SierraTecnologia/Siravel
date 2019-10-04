@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Logic\RegrasDeNegocios\Fluxo\Actions;
+namespace SiObjects\Logic\RegrasDeNegocios\Fluxo\Actions;
 
-use App\Logic\Info\Steps\BasicRegister;
-use App\Logic\Info\Steps\BottomInfos;
+use App\Components\Steps\BasicRegister;
+use App\Components\Steps\BottomInfos;
 
 class Mimar
 {

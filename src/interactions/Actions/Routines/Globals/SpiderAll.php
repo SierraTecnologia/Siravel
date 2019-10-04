@@ -3,7 +3,7 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace App\Logic\Actions\Routines\Globals;
+namespace SiInteractions\Logic\Actions\Routines\Globals;
 
 use App\Logic\Actions\Routines\Database\SpiderRoutine;
 

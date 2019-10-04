@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Logic\Info\Gamification;
+namespace SiLogic\Pointable;
 
 class Pointable
 {

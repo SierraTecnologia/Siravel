@@ -6,7 +6,7 @@
 namespace App\Models\Calendar;
 
 use App\Models\CmsModel as BaseModel;
-use App\Services\Normalizer;
+use Siravel\Services\Normalizer;
 use App\Models\Traits\Translatable;
 use Log;
 use Illuminate\Database\Eloquent\SoftDeletes;

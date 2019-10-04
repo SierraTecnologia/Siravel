@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Metrics;
+namespace SiInteractions\Logic\Metrics;
 
 use App\Models\User;
 use Illuminate\Http\Request;

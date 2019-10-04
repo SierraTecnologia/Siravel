@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\System;
+namespace Siravel\Services\System;
 
 use App\Models\Business;
 use Illuminate\Support\Facades\Config;

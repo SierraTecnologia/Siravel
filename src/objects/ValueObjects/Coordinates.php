@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\ValueObjects;
+namespace SiObjects\Logic\ValueObjects;
 
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;

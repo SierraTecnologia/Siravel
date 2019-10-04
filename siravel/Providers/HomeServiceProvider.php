@@ -113,11 +113,11 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \App\Services\Image\Contracts\ImageProcessor::class,
-            \App\Services\Image\ImagineImageProcessor::class
+            \Siravel\Services\Image\Contracts\ImageProcessor::class,
+            \Siravel\Services\Image\ImagineImageProcessor::class
         );
 
-        $this->app->when(\App\Services\Image\ImagineImageProcessor::class)
+        $this->app->when(\Siravel\Services\Image\ImagineImageProcessor::class)
             ->needs('$config')
             ->give(function (Application $app) {
                 return [
@@ -126,24 +126,24 @@ class HomeServiceProvider extends ServiceProvider
             });
 
         $this->app->bind(
-            \App\Services\Manifest\Contracts\Manifest::class,
-            \App\Services\Manifest\AppManifest::class
+            \Siravel\Services\Writelabel\Manifest\Contracts\Manifest::class,
+            \Siravel\Services\Writelabel\Manifest\AppManifest::class
         );
 
         $this->app->bind(
-            \App\Services\SiteMap\Contracts\SiteMapBuilder::class,
-            \App\Services\SiteMap\AppSiteMapBuilder::class
+            \Siravel\Services\Writelabel\SiteMap\Contracts\SiteMapBuilder::class,
+            \Siravel\Services\Writelabel\SiteMap\AppSiteMapBuilder::class
         );
 
         $this->app->bind(
-            \App\Services\Rss\Contracts\RssBuilder::class,
-            \App\Services\Rss\AppRssBuilder::class
+            \Siravel\Services\Writelabel\Rss\Contracts\RssBuilder::class,
+            \Siravel\Services\Writelabel\Rss\AppRssBuilder::class
         );
 
         $this->app->bind(
-            \App\Http\Rules\ReCaptchaRule::class,
+            \SiObject\Manipule\Rules\ReCaptchaRule::class,
             function () {
-                return new \App\Http\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
+                return new \SiObject\Manipule\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
             }
         );
     }
@@ -156,8 +156,8 @@ class HomeServiceProvider extends ServiceProvider
     protected function registerApiV1Services(): void
     {
         $this->app->bind(
-            \App\Http\Proxy\Contracts\OAuthProxy::class,
-            \App\Http\Proxy\CookieOAuthProxy::class
+            \SiObject\Http\Proxy\Contracts\OAuthProxy::class,
+            \SiObject\Http\Proxy\CookieOAuthProxy::class
         );
     }
 }

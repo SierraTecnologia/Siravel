@@ -3,7 +3,7 @@
  * Version: 0.1
  */
 
-namespace App\Logic\Entitys\Components;
+namespace SiObjects\Logic\Entitys\Components;
 
 use App\Logic\Entitys\Components\File;
 use App\Logic\Entitys\Components\Directory;

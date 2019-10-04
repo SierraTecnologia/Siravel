@@ -1,4 +1,4 @@
-<?php namespace App\Traits;
+<?php namespace SiObjects\Traits;
 
 use Input;
 use ReCaptcha\ReCaptcha;

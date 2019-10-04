@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Actions\Worker\Analyser\Logging;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Logging;
 
 class Logging
 {

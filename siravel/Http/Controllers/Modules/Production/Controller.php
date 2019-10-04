@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Production;
+namespace SiObject\Http\Controllers\Production;
 
-use App\Http\Controllers\Controller as BaseController;
+use SiObject\Http\Controllers\Controller as BaseController;
 use App\Article;
 use App\ArticleCategory;
 use App\Language;
 use Illuminate\Support\Facades\Input;
-use App\Http\Requests\Admin\ArticleRequest;
+use SiObject\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

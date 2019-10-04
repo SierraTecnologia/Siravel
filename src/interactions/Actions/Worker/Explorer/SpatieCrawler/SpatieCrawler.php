@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Actions\Worker\Explorer\SpatieCrawler;
+namespace SiInteractions\Logic\Actions\Worker\Explorer\SpatieCrawler;
 
 /**
  * https://github.com/spatie/crawler

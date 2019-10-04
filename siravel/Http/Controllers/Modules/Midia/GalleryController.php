@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Midia;
+namespace SiObject\Http\Controllers\Midia;
 
 use Config;
-use App\Http\Controllers\Controller;
+use SiObject\Http\Controllers\Controller;
 use App\Repositories\ImageRepository;
 
 class GalleryController extends Controller

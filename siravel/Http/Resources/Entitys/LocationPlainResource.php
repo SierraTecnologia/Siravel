@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use App\Features\Photos\Entities\LocationEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -10,7 +10,7 @@ use function App\Util\to_float;
 /**
  * Class LocationPlainResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class LocationPlainResource extends Resource
 {

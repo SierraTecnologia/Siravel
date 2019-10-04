@@ -7,7 +7,7 @@ use Auth;
 use Config;
 use Exception;
 use Siravel\Services\UserService;
-use Siravel\Models\Role;
+use App\Models\Role;
 use Illuminate\Support\Facades\Schema;
 
 class RoleService
@@ -42,7 +42,7 @@ class RoleService
      */
     public function paginated()
     {
-        return $this->model->paginate(env('paginate', 25));
+        return $this->model->paginate(env('PAGINATE', 25));
     }
 
     /**
@@ -71,7 +71,7 @@ class RoleService
             $query->orWhere($attribute, 'LIKE', '%'.$input.'%');
         };
 
-        return $query->paginate(env('paginate', 25));
+        return $query->paginate(env('PAGINATE', 25));
     }
 
     /**
@@ -101,7 +101,11 @@ class RoleService
     public function create($input)
     {
         try {
-            $input['permissions'] = implode(',', array_keys($input['permissions']));
+            if (isset($input['permissions'])) {
+                $input['permissions'] = implode(',', array_keys($input['permissions']));
+            } else {
+                $input['permissions'] = null;
+            }
             return $this->model->create($input);
         } catch (Exception $e) {
             throw new Exception("Failed to create role", 1);

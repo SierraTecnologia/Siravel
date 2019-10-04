@@ -1,5 +1,5 @@
 <?php
-namespace App\Logic\Actions\Worker\Analyser\Output;
+namespace SiInteractions\Logic\Actions\Worker\Analyser\Output;
 
 use League\Plates\Engine;
 use App\Logic\Actions\Worker\Analyser\Analyser;

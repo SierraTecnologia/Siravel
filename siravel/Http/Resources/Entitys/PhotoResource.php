@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace SiObject\Http\Resources\Entitys;
 
 use function App\Util\html_purify;
 use function App\Util\to_object;
@@ -9,7 +9,7 @@ use function App\Util\to_string;
 /**
  * Class PhotoResource.
  *
- * @package App\Http\Resources
+ * @package SiObject\Http\Resources\Entitys
  */
 class PhotoResource extends PhotoPlainResource
 {

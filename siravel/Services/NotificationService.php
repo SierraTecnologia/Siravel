@@ -2,8 +2,8 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\Notification;
-use Siravel\Notifications\GeneralNotification;
+use App\Models\Notification;
+use AppNotifications\GeneralNotification;
 use Siravel\Services\UserService;
 use Crypto;
 use Illuminate\Support\Facades\Schema;
@@ -35,7 +35,7 @@ class NotificationService
      */
     public function paginated()
     {
-        return $this->model->orderBy('created_at', 'desc')->paginate(env('paginate', 25));
+        return $this->model->orderBy('created_at', 'desc')->paginate(env('PAGINATE', 25));
     }
 
     /**
@@ -46,7 +46,7 @@ class NotificationService
      */
     public function userBasedPaginated($id)
     {
-        return $this->model->where('user_id', $id)->orderBy('created_at', 'desc')->paginate(env('paginate', 25));
+        return $this->model->where('user_id', $id)->orderBy('created_at', 'desc')->paginate(env('PAGINATE', 25));
     }
 
     /**
@@ -82,7 +82,7 @@ class NotificationService
             }
         };
 
-        return $query->paginate(env('paginate', 25));
+        return $query->paginate(env('PAGINATE', 25));
     }
 
     /**

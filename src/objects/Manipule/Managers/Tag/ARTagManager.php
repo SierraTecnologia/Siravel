@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Managers\Tag;
+namespace SiObjects\Managers\Tag;
 
 use App\Models\Tag;
 use App\Features\Photos\Contracts\TagManager;

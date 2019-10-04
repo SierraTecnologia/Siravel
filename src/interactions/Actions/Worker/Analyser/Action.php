@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Actions\Worker\Explorer;
+namespace SiInteractions\Logic\Actions\Worker\Explorer;
 
 use App\Models\Infra\Domain;
 use App\Models\Bot\Internet\Url;

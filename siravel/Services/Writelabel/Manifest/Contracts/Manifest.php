@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Manifest\Contracts;
+namespace Siravel\Services\Manifest\Contracts;
 
 /**
  * Interface Manifest.
  *
- * @package App\Services\SiteMap\Contracts
+ * @package Siravel\Services\SiteMap\Contracts
  */
 interface Manifest
 {

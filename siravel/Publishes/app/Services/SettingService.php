@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Settings;
+namespace Siravel\Services\Settings;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
 
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Cache\Repository as Cache;
  *
  * The settings are a simple key-value database store.
  *
- * @package App\Services
+ * @package Siravel\Services
  */
 class SettingService
 {

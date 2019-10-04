@@ -13,7 +13,7 @@ class GravatarServiceProvider extends ServiceProvider {
 	 */
 	public function register() {
 
-		$this->app->bind('GravatarService', 'App\Services\GravatarService');
+		$this->app->bind('GravatarService', 'Siravel\Services\GravatarService');
 
 	}
 

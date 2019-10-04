@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interactions;
+namespace SiInteractions\Interactions;
 
 use Maatwebsite\Excel\Excel;
 use Laravel\Nova\Fields\Select;

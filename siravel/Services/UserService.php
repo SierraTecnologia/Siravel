@@ -4,40 +4,34 @@ namespace Siravel\Services;
 
 use DB;
 use Auth;
-use Mail;
-use Config;
 use Session;
 use Exception;
-use Siravel\Models\User;
-use Siravel\Models\UserMeta;
-use Siravel\Models\Team;
-use Siravel\Models\Role;
-use Siravel\Events\UserRegisteredEmail;
-use Siravel\Notifications\ActivateUserEmail;
+use App\Models\User;
+use App\Models\UserMeta;
+use App\Models\Role;
+use App\Events\UserRegisteredEmail;
+use App\Notifications\ActivateUserEmail;
 use Illuminate\Support\Facades\Schema;
 
 class UserService
 {
     /**
-     * User model
+     * User model.
+     *
      * @var User
      */
     public $model;
 
     /**
-     * User Meta model
+     * User Meta model.
+     *
      * @var UserMeta
      */
     protected $userMeta;
 
     /**
-     * Team Service
-     * @var TeamService
-     */
-    protected $team;
-
-    /**
-     * Role Service
+     * Role Service.
+     *
      * @var RoleService
      */
     protected $role;
@@ -45,17 +39,15 @@ class UserService
     public function __construct(
         User $model,
         UserMeta $userMeta,
-        Team $team,
         Role $role
     ) {
         $this->model = $model;
         $this->userMeta = $userMeta;
-        $this->team = $team;
         $this->role = $role;
     }
 
     /**
-     * Get all users
+     * Get all users.
      *
      * @return array
      */
@@ -65,8 +57,10 @@ class UserService
     }
 
     /**
-     * Find a user
-     * @param  integer $id
+     * Find a user.
+     *
+     * @param int $id
+     *
      * @return User
      */
     public function find($id)
@@ -75,9 +69,10 @@ class UserService
     }
 
     /**
-     * Search the users
+     * Search the users.
      *
-     * @param  string $input
+     * @param string $input
+     *
      * @return mixed
      */
     public function search($input)
@@ -88,15 +83,16 @@ class UserService
 
         foreach ($columns as $attribute) {
             $query->orWhere($attribute, 'LIKE', '%'.$input.'%');
-        };
+        }
 
-        return $query->paginate(env('paginate', 25));
+        return $query->paginate(env('PAGINATE', 25));
     }
 
     /**
-     * Find a user by email
+     * Find a user by email.
      *
-     * @param  string $email
+     * @param string $email
+     *
      * @return User
      */
     public function findByEmail($email)
@@ -105,8 +101,10 @@ class UserService
     }
 
     /**
-     * Find by Role ID
-     * @param  integer $id
+     * Find by Role ID.
+     *
+     * @param int $id
+     *
      * @return Collection
      */
     public function findByRoleID($id)
@@ -124,10 +122,11 @@ class UserService
     }
 
     /**
-     * Find by the user meta activation token
+     * Find by the user meta activation token.
      *
-     * @param  string $token
-     * @return boolean
+     * @param string $token
+     *
+     * @return bool
      */
     public function findByActivationToken($token)
     {
@@ -141,12 +140,13 @@ class UserService
     }
 
     /**
-     * Create a user's profile
+     * Create a user's profile.
      *
-     * @param  User $user User
-     * @param  string $password the user password
-     * @param  string $role the role of this user
-     * @param  boolean $sendEmail Whether to send the email or not
+     * @param User   $user      User
+     * @param string $password  the user password
+     * @param string $role      the role of this user
+     * @param bool   $sendEmail Whether to send the email or not
+     *
      * @return User
      */
     public function create($user, $password, $role = 'member', $sendEmail = true)
@@ -154,7 +154,7 @@ class UserService
         try {
             DB::transaction(function () use ($user, $password, $role, $sendEmail) {
                 $this->userMeta->firstOrCreate([
-                    'user_id' => $user->id
+                    'user_id' => $user->id,
                 ]);
 
                 $this->assignRole($role, $user->id);
@@ -162,28 +162,28 @@ class UserService
                 if ($sendEmail) {
                     event(new UserRegisteredEmail($user, $password));
                 }
-
             });
 
-            $this->setAndSencUserActivationToken($user);
+            $this->setAndSendUserActivationToken($user);
 
             return $user;
         } catch (Exception $e) {
-            throw new Exception("We were unable to generate your profile, please try again later.", 1);
+            throw new Exception('We were unable to generate your profile, please try again later.', 1);
         }
     }
 
     /**
-     * Update a user's profile
+     * Update a user's profile.
      *
-     * @param  int $userId User Id
-     * @param  array $inputs UserMeta info
+     * @param int   $userId User Id
+     * @param array $inputs UserMeta info
+     *
      * @return User
      */
     public function update($userId, $payload)
     {
-        if (isset($payload['meta']) && ! isset($payload['meta']['terms_and_cond'])) {
-            throw new Exception("You must agree to the terms and conditions.", 1);
+        if (isset($payload['meta']) && !isset($payload['meta']['terms_and_cond'])) {
+            throw new Exception('You must agree to the terms and conditions.', 1);
         }
 
         try {
@@ -214,14 +214,14 @@ class UserService
                 return $user;
             });
         } catch (Exception $e) {
-            throw new Exception("We were unable to update your profile", 1);
+            throw new Exception('We were unable to update your profile', 1);
         }
     }
 
     /**
-     * Invite a new member
-     * @param  array $info
-     * @return void
+     * Invite a new member.
+     *
+     * @param array $info
      */
     public function invite($info)
     {
@@ -231,7 +231,7 @@ class UserService
             $user = $this->model->create([
                 'email' => $info['email'],
                 'name' => $info['name'],
-                'password' => bcrypt($password)
+                'password' => bcrypt($password),
             ]);
 
             return $this->create($user, $password, $info['roles'], true);
@@ -239,9 +239,10 @@ class UserService
     }
 
     /**
-     * Destroy the profile
+     * Destroy the profile.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return bool
      */
     public function destroy($id)
@@ -249,23 +250,23 @@ class UserService
         try {
             return DB::transaction(function () use ($id) {
                 $this->unassignAllRoles($id);
-                $this->leaveAllTeams($id);
 
                 $userMetaResult = $this->userMeta->where('user_id', $id)->delete();
                 $userResult = $this->model->find($id)->delete();
 
-                return ($userMetaResult && $userResult);
+                return $userMetaResult && $userResult;
             });
         } catch (Exception $e) {
-            throw new Exception("We were unable to delete this profile", 1);
+            throw new Exception('We were unable to delete this profile', 1);
         }
     }
 
     /**
-     * Switch user login
+     * Switch user login.
      *
-     * @param  integer $id
-     * @return boolean
+     * @param int $id
+     *
+     * @return bool
      */
     public function switchToUser($id)
     {
@@ -273,17 +274,19 @@ class UserService
             $user = $this->model->find($id);
             Session::put('original_user', Auth::id());
             Auth::login($user);
+
             return true;
         } catch (Exception $e) {
-            throw new Exception("Error logging in as user", 1);
+            throw new Exception('Error logging in as user', 1);
         }
     }
 
     /**
-     * Switch back
+     * Switch back.
      *
-     * @param  integer $id
-     * @return boolean
+     * @param int $id
+     *
+     * @return bool
      */
     public function switchUserBack()
     {
@@ -291,23 +294,24 @@ class UserService
             $original = Session::pull('original_user');
             $user = $this->model->find($original);
             Auth::login($user);
+
             return true;
         } catch (Exception $e) {
-            throw new Exception("Error returning to your user", 1);
+            throw new Exception('Error returning to your user', 1);
         }
     }
 
     /**
-     * Set and send the user activation token via email
+     * Set and send the user activation token via email.
      *
      * @param void
      */
-    public function setAndSencUserActivationToken($user)
+    public function setAndSendUserActivationToken($user)
     {
         $token = md5(str_random(40));
 
         $user->meta()->update([
-            'activation_token' => $token
+            'activation_token' => $token,
         ]);
 
         $user->notify(new ActivateUserEmail($token));
@@ -320,11 +324,10 @@ class UserService
     */
 
     /**
-     * Assign a role to the user
+     * Assign a role to the user.
      *
-     * @param  string $roleName
-     * @param  integer $userId
-     * @return void
+     * @param string $roleName
+     * @param int    $userId
      */
     public function assignRole($roleName, $userId)
     {
@@ -335,11 +338,10 @@ class UserService
     }
 
     /**
-     * Unassign a role from the user
+     * Unassign a role from the user.
      *
-     * @param  string $roleName
-     * @param  integer $userId
-     * @return void
+     * @param string $roleName
+     * @param int    $userId
      */
     public function unassignRole($roleName, $userId)
     {
@@ -350,64 +352,14 @@ class UserService
     }
 
     /**
-     * Unassign all roles from the user
+     * Unassign all roles from the user.
      *
-     * @param  string $roleName
-     * @param  integer $userId
-     * @return void
+     * @param string $roleName
+     * @param int    $userId
      */
     public function unassignAllRoles($userId)
     {
         $user = $this->model->find($userId);
         $user->roles()->detach();
-    }
-
-    /*
-    |--------------------------------------------------------------------------
-    | Teams
-    |--------------------------------------------------------------------------
-    */
-
-    /**
-     * Join a team
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function joinTeam($teamId, $userId)
-    {
-        $team = $this->team->find($teamId);
-        $user = $this->model->find($userId);
-
-        $user->teams()->attach($team);
-    }
-
-    /**
-     * Leave a team
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function leaveTeam($teamId, $userId)
-    {
-        $team = $this->team->find($teamId);
-        $user = $this->model->find($userId);
-
-        $user->teams()->detach($team);
-    }
-
-    /**
-     * Leave all teams
-     *
-     * @param  integer $teamId
-     * @param  integer $userId
-     * @return void
-     */
-    public function leaveAllTeams($userId)
-    {
-        $user = $this->model->find($userId);
-        $user->teams()->detach();
     }
 }

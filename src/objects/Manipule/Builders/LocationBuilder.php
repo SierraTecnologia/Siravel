@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Builders;
+namespace SiObjects\Models\Builders;
 
 use App\Contants\Tables;
-use App\Logic\Info\ValueObjects\Coordinates;
+use App\Components\ValueObjects\Coordinates;
 use Illuminate\Database\Eloquent\Builder;
 
 /**

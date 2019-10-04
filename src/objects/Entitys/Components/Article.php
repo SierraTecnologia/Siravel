@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Entitys\Components;
+namespace SiObjects\Logic\Entitys\Components;
 
 use App\Logic\Actions\Pipelines\Contracts\Registrator;
 use App\Logic\Actions\Pipelines\Contracts\Notificator;
