@@ -24,9 +24,9 @@
             "SiSeed\\": "src/seed/"
         },
         "files": [
-            "utils/functions.php",
-            "utils/helpers.php",
-            "utils/types.php"
+            "funcs/functions.php",
+            "funcs/helpers.php",
+            "funcs/types.php"
         ]
     },
     "scripts": {
