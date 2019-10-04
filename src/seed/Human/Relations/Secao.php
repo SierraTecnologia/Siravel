@@ -2,8 +2,8 @@
 
 namespace App\Logic\RegrasDeNegocios\Fluxo\Actions;
 
-use App\Logic\Info\Steps\BasicRegister;
-use App\Logic\Info\Steps\BottomInfos;
+use SiSeed\Human\Steps\BasicRegister;
+use SiSeed\Human\Steps\BottomInfos;
 
 class Secao
 {

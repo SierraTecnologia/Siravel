@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Productions\Pipelines;
+namespace SiSeed\Human\Productions\Pipelines;
 
 /**
  * Representa uma ação dentro da Produção

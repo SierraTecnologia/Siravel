@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Acordos;
+namespace SiSeed\Human\Contratos;
 
 class Acordo
 {

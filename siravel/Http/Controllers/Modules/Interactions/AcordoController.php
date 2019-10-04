@@ -39,7 +39,7 @@ class AcordoController extends Controller
     public function modelos($step = 3)
     {
         $questions = \App\Models\User::all()->count();
-        $acordo = new \App\Logic\Info\Acordos\FullSlave\Acordo();
+        $acordo = new \SiSeed\Human\Contratos\FullSlave\Acordo();
 
         // Step
         $contrato = $acordo->getSteps()[$step];

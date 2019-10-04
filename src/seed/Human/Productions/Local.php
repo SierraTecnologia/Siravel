@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Productions;
+namespace SiSeed\Human\Productions;
 
 class Local
 {

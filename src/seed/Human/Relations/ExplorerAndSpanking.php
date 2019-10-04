@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Info\Relations;
+namespace SiSeed\Human\Relations;
 
-use App\Logic\Info\Actions\Fisico;
+use SiSeed\Human\Actions\Fisico;
 
-use App\Logic\Info\Steps\BasicRegister;
-use App\Logic\Info\Steps\BottomInfos;
+use SiSeed\Human\Steps\BasicRegister;
+use SiSeed\Human\Steps\BottomInfos;
 
 class ExplorerAndSpanking
 {

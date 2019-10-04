@@ -2,7 +2,7 @@
 
 namespace SiLogic\Pointable\Mapeamento;
 
-use App\Logic\Info\Pointable\Pointable;
+use SiLogic\Pointable\Pointable;
 
 class Video extends Pointable
 {

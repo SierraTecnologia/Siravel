@@ -31,5 +31,33 @@ class BusinessBoard extends Board
             InfraBoard::class
         ];
     }
+    
+    public function getActions()
+    {
+        return [
+            'Editor' => $this->getEditores(),
+            'Save' => new GetNewData($this),
+            'Delete' => new SendNewData($this),
+            'Send' => $this->getIntegrations()
+        ];
+    }
+
+    public function getComponents()
+    {
+        return [
+            Post::class
+        ];
+    }
+
+    /**
+     * 
+     */
+    
+    public function getEditores()
+    {
+        return [
+            TuiImageEditor::class,
+        ];
+    }
 
 }
