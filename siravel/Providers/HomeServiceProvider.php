@@ -84,32 +84,32 @@ class HomeServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             \Core\Contracts\LocationManager::class,
-            \App\Managers\Location\ARLocationManager::class
+            \SiObject\Manipule\Managers\Location\ARLocationManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PostManager::class,
-            \App\Managers\Post\ARPostManager::class
+            \SiObject\Manipule\Managers\Post\ARPostManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PhotoManager::class,
-            \App\Managers\Photo\ARPhotoManager::class
+            \SiObject\Manipule\Managers\Photo\ARPhotoManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\SubscriptionManager::class,
-            \App\Managers\Subscription\ARSubscriptionManager::class
+            \SiObject\Manipule\Managers\Subscription\ARSubscriptionManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\TagManager::class,
-            \App\Managers\Tag\ARTagManager::class
+            \SiObject\Manipule\Managers\Tag\ARTagManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\UserManager::class,
-            \App\Managers\User\ARUserManager::class
+            \SiObject\Manipule\Managers\User\ARUserManager::class
         );
 
         $this->app->bind(

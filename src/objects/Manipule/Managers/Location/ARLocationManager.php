@@ -13,7 +13,7 @@ use Illuminate\Database\ConnectionInterface as Database;
 /**
  * Class ARLocationManager.
  *
- * @package App\Managers\Location
+ * @package SiObject\Manipule\Managers\Location
  */
 class ARLocationManager implements LocationManager
 {

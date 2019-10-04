@@ -50,7 +50,7 @@ class SiravelProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
         // Configs
-        $this->app->config->set('cms.modules.siravel', include(__DIR__.'/config.php'));
+        $this->app->config->set('siravel.modules.siravel', include(__DIR__.'/config.php'));
 
         /*
         |--------------------------------------------------------------------------

@@ -12,7 +12,7 @@ use function App\Util\validator_filter_attributes;
 /**
  * Class PostValidator.
  *
- * @package App\Managers\Post
+ * @package SiObject\Manipule\Managers\Post
  */
 class PostValidator
 {

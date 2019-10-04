@@ -12,7 +12,7 @@ use function App\Util\validator_filter_attributes;
 /**
  * Class LocationValidator.
  *
- * @package App\Managers\Location
+ * @package SiObject\Manipule\Managers\Location
  */
 class LocationValidator
 {

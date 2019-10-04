@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\PhotoApp;
 
-use App\Managers\User\ARUserManager;
+use SiObject\Manipule\Managers\User\ARUserManager;
 use Illuminate\Console\Command;
 
 /**

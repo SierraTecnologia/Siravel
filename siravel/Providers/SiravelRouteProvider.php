@@ -38,7 +38,7 @@ class SiravelRouteProvider extends ServiceProvider
             'namespace' => $this->namespace,
         ], function ($router) {
             $router->middleware('isAjax', isAjax::class);
-            require __DIR__.'/../Routes/cms.php';
+            require __DIR__.'/../Routes/web.php';
         });
     }
 }

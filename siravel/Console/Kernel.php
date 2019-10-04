@@ -29,6 +29,16 @@ class Kernel extends ConsoleKernel
         Commands\PhotoApp\TestScheduler::class,
 
         Commands\Photoacompanhante::class,
+
+
+        \Laravel\Tinker\Console\TinkerCommand::class,
+
+        /**
+         * Me
+         */
+        Commands\Explorer\InstagramGetAll::class,
+        Commands\Import\Data::class,
+        Commands\Import\Social::class,
     ];
 
     /**

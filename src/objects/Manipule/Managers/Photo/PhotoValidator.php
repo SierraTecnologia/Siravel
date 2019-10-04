@@ -15,7 +15,7 @@ use function App\Util\validator_filter_attributes;
 /**
  * Class PhotoValidator.
  *
- * @package App\Managers\Photo
+ * @package SiObject\Manipule\Managers\Photo
  */
 class PhotoValidator
 {

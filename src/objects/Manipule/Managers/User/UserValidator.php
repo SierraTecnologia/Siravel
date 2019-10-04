@@ -12,7 +12,7 @@ use function App\Util\validator_filter_attributes;
 /**
  * Class UserValidator.
  *
- * @package App\Managers\User
+ * @package SiObject\Manipule\Managers\User
  */
 class UserValidator
 {
