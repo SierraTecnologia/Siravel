@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Actions\Instagram;
 
-use App\Models\Calendar\AcaoHumana;
+use Siravel\Models\Actions\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
 use App\Models\Midia\Image;

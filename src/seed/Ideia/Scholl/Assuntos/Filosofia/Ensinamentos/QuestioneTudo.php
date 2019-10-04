@@ -5,7 +5,7 @@
 
 namespace SiSeed\Ideia\Scholl\Assuntos\Filosofia\Ensinamentos;
 
-use App\Models\Bot\Runner;
+use Siravel\Models\Actions\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 

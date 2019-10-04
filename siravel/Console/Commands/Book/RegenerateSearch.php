@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Siravel\Models\Book\SearchService;
+use Siravel\Models\Components\Book\SearchService;
 use Illuminate\Console\Command;
 
 class RegenerateSearch extends Command
@@ -26,7 +26,7 @@ class RegenerateSearch extends Command
     /**
      * Create a new command instance.
      *
-     * @param \App\Models\Book\SearchService $searchService
+     * @param \App\Models\Components\Book\SearchService $searchService
      */
     public function __construct(SearchService $searchService)
     {

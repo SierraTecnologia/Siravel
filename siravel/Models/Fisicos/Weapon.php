@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Fisico;
+namespace Siravel\Models\Fisicos;
 
 use Siravel\Models\Model;
 

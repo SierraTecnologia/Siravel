@@ -4,10 +4,10 @@ namespace SiObject\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\PostEntity;
 use Illuminate\Http\Resources\Json\Resource;
-use function SiUtil\Helper\html_purify;
-use function SiUtil\Helper\to_bool;
-use function SiUtil\Helper\to_int;
-use function SiUtil\Helper\to_string;
+use function SiUtils\Helper\html_purify;
+use function SiUtils\Helper\to_bool;
+use function SiUtils\Helper\to_int;
+use function SiUtils\Helper\to_string;
 
 /**
  * Class PostPlainResource.

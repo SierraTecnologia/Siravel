@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Bot\Internet;
+namespace Siravel\Models\Actions\Bot\Internet;
 
 use Siravel\Models\Traits\ComplexRelationamentTrait;
 use Siravel\Models\Model;
@@ -34,12 +34,12 @@ class Url extends Model
 
     public function linksFrom()
     {
-        return $this->hasMany('App\Models\Bot\Internet\UrlLink', 'from_bot_internet_url_id', 'id');
+        return $this->hasMany('Siravel\Models\Actions\Bot\Internet\UrlLink', 'from_bot_internet_url_id', 'id');
     }
 
     public function linksTo()
     {
-        return $this->hasMany('App\Models\Bot\Internet\UrlLink', 'to_bot_internet_url_id', 'id');
+        return $this->hasMany('Siravel\Models\Actions\Bot\Internet\UrlLink', 'to_bot_internet_url_id', 'id');
     }
 
     public function domain()

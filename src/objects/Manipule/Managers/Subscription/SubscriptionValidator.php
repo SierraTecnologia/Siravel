@@ -6,7 +6,7 @@ use App\Contants\Tables;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
-use function SiUtil\Helper\validator_filter_attributes;
+use function SiUtils\Helper\validator_filter_attributes;
 
 /**
  * Class SubscriptionValidator.

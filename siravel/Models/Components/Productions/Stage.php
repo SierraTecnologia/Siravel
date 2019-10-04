@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Productions;
+namespace Siravel\Models\Components\Productions;
 
 /**
  * Tipos de Produções

@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Siravel\Actions\Action;
-use Siravel\Models\Bot\Runner;
+use Siravel\Models\Actions\Bot\Runner;
 
 class ActionController extends Controller
 {

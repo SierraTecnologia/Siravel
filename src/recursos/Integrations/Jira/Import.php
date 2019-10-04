@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
 use Siravel\Models\Components\Code\CodeIssueLink;
-use App\Models\Calendar\Spent;
-use App\Models\Calendar\Estimate;
-use App\Models\Calendar\Event;
+use Siravel\Models\Actions\Calendar\Spent;
+use Siravel\Models\Actions\Calendar\Estimate;
+use Siravel\Models\Actions\Calendar\Event;
 
 use Siravel\Models\Components\Code\Release;
 use Siravel\Models\Components\Code\Issue;

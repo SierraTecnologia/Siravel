@@ -83,7 +83,7 @@ trait AsHuman
     }
     public function productions()
     {
-        return $this->morphToMany('App\Models\Productions\Production', 'productionable');
+        return $this->morphToMany('App\Models\Components\Productions\Production', 'productionable');
     }
     
     /**

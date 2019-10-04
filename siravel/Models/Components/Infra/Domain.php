@@ -3,7 +3,7 @@
 namespace Siravel\Models\Components\Infra;
 
 use Siravel\Models\Model;
-use Siravel\Models\Bot\Internet\Url;
+use Siravel\Models\Actions\Bot\Internet\Url;
 
 class Domain extends Model
 {
@@ -76,6 +76,6 @@ class Domain extends Model
 
     public function urls()
     {
-        return $this->hasMany('App\Models\Bot\Internet\Url', 'infra_domain_id', 'id');
+        return $this->hasMany('Siravel\Models\Actions\Bot\Internet\Url', 'infra_domain_id', 'id');
     }
 }

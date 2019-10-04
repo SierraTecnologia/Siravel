@@ -3,8 +3,8 @@
 namespace SiInteractions\Actions\Worker\Explorer;
 
 use Siravel\Models\Components\Infra\Domain;
-use App\Models\Bot\Internet\Url;
-use App\Models\Bot\Internet\UrlLink;
+use Siravel\Models\Actions\Bot\Internet\Url;
+use Siravel\Models\Actions\Bot\Internet\UrlLink;
 
 /**
  * Spider Class

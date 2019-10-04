@@ -1,6 +1,6 @@
 <?php 
 
-namespace Siravel\Models\Book;
+namespace Siravel\Models\Components\Book;
 
 use SiObjects\Entitys\Uploads\Image;
 

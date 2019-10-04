@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Book;
+<?php namespace Siravel\Models\Components\Book;
 
 class Chapter extends Entity
 {

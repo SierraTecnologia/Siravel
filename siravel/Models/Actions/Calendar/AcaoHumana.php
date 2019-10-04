@@ -3,7 +3,7 @@
  * Um Evento INdividual
  */
 
-namespace App\Models\Calendar;
+namespace Siravel\Models\Actions\Calendar;
 
 use App\Models\CmsModel as BaseModel;
 use Siravel\Services\Normalizer;

@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Book;
+<?php namespace Siravel\Models\Components\Book;
 
 /**
  * Class EntityProvider
@@ -7,7 +7,7 @@
  * Wrapped up in this provider since they are often used together
  * so this is a neater alternative to injecting all in individually.
  *
- * @package App\Models\Book
+ * @package App\Models\Components\Book
  */
 class EntityProvider
 {

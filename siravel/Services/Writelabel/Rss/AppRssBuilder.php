@@ -14,9 +14,9 @@ use SiObject\Mount\Rss\Channel;
 use SiObject\Mount\Rss\Contracts\Builder;
 use SiObject\Mount\Rss\Enclosure;
 use SiObject\Mount\Rss\Item;
-use function SiUtil\Helper\url_frontend;
-use function SiUtil\Helper\url_frontend_photo;
-use function SiUtil\Helper\url_storage;
+use function SiUtils\Helper\url_frontend;
+use function SiUtils\Helper\url_frontend_photo;
+use function SiUtils\Helper\url_storage;
 
 /**
  * Class AppRssBuilder.

@@ -1,6 +1,6 @@
 <?php namespace SiObjects\Entitys\Uploads;
 
-use App\Models\Book\Page;
+use App\Models\Components\Book\Page;
 use App\Models\Ownable;
 
 class Attachment extends Ownable

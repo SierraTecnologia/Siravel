@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Siravel\Models\Actions;
 
 use Siravel\Models\Builders\QuestionBuilder;
 use Siravel\Contants\Tables;

@@ -9,7 +9,7 @@ use SiObjects\Support\Contracts\PhotoManager;
 use SiObjects\Manipule\Entities\PhotoEntity;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Database\ConnectionInterface as Database;
-use function SiUtil\Helper\str_unique;
+use function SiUtils\Helper\str_unique;
 
 /**
  * Class ARPhotoManager.

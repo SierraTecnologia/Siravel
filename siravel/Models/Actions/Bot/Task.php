@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Bot;
+namespace Siravel\Models\Actions\Bot;
 
 use Siravel\Models\Traits\ComplexRelationamentTrait;
 use Siravel\Models\Traits\TasksTrait;

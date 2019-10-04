@@ -6,7 +6,7 @@
  * 2 -> User Log
  */
 
-namespace Siravel\Models\Log;
+namespace Siravel\Models\Actions\Log;
 
 use Siravel\Models\Model;
 

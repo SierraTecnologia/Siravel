@@ -1,6 +1,6 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
-use Siravel\Models\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
 use Siravel\Exceptions\FileUploadException;
 use Siravel\Exceptions\NotFoundException;
 use SiObjects\Entitys\Uploads\Attachment;

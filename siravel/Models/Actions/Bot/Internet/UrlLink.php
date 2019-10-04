@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Bot\Internet;
+namespace Siravel\Models\Actions\Bot\Internet;
 
 use Siravel\Models\Model;
 
@@ -32,11 +32,11 @@ class UrlLink extends Model
 
     public function from()
     {
-        return $this->belongsTo('App\Models\Bot\Internet\Url', 'from_bot_internet_url_id', 'id');
+        return $this->belongsTo('Siravel\Models\Actions\Bot\Internet\Url', 'from_bot_internet_url_id', 'id');
     }
 
     public function to()
     {
-        return $this->belongsTo('App\Models\Bot\Internet\Url', 'to_bot_internet_url_id', 'id');
+        return $this->belongsTo('Siravel\Models\Actions\Bot\Internet\Url', 'to_bot_internet_url_id', 'id');
     }
 }

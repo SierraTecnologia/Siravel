@@ -1,7 +1,7 @@
 <?php namespace SiInteractions\Actions\Book;
 
 use App\Models\Permissions\PermissionService;
-use App\Models\Book\Entity;
+use App\Models\Components\Book\Entity;
 
 class ViewService
 {

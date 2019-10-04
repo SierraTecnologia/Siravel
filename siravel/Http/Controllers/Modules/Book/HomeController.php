@@ -1,7 +1,7 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
 use Activity;
-use Siravel\Models\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
 use Illuminate\Http\Response;
 use Views;
 

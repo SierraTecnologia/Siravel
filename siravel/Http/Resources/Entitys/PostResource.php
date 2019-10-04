@@ -4,7 +4,7 @@ namespace SiObject\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\PostEntity;
 use SiObjects\Manipule\Entities\TagEntity;
-use function SiUtil\Helper\to_object;
+use function SiUtils\Helper\to_object;
 
 /**
  * Class PostResource.

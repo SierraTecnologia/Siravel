@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Book;
+<?php namespace Siravel\Models\Components\Book;
 
 use SiObjects\Entitys\Uploads\Attachment;
 
@@ -126,7 +126,7 @@ class Page extends Entity
 
     /**
      * Get the current revision for the page if existing
-     * @return \App\Models\Book\PageRevision|null
+     * @return \App\Models\Components\Book\PageRevision|null
      */
     public function getCurrentRevision()
     {

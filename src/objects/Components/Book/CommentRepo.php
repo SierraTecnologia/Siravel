@@ -1,6 +1,6 @@
 <?php namespace SiInteractions\Actions\Book;
 
-use App\Models\Book\Entity;
+use App\Models\Components\Book\Entity;
 
 /**
  * Class CommentRepo
@@ -35,7 +35,7 @@ class CommentRepo
 
     /**
      * Create a new comment on an entity.
-     * @param \App\Models\Book\Entity $entity
+     * @param \App\Models\Components\Book\Entity $entity
      * @param array $data
      * @return \App\Actions\Book\Comment
      */
@@ -75,7 +75,7 @@ class CommentRepo
 
     /**
      * Get the next local ID relative to the linked entity.
-     * @param \App\Models\Book\Entity $entity
+     * @param \App\Models\Components\Book\Entity $entity
      * @return int
      */
     protected function getNextLocalId(Entity $entity)

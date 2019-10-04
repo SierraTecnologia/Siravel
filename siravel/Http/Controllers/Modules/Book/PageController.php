@@ -2,9 +2,9 @@
 
 use Activity;
 use Siravel\Models\UserRepo;
-use Siravel\Models\Book\Repos\EntityRepo;
-use Siravel\Models\Book\ExportService;
-use Siravel\Models\Book\Repos\PageRepo;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\ExportService;
+use Siravel\Models\Components\Book\Repos\PageRepo;
 use Siravel\Exceptions\NotFoundException;
 use GatherContent\Htmldiff\Htmldiff;
 use Illuminate\Http\Request;
@@ -20,8 +20,8 @@ class PageController extends Controller
 
     /**
      * PageController constructor.
-     * @param \App\Models\Book\Repos\PageRepo $pageRepo
-     * @param \App\Models\Book\ExportService $exportService
+     * @param \App\Models\Components\Book\Repos\PageRepo $pageRepo
+     * @param \App\Models\Components\Book\ExportService $exportService
      * @param UserRepo $userRepo
      */
     public function __construct(PageRepo $pageRepo, ExportService $exportService, UserRepo $userRepo)

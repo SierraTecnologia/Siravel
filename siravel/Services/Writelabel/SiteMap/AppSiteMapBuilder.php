@@ -10,9 +10,9 @@ use Siravel\Services\SiteMap\Contracts\SiteMapBuilder as SiteMapBuilder;
 use Illuminate\Support\Collection;
 use SiObject\Mount\SiteMap\Contracts\Builder;
 use SiObject\Mount\SiteMap\Item;
-use function SiUtil\Helper\url_frontend;
-use function SiUtil\Helper\url_frontend_photo;
-use function SiUtil\Helper\url_frontend_tag;
+use function SiUtils\Helper\url_frontend;
+use function SiUtils\Helper\url_frontend_photo;
+use function SiUtils\Helper\url_frontend_tag;
 
 /**
  * Class AppSiteMapBuilder.

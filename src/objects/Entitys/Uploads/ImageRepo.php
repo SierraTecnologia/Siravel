@@ -1,7 +1,7 @@
 <?php namespace SiObjects\Entitys\Uploads;
 
 use App\Models\Permissions\PermissionService;
-use App\Models\Book\Page;
+use App\Models\Components\Book\Page;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ImageRepo
@@ -17,7 +17,7 @@ class ImageRepo
      * @param Image $image
      * @param ImageService $imageService
      * @param \App\Models\Permissions\PermissionService $permissionService
-     * @param \App\Models\Book\Page $page
+     * @param \App\Models\Components\Book\Page $page
      */
     public function __construct(Image $image, ImageService $imageService, PermissionService $permissionService, Page $page)
     {

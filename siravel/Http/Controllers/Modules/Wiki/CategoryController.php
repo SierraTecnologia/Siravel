@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Wiki;
 use Siravel\Http\Requests\CreateCategoryRequest as CreateRequest;
 use Siravel\Http\Requests\CreateCategoryRequest as UpdateRequest;
 use Siravel\Models\Category as Model;
-use Siravel\Models\Book\Page;
+use Siravel\Models\Components\Book\Page;
 
 class CategoryController extends ResourceController
 {

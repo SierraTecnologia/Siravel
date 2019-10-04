@@ -1,6 +1,6 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
-use Siravel\Models\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
 use Siravel\Exceptions\ImageUploadException;
 use Siravel\Repos\PageRepo;
 use SiObjects\Entitys\Uploads\Image;
@@ -218,7 +218,7 @@ class ImageController extends Controller
 
     /**
      * Show the usage of an image on pages.
-     * @param \App\Models\Book\Repos\EntityRepo $entityRepo
+     * @param \App\Models\Components\Book\Repos\EntityRepo $entityRepo
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */

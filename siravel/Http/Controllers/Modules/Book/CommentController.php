@@ -2,7 +2,7 @@
 
 use Activity;
 use Siravel\Actions\Book\CommentRepo;
-use Siravel\Models\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -13,7 +13,7 @@ class CommentController extends Controller
 
     /**
      * CommentController constructor.
-     * @param \App\Models\Book\Repos\EntityRepo $entityRepo
+     * @param \App\Models\Components\Book\Repos\EntityRepo $entityRepo
      * @param \App\Actions\Book\CommentRepo $commentRepo
      */
     public function __construct(EntityRepo $entityRepo, CommentRepo $commentRepo)

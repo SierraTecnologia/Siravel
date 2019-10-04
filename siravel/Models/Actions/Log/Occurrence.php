@@ -3,7 +3,7 @@
  * Registro de Ocorrencias de Logs
  */
 
-namespace Siravel\Models\Log;
+namespace Siravel\Models\Actions\Log;
 
 use Siravel\Models\Model;
 

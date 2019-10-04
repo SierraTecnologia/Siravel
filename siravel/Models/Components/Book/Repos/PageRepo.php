@@ -1,10 +1,10 @@
-<?php namespace Siravel\Models\Book\Repos;
+<?php namespace Siravel\Models\Components\Book\Repos;
 
-use Siravel\Models\Book\Book;
-use Siravel\Models\Book\Chapter;
-use Siravel\Models\Book\Entity;
-use Siravel\Models\Book\Page;
-use Siravel\Models\Book\PageRevision;
+use Siravel\Models\Components\Book\Book;
+use Siravel\Models\Components\Book\Chapter;
+use Siravel\Models\Components\Book\Entity;
+use Siravel\Models\Components\Book\Page;
+use Siravel\Models\Components\Book\PageRevision;
 use Carbon\Carbon;
 use DOMDocument;
 use DOMXPath;
@@ -191,7 +191,7 @@ class PageRepo extends EntityRepo
 
     /**
      * Get the plain text version of a page's content.
-     * @param \App\Models\Book\Page $page
+     * @param \App\Models\Components\Book\Page $page
      * @return string
      */
     protected function pageToPlainText(Page $page) : string
@@ -204,7 +204,7 @@ class PageRepo extends EntityRepo
      * Get a new draft page instance.
      * @param Book $book
      * @param Chapter|null $chapter
-     * @return \App\Models\Book\Page
+     * @return \App\Models\Components\Book\Page
      * @throws \Throwable
      */
     public function getDraftPage(Book $book, Chapter $chapter = null)
@@ -470,10 +470,10 @@ class PageRepo extends EntityRepo
 
     /**
      * Create a copy of a page in a new location with a new name.
-     * @param \App\Models\Book\Page $page
-     * @param \App\Models\Book\Entity $newParent
+     * @param \App\Models\Components\Book\Page $page
+     * @param \App\Models\Components\Book\Entity $newParent
      * @param string $newName
-     * @return \App\Models\Book\Page
+     * @return \App\Models\Components\Book\Page
      * @throws \Throwable
      */
     public function copyPage(Page $page, Entity $newParent, string $newName = '')

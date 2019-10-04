@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Book;
+<?php namespace Siravel\Models\Components\Book;
 
 use Siravel\Models\Permissions\PermissionService;
 use Illuminate\Database\Connection;
@@ -334,7 +334,7 @@ class SearchService
 
     /**
      * Index multiple Entities at once
-     * @param \App\Models\Book\Entity[] $entities
+     * @param \App\Models\Components\Book\Entity[] $entities
      */
     protected function indexEntities($entities)
     {

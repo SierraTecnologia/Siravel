@@ -1,8 +1,8 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
 use Siravel\Actions\Book\ViewService;
-use Siravel\Models\Book\Repos\EntityRepo;
-use Siravel\Models\Book\SearchService;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\SearchService;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -13,7 +13,7 @@ class SearchController extends Controller
 
     /**
      * SearchController constructor.
-     * @param \App\Models\Book\Repos\EntityRepo $entityRepo
+     * @param \App\Models\Components\Book\Repos\EntityRepo $entityRepo
      * @param ViewService $viewService
      * @param SearchService $searchService
      */

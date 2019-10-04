@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Book;
+<?php namespace Siravel\Models\Components\Book;
 
 use Siravel\Actions\Book\Activity;
 use Siravel\Actions\Book\Comment;
@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @property int $updated_by
  * @property boolean $restricted
  *
- * @package App\Models\Book
+ * @package App\Models\Components\Book
  */
 class Entity extends Ownable
 {

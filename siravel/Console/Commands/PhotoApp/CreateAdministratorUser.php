@@ -5,7 +5,7 @@ namespace Siravel\Console\Commands\PhotoApp;
 use SiObject\Manipule\Managers\User\ARUserManager;
 use App\Models\Role;
 use Illuminate\Console\Command;
-use function SiUtil\Helper\url_frontend_sign_in;
+use function SiUtils\Helper\url_frontend_sign_in;
 
 /**
  * Class CreateAdministratorUser.

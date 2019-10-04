@@ -3,7 +3,7 @@
  * Armazena os tipos de pagamentos que fazem com cada moeda e suas taxas
  */
 
-namespace Siravel\Models\Event;
+namespace Siravel\Models\Actions\Event;
 
 use Illuminate\Support\Facades\Hash;
 

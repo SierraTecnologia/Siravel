@@ -4,8 +4,8 @@ namespace SiObject\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\TagEntity;
 use Illuminate\Http\Resources\Json\Resource;
-use function SiUtil\Helper\html_purify;
-use function SiUtil\Helper\to_string;
+use function SiUtils\Helper\html_purify;
+use function SiUtils\Helper\to_string;
 
 /**
  * Class TagPlainResource.

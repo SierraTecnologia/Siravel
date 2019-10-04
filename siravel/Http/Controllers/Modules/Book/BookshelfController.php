@@ -2,9 +2,9 @@
 
 use Activity;
 use Siravel\Models\UserRepo;
-use Siravel\Models\Book\Bookshelf;
-use Siravel\Models\Book\Repos\EntityRepo;
-use Siravel\Models\Book\ExportService;
+use Siravel\Models\Components\Book\Bookshelf;
+use Siravel\Models\Components\Book\Repos\EntityRepo;
+use Siravel\Models\Components\Book\ExportService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Views;
@@ -18,9 +18,9 @@ class BookshelfController extends Controller
 
     /**
      * BookController constructor.
-     * @param \App\Models\Book\Repos\EntityRepo $entityRepo
+     * @param \App\Models\Components\Book\Repos\EntityRepo $entityRepo
      * @param UserRepo $userRepo
-     * @param \App\Models\Book\ExportService $exportService
+     * @param \App\Models\Components\Book\ExportService $exportService
      */
     public function __construct(EntityRepo $entityRepo, UserRepo $userRepo, ExportService $exportService)
     {
