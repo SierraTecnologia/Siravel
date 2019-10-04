@@ -8,7 +8,7 @@ use App\Models\Ownable;
 if (!function_exists('larametricUses')) {
     function larametricsUses($uses)
     {
-        return '\App\Providers\Metrics\Http\Controllers\\' . $uses;
+        return '\Siravel\Providers\Metrics\Http\Controllers\\' . $uses;
     }
 }
 

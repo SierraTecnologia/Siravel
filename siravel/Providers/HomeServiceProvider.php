@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Siravel\Providers;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class AppServiceProvider.
  *
- * @package App\Providers
+ * @package Siravel\Providers
  */
 class HomeServiceProvider extends ServiceProvider
 {

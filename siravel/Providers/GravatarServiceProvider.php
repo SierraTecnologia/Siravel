@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Siravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
-use App\Facades\CryptoServiceFacade;
+use Siravel\Facades\CryptoServiceFacade;
 use App\Services\Traits\DefaultModuleServiceTrait;
 use App\Services\Traits\LangServiceTrait;
 use App\Services\Traits\MenuServiceTrait;

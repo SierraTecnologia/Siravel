@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Book;
 
 use Siravel\Actions\Book\Activity;
 use Illuminate\Console\Command;

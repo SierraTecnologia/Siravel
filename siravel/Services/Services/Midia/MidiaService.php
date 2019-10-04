@@ -14,7 +14,7 @@ use Intervention\Image\Facades\Image;
 use Cms;
 use Log;
 use SplFileInfo;
-use App\Facades\CryptoServiceFacade;
+use Siravel\Facades\CryptoServiceFacade;
 use App\Models\Midia\Image as ModelImage;
 
 class MidiaService

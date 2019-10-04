@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Book;
 
 use Illuminate\Console\Command;
 

@@ -14,7 +14,7 @@ use Intervention\Image\Facades\Image;
 use Cms;
 use Log;
 use SplFileInfo;
-use App\Facades\CryptoServiceFacade;
+use Siravel\Facades\CryptoServiceFacade;
 
 class AssetService
 {

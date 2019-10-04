@@ -5,6 +5,11 @@ namespace Siravel\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+/**
+ * Class Kernel.
+ *
+ * @package Console
+ */
 class Kernel extends ConsoleKernel
 {
     /**
@@ -13,27 +18,59 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\PhotoApp\ChangeUserPassword::class,
+        Commands\PhotoApp\CreateAdministratorUser::class,
+        Commands\PhotoApp\CreateRoles::class,
+        Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
+        Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
+        Commands\PhotoApp\GeneratePhotosMetadata::class,
+        Commands\PhotoApp\GenerateRestApiDocumentation::class,
+        Commands\PhotoApp\SendWeeklySubscriptionMails::class,
+        Commands\PhotoApp\TestScheduler::class,
+
+        Commands\Photoacompanhante::class,
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
+
+
+        $schedule->command(Commands\PhotoApp\TestScheduler::class)
+            ->hourly();
+
+        $schedule->command(Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class)
+            ->dailyAt('00:00')
+            ->onOneServer();
+
+        $schedule->command(Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class)
+            ->dailyAt('00:10')
+            ->onOneServer();
+
+        $schedule->command(Commands\PhotoApp\SendWeeklySubscriptionMails::class)
+            ->weekly()
+            ->sundays()
+            ->at('06:00')
+            ->onOneServer();
+
+
+        $schedule->command('import:photoacompanhante')
+        ->hourly();
     }
 
     /**
-     * Register the commands for the application.
+     * Register the Closure based commands for the application.
      *
      * @return void
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        require base_path('routes/console.php');
     }
 }

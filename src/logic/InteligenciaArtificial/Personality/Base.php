@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Logic\InteligenciaArtificial\Personality;
+namespace SiLogic\InteligenciaArtificial\Personality;
 
 class Base
 {

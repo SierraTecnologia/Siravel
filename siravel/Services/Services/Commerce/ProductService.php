@@ -2,7 +2,7 @@
 
 namespace App\Services\Commerce;
 
-use App\Facades\CmsServiceFacade as Cms;
+use Siravel\Facades\CmsServiceFacade as Cms;
 use Illuminate\Support\Facades\Config;
 use App\Services\Midia\FileService;
 use App\Repositories\Commerce\ProductRepository;
