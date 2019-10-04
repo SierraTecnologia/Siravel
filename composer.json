@@ -18,23 +18,18 @@
     },
     "autoload": {
         "psr-4": {
-            "SierraTecnologia\\Commerce\\": "src/"
+            "SiTools\\App\\": "laravel/",
+            "SiTools\\Actions\\": "src/actions/",
+            "SiTools\\Boards\\": "src/boards/",
+            "SiTools\\Features\\": "src/features/",
+            "SiTools\\Libs\\": "src/libs/",
+            "SiTools\\Logic\\": "src/logic/",
+            "SiTools\\Objects\\": "src/objects/",
+            "SiTools\\Recursos\\": "src/recursos/",
+            "SiTools\\Seed\\": "src/seed/"
         },
         "files": [
-          "src/Helpers/commerce_helpers.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        },
-        "classmap": [
-            "tests/Factories",
-            "tests/TestCase.php",
-            "fixture/Controllers",
-            "fixture/Models",
-            "fixture/Services",
-            "src/Publishes"
+          "src/libs/helpers.php"
         ]
     },
     "scripts": {
@@ -42,17 +37,16 @@
         "post-update-cmd": [],
         "post-create-project-cmd": []
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
-                "SierraTecnologia\\Commerce\\SierraTecnologiaCommerceModuleProvider"
+                "SiTools\\App\\SiToolsProvider"
             ],
             "dont-discover": [
                 "laravel/cashier"
             ]
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
