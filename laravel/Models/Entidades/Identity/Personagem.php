@@ -6,7 +6,14 @@ use App\Models\Model;
 
 class Personagem extends Model
 {
-    protected $table = 'personagens';  
+    protected $table = 'personagens';
+    
+    public $incrementing = false;
+    protected $casts = [
+        'code' => 'string',
+    ];
+    protected $primaryKey = 'code';
+    protected $keyType = 'string';
 
     /**
      * The attributes that are mass assignable.
@@ -14,6 +21,7 @@ class Personagem extends Model
      * @var array
      */
     protected $fillable = [
+        'code',
         'name',
         'email',
         'user_id'

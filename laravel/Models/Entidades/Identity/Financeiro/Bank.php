@@ -14,16 +14,36 @@ class Bank extends Model
      * @var array
      */
     protected $fillable = [
-        'descriptions',
-        'value',
+        'description',
+        'bank',
+        'code',
+        // 'bank',
+        // 'agencia',
+        // 'conta',
     ];
 
     protected $mappingProperties = array(
-        'descriptions' => [
+        'description' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],
-        'value' => [
+        'bank' => [
+            'type' => 'string',
+            "analyzer" => "standard",
+        ],
+        'code' => [
+            'type' => 'string',
+            "analyzer" => "standard",
+        ],
+        'bank' => [
+            'type' => 'string',
+            "analyzer" => "standard",
+        ],
+        'agencia' => [
+            'type' => 'string',
+            "analyzer" => "standard",
+        ],
+        'conta' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],

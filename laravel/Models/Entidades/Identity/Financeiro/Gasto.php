@@ -14,12 +14,12 @@ class Gasto extends Model
      * @var array
      */
     protected $fillable = [
-        'descriptions',
+        'description',
         'value',
     ];
 
     protected $mappingProperties = array(
-        'descriptions' => [
+        'description' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],

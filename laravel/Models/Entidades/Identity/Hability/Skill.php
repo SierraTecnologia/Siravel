@@ -7,6 +7,18 @@ use App\Models\Model;
 class Skill extends Model
 {
 
+    protected $organizationPerspective = false;
+
+    protected $table = 'skills';
+    
+    public $incrementing = false;
+    protected $casts = [
+        'code' => 'string',
+    ];
+    protected $primaryKey = 'code';
+    protected $keyType = 'string';
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -15,15 +27,15 @@ class Skill extends Model
     protected $fillable = [
         'name',
         'description',
-        'code'
+        'code',
+        'skill_code'
     ];
 
+
     protected $mappingProperties = array(
-        /**
-         * User Info
-         */
+
         'name' => [
-            'type' => 'string',
+            'type' => 'integer',
             "analyzer" => "standard",
         ],
         'description' => [
@@ -35,20 +47,21 @@ class Skill extends Model
             "analyzer" => "standard",
         ],
     );
-
+        
     /**
-     * Get all of the slaves that are assigned this tag.
+     * Get all of the owning businessable models.
      */
-    public function slaves()
+    public function skillable()
     {
-        return $this->morphedByMany('App\Models\Identity\Slave', 'skillable');
+        return $this->morphTo(); //, 'businessable_type', 'businessable_code'
     }
 
+
     /**
-     * Get all of the users that are assigned this tag.
+     * Get all of the persons that are assigned this tag.
      */
-    public function users()
+    public function persons()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('App\Models\Identity\Person', 'skillable');
     }
 }

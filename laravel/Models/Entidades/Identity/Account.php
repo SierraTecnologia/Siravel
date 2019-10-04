@@ -7,12 +7,12 @@ use App\Models\Traits\ComplexRelationamentTrait;
 
 class Account extends Model
 {
-    use ComplexRelationamentTrait;
+    // use ComplexRelationamentTrait;
     
-    protected static $COMPLEX_RELATIONAMENT_MODELS = [
-        \App\Models\Photo::class,
-        \App\Models\Video::class
-    ];
+    // protected static $COMPLEX_RELATIONAMENT_MODELS = [
+    //     \App\Models\Photo::class,
+    //     \App\Models\Video::class
+    // ];
 
     /**
      * The attributes that are mass assignable.
@@ -20,9 +20,11 @@ class Account extends Model
      * @var array
      */
     protected $fillable = [
-        'url',
-        'account', // im segundos
-        'type',
+        'username',
+        'password',
+        'email',
+        'status',
+        'integration_id',
     ];
 
     protected $mappingProperties = array(
@@ -42,12 +44,21 @@ class Account extends Model
             "analyzer" => "standard",
         ],
     );
+
+    /**
+     * Get all of the owning businessable models.
+     */
+    public function accountable()
+    {
+        return $this->morphTo(); //, 'businessable_type', 'businessable_code'
+    }
+
     /**
      * Get all of the business that are assigned this tag.
      */
     public function business()
     {
-        return $this->morphedByMany('App\Models\Identity\Business', 'skillable');
+        return $this->morphedByMany('App\Models\Identity\Business', 'accountable');
     }
 
     /**
@@ -55,6 +66,14 @@ class Account extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('App\Models\User', 'accountable');
+    }
+
+    /**
+     * Get all of the persons that are assigned this tag.
+     */
+    public function persons()
+    {
+        return $this->morphedByMany('App\Models\Identity\Person', 'accountable');
     }
 }

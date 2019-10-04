@@ -32,6 +32,19 @@ class Video extends Model
 
     public function links()
     {
-        return $this->hasMany('App\Models\Midia\VideoLink', 'video_id', 'id');
+        return $this->sitios();
+    }
+
+    public function sitios()
+    {
+        return $this->morphToMany('App\Models\Identity\Hability\Sitio', 'sitioable');
+    }
+        
+    /**
+     * Get all of the owning videoable models.
+     */
+    public function videoable()
+    {
+        return $this->morphTo(); //, 'videoable_type', 'videoable_code'
     }
 }
