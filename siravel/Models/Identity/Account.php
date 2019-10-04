@@ -3,7 +3,7 @@
 namespace Siravel\Models\Identity;
 
 use Siravel\Models\Model;
-use Siravel\Models\Traits\ComplexRelationamentTrait;
+use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
 
 class Account extends Model
 {

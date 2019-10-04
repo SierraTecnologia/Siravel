@@ -2,9 +2,9 @@
 
 namespace Siravel\Models\System;
 
-use Siravel\Models\Traits\ArchiveTrait;
+use Siravel\Support\Traits\Models\ArchiveTrait;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Siravel\Support\Traits\Models\BusinessTrait;
 
 class Trackings extends ArchiveTrait
 {

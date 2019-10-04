@@ -10,7 +10,7 @@ use App\Models\Role;
 use Siravel\Models\Identity\Hability\Skill;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
-use App\Models\System\Integration;
+use Siravel\Models\System\Integration;
 use Artisan;
 
 class GetProfile

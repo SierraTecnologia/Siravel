@@ -12,8 +12,8 @@
 
 namespace Siravel\Models\Actions\Bot;
 
-use Siravel\Models\Traits\ComplexRelationamentTrait;
-use Siravel\Models\Traits\TasksTrait;
+use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
+use Siravel\Support\Traits\Models\TasksTrait;
 use Siravel\Models\Model;
 
 class Task extends Model

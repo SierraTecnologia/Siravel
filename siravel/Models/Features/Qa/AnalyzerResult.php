@@ -3,8 +3,8 @@
 namespace Siravel\Models\Qa;
 
 use Siravel\Models\Model;
-use Siravel\Models\Traits\EloquentGetTableNameTrait;
-use Siravel\Models\Traits\ComplexRelationamentInTrait;
+use Siravel\Support\Traits\Models\EloquentGetTableNameTrait;
+use Siravel\Support\Traits\Models\ComplexRelationamentInTrait;
 
 class AnalyzerResult extends Model
 {

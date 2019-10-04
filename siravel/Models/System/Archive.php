@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\System;
 
-use Siravel\Models\Traits\ArchiveTrait;
+use Siravel\Support\Traits\Models\ArchiveTrait;
 
 class Archive extends ArchiveTrait
 {

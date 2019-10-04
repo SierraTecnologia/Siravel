@@ -4,7 +4,7 @@ namespace Siravel\Services\System;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use App\Models\System\Trackings;
+use Siravel\Models\System\Trackings;
 
 class TrackingsService
 {

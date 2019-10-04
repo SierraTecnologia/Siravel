@@ -4,7 +4,7 @@ namespace Siravel\Services\System;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use App\Models\System\Analytics;
+use Siravel\Models\System\Analytics;
 
 class AnalyticsService
 {

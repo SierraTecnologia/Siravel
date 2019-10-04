@@ -7,10 +7,10 @@ namespace Siravel\Models\Actions\Calendar;
 
 use App\Models\CmsModel as BaseModel;
 use Siravel\Services\Normalizer;
-use App\Models\Traits\Translatable;
+use Siravel\Support\Traits\Models\Translatable;
 use Log;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Traits\BusinessTrait;
+use Siravel\Support\Traits\Models\BusinessTrait;
 
 class AcaoHumana extends BaseModel
 {

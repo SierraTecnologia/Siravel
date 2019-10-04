@@ -3,8 +3,8 @@
 namespace App\Models\Marketing;
 
 use App\Models\Model;
-use App\Models\Traits\ComplexRelationamentTrait;
-use App\Models\Traits\BusinessTrait;
+use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
+use Siravel\Support\Traits\Models\BusinessTrait;
 
 class Product extends Model
 {

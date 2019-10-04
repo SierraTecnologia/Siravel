@@ -12,7 +12,7 @@
 
 namespace Siravel\Models\Actions\Calendar;
 
-use Siravel\Models\Traits\ComplexRelationamentTrait;
+use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
 use Siravel\Actions\Action;
 use Illuminate\Support\Facades\Log;
