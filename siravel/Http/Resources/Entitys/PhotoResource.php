@@ -2,9 +2,9 @@
 
 namespace SiObject\Http\Resources\Entitys;
 
-use function App\Util\html_purify;
-use function App\Util\to_object;
-use function App\Util\to_string;
+use function SiUtil\Helper\html_purify;
+use function SiUtil\Helper\to_object;
+use function SiUtil\Helper\to_string;
 
 /**
  * Class PhotoResource.

@@ -4,9 +4,9 @@ namespace SiObject\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\PhotoEntity;
 use Illuminate\Http\Resources\Json\Resource;
-use function App\Util\html_purify;
-use function App\Util\to_int;
-use function App\Util\to_string;
+use function SiUtil\Helper\html_purify;
+use function SiUtil\Helper\to_int;
+use function SiUtil\Helper\to_string;
 
 /**
  * Class PhotoPlainResource.

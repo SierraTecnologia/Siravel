@@ -7,7 +7,7 @@ use SiObject\Manipule\Rules\LongitudeRule;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\ValidationException;
-use function App\Util\validator_filter_attributes;
+use function SiUtil\Helper\validator_filter_attributes;
 
 /**
  * Class LocationValidator.

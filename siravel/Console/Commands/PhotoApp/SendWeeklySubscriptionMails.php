@@ -10,8 +10,8 @@ use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Mail;
-use function App\Util\url_frontend;
-use function App\Util\url_frontend_unsubscription;
+use function SiUtil\Helper\url_frontend;
+use function SiUtil\Helper\url_frontend_unsubscription;
 
 /**
  * Class SendWeeklySubscriptionMails.

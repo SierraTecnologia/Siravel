@@ -4,8 +4,8 @@ namespace SiObject\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\LocationEntity;
 use Illuminate\Http\Resources\Json\Resource;
-use function App\Util\html_purify;
-use function App\Util\to_float;
+use function SiUtil\Helper\html_purify;
+use function SiUtil\Helper\to_float;
 
 /**
  * Class LocationPlainResource.

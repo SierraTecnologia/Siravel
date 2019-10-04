@@ -35,7 +35,7 @@ class BusinessService extends Service
 
     private function detectedBusiness()
     {
-        $domainSlug = \App\Util\General::getSlugForUrl(Request::root());
+        $domainSlug = \SiUtil\Helper\General::getSlugForUrl(Request::root());
 
         /**
          * Localhost ou terminal, retorna o padrao

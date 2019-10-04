@@ -49,7 +49,7 @@ class RoutineOrganizerCreateJob implements ShouldQueue
             'cpf'               => $organizerResult['cpf'],
             'email'             => $organizerResult['email'],
             'password'          => bcrypt('q1w2e3r4'.rand()),
-            'token'             => \App\Util\General::generateToken(),
+            'token'             => \SiUtil\Helper\General::generateToken(),
             'token_public'      => $this->companyToken,
             'role_id'           => Role::$CLIENT
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Siravel\Models\Identity\Location;
 
 use Siravel\Models\Builders\LocationBuilder;
 use Siravel\Contants\Tables;

@@ -5,10 +5,10 @@ namespace SiObject\Http\Resources\Entitys;
 use SiObjects\Manipule\Entities\ThumbnailEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Storage;
-use function App\Util\html_purify;
-use function App\Util\to_int;
-use function App\Util\to_string;
-use function App\Util\url_storage;
+use function SiUtil\Helper\html_purify;
+use function SiUtil\Helper\to_int;
+use function SiUtil\Helper\to_string;
+use function SiUtil\Helper\url_storage;
 
 /**
  * Class ThumbnailPlainResource.
