@@ -5,7 +5,7 @@
 
 namespace App\Logic\Info\Pointable;
 
-use SiSeed\Abstract\Questions\AboutMe;
+use SiSeed\Abstrato\Questions\AboutMe;
 
 class ConteSobreVoce
 {
