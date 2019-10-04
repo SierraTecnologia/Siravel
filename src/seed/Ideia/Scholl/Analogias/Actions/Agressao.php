@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\Actions;
+namespace SiSeed\Ideia\Scholl\Analogias\Actions;
 
 class Agressao
 {

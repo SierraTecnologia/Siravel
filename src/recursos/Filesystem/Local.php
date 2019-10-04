@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Filesystem;
+namespace SiWeapons\Filesystem;
 
 use App\Logic\Entitys\Components\File;
 use App\Logic\Entitys\Components\Directory;

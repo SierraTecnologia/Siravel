@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SenhorVerdugo;
+namespace SiWeapons\Integrations\SenhorVerdugo;
 
 
 class Create extends SenhorVerdugo

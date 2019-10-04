@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\History;
+namespace SiSeed\Ideia\Scholl\Analogias\History;
 
 class Sexo
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Logic\Info\Questions;
+namespace SiSeed\Abstract\Questions;
 
-use App\Logic\Info\Questions\Questions;
+use SiSeed\Abstract\Questions\Questions;
 
 class AboutMe extends Questions
 {

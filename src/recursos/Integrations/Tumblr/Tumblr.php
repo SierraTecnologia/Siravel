@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Tumblr;
+namespace SiWeapons\Integrations\Tumblr;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

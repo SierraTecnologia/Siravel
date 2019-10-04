@@ -12,7 +12,7 @@ use Siravel\Http\Requests\OrderFindRequest;
 use Siravel\Http\Requests\CreditCardRequest;
 use Siravel\Services\Gateway;
 use Siravel\Services\FraudAnalysi;
-use Siravel\Logic\Connections\Integrations\Gateways\Mundipagg;
+use Siravel\Integrations\Gateways\Mundipagg;
 use Siravel\Models\Customer;
 use Siravel\Models\CreditCardToken;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SitecPayment;
+namespace SiWeapons\Integrations\SitecPayment;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

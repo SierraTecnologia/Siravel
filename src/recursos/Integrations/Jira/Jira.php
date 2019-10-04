@@ -3,12 +3,12 @@
  * https://github.com/lesstif/php-jira-rest-client
  */
 
-namespace App\Logic\Connections\Integrations\Jira;
+namespace SiWeapons\Integrations\Jira;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 use JiraRestApi\Configuration\ArrayConfiguration;
 
 class Jira extends Integration

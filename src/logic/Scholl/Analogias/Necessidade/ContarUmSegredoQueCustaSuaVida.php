@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\Necessidade;
+namespace SiSeed\Ideia\Scholl\Analogias\Necessidade;
 
 class ContarUmSegredoQueCustaSuaVida
 {

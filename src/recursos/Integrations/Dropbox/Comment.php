@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Dropbox;
+namespace SiWeapons\Integrations\Dropbox;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

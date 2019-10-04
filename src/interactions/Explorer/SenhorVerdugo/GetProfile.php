@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Tools\Explorer\SenhorVerdugo;
+namespace SiInteractions\Explorer\SenhorVerdugo;
 
 use App\Models\User;
 use App\Models\Role;

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Youtube;
+namespace SiWeapons\Integrations\Youtube;
 
 use Illuminate\Support\Facades\Log;
 // use App\Models\Midia\Video;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Youtube extends Integration
 {

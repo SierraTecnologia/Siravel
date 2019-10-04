@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations;
+namespace SiWeapons\Integrations;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
@@ -8,15 +8,15 @@ use App\Models\User;
 
 use App\Models\Integrations\Token;
 
-use App\Logic\Connections\Integrations\Github\Github;
-use App\Logic\Connections\Integrations\Amazon\Amazon;
-use App\Logic\Connections\Integrations\Gitlab\Gitlab;
-use App\Logic\Connections\Integrations\Jira\Jira;
-use App\Logic\Connections\Integrations\Novare\Novare;
-use App\Logic\Connections\Integrations\Pipedrive\Pipedrive;
-use App\Logic\Connections\Integrations\Sentry\Sentry;
-use App\Logic\Connections\Integrations\Testlink\Testlink;
-use App\Logic\Connections\Integrations\Zoho\Zoho;
+use SiWeapons\Integrations\Github\Github;
+use SiWeapons\Integrations\Amazon\Amazon;
+use SiWeapons\Integrations\Gitlab\Gitlab;
+use SiWeapons\Integrations\Jira\Jira;
+use SiWeapons\Integrations\Novare\Novare;
+use SiWeapons\Integrations\Pipedrive\Pipedrive;
+use SiWeapons\Integrations\Sentry\Sentry;
+use SiWeapons\Integrations\Testlink\Testlink;
+use SiWeapons\Integrations\Zoho\Zoho;
 
 class Integration
 {

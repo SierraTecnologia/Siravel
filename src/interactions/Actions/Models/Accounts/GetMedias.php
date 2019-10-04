@@ -23,7 +23,7 @@ class AccountRoutine implements ShouldQueue
      */
     public function dayling(Account $account)
     {
-        if ($account->integration_id == \App\Logic\Connections\Integrations\Instagram\Instagram::$ID) {
+        if ($account->integration_id == \SiWeapons\Integrations\Instagram\Instagram::$ID) {
             (new GetMidias($account))->prepare($account->username)->execute();
         }
 

@@ -2,7 +2,7 @@
 /**
  * Rotinas de Inclusão de Dados
  */
-namespace App\Logic\Modules\Treinne\Conteudo\_Geral\Cap1Basico;
+namespace SiSeed\Treinne\Conteudo\_Geral\Cap1Basico;
 
 use App\Models\User;
 use App\Models\Role;
@@ -19,7 +19,7 @@ use App\Models\Business\Collaborator;
 use App\Models\Integrations\Token;
 use App\Models\Integrations\TokenAccess;
 
-use App\Logic\Connections\Integrations\Cloudflare\Cloudflare;
+use SiWeapons\Integrations\Cloudflare\Cloudflare;
 
 class AprendendoAAprender
 {

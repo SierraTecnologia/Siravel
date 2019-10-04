@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Channels;
+namespace SiWeapons\Channels;
 
 use Illuminate\Notifications\Notification;
-use App\Jobs\Sms;
+use Siravel\Jobs\Sms;
 use Illuminate\Support\Facades\Log;
 
 class SmsChannel

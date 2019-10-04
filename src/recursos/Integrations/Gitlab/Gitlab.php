@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Gitlab;
+namespace SiWeapons\Integrations\Gitlab;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Gitlab extends Integration
 {

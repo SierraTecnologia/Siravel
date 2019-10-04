@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Pinterest;
+namespace SiWeapons\Integrations\Pinterest;
 
 use Illuminate\Support\Facades\Log;
 // use App\Models\Midia\Video;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Pinterest extends Integration
 {

@@ -20,7 +20,7 @@
             "SiInteractions\\": "src/interactions/",
             "SiLogic\\": "src/logic/",
             "SiObjects\\": "src/objects/",
-            "SiWepons\\": "src/recursos/",
+            "SiWeapons\\": "src/recursos/",
             "SiSeed\\": "src/seed/"
         },
         "files": [

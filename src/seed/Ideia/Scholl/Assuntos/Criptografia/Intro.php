@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Assuntos\Criptografia;
+namespace SiSeed\Ideia\Scholl\Assuntos\Criptografia;
 
 class Intro
 {

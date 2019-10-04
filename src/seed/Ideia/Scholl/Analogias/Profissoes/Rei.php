@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\Profissoes;
+namespace SiSeed\Ideia\Scholl\Analogias\Profissoes;
 
 class Rei
 {

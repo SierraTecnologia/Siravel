@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Sentry;
+namespace SiWeapons\Integrations\Sentry;
 
 use Illuminate\Support\Facades\Log;
 

@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\Problems;
+namespace SiSeed\Ideia\Scholl\Analogias\Problems;
 
 class SeComunicar
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Instagram;
+namespace SiWeapons\Integrations\Instagram;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

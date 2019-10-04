@@ -5,12 +5,12 @@
  * Equipe de Qa
  */
 
-namespace App\Logic\Connections\Integrations\Testlink;
+namespace SiWeapons\Integrations\Testlink;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Testlink extends Integration
 {

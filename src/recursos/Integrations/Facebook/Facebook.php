@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Facebook;
+namespace SiWeapons\Integrations\Facebook;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

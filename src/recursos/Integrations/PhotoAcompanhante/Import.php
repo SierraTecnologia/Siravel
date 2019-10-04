@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\PhotoAcompanhante;
+namespace SiWeapons\Integrations\PhotoAcompanhante;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

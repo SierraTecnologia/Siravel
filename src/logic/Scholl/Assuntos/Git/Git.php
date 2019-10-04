@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Modules\Scholl\Assuntos\Git;
+namespace SiSeed\Ideia\Scholl\Assuntos\Git;
 
 
 class Git

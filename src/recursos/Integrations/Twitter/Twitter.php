@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Twitter;
+namespace SiWeapons\Integrations\Twitter;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

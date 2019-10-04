@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Filesystem;
+namespace SiWeapons\Filesystem;
 
 use Illuminate\Filesystem\Filesystem;
 

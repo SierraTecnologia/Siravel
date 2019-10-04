@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Xvideos;
+namespace SiWeapons\Integrations\Xvideos;
 
 use Illuminate\Support\Facades\Log;
 // use App\Models\Midia\Video;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Xvideos extends Integration
 {

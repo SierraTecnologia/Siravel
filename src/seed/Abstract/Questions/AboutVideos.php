@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Info\Questions;
+namespace SiSeed\Abstract\Questions;
 
 class AboutVideos extends Questions
 {

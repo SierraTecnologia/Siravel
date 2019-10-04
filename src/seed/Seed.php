@@ -3,9 +3,9 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace Logic;
+namespace SiSeed;
 
-class Logica
+class Seed
 {    
 
     public static function getDataClasses()

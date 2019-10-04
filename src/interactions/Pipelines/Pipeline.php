@@ -4,8 +4,8 @@ namespace App\Logic\Connections\Plugins\Pipelines;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Instagram\Instagram;
-use App\Logic\Connections\Integrations\Instagram\Facebook;
+use SiWeapons\Integrations\Instagram\Instagram;
+use SiWeapons\Integrations\Instagram\Facebook;
 
 
 use App\Logic\Connections\Plugins\Actions\PublishPost;

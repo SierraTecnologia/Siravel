@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Modules\Scholl\Actions;
+namespace SiSeed\Ideia\Scholl\Actions;
 
 use App\Models\Model;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Channels\Messages;
+namespace SiWeapons\Channels\Messages;
 
 use Illuminate\Support\Arr;
 

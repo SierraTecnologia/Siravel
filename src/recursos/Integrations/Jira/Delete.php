@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Jira;
+namespace SiWeapons\Integrations\Jira;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\Project as ProjectModel;

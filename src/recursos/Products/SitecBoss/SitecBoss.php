@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SitecBoss;
+namespace SiWeapons\Integrations\SitecBoss;
 
 use App\Models\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class SitecBoss extends Integration
 {

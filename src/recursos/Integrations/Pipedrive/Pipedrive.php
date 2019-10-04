@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Pipedrive;
+namespace SiWeapons\Integrations\Pipedrive;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Pipedrive extends Integration
 {

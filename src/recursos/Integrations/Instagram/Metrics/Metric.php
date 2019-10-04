@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Instagram\Metrics;
+namespace SiWeapons\Integrations\Instagram\Metrics;
 
-use App\Logic\Connections\Integrations\Instagram\Instagram;
+use SiWeapons\Integrations\Instagram\Instagram;
 
 class Metric extends Instagram
 {

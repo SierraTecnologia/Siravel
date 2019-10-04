@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Modules\Scholl;
+namespace SiSeed\Ideia\Scholl;
 
 use Illuminate\Support\Facades\Log;
 

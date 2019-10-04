@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Pipedrive;
+namespace SiWeapons\Integrations\Pipedrive;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

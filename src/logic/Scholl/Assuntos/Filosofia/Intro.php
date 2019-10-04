@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Assuntos\Filosofia;
+namespace SiSeed\Ideia\Scholl\Assuntos\Filosofia;
 
 class Intro
 {

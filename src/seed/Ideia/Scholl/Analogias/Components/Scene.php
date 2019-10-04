@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias\Components;
+namespace SiSeed\Ideia\Scholl\Analogias\Components;
 
 class Scene
 {

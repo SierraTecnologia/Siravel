@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SenhorVerdugo;
+namespace SiWeapons\Integrations\SenhorVerdugo;
 
 use App\Models\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class SenhorVerdugo extends Integration
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace SiWeapons\Saas;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;

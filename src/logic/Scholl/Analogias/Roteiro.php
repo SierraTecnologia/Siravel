@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Modules\Scholl\Analogias;
+namespace SiSeed\Ideia\Scholl\Analogias;
 
 class Roteiro
 {

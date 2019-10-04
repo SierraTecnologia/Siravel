@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Gitlab;
+namespace SiWeapons\Integrations\Gitlab;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

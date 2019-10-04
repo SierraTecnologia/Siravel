@@ -6,12 +6,12 @@
  * g4...
  */
 
-namespace App\Logic\Connections\Integrations\Novare;
+namespace SiWeapons\Integrations\Novare;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Novare extends Integration
 {

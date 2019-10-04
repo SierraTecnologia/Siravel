@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Modules\Scholl\Assuntos\Filosofia\Ensinamentos;
+namespace SiSeed\Ideia\Scholl\Assuntos\Filosofia\Ensinamentos;
 
 use App\Models\Bot\Runner;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Cloudflare;
+namespace SiWeapons\Integrations\Cloudflare;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

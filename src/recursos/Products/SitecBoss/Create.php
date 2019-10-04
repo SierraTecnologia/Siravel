@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SitecBoss;
+namespace SiWeapons\Integrations\SitecBoss;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

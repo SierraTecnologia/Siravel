@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Cloudflare;
+namespace SiWeapons\Integrations\Cloudflare;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Cloudflare\API\Auth\APIKey;
 use App\Models\User;
-use App\Logic\Connections\Integrations\Integration;
+use SiWeapons\Integrations\Integration;
 
 class Cloudflare extends Integration
 {

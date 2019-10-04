@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\Googledrive;
+namespace SiWeapons\Integrations\Googledrive;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;

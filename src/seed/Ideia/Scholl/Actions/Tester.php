@@ -3,7 +3,7 @@
  * Teste seus Conhecimentos
  */
 
-namespace App\Logic\Modules\Scholl\Actions;
+namespace SiSeed\Ideia\Scholl\Actions;
 
 use App\Models\Bot\Runner;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\Connections\Integrations\SenhorVerdugo;
+namespace SiWeapons\Integrations\SenhorVerdugo;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\Project as ProjectModel;
