@@ -3,8 +3,7 @@
     "description": "Recursos para Desenvolvimento Complexo",
     "license": "MIT",
     "require": {
-        "illuminate/support": "^5.8",
-        "sierratecnologia/payment-laravel": "dev-master"
+        "illuminate/support": "^5.8"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
@@ -19,9 +18,7 @@
     "autoload": {
         "psr-4": {
             "SiTools\\App\\": "laravel/",
-            "SiTools\\Actions\\": "src/actions/",
-            "SiTools\\Boards\\": "src/boards/",
-            "SiTools\\Features\\": "src/features/",
+            "SiTools\\Interactions\\": "src/interactions/",
             "SiTools\\Libs\\": "src/libs/",
             "SiTools\\Logic\\": "src/logic/",
             "SiTools\\Objects\\": "src/objects/",
