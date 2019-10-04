@@ -7,7 +7,7 @@
  */
 
 
-namespace SiObjects\Support\Traits\Support\Models;
+namespace SiObjects\Support\Traits\Models;
 
 trait ComplexRelationamentTrait
 {

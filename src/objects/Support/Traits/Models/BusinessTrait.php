@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObjects\Support\Traits\Support\Models;
+namespace SiObjects\Support\Traits\Models;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\Model;
