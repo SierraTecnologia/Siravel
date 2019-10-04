@@ -7,7 +7,7 @@ namespace SiInteractions\Actions\Routines\Database;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use App\Logic\Actions\Worker\Sync\Database\MigrateCollection;
+use SiInteraction\Actions\Worker\Sync\Database\MigrateCollection;
 
 use App\Models\Infra\Database;
 use App\Models\Infra\DatabaseCollection;

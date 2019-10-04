@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
 use Siravel\Models\Infra\Ci\Base\Environment as BaseEnvironment;
 

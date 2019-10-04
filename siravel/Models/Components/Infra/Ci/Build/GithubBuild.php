@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Build;
+namespace SiUtils\Tools\Model\Build;
 
 use GuzzleHttp\Client;
-use Siravel\Logic\Tools\Builder;
+use SiUtils\Tools\Builder;
 use Siravel\Helper\Diff;
 use Siravel\Helper\Github;
-use Siravel\Logic\Tools\Config;
+use SiUtils\Tools\Config;
 use Siravel\Models\Infra\Ci\Build;
 use Siravel\Models\Infra\Ci\BuildError;
 

@@ -1,6 +1,6 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
-use Siravel\Logic\Entitys\Uploads\ImageService;
+use SiObjects\Entitys\Uploads\ImageService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Setting;

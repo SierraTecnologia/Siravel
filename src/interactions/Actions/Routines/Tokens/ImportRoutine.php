@@ -7,7 +7,7 @@ namespace SiInteractions\Actions\Routines\Tokens;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use App\Logic\Actions\Worker\Sync\Database\ImportCollection;
+use SiInteraction\Actions\Worker\Sync\Database\ImportCollection;
 
 use App\Models\Integrations\Token;
 

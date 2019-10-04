@@ -113,11 +113,11 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \Siravel\Services\Image\Contracts\ImageProcessor::class,
-            \Siravel\Services\Image\ImagineImageProcessor::class
+            \SiInteractions\Services\Image\Contracts\ImageProcessor::class,
+            \SiInteractions\Services\Image\ImagineImageProcessor::class
         );
 
-        $this->app->when(\Siravel\Services\Image\ImagineImageProcessor::class)
+        $this->app->when(\SiInteractions\Services\Image\ImagineImageProcessor::class)
             ->needs('$config')
             ->give(function (Application $app) {
                 return [

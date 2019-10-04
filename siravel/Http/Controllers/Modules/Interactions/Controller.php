@@ -1,9 +1,9 @@
 <?php
 
-namespace SiObject\Http\Controllers\Interactions;
+namespace Siravel\Http\Controllers\Interactions;
 
 use Response;
-use SiObject\Http\Controllers\Controller as BaseController;
+use Siravel\Http\Controllers\Controller as BaseController;
 use Illuminate\Support\Facades\Log;
 
 class Controller extends BaseController

@@ -5,11 +5,11 @@
 
 namespace SiInteractions\Actions\Routines\Globals;
 
-use App\Logic\Actions\Routines\Database\SpiderRoutine;
+use SiInteraction\Actions\Routines\Database\SpiderRoutine;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use App\Logic\Actions\Worker\Sync\Database\SpiderCollection;
+use SiInteraction\Actions\Worker\Sync\Database\SpiderCollection;
 
 use App\Models\Infra\Domain;
 

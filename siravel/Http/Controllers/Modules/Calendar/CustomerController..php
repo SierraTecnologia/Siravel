@@ -1,8 +1,8 @@
 <?php
 
-namespace SiObject\Http\Controllers\Gp;
+namespace Siravel\Http\Controllers\Gp;
 
-use SiObject\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use SiObject\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;

@@ -1,8 +1,8 @@
 <?php
 
-namespace SiObject\Http\Controllers\Production;
+namespace Siravel\Http\Controllers\Production;
 
-use SiObject\Http\Controllers\Controller as BaseController;
+use Siravel\Http\Controllers\Controller as BaseController;
 use App\Article;
 use App\ArticleCategory;
 use App\Language;

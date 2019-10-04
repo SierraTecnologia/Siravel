@@ -6,8 +6,8 @@ use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use App\Logics\Components\Pipeline as PipelineComponent;
 
-use App\Logic\Actions\Pipelines\Contracts\Registrator;
-use App\Logic\Actions\Pipelines\Contracts\Notificator;
+use SiInteraction\Actions\Routines\Contracts\Registrator;
+use SiInteraction\Actions\Routines\Contracts\Notificator;
 
 class ArticleImporterStage implements StageInterface
 {

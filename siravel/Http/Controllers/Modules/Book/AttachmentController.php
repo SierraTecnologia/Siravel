@@ -3,8 +3,8 @@
 use Siravel\Models\Book\Repos\EntityRepo;
 use Siravel\Exceptions\FileUploadException;
 use Siravel\Exceptions\NotFoundException;
-use Siravel\Logic\Entitys\Uploads\Attachment;
-use Siravel\Logic\Entitys\Uploads\AttachmentService;
+use SiObjects\Entitys\Uploads\Attachment;
+use SiObjects\Entitys\Uploads\AttachmentService;
 use Illuminate\Http\Request;
 
 class AttachmentController extends Controller
@@ -15,7 +15,7 @@ class AttachmentController extends Controller
 
     /**
      * AttachmentController constructor.
-     * @param \App\Logic\Entitys\Uploads\AttachmentService $attachmentService
+     * @param \SiObjects\Entitys\Uploads\AttachmentService $attachmentService
      * @param Attachment $attachment
      * @param EntityRepo $entityRepo
      */

@@ -1,7 +1,7 @@
 <?php
 namespace SiInteractions\Actions\Worker\Analyser\Output;
 
-use App\Logic\Actions\Worker\Analyser\Analyser;
+use SiInteraction\Actions\Worker\Analyser\Analyser;
 
 /**
  * Outputs events information to the console.

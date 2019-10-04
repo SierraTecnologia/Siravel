@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Build;
+namespace SiUtils\Tools\Model\Build;
 
 /**
  * GogsBuild Build Model

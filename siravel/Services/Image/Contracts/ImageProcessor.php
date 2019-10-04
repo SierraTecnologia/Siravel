@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Services\Image\Contracts;
+namespace SiInteractions\Services\Image\Contracts;
 
 /**
  * Interface ImageProcessor.
  *
- * @package Siravel\Services\Image\Contracts
+ * @package SiInteractions\Services\Image\Contracts
  */
 interface ImageProcessor
 {

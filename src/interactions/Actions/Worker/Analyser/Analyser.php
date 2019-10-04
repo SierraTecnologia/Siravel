@@ -1,9 +1,9 @@
 <?php
 namespace SiInteractions\Actions\Worker\Analyser;
 
-use App\Logic\Actions\Worker\Analyser\Output\AbstractOutput;
-use App\Logic\Actions\Worker\Analyser\Output\Filter\OutputFilterInterface;
-use App\Logic\Actions\Worker\Analyser\Output\TriggerableInterface;
+use SiInteraction\Actions\Worker\Analyser\Output\AbstractOutput;
+use SiInteraction\Actions\Worker\Analyser\Output\Filter\OutputFilterInterface;
+use SiInteraction\Actions\Worker\Analyser\Output\TriggerableInterface;
 
 /**
  * Run all script analysers and outputs their result.
@@ -160,7 +160,7 @@ class Analyser
 
     /**
      * Set of PHP analys integration objects.
-     * @return App\Logic\Actions\Worker\Analyser\Tools\AbstractIntegrationTool[] set of objects.
+     * @return SiInteraction\Actions\Worker\Analyser\Tools\AbstractIntegrationTool[] set of objects.
      */
     protected function getAnalysisTools()
     {

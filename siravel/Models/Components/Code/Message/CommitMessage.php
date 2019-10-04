@@ -14,7 +14,7 @@ namespace Siravel\Models\Code\Message;
 
 use Siravel\Models\Code\Message;
 
-use Siravel\Logic\Tools\Programs\Git\Log;
+use SiUtils\Tools\Programs\Git\Log;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

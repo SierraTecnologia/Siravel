@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Services\Image;
+namespace SiInteractions\Services\Image;
 
-use Siravel\Services\Image\Contracts\ImageProcessor;
+use SiInteractions\Services\Image\Contracts\ImageProcessor;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Contracts\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\Rule;
@@ -17,7 +17,7 @@ use InvalidArgumentException;
 /**
  * Class ImagineImageProcessor.
  *
- * @package Siravel\Services\Image
+ * @package SiInteractions\Services\Image
  */
 class ImagineImageProcessor implements ImageProcessor
 {

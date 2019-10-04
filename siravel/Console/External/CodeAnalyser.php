@@ -2,8 +2,8 @@
 namespace Siravel\Console\External;
 
 use League\CLImate\CLImate;
-use Siravel\Logic\Actions\Worker\Analyser\Output\AbstractOutput;
-use Siravel\Logic\Actions\Worker\Analyser\Output\Filter\DiffOutputFilter;
+use SiInteraction\Actions\Worker\Analyser\Output\AbstractOutput;
+use SiInteraction\Actions\Worker\Analyser\Output\Filter\DiffOutputFilter;
 use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
@@ -282,11 +282,11 @@ class CodeAnalyser
     protected function getOutputFormatClasses()
     {
         return [
-            'text' => 'App\Logic\Actions\Worker\Analyser\Output\TextOutput',
-            'json' => 'App\Logic\Actions\Worker\Analyser\Output\JsonOutput',
-            'xml' => 'App\Logic\Actions\Worker\Analyser\Output\XmlOutput',
-            'csv' => 'App\Logic\Actions\Worker\Analyser\Output\CsvOutput',
-            'html' => 'App\Logic\Actions\Worker\Analyser\Output\HtmlOutput',
+            'text' => 'SiInteraction\Actions\Worker\Analyser\Output\TextOutput',
+            'json' => 'SiInteraction\Actions\Worker\Analyser\Output\JsonOutput',
+            'xml' => 'SiInteraction\Actions\Worker\Analyser\Output\XmlOutput',
+            'csv' => 'SiInteraction\Actions\Worker\Analyser\Output\CsvOutput',
+            'html' => 'SiInteraction\Actions\Worker\Analyser\Output\HtmlOutput',
         ];
     }
 

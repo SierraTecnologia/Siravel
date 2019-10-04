@@ -3,7 +3,7 @@
 namespace Siravel\Models\Code;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Siravel\Logic\Tools\Programs\Git\Repository;
+use SiUtils\Tools\Programs\Git\Repository;
 
 use Siravel\Models\Model;
 use Siravel\Helper\General;

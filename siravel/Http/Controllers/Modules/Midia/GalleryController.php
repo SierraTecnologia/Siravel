@@ -1,9 +1,9 @@
 <?php
 
-namespace SiObject\Http\Controllers\Midia;
+namespace Siravel\Http\Controllers\Midia;
 
 use Config;
-use SiObject\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Repositories\ImageRepository;
 
 class GalleryController extends Controller

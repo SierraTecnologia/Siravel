@@ -13,7 +13,7 @@ use Siravel\Models\Book\Page;
 use Siravel\Models\Book\SearchService;
 use Siravel\Exceptions\NotFoundException;
 use Siravel\Exceptions\NotifyException;
-use Siravel\Logic\Entitys\Uploads\AttachmentService;
+use SiObjects\Entitys\Uploads\AttachmentService;
 use DOMDocument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;

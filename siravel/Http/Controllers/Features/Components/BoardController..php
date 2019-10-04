@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Components;
 
-use SiObject\Http\Controllers\Controller as BaseController;
-use Siravel\Logic\Entitys\Components\Navegador as NavegadorComponent;
+use Siravel\Http\Controllers\Controller as BaseController;
+use SiObjects\Entitys\Components\Navegador as NavegadorComponent;
 use Exception;
 use Throwable;
 

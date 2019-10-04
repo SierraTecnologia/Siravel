@@ -3,7 +3,7 @@
 namespace Siravel\Models\Infra;
 
 use Siravel\Models\Model;
-use Siravel\Logic\Tools\Ssh;
+use SiUtils\Tools\Ssh;
 
 class Logger extends Model
 {

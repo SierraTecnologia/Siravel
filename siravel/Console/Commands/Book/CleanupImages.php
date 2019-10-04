@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Siravel\Logic\Entitys\Uploads\ImageService;
+use SiObjects\Entitys\Uploads\ImageService;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -30,7 +30,7 @@ class CleanupImages extends Command
 
     /**
      * Create a new command instance.
-     * @param \App\Logic\Entitys\Uploads\ImageService $imageService
+     * @param \SiObjects\Entitys\Uploads\ImageService $imageService
      */
     public function __construct(ImageService $imageService)
     {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Components;
 
-use SiObject\Http\Controllers\Controller as BaseController;
+use Siravel\Http\Controllers\Controller as BaseController;
 use Exception;
 use Throwable;
 

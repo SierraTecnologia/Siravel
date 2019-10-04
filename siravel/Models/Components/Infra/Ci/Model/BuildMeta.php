@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
 use Siravel\Models\Infra\Ci\Base\BuildMeta as BaseBuildMeta;
-use Siravel\Logic\Tools\Store\BuildStore;
-use Siravel\Logic\Tools\Store\Factory;
+use SiUtils\Tools\Store\BuildStore;
+use SiUtils\Tools\Store\Factory;
 
 class BuildMeta extends BaseBuildMeta
 {

@@ -3,8 +3,8 @@
 use Siravel\Models\Book\Repos\EntityRepo;
 use Siravel\Exceptions\ImageUploadException;
 use Siravel\Repos\PageRepo;
-use Siravel\Logic\Entitys\Uploads\Image;
-use Siravel\Logic\Entitys\Uploads\ImageRepo;
+use SiObjects\Entitys\Uploads\Image;
+use SiObjects\Entitys\Uploads\ImageRepo;
 use Illuminate\Filesystem\Filesystem as File;
 use Illuminate\Http\Request;
 

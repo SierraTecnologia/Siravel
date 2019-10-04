@@ -2,10 +2,10 @@
 namespace SiInteractions\Actions\Worker\Analyser\Output;
 
 use League\Plates\Engine;
-use App\Logic\Actions\Worker\Analyser\Analyser;
-use App\Logic\Actions\Worker\Analyser\AnalysisResult;
-use App\Logic\Actions\Worker\Analyser\Output\Html\FileHighlighter;
-use App\Logic\Actions\Worker\Analyser\Output\Html\History;
+use SiInteraction\Actions\Worker\Analyser\Analyser;
+use SiInteraction\Actions\Worker\Analyser\AnalysisResult;
+use SiInteraction\Actions\Worker\Analyser\Output\Html\FileHighlighter;
+use SiInteraction\Actions\Worker\Analyser\Output\Html\History;
 use DateTime;
 use SplFileObject;
 
@@ -25,7 +25,7 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
     public function result(AnalysisResult $result)
     {
         $this->cli->br();
-        $this->cli->inline('Writing HTML report in "./App\Logic\Actions\Worker\Analyser/"... ');
+        $this->cli->inline('Writing HTML report in "./SiInteraction\Actions\Worker\Analyser/"... ');
         $history = new History($this->getOutputDirectory());
         $history->append($result);
         foreach ($result->toArray() as $filePath => $lines) {
@@ -136,7 +136,7 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
      */
     protected function getOutputDirectory()
     {
-        $directory = $this->outputDirectory . '/App\Logic\Actions\Worker\Analyser';
+        $directory = $this->outputDirectory . '/SiInteraction\Actions\Worker\Analyser';
 
         if (!file_exists($directory)) {
             mkdir($directory);

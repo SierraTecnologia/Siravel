@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Base;
+namespace SiUtils\Tools\Model\Base;
 
-use Siravel\Logic\Tools\Exception\InvalidArgumentException;
-use Siravel\Logic\Tools\Model;
-use Siravel\Logic\Tools\Store\BuildStore;
-use Siravel\Logic\Tools\Store\Factory;
+use SiUtils\Tools\Exception\InvalidArgumentException;
+use SiUtils\Tools\Model;
+use SiUtils\Tools\Store\BuildStore;
+use SiUtils\Tools\Store\Factory;
 
 class Build extends Model
 {

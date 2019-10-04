@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
-use Siravel\Logic\Tools\Store\Factory;
-use Siravel\Logic\Tools\Store\EnvironmentStore;
-use Siravel\Logic\Tools\Store\ProjectGroupStore;
+use SiUtils\Tools\Store\Factory;
+use SiUtils\Tools\Store\EnvironmentStore;
+use SiUtils\Tools\Store\ProjectGroupStore;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Symfony\Component\Yaml\Dumper as YamlDumper;
 use Siravel\Models\Infra\Ci\Base\Project as BaseProject;

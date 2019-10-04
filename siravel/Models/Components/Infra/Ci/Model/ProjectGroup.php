@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
-use Siravel\Logic\Tools\Store\Factory;
+use SiUtils\Tools\Store\Factory;
 use Siravel\Models\Infra\Ci\Base\ProjectGroup as BaseProjectGroup;
-use Siravel\Logic\Tools\Store\ProjectStore;
+use SiUtils\Tools\Store\ProjectStore;
 
 class ProjectGroup extends BaseProjectGroup
 {

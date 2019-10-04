@@ -2,7 +2,7 @@
 namespace SiInteractions\Actions\Worker\Analyser\Output;
 
 use League\CLImate\CLImate;
-use App\Logic\Actions\Worker\Analyser\AnalysisResult;
+use SiInteraction\Actions\Worker\Analyser\AnalysisResult;
 
 abstract class AbstractOutput
 {

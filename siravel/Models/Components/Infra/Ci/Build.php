@@ -1,17 +1,17 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
-use Siravel\Logic\Tools\Builder;
+use SiUtils\Tools\Builder;
 use Siravel\Helper\Lang;
-use Siravel\Logic\Tools\Plugin\PhpParallelLint;
-use Siravel\Logic\Tools\Store\Factory;
-use Siravel\Logic\Tools\Store\ProjectStore;
-use Siravel\Logic\Tools\Store\BuildErrorStore;
+use SiUtils\Tools\Plugin\PhpParallelLint;
+use SiUtils\Tools\Store\Factory;
+use SiUtils\Tools\Store\ProjectStore;
+use SiUtils\Tools\Store\BuildErrorStore;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Siravel\Models\Infra\Ci\Base\Build as BaseBuild;
-use Siravel\Logic\Tools\Exception\InvalidArgumentException;
+use SiUtils\Tools\Exception\InvalidArgumentException;
 
 /**
  * @author Ricardo Sierra <ricardo@sierratecnologia.com>

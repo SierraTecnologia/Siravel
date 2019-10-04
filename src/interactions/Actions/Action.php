@@ -128,7 +128,7 @@ class Action
         $actions[] = self::insertAction(
             'scanDomain',
             \App\Models\Infra\Domain::class, // Ou Url
-            \App\Logic\Actions\Worker\Explorer\Spider::class,
+            \SiInteraction\Actions\Worker\Explorer\Spider::class,
             self::$spider
         );
 
@@ -138,7 +138,7 @@ class Action
         $actions[] = self::insertAction(
             'whoisDomain',
             \App\Models\Infra\Domain::class, // Ou Url
-            \App\Logic\Actions\Worker\Explorer\Whois::class,
+            \SiInteraction\Actions\Worker\Explorer\Whois::class,
             self::$spider
         );
 
@@ -153,7 +153,7 @@ class Action
         $actions[] = self::insertAction(
             'backupDatabase',
             \App\Models\Infra\DatabaseCollection::class,
-            \App\Logic\Actions\Worker\Sync\Keys\BackupCollection::class,
+            \SiInteraction\Actions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
 
@@ -163,7 +163,7 @@ class Action
         $actions[] = self::insertAction(
             'searchLog',
             \App\Models\Infra\Computer::class,
-            \App\Logic\Actions\Worker\Logging\Logging::class,
+            \SiInteraction\Actions\Worker\Logging\Logging::class,
             self::$routine
         );
 
@@ -179,7 +179,7 @@ class Action
         $actions[] = self::insertAction(
             'analyseComit',
             \App\Models\Code\Commit::class,
-            \App\Logic\Actions\Worker\Analyser\Analyser::class,
+            \SiInteraction\Actions\Worker\Analyser\Analyser::class,
             self::$hook
         );
 
@@ -189,7 +189,7 @@ class Action
         $actions[] = self::insertAction(
             'deployCommit',
             \App\Models\Code\Commit::class,
-            \App\Logic\Actions\Worker\Deploy\Deploy::class,
+            \SiInteraction\Actions\Worker\Deploy\Deploy::class,
             self::$hook
         );
 
@@ -203,7 +203,7 @@ class Action
         $actions[] = self::insertAction(
             'importIntegrationToken',
             \App\Models\Integrations\Token::class,
-            \App\Logic\Actions\Worker\Sync\Keys\ImportFromToken::class,
+            \SiInteraction\Actions\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );
 
@@ -213,7 +213,7 @@ class Action
         $actions[] = self::insertAction(
             'syncProject',
             \App\Models\Code\Project::class,
-            \App\Logic\Actions\Worker\Sync\Project::class,
+            \SiInteraction\Actions\Worker\Sync\Project::class,
             self::$hook
         );
 

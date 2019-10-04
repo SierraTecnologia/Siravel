@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Build;
+namespace SiUtils\Tools\Model\Build;
 
-use Siravel\Logic\Tools\Builder;
+use SiUtils\Tools\Builder;
 use Siravel\Models\Infra\Ci\Build;
 
 class BitbucketServerBuild extends GitBuild

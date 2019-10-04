@@ -8,14 +8,14 @@ use SiWeapons\Integrations\Instagram\Instagram;
 use SiWeapons\Integrations\Instagram\Facebook;
 
 
-use App\SiInteraction\Actions\PublishPost;
-use App\SiInteraction\Actions\SearchFollows;
+use SiInteraction\Actions\PublishPost;
+use SiInteraction\Actions\SearchFollows;
 
 
 
-use App\Routines\ForceNewRelations;
-use App\Routines\GetNewData;
-use App\Routines\SendNewData;
+use SiInteraction\Routines\ForceNewRelations;
+use SiInteraction\Routines\GetNewData;
+use SiInteraction\Routines\SendNewData;
 
 use SiObjects\Components\Comment;
 use SiObjects\Components\Post;

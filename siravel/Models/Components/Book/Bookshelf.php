@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Book;
 
-use Siravel\Logic\Entitys\Uploads\Image;
+use SiObjects\Entitys\Uploads\Image;
 
 class Bookshelf extends Entity
 {

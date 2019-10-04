@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Actions\Routines\Globals;
 
-use App\Logic\Actions\Routines\Tokens\ImportRoutine;
+use SiInteraction\Actions\Routines\Tokens\ImportRoutine;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;

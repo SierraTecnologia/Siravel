@@ -1,6 +1,6 @@
 <?php
 
-use Siravel\Logic\Entitys\Uploads\Image;
+use SiObjects\Entitys\Uploads\Image;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 

@@ -12,10 +12,10 @@
 
 namespace SiInteractions\Actions\Worker\Analyser\Logging;
 
-use App\Logic\Actions\Worker\Logging\Plugins\Apache;
-use App\Logic\Actions\Worker\Logging\Plugins\Iis;
-use App\Logic\Actions\Worker\Logging\Plugins\Nginx;
-use App\Logic\Actions\Worker\Logging\Plugins\Php;
+use SiInteraction\Actions\Worker\Logging\Plugins\Apache;
+use SiInteraction\Actions\Worker\Logging\Plugins\Iis;
+use SiInteraction\Actions\Worker\Logging\Plugins\Nginx;
+use SiInteraction\Actions\Worker\Logging\Plugins\Php;
 
 class ConfigPlugins {
 

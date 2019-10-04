@@ -6,9 +6,9 @@
 namespace SiInteractions\Actions\Routines\Readables;
 
 use Illuminate\Support\Facades\Log;
-use App\Logic\Entitys\Components\Pipeline as PipelineComponent;
-use App\Logic\Actions\Pipelines\ArticlePipeline;
-use App\Logic\Actions\Pipelines\Readables\RrsImporterStage;
+use App\Logic\ComponentsPipeline as PipelineComponent;
+use SiInteraction\Actions\Routines\ArticlePipeline;
+use SiInteraction\Actions\Routines\Readables\RrsImporterStage;
 use Exception;
 
 class NewsRoutine

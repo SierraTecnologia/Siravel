@@ -3,7 +3,7 @@
 namespace SiObjects\Manipule\Managers\Photo;
 
 use App\Models\Photo;
-use Siravel\Services\Image\Contracts\ImageProcessor;
+use SiInteractions\Services\Image\Contracts\ImageProcessor;
 use SiObjects\Support\Contracts\LocationManager;
 use SiObjects\Support\Contracts\PhotoManager;
 use SiObjects\Manipule\Entities\PhotoEntity;

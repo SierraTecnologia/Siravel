@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Build;
+namespace SiUtils\Tools\Model\Build;
 
 use Siravel\Models\Infra\Ci\Build;
-use Siravel\Logic\Tools\Builder;
+use SiUtils\Tools\Builder;
 
 /**
  * Local Build Model

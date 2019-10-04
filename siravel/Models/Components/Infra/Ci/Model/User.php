@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model;
+namespace SiUtils\Tools\Model;
 
-use Siravel\Logic\Tools\Config;
+use SiUtils\Tools\Config;
 use Siravel\Models\Infra\Ci\Base\User as BaseUser;
 
 /**

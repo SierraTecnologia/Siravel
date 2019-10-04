@@ -1,6 +1,6 @@
 <?php namespace Siravel\Models\Book;
 
-use Siravel\Logic\Entitys\Uploads\Attachment;
+use SiObjects\Entitys\Uploads\Attachment;
 
 class Page extends Entity
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Controllers\Interactions;
+namespace Siravel\Http\Controllers\Interactions;
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Build;
+namespace SiUtils\Tools\Model\Build;
 
 use Siravel\Models\Infra\Ci\Build;
 

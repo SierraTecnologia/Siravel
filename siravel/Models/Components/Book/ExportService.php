@@ -1,7 +1,7 @@
 <?php namespace Siravel\Models\Book;
 
 use Siravel\Models\Book\Repos\EntityRepo;
-use Siravel\Logic\Entitys\Uploads\ImageService;
+use SiObjects\Entitys\Uploads\ImageService;
 
 class ExportService
 {

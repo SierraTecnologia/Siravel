@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Logic\Tools\Model\Base;
+namespace SiUtils\Tools\Model\Base;
 
-use Siravel\Logic\Tools\Model;
-use Siravel\Logic\Tools\Exception\InvalidArgumentException;
+use SiUtils\Tools\Model;
+use SiUtils\Tools\Exception\InvalidArgumentException;
 
 class BuildMeta extends Model
 {

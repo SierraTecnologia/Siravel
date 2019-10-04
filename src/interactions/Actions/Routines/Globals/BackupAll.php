@@ -5,11 +5,11 @@
 
 namespace SiInteractions\Actions\Routines\Globals;
 
-use App\Logic\Actions\Routines\Database\BackupRoutine;
+use SiInteraction\Actions\Routines\Database\BackupRoutine;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use App\Logic\Actions\Worker\Sync\Database\BackupCollection;
+use SiInteraction\Actions\Worker\Sync\Database\BackupCollection;
 
 use App\Models\Infra\Database;
 use App\Models\Infra\DatabaseCollection;

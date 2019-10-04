@@ -1,7 +1,7 @@
 <?php
 namespace SiInteractions\Actions\Worker\Analyser\Tools;
 
-use App\Logic\Actions\Worker\Analyser\AnalysisResult;
+use SiInteraction\Actions\Worker\Analyser\AnalysisResult;
 use Sabre\Xml\Reader;
 
 /**

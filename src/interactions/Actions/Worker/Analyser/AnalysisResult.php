@@ -1,7 +1,7 @@
 <?php
 namespace SiInteractions\Actions\Worker\Analyser;
 
-use App\Logic\Actions\Worker\Analyser\Output\Filter\OutputFilterInterface;
+use SiInteraction\Actions\Worker\Analyser\Output\Filter\OutputFilterInterface;
 
 /**
  * Code analysis result.

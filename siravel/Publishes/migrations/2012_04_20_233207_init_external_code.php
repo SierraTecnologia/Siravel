@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-use App\Logic\Entitys\Components\Navegador;
-use App\Logic\Entitys\Components\Directory;
+use App\Logic\ComponentsNavegador;
+use App\Logic\ComponentsDirectory;
 
 class InitExternalCode extends Migration
 {

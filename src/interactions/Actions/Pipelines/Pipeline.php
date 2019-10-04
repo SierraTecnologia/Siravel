@@ -11,8 +11,8 @@ use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use League\Pipeline\PipelineBuilder;
 
-use App\Logic\Actions\Pipelines\Contracts\Registrator;
-use App\Logic\Actions\Pipelines\Contracts\Notificator;
+use SiInteraction\Actions\Routines\Contracts\Registrator;
+use SiInteraction\Actions\Routines\Contracts\Notificator;
 
 class Pipeline extends PipelineBuilder
 {

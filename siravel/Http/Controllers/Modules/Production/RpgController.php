@@ -1,8 +1,8 @@
 <?php
 
-namespace SiObject\Http\Controllers\Production;
+namespace Siravel\Http\Controllers\Production;
 
-use SiObject\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Rpg;
 use App\RpgCategory;
 use App\Language;

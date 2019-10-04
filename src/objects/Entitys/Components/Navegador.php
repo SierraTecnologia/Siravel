@@ -5,8 +5,8 @@
 
 namespace SiObjects\Entitys\Components;
 
-use App\Logic\Entitys\Components\File;
-use App\Logic\Entitys\Components\Directory;
+use App\Logic\ComponentsFile;
+use App\Logic\ComponentsDirectory;
 
 use App\Logic\Connections\Filesystem\Local;
 use App\Logic\Connections\Filesystem\Dropbox;
