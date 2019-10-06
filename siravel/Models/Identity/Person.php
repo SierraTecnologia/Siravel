@@ -3,7 +3,7 @@
 namespace Siravel\Models\Identity;
 
 use Siravel\Models\Model;
-use Siravel\Traits\Models\AsHuman;
+use SiObjects\Support\Traits\Models\AsHuman;
 
 class Person extends Model
 {
