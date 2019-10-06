@@ -12,7 +12,7 @@
 
 namespace Siravel\Models\Actions\Bot;
 
-use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
+use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
 use Siravel\Actions\Action;
 use Illuminate\Support\Facades\Log;

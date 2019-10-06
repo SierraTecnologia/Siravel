@@ -3,7 +3,7 @@
 namespace Siravel\Models\Identity;
 
 use App\Models\Model;
-use Siravel\Support\Traits\Models\ComplexRelationamentTrait;
+use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 
 class Address extends Model
 {

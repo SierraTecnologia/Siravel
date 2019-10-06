@@ -2,9 +2,9 @@
 
 namespace Siravel\Models\System;
 
-use Siravel\Support\Traits\Models\ArchiveTrait;
+use SiObjects\Support\Traits\Models\ArchiveTrait;
 
-use Siravel\Support\Traits\Models\BusinessTrait;
+use SiObjects\Support\Traits\Models\BusinessTrait;
 
 class Analytics extends ArchiveTrait
 {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\System;
 
-use Siravel\Support\Traits\Models\ArchiveTrait;
+use SiObjects\Support\Traits\Models\ArchiveTrait;
 
 
 /**
