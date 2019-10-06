@@ -3,7 +3,7 @@
 namespace SiWeapons\Integrations\Xvideos;
 
 use Illuminate\Support\Facades\Log;
-// use App\Models\Midia\Video;
+// use Siravel\Models\Digital\Midia\Video;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

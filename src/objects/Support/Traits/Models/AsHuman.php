@@ -24,7 +24,7 @@ trait AsHuman
      */
     public function videos()
     {
-        return $this->morphedByMany('App\Models\Midia\Video', 'personable');
+        return $this->morphedByMany('Siravel\Models\Digital\Midia\Video', 'personable');
     }
 
     /**
@@ -32,7 +32,7 @@ trait AsHuman
      */
     public function images()
     {
-        return $this->morphedByMany('App\Models\Midia\Image', 'personable');
+        return $this->morphedByMany('Siravel\Models\Digital\Midia\Image', 'personable');
     }
 
     /**

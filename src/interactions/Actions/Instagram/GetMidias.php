@@ -5,7 +5,7 @@ namespace SiInteractions\Actions\Instagram;
 use Siravel\Models\Actions\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
-use App\Models\Midia\Image;
+use Siravel\Models\Digital\Midia\Image;
 
 class GetMidias extends Instagram
 {

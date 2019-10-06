@@ -2,7 +2,7 @@
 
 namespace SiObjects\Manipule\Builders;
 
-use App\Models\Midia\Photo;
+use Siravel\Models\Digital\Midia\Photo;
 use App\Contants\Tables;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;

@@ -1,8 +1,8 @@
 <?php 
 namespace Siravel\Http\Controllers\Midia;
 
-use App\Models\Midia\Photo;
-use App\Models\Midia\PhotoAlbum;
+use Siravel\Models\Digital\Midia\Photo;
+use Siravel\Models\Digital\Midia\PhotoAlbum;
 
 class PhotoController extends Controller {
 
