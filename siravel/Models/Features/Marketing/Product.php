@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Marketing;
+namespace App\Models\Features\Marketing;
 
 use App\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;

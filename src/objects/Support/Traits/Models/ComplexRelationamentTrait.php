@@ -13,7 +13,7 @@ trait ComplexRelationamentTrait
 {
     // Acrescentar na tabela
     // protected static $COMPLEX_RELATIONAMENT_MODELS = [
-    //     \App\Models\Qa\AnalyzerResult::class
+    //     \Siravel\Models\Features\Qa\AnalyzerResult::class
     // ];
 
     public static function getTableName()

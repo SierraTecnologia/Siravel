@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Qa;
+namespace Siravel\Models\Features\Qa;
 
 use Siravel\Models\Model;
 use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;

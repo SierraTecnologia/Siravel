@@ -11,7 +11,7 @@
  * -> Customer (Consumidor Final, pagando e adquirindo os produtos do cliente)
  */
 
-namespace Siravel\Models;
+namespace Siravel\Models\Features;
 
 class Estatistica extends Model
 {

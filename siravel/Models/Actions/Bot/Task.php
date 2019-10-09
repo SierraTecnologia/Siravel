@@ -26,7 +26,7 @@ class Task extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \App\Models\Qa\AnalyzerResult::class
+            \Siravel\Models\Features\Qa\AnalyzerResult::class
         ]
     ];
 
