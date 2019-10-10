@@ -16,8 +16,7 @@
 
         "ricardosierra/phpwhois": "dev-dev",
         "ricardosierra/validate": "^0.2",
-        "ricardosierra/translation": "dev-master",
-        "sierratecnologia/tools": "dev-master"
+        "ricardosierra/translation": "dev-master"
     },
     "autoload": {
         "psr-4": {
