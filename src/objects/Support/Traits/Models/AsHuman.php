@@ -73,7 +73,7 @@ trait AsHuman
     }
     public function productions()
     {
-        return $this->morphToMany('App\Models\Components\Productions\Production', 'productionable');
+        return $this->morphToMany('Siravel\Models\Components\Productions\Production', 'productionable');
     }
     
     /**

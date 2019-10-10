@@ -3,7 +3,13 @@
     "description": "Recursos para Desenvolvimento Complexo",
     "license": "MIT",
     "require": {
-        "illuminate/support": "^5.8"
+        "illuminate/support": "^5.8",
+        "cmgmyr/messenger": "^2.17",
+        "sierratecnologia/facilitador": "dev-master",
+
+        "ricardosierra/phpwhois": "dev-dev",
+        "ricardosierra/validate": "^0.2",
+        "ricardosierra/translation": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
@@ -11,12 +17,7 @@
         "mikey179/vfsstream": ">=1.6",
         "orchestra/database": ">=3.6",
         "phpunit/phpunit": ">=7.0",
-        "orchestra/testbench-browser-kit": ">=3.6",
-        "sierratecnologia/facilitador": "dev-master",
-
-        "ricardosierra/phpwhois": "dev-dev",
-        "ricardosierra/validate": "^0.2",
-        "ricardosierra/translation": "dev-master"
+        "orchestra/testbench-browser-kit": ">=3.6"
     },
     "autoload": {
         "psr-4": {
