@@ -3,9 +3,11 @@
 namespace Siravel\Models\Fisicos;
 
 use Siravel\Models\Model;
+use SiObjects\Support\Traits\Models\AsFofocavel;
 
 class Weapon extends Model
 {
+    use AsFofocavel;
 
     protected $organizationPerspective = false;
 

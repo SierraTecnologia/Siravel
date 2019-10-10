@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 
 trait AsHuman
 {
-    use MakeEconomicActions;
+    use MakeEconomicActions, AsFofocavel;
 
 
         
@@ -60,22 +60,12 @@ trait AsHuman
         return true;
     }
 
-
-
     /**
      * Many To Many (Polymorphic)
      */
     public function skills()
     {
         return $this->morphToMany('Siravel\Models\Identity\Hability\Skill', 'skillable');
-    }
-    public function gostos()
-    {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Gosto', 'gostoable');
-    }
-    public function sitios()
-    {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Sitio', 'sitioable');
     }
     public function itens()
     {
@@ -91,10 +81,6 @@ trait AsHuman
      *
      * @return void
      */
-    public function infos()
-    {
-        return $this->morphMany('Siravel\Models\Identity\Hability\Info', 'infoable');
-    }
     public function pircings()
     {
         return $this->morphMany('Siravel\Models\Identity\Hability\Pircing', 'pircingable');
