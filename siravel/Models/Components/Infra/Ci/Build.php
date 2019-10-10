@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Model;
 
 use SiUtils\Tools\Builder;
-use Siravel\Helper\Lang;
+use SiUtils\Helper\Lang;
 use SiUtils\Tools\Plugin\PhpParallelLint;
 use SiUtils\Tools\Store\Factory;
 use SiUtils\Tools\Store\ProjectStore;

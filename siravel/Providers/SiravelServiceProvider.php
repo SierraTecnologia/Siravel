@@ -4,7 +4,7 @@ namespace Siravel\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Siravel\Helpers\StoreHelper;
+use SiUtils\Helpers\StoreHelper;
 use Siravel\Services\CartService;
 use Siravel\Services\CustomerProfileService;
 use Siravel\Services\LogisticService;

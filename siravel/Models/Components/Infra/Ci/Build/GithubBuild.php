@@ -4,8 +4,8 @@ namespace SiUtils\Tools\Model\Build;
 
 use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;
-use Siravel\Helper\Diff;
-use Siravel\Helper\Github;
+use SiUtils\Helper\Diff;
+use SiUtils\Helper\Github;
 use SiUtils\Tools\Config;
 use Siravel\Models\Components\Infra\Ci\Build;
 use Siravel\Models\Components\Infra\Ci\BuildError;

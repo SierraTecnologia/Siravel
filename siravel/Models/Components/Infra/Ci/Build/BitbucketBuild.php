@@ -4,11 +4,11 @@ namespace SiUtils\Tools\Model\Build;
 
 use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;
-use Siravel\Helper\Bitbucket;
+use SiUtils\Helper\Bitbucket;
 use SiUtils\Tools\Config;
 use Siravel\Models\Components\Infra\Ci\Build;
 use Siravel\Models\Components\Infra\Ci\BuildError;
-use Siravel\Helper\Diff;
+use SiUtils\Helper\Diff;
 
 /**
  * BitBucket Build Model

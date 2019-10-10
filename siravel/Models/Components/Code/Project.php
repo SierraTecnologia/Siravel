@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;
 
 use Siravel\Models\Model;
-use Siravel\Helper\General;
+use SiUtils\Helper\General;
 
 class Project extends Model
 {
