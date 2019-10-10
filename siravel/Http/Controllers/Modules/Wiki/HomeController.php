@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Wiki;
+namespace Siravel\Http\Controllers\Modules\Wiki;
 
 class HomeController extends Controller
 {
@@ -29,7 +29,7 @@ class HomeController extends Controller
 	 */
 	public function changeApplicationLanguage($code)
 	{
-		if($language = \App\Language::whereCode($code)->first())
+		if($language = \Siravel\Models\System\Language::whereCode($code)->first())
 			event('language.change', $language);
 
 		return redirect(\URL::previous() ?: route('home'));

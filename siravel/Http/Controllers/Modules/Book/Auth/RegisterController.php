@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Book\Auth;
+namespace Siravel\Http\Controllers\Modules\Book\Auth;
 
 use Siravel\Models\SocialAccount;
 use App\Models\User;
@@ -8,7 +8,7 @@ use Siravel\Models\UserRepo;
 use Siravel\Exceptions\SocialSignInAccountNotUsed;
 use Siravel\Exceptions\SocialSignInException;
 use Siravel\Exceptions\UserRegistrationException;
-use Siravel\Http\Controllers\Book\Controller;
+use Siravel\Http\Controllers\Modules\Book\Controller;
 use Exception;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;

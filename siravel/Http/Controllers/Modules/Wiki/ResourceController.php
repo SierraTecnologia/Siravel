@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Wiki;
+namespace Siravel\Http\Controllers\Modules\Wiki;
 
 use DomainException;
 use Illuminate\Database\Eloquent\Model;

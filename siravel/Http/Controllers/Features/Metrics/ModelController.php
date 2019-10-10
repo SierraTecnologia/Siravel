@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Providers\Metrics\Http\Controllers;
+namespace Siravel\Http\Controllers\Features\Metrics;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

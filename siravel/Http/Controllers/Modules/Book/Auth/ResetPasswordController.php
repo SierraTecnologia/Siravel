@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Http\Controllers\Book\Auth;
+namespace Siravel\Http\Controllers\Modules\Book\Auth;
 
-use Siravel\Http\Controllers\Book\Controller;
+use Siravel\Http\Controllers\Modules\Book\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

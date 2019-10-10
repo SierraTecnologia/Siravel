@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Book;
+namespace Siravel\Http\Controllers\Modules\Book;
 
 use App\Models\User;
 use Siravel\Models\Ownable;

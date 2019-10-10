@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Wiki;
+namespace Siravel\Http\Controllers\Modules\Wiki;
 
 use Siravel\Http\Requests\CreateRoleRequest as CreateRequest;
 use Siravel\Http\Requests\CreateRoleRequest as UpdateRequest;

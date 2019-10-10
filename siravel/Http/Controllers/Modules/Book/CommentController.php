@@ -1,4 +1,4 @@
-<?php namespace Siravel\Http\Controllers\Book;
+<?php namespace Siravel\Http\Controllers\Modules\Book;
 
 use Activity;
 use Siravel\Actions\Book\CommentRepo;

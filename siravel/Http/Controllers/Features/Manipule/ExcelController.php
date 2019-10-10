@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers;
+namespace Siravel\Http\Controllers\Features\Manipule;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

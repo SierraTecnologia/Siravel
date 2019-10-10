@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Http\Controllers\Production;
+namespace Siravel\Http\Controllers\Modules\Production;
 
 use Siravel\Http\Controllers\Controller;
 use App\Models\Production;
-use App\Language;
+use Siravel\Models\System\Language;
 use Illuminate\Support\Facades\Input;
 use SiObject\Http\Requests\Admin\ProductionRequest;
 use Illuminate\Support\Facades\Auth;

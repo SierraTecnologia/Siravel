@@ -1,4 +1,4 @@
-<?php namespace Siravel\Http\Controllers\Book;
+<?php namespace Siravel\Http\Controllers\Modules\Book;
 
 use Siravel\Actions\Book\ViewService;
 use Siravel\Models\Components\Book\Repos\EntityRepo;

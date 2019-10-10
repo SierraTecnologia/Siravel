@@ -1,5 +1,5 @@
 <?php 
-namespace Siravel\Http\Controllers\Midia;
+namespace Siravel\Http\Controllers\Modules\Midia;
 
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Digital\Midia\PhotoAlbum;

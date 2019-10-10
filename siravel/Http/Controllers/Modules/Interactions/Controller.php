@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Interactions;
+namespace Siravel\Http\Controllers\Modules\Interactions;
 
 use Response;
 use Siravel\Http\Controllers\Controller as BaseController;

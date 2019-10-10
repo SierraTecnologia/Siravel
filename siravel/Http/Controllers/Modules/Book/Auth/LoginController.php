@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Http\Controllers\Book\Auth;
+namespace Siravel\Http\Controllers\Modules\Book\Auth;
 
 use Siravel\Models\Access\LdapService;
 use Siravel\Models\Access\SocialAuthService;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\AuthException;
-use Siravel\Http\Controllers\Book\Controller;
+use Siravel\Http\Controllers\Modules\Book\Controller;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;

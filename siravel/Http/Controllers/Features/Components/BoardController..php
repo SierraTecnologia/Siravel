@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Components;
+namespace Siravel\Http\Controllers\Features\Components;
 
 use Siravel\Http\Controllers\Controller as BaseController;
 use SiObjects\Entitys\Components\Navegador as NavegadorComponent;

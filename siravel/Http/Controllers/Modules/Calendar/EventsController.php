@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Calendar;
+namespace Siravel\Http\Controllers\Modules\Calendar;
 
 use Siravel\Http\Controllers\Controller;
 use Siravel\Services\EventService;

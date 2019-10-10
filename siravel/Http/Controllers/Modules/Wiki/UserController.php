@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Wiki;
+namespace Siravel\Http\Controllers\Modules\Wiki;
 
 use Siravel\Http\Requests\CreateUserRequest as CreateRequest;
 use Siravel\Http\Requests\CreateUserRequest as UpdateRequest;
@@ -54,7 +54,7 @@ class UserController extends ResourceController
 	protected function showForm($subtitle, $action, $method = 'POST')
 	{
 		view()->share([
-			'languages' => \App\Language::orderBy('name')->withTrashed()->lists('name', 'id'),
+			'languages' => \Siravel\Models\System\Language::orderBy('name')->withTrashed()->lists('name', 'id'),
 			'providers' => \App\Models\Provider::orderBy('name')->withTrashed()->lists('name', 'id'),
 			'role' => \App\Role::orderBy('name')->lists('name', 'id'),
 		]);

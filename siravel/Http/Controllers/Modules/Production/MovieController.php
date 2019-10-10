@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Http\Controllers\Production;
+namespace Siravel\Http\Controllers\Modules\Production;
 
 use Siravel\Http\Controllers\Controller;
 use App\Movie;
 use App\MovieCategory;
-use App\Language;
+use Siravel\Models\System\Language;
 use Illuminate\Support\Facades\Input;
 use SiObject\Http\Requests\Admin\MovieRequest;
 use Illuminate\Support\Facades\Auth;
