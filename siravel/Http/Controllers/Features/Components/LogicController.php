@@ -7,7 +7,7 @@ use Exception;
 use Throwable;
 
 
-class PlaygroundController extends BaseController
+class LogicController extends BaseController
 {
     public static $root = 'playground';
 
