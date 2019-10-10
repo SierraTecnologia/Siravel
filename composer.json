@@ -11,7 +11,13 @@
         "mikey179/vfsstream": ">=1.6",
         "orchestra/database": ">=3.6",
         "phpunit/phpunit": ">=7.0",
-        "orchestra/testbench-browser-kit": ">=3.6"
+        "orchestra/testbench-browser-kit": ">=3.6",
+        "sierratecnologia/facilitador": "dev-master",
+
+        "ricardosierra/phpwhois": "dev-dev",
+        "ricardosierra/validate": "^0.2",
+        "ricardosierra/translation": "dev-master",
+        "sierratecnologia/tools": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -34,6 +40,15 @@
         "post-update-cmd": [],
         "post-create-project-cmd": []
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../Sitec/Libs/Facilitador",
+            "options": {
+                "symlink": false
+            }
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": {
