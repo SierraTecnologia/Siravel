@@ -3,11 +3,9 @@
 namespace Siravel\Models\Identity\Business;
 
 use Siravel\Models\User;
-use Siravel\Http\Bots\Traits\Conversador;
 
 class Business extends User
 {
-    use Conversador;
 
     protected $organizationPerspective = false;
 
