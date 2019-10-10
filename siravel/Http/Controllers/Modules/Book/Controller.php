@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Book;
 
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\Ownable;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;

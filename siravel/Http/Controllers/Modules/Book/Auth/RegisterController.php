@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Book\Auth;
 
 use Siravel\Models\SocialAccount;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\SocialSignInAccountNotUsed;
 use Siravel\Exceptions\SocialSignInException;

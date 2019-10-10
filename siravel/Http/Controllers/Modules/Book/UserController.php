@@ -1,7 +1,7 @@
 <?php namespace Siravel\Http\Controllers\Book;
 
 use Siravel\Models\Access\SocialAuthService;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\UserUpdateException;
 use Illuminate\Http\Request;

@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Wiki;
 
 use Siravel\Http\Requests\SocialLoginRequest;
 use Siravel\Models\Provider;
-use Siravel\Models\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Contracts\User as SocialUser;

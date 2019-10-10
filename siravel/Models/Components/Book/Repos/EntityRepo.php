@@ -3,7 +3,7 @@
 use Siravel\Actions\Book\TagRepo;
 use Siravel\Actions\Book\ViewService;
 use Siravel\Models\Permissions\PermissionService;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\Components\Book\Book;
 use Siravel\Models\Components\Book\Bookshelf;
 use Siravel\Models\Components\Book\Chapter;

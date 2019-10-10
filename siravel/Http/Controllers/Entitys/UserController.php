@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\Role;
 use Siravel\Models\Customer;
 use Auth;

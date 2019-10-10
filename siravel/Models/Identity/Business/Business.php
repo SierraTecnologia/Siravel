@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Identity\Business;
 
-use Siravel\Models\User;
+use App\Models\User;
 
 class Business extends User
 {

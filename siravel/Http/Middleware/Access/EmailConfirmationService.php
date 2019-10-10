@@ -1,6 +1,6 @@
 <?php namespace Siravel\Models\Access;
 
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\ConfirmationEmailException;
 use Siravel\Exceptions\UserRegistrationException;

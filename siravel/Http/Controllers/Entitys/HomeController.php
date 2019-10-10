@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\Components\Code\Project;
 use Siravel\Models\Components\Code\Issue;
 use Siravel\Models\Identity\Business\Collaborator;

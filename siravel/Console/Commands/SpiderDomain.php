@@ -7,7 +7,7 @@ use Siravel\Models\MediaSend;
 use Siravel\Models\MediaEmail;
 use Siravel\Models\MediaPush;
 use Siravel\Models\Company;
-use Siravel\Models\User;
+use App\Models\User;
 use SendGrid;
 use Siravel\Http\Controllers\Api\Controller;
 

@@ -1,6 +1,6 @@
 <?php namespace Siravel\Models\Components\Book;
 
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\Model;
 
 class PageRevision extends Model

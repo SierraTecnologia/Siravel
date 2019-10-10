@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\UserRepo;
 use Illuminate\Console\Command;
 

@@ -2,7 +2,7 @@
 
 use Siravel\Models\Access;
 use Siravel\Models\Role;
-use Siravel\Models\User;
+use App\Models\User;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
