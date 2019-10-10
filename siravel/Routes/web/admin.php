@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('Admin')->group(function () {
+Route::prefix('admin')->group(function () {
     Route::namespace('Admin')->group(function () {
         Route::get('/', 'HomeController@index');
         Route::get('/home', 'HomeController@index')->name('home');
