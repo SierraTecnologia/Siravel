@@ -42,7 +42,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../../Sitec/Libs/Facilitador",
+            "url": "../Facilitador",
             "options": {
                 "symlink": false
             }
