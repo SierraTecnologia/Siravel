@@ -37,6 +37,7 @@ class SiravelProvider extends ServiceProvider
         $this->app->register(\Siravel\Providers\SiravelEventServiceProvider::class);
         $this->app->register(\Siravel\Providers\SiravelServiceProvider::class);
         $this->app->register(\Siravel\Providers\SiravelRouteProvider::class);
+        $this->app->register(\SierraTecnologia\Facilitador\FacilitadorProvider::class);
 
         // View namespace
         $this->loadViewsFrom(__DIR__.'/Views', 'siravel');
