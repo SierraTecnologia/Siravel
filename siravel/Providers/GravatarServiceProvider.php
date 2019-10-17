@@ -2,7 +2,10 @@
 
 namespace Siravel\Providers;
 
+use App;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Siravel\Services\Gravatar;
 
 class GravatarServiceProvider extends ServiceProvider
 {
