@@ -34,18 +34,7 @@ class SiravelProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(\Siravel\Providers\SiravelEventServiceProvider::class);
-        $this->app->register(\Siravel\Providers\SiravelServiceProvider::class);
-        $this->app->register(\Siravel\Providers\SiravelRouteProvider::class);
-
-        /**
-         * Dependencias
-         */
-        $this->app->register(\SierraTecnologia\Facilitador\FacilitadorProvider::class);
-        /**
-         * Externos
-         */
-        $this->app->register(\Siravel\Providers\GravatarServiceProvider::class);
+        $this->setProviders();
 
         // View namespace
         $this->loadViewsFrom(__DIR__.'/Views', 'siravel');
@@ -68,5 +57,26 @@ class SiravelProvider extends ServiceProvider
         */
 
         $this->commands([]);
+    }
+
+    protected function setProviders()
+    {
+        $this->app->register(\Siravel\Providers\SiravelEventServiceProvider::class);
+        $this->app->register(\Siravel\Providers\SiravelServiceProvider::class);
+        $this->app->register(\Siravel\Providers\SiravelRouteProvider::class);
+        /**
+         * Dependencias
+         */
+        $this->app->register(\SierraTecnologia\Facilitador\FacilitadorProvider::class);
+        
+        /**
+         * Externos
+         */
+        $this->app->register(\Siravel\Providers\GravatarServiceProvider::class);
+        
+        /**
+         * Serviços
+         */
+        $this->app->register(\Cmgmyr\Messenger\MessengerServiceProvider::class);
     }
 }
