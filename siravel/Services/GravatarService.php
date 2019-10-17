@@ -37,7 +37,7 @@ use \InvalidArgumentException;
  * @license     MIT License
  * @link        https://github.com/emberlabs/gravatarlib
  */
-class Gravatar
+class GravatarService
 {
 	/**
 	 * @var integer - The size to use for avatars.
