@@ -23,7 +23,7 @@
         "psr-4": {
             "SiUtils\\": "utils/",
             "Siravel\\": "siravel/",
-            "SiInteractions\\": "src/interactions/",
+            "SiInteractions\\": "src/components/",
             "SiLogic\\": "src/logic/",
             "SiObjects\\": "src/objects/",
             "SiWeapons\\": "src/recursos/",
