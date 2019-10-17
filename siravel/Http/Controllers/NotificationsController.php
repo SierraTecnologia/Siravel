@@ -7,12 +7,6 @@ use Auth;
 
 class NotificationsController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function unread()
     {
         if (Auth::user()->notification_count > 0 && Auth::user()->message_count == 0) {

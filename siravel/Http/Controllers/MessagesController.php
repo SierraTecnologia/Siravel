@@ -18,11 +18,6 @@ use App\Http\Requests\MessageRequest;
 
 class MessagesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $threads = Thread::participateBy(Auth::id());

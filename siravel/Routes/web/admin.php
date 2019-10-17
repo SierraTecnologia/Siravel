@@ -1,6 +1,8 @@
 <?php
 
 Route::prefix('admin')->group(function () {
+
+    
     // ADmin Router
     Route::get('/gerenciar/{modulo}', 'AdminController@index');
     Route::get('/gerenciar/{modulo}/{id}', 'AdminController@show');
