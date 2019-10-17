@@ -3,11 +3,22 @@
 namespace SiObjects\Support\Traits\Models;
 
 use Illuminate\Support\Facades\Log;
+// Podem Seguir
+use Overtrue\LaravelFollow\Traits\CanFollow;
+use Overtrue\LaravelFollow\Traits\CanLike;
+use Overtrue\LaravelFollow\Traits\CanFavorite;
+use Overtrue\LaravelFollow\Traits\CanSubscribe;
+use Overtrue\LaravelFollow\Traits\CanVote;
+use Overtrue\LaravelFollow\Traits\CanBookmark;
+// Podem Serem Seguidos
+use Overtrue\LaravelFollow\Traits\CanBeFollowed;
 
 trait AsHuman
 {
     use MakeEconomicActions, AsFofocavel;
 
+    use CanFollow, CanLike, CanFavorite, CanSubscribe, CanVote, CanBookmark;
+    use CanBeFollowed;
 
         
     /**
@@ -119,11 +130,6 @@ trait AsHuman
         return $this->infos()->create([
             'text' => implode(';', $data)
         ]);
-    }
-
-    public function likes()
-    {
-        return $this->morphToMany('Siravel\Models\Identity\Person', 'personable');
     }
 
     /**
