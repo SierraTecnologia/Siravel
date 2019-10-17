@@ -1,8 +1,8 @@
 <?php
 
-namespace SiHelper\Help\Dicionario\Seguranca\Agents;
+namespace SiHelper\Help\Dicionario\Seguranca\Informacao;
 
-class Human extends Agents
+class Human extends Informacao
 {
     public function __construct()
     {
