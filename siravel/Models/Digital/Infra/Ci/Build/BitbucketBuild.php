@@ -6,8 +6,8 @@ use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;
 use SiUtils\Helper\Bitbucket;
 use SiUtils\Tools\Config;
-use SiWeapons\Models\Digital\Infra\Ci\Build;
-use SiWeapons\Models\Digital\Infra\Ci\BuildError;
+use Siravel\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\BuildError;
 use SiUtils\Helper\Diff;
 
 /**

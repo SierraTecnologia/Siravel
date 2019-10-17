@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Models\Digital\Infra;
+namespace Siravel\Models\Digital\Infra;
 
 use Siravel\Models\Model;
 
@@ -46,7 +46,7 @@ class ServiceAccount extends Model
 
     public function service()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Infra\Service', 'infra_service_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Infra\Service', 'infra_service_id', 'id');
     }
 
     public function user()

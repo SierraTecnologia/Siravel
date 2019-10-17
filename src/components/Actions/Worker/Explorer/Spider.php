@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Actions\Worker\Explorer;
 
-use SiWeapons\Models\Digital\Infra\Domain;
-use SiWeapons\Models\Digital\Internet\Url;
-use SiWeapons\Models\Digital\Internet\UrlLink;
+use Siravel\Models\Digital\Infra\Domain;
+use Siravel\Models\Digital\Internet\Url;
+use Siravel\Models\Digital\Internet\UrlLink;
 
 /**
  * Spider Class

@@ -4,8 +4,8 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use SiWeapons\Models\Digital\Code\Project;
-use SiWeapons\Models\Digital\Code\Issue;
+use Siravel\Models\Digital\Code\Project;
+use Siravel\Models\Digital\Code\Issue;
 use Siravel\Models\Identity\Business\Collaborator;
 
 class HomeController extends Controller

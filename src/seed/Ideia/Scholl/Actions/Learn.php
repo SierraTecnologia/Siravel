@@ -127,7 +127,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'scanDomain',
-            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
+            \Siravel\Models\Digital\Infra\Domain::class, // Ou Url
             \SiInteraction\Actions\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'whoisDomain',
-            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
+            \Siravel\Models\Digital\Infra\Domain::class, // Ou Url
             \SiInteraction\Actions\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'backupDatabase',
-            \SiWeapons\Models\Digital\Infra\DatabaseCollection::class,
+            \Siravel\Models\Digital\Infra\DatabaseCollection::class,
             \SiInteraction\Actions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'searchLog',
-            \SiWeapons\Models\Digital\Infra\Computer::class,
+            \Siravel\Models\Digital\Infra\Computer::class,
             \SiInteraction\Actions\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'analyseComit',
-            \SiWeapons\Models\Digital\Code\Commit::class,
+            \Siravel\Models\Digital\Code\Commit::class,
             \SiInteraction\Actions\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'deployCommit',
-            \SiWeapons\Models\Digital\Code\Commit::class,
+            \Siravel\Models\Digital\Code\Commit::class,
             \SiInteraction\Actions\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'syncProject',
-            \SiWeapons\Models\Digital\Code\Project::class,
+            \Siravel\Models\Digital\Code\Project::class,
             \SiInteraction\Actions\Worker\Sync\Project::class,
             self::$hook
         );

@@ -16,7 +16,7 @@ class AnalyzerResult extends Model
      * Possui um relacionamento com a tabela Task
      */
     protected static $COMPLEX_RELATIONAMENT_IN_MODELS = [
-        \SiWeapons\Models\Digital\Bot\Task::class
+        \Siravel\Models\Digital\Bot\Task::class
     ];
 
     /**

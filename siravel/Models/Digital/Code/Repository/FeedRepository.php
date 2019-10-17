@@ -10,12 +10,12 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Code\Repository;
+namespace Siravel\Models\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-use SiWeapons\Models\Digital\Code\Project;
-use SiWeapons\Models\Digital\Code\Feed;
+use Siravel\Models\Digital\Code\Project;
+use Siravel\Models\Digital\Code\Feed;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

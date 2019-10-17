@@ -11,8 +11,8 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteraction\Actions\Worker\Sync\Database\BackupCollection;
 
-use SiWeapons\Models\Digital\Infra\Database;
-use SiWeapons\Models\Digital\Infra\DatabaseCollection;
+use Siravel\Models\Digital\Infra\Database;
+use Siravel\Models\Digital\Infra\DatabaseCollection;
 
 class BackupAll extends ActionCollection
 {

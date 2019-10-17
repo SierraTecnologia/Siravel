@@ -7,8 +7,8 @@ use SiUtils\Tools\Builder;
 use SiUtils\Helper\Diff;
 use SiUtils\Helper\Github;
 use SiUtils\Tools\Config;
-use SiWeapons\Models\Digital\Infra\Ci\Build;
-use SiWeapons\Models\Digital\Infra\Ci\BuildError;
+use Siravel\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\BuildError;
 
 /**
  * Github Build Model

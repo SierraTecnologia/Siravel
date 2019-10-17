@@ -10,13 +10,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Code;
+namespace Siravel\Models\Digital\Code;
 
 use Gitonomy\Bundle\CoreBundle\EventDispatcher\Event\PushReferenceEvent;
 
-use SiWeapons\Models\Digital\Code\Message\CloseMessage;
-use SiWeapons\Models\Digital\Code\Message\CommitMessage;
-use SiWeapons\Models\Digital\Code\Message\ForceMessage;
+use Siravel\Models\Digital\Code\Message\CloseMessage;
+use Siravel\Models\Digital\Code\Message\CommitMessage;
+use Siravel\Models\Digital\Code\Message\ForceMessage;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

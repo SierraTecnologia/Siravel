@@ -10,11 +10,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Code\Repository;
+namespace Siravel\Models\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
-use SiWeapons\Models\Digital\Code\User;
+use Siravel\Models\Digital\Code\User;
 
 class UserForgotPasswordRepository extends EntityRepository
 {

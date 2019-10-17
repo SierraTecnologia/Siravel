@@ -4,7 +4,7 @@ namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
 use SiUtils\Tools\Config;
-use SiWeapons\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
 use Symfony\Component\Filesystem\Filesystem;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace SiWeapons\Models\Digital\Infra;
+namespace Siravel\Models\Digital\Infra;
 
 use Siravel\Models\Model;
-use SiWeapons\Models\Digital\Internet\Url;
+use Siravel\Models\Digital\Internet\Url;
 
 class Domain extends Model
 {
@@ -76,6 +76,6 @@ class Domain extends Model
 
     public function urls()
     {
-        return $this->hasMany('SiWeapons\Models\Digital\Internet\Url', 'infra_domain_id', 'id');
+        return $this->hasMany('Siravel\Models\Digital\Internet\Url', 'infra_domain_id', 'id');
     }
 }

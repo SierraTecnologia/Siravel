@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Actions\Models\Accounts;
 
-use SiWeapons\Models\Digital\Code\Account;
+use Siravel\Models\Digital\Code\Account;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;

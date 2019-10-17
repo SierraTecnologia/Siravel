@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Internet;
+namespace Siravel\Models\Digital\Internet;
 
 use Siravel\Models\Model;
 
@@ -32,11 +32,11 @@ class UrlLink extends Model
 
     public function from()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Internet\Url', 'from_bot_internet_url_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Internet\Url', 'from_bot_internet_url_id', 'id');
     }
 
     public function to()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Internet\Url', 'to_bot_internet_url_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Internet\Url', 'to_bot_internet_url_id', 'id');
     }
 }

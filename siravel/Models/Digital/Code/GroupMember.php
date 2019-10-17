@@ -3,7 +3,7 @@
  * Group/Team Member
  */
 
-namespace SiWeapons\Models\Digital\Code;
+namespace Siravel\Models\Digital\Code;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;

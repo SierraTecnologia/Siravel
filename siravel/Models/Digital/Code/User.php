@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Code;
+namespace Siravel\Models\Digital\Code;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;

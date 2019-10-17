@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Internet;
+namespace Siravel\Models\Digital\Internet;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
@@ -34,16 +34,16 @@ class Url extends Model
 
     public function linksFrom()
     {
-        return $this->hasMany('SiWeapons\Models\Digital\Internet\UrlLink', 'from_bot_internet_url_id', 'id');
+        return $this->hasMany('Siravel\Models\Digital\Internet\UrlLink', 'from_bot_internet_url_id', 'id');
     }
 
     public function linksTo()
     {
-        return $this->hasMany('SiWeapons\Models\Digital\Internet\UrlLink', 'to_bot_internet_url_id', 'id');
+        return $this->hasMany('Siravel\Models\Digital\Internet\UrlLink', 'to_bot_internet_url_id', 'id');
     }
 
     public function domain()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Infra\Domain', 'infra_domain_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Infra\Domain', 'infra_domain_id', 'id');
     }
 }

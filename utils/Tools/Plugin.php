@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools;
 
-use SiWeapons\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin\Codeception;
 
 /**

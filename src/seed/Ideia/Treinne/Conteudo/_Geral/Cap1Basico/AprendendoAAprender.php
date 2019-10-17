@@ -11,7 +11,7 @@ use App\Models\FraudAnalysi;
 use App\Models\TrackingType;
 use Illuminate\Support\Facades\DB;
 
-use SiWeapons\Models\Digital\Code\Project;
+use Siravel\Models\Digital\Code\Project;
 
 use Siravel\Models\Identity\Business\Business;
 use Siravel\Models\Identity\Business\Collaborator;

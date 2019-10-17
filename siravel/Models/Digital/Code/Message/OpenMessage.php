@@ -10,9 +10,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Code\Message;
+namespace Siravel\Models\Digital\Code\Message;
 
-use SiWeapons\Models\Digital\Code\Message;
+use Siravel\Models\Digital\Code\Message;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>

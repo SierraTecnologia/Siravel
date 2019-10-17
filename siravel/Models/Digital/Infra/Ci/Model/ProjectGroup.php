@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Model;
 
 use SiUtils\Tools\Store\Factory;
-use SiWeapons\Models\Digital\Infra\Ci\Base\ProjectGroup as BaseProjectGroup;
+use Siravel\Models\Digital\Infra\Ci\Base\ProjectGroup as BaseProjectGroup;
 use SiUtils\Tools\Store\ProjectStore;
 
 class ProjectGroup extends BaseProjectGroup

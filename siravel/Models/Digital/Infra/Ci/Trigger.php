@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Models\Digital\Infra\Ci;
+namespace Siravel\Models\Digital\Infra\Ci;
     
 use Siravel\Models\Model;
 

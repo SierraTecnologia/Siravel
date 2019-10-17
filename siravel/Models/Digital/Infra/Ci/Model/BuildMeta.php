@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools\Model;
 
-use SiWeapons\Models\Digital\Infra\Ci\Base\BuildMeta as BaseBuildMeta;
+use Siravel\Models\Digital\Infra\Ci\Base\BuildMeta as BaseBuildMeta;
 use SiUtils\Tools\Store\BuildStore;
 use SiUtils\Tools\Store\Factory;
 

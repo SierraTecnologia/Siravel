@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Model;
 
 use SiUtils\Tools\Config;
-use SiWeapons\Models\Digital\Infra\Ci\Base\User as BaseUser;
+use Siravel\Models\Digital\Infra\Ci\Base\User as BaseUser;
 
 /**
  * @author Ricardo Sierra <ricardo@sierratecnologia.com>

@@ -3,7 +3,7 @@
  * Bancos dentro do Servidor do Database
  */
 
-namespace SiWeapons\Models\Digital\Infra;
+namespace Siravel\Models\Digital\Infra;
 
 use Siravel\Models\Model;
 
@@ -61,7 +61,7 @@ class DatabaseCollection extends Model
 
     public function database()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Infra\Database', 'infra_database_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Infra\Database', 'infra_database_id', 'id');
     }
 
     public function user()

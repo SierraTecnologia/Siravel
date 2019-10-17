@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Models\Digital\Code;
+namespace Siravel\Models\Digital\Code;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;

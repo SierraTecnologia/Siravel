@@ -3,8 +3,8 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use SiWeapons\Models\Digital\Infra\Ci\Build;
-use SiWeapons\Models\Digital\Infra\Ci\BuildError;
+use Siravel\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\BuildError;
 use SiUtils\Tools\Plugin;
 use SebastianBergmann\Diff\Line;
 use SebastianBergmann\Diff\Parser;

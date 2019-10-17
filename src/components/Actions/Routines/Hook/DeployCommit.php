@@ -8,7 +8,7 @@ namespace SiInteractions\Actions\Routines\Hook;
 use App\Actions\Action;
 use App\Actions\ActionCollection;
 
-use SiWeapons\Models\Digital\Code\Commit;
+use Siravel\Models\Digital\Code\Commit;
 
 class DeployCommit extends ActionCollection
 {

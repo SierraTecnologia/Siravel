@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Models\Digital\Infra;
+namespace Siravel\Models\Digital\Infra;
 
 use Siravel\Models\Model;
 
@@ -57,6 +57,6 @@ class DatabaseTable extends Model
 
     public function collection()
     {
-        return $this->belongsTo('SiWeapons\Models\Digital\Infra\DatabaseCollection', 'collection_id', 'id');
+        return $this->belongsTo('Siravel\Models\Digital\Infra\DatabaseCollection', 'collection_id', 'id');
     }
 }

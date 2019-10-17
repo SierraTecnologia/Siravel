@@ -4,9 +4,9 @@ namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools;
 use SiUtils\Tools\Builder;
-use SiWeapons\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
-use SiWeapons\Models\Digital\Infra\Ci\BuildError;
+use Siravel\Models\Digital\Infra\Ci\BuildError;
 use SiUtils\Tools\ZeroConfigPluginInterface;
 use SensioLabs\Security\SecurityChecker as BaseSecurityChecker;
 

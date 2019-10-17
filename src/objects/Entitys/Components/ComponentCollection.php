@@ -5,7 +5,7 @@
 
 namespace SiObjects\Entitys\Components;
 
-use SiWeapons\Models\Digital\Bot\Runner;
+use Siravel\Models\Digital\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 

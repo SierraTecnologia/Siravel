@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace SiWeapons\Models\Digital\Bot;
+namespace Siravel\Models\Digital\Bot;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use SiObjects\Support\Traits\Models\TasksTrait;

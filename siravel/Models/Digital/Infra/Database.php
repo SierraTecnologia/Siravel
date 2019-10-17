@@ -3,7 +3,7 @@
  * Servidor de Database
  */
 
-namespace SiWeapons\Models\Digital\Infra;
+namespace Siravel\Models\Digital\Infra;
 
 use Siravel\Models\Model;
 
@@ -58,6 +58,6 @@ class Database extends Model
 
     public function collections()
     {
-        return $this->hasMany('SiWeapons\Models\Digital\Infra\DatabaseCollection');
+        return $this->hasMany('Siravel\Models\Digital\Infra\DatabaseCollection');
     }
 }

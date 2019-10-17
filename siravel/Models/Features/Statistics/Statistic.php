@@ -17,7 +17,7 @@ class Statistic extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \SiWeapons\Models\Digital\Code\Commit::class
+            \Siravel\Models\Digital\Code\Commit::class
         ]
     ];
 

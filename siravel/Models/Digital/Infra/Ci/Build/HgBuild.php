@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools\Model\Build;
 
-use SiWeapons\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Builder;
 
 /**

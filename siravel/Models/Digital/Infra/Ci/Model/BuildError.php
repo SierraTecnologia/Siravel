@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools\Model;
 
-use SiWeapons\Models\Digital\Infra\Ci\Base\BuildError as BaseBuildError;
+use Siravel\Models\Digital\Infra\Ci\Base\BuildError as BaseBuildError;
 use SiUtils\Tools\Store\BuildStore;
 use SiUtils\Tools\Store\Factory;
 
