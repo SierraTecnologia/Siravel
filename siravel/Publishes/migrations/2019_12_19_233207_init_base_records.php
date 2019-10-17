@@ -4,10 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-use Data\InitData;
-
 class InitBaseRecords extends Migration
 {
+       
+    protected static function getDataClasses()
+    {
+        return array_merge(
+            \Data\Informacao\Informacao::getDataClasses(),
+            \Data\Libertario\Libertario::getDataClasses(),
+            \Data\Treinamento\Treinamento::getDataClasses(),
+        );
+    }
+
     /**
      * Run the migrations.
      *
@@ -62,9 +70,15 @@ class InitBaseRecords extends Migration
             // Automatic columns
             $table->timestamps();
         });
-        
-        (new InitData())->run();
+
+
+        collect(
+            self::getDataClasses()
+        )->map(function ($class) {
+            (new $class)->run();
+        });
     }
+
     /**
      * Reverse the migrations.
      *

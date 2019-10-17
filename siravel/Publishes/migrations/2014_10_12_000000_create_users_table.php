@@ -36,6 +36,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('token');
+            $table->string('language_code')->nullable();
+            $table->string('region_code')->nullable();
 
             $table->integer('role_id')->unsigned();
 
