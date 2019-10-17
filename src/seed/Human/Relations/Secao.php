@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Logic\RegrasDeNegocios\Fluxo\Actions;
+namespace SiSeed\Human\Relations;
 
 use SiSeed\Human\Steps\BasicRegister;
 use SiSeed\Human\Steps\BottomInfos;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiSeed\Human\Actions;
+namespace SiSeed\Human\Relations;
 
 use SiSeed\Human\Actions\Fisico;
 

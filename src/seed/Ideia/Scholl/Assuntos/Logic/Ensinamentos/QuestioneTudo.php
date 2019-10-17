@@ -3,7 +3,7 @@
  * 
  */
 
-namespace App\Logic\Assuntos\Logic\Ensinamentos;
+namespace SiSeed\Ideia\Scholl\Assuntos\Logic\Ensinamentos;
 
 use Siravel\Models\Actions\Bot\Runner;
 use Illuminate\Support\Facades\Log;

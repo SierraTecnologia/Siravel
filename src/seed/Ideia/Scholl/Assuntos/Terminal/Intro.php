@@ -4,7 +4,7 @@
  */
 
 
-namespace App\Logic\Assuntos\Terminal;
+namespace SiSeed\Ideia\Scholl\Assuntos\Terminal;
 
 class Intro
 {

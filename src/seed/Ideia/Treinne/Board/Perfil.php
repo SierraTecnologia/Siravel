@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace SiSeed\Treinne\Cap1Basico;
+namespace SiSeed\Ideia\Treinne\Cap1Basico;
 
 use App\Models\User;
 use App\Models\Role;
