@@ -127,7 +127,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'scanDomain',
-            \Siravel\Models\Components\Infra\Domain::class, // Ou Url
+            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
             \SiObjects\Components\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'whoisDomain',
-            \Siravel\Models\Components\Infra\Domain::class, // Ou Url
+            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
             \SiObjects\Components\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'backupDatabase',
-            \Siravel\Models\Components\Infra\DatabaseCollection::class,
+            \SiWeapons\Models\Digital\Infra\DatabaseCollection::class,
             \SiObjects\Components\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'searchLog',
-            \Siravel\Models\Components\Infra\Computer::class,
+            \SiWeapons\Models\Digital\Infra\Computer::class,
             \SiObjects\Components\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'analyseComit',
-            \Siravel\Models\Components\Code\Commit::class,
+            \SiWeapons\Models\Digital\Code\Commit::class,
             \SiObjects\Components\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'deployCommit',
-            \Siravel\Models\Components\Code\Commit::class,
+            \SiWeapons\Models\Digital\Code\Commit::class,
             \SiObjects\Components\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'syncProject',
-            \Siravel\Models\Components\Code\Project::class,
+            \SiWeapons\Models\Digital\Code\Project::class,
             \SiObjects\Components\Worker\Sync\Project::class,
             self::$hook
         );

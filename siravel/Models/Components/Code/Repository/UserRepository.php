@@ -10,10 +10,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Components\Code\Repository;
+namespace SiWeapons\Models\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Siravel\Models\Components\Code;
+use SiWeapons\Models\Digital\Code;
 
 class UserRepository extends EntityRepository
 {

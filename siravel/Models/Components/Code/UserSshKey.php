@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Components\Code;
+namespace SiWeapons\Models\Digital\Code;
 
 class UserSshKey extends Model
 {

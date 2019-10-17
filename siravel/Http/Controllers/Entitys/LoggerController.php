@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Components\Infra\Logger;
+use SiWeapons\Models\Digital\Infra\Logger;
 
 class LoggerController extends Controller
 {

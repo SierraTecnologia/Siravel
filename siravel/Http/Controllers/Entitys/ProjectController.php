@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Components\Code\Project;
+use SiWeapons\Models\Digital\Code\Project;
 
 class ProjectController extends Controller
 {

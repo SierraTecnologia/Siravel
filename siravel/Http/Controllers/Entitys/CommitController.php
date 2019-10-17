@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Components\Code\Commit;
+use SiWeapons\Models\Digital\Code\Commit;
 
 class CommitController extends Controller
 {

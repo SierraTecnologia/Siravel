@@ -10,9 +10,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Components\Code\Message;
+namespace SiWeapons\Models\Digital\Code\Message;
 
-use Siravel\Models\Components\Code\Message;
+use SiWeapons\Models\Digital\Code\Message;
 
 use SiUtils\Tools\Programs\Git\Log;
 

@@ -4,7 +4,7 @@ namespace SiUtils\Tools;
 
 include('Net/SSH2.php');
 
-use Siravel\Models\Components\Infra\Computer;
+use SiWeapons\Models\Digital\Infra\Computer;
 
 /**
  * Bash Class

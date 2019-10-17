@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Actions\Worker\Life;
 
-use Siravel\Models\Components\Infra\Domain;
-use Siravel\Models\Components\Infra\Url;
-use Siravel\Models\Components\Infra\UrlLink;
+use SiWeapons\Models\Digital\Infra\Domain;
+use SiWeapons\Models\Digital\Infra\Url;
+use SiWeapons\Models\Digital\Infra\UrlLink;
 
 /**
  * Ping Class

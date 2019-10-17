@@ -4,7 +4,7 @@ namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools;
 use SiUtils\Tools\Builder;
-use Siravel\Models\Components\Infra\Ci\Build;
+use SiWeapons\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
 
 /**

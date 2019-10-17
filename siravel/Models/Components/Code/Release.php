@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Components\Code;
+namespace SiWeapons\Models\Digital\Code;
 
 use Siravel\Models\Model;
 

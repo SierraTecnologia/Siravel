@@ -5,15 +5,15 @@ namespace SiWeapons\Integrations\Jira;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-use Siravel\Models\Components\Code\CodeIssueLink;
+use SiWeapons\Models\Digital\Code\CodeIssueLink;
 use Siravel\Models\Actions\Calendar\Spent;
 use Siravel\Models\Actions\Calendar\Estimate;
 use Siravel\Models\Actions\Calendar\Event;
 
-use Siravel\Models\Components\Code\Release;
-use Siravel\Models\Components\Code\Issue;
-use Siravel\Models\Components\Code\Field as FieldModel;
-use Siravel\Models\Components\Code\Project as ProjectModel;
+use SiWeapons\Models\Digital\Code\Release;
+use SiWeapons\Models\Digital\Code\Issue;
+use SiWeapons\Models\Digital\Code\Field as FieldModel;
+use SiWeapons\Models\Digital\Code\Project as ProjectModel;
 
 use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;

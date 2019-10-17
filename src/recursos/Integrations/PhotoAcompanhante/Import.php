@@ -7,6 +7,17 @@ use App\Models\User;
 
 class Import extends PhotoAcompanhante
 {
+
+    /**
+     * Import Girl From Url
+     */
+    public static function girlFromUrl($url)
+    {
+        QueryList::get($url)->map(function($img){
+            dd($img);
+        });
+    }
+
     /**
      * Home Folders
      */
@@ -18,7 +29,7 @@ class Import extends PhotoAcompanhante
 
             $nameAndPhone = $img->find('.anuncio_categoria')->map(function($data){
                 dd($data);
-            }
+            });
         });
 
     }

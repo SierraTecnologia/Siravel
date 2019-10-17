@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
-use App\Tools\Integrations\PhotoAcompanhante\Import;
+use SiWeapons\Integrations\PhotoAcompanhante\Import;
 
 class Photoacompanhante extends Command
 {

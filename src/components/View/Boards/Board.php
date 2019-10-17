@@ -127,7 +127,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'scanDomain',
-            \Siravel\Models\Components\Infra\Domain::class, // Ou Url
+            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
             \App\Boards\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'whoisDomain',
-            \Siravel\Models\Components\Infra\Domain::class, // Ou Url
+            \SiWeapons\Models\Digital\Infra\Domain::class, // Ou Url
             \App\Boards\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'backupDatabase',
-            \Siravel\Models\Components\Infra\DatabaseCollection::class,
+            \SiWeapons\Models\Digital\Infra\DatabaseCollection::class,
             \App\Boards\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'searchLog',
-            \Siravel\Models\Components\Infra\Computer::class,
+            \SiWeapons\Models\Digital\Infra\Computer::class,
             \App\Boards\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'analyseComit',
-            \Siravel\Models\Components\Code\Commit::class,
+            \SiWeapons\Models\Digital\Code\Commit::class,
             \App\Boards\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'deployCommit',
-            \Siravel\Models\Components\Code\Commit::class,
+            \SiWeapons\Models\Digital\Code\Commit::class,
             \App\Boards\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'syncProject',
-            \Siravel\Models\Components\Code\Project::class,
+            \SiWeapons\Models\Digital\Code\Project::class,
             \App\Boards\Worker\Sync\Project::class,
             self::$hook
         );

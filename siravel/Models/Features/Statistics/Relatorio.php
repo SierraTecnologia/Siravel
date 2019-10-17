@@ -17,7 +17,7 @@ class Relatorio extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \Siravel\Models\Components\Code\Commit::class
+            \SiWeapons\Models\Digital\Code\Commit::class
         ]
     ];
 

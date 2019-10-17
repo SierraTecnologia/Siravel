@@ -9,8 +9,8 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteraction\Actions\Worker\Sync\Database\MigrateCollection;
 
-use Siravel\Models\Components\Infra\Database;
-use Siravel\Models\Components\Infra\DatabaseCollection;
+use SiWeapons\Models\Digital\Infra\Database;
+use SiWeapons\Models\Digital\Infra\DatabaseCollection;
 
 class Migrate extends ActionCollection
 {

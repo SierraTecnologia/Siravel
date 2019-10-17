@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Components\Infra\Database;
+use SiWeapons\Models\Digital\Infra\Database;
 
 class DatabaseController extends Controller
 {

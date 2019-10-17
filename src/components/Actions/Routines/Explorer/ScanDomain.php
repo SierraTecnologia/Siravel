@@ -8,7 +8,7 @@ namespace SiInteractions\Actions\Routines\Database;
 use App\Actions\Action;
 use App\Actions\ActionCollection;
 
-use Siravel\Models\Components\Infra\Domain;
+use SiWeapons\Models\Digital\Infra\Domain;
 
 class ScanDomain extends ActionCollection
 {

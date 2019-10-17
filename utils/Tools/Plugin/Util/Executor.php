@@ -6,7 +6,7 @@ use SiUtils\Tools\Store\Factory as StoreFactory;
 use Exception;
 use SiUtils\Helper\Lang;
 use SiUtils\Tools\Logging\BuildLogger;
-use Siravel\Models\Components\Infra\Ci\Build;
+use SiWeapons\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
 use SiUtils\Tools\Store\BuildStore;
 

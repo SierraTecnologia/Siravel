@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Models\Components\Code\Repository;
+namespace SiWeapons\Models\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Siravel\Models\Components\Code\Project;
-use Siravel\Models\Components\Code\User;
+use SiWeapons\Models\Digital\Code\Project;
+use SiWeapons\Models\Digital\Code\User;
 use Gitonomy\Component\Pagination\Adapter\ArrayAdapter;
 use Gitonomy\Component\Pagination\Adapter\DoctrineOrmQueryAdapter;
 use Gitonomy\Component\Pagination\Pager;
