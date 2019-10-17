@@ -30,7 +30,7 @@ class AdminController extends Controller
 
         $loadClass = $modulos[$modulo];
 
-        return (new \SierraTecnologia\Facilitador\Controllers\RepositoryController(
+        return (new \SierraTecnologia\Facilitador\Http\Controllers\RepositoryController(
             new \SierraTecnologia\Facilitador\Services\RepositoryService($loadClass)
         ))->index($request);
     }
@@ -48,7 +48,7 @@ class AdminController extends Controller
 
         $loadClass = $modulos[$modulo];
 
-        return (new \SierraTecnologia\Facilitador\Controllers\RepositoryController(
+        return (new \SierraTecnologia\Facilitador\Http\Controllers\RepositoryController(
             new \SierraTecnologia\Facilitador\Services\RepositoryService($loadClass)
         ))->index($request);
     }

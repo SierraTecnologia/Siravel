@@ -68,8 +68,8 @@ class SiravelProvider extends ServiceProvider
         /**
          * Dependencias
          */
-        $this->app->register(\Siravel\Providers\HorizonProvider::class);
-        $this->app->register(\Siravel\Providers\TelescopeProvider::class);
+        $this->app->register(\Siravel\Providers\HorizonServiceProvider::class);
+        $this->app->register(\Siravel\Providers\TelescopeServiceProvider::class);
         $this->app->register(\SierraTecnologia\Facilitador\FacilitadorProvider::class);
         
         /**
