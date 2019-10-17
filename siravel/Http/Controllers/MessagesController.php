@@ -64,6 +64,22 @@ class MessagesController extends Controller
         return view('messages.create', compact('recipient'));
     }
 
+    public function createSecureMessage($id)
+    {
+        // @todo Fazer com as seguintes opcoes
+        // timePraAutoDestruicao
+        // Grava em disco ou só memoria
+        // Criptografia ponta a ponta com limite de data
+        $recipient = User::findOrFail($id);
+
+        $thread = Thread::between([$recipient->id, Auth::id()])->first();
+        if ($thread) {
+            return redirect()->route('messages.show', $thread->id);
+        }
+
+        return view('messages.create', compact('recipient'));
+    }
+
     public function store(MessageRequest $request, Markdown $markdown)
     {
         $recipient = User::findOrFail($request->recipient_id);

@@ -1,8 +1,8 @@
 <?php
 
-namespace SiHelper\Help\Dicionario\Seguranca\Informacao;
+namespace SiHelper\Help\Dicionario\Seguranca\Agents;
 
-class Informacao
+class Agents
 {
     public function __construct()
     {

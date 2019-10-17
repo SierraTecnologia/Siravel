@@ -29,17 +29,18 @@ class GravatarServiceProvider extends ServiceProvider
 	 *
 	 * @return void
 	 */
-	public function register() {
+    public function register()
+    {
 
-		$this->app->bind('GravatarService', 'Siravel\Services\GravatarService');
-
+        $loader = AliasLoader::getInstance();
+        $loader->alias('Gravatar', \Siravel\Facades\Gravatar::class);
+		$this->app->bind('Gravatar', 'Siravel\Facades\Gravatar');
 		/**
 		 * Adicionei separado do de cima
 		 */
-        $this->app->singleton('gravatar', function ($app) {
+        $this->app->singleton('Gravatar', function ($app) {
             return new Gravatar($this->app['config']);
         });
-
 	}
 
 }
