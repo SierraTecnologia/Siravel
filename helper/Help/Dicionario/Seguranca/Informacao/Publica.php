@@ -1,8 +1,8 @@
 <?php
 
-namespace SiHelper\Help\Dicionario\Control\Agents;
+namespace SiHelper\Help\Dicionario\Seguranca\Agents;
 
-class Human extends Agents
+class Bot extends Agents
 {
     public function __construct()
     {

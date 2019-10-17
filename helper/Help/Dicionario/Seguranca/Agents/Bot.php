@@ -1,6 +1,6 @@
 <?php
 
-namespace SiHelper\Help\Dicionario\Control\Agents;
+namespace SiHelper\Help\Dicionario\Seguranca\Agents;
 
 class Bot extends Agents
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiHelper\Help\Dicionario\Control\Informacao;
+namespace SiHelper\Help\Dicionario\Seguranca\Informacao;
 
 class Informacao
 {
