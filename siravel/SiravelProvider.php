@@ -67,16 +67,22 @@ class SiravelProvider extends ServiceProvider
         /**
          * Dependencias
          */
-        $this->app->register(\SierraTecnologia\Facilitador\FacilitadorProvider::class);
-        
-        /**
-         * Externos
-         */
-        $this->app->register(\Siravel\Providers\GravatarServiceProvider::class);
+        $this->app->register(\Siravel\Providers\HorizonProvider::class);
+        $this->app->register(\Siravel\Providers\TelescopeProvider::class);
+        $this->app->register(\Siravel\Providers\FacilitadorProvider::class);
         
         /**
          * Serviços
          */
         $this->app->register(\Cmgmyr\Messenger\MessengerServiceProvider::class);
+
+
+
+
+        /**
+         * Logs Views
+         */
+        $this->app->register(\Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class);
+
     }
 }

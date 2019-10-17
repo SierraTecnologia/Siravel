@@ -21,14 +21,17 @@ class CmsServiceProvider extends ServiceProvider
     {
         $loader = AliasLoader::getInstance();
 
+        $loader->alias('FileService', \SierraTecnologia\Facilitador\Services\Midia\FileService::class);
         $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
         $loader->alias('CmsService', \App\Facades\CmsServiceFacade::class);
         $loader->alias('PageService', \App\Facades\PageServiceFacade::class);
         $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
-        $loader->alias('CryptoService', \App\Facades\CryptoServiceFacade::class);
         $loader->alias('ModuleService', \App\Facades\ModuleServiceFacade::class);
         $loader->alias('BlogService', \App\Facades\BlogServiceFacade::class);
-        $loader->alias('FileService', \App\Services\Midia\FileService::class);
+
+        $this->app->bind('FileService', function ($app) {
+            return new FileService();
+        });
 
         $this->app->bind('BusinessService', function ($app) {
             return new BusinessService();
@@ -44,10 +47,6 @@ class CmsServiceProvider extends ServiceProvider
 
         $this->app->bind('EventService', function ($app) {
             return App::make(EventService::class);
-        });
-
-        $this->app->bind('CryptoService', function ($app) {
-            return new CryptoService();
         });
 
         $this->app->bind('ModuleService', function ($app) {

@@ -47,4 +47,32 @@ class ProjectManager extends Base
         return $this->getInfoInstance;
     }
     
+
+    public function mountReleases()
+    {
+        $input = new \ChangeLog\IO\File([
+            'file' => $this->locationFolder->getLocation('CHANGELOG.md'),
+        ]);
+        
+        $parser = new \ChangeLog\Parser\KeepAChangeLog();
+        
+        $cl = new \ChangeLog\ChangeLog;
+        $cl->setParser($parser);
+        $cl->setInput($input);
+        
+        $log = $cl->parse();
+        
+        // Instance of ChangeLog\Log
+        return $log->getReleases();
+    }
+
+    /**
+     * Retorna se o sistema está instalado ou não
+     *
+     * @return boolean
+     */
+    public static function isInstall()
+    {
+        return \Schema::hasTable('persons');
+    }
 }

@@ -26,10 +26,15 @@ class Folder
 
     }
 
+    public function getLocation()
+    {
+        return $this->raizLocation;
+    }
+
     public function getAdapter()
     {
         if (!$this->adapter) {
-            $this->adapter = new Local($this->raizLocation);
+            $this->adapter = new Local($this->getLocation());
         }
         return $this->adapter;
     }

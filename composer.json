@@ -14,7 +14,6 @@
         "friendsofphp/php-cs-fixer": "*",
         "fzaninotto/faker": "*",
         "jaeger/querylist": "^4.1",
-        "jeroennoten/laravel-adminlte": "*",
         "kassner/log-parser": "*",
         "laravel/envoy": "^1.5",
         "laravel/framework": "5.8.*",
@@ -22,7 +21,6 @@
         "laravel/telescope": "^2.0",
         "laravel/tinker": "*",
         "league/climate": "3.1.*",
-        "league/csv": "^7.1",
         "league/flysystem": "*",
         "league/flysystem-cached-adapter": "*",
         "league/flysystem-sftp": "*",
@@ -40,7 +38,6 @@
         "php-http/guzzle6-adapter": "*",
         "predis/predis": "*",
         "pusher/pusher-php-server": "~3.4",
-        "ramsey/uuid": "^3.8",
         "rap2hpoutre/laravel-log-viewer": "*",
         "rokde/laravel-slow-query-logger": "*",
         "sabre/xml": "*",
@@ -57,9 +54,6 @@
         "texthtml/docker-links": "*",
         "waavi/sanitizer": "*",
         "wnx/laravel-stats": "*",
-        "zendframework/zend-crypt": "*",
-
-        "illuminate/support": "^5.8",
         "cmgmyr/messenger": "^2.19",
         "sierratecnologia/facilitador": "dev-master",
 

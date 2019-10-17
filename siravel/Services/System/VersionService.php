@@ -3,25 +3,30 @@
 namespace Siravel\Services\System;
 
 use Illuminate\Support\Facades\Config;
+use SiPlugins\ProjectManager\ProjectManager;
 
 class VersionService extends Service
 {
+    protected $projectManager = false;
+
+    public function __construct()
+    {
+        $this->projectManager = new ProjectManager(base_path());
+    }
+
+    public function getProjectManager()
+    {
+        return $this->projectManager;
+    }
+
+    public function getInfos()
+    {
+        return $this->getProjectManager()->mountInfo();
+    }
+
     public function getReleases()
     {
-        $input = new \ChangeLog\IO\File([
-            'file' => base_path('CHANGELOG.md')
-        ]);
-        
-        $parser = new \ChangeLog\Parser\KeepAChangeLog();
-        
-        $cl = new \ChangeLog\ChangeLog;
-        $cl->setParser($parser);
-        $cl->setInput($input);
-        
-        $log = $cl->parse();
-        
-        // Instance of ChangeLog\Log
-        return $log->getReleases();
+        return $this->getProjectManager()->mountReleases();
     }
 
     /**
@@ -31,6 +36,6 @@ class VersionService extends Service
      */
     public static function isInstall()
     {
-        return \Schema::hasTable('businesses');
+        return ProjectManager::isInstall();
     }
 }
