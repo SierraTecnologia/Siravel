@@ -4,11 +4,6 @@ namespace Siravel\Providers;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use SiUtils\Helpers\StoreHelper;
-use Siravel\Services\CartService;
-use Siravel\Services\CustomerProfileService;
-use Siravel\Services\LogisticService;
-use Siravel\Services\ProductService;
 
 class SiravelServiceProvider extends ServiceProvider
 {
@@ -17,9 +12,9 @@ class SiravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $loader = AliasLoader::getInstance();
+        // $loader = AliasLoader::getInstance();
 
-        $loader->alias('StoreHelper', StoreHelper::class);
+        // $loader->alias('StoreHelper', StoreHelper::class);
     }
 
     /**
@@ -27,20 +22,42 @@ class SiravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('ProductService', function ($app) {
-            return app()->make(ProductService::class);
+        $loader = AliasLoader::getInstance();
+
+        $loader->alias('FileService', \SierraTecnologia\Facilitador\Services\Midia\FileService::class);
+        $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
+        $loader->alias('CmsService', \App\Facades\CmsServiceFacade::class);
+        $loader->alias('PageService', \App\Facades\PageServiceFacade::class);
+        $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
+        $loader->alias('ModuleService', \App\Facades\ModuleServiceFacade::class);
+        $loader->alias('BlogService', \App\Facades\BlogServiceFacade::class);
+
+        $this->app->bind('FileService', function ($app) {
+            return new FileService();
         });
 
-        $this->app->bind('CartService', function ($app) {
-            return app()->make(CartService::class);
+        $this->app->bind('BusinessService', function ($app) {
+            return new BusinessService();
+        });
+        
+        $this->app->bind('CmsService', function ($app) {
+            return new CmsService();
         });
 
-        $this->app->bind('LogisticService', function ($app) {
-            return app()->make(LogisticService::class);
+        $this->app->bind('PageService', function ($app) {
+            return new PageService();
         });
 
-        $this->app->bind('CustomerProfileService', function ($app) {
-            return app()->make(CustomerProfileService::class);
+        $this->app->bind('EventService', function ($app) {
+            return App::make(EventService::class);
+        });
+
+        $this->app->bind('ModuleService', function ($app) {
+            return new ModuleService();
+        });
+
+        $this->app->bind('BlogService', function ($app) {
+            return new BlogService();
         });
     }
 }
