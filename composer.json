@@ -21,11 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "SiUtils\\": "utils/",
             "Siravel\\": "siravel/",
+            "SiUtils\\": "utils/",
+            "SiHelper\\": "helper/",
             "SiInteractions\\": "src/components/",
             "SiLogic\\": "src/logic/",
             "SiObjects\\": "src/objects/",
+            "Plugins\\": "src/plugins/",
             "SiWeapons\\": "src/recursos/",
             "SiSeed\\": "src/seed/"
         },
