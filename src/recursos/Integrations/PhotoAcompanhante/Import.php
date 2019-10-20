@@ -5,6 +5,7 @@ namespace SiWeapons\Integrations\PhotoAcompanhante;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use QL\QueryList;
+use SiUtils\Tools\Proxy;
 
 class Import extends PhotoAcompanhante
 {
@@ -14,7 +15,7 @@ class Import extends PhotoAcompanhante
      */
     public static function girlFromUrl($url)
     {
-        QueryList::get($url)->map(function($img){
+        QueryList::get($url, Proxy::getOpts())->map(function($img){
             dd($img);
         });
     }

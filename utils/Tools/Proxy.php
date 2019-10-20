@@ -16,7 +16,11 @@ class Proxy
     /**
      * @var Url
      */
-    protected $url;
+	protected $url;
+	
+	public static $agents = [
+		'GoogleBot' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+	];
 
 	function __construct() {
 
@@ -68,5 +72,27 @@ class Proxy
 		curl_setopt( $this->ch, CURLOPT_FOLLOWLOCATION, true );
 		curl_setopt( $this->ch, CURLOPT_RETURNTRANSFER, false );
 		curl_setopt( $this->ch, CURLOPT_HEADER, false );
-    }
+	}
+	
+	public static function getOpts($proxy = false)
+	{
+		$opts = [
+			//Set the timeout time in seconds
+			'timeout' => 30,
+			// Fake HTTP headers
+			'headers' => [
+				// 'Referer' => 'https://querylist.cc/',
+				'User-Agent' => self::$agents['GoogleBot'],
+				// 'Accept'     => 'application/json',
+				// 'X-Foo'      => ['Bar', 'Baz'],
+				// 'Cookie'    => 'abc=111;xxx=222'
+			]
+		];
+
+		// Set the http proxy
+		if ($proxy) {
+			$opts['proxy'] = 'http://222.141.11.17:8118';
+		}
+		return $opts;
+	}
 }
