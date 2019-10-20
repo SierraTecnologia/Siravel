@@ -19,7 +19,9 @@ class Proxy
 	protected $url;
 	
 	public static $agents = [
-		'GoogleBot' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+		'GoogleBot' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+		'Bingbot' => 'Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)',
+		'Slurp' => 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)',
 	];
 
 	function __construct() {
@@ -77,8 +79,8 @@ class Proxy
 	public static function getOpts($proxy = false)
 	{
 		$opts = [
-			//Set the timeout time in seconds
-			'timeout' => 30,
+			// //Set the timeout time in seconds
+			// 'timeout' => 30,
 			// Fake HTTP headers
 			'headers' => [
 				// 'Referer' => 'https://querylist.cc/',

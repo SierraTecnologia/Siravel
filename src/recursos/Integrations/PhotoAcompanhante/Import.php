@@ -15,7 +15,7 @@ class Import extends PhotoAcompanhante
      */
     public static function girlFromUrl($url)
     {
-        QueryList::get($url, Proxy::getOpts())->map(function($img){
+        QueryList::get($url, '', Proxy::getOpts())->map(function($img){
             dd($img);
         });
     }
