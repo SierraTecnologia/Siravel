@@ -19,6 +19,7 @@ class Proxy
 	protected $url;
 	
 	public static $agents = [
+		'Firefox' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0',
 		'GoogleBot' => 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
 		'Bingbot' => 'Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)',
 		'Slurp' => 'Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)',
@@ -84,7 +85,7 @@ class Proxy
 			// Fake HTTP headers
 			'headers' => [
 				// 'Referer' => 'https://querylist.cc/',
-				'User-Agent' => self::$agents['GoogleBot'],
+				'User-Agent' => self::$agents['Firefox'],
 				// 'Accept'     => 'application/json',
 				// 'X-Foo'      => ['Bar', 'Baz'],
 				// 'Cookie'    => 'abc=111;xxx=222'
