@@ -69,7 +69,6 @@
         "jeroennoten/laravel-adminlte": "*",
         "sierratecnologia/crudmaker": "dev-master",
         "raiym/instagram-php-scraper": "^0.8.35",
-        "amranidev/scaffold-interface": "dev-master",
         "aws/aws-sdk-php": "*",
         "botman/botman": "~2.5",
         "botman/driver-facebook": "~1.10",
