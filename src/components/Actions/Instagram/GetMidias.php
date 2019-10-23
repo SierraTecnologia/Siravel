@@ -49,9 +49,9 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
     {
         collect($this->executor->getMedias($target, 25))->each(function ($media) use ($target) {
             $name = md5($media->getShortCode());
-            if ($media->getType()=='image') {
-                Log::info('É imagem');
-            }
+            // if ($media->getType()=='image') {
+            //     Log::info('É imagem');
+            // }
 
 
             if (!$acaoHumana = AcaoHumana::where([
@@ -69,7 +69,7 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
             //         'code' => $media->getId()
             //     ]
             // );
-            $acaoHumana->addInfo('caption', $media->getCommentsCount());
+            // $acaoHumana->addInfo('caption', $media->getCommentsCount());
             $acaoHumana->addInfo('posted_at', $media->getCreatedTime());
             $acaoHumana->addStat('comments', $media->getCommentsCount());
             $acaoHumana->addStat('links', $media->getLikesCount());
