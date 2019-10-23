@@ -24,6 +24,17 @@ trait AsHuman
     /**
      * Get all of the owning personable models.
      */
+    public function savePassword($password = '', $type = '')
+    {
+        // @todo Fazer
+        return true;
+    }
+
+
+        
+    /**
+     * Get all of the owning personable models.
+     */
     public function personable()
     {
         return $this->morphTo(); //, 'personable_type', 'personable_code'
