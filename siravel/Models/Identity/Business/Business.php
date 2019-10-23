@@ -7,7 +7,13 @@ use App\Models\User;
 class Business extends User
 {
 
-    protected $organizationPerspective = false;
+    public $incrementing = false;
+    protected $casts = [
+        'code' => 'string',
+    ];
+    protected $primaryKey = 'code';
+    protected $keyType = 'string';
+
 
     protected $table = 'businesses';       
 
