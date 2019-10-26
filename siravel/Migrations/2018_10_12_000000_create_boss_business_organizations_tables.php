@@ -38,7 +38,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
             $table->string('dominio')->nullable();
             $table->string('subdominio')->nullable();
 
-            $table->string('type');
+            $table->string('type')->nullable();
             $table->integer('status')->nullable();
             
 			$table->timestamps();
