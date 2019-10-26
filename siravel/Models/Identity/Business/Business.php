@@ -2,9 +2,9 @@
 
 namespace Siravel\Models\Identity\Business;
 
-use App\Models\User;
+use Siravel\Models\Model;
 
-class Business extends User
+class Business extends Model
 {
 
     public $incrementing = false;
@@ -23,7 +23,7 @@ class Business extends User
      * @var array
      */
     protected $fillable = [
-        'user_id',
+        // 'user_id',
         'name',
         'code'
     ];
@@ -39,7 +39,7 @@ class Business extends User
             'type' => 'string',
             "analyzer" => "standard",
         ],
-        'slug' => [
+        'code' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],

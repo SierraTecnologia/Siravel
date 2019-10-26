@@ -13,6 +13,8 @@
 
 namespace Siravel\Models\Features;
 
+use Siravel\Models\Model;
+
 class Estatistica extends Model
 {
     /**
