@@ -39,7 +39,7 @@ class ProjectManager extends Base
         ];
     }
 
-    protected function getInfo()
+    public function getInfo()
     {
         if (!$this->getInfoInstance) {
             $this->getInfoInstance = new GetInfo($this);
