@@ -56,7 +56,7 @@
         "wnx/laravel-stats": "*",
         "cmgmyr/messenger": "^2.19",
         "sierratecnologia/facilitador": "dev-master",
-
+        "google/photos-library": "^1.4",
         "ricardosierra/phpwhois": "dev-dev",
         "ricardosierra/translation": "dev-master",
         "spatie/laravel-backup": "^6.2",
@@ -99,7 +99,7 @@
             "SiInteractions\\": "src/components/",
             "SiLogic\\": "src/logic/",
             "SiObjects\\": "src/objects/",
-            "Plugins\\": "src/plugins/",
+            "SiPlugins\\": "src/plugins/",
             "SiWeapons\\": "src/recursos/",
             "SiSeed\\": "src/seed/"
         },

@@ -97,53 +97,55 @@ class CreateCodeTables extends Migration
             $table->timestamps();
         });
 
-        Schema::table('project', function (Blueprint $table) {
-            $table->integer('is_public')->default(0);
-            $table->string('type_id')->nullable();
-            $table->integer('code_language_id')->nullable();
-            $table->string('url')->nullable();
-            $table->string('description')->nullable();
-            $table->string('reference')->nullable();
-            // $table->string('slug')->nullable();
-            $table->string('repository')->nullable();
+        if (Schema::exists('project')) {
+            Schema::table('project', function (Blueprint $table) {
+                $table->integer('is_public')->default(0);
+                $table->string('type_id')->nullable();
+                $table->integer('code_language_id')->nullable();
+                $table->string('url')->nullable();
+                $table->string('description')->nullable();
+                $table->string('reference')->nullable();
+                // $table->string('slug')->nullable();
+                $table->string('repository')->nullable();
 
-            // $table->increments('id');
-            // $table->string('name')->nullable();
-            // $table->integer('status')->default(1);
-            // $table->string('card_description')->nullable();
-            // $table->integer('money_id')->nullable();
-            // $table->integer('credit_card_id')->nullable();
-            // $table->string('user_token')->nullable();
-            // $table->string('company_token')->nullable();
-            // $table->decimal('total',6,2)->nullable();
+                // $table->increments('id');
+                // $table->string('name')->nullable();
+                // $table->integer('status')->default(1);
+                // $table->string('card_description')->nullable();
+                // $table->integer('money_id')->nullable();
+                // $table->integer('credit_card_id')->nullable();
+                // $table->string('user_token')->nullable();
+                // $table->string('company_token')->nullable();
+                // $table->decimal('total',6,2)->nullable();
 
-            // $table->string('installments')->nullable();
+                // $table->string('installments')->nullable();
 
-            // $table->json('customer')->nullable();
+                // $table->json('customer')->nullable();
 
-            // $table->string('device_token')->nullable();
-            // $table->string('device')->nullable();
+                // $table->string('device_token')->nullable();
+                // $table->string('device')->nullable();
 
-            // $table->string('gateway_token_cielo')->nullable();
-            // $table->string('gateway_token_rede')->nullable();
-            // $table->string('tid')->nullable();
-            // $table->integer('bank_slip_id')->nullable();
+                // $table->string('gateway_token_cielo')->nullable();
+                // $table->string('gateway_token_rede')->nullable();
+                // $table->string('tid')->nullable();
+                // $table->integer('bank_slip_id')->nullable();
 
-            // $table->json('fraud_analysis')->nullable();
+                // $table->json('fraud_analysis')->nullable();
 
-            // $table->boolean('konduto')->nullable();
-            // $table->bigInteger('tax_id')->nullable();
-            // $table->string('billing_name')->nullable();
-            // $table->string('billing_address')->nullable();
-            // $table->string('billing_complement')->nullable();
-            // $table->string('billing_city')->nullable();
-            // $table->string('billing_state')->nullable();
-            // $table->string('billing_zip')->nullable();
-            // $table->string('billing_country')->nullable();
-            // $table->index('company_token');
+                // $table->boolean('konduto')->nullable();
+                // $table->bigInteger('tax_id')->nullable();
+                // $table->string('billing_name')->nullable();
+                // $table->string('billing_address')->nullable();
+                // $table->string('billing_complement')->nullable();
+                // $table->string('billing_city')->nullable();
+                // $table->string('billing_state')->nullable();
+                // $table->string('billing_zip')->nullable();
+                // $table->string('billing_country')->nullable();
+                // $table->index('company_token');
 
-            $table->timestamps();
-        });
+                $table->timestamps();
+            });
+        }
 
         Schema::create('code_releases', function (Blueprint $table) {
             $table->increments('id');
