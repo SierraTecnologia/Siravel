@@ -97,7 +97,7 @@ class CreateCodeTables extends Migration
             $table->timestamps();
         });
 
-        if (Schema::exists('project')) {
+        if (Schema::hasTable('project')) {
             Schema::table('project', function (Blueprint $table) {
                 $table->integer('is_public')->default(0);
                 $table->string('type_id')->nullable();
