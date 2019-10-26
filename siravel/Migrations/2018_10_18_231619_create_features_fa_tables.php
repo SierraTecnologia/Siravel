@@ -132,27 +132,6 @@ class CreateFeaturesFATables extends Migration
             $table->softDeletes();
 		});
         
-		Schema::create(config('app.db-prefix', '').'addresses', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->increments('id')->unsigned();
-			$table->string('street', 255)->nullable();
-			$table->string('num', 255)->nullable();
-			$table->string('complemento', 255)->nullable();
-			$table->integer('region')->nullable();
-			$table->timestamps();
-            $table->softDeletes();
-		});
-        
-		Schema::create(config('app.db-prefix', '').'addresseables', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->integer('address_id')->unsigned();
-			$table->string('addresseable_id')->nullable();
-			$table->string('addresseable_type', 255)->nullable();
-			$table->timestamps();
-            $table->softDeletes();
-		});
-        
-        
 		Schema::create(config('app.db-prefix', '').'accounts', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
