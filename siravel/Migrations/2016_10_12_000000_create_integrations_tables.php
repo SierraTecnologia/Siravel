@@ -32,9 +32,9 @@ class CreateIntegrationsTables extends Migration
         });
         Schema::create('integration_token_accesses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('model');
-            $table->string('model_id');
-            $table->string('token_id');
+            $table->string('model')->nullable();
+            $table->string('model_id')->nullable();
+            $table->string('token_id')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });
