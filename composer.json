@@ -56,6 +56,7 @@
         "wnx/laravel-stats": "*",
         "cmgmyr/messenger": "^2.19",
         "sierratecnologia/facilitador": "dev-master",
+        "sierratecnologia/locaravel": "dev-master",
         "google/photos-library": "^1.4",
         "ricardosierra/phpwhois": "dev-dev",
         "ricardosierra/translation": "dev-master",
@@ -118,6 +119,13 @@
         {
             "type": "path",
             "url": "../Facilitador",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../Locaravel",
             "options": {
                 "symlink": false
             }
