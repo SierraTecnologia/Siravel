@@ -12,9 +12,6 @@ class SiravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $loader = AliasLoader::getInstance();
-
-        // $loader->alias('StoreHelper', StoreHelper::class);
     }
 
     /**
@@ -23,6 +20,14 @@ class SiravelServiceProvider extends ServiceProvider
     public function register()
     {
         $loader = AliasLoader::getInstance();
+
+        $loader->alias('TranslationCache', \RicardoSierra\Translation\Facades\TranslationCache::class);
+        $loader->alias('Translation', \RicardoSierra\Translation\Facades\Translation::class);
+        $this->app->register(\RicardoSierra\Translation\TranslationServiceProvider::class);
+
+
+
+        
         // // @todo Resolver
         // $loader->alias('FileService', \SierraTecnologia\Facilitador\Services\Midia\FileService::class);
         // $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
