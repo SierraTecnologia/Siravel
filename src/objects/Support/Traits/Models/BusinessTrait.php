@@ -13,6 +13,12 @@ trait BusinessTrait
 
     protected static function bootBusinessTrait()                                                                                                                                                             
     {
+        // Caso config seja falso, ignora
+        if (!config('sitec-tools.configs.multi-tenant')) {
+            return true;
+        }
+
+
         if ($business = \Siravel\Services\System\BusinessService::getSingleton()->getBusiness()){
 
             static::creating(function ($model) use ($business) {

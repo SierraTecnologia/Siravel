@@ -43,7 +43,7 @@ class Address extends Model
      */
     public function business()
     {
-        return $this->morphedByMany('App\Models\Negocios\Business', 'addressable');
+        return $this->morphedByMany(config('sitec-tools.models.business')), 'addressable');
     }
 
     /**

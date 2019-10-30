@@ -41,7 +41,7 @@ class Item extends Model
      */
     public function businesses()
     {
-        return $this->morphedByMany('App\Models\Negocios\Business', 'itemable');
+        return $this->morphedByMany(config('sitec-tools.models.business')), 'itemable');
     }
 
     /**

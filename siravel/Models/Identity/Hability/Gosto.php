@@ -41,7 +41,7 @@ class Gosto extends Model
      */
     public function businesses()
     {
-        return $this->morphedByMany('App\Models\Negocios\Business', 'gostoable');
+        return $this->morphedByMany(config('sitec-tools.models.business')), 'gostoable');
     }
 
     /**
