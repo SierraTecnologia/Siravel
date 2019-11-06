@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class PostBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class PostBuilder extends Builder
 {

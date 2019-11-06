@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class SubscriptionBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class SubscriptionBuilder extends Builder
 {

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class UserBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class UserBuilder extends Builder
 {

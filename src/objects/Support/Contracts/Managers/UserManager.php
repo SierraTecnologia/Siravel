@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Contracts\Managers;
 
-use App\Models\Entities\UserEntity;
+use SiObjects\Manipule\Entities\UserEntity;
 
 /**
  * Interface UserManager.

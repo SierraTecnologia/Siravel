@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class PhotoBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class PhotoBuilder extends Builder
 {

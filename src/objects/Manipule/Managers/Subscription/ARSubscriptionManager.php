@@ -2,7 +2,7 @@
 
 namespace SiObjects\Manipule\Managers\Subscription;
 
-use App\Models\Builders\SubscriptionBuilder;
+use SiObjects\Manipule\Builders\SubscriptionBuilder;
 use App\Models\Subscription;
 use SiObjects\Support\Contracts\SubscriptionManager;
 use SiObjects\Manipule\Entities\SubscriptionEntity;

@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Contracts\Managers;
 
-use App\Models\Entities\PhotoEntity;
+use SiObjects\Manipule\Entities\PhotoEntity;
 
 /**
  * Interface PhotoManager.

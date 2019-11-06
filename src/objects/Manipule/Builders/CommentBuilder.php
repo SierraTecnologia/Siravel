@@ -9,7 +9,7 @@ use Illuminate\Database\Query\Expression;
 /**
  * Class CommentBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class CommentBuilder extends Builder
 {

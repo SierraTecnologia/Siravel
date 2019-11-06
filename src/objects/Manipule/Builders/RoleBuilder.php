@@ -3,13 +3,13 @@
 namespace SiObjects\Manipule\Builders;
 
 use App\Contants\Tables;
-use App\Models\Entities\UserEntity;
+use SiObjects\Manipule\Entities\UserEntity;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class RoleBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class RoleBuilder extends Builder
 {

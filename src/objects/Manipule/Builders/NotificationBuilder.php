@@ -9,7 +9,7 @@ use Illuminate\Database\Query\Expression;
 /**
  * Class NotificationBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class NotificationBuilder extends Builder
 {

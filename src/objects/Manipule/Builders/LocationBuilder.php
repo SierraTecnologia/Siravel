@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class LocationBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class LocationBuilder extends Builder
 {

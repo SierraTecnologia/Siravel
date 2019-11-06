@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Contracts\Managers;
 
-use App\Models\Entities\PostEntity;
+use SiObjects\Manipule\Entities\PostEntity;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**

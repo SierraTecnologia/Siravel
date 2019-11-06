@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class ThumbnailBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class ThumbnailBuilder extends Builder
 {

@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Contracts\Managers;
 
-use App\Models\Entities\LocationEntity;
+use SiObjects\Manipule\Entities\LocationEntity;
 
 /**
  * Interface LocationManager.

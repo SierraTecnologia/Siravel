@@ -2,7 +2,7 @@
 
 namespace SiObjects\Manipule\Managers\Post;
 
-use App\Models\Builders\PostBuilder;
+use SiObjects\Manipule\Builders\PostBuilder;
 use App\Models\Photo;
 use App\Models\Post;
 use App\Models\Tag;

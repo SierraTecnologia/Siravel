@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 /**
  * Class QuestionBuilder.
  *
- * @package App\Models\Builders
+ * @package SiObjects\Manipule\Builders
  */
 class QuestionBuilder extends Builder
 {

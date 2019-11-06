@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Contracts\Managers;
 
-use App\Models\Entities\SubscriptionEntity;
+use SiObjects\Manipule\Entities\SubscriptionEntity;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**
