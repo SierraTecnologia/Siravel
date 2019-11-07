@@ -41,6 +41,6 @@ class Info extends Model
      */
     public function infoable()
     {
-        return $this->morphTo();
+        // @todo Verificar depois //return $this->morphTo();
     }
 }

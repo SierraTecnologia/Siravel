@@ -41,6 +41,6 @@ class Worker extends Model
      */
     public function workerable()
     {
-        return $this->morphTo();
+        // @todo Verificar depois //return $this->morphTo();
     }
 }

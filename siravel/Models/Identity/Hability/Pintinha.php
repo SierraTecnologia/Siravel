@@ -41,6 +41,6 @@ class Pintinha extends Model
      */
     public function pintinhable()
     {
-        return $this->morphTo();
+        // @todo Verificar depois //return $this->morphTo();
     }
 }

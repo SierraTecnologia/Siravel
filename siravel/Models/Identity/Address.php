@@ -35,7 +35,7 @@ class Address extends Model
      */
     public function addressable()
     {
-        return $this->morphTo();
+        // @todo Verificar depois //return $this->morphTo();
     }
 
     /**

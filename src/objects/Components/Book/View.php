@@ -13,6 +13,6 @@ class View extends Model
      */
     public function viewable()
     {
-        return $this->morphTo();
+        // @todo Verificar depois //return $this->morphTo();
     }
 }

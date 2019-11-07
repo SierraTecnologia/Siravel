@@ -50,7 +50,7 @@ class Account extends Model
      */
     public function accountable()
     {
-        return $this->morphTo(); //, 'businessable_type', 'businessable_code'
+        // @todo Verificar depois //return $this->morphTo(); //, 'businessable_type', 'businessable_code'
     }
 
     /**

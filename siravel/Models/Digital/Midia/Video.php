@@ -40,11 +40,12 @@ class Video extends Model
         return $this->morphToMany('Siravel\Models\Identity\Hability\Sitio', 'sitioable');
     }
         
-    /**
-     * Get all of the owning videoable models.
-     */
-    public function videoable()
-    {
-        return $this->morphTo(); //, 'videoable_type', 'videoable_code'
-    }
+    // /**
+    //  * Get all of the owning videoable models.
+    //  */
+    // @todo Verificar Depois
+    // public function videoable()
+    // {
+    //     // @todo Verificar depois //return $this->morphTo(); //, 'videoable_type', 'videoable_code'
+    // }
 }

@@ -53,7 +53,7 @@ class Skill extends Model
      */
     public function skillable()
     {
-        return $this->morphTo(); //, 'businessable_type', 'businessable_code'
+        // @todo Verificar depois //return $this->morphTo(); //, 'businessable_type', 'businessable_code'
     }
 
 
