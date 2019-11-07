@@ -38,7 +38,7 @@ class Sitio extends Model
      */
     public function businesses()
     {
-        return $this->morphedByMany(config('sitec-tools.models.business')), 'sitioable');
+        return $this->morphedByMany(config('sitec-tools.models.business'), 'sitioable');
     }
 
     /**

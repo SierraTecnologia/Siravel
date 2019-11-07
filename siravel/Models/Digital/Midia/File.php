@@ -2,7 +2,9 @@
 
 namespace Siravel\Models\Digital\Midia;
 
-class File extends Traits\ArchiveTrait
+use SiObjects\Support\Traits\Models\ArchiveTrait;
+
+class File extends ArchiveTrait
 {
     public $table = 'files';
 

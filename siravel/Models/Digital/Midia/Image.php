@@ -2,6 +2,8 @@
 
 namespace Siravel\Models\Digital\Midia;
 
+use SiObjects\Support\Traits\Models\ArchiveTrait;
+
 use Carbon\Carbon;
 use Config;
 use FileService;
@@ -11,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
 use Storage;
 
-class Image extends Traits\ArchiveTrait
+class Image extends ArchiveTrait
 {
     public $table = 'images';
 
