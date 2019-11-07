@@ -29,7 +29,7 @@ class SiravelServiceProvider extends ServiceProvider
 
         
         // // @todo Resolver
-        // $loader->alias('FileService', \SierraTecnologia\Facilitador\Services\Midia\FileService::class);
+        // $loader->alias('FileService', \Facilitador\Services\Midia\FileService::class);
         // $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
         // $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
 
