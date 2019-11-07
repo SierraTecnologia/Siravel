@@ -79,6 +79,10 @@ class SiravelProvider extends ServiceProvider
         $this->app->register(\Cmgmyr\Messenger\MessengerServiceProvider::class);
 
 
+        /**
+         * Admin
+         */
+        $this->app->register(\Laravel\Tinker\TinkerServiceProvider::class);
 
 
         /**
