@@ -34,7 +34,7 @@ trait AsFofocavel
     /**
      * Events
      */
-    protected static function bootAsFofocavel()                                                                                                                                                             
+    public static function bootAsFofocavel()                                                                                                                                                             
     {
 
         // static::deleting(function (self $user) {

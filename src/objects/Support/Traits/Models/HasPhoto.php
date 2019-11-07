@@ -13,7 +13,7 @@ trait HasPhoto
 {
     use HasMediaTrait;
 
-    protected static function bootHasPhoto()                                                                                                                                                             
+    public static function bootHasPhoto()                                                                                                                                                             
     {
 
         static::deleting(function (self $user) {

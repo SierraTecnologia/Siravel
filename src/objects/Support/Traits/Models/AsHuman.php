@@ -147,7 +147,7 @@ trait AsHuman
     /**
      * Events
      */
-    protected static function bootAsHuman()                                                                                                                                                             
+    public static function bootAsHuman()                                                                                                                                                             
     {
 
         // static::deleting(function (self $user) {

@@ -26,7 +26,7 @@ trait MakeEconomicActions
     /**
      * Events
      */
-    protected static function bootMakeEconomicActions()                                                                                                                                                             
+    public static function bootMakeEconomicActions()                                                                                                                                                             
     {
 
         // static::deleting(function (self $user) {

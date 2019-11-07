@@ -70,7 +70,7 @@ class Photo extends Model
     /**
      * @inheritdoc
      */
-    protected static function boot()
+    public static function boot()
     {
         parent::boot();
 

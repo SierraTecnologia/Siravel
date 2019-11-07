@@ -14,7 +14,7 @@ trait AccessTrait
 {
     use EloquentGetTableNameTrait;
 
-    protected static function bootAccessTrait()                                                                                                                                                             
+    public static function bootAccessTrait()                                                                                                                                                             
     {
         //@todo
     }

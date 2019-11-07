@@ -36,7 +36,7 @@ return [
 
         // Internet
         'urls' => \Siravel\Models\Digital\Internet\Url::class,
-        'links' => \Siravel\Models\Digital\Internet\Link::class,
+        'url_links' => \Siravel\Models\Digital\Internet\UrlLink::class,
 
         // Midias
         'files' => \Siravel\Models\Digital\Midia\File::class,

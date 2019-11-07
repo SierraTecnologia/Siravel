@@ -11,7 +11,7 @@ trait BusinessTrait
 {
     use EloquentGetTableNameTrait;
 
-    protected static function bootBusinessTrait()                                                                                                                                                             
+    public static function bootBusinessTrait()                                                                                                                                                             
     {
         // Caso config seja falso, ignora
         if (!config('sitec-tools.configs.multi-tenant')) {
