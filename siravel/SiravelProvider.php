@@ -27,6 +27,43 @@ class SiravelProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/Views' => base_path('resources/views/vendor/siravel'),
         ], 'SierraTecnologia Siravel');
+        /*
+        |--------------------------------------------------------------------------
+        | Blade Directives
+        |--------------------------------------------------------------------------
+        */
+        /**
+        Blade::directive('menu', function ($expression) {
+            return "<?php echo Cms::menu($expression); ?>";
+        });
+
+        Blade::directive('features', function () {
+            return '<?php echo Cms::moduleLinks(); ?>';
+        });
+
+        Blade::directive('widget', function ($expression) {
+            return "<?php echo Cms::widget($expression); ?>";
+        });
+
+        Blade::directive('image', function ($expression) {
+            return "<?php echo Cms::image($expression); ?>";
+        });
+
+        Blade::directive('image_link', function ($expression) {
+            return "<?php echo Cms::imageLink($expression); ?>";
+        });
+
+        Blade::directive('images', function ($expression) {
+            return "<?php echo Cms::images($expression); ?>";
+        });
+
+        Blade::directive('edit', function ($expression) {
+            return "<?php echo Cms::editBtn($expression); ?>";
+        });
+
+        Blade::directive('markdown', function ($expression) {
+            return "<?php echo Markdown::convertToHtml($expression); ?>";
+        }); */
     }
 
     /**
