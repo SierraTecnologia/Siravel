@@ -1,75 +1,28 @@
-<?php
-
-namespace SiWeapons\Integrations\Twitter;
-
-use Illuminate\Support\Facades\Log;
-use App\Models\User;
-
-class Post extends Twitter
-{
-    
-    public function __construct()
-    {
-        
-    }
-
-    public function send($component, $text = 'Hello word')
-    {
-        try {
-            // The most basic upload command, if you're sure that your photo file is
-            // valid on Twitter (that it fits all requirements), is the following:
-            // $ig->timeline->uploadPhoto($photoFilename, ['caption' => $text]);
-            // However, if you want to guarantee that the file is valid (correct format,
-            // width, height and aspect ratio), then you can run it through our
-            // automatic photo processing class. It is pretty fast, and only does any
-            // work when the input file is invalid, so you may want to always use it.
-            // You have nothing to worry about, since the class uses temporary files if
-            // the input needs processing, and it never overwrites your original file.
-            //
-            // Also note that it has lots of options, so read its class documentation!
-            $photo = new \TwitterAPI\Media\Photo\TwitterPhoto($component->getTarget());
-            $this->getConnection()->timeline->uploadPhoto($photo->getFile(), ['caption' => $text]);
-        } catch (\Exception $e) {
-            echo 'Something went wrong: '.$e->getMessage()."\n";
-        }
-    }
-
-    public function getAll()
-    {
-        $instagram = $this->getConnection()->likeMedia();
-
-        // set user's accesstoken (can be received after authentication)
-        $instagram->setAccessToken("2823787.9687902.21u77429n3r79o08233122306fa78902");
-
-        // follow user (snoopdogg)
-        $instagram->modifyRelationship('follow', $component->getReference());
-
-        // receive the list of users this user follows
-        $follows = $instagram->getUserFollows();
-
-        // dump response object
-        echo '<pre>';
-        print_r($follows);
-        echo '<pre>';
-
-        
-        
-        $result = $this->getConnection()->likeMedia($component->getReference());
-    }
-
-    public function getRelations()
-    {
-        $this->getFollows();
-    }
-
-    protected function getFollows()
-    {
-
-    }
-
-    protected function getComments()
-    {
-
-    }
-
+session_start();
+require 'autoload.php';
+use Abraham\TwitterOAuth\TwitterOAuth;
+define('CONSUMER_KEY', ''); // add your app consumer key between single quotes
+define('CONSUMER_SECRET', ''); // add your app consumer secret key between single quotes
+define('OAUTH_CALLBACK', 'https://sohaibilyas.com/twapp/callback.php'); // your app callback URL
+if (!isset($_SESSION['access_token'])) {
+	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+	$request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
+	$_SESSION['oauth_token'] = $request_token['oauth_token'];
+	$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+	$url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+	echo $url;
+} else {
+	$access_token = $_SESSION['access_token'];
+	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+	
+	// getting basic user info
+	$user = $connection->get("account/verify_credentials");
+	
+	// printing username on screen
+	echo "Welcome " . $user->screen_name;
+	// uploading media (image) and getting media_id
+	$tweetWM = $connection->upload('media/upload', ['media' => 'https://pbs.twimg.com/profile_images/695720184464740353/lnOGP0Z8_400x400.jpg']);
+	// tweeting with uploaded media (image) using media_id
+	$tweet = $connection->post('statuses/update', ['media_ids' => $tweetWM->media_id, 'status' => 'tweeting with image file']);
+	print_r($tweet);
 }

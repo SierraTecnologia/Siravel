@@ -23,6 +23,7 @@ class Personagem extends Model
     protected $fillable = [
         'code',
         'name',
+        'description',
         'email',
         'user_id'
     ];

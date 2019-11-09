@@ -75,7 +75,8 @@
         "spatie/laravel-activitylog": "^3.6",
         "spatie/laravel-medialibrary": "^7.0.0",
         "cipemotion/medialibrary": "^1.16",
-        "graham-campbell/markdown": "*"
+        "graham-campbell/markdown": "*",
+        "thujohn/twitter": "^2.2"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",

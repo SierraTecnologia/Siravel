@@ -21,6 +21,7 @@ class CreateSexRelationsTables extends Migration
             $table->string('code')->unique();
             $table->primary('code');
 			$table->string('name', 255)->nullable();
+			$table->string('description')->nullable();
             $table->unsignedInteger('status')->default(0);
 			$table->timestamps();
             $table->softDeletes();
