@@ -4,9 +4,9 @@ namespace Siravel\Http\Controllers;
 
 use App\Models\User;
 use Carbon\Carbon;
-use App\Models\Message;
-use App\Models\Participant;
-use App\Models\Thread;
+use Siravel\Models\Features\Messenger\Message;
+use Siravel\Models\Features\Messenger\Participant;
+use Siravel\Models\Features\Messenger\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;

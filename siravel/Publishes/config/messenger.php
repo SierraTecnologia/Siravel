@@ -2,13 +2,13 @@
 
 return [
 
-    // 'user_model' => App\Models\User::class,
+    'user_model' => App\Models\User::class,
 
-    'message_model' => Cmgmyr\Messenger\Models\Message::class,
+    'message_model' => Siravel\Models\Features\Messenger\Message::class,
 
-    'participant_model' => Cmgmyr\Messenger\Models\Participant::class,
+    'participant_model' => Siravel\Models\Features\Messenger\Participant::class,
 
-    'thread_model' => Cmgmyr\Messenger\Models\Thread::class,
+    'thread_model' => Siravel\Models\Features\Messenger\Thread::class,
 
     /**
      * Define custom database table names - without prefixes.
