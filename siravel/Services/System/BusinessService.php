@@ -2,14 +2,14 @@
 
 namespace Siravel\Services\System;
 
-use App\Models\Negocios\Business;
-use Illuminate\Support\Facades\Config;
 use App\Models\User;
-use App\Models\Order;
+// use App\Models\Order;
+use App\Jobs\RoutineOrganizerCreateJob;
+use Siravel\Models\Identity\Business\Business;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
-use App\Jobs\RoutineOrganizerCreateJob;
-use App\Models\Setting;
+use Siravel\Models\System\Setting;
 
 class BusinessService extends Service
 {
@@ -239,22 +239,22 @@ class BusinessService extends Service
         // Passepague -> config('business.default')
     }
 
-    /**
-     * Cria base de Organizações clientes do negócio da empresa
-     * em cima dos tokens públicos enviados pelos apps.
-     */
-    public static function createIfNotExist(Order $order)
-    {
-        if (empty($order->company_token)) {
-            return true;
-        }
+    // /**
+    //  * Cria base de Organizações clientes do negócio da empresa
+    //  * em cima dos tokens públicos enviados pelos apps.
+    //  */
+    // public static function createIfNotExist(Order $order)
+    // {
+    //     if (empty($order->company_token)) {
+    //         return true;
+    //     }
 
-        if ($found = User::where('token_public', $order->company_token)->first()){
-            return true;
-        }
+    //     if ($found = User::where('token_public', $order->company_token)->first()){
+    //         return true;
+    //     }
 
-        return RoutineOrganizerCreateJob::dispatch($order->user, $order->company_token);
-    }
+    //     return RoutineOrganizerCreateJob::dispatch($order->user, $order->company_token);
+    // }
 
     /**
      * Retorna Serviço de acordo com o Usuario

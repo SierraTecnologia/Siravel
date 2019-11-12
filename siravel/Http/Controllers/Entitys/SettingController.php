@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Setting;
+use Siravel\Models\System\Setting;
 
 class SettingController extends Controller
 {
