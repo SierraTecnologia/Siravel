@@ -21,7 +21,7 @@ class NotificationsController extends Controller
         Auth::user()->notification_count = 0;
         Auth::user()->save();
 
-        return view('notifications.index', compact('notifications'));
+        return view('siravel::components.modules.notifications.index', compact('notifications'));
     }
 
     public function count()

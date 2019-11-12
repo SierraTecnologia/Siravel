@@ -25,7 +25,7 @@ class Personagem extends Model
         'name',
         'description',
         'email',
-        'user_id'
+        'person_code'
     ];
 
     protected $mappingProperties = array(

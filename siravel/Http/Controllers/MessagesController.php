@@ -25,7 +25,7 @@ class MessagesController extends Controller
             Auth::user()->message_count = 0;
             Auth::user()->save();
         }
-        return view('messages.index', compact('threads', 'currentUserId'));
+        return view('siravel::components.modules.messages.index', compact('threads', 'currentUserId'));
     }
 
     public function show($id)
@@ -44,7 +44,7 @@ class MessagesController extends Controller
         }
         $thread->markAsRead(Auth::id());
 
-        return view('messages.show', compact('thread', 'participant', 'messages', 'unread_message_count'));
+        return view('siravel::components.modules.messages.show', compact('thread', 'participant', 'messages', 'unread_message_count'));
     }
 
     public function create($id)
@@ -56,7 +56,7 @@ class MessagesController extends Controller
             return redirect()->route('messages.show', $thread->id);
         }
 
-        return view('messages.create', compact('recipient'));
+        return view('siravel::components.modules.messages.create', compact('recipient'));
     }
 
     public function createSecureMessage($id)
@@ -72,7 +72,7 @@ class MessagesController extends Controller
             return redirect()->route('messages.show', $thread->id);
         }
 
-        return view('messages.create', compact('recipient'));
+        return view('siravel::components.modules.messages.create', compact('recipient'));
     }
 
     public function store(MessageRequest $request, Markdown $markdown)

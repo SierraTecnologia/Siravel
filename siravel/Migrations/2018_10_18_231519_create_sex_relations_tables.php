@@ -23,8 +23,8 @@ class CreateSexRelationsTables extends Migration
 			$table->string('name', 255)->nullable();
 			$table->string('description')->nullable();
 			$table->unsignedInteger('status')->default(0);
-			$table->string('user_code');
-            $table->foreign('user_code')->references('code')->on('users');
+			$table->string('person_code');
+            $table->foreign('person_code')->references('code')->on('persons');
 			$table->timestamps();
             $table->softDeletes();
 		});
