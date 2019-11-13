@@ -23,15 +23,13 @@ class CreateFeaturesProductionsTables extends Migration
 			$table->string('name', 255)->nullable();
 			$table->string('description')->nullable();
 			$table->unsignedInteger('status')->default(0);
-			$table->string('person_code');
-            $table->foreign('person_code')->references('code')->on('persons');
 			$table->timestamps();
             $table->softDeletes();
 		});
         
 		Schema::create('personagenables', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
-			$table->unsignedInteger('personagenable_id')->nullable();
+			$table->string('personagenable_id')->nullable();
 			$table->string('personagenable_type', 255)->nullable();
 
             $table->string('personagen_code')->nullable();

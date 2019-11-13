@@ -7,7 +7,7 @@ use App\Models\User;
 use Siravel\Models\Model;
 use Siravel\Models\Identity\Business\Business;
 use Siravel\Models\System\Language;
-use SiObjects\Support\Traits\Model\EloquentGetTableNameTrait;
+use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
 
 class Setting extends Model
 {
