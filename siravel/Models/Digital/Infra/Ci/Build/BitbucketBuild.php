@@ -1,6 +1,6 @@
 <?php
 
-namespace SiUtils\Tools\Model\Build;
+namespace Siravel\Models\Digital\Infra\Ci\Build;
 
 use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;

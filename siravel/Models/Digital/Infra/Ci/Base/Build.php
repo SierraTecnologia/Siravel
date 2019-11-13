@@ -1,6 +1,6 @@
 <?php
 
-namespace SiUtils\Tools\Model\Base;
+namespace Siravel\Models\Digital\Infra\Ci\Base;
 
 use SiUtils\Tools\Exception\InvalidArgumentException;
 use SiUtils\Tools\Model;
