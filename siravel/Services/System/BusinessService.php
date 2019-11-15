@@ -30,7 +30,9 @@ class BusinessService extends Service
             }
         });
 
-        $this->features = $this->business->features->all();
+        if ($this->business->features) {
+            $this->features = $this->business->features->all();
+        }
     }
 
     private function detectedBusiness()
