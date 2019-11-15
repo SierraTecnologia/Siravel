@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Feactures\Reports\Metrics;
+namespace SiInteractions\Feactures\Training\Metrics;
 
 use App\Models\User;
 use Illuminate\Http\Request;
