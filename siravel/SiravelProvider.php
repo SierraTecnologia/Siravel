@@ -109,6 +109,8 @@ class SiravelProvider extends ServiceProvider
         $this->app->register(\Siravel\Providers\TelescopeServiceProvider::class);
         $this->app->register(\Facilitador\FacilitadorProvider::class);
         $this->app->register(\Locaravel\LocaravelProvider::class);
+
+        $this->app->register(\Laravel\Passport\PassportServiceProvider::class);
         
         /**
          * Serviços
