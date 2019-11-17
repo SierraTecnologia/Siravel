@@ -62,7 +62,7 @@
         "ricardosierra/translation": "dev-master",
         "spatie/laravel-backup": "^6.2",
         "zizaco/entrust": "^1.8",
-        "laravel/passport": "^8.0.0",
+        "laravel/passport": "^7.5",
         "laracasts/presenter": "0.2.*",
         "laravelcollective/html": "^5.8",
         "intervention/image": "^2.4",
