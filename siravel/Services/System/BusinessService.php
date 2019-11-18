@@ -35,8 +35,20 @@ class BusinessService extends Service
         }
     }
 
+    public function isHability()
+    {
+        $config = config('sitec-tools.configs.multi-tenant');
+        if (!$config) {
+            return false;
+        }
+        return true;
+    }
+
     private function detectedBusiness()
     {
+        if (!$this->isHability()) {
+            return false;
+        }
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
 
         /**
@@ -55,6 +67,10 @@ class BusinessService extends Service
 
     private function getDefault()
     {
+        if (!$this->isHability()) {
+            return false;
+        }
+
         if (!$default = CacheService::getUniversal('business-default')){
             $default = 'HotelByNow';
         }
@@ -82,6 +98,9 @@ class BusinessService extends Service
      */
     public function makeDefault(Business $business)
     {
+        if (!$this->isHability()) {
+            return false;
+        }
         CacheService::setUniversal('business-default', $business->code);
         $this->business = $business;
         return true;
@@ -89,6 +108,9 @@ class BusinessService extends Service
 
     public function isDefault(Business $business)
     {
+        if (!$this->isHability()) {
+            return false;
+        }
         return $business->code === $this->getBusiness()->code;
     }
 
