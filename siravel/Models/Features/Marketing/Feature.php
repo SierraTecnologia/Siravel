@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Features\Marketing;
+namespace Siravel\Models\Features\Marketing;
 
 use App\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
