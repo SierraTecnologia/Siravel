@@ -23,7 +23,7 @@ return [
         'equipaments' => \Siravel\Models\Entytys\Fisicos\Equipament::class,
         'genders' => \Siravel\Models\Entytys\Fisicos\Gender::class,
         'gostos' => \Siravel\Models\Entytys\Fisicos\Gosto::class,
-        'infos' => \Siravel\Models\Market\About\Info::class,
+        'infos' => \Siravel\Models\Market\Abouts\Info::class,
         'integrations' => \Siravel\Models\Entytys\Fisicos\Integration::class,
         'items' => \Siravel\Models\Entytys\Fisicos\Item::class,
         'pintinhas' => \Siravel\Models\Identity\Fisicos\Pintinha::class,

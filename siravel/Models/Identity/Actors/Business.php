@@ -162,7 +162,7 @@ class Business extends Model
     }
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Market\About\Info', 'infoable');
+        return $this->morphMany('Siravel\Models\Market\Abouts\Info', 'infoable');
     }
     public function gostos()
     {
