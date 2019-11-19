@@ -1,7 +1,7 @@
 <?php namespace Siravel\Models\Components\Book\Repos;
 
-use Siravel\Actions\Book\TagRepo;
-use Siravel\Actions\Book\ViewService;
+use SiInteractions\Actions\Book\TagRepo;
+use SiInteractions\Actions\Book\ViewService;
 use Siravel\Models\Permissions\PermissionService;
 use App\Models\User;
 use Siravel\Models\Components\Book\Book;

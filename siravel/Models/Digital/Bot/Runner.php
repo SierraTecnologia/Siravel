@@ -14,7 +14,7 @@ namespace Siravel\Models\Digital\Bot;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
-use Siravel\Actions\Action;
+use SiInteractions\Actions\Action;
 use Illuminate\Support\Facades\Log;
 class Runner extends Model
 {

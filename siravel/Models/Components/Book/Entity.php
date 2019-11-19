@@ -1,9 +1,9 @@
 <?php namespace Siravel\Models\Components\Book;
 
-use Siravel\Actions\Book\Activity;
-use Siravel\Actions\Book\Comment;
-use Siravel\Actions\Book\Tag;
-use Siravel\Actions\Book\View;
+use SiInteractions\Actions\Book\Activity;
+use SiInteractions\Actions\Book\Comment;
+use SiInteractions\Actions\Book\Tag;
+use SiInteractions\Actions\Book\View;
 use Siravel\Models\Permissions\EntityPermission;
 use Siravel\Models\Permissions\JointPermission;
 use Siravel\Models\Ownable;

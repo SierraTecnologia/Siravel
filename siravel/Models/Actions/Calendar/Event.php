@@ -14,7 +14,7 @@ namespace Siravel\Models\Actions\Calendar;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
-use Siravel\Actions\Action;
+use SiInteractions\Actions\Action;
 use Illuminate\Support\Facades\Log;
 class Event extends Model
 {
