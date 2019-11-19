@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Digital\Code\Language;
+use Siravel\Models\Entytys\Digital\Code\Language;
 
 class LanguageController extends Controller
 {

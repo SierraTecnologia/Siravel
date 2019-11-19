@@ -11,8 +11,8 @@ class Product extends Model
     use ComplexRelationamentTrait;
     
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
-        \Siravel\Models\Digital\Midia\Photo::class,
-        \Siravel\Models\Digital\Midia\Video::class
+        \Siravel\Models\Entytys\Digital\Midia\Photo::class,
+        \Siravel\Models\Entytys\Digital\Midia\Video::class
     ];
 
     /**

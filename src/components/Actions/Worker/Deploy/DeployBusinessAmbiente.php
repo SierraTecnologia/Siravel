@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Actions\Worker\Deploy;
 
-use Siravel\Models\Digital\Infra\Commit;
+use Siravel\Models\Entytys\Digital\Infra\Commit;
 
 /**
  * DeployBusinessAmbiente Class

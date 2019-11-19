@@ -47,7 +47,7 @@ trait AsHuman
      */
     public function videos()
     {
-        return $this->morphedByMany('Siravel\Models\Digital\Midia\Video', 'personable');
+        return $this->morphedByMany('Siravel\Models\Entytys\Digital\Midia\Video', 'personable');
     }
 
     /**
@@ -55,7 +55,7 @@ trait AsHuman
      */
     public function images()
     {
-        return $this->morphedByMany('Siravel\Models\Digital\Midia\Image', 'personable');
+        return $this->morphedByMany('Siravel\Models\Entytys\Digital\Midia\Image', 'personable');
     }
 
     /**
@@ -71,7 +71,7 @@ trait AsHuman
      */
     public function workers()
     {
-        return $this->morphMany('Siravel\Models\Identity\Rotina\Worker', 'workerable');
+        return $this->morphMany('Siravel\Models\Market\Actions\Worker', 'workerable');
     }
 
     /**
@@ -88,11 +88,11 @@ trait AsHuman
      */
     public function skills()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Skill', 'skillable');
+        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Skill', 'skillable');
     }
     public function itens()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Item', 'itemable');
+        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Item', 'itemable');
     }
     public function productions()
     {
@@ -106,15 +106,15 @@ trait AsHuman
      */
     public function pircings()
     {
-        return $this->morphMany('Siravel\Models\Identity\Hability\Pircing', 'pircingable');
+        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Pircing', 'pircingable');
     }
     public function pintinhas()
     {
-        return $this->morphMany('Siravel\Models\Identity\Hability\Pintinha', 'pintinhable');
+        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Pintinha', 'pintinhable');
     }
     public function tatuages()
     {
-        return $this->morphMany('Siravel\Models\Identity\Hability\Tatuage', 'tatuageable');
+        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Tatuage', 'tatuageable');
     }
     
     /**

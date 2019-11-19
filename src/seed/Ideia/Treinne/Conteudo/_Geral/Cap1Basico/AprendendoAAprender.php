@@ -11,10 +11,10 @@ use App\Models\FraudAnalysi;
 use App\Models\TrackingType;
 use Illuminate\Support\Facades\DB;
 
-use Siravel\Models\Digital\Code\Project;
+use Siravel\Models\Entytys\Digital\Code\Project;
 
-use Siravel\Models\Identity\Business\Business;
-use Siravel\Models\Identity\Business\Collaborator;
+use Siravel\Models\Identity\Actors\Business;
+use Siravel\Models\Market\Business\Collaborator;
 
 use Siravel\Models\Components\Integrations\Token;
 use Siravel\Models\Components\Integrations\TokenAccess;

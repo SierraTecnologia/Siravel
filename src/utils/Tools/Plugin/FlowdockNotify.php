@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use Siravel\Models\Digital\Infra\Ci\Build;
+use Siravel\Models\Entytys\Digital\Infra\Ci\Build;
 use FlowdockClient\Api\Push\Push;
 use FlowdockClient\Api\Push\TeamInboxMessage;
 use SiUtils\Tools\Plugin;

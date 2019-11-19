@@ -6,10 +6,10 @@
 namespace SiInteractions\Actions\Worker\Sync;
 
 use App\Logic\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Siravel\Models\Digital\Infra\Token;
-use Siravel\Models\Digital\Infra\SshKey;
+use Siravel\Models\Entytys\Digital\Infra\Token;
+use Siravel\Models\Entytys\Digital\Infra\SshKey;
 use App\Logic\Tools\Programs\Git\Admin as GitManiputor;
-use Siravel\Models\Digital\Code\Project as ProjectModel;
+use Siravel\Models\Entytys\Digital\Code\Project as ProjectModel;
 class Project
 {
 

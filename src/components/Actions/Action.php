@@ -127,7 +127,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'scanDomain',
-            \Siravel\Models\Digital\Infra\Domain::class, // Ou Url
+            \Siravel\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiInteraction\Actions\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'whoisDomain',
-            \Siravel\Models\Digital\Infra\Domain::class, // Ou Url
+            \Siravel\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiInteraction\Actions\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'backupDatabase',
-            \Siravel\Models\Digital\Infra\DatabaseCollection::class,
+            \Siravel\Models\Entytys\Digital\Infra\DatabaseCollection::class,
             \SiInteraction\Actions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'searchLog',
-            \Siravel\Models\Digital\Infra\Computer::class,
+            \Siravel\Models\Entytys\Digital\Infra\Computer::class,
             \SiInteraction\Actions\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'analyseComit',
-            \Siravel\Models\Digital\Code\Commit::class,
+            \Siravel\Models\Entytys\Digital\Code\Commit::class,
             \SiInteraction\Actions\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'deployCommit',
-            \Siravel\Models\Digital\Code\Commit::class,
+            \Siravel\Models\Entytys\Digital\Code\Commit::class,
             \SiInteraction\Actions\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'syncProject',
-            \Siravel\Models\Digital\Code\Project::class,
+            \Siravel\Models\Entytys\Digital\Code\Project::class,
             \SiInteraction\Actions\Worker\Sync\Project::class,
             self::$hook
         );

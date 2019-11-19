@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Digital\Bot\Runner;
+use Siravel\Models\Entytys\Digital\Bot\Runner;
 
 class RunnerController extends Controller
 {

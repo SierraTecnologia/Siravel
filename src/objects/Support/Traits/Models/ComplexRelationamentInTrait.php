@@ -12,7 +12,7 @@ trait ComplexRelationamentInTrait
 {
     // Acrescentar na tabela
     // protected static $COMPLEX_RELATIONAMENT_IN_MODELS = [
-    //     \Siravel\Models\Digital\Bot\Task::class
+    //     \Siravel\Models\Entytys\Digital\Bot\Task::class
     // ];
 
     public static function getTableName()

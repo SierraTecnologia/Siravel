@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Actions;
 
-use Siravel\Models\Builders\QuestionBuilder;
+use SiObjects\Manipule\Builders\QuestionBuilder;
 use Siravel\Contants\Tables;
 use Siravel\Features\Photos\Entities\QuestionEntity;
 use Illuminate\Database\Eloquent\Collection;

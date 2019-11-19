@@ -5,7 +5,7 @@ namespace App\Repositories;
 use Auth;
 use Config;
 use CryptoService;
-use Siravel\Models\Digital\Midia\File;
+use Siravel\Models\Entytys\Digital\Midia\File;
 use App\Repositories\CmsRepository;
 use App\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;

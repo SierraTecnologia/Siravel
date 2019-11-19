@@ -5,7 +5,7 @@ namespace Siravel\Services\System;
 use App\Models\User;
 // use App\Models\Order;
 use App\Jobs\RoutineOrganizerCreateJob;
-use Siravel\Models\Identity\Business\Business;
+use Siravel\Models\Identity\Actors\Business;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;

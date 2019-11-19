@@ -1,6 +1,6 @@
 <?php
 
-use Siravel\Models\Identity\BibliotecaType;
+use Siravel\Models\Entytys\Category\BibliotecaType;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 

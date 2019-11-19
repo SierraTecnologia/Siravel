@@ -5,7 +5,7 @@ namespace Siravel\Models\System;
 use App\Models\User;
 
 use Siravel\Models\Model;
-use Siravel\Models\Identity\Business\Business;
+use Siravel\Models\Identity\Actors\Business;
 use Siravel\Models\System\Language;
 use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
 

@@ -4,7 +4,7 @@ namespace SiUtils\Tools;
 
 use JJG\Ping as PingLib;
 
-use Siravel\Models\Digital\Infra\Computer;
+use Siravel\Models\Entytys\Digital\Infra\Computer;
 
 /**
  * Ping Class

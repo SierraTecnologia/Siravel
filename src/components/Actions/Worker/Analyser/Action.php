@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Actions\Worker\Explorer;
 
-use Siravel\Models\Digital\Infra\Domain;
-use Siravel\Models\Digital\Internet\Url;
-use Siravel\Models\Digital\Internet\UrlLink;
+use Siravel\Models\Entytys\Digital\Infra\Domain;
+use Siravel\Models\Entytys\Digital\Internet\Url;
+use Siravel\Models\Entytys\Digital\Internet\UrlLink;
 
 /**
  * Action Class

@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Actions\Worker\Explorer;
 
-use Siravel\Models\Digital\Infra\Domain;
-use Siravel\Models\Digital\Infra\SubDomain;
-use Siravel\Models\Digital\Infra\DomainLink;
+use Siravel\Models\Entytys\Digital\Infra\Domain;
+use Siravel\Models\Entytys\Digital\Infra\SubDomain;
+use Siravel\Models\Entytys\Digital\Infra\DomainLink;
 
 /**
  * Spider Class

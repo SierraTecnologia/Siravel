@@ -2,7 +2,7 @@
 
 namespace SiObjects\Manipule\Builders;
 
-use Siravel\Models\Digital\Midia\Photo;
+use Siravel\Models\Entytys\Digital\Midia\Photo;
 use App\Contants\Tables;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -17,7 +17,7 @@ class PhotoBuilder extends Builder
     /**
      * @var string
      */
-    private $photosTable = Tables::TABLE_PHOTOS;
+    private $photosTable = 'photos';
 
     /**
      * @return $this

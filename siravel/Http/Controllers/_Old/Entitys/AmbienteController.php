@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Digital\Infra\Ambiente;
+use Siravel\Models\Entytys\Digital\Infra\Ambiente;
 
 class AmbienteController extends Controller
 {

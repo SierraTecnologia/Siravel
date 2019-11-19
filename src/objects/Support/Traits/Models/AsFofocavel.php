@@ -15,18 +15,18 @@ trait AsFofocavel
 
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Identity\Hability\Info', 'infoable');
+        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Info', 'infoable');
     }
     /**
      * Many To Many (Polymorphic)
      */
     public function gostos()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Gosto', 'gostoable');
+        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Gosto', 'gostoable');
     }
     public function sitios()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Sitio', 'sitioable');
+        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Sitio', 'sitioable');
     }
 
 

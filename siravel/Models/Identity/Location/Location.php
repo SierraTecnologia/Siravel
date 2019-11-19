@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Identity\Location;
 
-use Siravel\Models\Builders\LocationBuilder;
+use SiObjects\Manipule\Builders\LocationBuilder;
 use Siravel\Contants\Tables;
 use Siravel\Features\Photos\Entities\LocationEntity;
 use SiObjects\ValueObjects\Coordinates;

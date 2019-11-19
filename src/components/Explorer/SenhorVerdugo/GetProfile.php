@@ -7,7 +7,7 @@ namespace SiInteractions\Explorer\SenhorVerdugo;
 
 use App\Models\User;
 use App\Models\Role;
-use Siravel\Models\Identity\Hability\Skill;
+use Siravel\Models\Entytys\Fisicos\Skill;
 use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
 use Siravel\Models\System\Integration;
