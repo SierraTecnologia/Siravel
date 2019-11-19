@@ -4,7 +4,7 @@ namespace Siravel\Models\Entytys\Fisicos;
 
 use Siravel\Models\Model;
 
-class Position extends Model
+class Position extends Caracteristica
 {
     public $incrementing = false;
     protected $casts = [
