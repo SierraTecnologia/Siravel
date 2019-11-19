@@ -13,7 +13,7 @@ return [
         'accounts' => \Siravel\Models\Identity\Account::class,
         'passwords' => \Siravel\Models\Identity\Password::class,
         'phones' => \Siravel\Models\Identity\Phone::class,
-        'dominios' => \Siravel\Models\Identity\Dominio::class,
+        'dominios' => \Siravel\Models\Digital\Infra\Domain::class,
         'emails' => \Siravel\Models\Identity\Email::class,
         'bibliotecas' => \Siravel\Models\Identity\Biblioteca::class,
         'biblioteca_types' => \Siravel\Models\Identity\BibliotecaType::class,
@@ -43,7 +43,7 @@ return [
         'images' => \Siravel\Models\Digital\Midia\Image::class,
         'photos' => \Siravel\Models\Digital\Midia\Photo::class,
         'photo_albums' => \Siravel\Models\Digital\Midia\PhotoAlbum::class,
-        'thumbnails' => \Siravel\Models\Digital\Midia\Thunbnail::class,
+        'thumbnails' => \Siravel\Models\Digital\Midia\Thumbnail::class,
         'videos' => \Siravel\Models\Digital\Midia\Video::class,
 
 
