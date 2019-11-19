@@ -52,7 +52,7 @@ class CreateBusinessAndFeaturesTables extends Migration
             // $table->primary('code');
 			$table->string('value')->default(false);
 			$table->string('business_code')->nullable();
-            $table->foreign('business_code')->references('code')->on('businesses');
+            // $table->foreign('business_code')->references('code')->on('businesses');
 			$table->timestamps();
 			$table->softDeletes();
 			

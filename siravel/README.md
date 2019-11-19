@@ -2,6 +2,26 @@
 
 **Siravel** - An e-siravel package for Laravel apps using SierraTecnologia CMS
 
+
+
+# Routes
+
+## Actors
+
+- Person
+- Business
+
+## Features for Actor
+
+/messages
+/notifications
+
+
+
+
+# SIravel
+
+
 [![Build Status](https://travis-ci.org/SierraTecnologiaInc/Siravel.svg?branch=master)](https://travis-ci.org/SierraTecnologiaInc/Siravel)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f28b73ebf600f2db7f48/maintainability)](https://codeclimate.com/github/SierraTecnologiaInc/Siravel/maintainability)
 [![Packagist](https://img.shields.io/packagist/dt/sierratecnologia/siravel.svg?maxAge=2592000)](https://packagist.org/packages/sierratecnologia/siravel)

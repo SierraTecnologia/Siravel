@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Feactures\Reports\Metrics;
+namespace SiInteractions\Feactures\Training\Metrics;
 
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Metrics\Value as BaseValue;
