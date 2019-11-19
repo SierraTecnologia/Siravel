@@ -106,15 +106,15 @@ trait AsHuman
      */
     public function pircings()
     {
-        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Pircing', 'pircingable');
+        return $this->morphMany('Siravel\Models\Identity\Fisicos\Pircing', 'pircingable');
     }
     public function pintinhas()
     {
-        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Pintinha', 'pintinhable');
+        return $this->morphMany('Siravel\Models\Identity\Fisicos\Pintinha', 'pintinhable');
     }
     public function tatuages()
     {
-        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Tatuage', 'tatuageable');
+        return $this->morphMany('Siravel\Models\Identity\Fisicos\Tatuage', 'tatuageable');
     }
     
     /**

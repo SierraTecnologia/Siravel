@@ -151,7 +151,7 @@ class Business extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Sitio', 'sitioable');
+        return $this->morphToMany('Siravel\Models\Identity\Digital\Sitio', 'sitioable');
     }
     /**
      * Get all of the skills for the post.
@@ -162,7 +162,7 @@ class Business extends Model
     }
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Info', 'infoable');
+        return $this->morphMany('Siravel\Models\Market\About\Info', 'infoable');
     }
     public function gostos()
     {
@@ -170,11 +170,11 @@ class Business extends Model
     }
     public function pircings()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Pircing', 'pircingable');
+        return $this->morphToMany('Siravel\Models\Identity\Fisicos\Pircing', 'pircingable');
     }
     public function tatuages()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Tatuagem', 'tatuageable');
+        return $this->morphToMany('Siravel\Models\Identity\Fisicos\Tatuagem', 'tatuageable');
     }
 
 }

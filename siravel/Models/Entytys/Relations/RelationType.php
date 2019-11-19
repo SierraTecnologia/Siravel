@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Fisicos;
+namespace Siravel\Models\Entytys\Relations;
 
 use Siravel\Models\Model;
 

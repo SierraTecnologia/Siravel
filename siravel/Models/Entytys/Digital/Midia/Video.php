@@ -37,7 +37,7 @@ class Video extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Sitio', 'sitioable');
+        return $this->morphToMany('Siravel\Models\Identity\Digital\Sitio', 'sitioable');
     }
         
     // /**

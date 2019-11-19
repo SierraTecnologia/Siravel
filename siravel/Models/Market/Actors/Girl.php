@@ -49,7 +49,7 @@ class Girl extends Model
     
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Entytys\Fisicos\Info', 'infoable');
+        return $this->morphMany('Siravel\Models\Market\About\Info', 'infoable');
     }
 
     /**
