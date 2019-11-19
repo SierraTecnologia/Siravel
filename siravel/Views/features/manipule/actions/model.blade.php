@@ -28,7 +28,7 @@
     @endif
 
     @include('
-        actions.table-models',
+        siravel::features.manipule.actions.table-models',
         [
             'actionsForModels' => $actionsForModels,
             'models' => $models

@@ -27,7 +27,7 @@
     </div><br />
   @endif
 
-  @include('actions.table', ['modelForActions' => $modelForActions])
+  @include('siravel::features.manipule.actions.table', ['modelForActions' => $modelForActions])
   
 <div>
 @endsection
