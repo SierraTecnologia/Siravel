@@ -1,4 +1,5 @@
 <div class="row">
+        <h2 class="page-header">Tools</h2>
         <div class="col-md-6">
           <div class="box box-default">
             <div class="box-header with-border">
