@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity;
+namespace Siravel\Models\Entytys\Category;
 
 use Siravel\Models\Model;
 
