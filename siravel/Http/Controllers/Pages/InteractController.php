@@ -19,7 +19,7 @@ class InteractController extends Controller
 
 
 
-	public function index(Request $request)
+	public function completeProfile(Request $request)
 	{
         $links = [];
         return view(
@@ -28,7 +28,7 @@ class InteractController extends Controller
         );
 	}
 
-	public function index(Request $request)
+	public function opineSobre(Request $request)
 	{
         $links = [];
         return view(
@@ -37,7 +37,7 @@ class InteractController extends Controller
         );
 	}
 
-	public function index(Request $request)
+	public function desejos(Request $request)
 	{
         $links = [];
         return view(

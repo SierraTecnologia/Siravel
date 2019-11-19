@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Market\Fisicos;
+namespace Siravel\Models\Market\Informacao;
 
 use Siravel\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;

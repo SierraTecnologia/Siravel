@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Pages;
 
 use Illuminate\Http\Request;
 
-class InteractController extends Controller
+class PersonagemController extends Controller
 {
 	public function index(Request $request)
 	{
@@ -28,7 +28,7 @@ class InteractController extends Controller
         );
 	}
 
-	public function index(Request $request)
+	public function indexx(Request $request)
 	{
         $links = [];
         return view(
@@ -37,7 +37,7 @@ class InteractController extends Controller
         );
 	}
 
-	public function index(Request $request)
+	public function indexxx(Request $request)
 	{
         $links = [];
         return view(
