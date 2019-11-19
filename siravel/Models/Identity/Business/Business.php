@@ -72,7 +72,7 @@ class Business extends Model
      */
     public function features()
     {
-        return $this->morphToMany('App\Models\Features\Marketing\Feature', 'featureable');
+        return $this->morphToMany('Siravel\Models\Features\Marketing\Feature', 'featureable');
     }
 
     // /**
