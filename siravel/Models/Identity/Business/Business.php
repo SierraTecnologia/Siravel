@@ -67,13 +67,14 @@ class Business extends Model
     }
 
 
-    // /**
-    //  * Get all of the features for the post.
-    //  */
-    // public function features()
-    // {
-    //     return $this->morphToMany('App\Models\Feature', 'featureable');
-    // }
+    /**
+     * Get all of the features for the post.
+     */
+    public function features()
+    {
+        return [];
+        // return $this->morphToMany('App\Models\Feature', 'featureable');
+    }
 
     // /**
     //  * Get all of the plugins for the post.
