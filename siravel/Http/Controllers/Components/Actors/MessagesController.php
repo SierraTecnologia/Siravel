@@ -20,7 +20,8 @@ class MessagesController extends Controller
 {
     public function index()
     {
-        $threads = Thread::participateBy(Auth::id());
+        $currentUserId = Auth::id();
+        $threads = Thread::participateBy($currentUserId);
 
         // @todo Refazer essa parte
         // if (Auth::user()->newThreadsCount() == 0) {
