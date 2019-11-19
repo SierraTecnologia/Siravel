@@ -1,4 +1,7 @@
+
 <div class="col-md-4">
+    <h2 class="page-header">System Diagnostc</h2>
+
     <!-- Info Boxes Style 2 -->
     <div class="info-box bg-yellow">
       <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>

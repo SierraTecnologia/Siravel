@@ -33,7 +33,7 @@ Minhas Mensagens | @parent
                             $participant = $thread->participant();
                         ?>
                         <div class="avatar pull-left">
-                            <a href="{{ route('users.show', [$participant->id]) }}">
+                            <a href="{{ route('components.actors.profile.show', [$participant->id]) }}">
                                 <img class="media-object img-thumbnail avatar" alt="{{ $participant->name }}" src="{{ $participant->present()->gravatar }}"  style="width:48px;height:48px;"/>
                             </a>
                         </div>

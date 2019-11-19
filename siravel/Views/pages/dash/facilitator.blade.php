@@ -1,10 +1,12 @@
 <div class="row">
+    <h2 class="page-header">Admin Facilitator</h2>
+
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">CPU Traffic</span>
+              <span class="info-box-text">Facilitator Dash</span>
               <span class="info-box-number">90<small>%</small></span>
             </div>
             <!-- /.info-box-content -->
@@ -17,7 +19,7 @@
             <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Likes</span>
+              <span class="info-box-text">Estatisticas</span>
               <span class="info-box-number">41,410</span>
             </div>
             <!-- /.info-box-content -->

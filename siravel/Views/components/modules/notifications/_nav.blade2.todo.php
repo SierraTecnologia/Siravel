@@ -6,9 +6,9 @@ ver parte das funcoes q nao existem
           <a href="{{ route('messages.index') }}" class="list-group-item big {{ active_class(if_uri_pattern(['messages*'])) }}">
               <i class="text-md fa fa-envelope" aria-hidden="true"></i>
               &nbsp;Comunicação pessoal
-               @if ($currentUser->message_count > 0)
+               @if ($currentActor->message_count > 0)
                    <span class="badge badge-important" style="color: white;">
-                      {{ $currentUser->message_count }}
+                      {{ $currentActor->message_count }}
                   </span>
                @endif
           </a>
@@ -16,9 +16,9 @@ ver parte das funcoes q nao existem
           <a href="{{ route('notifications.index') }}" class="list-group-item big {{ active_class(if_route('notifications.index')) }}">
               <i class="text-md fa fa-bell" aria-hidden="true"></i>
                &nbsp;Aviso
-               @if ($currentUser->notification_count > 0)
+               @if ($currentActor->notification_count > 0)
                    <span class="badge badge-important" style="color: white;">
-                      {{ $currentUser->notification_count }}
+                      {{ $currentActor->notification_count }}
                   </span>
                @endif
            </a>

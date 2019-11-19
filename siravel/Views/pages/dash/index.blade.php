@@ -28,10 +28,13 @@
         </div>
 
     </div>
-    @include('siravel::pages.dash.links', [
+    @include('siravel::pages.dash.facilitator', [
         // 'models' => $models,
     ])
-    @include('siravel::pages.dash.links-right', [
+    @include('siravel::pages.dash.systemdiagnostc', [
+        // 'models' => $models,
+    ])
+    @include('siravel::pages.dash.tools', [
         // 'models' => $models,
     ])
 @stop

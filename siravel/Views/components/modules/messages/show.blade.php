@@ -20,7 +20,7 @@ Minhas Mensagens | @parent
                 <div><a href="{{ route('messages.index') }}" class="normalize-link-color"><i class="fa fa-arrow-left" aria-hidden="true"></i> Retorno</a></div>
                 <br>
                 <div>
-                    <p>Enviar uma mensagem privada para <a href="{{ route('users.show', $participant->id) }}" class="">{{ $participant->name }}</a> ：</p>
+                    <p>Enviar uma mensagem privada para <a href="{{ route('components.actors.profile.show', $participant->id) }}" class="">{{ $participant->name }}</a> ：</p>
                 </div>
 
                 <form class="form-horizontal" method="POST" action="{{ route('messages.store') }}" accept-charset="UTF-8">

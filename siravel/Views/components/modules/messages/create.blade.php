@@ -25,7 +25,7 @@ Nova mensagem privada | @parent
             <div class="panel-body">
 
                 <div>
-                    <a href="{{ route('users.show', [$recipient->id]) }}" title="{{ $recipient->name }}">
+                    <a href="{{ route('components.actors.profile.show', [$recipient->id]) }}" title="{{ $recipient->name }}">
                         <img class="avatar avatar-small" alt="{{ $recipient->name }}" src="{{ $recipient->present()->gravatar }}"/>
                         {{ $recipient->name }}
                     </a>
