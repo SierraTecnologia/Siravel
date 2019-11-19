@@ -72,8 +72,7 @@ class Business extends Model
      */
     public function features()
     {
-        return [];
-        // return $this->morphToMany('App\Models\Feature', 'featureable');
+        return $this->morphToMany('App\Models\Features\Marketing\Feature', 'featureable');
     }
 
     // /**
@@ -92,13 +91,13 @@ class Business extends Model
     //     return $this->morphToMany('App\Models\Negocios\Widget', 'widgetable');
     // }
 
-    // /**
-    //  * Get all of the settings for the post.
-    //  */
-    // public function settings()
-    // {
-    //     return $this->hasMany('App\Models\Setting');
-    // }
+    /**
+     * Get all of the settings for the post.
+     */
+    public function settings()
+    {
+        return $this->hasMany('Siravel\Models\System\Setting');
+    }
 
     // /**
     //  * Get all of the subscriptions for the post.
