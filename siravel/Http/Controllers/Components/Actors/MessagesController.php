@@ -21,10 +21,12 @@ class MessagesController extends Controller
     public function index()
     {
         $threads = Thread::participateBy(Auth::id());
-        if (Auth::user()->newThreadsCount() == 0) {
-            Auth::user()->message_count = 0;
-            Auth::user()->save();
-        }
+
+        // @todo Refazer essa parte
+        // if (Auth::user()->newThreadsCount() == 0) {
+        //     Auth::user()->message_count = 0;
+        //     Auth::user()->save();
+        // }
         return view('siravel::components.modules.messages.index', compact('threads', 'currentUserId'));
     }
 
