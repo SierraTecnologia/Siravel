@@ -70,7 +70,7 @@ class CreateBusinessAndFeaturesTables extends Migration
         
 		Schema::create(config('app.db-prefix', '').'featureables', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
-			$table->string('feature_id');
+			$table->string('featureable_id');
 			$table->string('featureable_type', 255);
 			$table->string('feature_code');
             $table->foreign('feature_code')->references('code')->on('features');
