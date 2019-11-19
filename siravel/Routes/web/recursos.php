@@ -1,5 +1,15 @@
 <?php
 Route::group(['middleware' => 'auth'], function () {
+    Route::group(['as' => 'sitec.'], function () {
+        Route::group(['namespace' => 'Pages'], function () {
+            Route::get('/sitec/dash', 'DashController@index')->name('notifications.unread');
+
+        });
+    });
+
+
+
+
     Route::group(['namespace' => 'Components'], function () {
         Route::group(['namespace' => 'Actors'], function () {
             Route::get('/notifications/unread', 'NotificationsController@unread')->name('notifications.unread');
