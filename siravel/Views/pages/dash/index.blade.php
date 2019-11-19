@@ -28,9 +28,10 @@
         </div>
 
     </div>
-    @include('siravel::pages.dash.numbers', [
+    @include('siravel::pages.dash.links', [
         // 'models' => $models,
     ])
-
-    <example-component></example-component>
+    @include('siravel::pages.dash.links-right', [
+        // 'models' => $models,
+    ])
 @stop
