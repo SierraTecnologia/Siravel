@@ -31,6 +31,9 @@
     @include('siravel::pages.dash.facilitator', [
         // 'models' => $models,
     ])
+    @include('siravel::pages.dash.profile', [
+        // 'models' => $models,
+    ])
     @include('siravel::pages.dash.systemdiagnostc', [
         // 'models' => $models,
     ])

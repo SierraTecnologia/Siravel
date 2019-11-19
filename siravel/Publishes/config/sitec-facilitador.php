@@ -5,7 +5,7 @@ return [
     'models' => [
         // 'comments' => \App\Models\Comment::class,
         // 'categorys' => \App\Models\Category::class,
-        // 'weapons' => \App\Models\Weapon::class,
+        // 'weapons' => \Siravel\Models\Entytys\Fisicos\Weapon::class,
         // 'users' => \App\Models\User::class,
 
         // Identity
