@@ -15,7 +15,7 @@ return [
         'phones' => \Siravel\Models\Identity\Phone::class,
         'dominios' => \Siravel\Models\Entytys\Digital\Infra\Domain::class,
         'emails' => \Siravel\Models\Identity\Email::class,
-        'bibliotecas' => \Siravel\Models\Identity\Biblioteca::class,
+        'bibliotecas' => \Siravel\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Siravel\Models\Entytys\Category\BibliotecaType::class,
 
         // Hability
