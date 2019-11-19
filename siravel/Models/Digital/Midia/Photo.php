@@ -9,6 +9,7 @@ use Siravel\Features\Photos\Entities\PhotoEntity;
 use Illuminate\Database\Eloquent\Collection;
 use Siravel\Models\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Photo.
  *
