@@ -3,3 +3,5 @@ composer.phar
 .DS_Store
 build
 build.json
+/node_modules
+.env

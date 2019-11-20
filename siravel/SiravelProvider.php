@@ -25,7 +25,7 @@ class SiravelProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__.'/Views' => base_path('resources/views/vendor/siravel'),
+            __DIR__.'../resources/views' => base_path('resources/views/vendor/siravel'),
         ], 'SierraTecnologia Siravel');
         /*
         |--------------------------------------------------------------------------
