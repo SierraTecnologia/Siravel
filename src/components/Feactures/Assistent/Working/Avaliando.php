@@ -1,8 +1,8 @@
 <?php
 
-namespace SiInteractions\Feactures\Assistent\Questions;
+namespace SiInteractions\Feactures\Assistent\Working;
 
-class SeAltoDescrevendo
+class Avaliando
 {
 
     public function alvos()

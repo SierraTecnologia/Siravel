@@ -3,13 +3,13 @@
  * 
  */
 
-namespace SiInteractions\Actions;
+namespace SiInteractions\Actions\Collect;
 
 use Siravel\Models\Entytys\Digital\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 
-class ActionCollection implements \App\Contracts\Robot
+class FromDatabase implements \App\Contracts\Robot
 {
     /**
      * Array de Array de Actions, o Indice seria o Stage. 

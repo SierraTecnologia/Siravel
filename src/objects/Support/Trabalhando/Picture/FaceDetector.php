@@ -3,7 +3,7 @@
 namespace SiObjects\Support\Trabalhando\Picture;
 
 use Exception;
-use psp\Exception\NoFaceException;
+use Siravel\Exception\NoFaceException;
 
 class FaceDetector
 {
