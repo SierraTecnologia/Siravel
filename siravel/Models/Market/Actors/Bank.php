@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Market\Actions;
+namespace Siravel\Models\Market\Actors;
 
 use Siravel\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
