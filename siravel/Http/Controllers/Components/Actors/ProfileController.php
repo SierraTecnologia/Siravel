@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Components\Actors;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Requests;
+use Siravel\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\Banner;
 use App\Models\Link;

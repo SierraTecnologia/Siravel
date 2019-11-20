@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Resources\Entitys;
+namespace Siravel\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\PostEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -12,7 +12,7 @@ use function SiUtils\Helper\to_string;
 /**
  * Class PostPlainResource.
  *
- * @package SiObject\Http\Resources\Entitys
+ * @package Siravel\Http\Resources\Entitys
  */
 class PostPlainResource extends Resource
 {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Components\Actors;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Auth;
 
 class NotificationsController extends Controller

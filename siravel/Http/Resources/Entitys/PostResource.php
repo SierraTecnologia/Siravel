@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Resources\Entitys;
+namespace Siravel\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\PostEntity;
 use SiObjects\Manipule\Entities\TagEntity;
@@ -9,7 +9,7 @@ use function SiUtils\Helper\to_object;
 /**
  * Class PostResource.
  *
- * @package SiObject\Http\Resources\Entitys
+ * @package Siravel\Http\Resources\Entitys
  */
 class PostResource extends PostPlainResource
 {

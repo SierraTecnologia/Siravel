@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Phphub\Markdown\Markdown;
 use App\Jobs\SendNotifyMail;
-use App\Http\Requests\MessageRequest;
+use Siravel\Http\Requests\MessageRequest;
 
 class MessagesController extends Controller
 {

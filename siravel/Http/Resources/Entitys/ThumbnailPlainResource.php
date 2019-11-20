@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Resources\Entitys;
+namespace Siravel\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\ThumbnailEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -13,7 +13,7 @@ use function SiUtils\Helper\url_storage;
 /**
  * Class ThumbnailPlainResource.
  *
- * @package SiObject\Http\Resources\Entitys
+ * @package Siravel\Http\Resources\Entitys
  */
 class ThumbnailPlainResource extends Resource
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Resources\Entitys;
+namespace Siravel\Http\Resources\Entitys;
 
 use SiObjects\Manipule\Entities\SubscriptionEntity;
 use Illuminate\Http\Resources\Json\Resource;
@@ -10,7 +10,7 @@ use function SiUtils\Helper\to_string;
 /**
  * Class SubscriptionPlainResource.
  *
- * @package SiObject\Http\Resources\Entitys
+ * @package Siravel\Http\Resources\Entitys
  */
 class SubscriptionPlainResource extends Resource
 {
