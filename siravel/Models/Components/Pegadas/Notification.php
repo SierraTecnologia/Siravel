@@ -1,16 +1,11 @@
 <?php
-/**
- * Alguma ação que ocorra dentro da Produção
- */
 
-namespace Siravel\Models\Components\Productions;
+namespace Siravel\Models\Components\Pegadas;
 
 use Siravel\Models\Model;
 
 class Action extends Model
 {
-
-    protected $table = 'production_actions';
 
     /**
      * The attributes that are mass assignable.
