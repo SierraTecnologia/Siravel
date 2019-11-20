@@ -4,7 +4,7 @@ namespace Siravel\Models\Components\Pegadas;
 
 use Siravel\Models\Model;
 
-class Action extends Model
+class Notification extends Model
 {
 
     /**

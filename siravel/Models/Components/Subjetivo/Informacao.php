@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel;
+namespace Siravel\Models\Components\Subjetivo;
 
 use Request;
 use Illuminate\Database\Eloquent\Model;
 
-class Version extends Model
+class Informacao extends Model
 {
 	// Meta ========================================================================
 

@@ -7,7 +7,7 @@ use Illuminate\Routing\ResponseFactory;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
-class ExcelController extends Controller
+class CreatorController extends Controller
 {
     use ValidatesRequests;
 
