@@ -128,7 +128,7 @@ class Business extends Model
      */
     public function accounts()
     {
-        return $this->morphMany('Siravel\Models\Identity\Account', 'accountable');
+        return $this->morphMany('Siravel\Models\Identity\Digital\Account', 'accountable');
     }
 
     /**

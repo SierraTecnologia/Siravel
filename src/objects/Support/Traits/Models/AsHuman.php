@@ -63,7 +63,7 @@ trait AsHuman
      */
     public function accounts()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Account', 'accountable');
+        return $this->morphToMany('Siravel\Models\Identity\Digital\Account', 'accountable');
     }
 
     /**

@@ -10,7 +10,7 @@ return [
 
         // Identity
         'persons' => \Siravel\Models\Identity\Actors\Person::class,
-        'accounts' => \Siravel\Models\Identity\Account::class,
+        'accounts' => \Siravel\Models\Identity\Digital\Account::class,
         'passwords' => \Siravel\Models\Identity\Password::class,
         'phones' => \Siravel\Models\Identity\Phone::class,
         'dominios' => \Siravel\Models\Entytys\Digital\Infra\Domain::class,
