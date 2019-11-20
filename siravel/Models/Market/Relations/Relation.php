@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Fisicos;
+namespace Siravel\Models\Market\Relations;
 
 use Siravel\Models\Model;
 
