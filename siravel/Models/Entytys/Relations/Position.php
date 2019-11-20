@@ -3,6 +3,7 @@
 namespace Siravel\Models\Entytys\Relations;
 
 use Siravel\Models\Model;
+use Siravel\Models\Entytys\About\Caracteristica;
 
 class Position extends Caracteristica
 {
