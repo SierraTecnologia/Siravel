@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity;
+namespace Siravel\Models\Identity\Actors;
 
 use Siravel\Models\Model;
 use SiObjects\Support\Traits\Models\AsHuman;
