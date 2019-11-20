@@ -16,7 +16,7 @@ trait MakeEconomicActions
     }
     public function rendas()
     {
-        return $this->morphMany('Siravel\Models\Market\Actions\Renda', 'rendable');
+        return $this->morphMany('Siravel\Models\Market\Abouts\Renda', 'rendable');
     }
     public function gastos()
     {
