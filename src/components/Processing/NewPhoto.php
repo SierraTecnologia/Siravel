@@ -4,6 +4,7 @@ namespace SiInteractions\Processing;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
+use SiObjects\Support\Trabalhando\Picture;
 
 class NewPhoto
 {
@@ -15,7 +16,6 @@ class NewPhoto
 
     public function actions()
     {
-        use psp\FaceDetector;
         $facedetect = new FaceDetector();
         $facedetect->faceDetect($_FILES['image']['tmp_name']);
         // $json = $facedetect->toJson();

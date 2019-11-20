@@ -5,7 +5,7 @@ namespace SiInteractions\Processing;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class PushData
+class NewInformacao
 {
     
     public function __construct()

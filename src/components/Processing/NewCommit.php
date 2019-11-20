@@ -7,7 +7,7 @@ use App\Board;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class GetNewData
+class NewCommit
 {
 
     public function __construct(Board $board)
