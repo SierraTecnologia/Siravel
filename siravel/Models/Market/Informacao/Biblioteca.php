@@ -4,6 +4,7 @@ namespace Siravel\Models\Market\Informacao;
 
 use Siravel\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Siravel\Models\Entytys\Category\BibliotecaType;
 
 class Biblioteca extends Model
 {

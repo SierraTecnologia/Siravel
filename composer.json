@@ -76,7 +76,8 @@
         "spatie/laravel-medialibrary": "^7.0.0",
         "cipemotion/medialibrary": "^1.16",
         "graham-campbell/markdown": "*",
-        "thujohn/twitter": "^2.2"
+        "thujohn/twitter": "^2.2",
+        "vanderlee/php-sentence": "^1.0.4"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
@@ -107,6 +108,7 @@
             "funcs/types.php"
         ]
     },
+    "bin": ["bin/code-analyser"],
     "scripts": {
         "post-install-cmd": [],
         "post-update-cmd": [],
