@@ -19,6 +19,8 @@ class SiravelServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->setProviders();
+
         $loader = AliasLoader::getInstance();
 
         $loader->alias('TranslationCache', \RicardoSierra\Translation\Facades\TranslationCache::class);
@@ -44,5 +46,18 @@ class SiravelServiceProvider extends ServiceProvider
         // $this->app->bind('EventService', function ($app) {
         //     return App::make(EventService::class);
         // });
+    }
+    protected function setProviders()
+    {
+        /**
+         * Dependencias
+         */
+        $this->app->register(\Facilitador\FacilitadorProvider::class);
+        
+        /**
+         * Serviços
+         */
+        $this->app->register(\Cmgmyr\Messenger\MessengerServiceProvider::class);
+
     }
 }

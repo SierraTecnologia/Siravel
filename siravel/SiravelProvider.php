@@ -102,32 +102,6 @@ class SiravelProvider extends ServiceProvider
         $this->app->register(\Siravel\Providers\SiravelServiceProvider::class);
         $this->app->register(\Siravel\Providers\SiravelRouteProvider::class);
 
-        /**
-         * Dependencias
-         */
-        $this->app->register(\Siravel\Providers\HorizonServiceProvider::class);
-        $this->app->register(\Siravel\Providers\TelescopeServiceProvider::class);
-        $this->app->register(\Facilitador\FacilitadorProvider::class);
-        $this->app->register(\Locaravel\LocaravelProvider::class);
-
-        $this->app->register(\Laravel\Passport\PassportServiceProvider::class);
-        
-        /**
-         * Serviços
-         */
-        $this->app->register(\Cmgmyr\Messenger\MessengerServiceProvider::class);
-
-
-        /**
-         * Admin
-         */
-        $this->app->register(\Laravel\Tinker\TinkerServiceProvider::class);
-
-
-        /**
-         * Logs Views
-         */
-        $this->app->register(\Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class);
-
     }
+
 }

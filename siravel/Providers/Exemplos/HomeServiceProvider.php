@@ -3,7 +3,7 @@
  * Nao é usado 
  */
 
-namespace Siravel\Providers;
+namespace Siravel\Providers\Exemplos;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
