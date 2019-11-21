@@ -15,7 +15,7 @@ foreach ($composerAutoload as $autoload) {
 }
 
 $cliMate = new \League\CLImate\CLImate;
-$analyser = new \App\Console\Explorer\CodeAnalyser($cliMate, $binariesPath, $_SERVER['argv']);
+$analyser = new \Siravel\Console\External\DirectoryExplorer($cliMate, $binariesPath, $_SERVER['argv']);
 if ($analyser->run()) {
     // No issues found
     exit(0);
