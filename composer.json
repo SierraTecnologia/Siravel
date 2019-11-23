@@ -4,12 +4,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.0",
-        "cloudflare/sdk": "*",
-        "deployer/deployer": "^6.4",
-        "devio/pipedrive": "*",
         "droath/robo-docker-compose": "*",
         "elasticquent/elasticquent": "*",
-        "fideloper/proxy": "^4.0",
         "friendsofphp/php-cs-fixer": "*",
         "fzaninotto/faker": "*",
         "jaeger/querylist": "^4.1",
@@ -26,25 +22,19 @@
         "pusher/pusher-php-server": "~3.4",
         "rap2hpoutre/laravel-log-viewer": "*",
         "rokde/laravel-slow-query-logger": "*",
-        "sebastian/diff": "*",
         "sebastian/phpcpd": "*",
         "sensiolabs/security-checker": "*",
         "spatie/crawler": "*",
         "squizlabs/php_codesniffer": "*",
-        "srmklive/flysystem-dropbox-v2": "*",
         "symfony/dom-crawler": "*",
         "texthtml/docker-links": "*",
         "waavi/sanitizer": "*",
         "cmgmyr/messenger": "^2.19",
         "sierratecnologia/facilitador": "dev-master",
-        "google/photos-library": "^1.4",
         "ricardosierra/phpwhois": "dev-dev",
-        "spatie/laravel-backup": "^6.2",
         "zizaco/entrust": "^1.8",
         "raiym/instagram-php-scraper": "^0.8.35",
         "aws/aws-sdk-php": "*",
-        "spatie/laravel-activitylog": "^3.6",
-        "spatie/laravel-medialibrary": "^7.0.0",
         "graham-campbell/markdown": "*",
         "thujohn/twitter": "^2.2",
         "vanderlee/php-sentence": "^1.0.4",
@@ -87,6 +77,13 @@
         "post-create-project-cmd": []
     },
     "repositories": [
+        {
+            "type": "path",
+            "url": "../Finder",
+            "options": {
+                "symlink": false
+            }
+        },
         {
             "type": "path",
             "url": "../Facilitador",
