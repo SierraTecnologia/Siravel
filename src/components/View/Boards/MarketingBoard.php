@@ -8,17 +8,17 @@ use SiWeapons\Integrations\Instagram\Instagram;
 use SiWeapons\Integrations\Instagram\Facebook;
 
 
-use SiInteraction\Actions\PublishPost;
-use SiInteraction\Actions\SearchFollows;
+use SiInteractions\Actions\PublishPost;
+use SiInteractions\Actions\SearchFollows;
 
 
 use App\Editores\TuiImageEditor;
 
 
 
-use SiInteraction\Routines\ForceNewRelations;
-use SiInteraction\Routines\GetNewData;
-use SiInteraction\Routines\SendNewData;
+use SiInteractions\Routines\ForceNewRelations;
+use SiInteractions\Routines\GetNewData;
+use SiInteractions\Routines\SendNewData;
 
 use App\Board;
 use SiObjects\Components\Comment;

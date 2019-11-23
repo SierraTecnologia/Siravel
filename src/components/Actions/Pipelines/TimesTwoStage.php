@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Actions\Pipelines;
+namespace SiInteractions\Pipelines;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;

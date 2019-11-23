@@ -1,13 +1,13 @@
 <?php
 
-namespace SiInteractions\Actions\Pipelines\Readables;
+namespace SiInteractions\Pipelines\Readables;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use App\Logics\Components\Pipeline as PipelineComponent;
 
-use SiInteraction\Actions\Routines\Contracts\Registrator;
-use SiInteraction\Actions\Routines\Contracts\Notificator;
+use SiInteractions\Routines\Contracts\Registrator;
+use SiInteractions\Routines\Contracts\Notificator;
 
 class ArticleImporterStage implements StageInterface
 {

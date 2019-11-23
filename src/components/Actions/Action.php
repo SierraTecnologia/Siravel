@@ -128,7 +128,7 @@ class Action
         $actions[] = self::insertAction(
             'scanDomain',
             \Siravel\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
-            \SiInteraction\Actions\Worker\Explorer\Spider::class,
+            \SiInteractions\Worker\Explorer\Spider::class,
             self::$spider
         );
 
@@ -138,7 +138,7 @@ class Action
         $actions[] = self::insertAction(
             'whoisDomain',
             \Siravel\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
-            \SiInteraction\Actions\Worker\Explorer\Whois::class,
+            \SiInteractions\Worker\Explorer\Whois::class,
             self::$spider
         );
 
@@ -153,7 +153,7 @@ class Action
         $actions[] = self::insertAction(
             'backupDatabase',
             \Siravel\Models\Entytys\Digital\Infra\DatabaseCollection::class,
-            \SiInteraction\Actions\Worker\Sync\Keys\BackupCollection::class,
+            \SiInteractions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
 
@@ -163,7 +163,7 @@ class Action
         $actions[] = self::insertAction(
             'searchLog',
             \Siravel\Models\Entytys\Digital\Infra\Computer::class,
-            \SiInteraction\Actions\Worker\Logging\Logging::class,
+            \SiInteractions\Worker\Logging\Logging::class,
             self::$routine
         );
 
@@ -179,7 +179,7 @@ class Action
         $actions[] = self::insertAction(
             'analyseComit',
             \Siravel\Models\Entytys\Digital\Code\Commit::class,
-            \SiInteraction\Actions\Worker\Analyser\Analyser::class,
+            \SiInteractions\Worker\Analyser\Analyser::class,
             self::$hook
         );
 
@@ -189,7 +189,7 @@ class Action
         $actions[] = self::insertAction(
             'deployCommit',
             \Siravel\Models\Entytys\Digital\Code\Commit::class,
-            \SiInteraction\Actions\Worker\Deploy\Deploy::class,
+            \SiInteractions\Worker\Deploy\Deploy::class,
             self::$hook
         );
 
@@ -203,7 +203,7 @@ class Action
         $actions[] = self::insertAction(
             'importIntegrationToken',
             \Siravel\Models\Components\Integrations\Token::class,
-            \SiInteraction\Actions\Worker\Sync\Keys\ImportFromToken::class,
+            \SiInteractions\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );
 
@@ -213,7 +213,7 @@ class Action
         $actions[] = self::insertAction(
             'syncProject',
             \Siravel\Models\Entytys\Digital\Code\Project::class,
-            \SiInteraction\Actions\Worker\Sync\Project::class,
+            \SiInteractions\Worker\Sync\Project::class,
             self::$hook
         );
 

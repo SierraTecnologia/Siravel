@@ -3,7 +3,7 @@
  * 
  */
 
-namespace SiInteractions\Actions\Pipelines;
+namespace SiInteractions\Pipelines;
 
 use Illuminate\Support\Facades\Log;
 
@@ -11,8 +11,8 @@ use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use League\Pipeline\PipelineBuilder;
 
-use SiInteraction\Actions\Routines\Contracts\Registrator;
-use SiInteraction\Actions\Routines\Contracts\Notificator;
+use SiInteractions\Routines\Contracts\Registrator;
+use SiInteractions\Routines\Contracts\Notificator;
 
 class Pipeline extends PipelineBuilder
 {

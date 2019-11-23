@@ -44,6 +44,6 @@ class SpiderDomain extends Command
      */
     public function handle()
     {
-        (new \SiInteraction\Actions\Routines\Globals\SpiderAllDomains)->run();
+        (new \SiInteractions\Routines\Globals\SpiderAllDomains)->run();
     }
 }

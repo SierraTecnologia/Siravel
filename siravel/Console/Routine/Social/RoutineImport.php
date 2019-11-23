@@ -44,7 +44,7 @@ class RoutineImport extends Command
      */
     public function handle()
     {
-        // (new \SiInteraction\Actions\Routines\Globals\BackupAll)->run();
-        (new \SiInteraction\Actions\Routines\Globals\ImportTokens)->run();
+        // (new \SiInteractions\Routines\Globals\BackupAll)->run();
+        (new \SiInteractions\Routines\Globals\ImportTokens)->run();
     }
 }

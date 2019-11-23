@@ -1,6 +1,6 @@
 <?php
 
-namespace SiInteractions\Actions\Pipelines\Contracts;
+namespace SiInteractions\Pipelines\Contracts;
 
 
 interface Registrator{}
