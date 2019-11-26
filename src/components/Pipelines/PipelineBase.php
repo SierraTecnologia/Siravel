@@ -14,7 +14,7 @@ use League\Pipeline\PipelineBuilder;
 use SiInteractions\Routines\Contracts\Registrator;
 use SiInteractions\Routines\Contracts\Notificator;
 
-class Pipeline extends PipelineBuilder
+class PipelineBase extends PipelineBuilder
 {
 
     /**
