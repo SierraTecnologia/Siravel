@@ -35,7 +35,8 @@ class SiravelRouteProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->middleware('siravel-analytics', Analytics::class);
+        // @todo ja add na dependencia
+        //$router->middleware('siravel-analytics', Analytics::class);
 
         $router->group([
             'namespace' => $this->namespace,
