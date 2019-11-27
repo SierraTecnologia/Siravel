@@ -19,6 +19,7 @@ class SiravelProvider extends ServiceProvider
          * SitecLibs
          */
         \Finder\FinderProvider::class,
+        \Gamer\GamerProvider::class,
         \Facilitador\FacilitadorProvider::class,
         
         /**

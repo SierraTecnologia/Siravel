@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c3550017b3d12c72e6a6717ccf175f9",
+    "content-hash": "b01348812be523158877c856909e4d1b",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -10918,16 +10918,15 @@
         {
             "name": "ricardosierra/translation",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ricardosierra/translation.git",
-                "reference": "e980c991a19b8b3ff4204b7e06c047da16dc08db"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ricardosierra/translation/zipball/e980c991a19b8b3ff4204b7e06c047da16dc08db",
-                "reference": "e980c991a19b8b3ff4204b7e06c047da16dc08db",
-                "shasum": ""
+                "type": "path",
+                "url": "../Translation",
+                "reference": "cd6c0928ec40fa7c02495485b703e082957cdf1a"
+            },
+            "archive": {
+                "exclude": [
+                    "/tests"
+                ]
             },
             "require": {
                 "doctrine/dbal": "*",
@@ -10962,7 +10961,12 @@
                     "Waavi\\Translation\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "RicardoSierra\\Translation\\Tests\\": "tests/",
+                    "Waavi\\Translation\\Tests\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -10985,7 +10989,9 @@
                 }
             ],
             "description": "An easy automatic database driven translator for Laravel 5.*",
-            "time": "2019-11-06T20:02:35+00:00"
+            "transport-options": {
+                "symlink": true
+            }
         },
         {
             "name": "ricardosierra/validate",
@@ -11797,7 +11803,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "3d0cb5d6271148682be98810c6e85497146b3564"
+                "reference": "488f1d78df01e743ffe379f861becdcb905e1411"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -12111,12 +12117,51 @@
             "time": "2019-09-12T05:02:04+00:00"
         },
         {
+            "name": "sierratecnologia/gamer",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../Gamer",
+                "reference": "510ecfdc5314f6611b0d24df4ce09b5d53d7f31e"
+            },
+            "require": {
+                "sierratecnologia/audit": "dev-master",
+                "sierratecnologia/finder": "dev-master",
+                "sierratecnologia/tracking": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gamer\\GamerProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gamer\\": "src/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": [],
+                "post-create-project-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Game",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
             "name": "sierratecnologia/informate",
             "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "90f11c7c71720206aac60e342b818dfecb538116"
+                "reference": "0e633a404271eaf812919322a6eedbdc047f2544"
             },
             "require": {
                 "php": "^7.3.0"
@@ -12217,7 +12262,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "bf4fe0e491340e9f85262648e831ea508d92f89a"
+                "reference": "b71ed0495f90e2082de45112d3a1b067f316fa1d"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -16110,16 +16155,16 @@
         },
         {
             "name": "waavi/sanitizer",
-            "version": "1.0.14",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Waavi/Sanitizer.git",
-                "reference": "73675ac74700005693b05af1085949b256ede508"
+                "reference": "bc7bc736b7640d8c7bc782459cd7898413d08b7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Waavi/Sanitizer/zipball/73675ac74700005693b05af1085949b256ede508",
-                "reference": "73675ac74700005693b05af1085949b256ede508",
+                "url": "https://api.github.com/repos/Waavi/Sanitizer/zipball/bc7bc736b7640d8c7bc782459cd7898413d08b7f",
+                "reference": "bc7bc736b7640d8c7bc782459cd7898413d08b7f",
                 "shasum": ""
             },
             "require": {
@@ -16166,7 +16211,7 @@
                 "sanitation",
                 "transform input"
             ],
-            "time": "2019-11-14T12:19:43+00:00"
+            "time": "2019-11-27T12:02:47+00:00"
         },
         {
             "name": "weotch/phpthumb",
@@ -18429,6 +18474,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "sierratecnologia/finder": 20,
+        "sierratecnologia/gamer": 20,
         "sierratecnologia/facilitador": 20,
         "ricardosierra/phpwhois": 20
     },
