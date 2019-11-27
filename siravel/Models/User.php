@@ -7,10 +7,8 @@ use Illuminate\Notifications\Notifiable;
 // use App\Models\Model;
 // use Illuminate\Contracts\Auth\Access\Authorizable;
 // use Illuminate\Contracts\Auth\CanResetPassword;
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as UserAuthenticatable;
-
-
+use SiObjects\Support\Traits\Models\AsHuman;
 use Laravel\Passport\HasApiTokens;
 use SiObjects\Manipule\Builders\UserBuilder;
 use Siravel\Support\Traits\Models\HasRoutine;
@@ -19,7 +17,7 @@ use Siravel\Support\Traits\Models\HasTask;
 
 class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable, HasRoles, HasApiTokens;
+    use Notifiable, HasApiTokens;
     use AsHuman;
 
     // use HasRoutine, HasTask;
@@ -155,24 +153,6 @@ class User extends \TCG\Voyager\Models\User
             'updated_at' => $this->updated_at->toAtomString(),
         ]);
     }
-
-    /**
-     * Get all of the skills for the post.
-     */
-    public function skills()
-    {
-        return $this->morphToMany('Siravel\Models\Identity\Hability\Skill', 'skillable');
-    }
-
-    public function money()
-    {
-        return $this->belongsTo('App\Models\Money', 'money_id', 'id');
-    }
-
-    public function language()
-    {
-        return $this->belongsTo('Siravel\Models\System\Language', 'language_id', 'id');
-    }
     
 
     /**
@@ -286,22 +266,6 @@ class User extends \TCG\Voyager\Models\User
     public function accounts()
     {
         return $this->morphMany('Siravel\Models\Identity\Account', 'accountable');
-    }
-
-    /**
-     * Financeiro
-     */
-    public function banks()
-    {
-        return $this->morphToMany('Siravel\Models\Identity\Financeiro\Bank', 'bankable');
-    }
-    public function rendas()
-    {
-        return $this->morphMany('Siravel\Models\Identity\Financeiro\Renda', 'rendable');
-    }
-    public function gastos()
-    {
-        return $this->morphMany('Siravel\Models\Identity\Financeiro\Gasto', 'gastoable');
     }
 
     /**
