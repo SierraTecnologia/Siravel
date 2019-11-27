@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
 class SiravelProvider extends ServiceProvider
 {
     public static $providers = [
-        \RicardoSierra\Translation\TranslationServiceProvider::class,
     
         \Siravel\Providers\SiravelEventServiceProvider::class,
         \Siravel\Providers\SiravelRouteProvider::class,
@@ -122,10 +121,7 @@ class SiravelProvider extends ServiceProvider
     protected function setDependencesAlias()
     {
 
-        $loader = AliasLoader::getInstance();
-
-        $loader->alias('TranslationCache', \RicardoSierra\Translation\Facades\TranslationCache::class);
-        $loader->alias('Translation', \RicardoSierra\Translation\Facades\Translation::class);
+        // $loader = AliasLoader::getInstance();
 
         // // @todo Resolver
         // $loader->alias('FileService', \Facilitador\Services\Midia\FileService::class);
