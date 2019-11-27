@@ -2,17 +2,38 @@
 
 namespace Siravel;
 
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class SiravelProvider extends ServiceProvider
 {
+    public static $providers = [
+        \RicardoSierra\Translation\TranslationServiceProvider::class,
+    
+        \Siravel\Providers\SiravelEventServiceProvider::class,
+        \Siravel\Providers\SiravelRouteProvider::class,
+        
+        /**
+         * SitecLibs
+         */
+        \Finder\FinderProvider::class,
+        \Facilitador\FacilitadorProvider::class,
+        
+        /**
+         * Serviços
+         */
+        \Cmgmyr\Messenger\MessengerServiceProvider::class,
+
+    ];
+
     /**
      * Alias the services in the boot.
      */
     public function boot()
     {
+
         $this->publishes([
             __DIR__.'/Publishes/resources/tools' => base_path('resources/tools'),
             __DIR__.'/Publishes/app/Services' => app_path('Services'),
@@ -71,6 +92,7 @@ class SiravelProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->setDependencesAlias();
         $this->setProviders();
 
         // View namespace
@@ -96,12 +118,37 @@ class SiravelProvider extends ServiceProvider
         $this->commands([]);
     }
 
-    protected function setProviders()
+    protected function setDependencesAlias()
     {
-        $this->app->register(\Siravel\Providers\SiravelEventServiceProvider::class);
-        $this->app->register(\Siravel\Providers\SiravelServiceProvider::class);
-        $this->app->register(\Siravel\Providers\SiravelRouteProvider::class);
 
+        $loader = AliasLoader::getInstance();
+
+        $loader->alias('TranslationCache', \RicardoSierra\Translation\Facades\TranslationCache::class);
+        $loader->alias('Translation', \RicardoSierra\Translation\Facades\Translation::class);
+
+        // // @todo Resolver
+        // $loader->alias('FileService', \Facilitador\Services\Midia\FileService::class);
+        // $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
+        // $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
+
+        // $this->app->bind('FileService', function ($app) {
+        //     return new FileService();
+        // });
+
+        // $this->app->bind('BusinessService', function ($app) {
+        //     return new BusinessService();
+        // });
+
+        // $this->app->bind('EventService', function ($app) {
+        //     return App::make(EventService::class);
+        // });
+    }
+
+    private function setProviders()
+    {
+        collection(self::$providers)->map(function ($provider) {
+            $this->app->register($provider);
+        });
     }
 
 }
