@@ -19,7 +19,8 @@ use Siravel\Support\Traits\Models\HasTask;
 
 class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable, HasRoles, Notifiable, HasApiTokens;
+    use Notifiable, HasRoles, HasApiTokens;
+    use AsHuman;
 
     // use HasRoutine, HasTask;
 
