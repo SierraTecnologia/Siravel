@@ -56,12 +56,12 @@ class CreateExtraWikiTables extends Migration
 			$table->unsignedInteger('login_count')->default(0);
 
 			// Foreign keys
-			$table->string('language_code');
-			$table->foreign('language_code')->references('code')->on('languages')->onUpdate('cascade')->onDelete('cascade');
+			// $table->string('language_code');
+			// $table->foreign('language_code')->references('code')->on('languages')->onUpdate('cascade')->onDelete('cascade');
 			$table->unsignedInteger('provider_id');
 			$table->foreign('provider_id')->references('id')->on('providers')->onUpdate('cascade')->onDelete('cascade');
 			$table->unsignedInteger('role_id');
-			$table->foreign('role_id')->references('id')->on('wiki_roles')->onUpdate('cascade')->onDelete('restrict');
+			// $table->foreign('role_id')->references('id')->on('wiki_roles')->onUpdate('cascade')->onDelete('restrict');
 
 			// Extra keys
 			$table->unique(['uuid', 'provider_id']);
