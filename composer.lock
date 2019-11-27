@@ -10916,6 +10916,78 @@
             "time": "2019-05-01T07:14:34+00:00"
         },
         {
+            "name": "ricardosierra/translation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ricardosierra/translation.git",
+                "reference": "e980c991a19b8b3ff4204b7e06c047da16dc08db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ricardosierra/translation/zipball/e980c991a19b8b3ff4204b7e06c047da16dc08db",
+                "reference": "e980c991a19b8b3ff4204b7e06c047da16dc08db",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "*",
+                "illuminate/database": "*",
+                "illuminate/support": "*",
+                "illuminate/validation": "*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/database": "~3.0",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~4|~5|~6|~7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RicardoSierra\\Translation\\TranslationServiceProvider"
+                    ],
+                    "aliases": {
+                        "Translation": "RicardoSierra\\Translation\\Facades\\Translation"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RicardoSierra\\Translation\\": "src/",
+                    "Waavi\\Translation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Sierra",
+                    "email": "ricardo@ricardosierra.com.br"
+                },
+                {
+                    "name": "Kunle Adekoya",
+                    "email": "crfystoline@gmail.com"
+                },
+                {
+                    "name": "Steve Bauman",
+                    "email": "steven_bauman@outlook.com"
+                },
+                {
+                    "name": "Levan Velijanashvili",
+                    "email": "me@stichoza.com"
+                }
+            ],
+            "description": "An easy automatic database driven translator for Laravel 5.*",
+            "time": "2019-11-06T20:02:35+00:00"
+        },
+        {
             "name": "ricardosierra/validate",
             "version": "v0.2.2",
             "source": {
@@ -11725,7 +11797,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "097646b5ae70a21528bab350d3f508b0065c0948"
+                "reference": "3d0cb5d6271148682be98810c6e85497146b3564"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -11762,6 +11834,7 @@
                 "ramsey/uuid": "^3.8",
                 "ricardosierra/changelog": "~1.4",
                 "ricardosierra/minify": "dev-master",
+                "ricardosierra/translation": "dev-master",
                 "ricardosierra/validate": "^0.2",
                 "sierratecnologia/crudmaker": "dev-master",
                 "sierratecnologia/crypto": "dev-master",
