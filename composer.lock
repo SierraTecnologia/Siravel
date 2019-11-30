@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b01348812be523158877c856909e4d1b",
+    "content-hash": "ac56f829cf882df84c7dcc221d3fa854",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -11916,7 +11916,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "739fdce5b9418212e03554bfea737d858b92b574"
+                "reference": "0a29f279a16f6100ed0c306b5ed77bd94c9e86d9"
             },
             "require": {
                 "cache/filesystem-adapter": "^1.0",
@@ -11946,7 +11946,6 @@
                 "sabre/xml": "*",
                 "sebastian/diff": "*",
                 "sebastian/phpcpd": "*",
-                "sierratecnologia/casa": "dev-master",
                 "sierratecnologia/crypto": "dev-master",
                 "sierratecnologia/tracking": "dev-master",
                 "spatie/crawler": "*",
@@ -18471,7 +18470,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sierratecnologia/finder": 20,
+        "sierratecnologia/casa": 20,
         "sierratecnologia/gamer": 20,
         "sierratecnologia/facilitador": 20,
         "ricardosierra/phpwhois": 20
