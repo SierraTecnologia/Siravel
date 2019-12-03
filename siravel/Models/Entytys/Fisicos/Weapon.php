@@ -3,7 +3,7 @@
 namespace Siravel\Models\Entytys\Fisicos;
 
 use Siravel\Models\Model;
-use SiObjects\Support\Traits\Models\AsFofocavel;
+use Informate\Traits\AsFofocavel;
 
 class Weapon extends Model
 {

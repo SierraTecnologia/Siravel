@@ -12,7 +12,7 @@
 
 namespace Siravel\Models\Entytys\Digital\Internet;
 
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 use Siravel\Models\Model;
 
 class Url extends Model

@@ -5,9 +5,9 @@ namespace Siravel\Models\Identity\Location;
 use SiObjects\Manipule\Builders\LocationBuilder;
 use Siravel\Contants\Tables;
 use Siravel\Features\Photos\Entities\LocationEntity;
-use SiObjects\ValueObjects\Coordinates;
-use SiObjects\ValueObjects\Latitude;
-use SiObjects\ValueObjects\Longitude;
+use Informate\ValueObjects\Coordinates;
+use Informate\ValueObjects\Latitude;
+use Informate\ValueObjects\Longitude;
 use Siravel\Models\Model;
 use Illuminate\Support\Str;
 

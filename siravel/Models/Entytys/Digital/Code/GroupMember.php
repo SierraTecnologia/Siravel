@@ -8,7 +8,7 @@ namespace Siravel\Models\Entytys\Digital\Code;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
-use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
+use Informate\Traits\EloquentGetTableNameTrait;
 
 class CreditCardToken extends InterfaceBusinessModel
 {

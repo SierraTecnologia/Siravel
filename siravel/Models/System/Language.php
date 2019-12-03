@@ -4,7 +4,7 @@ namespace Siravel\Models\System;
 
 use Illuminate\Support\Facades\URL;
 
-use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
+use Informate\Traits\EloquentGetTableNameTrait;
 
 class Language extends \RicardoSierra\Translation\Models\Language
 {
