@@ -3,7 +3,7 @@
 namespace Siravel\Models\Identity\Digital;
 
 use Siravel\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Phone extends Model
 {

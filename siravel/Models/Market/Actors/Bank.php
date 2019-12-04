@@ -3,7 +3,7 @@
 namespace Siravel\Models\Market\Actors;
 
 use Siravel\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Bank extends Model
 {

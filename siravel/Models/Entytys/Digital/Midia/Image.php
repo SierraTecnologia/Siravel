@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Entytys\Digital\Midia;
 
-use SiObjects\Support\Traits\Models\ArchiveTrait;
+use Informate\Traits\ArchiveTrait;
 
 use Carbon\Carbon;
 use Config;

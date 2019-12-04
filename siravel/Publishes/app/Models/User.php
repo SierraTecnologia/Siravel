@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use SiObjects\Support\Traits\Models\AsHuman;
+use Informate\Traits\AsHuman;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable implements AuthenticatableContract, CanResetPasswordContract

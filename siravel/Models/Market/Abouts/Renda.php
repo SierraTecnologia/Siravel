@@ -3,7 +3,7 @@
 namespace Siravel\Models\Market\Abouts;
 
 use Siravel\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Renda extends Model
 {

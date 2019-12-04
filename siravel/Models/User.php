@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 // use Illuminate\Contracts\Auth\Access\Authorizable;
 // use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as UserAuthenticatable;
-use SiObjects\Support\Traits\Models\AsHuman;
+use Informate\Traits\AsHuman;
 use Laravel\Passport\HasApiTokens;
 use SiObjects\Manipule\Builders\UserBuilder;
 use Siravel\Support\Traits\Models\HasRoutine;

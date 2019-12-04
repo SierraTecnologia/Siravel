@@ -5,9 +5,9 @@ namespace SiObjects\Manipule\Managers\Location;
 use App\Models\Location;
 use SiObjects\Support\Contracts\LocationManager;
 use SiObjects\Manipule\Entities\LocationEntity;
-use SiObjects\ValueObjects\Coordinates;
-use SiObjects\ValueObjects\Latitude;
-use SiObjects\ValueObjects\Longitude;
+use Informate\ValueObjects\Coordinates;
+use Informate\ValueObjects\Latitude;
+use Informate\ValueObjects\Longitude;
 use Illuminate\Database\ConnectionInterface as Database;
 
 /**
