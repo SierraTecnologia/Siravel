@@ -162,16 +162,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.125.0",
+            "version": "3.127.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "d9ffe7cf9cc93d3c49f4f6d2db6cf0c469686f9c"
+                "reference": "c7f8c962ad2bb1430e673f14505870d8573a55d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d9ffe7cf9cc93d3c49f4f6d2db6cf0c469686f9c",
-                "reference": "d9ffe7cf9cc93d3c49f4f6d2db6cf0c469686f9c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c7f8c962ad2bb1430e673f14505870d8573a55d6",
+                "reference": "c7f8c962ad2bb1430e673f14505870d8573a55d6",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,8 @@
                 "nette/neon": "^2.3",
                 "phpunit/phpunit": "^4.8.35|^5.4.3",
                 "psr/cache": "^1.0",
-                "psr/simple-cache": "^1.0"
+                "psr/simple-cache": "^1.0",
+                "sebastian/comparator": "^1.2.3"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -241,7 +242,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-12-02T23:15:42+00:00"
+            "time": "2019-12-04T01:40:14+00:00"
         },
         {
             "name": "bkwld/cloner",
@@ -7528,16 +7529,16 @@
         },
         {
             "name": "markrogoyski/math-php",
-            "version": "v0.55.0",
+            "version": "v0.56.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/markrogoyski/math-php.git",
-                "reference": "341fb63becd4dbea0882fe62cf384c56c2d5f434"
+                "reference": "0dccd000680755f1f45bf9ff3c6409898481ef7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/markrogoyski/math-php/zipball/341fb63becd4dbea0882fe62cf384c56c2d5f434",
-                "reference": "341fb63becd4dbea0882fe62cf384c56c2d5f434",
+                "url": "https://api.github.com/repos/markrogoyski/math-php/zipball/0dccd000680755f1f45bf9ff3c6409898481ef7d",
+                "reference": "0dccd000680755f1f45bf9ff3c6409898481ef7d",
                 "shasum": ""
             },
             "require": {
@@ -7597,7 +7598,7 @@
                 "regressions",
                 "statistics"
             ],
-            "time": "2019-11-19T05:55:32+00:00"
+            "time": "2019-12-04T06:30:01+00:00"
         },
         {
             "name": "mashape/unirest-php",
@@ -10585,16 +10586,16 @@
         },
         {
             "name": "rap2hpoutre/fast-excel",
-            "version": "v1.3.1",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/fast-excel.git",
-                "reference": "d45e1c3cc8ad4becf5b0e764c412e802459941a7"
+                "reference": "2a0253ba936c7d9afdb538d9f43540473244cdfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/d45e1c3cc8ad4becf5b0e764c412e802459941a7",
-                "reference": "d45e1c3cc8ad4becf5b0e764c412e802459941a7",
+                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/2a0253ba936c7d9afdb538d9f43540473244cdfa",
+                "reference": "2a0253ba936c7d9afdb538d9f43540473244cdfa",
                 "shasum": ""
             },
             "require": {
@@ -10640,20 +10641,20 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2019-09-04T09:45:32+00:00"
+            "time": "2019-12-03T20:59:23+00:00"
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v1.3.2",
+            "version": "v1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "5957eb05d86058dfbbe9a0782e4dd7cee550a376"
+                "reference": "031ed45cd09814f5ab3c03a235b4511994911683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/5957eb05d86058dfbbe9a0782e4dd7cee550a376",
-                "reference": "5957eb05d86058dfbbe9a0782e4dd7cee550a376",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/031ed45cd09814f5ab3c03a235b4511994911683",
+                "reference": "031ed45cd09814f5ab3c03a235b4511994911683",
                 "shasum": ""
             },
             "require": {
@@ -10699,7 +10700,7 @@
                 "logging",
                 "lumen"
             ],
-            "time": "2019-09-04T14:54:37+00:00"
+            "time": "2019-12-03T22:00:29+00:00"
         },
         {
             "name": "react/promise",
@@ -11597,11 +11598,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-<<<<<<< HEAD
-                "reference": "91e1918c17d5c3ae4fe56d8350ed2f8a8ffd54cf"
-=======
-                "reference": "79348f64375a2b846603b9bb17e7738065f693a8"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "25b5ad6f082d0a9d738bb1eed363dc0d2153eb27"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -11650,11 +11647,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-<<<<<<< HEAD
-                "reference": "81933f97e209286493d5ed04cf771fea266405bf"
-=======
-                "reference": "dd0c25c693f0917ecf3ff1592a5c48fb82f6579f"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "a440f551a1e12993d5e3ab1474aa0a841f6b949c"
             },
             "require": {
                 "php": "^7.3.0",
@@ -11821,11 +11814,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-<<<<<<< HEAD
-                "reference": "1ae10cfd6e573cde76b7fa2b089a94369aa2411a"
-=======
-                "reference": "8787b974cb225a2abd257bacba0016a09bf8ec1c"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "b9441fbc07dc691d05eb71948a1d97d77df977b5"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -11940,11 +11929,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-<<<<<<< HEAD
-                "reference": "8b2f043904641ad0e3889892bd07b2f317be372f"
-=======
-                "reference": "295f95601763db883ed4457466493c1109f8dbfa"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "41053ece8e385871487bf397af821b7aa2f4bf95"
             },
             "require": {
                 "cache/filesystem-adapter": "^1.0",
@@ -12153,11 +12138,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-<<<<<<< HEAD
-                "reference": "d10c871be2f5926dc1a783ce6bac0b3cdf04f83d"
-=======
-                "reference": "ac3b2353e01a46daaf6787e584ec5db37c1cf6b5"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "cdecd07deb2723dc4795bfb7d1b2c89538887c6b"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -12196,7 +12177,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "52d5dffdd36d166e059443e03113a05ecf18dc5e"
+                "reference": "7e6602d1663dab67ad1f53c4967c3b7d62c6e7b2"
             },
             "require": {
                 "php": "^7.3.0"
@@ -12240,11 +12221,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-<<<<<<< HEAD
                 "reference": "b251420adaf038e6d88b03955b2483037699bd65"
-=======
-                "reference": "777ca1040847b3365fef708ac9889d8b8dd9e131"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
             },
             "require": {
                 "doctrine/dbal": ">=2.5",
@@ -12301,7 +12278,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "8b0bfd9a8e98b3a2edd18daa3bdae4655f52add0"
+                "reference": "d4311e7bfacaebd36d76291232355bdddff7b944"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -12338,11 +12315,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-<<<<<<< HEAD
-                "reference": "a69bc8fb0315ab402ef3531d3d4a34ad649ceb96"
-=======
-                "reference": "330ccac2df81d0f56a9647223159106a223fa6c1"
->>>>>>> 386e363b2d24f51d74aac30c21ede6260eda0697
+                "reference": "1736039d159738df6748e3eed5e681c8800f827d"
             },
             "require": {
                 "markrogoyski/math-php": "*",
@@ -13307,16 +13280,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.2",
+            "version": "3.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "65b12cdeaaa6cd276d4c3033a95b9b88b12701e7"
+                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/65b12cdeaaa6cd276d4c3033a95b9b88b12701e7",
-                "reference": "65b12cdeaaa6cd276d4c3033a95b9b88b12701e7",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
                 "shasum": ""
             },
             "require": {
@@ -13354,7 +13327,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-10-28T04:36:32+00:00"
+            "time": "2019-12-04T04:46:47+00:00"
         },
         {
             "name": "srmklive/flysystem-dropbox-v2",
