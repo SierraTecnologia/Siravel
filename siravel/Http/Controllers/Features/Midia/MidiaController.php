@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Features\Midia;
 
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Digital\Midia\PhotoAlbum;
-use Siravel\Services\Midia\MidiaService;
+use Finder\Services\Midia\MidiaService;
 use App\Http\Controllers\Controller;
 
 class MidiaController extends Controller {
