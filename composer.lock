@@ -11647,7 +11647,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "d553e14e88d55d2f1ed0954d5bda48f04f986058"
+                "reference": "8ecf0fff84c0996056fc4ce33f0399d1cb548576"
             },
             "require": {
                 "php": "^7.3.0",
@@ -12138,7 +12138,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "43ce23154a5f46afe450a3b7a1b54a3a60405045"
+                "reference": "66f9e1d2dada1a59247a011c5aec08875be3f7e9"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
