@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Informate\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
 
 class Phone extends Model
@@ -32,7 +32,7 @@ class Phone extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

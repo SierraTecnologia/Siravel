@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Informate\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
-use Siravel\Models\Entytys\Digital\Internet\Url;
+use Informate\Models\Model;
+use Informate\Models\Entytys\Digital\Internet\Url;
 
 class Domain extends Model
 {
@@ -76,6 +76,6 @@ class Domain extends Model
 
     public function urls()
     {
-        return $this->hasMany('Siravel\Models\Entytys\Digital\Internet\Url', 'infra_domain_id', 'id');
+        return $this->hasMany('Informate\Models\Entytys\Digital\Internet\Url', 'infra_domain_id', 'id');
     }
 }

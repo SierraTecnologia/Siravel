@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Informate\Models\Entytys\Digital\Midia;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

@@ -2,7 +2,7 @@
 
 namespace Siravel\Repositories;
 
-use Siravel\Models\Product;
+use Informate\Models\Product;
 use Siravel\Repositories\FavoriteRepository;
 use Illuminate\Support\Facades\Schema;
 

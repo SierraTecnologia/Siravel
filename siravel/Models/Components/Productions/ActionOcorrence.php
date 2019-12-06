@@ -3,9 +3,9 @@
  * Alguma ação que ocorra dentro da Produção
  */
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class ActionOcorrence extends Person
 {

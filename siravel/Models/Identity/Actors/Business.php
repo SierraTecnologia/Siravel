@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Actors;
+namespace Informate\Models\Identity\Actors;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Business extends Model
 {
@@ -72,7 +72,7 @@ class Business extends Model
      */
     public function features()
     {
-        return $this->morphToMany('Siravel\Models\Features\Marketing\Feature', 'featureable');
+        return $this->morphToMany('Informate\Models\Features\Marketing\Feature', 'featureable');
     }
 
     // /**
@@ -96,7 +96,7 @@ class Business extends Model
      */
     public function settings()
     {
-        return $this->hasMany('Siravel\Models\System\Setting');
+        return $this->hasMany('Informate\Models\System\Setting');
     }
 
     // /**
@@ -112,7 +112,7 @@ class Business extends Model
      */
     public function addresses()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Address', 'addresseable');
+        return $this->morphToMany('Informate\Models\Identity\Address', 'addresseable');
     }
 
     /**
@@ -120,7 +120,7 @@ class Business extends Model
      */
     public function phones()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Phone', 'phoneable');
+        return $this->morphToMany('Informate\Models\Identity\Phone', 'phoneable');
     }
 
     /**
@@ -128,7 +128,7 @@ class Business extends Model
      */
     public function accounts()
     {
-        return $this->morphMany('Siravel\Models\Identity\Digital\Account', 'accountable');
+        return $this->morphMany('Informate\Models\Identity\Digital\Account', 'accountable');
     }
 
     /**
@@ -151,30 +151,30 @@ class Business extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Digital\Sitio', 'sitioable');
+        return $this->morphToMany('Informate\Models\Identity\Digital\Sitio', 'sitioable');
     }
     /**
      * Get all of the skills for the post.
      */
     public function skills()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Skill', 'skillable');
+        return $this->morphToMany('Informate\Models\Entytys\Fisicos\Skill', 'skillable');
     }
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Market\Abouts\Info', 'infoable');
+        return $this->morphMany('Informate\Models\Market\Abouts\Info', 'infoable');
     }
     public function gostos()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Gosto', 'gostoable');
+        return $this->morphToMany('Informate\Models\Entytys\Fisicos\Gosto', 'gostoable');
     }
     public function pircings()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Fisicos\Pircing', 'pircingable');
+        return $this->morphToMany('Informate\Models\Identity\Fisicos\Pircing', 'pircingable');
     }
     public function tatuages()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Fisicos\Tatuagem', 'tatuageable');
+        return $this->morphToMany('Informate\Models\Identity\Fisicos\Tatuagem', 'tatuageable');
     }
 
 }

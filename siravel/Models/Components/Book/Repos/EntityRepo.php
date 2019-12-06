@@ -1,16 +1,16 @@
-<?php namespace Siravel\Models\Components\Book\Repos;
+<?php namespace Informate\Models\Components\Book\Repos;
 
 use SiInteractions\Actions\Book\TagRepo;
 use SiInteractions\Actions\Book\ViewService;
-use Siravel\Models\Permissions\PermissionService;
+use Informate\Models\Permissions\PermissionService;
 use App\Models\User;
-use Siravel\Models\Components\Book\Book;
-use Siravel\Models\Components\Book\Bookshelf;
-use Siravel\Models\Components\Book\Chapter;
-use Siravel\Models\Components\Book\Entity;
-use Siravel\Models\Components\Book\EntityProvider;
-use Siravel\Models\Components\Book\Page;
-use Siravel\Models\Components\Book\SearchService;
+use Informate\Models\Components\Book\Book;
+use Informate\Models\Components\Book\Bookshelf;
+use Informate\Models\Components\Book\Chapter;
+use Informate\Models\Components\Book\Entity;
+use Informate\Models\Components\Book\EntityProvider;
+use Informate\Models\Components\Book\Page;
+use Informate\Models\Components\Book\SearchService;
 use Siravel\Exceptions\NotFoundException;
 use Siravel\Exceptions\NotifyException;
 use SiObjects\Entitys\Uploads\AttachmentService;

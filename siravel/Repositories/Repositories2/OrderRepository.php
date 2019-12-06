@@ -3,7 +3,7 @@
 namespace Siravel\Repositories;
 
 use Illuminate\Support\Facades\Schema;
-use Siravel\Models\Order;
+use Informate\Models\Order;
 
 class OrderRepository
 {

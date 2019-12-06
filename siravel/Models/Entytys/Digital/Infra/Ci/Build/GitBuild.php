@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+namespace Informate\Models\Entytys\Digital\Infra\Ci\Build;
 
-use Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+use Informate\Models\Entytys\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Builder;
 use Psr\Log\LogLevel;
 

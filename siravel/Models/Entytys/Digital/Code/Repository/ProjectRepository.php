@@ -10,11 +10,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code\Repository;
+namespace Informate\Models\Entytys\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-use Siravel\Models\Entytys\Digital\Code;
+use Informate\Models\Entytys\Digital\Code;
 
 class ProjectRepository extends EntityRepository
 {

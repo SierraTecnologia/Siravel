@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+namespace Informate\Models\Entytys\Digital\Infra\Ci\Build;
 
 /**
  * GogsBuild Build Model

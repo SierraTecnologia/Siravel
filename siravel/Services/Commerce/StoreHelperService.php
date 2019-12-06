@@ -4,7 +4,7 @@ namespace Siravel\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
-use Siravel\Models\Plan;
+use Informate\Models\Plan;
 use Siravel\Services\CartService;
 use Siravel\Services\CustomerProfileService;
 use Siravel\Services\LogisticService;

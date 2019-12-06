@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity\Location;
+namespace Informate\Models\Identity\Location;
 
 use SiObjects\Manipule\Builders\LocationBuilder;
 use Siravel\Contants\Tables;
@@ -8,7 +8,7 @@ use Siravel\Features\Photos\Entities\LocationEntity;
 use Informate\ValueObjects\Coordinates;
 use Informate\ValueObjects\Latitude;
 use Informate\ValueObjects\Longitude;
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Illuminate\Support\Str;
 
 /**

@@ -65,7 +65,7 @@ class User extends Model implements AuthenticatableContract
 
 	public function language()
 	{
-		return $this->belongsTo('Siravel\Models\System\Language');
+		return $this->belongsTo('Informate\Models\System\Language');
 	}
 
 	public function provider()

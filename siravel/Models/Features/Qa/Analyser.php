@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Features\Qa;
+namespace Informate\Models\Features\Qa;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Analyser extends Model
 {

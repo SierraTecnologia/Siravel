@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
 /**
  * Tipos de Produções
  */
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class CharacterClothing extends Item
 {

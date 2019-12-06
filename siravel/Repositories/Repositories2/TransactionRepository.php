@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Models\Transaction;
+use Informate\Models\Transaction;
 use Siravel\Services\LogisticService;
 
 class TransactionRepository

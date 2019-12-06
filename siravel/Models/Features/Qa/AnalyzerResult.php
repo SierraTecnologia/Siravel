@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Features\Qa;
+namespace Informate\Models\Features\Qa;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\EloquentGetTableNameTrait;
 use Informate\Traits\ComplexRelationamentInTrait;
 
@@ -16,7 +16,7 @@ class AnalyzerResult extends Model
      * Possui um relacionamento com a tabela Task
      */
     protected static $COMPLEX_RELATIONAMENT_IN_MODELS = [
-        \Siravel\Models\Entytys\Digital\Bot\Task::class
+        \Informate\Models\Entytys\Digital\Bot\Task::class
     ];
 
     /**

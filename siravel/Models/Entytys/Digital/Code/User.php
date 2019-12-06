@@ -10,11 +10,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Informate\Models\Entytys\Digital\Code;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**

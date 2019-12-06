@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Pegadas;
+namespace Informate\Models\Components\Pegadas;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class History extends Model
 {

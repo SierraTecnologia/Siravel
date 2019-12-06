@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Informate\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Dominio extends Model
 {

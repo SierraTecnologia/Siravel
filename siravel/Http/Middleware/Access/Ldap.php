@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Access;
+<?php namespace Informate\Models\Access;
 
 /**
  * Class Ldap

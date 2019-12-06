@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Informate\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Sitio extends Model
 {
@@ -46,7 +46,7 @@ class Sitio extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Girl', 'sitioable');
+        return $this->morphedByMany('Informate\Models\Identity\Girl', 'sitioable');
     }
 
     /**

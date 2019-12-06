@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci\Base;
+namespace Informate\Models\Entytys\Digital\Infra\Ci\Base;
 
 use SiUtils\Tools\Exception\InvalidArgumentException;
 use SiUtils\Tools\Model;

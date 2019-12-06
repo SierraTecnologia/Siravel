@@ -3,9 +3,9 @@
  *  //@todo Fazer isso aqui.. Ta dificil
  */
 
-namespace Siravel\Models\System;
+namespace Informate\Models\System;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Access extends Model
 {

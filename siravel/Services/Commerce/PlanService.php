@@ -2,12 +2,12 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\UserMeta;
+use Informate\Models\UserMeta;
 use Siravel\Services\UserService;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
-use Siravel\Models\Plan;
+use Informate\Models\Plan;
 use SierraTecnologia\Cms\Services\CmsService;
 
 class PlanService
@@ -210,7 +210,7 @@ class PlanService
     /**
      * Get subscribers.
      *
-     * @param Siravel\Models\Plan $plan
+     * @param Informate\Models\Plan $plan
      *
      * @return Illuminate\Support\Collection
      */

@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
 /**
  * Tipos de Produções
  */
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Stage extends Item
 {
@@ -47,7 +47,7 @@ class Stage extends Item
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

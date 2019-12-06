@@ -9,7 +9,7 @@
 return [
 
     'models' => [
-        'business' => \Siravel\Models\Market\Business::class,
+        'business' => \Informate\Models\Market\Business::class,
     ],
 
 

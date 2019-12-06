@@ -1,12 +1,12 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Informate\Models\Components\Book;
 
 use SiInteractions\Actions\Book\Activity;
 use SiInteractions\Actions\Book\Comment;
 use SiInteractions\Actions\Book\Tag;
 use SiInteractions\Actions\Book\View;
-use Siravel\Models\Permissions\EntityPermission;
-use Siravel\Models\Permissions\JointPermission;
-use Siravel\Models\Ownable;
+use Informate\Models\Permissions\EntityPermission;
+use Informate\Models\Permissions\JointPermission;
+use Informate\Models\Ownable;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 

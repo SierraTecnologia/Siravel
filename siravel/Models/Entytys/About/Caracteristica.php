@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\About;
+namespace Informate\Models\Entytys\About;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Caracteristica extends Model
 {
@@ -38,7 +38,7 @@ class Caracteristica extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

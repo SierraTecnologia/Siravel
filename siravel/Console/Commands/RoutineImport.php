@@ -3,10 +3,10 @@
 namespace Siravel\Console\Commands;
 
 use Illuminate\Console\Command;
-use Siravel\Models\MediaSend;
-use Siravel\Models\MediaEmail;
-use Siravel\Models\MediaPush;
-use Siravel\Models\Company;
+use Informate\Models\MediaSend;
+use Informate\Models\MediaEmail;
+use Informate\Models\MediaPush;
+use Informate\Models\Company;
 use App\Models\User;
 use SendGrid;
 use Siravel\Http\Controllers\Api\Controller;

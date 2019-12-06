@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class SceneLine extends Model
 {
@@ -55,7 +55,7 @@ class SceneLine extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

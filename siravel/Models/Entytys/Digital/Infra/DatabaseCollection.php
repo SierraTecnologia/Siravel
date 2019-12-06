@@ -3,9 +3,9 @@
  * Bancos dentro do Servidor do Database
  */
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Informate\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class DatabaseCollection extends Model
 {
@@ -61,7 +61,7 @@ class DatabaseCollection extends Model
 
     public function database()
     {
-        return $this->belongsTo('Siravel\Models\Entytys\Digital\Infra\Database', 'infra_database_id', 'id');
+        return $this->belongsTo('Informate\Models\Entytys\Digital\Infra\Database', 'infra_database_id', 'id');
     }
 
     public function user()

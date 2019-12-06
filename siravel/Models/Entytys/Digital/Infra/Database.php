@@ -3,9 +3,9 @@
  * Servidor de Database
  */
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Informate\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Database extends Model
 {
@@ -58,6 +58,6 @@ class Database extends Model
 
     public function collections()
     {
-        return $this->hasMany('Siravel\Models\Entytys\Digital\Infra\DatabaseCollection');
+        return $this->hasMany('Informate\Models\Entytys\Digital\Infra\DatabaseCollection');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\System;
+namespace Informate\Models\System;
 
 use Informate\Traits\ArchiveTrait;
 

@@ -4,7 +4,7 @@ namespace Siravel\Services;
 
 use Carbon\Carbon;
 use SierraTecnologia\Cashier\Subscription;
-use Siravel\Models\Transaction;
+use Informate\Models\Transaction;
 
 class AnalyticsService
 {

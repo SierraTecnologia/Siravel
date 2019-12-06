@@ -5,7 +5,7 @@ namespace Siravel\Services;
 use Carbon\Carbon;
 use SierraTecnologia\Error\InvalidRequest;
 use SierraTecnologia\Crypto\Services\Crypto;
-use Siravel\Models\Refund;
+use Informate\Models\Refund;
 use Siravel\Repositories\OrderItemRepository;
 use Siravel\Services\CartService;
 use Siravel\Services\LogisticService;

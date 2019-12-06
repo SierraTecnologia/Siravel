@@ -3,9 +3,9 @@
  * Armazena casas de cambios que aceitam trocar moedas
  */
 
-namespace Siravel\Models\Components\Integrations;
+namespace Informate\Models\Components\Integrations;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Token extends Model
 {

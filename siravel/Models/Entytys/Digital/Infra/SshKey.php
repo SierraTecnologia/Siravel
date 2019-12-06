@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Informate\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use SiUtils\Helper\File;
 
 // set_include_path(get_include_path() . get_include_path().'/phpseclib');

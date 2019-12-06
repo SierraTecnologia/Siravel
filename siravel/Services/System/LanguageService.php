@@ -4,7 +4,7 @@ namespace Siravel\Services\System;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Models\System\Language;
+use Informate\Models\System\Language;
 use Illuminate\Support\Facades\Auth;
 
 class LanguageService extends Service

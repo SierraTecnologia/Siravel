@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code\Repository;
+namespace Informate\Models\Entytys\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Siravel\Models\Entytys\Digital\Code\Project;
-use Siravel\Models\Entytys\Digital\Code\User;
+use Informate\Models\Entytys\Digital\Code\Project;
+use Informate\Models\Entytys\Digital\Code\User;
 use Gitonomy\Component\Pagination\Adapter\ArrayAdapter;
 use Gitonomy\Component\Pagination\Adapter\DoctrineOrmQueryAdapter;
 use Gitonomy\Component\Pagination\Pager;

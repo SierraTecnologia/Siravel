@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Variable extends Production
 {
@@ -57,7 +57,7 @@ class Variable extends Production
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

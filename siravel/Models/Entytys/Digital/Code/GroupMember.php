@@ -3,7 +3,7 @@
  * Group/Team Member
  */
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Informate\Models\Entytys\Digital\Code;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;

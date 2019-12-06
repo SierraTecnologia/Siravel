@@ -2,8 +2,8 @@
 
 namespace SiObjects\Support\Concerns;
 
-use Siravel\Models\Favorite;
-use Siravel\Models\Product;
+use Informate\Models\Favorite;
+use Informate\Models\Product;
 
 trait hasFavorites
 {

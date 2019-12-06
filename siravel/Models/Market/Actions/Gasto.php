@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Actions;
+namespace Informate\Models\Market\Actions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
 
 class Gasto extends Model
@@ -34,7 +34,7 @@ class Gasto extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'gastoable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'gastoable');
     }
 
     /**

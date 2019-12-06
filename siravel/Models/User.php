@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Informate\Models;
 
 use Illuminate\Notifications\Notifiable;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -265,7 +265,7 @@ class User extends \TCG\Voyager\Models\User
      */
     public function accounts()
     {
-        return $this->morphMany('Siravel\Models\Identity\Account', 'accountable');
+        return $this->morphMany('Informate\Models\Identity\Account', 'accountable');
     }
 
     /**
@@ -273,6 +273,6 @@ class User extends \TCG\Voyager\Models\User
      */
     public function workers()
     {
-        return $this->morphMany('Siravel\Models\Identity\Rotina\Worker', 'workerable');
+        return $this->morphMany('Informate\Models\Identity\Rotina\Worker', 'workerable');
     }
 }

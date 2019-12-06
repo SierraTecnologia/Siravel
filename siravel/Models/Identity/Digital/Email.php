@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Informate\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Email extends Model
 {
@@ -31,7 +31,7 @@ class Email extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Market\Actors;
+namespace Informate\Models\Market\Actors;
 
 use App\Models\Model;
 
@@ -49,7 +49,7 @@ class Girl extends Model
     
     public function infos()
     {
-        return $this->morphMany('Siravel\Models\Market\Abouts\Info', 'infoable');
+        return $this->morphMany('Informate\Models\Market\Abouts\Info', 'infoable');
     }
 
     /**
@@ -57,7 +57,7 @@ class Girl extends Model
      */
     public function skills()
     {
-        return $this->morphToMany('Siravel\Models\Entytys\Fisicos\Skill', 'skillable');
+        return $this->morphToMany('Informate\Models\Entytys\Fisicos\Skill', 'skillable');
     }
 
 }

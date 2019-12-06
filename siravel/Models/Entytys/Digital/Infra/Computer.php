@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Informate\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use SiUtils\Tools\Ssh;
 
 class Computer extends Model

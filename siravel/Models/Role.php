@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Informate\Models;
 
 // use Illuminate\Database\Eloquent\Model;
 // use TCG\Voyager\Facades\Voyager;

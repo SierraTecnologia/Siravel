@@ -4,8 +4,8 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Siravel\Models\Role;
-use Siravel\Models\Customer;
+use Informate\Models\Role;
+use Informate\Models\Customer;
 use Auth;
 
 class UserController extends Controller

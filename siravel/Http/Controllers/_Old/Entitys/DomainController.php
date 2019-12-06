@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Infra\Domain;
+use Informate\Models\Entytys\Digital\Infra\Domain;
 
 class DomainController extends Controller
 {

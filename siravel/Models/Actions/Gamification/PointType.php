@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Actions\Gamification;
+namespace Informate\Models\Actions\Gamification;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class PointType extends Model
 {

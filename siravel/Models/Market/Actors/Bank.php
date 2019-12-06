@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Actors;
+namespace Informate\Models\Market\Actors;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
 
 class Bank extends Model
@@ -54,7 +54,7 @@ class Bank extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'bankable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'bankable');
     }
 
     /**

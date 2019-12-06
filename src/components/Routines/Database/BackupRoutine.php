@@ -9,8 +9,8 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteractions\Worker\Sync\Database\BackupCollection;
 
-use Siravel\Models\Entytys\Digital\Infra\Database;
-use Siravel\Models\Entytys\Digital\Infra\DatabaseCollection;
+use Informate\Models\Entytys\Digital\Infra\Database;
+use Informate\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class BackupRoutine extends ActionCollection
 {

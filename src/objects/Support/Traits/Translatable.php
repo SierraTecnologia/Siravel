@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Traits;
 
-use Siravel\Models\System\Translation;
+use Informate\Models\System\Translation;
 use Siravel\Services\GpowerService;
 use Stichoza\GoogleTranslate\TranslateClient;
 use App\Repositories\TranslationRepository;

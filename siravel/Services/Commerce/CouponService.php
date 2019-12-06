@@ -2,14 +2,14 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\UserMeta;
+use Informate\Models\UserMeta;
 use Siravel\Services\UserService;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
 use SierraTecnologia\Cms\Services\CmsService;
-use Siravel\Models\Coupon;
+use Informate\Models\Coupon;
 
 class CouponService
 {

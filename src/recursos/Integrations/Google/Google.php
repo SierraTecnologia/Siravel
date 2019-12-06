@@ -3,7 +3,7 @@
 namespace SiWeapons\Integrations\Google;
 
 use Illuminate\Support\Facades\Log;
-// use Siravel\Models\Entytys\Digital\Midia\Video;
+// use Informate\Models\Entytys\Digital\Midia\Video;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

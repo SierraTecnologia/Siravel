@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Infra\DatabaseCollection;
+use Informate\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class DatabaseCollectionsController extends Controller
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Informate\Models\Entytys\Digital\Code;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Lib extends Model
 {

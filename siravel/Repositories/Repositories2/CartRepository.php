@@ -3,8 +3,8 @@
 namespace Siravel\Repositories;
 
 use Illuminate\Support\Facades\Session;
-use Siravel\Models\Cart;
-use Siravel\Models\Variant;
+use Informate\Models\Cart;
+use Informate\Models\Variant;
 
 class CartRepository
 {

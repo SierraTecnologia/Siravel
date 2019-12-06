@@ -4,7 +4,7 @@ namespace SiUtils\Tools\Plugin;
 
 use GuzzleHttp\Client;
 use SiUtils\Tools\Builder;
-use Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+use Informate\Models\Entytys\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
 
 /**

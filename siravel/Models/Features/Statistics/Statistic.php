@@ -3,9 +3,9 @@
  * Sistemas de Analise de Crédito e Fraudes
  */
 
-namespace Siravel\Models\Features\Statistics;
+namespace Informate\Models\Features\Statistics;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Statistic extends Model
 {
@@ -17,7 +17,7 @@ class Statistic extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \Siravel\Models\Entytys\Digital\Code\Commit::class
+            \Informate\Models\Entytys\Digital\Code\Commit::class
         ]
     ];
 

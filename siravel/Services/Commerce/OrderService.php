@@ -2,7 +2,7 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\Refund;
+use Informate\Models\Refund;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\Config;
 use Siravel\Services\TransactionService;

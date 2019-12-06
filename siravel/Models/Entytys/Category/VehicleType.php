@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Category;
+namespace Informate\Models\Entytys\Category;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class VehicleType extends Model
 {

@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-use Siravel\Models\Customer;
+use Informate\Models\Customer;
 use Illuminate\Support\Facades\Log;
 
 class RoutineTrackingUserDeviseJob implements ShouldQueue

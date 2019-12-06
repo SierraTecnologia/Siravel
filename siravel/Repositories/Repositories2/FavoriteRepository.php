@@ -3,7 +3,7 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use Siravel\Models\Favorite;
+use Informate\Models\Favorite;
 
 class FavoriteRepository
 {

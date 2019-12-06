@@ -10,9 +10,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Informate\Models\Entytys\Digital\Code;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Commit extends Model
 {
@@ -49,7 +49,7 @@ class Commit extends Model
 
     public function project()
     {
-        return $this->belongsTo('Siravel\Models\Entytys\Digital\Code\Project', 'code_project_id', 'id');
+        return $this->belongsTo('Informate\Models\Entytys\Digital\Code\Project', 'code_project_id', 'id');
     }
 
 

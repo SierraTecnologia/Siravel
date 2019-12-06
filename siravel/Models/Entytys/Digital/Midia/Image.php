@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Informate\Models\Entytys\Digital\Midia;
 
 use Informate\Traits\ArchiveTrait;
 

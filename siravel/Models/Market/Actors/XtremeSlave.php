@@ -3,9 +3,9 @@
  * Ex: https://www.xvideos.com/video26396499/bound_bdsm_sub_raven_bay_facefucked
  *  */
 
-namespace Siravel\Models\Market\Actors;
+namespace Informate\Models\Market\Actors;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class XtremeSlave extends Slave
 {

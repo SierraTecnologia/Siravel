@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity\Fisicos;
+namespace Informate\Models\Identity\Fisicos;
 
 use App\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;

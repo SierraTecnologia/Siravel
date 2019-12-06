@@ -11,7 +11,7 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteractions\Worker\Sync\Database\SpiderCollection;
 
-use Siravel\Models\Entytys\Digital\Infra\Domain;
+use Informate\Models\Entytys\Digital\Infra\Domain;
 
 class SpiderAll extends ActionCollection
 {

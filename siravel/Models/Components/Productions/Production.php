@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Informate\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Production extends Model
 {

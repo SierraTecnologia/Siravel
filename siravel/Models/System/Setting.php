@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Models\System;
+namespace Informate\Models\System;
 
 use App\Models\User;
 
-use Siravel\Models\Model;
-use Siravel\Models\Identity\Actors\Business;
-use Siravel\Models\System\Language;
+use Informate\Models\Model;
+use Informate\Models\Identity\Actors\Business;
+use Informate\Models\System\Language;
 use Informate\Traits\EloquentGetTableNameTrait;
 
 class Setting extends Model

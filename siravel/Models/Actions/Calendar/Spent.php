@@ -10,10 +10,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Actions\Calendar;
+namespace Informate\Models\Actions\Calendar;
 
 use Informate\Traits\ComplexRelationamentTrait;
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use SiInteractions\Actions\Action;
 use Illuminate\Support\Facades\Log;
 class Spent extends Model

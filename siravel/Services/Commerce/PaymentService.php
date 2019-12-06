@@ -2,8 +2,8 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\Coupon;
-use Siravel\Models\Transaction;
+use Informate\Models\Coupon;
+use Informate\Models\Transaction;
 use Siravel\Services\TransactionService;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\DB;

@@ -1,4 +1,4 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Informate\Models\Components\Book;
 
 /**
  * Class EntityProvider

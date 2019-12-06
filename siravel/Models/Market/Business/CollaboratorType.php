@@ -5,9 +5,9 @@
  * 2 -> Sócio
  * 3 -> Assalariado
  */
-namespace Siravel\Models\Market\Business;
+namespace Informate\Models\Market\Business;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class CollaboratorType extends Model
 {

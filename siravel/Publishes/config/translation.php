@@ -22,7 +22,7 @@ return [
         |
         */
 
-        'country' => Siravel\Models\System\Country::class,
+        'country' => Informate\Models\System\Country::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
         |
         */
 
-        'locale' => Siravel\Models\System\Locale::class,
+        'locale' => Informate\Models\System\Locale::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
         |
         */
 
-        'language' => Siravel\Models\System\Language::class,
+        'language' => Informate\Models\System\Language::class,
 
         /*
         |--------------------------------------------------------------------------

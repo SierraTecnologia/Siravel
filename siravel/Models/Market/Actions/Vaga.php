@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Actions;
+namespace Informate\Models\Market\Actions;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Vaga extends Model
 {

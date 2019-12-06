@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Siravel\Models\Components\Book\SearchService;
+use Informate\Models\Components\Book\SearchService;
 use Illuminate\Console\Command;
 
 class RegenerateSearch extends Command

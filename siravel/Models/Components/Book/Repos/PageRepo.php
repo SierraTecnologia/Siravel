@@ -1,10 +1,10 @@
-<?php namespace Siravel\Models\Components\Book\Repos;
+<?php namespace Informate\Models\Components\Book\Repos;
 
-use Siravel\Models\Components\Book\Book;
-use Siravel\Models\Components\Book\Chapter;
-use Siravel\Models\Components\Book\Entity;
-use Siravel\Models\Components\Book\Page;
-use Siravel\Models\Components\Book\PageRevision;
+use Informate\Models\Components\Book\Book;
+use Informate\Models\Components\Book\Chapter;
+use Informate\Models\Components\Book\Entity;
+use Informate\Models\Components\Book\Page;
+use Informate\Models\Components\Book\PageRevision;
 use Carbon\Carbon;
 use DOMDocument;
 use DOMXPath;

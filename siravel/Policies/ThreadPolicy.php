@@ -5,7 +5,7 @@ namespace App\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use App\Models\User;
-use Siravel\Models\Features\Messenger\Thread;
+use Informate\Models\Features\Messenger\Thread;
 use Gate;
 
 class ThreadPolicy

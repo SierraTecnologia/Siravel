@@ -6,7 +6,7 @@
 namespace SiInteractions\Worker\Sync\Database;
 
 use App\Logic\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Siravel\Models\Entytys\Digital\Infra\DatabaseCollection;
+use Informate\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class BackupCollection
 {

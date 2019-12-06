@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Actions\Collect;
 
-use Siravel\Models\Entytys\Digital\Bot\Runner;
+use Informate\Models\Entytys\Digital\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 

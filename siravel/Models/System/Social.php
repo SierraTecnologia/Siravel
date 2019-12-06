@@ -1,7 +1,7 @@
 <?php
-namespace Siravel\Models\System;
+namespace Informate\Models\System;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Social extends Model {
 

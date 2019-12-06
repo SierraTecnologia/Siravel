@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci;
+namespace Informate\Models\Entytys\Digital\Infra\Ci;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Runner extends Model
 {

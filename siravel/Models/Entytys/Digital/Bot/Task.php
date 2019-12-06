@@ -10,11 +10,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Bot;
+namespace Informate\Models\Entytys\Digital\Bot;
 
 use Informate\Traits\ComplexRelationamentTrait;
 use Informate\Traits\TasksTrait;
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Task extends Model
 {
@@ -26,7 +26,7 @@ class Task extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \Siravel\Models\Features\Qa\AnalyzerResult::class
+            \Informate\Models\Features\Qa\AnalyzerResult::class
         ]
     ];
 

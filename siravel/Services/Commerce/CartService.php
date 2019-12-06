@@ -3,9 +3,9 @@
 namespace Siravel\Services;
 
 use Siravel\Services\StoreLogistics;
-use Siravel\Models\Coupon;
-use Siravel\Models\Currency;
-use Siravel\Models\Variant;
+use Informate\Models\Coupon;
+use Informate\Models\Currency;
+use Informate\Models\Variant;
 use Siravel\Repositories\CartRepository;
 use Siravel\Repositories\CartSessionRepository;
 use Siravel\Repositories\TransactionRepository;

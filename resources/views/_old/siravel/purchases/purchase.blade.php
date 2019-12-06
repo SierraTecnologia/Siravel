@@ -31,7 +31,7 @@
         @if ($purchase->coupon)
         <tr>
             <td>Coupon</td>
-            <td class="text-right">${!! app(\Siravel\Models\Coupon::class)->fill(json_decode($purchase->coupon, true))->dollars !!}</td>
+            <td class="text-right">${!! app(\Informate\Models\Coupon::class)->fill(json_decode($purchase->coupon, true))->dollars !!}</td>
         </tr>
         @endif
 

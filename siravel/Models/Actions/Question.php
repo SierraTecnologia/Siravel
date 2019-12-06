@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Models\Actions;
+namespace Informate\Models\Actions;
 
 use SiObjects\Manipule\Builders\QuestionBuilder;
 use Siravel\Contants\Tables;
 use Siravel\Features\Photos\Entities\QuestionEntity;
 use Illuminate\Database\Eloquent\Collection;
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 /**
  * Class Question.

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Actors;
+namespace Informate\Models\Identity\Actors;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\AsHuman;
 
 class Person extends Model

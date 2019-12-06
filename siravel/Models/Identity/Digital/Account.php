@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Informate\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
 
 class Account extends Model
@@ -58,7 +58,7 @@ class Account extends Model
      */
     public function business()
     {
-        return $this->morphedByMany('Siravel\Models\Market\Business', 'accountable');
+        return $this->morphedByMany('Informate\Models\Market\Business', 'accountable');
     }
 
     /**
@@ -74,6 +74,6 @@ class Account extends Model
      */
     public function persons()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Actors\Person', 'accountable');
+        return $this->morphedByMany('Informate\Models\Identity\Actors', 'accountable');
     }
 }

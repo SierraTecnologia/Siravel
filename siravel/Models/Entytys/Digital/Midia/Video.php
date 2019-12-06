@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Informate\Models\Entytys\Digital\Midia;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Video extends Model
 {
@@ -37,7 +37,7 @@ class Video extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Siravel\Models\Identity\Digital\Sitio', 'sitioable');
+        return $this->morphToMany('Informate\Models\Identity\Digital\Sitio', 'sitioable');
     }
         
     // /**

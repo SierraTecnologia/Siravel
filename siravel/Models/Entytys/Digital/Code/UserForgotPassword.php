@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Informate\Models\Entytys\Digital\Code;
 
 class UserForgotPassword extends Model
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Business;
+namespace Informate\Models\Market\Business;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Sector extends Model
 {

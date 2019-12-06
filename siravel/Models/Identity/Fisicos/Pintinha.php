@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Fisicos;
+namespace Informate\Models\Entytys\Fisicos;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 
 class Pintinha extends Model
 {

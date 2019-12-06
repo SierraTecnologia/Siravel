@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Abouts;
+namespace Informate\Models\Market\Abouts;
 
-use Siravel\Models\Model;
+use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
 
 class Renda extends Model
@@ -33,7 +33,7 @@ class Renda extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'rendable');
+        return $this->morphedByMany('Informate\Models\Identity\Slave', 'rendable');
     }
 
     /**

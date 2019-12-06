@@ -10,9 +10,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code\Message;
+namespace Informate\Models\Entytys\Digital\Code\Message;
 
-use Siravel\Models\Entytys\Digital\Code\Message;
+use Informate\Models\Entytys\Digital\Code\Message;
 
 /**
  * @author Julien DIDIER <genzo.wm@gmail.com>
