@@ -2,7 +2,7 @@
 
 namespace SiSeed\Abstrato\Tastes;
 
-use Informate\Models\Entytys\Fisicos\Gosto;
+use Informate\Models\Entytys\About\Gosto;
 
 class Tastes
 {

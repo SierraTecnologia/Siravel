@@ -22,7 +22,7 @@ return [
         'acessorios' => \Informate\Models\Entytys\Fisicos\Acessorio::class,
         'equipaments' => \Informate\Models\Entytys\Fisicos\Equipament::class,
         'genders' => \Informate\Models\Entytys\Fisicos\Gender::class,
-        'gostos' => \Informate\Models\Entytys\Fisicos\Gosto::class,
+        'gostos' => \Informate\Models\Entytys\About\Gosto::class,
         'infos' => \Population\Models\Market\Abouts\Info::class,
         'integrations' => \Informate\Models\Entytys\Fisicos\Integration::class,
         'items' => \Informate\Models\Entytys\Fisicos\Item::class,
