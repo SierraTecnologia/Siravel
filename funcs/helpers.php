@@ -3,14 +3,6 @@
 use App\Models\Permissions\PermissionService;
 
 
-if (!function_exists('larametricUses')) {
-    function larametricsUses($uses)
-    {
-        return '\Siravel\Providers\Metrics\Http\Controllers\\' . $uses;
-    }
-}
-
-
 if (!function_exists('redirect')) {
     /**
      * Get an instance of the redirector.
