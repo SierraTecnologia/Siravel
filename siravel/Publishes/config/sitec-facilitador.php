@@ -11,7 +11,7 @@ return [
         // Identity
         'persons' => \Population\Models\Identity\Actors\Person::class,
         'accounts' => \Population\Models\Identity\Digital\Account::class,
-        'passwords' => \Population\Models\Identity\Password::class,
+        'passwords' => \Population\Models\Identity\Digital\Password::class,
         'phones' => \Population\Models\Identity\Phone::class,
         'dominios' => \Informate\Models\Entytys\Digital\Infra\Domain::class,
         'emails' => \Population\Models\Identity\Email::class,

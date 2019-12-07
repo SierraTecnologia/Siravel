@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Population\Models\Market\Business\Sector;
+use Informate\Models\Business\Sector;
 
 class SectorController extends Controller
 {
