@@ -39,12 +39,12 @@ return [
         'url_links' => \Informate\Models\Entytys\Digital\Internet\UrlLink::class,
 
         // Midias
-        'files' => \Finder\Models\Entytys\Digital\Midia\File::class,
-        'images' => \Finder\Models\Entytys\Digital\Midia\Image::class,
-        'photos' => \Finder\Models\Entytys\Digital\Midia\Photo::class,
-        'photo_albums' => \Finder\Models\Entytys\Digital\Midia\PhotoAlbum::class,
-        'thumbnails' => \Finder\Models\Entytys\Digital\Midia\Thumbnail::class,
-        'videos' => \Finder\Models\Entytys\Digital\Midia\Video::class,
+        'files' => \Informate\Models\Entytys\Digital\Midia\File::class,
+        'images' => \Informate\Models\Entytys\Digital\Midia\Image::class,
+        'photos' => \Informate\Models\Entytys\Digital\Midia\Photo::class,
+        'photo_albums' => \Informate\Models\Entytys\Digital\Midia\PhotoAlbum::class,
+        'thumbnails' => \Informate\Models\Entytys\Digital\Midia\Thumbnail::class,
+        'videos' => \Informate\Models\Entytys\Digital\Midia\Video::class,
 
 
         // Components
