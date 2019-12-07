@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers\Features\Girl;
+<?php
+
+namespace App\Http\Controllers\Features\Girl;
 
 use App\Http\Controllers\AdminController;
 use Informate\Models\Digital\Midia\Photo;

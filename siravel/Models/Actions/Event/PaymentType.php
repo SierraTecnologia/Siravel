@@ -3,7 +3,7 @@
  * Armazena os tipos de pagamentos para moedas fiat
  */
 
-namespace Informate\Models\Actions\Event;
+namespace Siravel\Models\Actions\Event;
 
 use Illuminate\Support\Facades\Hash;
 

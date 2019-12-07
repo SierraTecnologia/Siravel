@@ -1,4 +1,6 @@
-<?php namespace SiUtils\Exceptions;
+<?php
+
+namespace SiUtils\Exceptions;
 
 class ImageUploadException extends PrettyException
 {

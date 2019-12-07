@@ -1,4 +1,6 @@
-<?php namespace Informate\Models\Access;
+<?php
+
+namespace Siravel\Models\Access;
 
 use App\Models\User;
 use Siravel\Models\UserRepo;

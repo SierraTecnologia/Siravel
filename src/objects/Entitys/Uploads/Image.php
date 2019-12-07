@@ -1,4 +1,6 @@
-<?php namespace SiObjects\Entitys\Uploads;
+<?php
+
+namespace SiObjects\Entitys\Uploads;
 
 use App\Models\Ownable;
 use Images;

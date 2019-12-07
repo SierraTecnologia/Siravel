@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Actions\Gamification;
+namespace Siravel\Models\Actions\Gamification;
 
 use Siravel\Models\Model;
 

@@ -1,4 +1,6 @@
-<?php namespace Siravel\Notifications;
+<?php
+
+namespace Siravel\Notifications;
 
 class ResetPassword extends MailNotification
 {

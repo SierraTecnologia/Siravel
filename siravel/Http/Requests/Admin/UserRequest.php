@@ -1,4 +1,6 @@
-<?php namespace Siravel\Http\Requests\Admin;
+<?php
+
+namespace Siravel\Http\Requests\Admin;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;

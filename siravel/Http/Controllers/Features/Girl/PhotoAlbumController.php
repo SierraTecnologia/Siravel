@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers\Features\Girl;
+<?php
+
+namespace App\Http\Controllers\Features\Girl;
 
 use Informate\Models\Digital\Midia\PhotoAlbum;
 use Informate\Models\Digital\Midia\Photo;

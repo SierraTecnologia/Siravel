@@ -1,4 +1,6 @@
-<?php namespace Siravel\Http\Middleware;
+<?php
+
+namespace Siravel\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;

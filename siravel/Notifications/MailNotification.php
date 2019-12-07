@@ -1,4 +1,6 @@
-<?php namespace Siravel\Notifications;
+<?php
+
+namespace Siravel\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

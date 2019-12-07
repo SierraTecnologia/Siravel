@@ -1,4 +1,6 @@
-<?php namespace SiInteractions\Actions\Book;
+<?php
+
+namespace SiInteractions\Actions\Book;
 
 use App\Models\Ownable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Actions\Vendas;
+namespace Siravel\Models\Actions\Vendas;
 
 use Siravel\Models\Model;
 

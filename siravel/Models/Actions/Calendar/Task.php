@@ -10,7 +10,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Informate\Models\Actions\Calendar;
+namespace Siravel\Models\Actions\Calendar;
 
 use Informate\Traits\ComplexRelationamentTrait;
 use Siravel\Models\Model;

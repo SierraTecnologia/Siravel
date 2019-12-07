@@ -1,4 +1,6 @@
-<?php namespace SiObjects\Entitys\Uploads;
+<?php
+
+namespace SiObjects\Entitys\Uploads;
 
 use Illuminate\Contracts\Filesystem\Factory as FileSystem;
 use Illuminate\Contracts\Filesystem\Filesystem as FileSystemInstance;
