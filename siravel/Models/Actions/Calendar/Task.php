@@ -13,7 +13,7 @@
 namespace Informate\Models\Actions\Calendar;
 
 use Informate\Traits\ComplexRelationamentTrait;
-use Informate\Models\Model;
+use Siravel\Models\Model;
 
 use Illuminate\Support\Facades\Log;
 

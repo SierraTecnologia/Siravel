@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Informate\Models\Role;
+use Siravel\Models\Role;
 use Informate\Models\Customer;
 use Auth;
 

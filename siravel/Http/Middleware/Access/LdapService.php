@@ -1,7 +1,7 @@
 <?php namespace Informate\Models\Access;
 
 use Informate\Models\Access;
-use Informate\Models\Role;
+use Siravel\Models\Role;
 use App\Models\User;
 use Siravel\Models\UserRepo;
 use Siravel\Exceptions\LdapException;

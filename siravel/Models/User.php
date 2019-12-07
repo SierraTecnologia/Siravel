@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models;
+namespace Siravel\Models;
 
 use Illuminate\Notifications\Notifiable;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;

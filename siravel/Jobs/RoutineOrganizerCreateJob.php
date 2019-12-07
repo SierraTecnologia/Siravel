@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 use App\Models\User;
-use Informate\Models\Role;
+use Siravel\Models\Role;
 use Siravel\Services\PaymentGatewayService;
 use Illuminate\Support\Facades\Log;
 use Siravel\Tools\Organizer;

@@ -2,7 +2,7 @@
 
 namespace Informate\Models\Actions\Gamification;
 
-use Informate\Models\Model;
+use Siravel\Models\Model;
 
 class Point extends Model
 {

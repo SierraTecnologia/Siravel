@@ -7,7 +7,7 @@ namespace Informate\Models\Actions\Event;
 
 use Illuminate\Support\Facades\Hash;
 
-use Informate\Models\Model;
+use Siravel\Models\Model;
 class PaymentType  extends Model
 {
 

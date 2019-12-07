@@ -6,7 +6,7 @@ use SiObjects\Manipule\Builders\QuestionBuilder;
 use Siravel\Contants\Tables;
 use Siravel\Features\Photos\Entities\QuestionEntity;
 use Illuminate\Database\Eloquent\Collection;
-use Informate\Models\Model;
+use Siravel\Models\Model;
 
 /**
  * Class Question.

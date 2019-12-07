@@ -2,7 +2,7 @@
 
 namespace Informate\Models\Actions\Vendas;
 
-use Informate\Models\Model;
+use Siravel\Models\Model;
 
 class Proposta extends Model
 {
