@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Features\Midia;
 
-use Informate\Models\Digital\Midia\Photo;
-use Informate\Models\Digital\Midia\PhotoAlbum;
+use Informate\Models\Entytys\Digital\Midia\Photo;
+use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
 use Finder\Services\Midia\MidiaService;
 use App\Http\Controllers\Controller;
 

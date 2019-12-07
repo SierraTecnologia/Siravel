@@ -6,8 +6,8 @@ use App\Http\Controllers\GirlController;
 use App\Models\Blog\Article;
 use App\Models\Blog\Category;
 use App\Models\User;
-use Informate\Models\Digital\Midia\Photo;
-use Informate\Models\Digital\Midia\PhotoAlbum;
+use Informate\Models\Entytys\Digital\Midia\Photo;
+use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
 
 class DashboardController extends GirlController {
 
