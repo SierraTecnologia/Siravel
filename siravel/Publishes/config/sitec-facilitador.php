@@ -12,9 +12,9 @@ return [
         'persons' => \Population\Models\Identity\Actors\Person::class,
         'accounts' => \Population\Models\Identity\Digital\Account::class,
         'passwords' => \Population\Models\Identity\Digital\Password::class,
-        'phones' => \Population\Models\Identity\Phone::class,
+        'phones' => \Population\Models\Identity\Digital\Phone::class,
         'dominios' => \Informate\Models\Entytys\Digital\Infra\Domain::class,
-        'emails' => \Population\Models\Identity\Email::class,
+        'emails' => \Population\Models\Identity\Digital\Email::class,
         'bibliotecas' => \Population\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Informate\Models\Entytys\Category\BibliotecaType::class,
 

@@ -265,7 +265,7 @@ class User extends \TCG\Voyager\Models\User
      */
     public function accounts()
     {
-        return $this->morphMany('Population\Models\Identity\Account', 'accountable');
+        return $this->morphMany('Population\Models\Identity\Digital\Account', 'accountable');
     }
 
     /**
