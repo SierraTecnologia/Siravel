@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Features\Messenger;
+namespace Population\Models\Features\Messenger;
 
 class Models
 {
@@ -101,7 +101,7 @@ class Models
      * Get an instance of the messages model.
      *
      * @param  array $attributes
-     * @return \Informate\Models\Features\Messenger\Message
+     * @return \Population\Models\Features\Messenger\Message
      */
     public static function message(array $attributes = [])
     {
@@ -112,7 +112,7 @@ class Models
      * Get an instance of the participants model.
      *
      * @param  array $attributes
-     * @return \Informate\Models\Features\Messenger\Participant
+     * @return \Population\Models\Features\Messenger\Participant
      */
     public static function participant(array $attributes = [])
     {
@@ -123,7 +123,7 @@ class Models
      * Get an instance of the threads model.
      *
      * @param  array $attributes
-     * @return \Informate\Models\Features\Messenger\Thread
+     * @return \Population\Models\Features\Messenger\Thread
      */
     public static function thread(array $attributes = [])
     {

@@ -3,7 +3,7 @@
 use Informate\Models\Access;
 use Informate\Models\Role;
 use App\Models\User;
-use Informate\Models\UserRepo;
+use Siravel\Models\UserRepo;
 use Siravel\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;

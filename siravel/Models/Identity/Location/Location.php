@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Location;
+namespace Population\Models\Identity\Location;
 
 use SiObjects\Manipule\Builders\LocationBuilder;
 use Siravel\Contants\Tables;

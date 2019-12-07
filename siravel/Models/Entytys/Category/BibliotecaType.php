@@ -28,6 +28,6 @@ class BibliotecaType extends Model
 
     public function bibliotecas()
     {
-        return $this->hasMany('Informate\Models\Market\Informacao\Biblioteca', 'biblioteca_type_id', 'id');
+        return $this->hasMany('Population\Models\Market\Informacao\Biblioteca', 'biblioteca_type_id', 'id');
     }
 }

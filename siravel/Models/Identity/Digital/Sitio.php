@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Digital;
+namespace Population\Models\Identity\Digital;
 
 use Informate\Models\Model;
 
@@ -46,7 +46,7 @@ class Sitio extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Girl', 'sitioable');
+        return $this->morphedByMany('Population\Models\Identity\Girl', 'sitioable');
     }
 
     /**

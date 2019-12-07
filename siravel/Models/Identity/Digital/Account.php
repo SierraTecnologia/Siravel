@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Digital;
+namespace Population\Models\Identity\Digital;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -58,7 +58,7 @@ class Account extends Model
      */
     public function business()
     {
-        return $this->morphedByMany('Informate\Models\Market\Business', 'accountable');
+        return $this->morphedByMany('Population\Models\Market\Business', 'accountable');
     }
 
     /**
@@ -74,6 +74,6 @@ class Account extends Model
      */
     public function persons()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Actors', 'accountable');
+        return $this->morphedByMany('Population\Models\Identity\Actors', 'accountable');
     }
 }

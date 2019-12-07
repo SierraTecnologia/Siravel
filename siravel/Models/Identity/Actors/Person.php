@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Actors;
+namespace Population\Models\Identity\Actors;
 
 use Informate\Models\Model;
 use Informate\Traits\AsHuman;

@@ -11,7 +11,7 @@
  * -> Customer (Consumidor Final, pagando e adquirindo os produtos do cliente)
  */
 
-namespace Informate\Models\Features;
+namespace Population\Models\Features;
 
 use Informate\Models\Model;
 

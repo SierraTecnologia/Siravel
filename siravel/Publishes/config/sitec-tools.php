@@ -9,7 +9,7 @@
 return [
 
     'models' => [
-        'business' => \Informate\Models\Market\Business::class,
+        'business' => \Population\Models\Market\Business::class,
     ],
 
 

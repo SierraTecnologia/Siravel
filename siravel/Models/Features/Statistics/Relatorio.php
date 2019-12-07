@@ -3,7 +3,7 @@
  * Sistemas de Analise de Crédito e Fraudes
  */
 
-namespace Informate\Models\Features\Statistics;
+namespace Population\Models\Features\Statistics;
 
 use Informate\Models\Model;
 

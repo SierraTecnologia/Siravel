@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Informate\Models\UserRepo;
+use Siravel\Models\UserRepo;
 use Illuminate\Console\Command;
 
 class CreateAdmin extends Command

@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Features\Qa;
+namespace Population\Models\Features\Qa;
 
 use Informate\Models\Model;
 

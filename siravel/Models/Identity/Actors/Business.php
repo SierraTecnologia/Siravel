@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Actors;
+namespace Population\Models\Identity\Actors;
 
 use Informate\Models\Model;
 
@@ -72,7 +72,7 @@ class Business extends Model
      */
     public function features()
     {
-        return $this->morphToMany('Informate\Models\Features\Marketing\Feature', 'featureable');
+        return $this->morphToMany('Population\Models\Features\Marketing\Feature', 'featureable');
     }
 
     // /**
@@ -112,7 +112,7 @@ class Business extends Model
      */
     public function addresses()
     {
-        return $this->morphToMany('Informate\Models\Identity\Address', 'addresseable');
+        return $this->morphToMany('Population\Models\Identity\Address', 'addresseable');
     }
 
     /**
@@ -120,7 +120,7 @@ class Business extends Model
      */
     public function phones()
     {
-        return $this->morphToMany('Informate\Models\Identity\Phone', 'phoneable');
+        return $this->morphToMany('Population\Models\Identity\Phone', 'phoneable');
     }
 
     /**
@@ -128,7 +128,7 @@ class Business extends Model
      */
     public function accounts()
     {
-        return $this->morphMany('Informate\Models\Identity\Digital\Account', 'accountable');
+        return $this->morphMany('Population\Models\Identity\Digital\Account', 'accountable');
     }
 
     /**
@@ -151,7 +151,7 @@ class Business extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Informate\Models\Identity\Digital\Sitio', 'sitioable');
+        return $this->morphToMany('Population\Models\Identity\Digital\Sitio', 'sitioable');
     }
     /**
      * Get all of the skills for the post.
@@ -162,7 +162,7 @@ class Business extends Model
     }
     public function infos()
     {
-        return $this->morphMany('Informate\Models\Market\Abouts\Info', 'infoable');
+        return $this->morphMany('Population\Models\Market\Abouts\Info', 'infoable');
     }
     public function gostos()
     {
@@ -170,11 +170,11 @@ class Business extends Model
     }
     public function pircings()
     {
-        return $this->morphToMany('Informate\Models\Identity\Fisicos\Pircing', 'pircingable');
+        return $this->morphToMany('Population\Models\Identity\Fisicos\Pircing', 'pircingable');
     }
     public function tatuages()
     {
-        return $this->morphToMany('Informate\Models\Identity\Fisicos\Tatuagem', 'tatuageable');
+        return $this->morphToMany('Population\Models\Identity\Fisicos\Tatuagem', 'tatuageable');
     }
 
 }

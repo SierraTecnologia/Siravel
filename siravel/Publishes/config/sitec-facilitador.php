@@ -9,13 +9,13 @@ return [
         // 'users' => \App\Models\User::class,
 
         // Identity
-        'persons' => \Informate\Models\Identity\Actors\Person::class,
-        'accounts' => \Informate\Models\Identity\Digital\Account::class,
-        'passwords' => \Informate\Models\Identity\Password::class,
-        'phones' => \Informate\Models\Identity\Phone::class,
+        'persons' => \Population\Models\Identity\Actors\Person::class,
+        'accounts' => \Population\Models\Identity\Digital\Account::class,
+        'passwords' => \Population\Models\Identity\Password::class,
+        'phones' => \Population\Models\Identity\Phone::class,
         'dominios' => \Informate\Models\Entytys\Digital\Infra\Domain::class,
-        'emails' => \Informate\Models\Identity\Email::class,
-        'bibliotecas' => \Informate\Models\Market\Informacao\Biblioteca::class,
+        'emails' => \Population\Models\Identity\Email::class,
+        'bibliotecas' => \Population\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Informate\Models\Entytys\Category\BibliotecaType::class,
 
         // Hability
@@ -23,16 +23,16 @@ return [
         'equipaments' => \Informate\Models\Entytys\Fisicos\Equipament::class,
         'genders' => \Informate\Models\Entytys\Fisicos\Gender::class,
         'gostos' => \Informate\Models\Entytys\Fisicos\Gosto::class,
-        'infos' => \Informate\Models\Market\Abouts\Info::class,
+        'infos' => \Population\Models\Market\Abouts\Info::class,
         'integrations' => \Informate\Models\Entytys\Fisicos\Integration::class,
         'items' => \Informate\Models\Entytys\Fisicos\Item::class,
-        'pintinhas' => \Informate\Models\Identity\Fisicos\Pintinha::class,
-        'pincirgs' => \Informate\Models\Identity\Fisicos\Pircing::class,
+        'pintinhas' => \Population\Models\Identity\Fisicos\Pintinha::class,
+        'pincirgs' => \Population\Models\Identity\Fisicos\Pircing::class,
         'positions' => \Informate\Models\Entytys\Relations\Position::class,
         'relations' => \Informate\Models\Entytys\Fisicos\Relation::class,
         'skills' => \Informate\Models\Entytys\Fisicos\Skill::class,
-        'sitios' => \Informate\Models\Identity\Digital\Sitio::class,
-        'tatuages' => \Informate\Models\Identity\Fisicos\Tatuage::class,
+        'sitios' => \Population\Models\Identity\Digital\Sitio::class,
+        'tatuages' => \Population\Models\Identity\Fisicos\Tatuage::class,
 
         // Internet
         'urls' => \Informate\Models\Entytys\Digital\Internet\Url::class,

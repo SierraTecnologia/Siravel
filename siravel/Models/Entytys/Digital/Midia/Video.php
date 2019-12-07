@@ -37,7 +37,7 @@ class Video extends Model
 
     public function sitios()
     {
-        return $this->morphToMany('Informate\Models\Identity\Digital\Sitio', 'sitioable');
+        return $this->morphToMany('Population\Models\Identity\Digital\Sitio', 'sitioable');
     }
         
     // /**

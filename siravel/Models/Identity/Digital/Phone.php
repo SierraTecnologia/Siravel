@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Digital;
+namespace Population\Models\Identity\Digital;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -32,7 +32,7 @@ class Phone extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'skillable');
     }
 
     /**

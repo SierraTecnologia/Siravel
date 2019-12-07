@@ -49,7 +49,7 @@ class Item extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Girl', 'itemable');
+        return $this->morphedByMany('Population\Models\Identity\Girl', 'itemable');
     }
 
     /**

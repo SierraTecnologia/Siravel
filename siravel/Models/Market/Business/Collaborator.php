@@ -1,8 +1,8 @@
 <?php
 
-namespace Informate\Models\Market\Business;
+namespace Population\Models\Market\Business;
 
-use Informate\Models\Identity\Actors;
+use Population\Models\Identity\Actors;
 
 class Collaborator extends Person
 {

@@ -1,7 +1,7 @@
 <?php namespace Informate\Models\Access;
 
 use Informate\Models\SocialAccount;
-use Informate\Models\UserRepo;
+use Siravel\Models\UserRepo;
 use Siravel\Exceptions\SocialDriverNotConfigured;
 use Siravel\Exceptions\SocialSignInAccountNotUsed;
 use Siravel\Exceptions\UserRegistrationException;

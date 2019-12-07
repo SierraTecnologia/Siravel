@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Informacao;
+namespace Population\Models\Market\Informacao;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;

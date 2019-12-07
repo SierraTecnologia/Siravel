@@ -3,7 +3,7 @@
 namespace Siravel\Console\Commands\Book;
 
 use App\Models\User;
-use Informate\Models\UserRepo;
+use Siravel\Models\UserRepo;
 use Illuminate\Console\Command;
 
 class DeleteUsers extends Command

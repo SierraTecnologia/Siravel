@@ -1,7 +1,7 @@
 <?php namespace Informate\Models\Access;
 
 use App\Models\User;
-use Informate\Models\UserRepo;
+use Siravel\Models\UserRepo;
 use Siravel\Exceptions\ConfirmationEmailException;
 use Siravel\Exceptions\UserRegistrationException;
 use Siravel\Notifications\ConfirmEmail;

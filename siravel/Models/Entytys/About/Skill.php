@@ -62,6 +62,6 @@ class Skill extends Model
      */
     public function persons()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Actors', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Actors', 'skillable');
     }
 }

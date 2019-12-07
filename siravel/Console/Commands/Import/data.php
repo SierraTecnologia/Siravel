@@ -3,7 +3,7 @@
 namespace App\Console\Commands\Import;
 
 use App\Actions\Instagram\GetMidias;
-use Informate\Models\Identity\Digital\Account;
+use Population\Models\Identity\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;

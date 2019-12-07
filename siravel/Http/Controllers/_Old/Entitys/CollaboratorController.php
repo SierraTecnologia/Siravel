@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Informate\Models\Market\Business\Collaborator;
+use Population\Models\Market\Business\Collaborator;
 
 class CollaboratorController extends Controller
 {

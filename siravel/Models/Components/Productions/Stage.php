@@ -47,7 +47,7 @@ class Stage extends Item
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'skillable');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Actors;
+namespace Population\Models\Market\Actors;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -54,7 +54,7 @@ class Bank extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'bankable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'bankable');
     }
 
     /**

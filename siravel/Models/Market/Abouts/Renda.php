@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Abouts;
+namespace Population\Models\Market\Abouts;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -33,7 +33,7 @@ class Renda extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'rendable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'rendable');
     }
 
     /**

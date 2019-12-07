@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Digital;
+namespace Population\Models\Identity\Digital;
 
 use Informate\Models\Model;
 

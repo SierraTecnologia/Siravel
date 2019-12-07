@@ -36,7 +36,7 @@ class RelationType extends Model
      */
     public function relations()
     {
-        return $this->belongsToMany('Informate\Models\Identity\Relation');
+        return $this->belongsToMany('Population\Models\Identity\Relation');
     }
     
     /**
@@ -44,7 +44,7 @@ class RelationType extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'skillable');
     }
 
     /**

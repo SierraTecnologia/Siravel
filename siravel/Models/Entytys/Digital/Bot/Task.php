@@ -26,7 +26,7 @@ class Task extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \Informate\Models\Features\Qa\AnalyzerResult::class
+            \Population\Models\Features\Qa\AnalyzerResult::class
         ]
     ];
 

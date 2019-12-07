@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Abouts;
+namespace Population\Models\Market\Abouts;
 
 use Informate\Models\Model;
 

@@ -5,7 +5,7 @@
  * 2 -> Sócio
  * 3 -> Assalariado
  */
-namespace Informate\Models\Market\Business;
+namespace Population\Models\Market\Business;
 
 use Informate\Models\Model;
 

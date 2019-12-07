@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Features\Marketing;
+namespace Population\Models\Features\Marketing;
 
 use App\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -62,7 +62,7 @@ class Product extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Girl', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Girl', 'skillable');
     }
 
     /**

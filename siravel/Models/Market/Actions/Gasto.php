@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Actions;
+namespace Population\Models\Market\Actions;
 
 use Informate\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;
@@ -34,7 +34,7 @@ class Gasto extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Slave', 'gastoable');
+        return $this->morphedByMany('Population\Models\Identity\Slave', 'gastoable');
     }
 
     /**

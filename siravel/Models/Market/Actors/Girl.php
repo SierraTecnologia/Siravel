@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Actors;
+namespace Population\Models\Market\Actors;
 
 use App\Models\Model;
 
@@ -49,7 +49,7 @@ class Girl extends Model
     
     public function infos()
     {
-        return $this->morphMany('Informate\Models\Market\Abouts\Info', 'infoable');
+        return $this->morphMany('Population\Models\Market\Abouts\Info', 'infoable');
     }
 
     /**

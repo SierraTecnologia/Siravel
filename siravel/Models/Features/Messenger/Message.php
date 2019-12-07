@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Features\Messenger;
+namespace Population\Models\Features\Messenger;
 
 use Cmgmyr\Messenger\Models\Message as MessengerMessage;
 

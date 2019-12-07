@@ -3,7 +3,7 @@
  * Ex: https://www.xvideos.com/video26396499/bound_bdsm_sub_raven_bay_facefucked
  *  */
 
-namespace Informate\Models\Market\Actors;
+namespace Population\Models\Market\Actors;
 
 use Informate\Models\Model;
 

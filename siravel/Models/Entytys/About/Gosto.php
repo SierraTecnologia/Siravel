@@ -49,7 +49,7 @@ class Gosto extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Girl', 'gostoable');
+        return $this->morphedByMany('Population\Models\Identity\Girl', 'gostoable');
     }
 
     /**

@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\DB;
 
 use Informate\Models\Entytys\Digital\Code\Project;
 
-use Informate\Models\Identity\Actors\Business;
-use Informate\Models\Market\Business\Collaborator;
+use Population\Models\Identity\Actors\Business;
+use Population\Models\Market\Business\Collaborator;
 
 use Informate\Models\Components\Integrations\Token;
 use Informate\Models\Components\Integrations\TokenAccess;

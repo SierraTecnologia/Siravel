@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Identity\Fisicos;
+namespace Population\Models\Identity\Fisicos;
 
 use App\Models\Model;
 use Informate\Traits\ComplexRelationamentTrait;

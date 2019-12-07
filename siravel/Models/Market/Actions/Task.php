@@ -1,6 +1,6 @@
 <?php
 
-namespace Informate\Models\Market\Actions;
+namespace Population\Models\Market\Actions;
 
 use App\Models\Model;
 
@@ -62,7 +62,7 @@ class Task extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Informate\Models\Identity\Girl', 'skillable');
+        return $this->morphedByMany('Population\Models\Identity\Girl', 'skillable');
     }
 
     /**
