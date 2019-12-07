@@ -40,7 +40,7 @@ return [
 
         // Midias
         'files' => \Informate\Models\Entytys\Digital\Midia\File::class,
-        'images' => \Informate\Models\Entytys\Digital\Midia\Image::class,
+        'images' => \Informate\Models\Entytys\Digital\Midia\Imagen::class,
         'photos' => \Informate\Models\Entytys\Digital\Midia\Photo::class,
         'photo_albums' => \Informate\Models\Entytys\Digital\Midia\PhotoAlbum::class,
         'thumbnails' => \Informate\Models\Entytys\Digital\Midia\Thumbnail::class,
