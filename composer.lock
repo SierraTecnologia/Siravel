@@ -11646,7 +11646,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "33d527ccd3f202c21b18c54e95184663f98d5b2c"
+                "reference": "291b40af03fdcead1f2b551e46b8945ae2d2e0a0"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -11695,7 +11695,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "057df026371d4176adacccfb6231a3afd3681287"
+                "reference": "8ca499f812f6a0143e40c03cf1efcd2f60468ab4"
             },
             "require": {
                 "php": "^7.3.0",
@@ -11862,7 +11862,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "157e6fd75c0508e6d18f2a9ef11288a354110fec"
+                "reference": "6a90313f6eca2668beb54e2aed6fa2b4060ceed2"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -11977,7 +11977,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "67f452c0b33e0d7f6a365ef63759b7a0936ef21a"
+                "reference": "dcb8c48268f8c8091dc17ff29fe074a999d3ae3b"
             },
             "require": {
                 "cache/filesystem-adapter": "^1.0",
@@ -12186,7 +12186,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "ba86809ce5c6c2be4c57126f607d45f5bf8242ce"
+                "reference": "fbcbecf49a75f458aa432af14241691e99b325fe"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -12363,7 +12363,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "0094be6058a86c42a595c471aaac4e64e287207b"
+                "reference": "597db1e369b595449c155e9080892e6d9a5332d1"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
