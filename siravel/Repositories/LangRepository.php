@@ -5,7 +5,7 @@ namespace App\Repositories;
 use Cms;
 use Config;
 use CryptoService;
-Informate\Models\Entytys\Digital\Midia\Imagen as Image;
+use Informate\Models\Entytys\Digital\Midia\Imagen as Image;
 use Illuminate\Support\Facades\Schema;
 
 class LangRepository
