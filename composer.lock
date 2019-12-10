@@ -6275,16 +6275,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "d74654d85954e3b9451d67faaebacd210fc70252"
+                "reference": "772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d74654d85954e3b9451d67faaebacd210fc70252",
-                "reference": "d74654d85954e3b9451d67faaebacd210fc70252",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c",
+                "reference": "772e03fa9c6477ef5ef2d154fefd8a2a8d8ed03c",
                 "shasum": ""
             },
             "require": {
@@ -6342,7 +6342,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-11-11T22:23:29+00:00"
+            "time": "2019-12-10T02:55:03+00:00"
         },
         {
             "name": "league/container",
@@ -11696,7 +11696,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "ca1752f6bc6f0121c113d22566c653b80a5a24c4"
+                "reference": "54e236fb2b9ac9b9397f5083b40931fa73415763"
             },
             "require": {
                 "php": "^7.3.0",
@@ -11863,7 +11863,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "62b84e28e19fd18d0c916ce78bb68c0f96f9e378"
+                "reference": "42e14b718995f0418cea23efe72a4546107961e8"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -12187,7 +12187,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "c5a235076d588dcec4d4057f8a38d83b941924b9"
+                "reference": "79de3beef8f27c238b8d606775edfbf410339e02"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -12270,7 +12270,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-                "reference": "d652dfd90b567c9e644e6a7dea7ba093dc65de9a"
+                "reference": "83597a709d4ea14367b55d996517d82490d1581e"
             },
             "require": {
                 "doctrine/dbal": ">=2.5",
@@ -17264,16 +17264,16 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.8.7",
+            "version": "v3.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "2122fc0c3c4e592ab142786b27d5bd6c60ca7a3c"
+                "reference": "fd3436e12ad61547f83a77384679efeaae1aaede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/2122fc0c3c4e592ab142786b27d5bd6c60ca7a3c",
-                "reference": "2122fc0c3c4e592ab142786b27d5bd6c60ca7a3c",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/fd3436e12ad61547f83a77384679efeaae1aaede",
+                "reference": "fd3436e12ad61547f83a77384679efeaae1aaede",
                 "shasum": ""
             },
             "require": {
@@ -17325,7 +17325,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2019-09-11T07:07:58+00:00"
+            "time": "2019-12-10T02:49:57+00:00"
         },
         {
             "name": "phar-io/manifest",
