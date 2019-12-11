@@ -60,7 +60,7 @@ class CreateExtraWikiTables extends Migration
 			// $table->foreign('language_code')->references('code')->on('languages')->onUpdate('cascade')->onDelete('cascade');
 			$table->unsignedInteger('provider_id');
 			$table->foreign('provider_id')->references('id')->on('providers')->onUpdate('cascade')->onDelete('cascade');
-			$table->unsignedInteger('role_id');
+			$table->unsignedInteger('wiki_role_id');
 			// $table->foreign('role_id')->references('id')->on('wiki_roles')->onUpdate('cascade')->onDelete('restrict');
 
 			// Extra keys
@@ -72,7 +72,7 @@ class CreateExtraWikiTables extends Migration
 			$table->softDeletes();
 		});
 
-		Schema::create('categories', function (Blueprint $table) {
+		Schema::create('wiki_categories', function (Blueprint $table) {
 
 			// Set the storage engine and primary key
 			$table->engine = 'InnoDB';
@@ -91,7 +91,7 @@ class CreateExtraWikiTables extends Migration
 			// Automatic columns
 			$table->timestamps();
 		});
-		Schema::create('pages', function (Blueprint $table) {
+		Schema::create('wiki_pages', function (Blueprint $table) {
 
 			// Set the storage engine and primary key
 			$table->engine = 'InnoDB';
@@ -103,14 +103,14 @@ class CreateExtraWikiTables extends Migration
 			$table->longText('markup')->nullable();
 
 			// Foreign keys
-			$table->unsignedInteger('category_id');
-			$table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+			$table->unsignedInteger('wiki_category_id');
+			$table->foreign('wiki_category_id')->references('id')->on('wiki_categories')->onUpdate('cascade')->onDelete('cascade');
 
 			// Automatic columns
 			$table->timestamps();
 			$table->softDeletes();
 		});
-		Schema::create('versions', function (Blueprint $table) {
+		Schema::create('wiki_versions', function (Blueprint $table) {
 
 			// Set the storage engine and primary key
 			$table->engine = 'InnoDB';
@@ -122,8 +122,8 @@ class CreateExtraWikiTables extends Migration
 			$table->string('ip_address', 45);
 
 			// Foreign keys
-			$table->unsignedInteger('page_id');
-			$table->foreign('page_id')->references('id')->on('pages')->onUpdate('cascade')->onDelete('cascade');
+			$table->unsignedInteger('wiki_page_id');
+			$table->foreign('wiki_page_id')->references('id')->on('wiki_pages')->onUpdate('cascade')->onDelete('cascade');
 			$table->unsignedInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('wiki_users')->onUpdate('cascade')->onDelete('cascade');
 
@@ -139,10 +139,10 @@ class CreateExtraWikiTables extends Migration
      */
     public function down()
     {
-		Schema::dropIfExists('versions');
+		Schema::dropIfExists('wiki_versions');
         // Pages
-		Schema::dropIfExists('pages');
-		Schema::dropIfExists('categories');
+		Schema::dropIfExists('wiki_pages');
+		Schema::dropIfExists('wiki_categories');
 		Schema::dropIfExists('wiki_users');
         Schema::dropIfExists('wiki_roles');
         // Providers

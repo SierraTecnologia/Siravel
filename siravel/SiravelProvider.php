@@ -10,9 +10,11 @@ use Illuminate\Support\Collection;
 
 class SiravelProvider extends ServiceProvider
 {
+    public static $aliasProviders = [
+
+    ];
+
     public static $providers = [
-    
-        \Siravel\Providers\SiravelEventServiceProvider::class,
         \Siravel\Providers\SiravelRouteProvider::class,
         
         /**
@@ -36,19 +38,20 @@ class SiravelProvider extends ServiceProvider
     {
 
         $this->publishes([
-            __DIR__.'/Publishes/resources/tools' => base_path('resources/tools'),
-            __DIR__.'/Publishes/app/Services' => app_path('Services'),
-            __DIR__.'/Publishes/public/js' => base_path('public/js'),
-            __DIR__.'/Publishes/public/css' => base_path('public/css'),
-            __DIR__.'/Publishes/public/img' => base_path('public/img'),
-            __DIR__.'/Publishes/config' => base_path('config'),
-            __DIR__.'/Publishes/routes' => base_path('routes'),
-            __DIR__.'/Publishes/app/Controllers' => app_path('Http/Controllers/Siravel'),
+            $this->getPublishesPath('resources/tools') => base_path('resources/tools'),
+            $this->getPublishesPath('app/Services') => app_path('Services'),
+            $this->getPublishesPath('public/js') => base_path('public/js'),
+            $this->getPublishesPath('public/css') => base_path('public/css'),
+            $this->getPublishesPath('public/img') => base_path('public/img'),
+            $this->getPublishesPath('config') => base_path('config'),
+            $this->getPublishesPath('routes') => base_path('routes'),
+            $this->getPublishesPath('app/Controllers') => app_path('Http/Controllers/Siravel'),
         ]);
 
         $this->publishes([
-            __DIR__.'../resources/views' => base_path('resources/views/vendor/siravel'),
-        ], 'SierraTecnologia Siravel');
+            $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
+        ], 'siravel');
+
         /*
         |--------------------------------------------------------------------------
         | Blade Directives
@@ -93,19 +96,23 @@ class SiravelProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->setDependencesAlias();
+        // Register external packages
         $this->setProviders();
+        $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
         // View namespace
-        $this->loadViewsFrom(__DIR__.'/Views', 'siravel');
+        $viewsPath = $this->getResourcesPath('views');
+        $this->loadViewsFrom($viewsPath, 'siravel');
+        $this->publishes([
+            $viewsPath => base_path('resources/views/vendor/siravel'),
+        ], 'views');
 
         if (is_dir(base_path('resources/siravel'))) {
             $this->app->view->addNamespace('siravel-frontend', base_path('resources/siravel'));
         } else {
-            $this->app->view->addNamespace('siravel-frontend', __DIR__.'/Publishes/resources/siravel');
+            $this->app->view->addNamespace('siravel-frontend', $this->getResourcesPath('siravel'));
         }
 
-        $this->loadMigrationsFrom(__DIR__.'/Migrations');
 
         // Configs
         $this->app->config->set('siravel.modules.siravel', include(__DIR__.'/config.php'));
@@ -119,33 +126,39 @@ class SiravelProvider extends ServiceProvider
         $this->commands([]);
     }
 
-    protected function setDependencesAlias()
+    /**
+     * Configs Paths
+     */
+    private function getResourcesPath($folder)
     {
-
-        // $loader = AliasLoader::getInstance();
-
-        // // @todo Resolver
-        // $loader->alias('FileService', \Facilitador\Services\Midia\FileService::class);
-        // $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
-        // $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
-
-        // $this->app->bind('FileService', function ($app) {
-        //     return new FileService();
-        // });
-
-        // $this->app->bind('BusinessService', function ($app) {
-        //     return new BusinessService();
-        // });
-
-        // $this->app->bind('EventService', function ($app) {
-        //     return App::make(EventService::class);
-        // });
+        return __DIR__.'/../resources/'.$folder;
     }
 
+    private function getPublishesPath($folder)
+    {
+        return __DIR__.'/../publishes/'.$folder;
+    }
+
+    private function getDistPath($folder)
+    {
+        return __DIR__.'/../dist/'.$folder;
+    }
+
+    /**
+     * Load Alias and Providers
+     */
     private function setProviders()
     {
+        $this->setDependencesAlias();
         (new Collection(self::$providers))->map(function ($provider) {
             $this->app->register($provider);
+        });
+    }
+    private function setDependencesAlias()
+    {
+        $loader = AliasLoader::getInstance();
+        (new Collection(self::$aliasProviders))->map(function ($class, $alias) use ($loader) {
+            $loader->alias($alias, $class);
         });
     }
 
