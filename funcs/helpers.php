@@ -105,20 +105,20 @@ function userCanOnAny(string $permission, string $entityClass = null)
     return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
 }
 
-/**
- * Helper to access system settings.
- * @param $key
- * @param bool $default
- * @return bool|string|\App\Settings\SettingService
- */
-function setting($key = null, $default = false)
-{
-    $settingService = resolve(\App\Settings\SettingService::class);
-    if (is_null($key)) {
-        return $settingService;
-    }
-    return $settingService->get($key, $default);
-}
+// /**
+//  * Helper to access system settings.
+//  * @param $key
+//  * @param bool $default
+//  * @return bool|string|\App\Settings\SettingService
+//  */
+// function setting($key = null, $default = false)
+// {
+//     $settingService = resolve(\App\Settings\SettingService::class);
+//     if (is_null($key)) {
+//         return $settingService;
+//     }
+//     return $settingService->get($key, $default);
+// }
 
 /**
  * Helper to create url's relative to the applications root path.
