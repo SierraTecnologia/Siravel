@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Informate\Models\Components\Book\PageRevision;
+use Population\Models\Components\Book\PageRevision;
 use Illuminate\Console\Command;
 
 class ClearRevisions extends Command

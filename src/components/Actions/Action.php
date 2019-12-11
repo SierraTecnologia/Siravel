@@ -202,7 +202,7 @@ class Action
 
         $actions[] = self::insertAction(
             'importIntegrationToken',
-            \Informate\Models\Components\Integrations\Token::class,
+            \Population\Models\Components\Integrations\Token::class,
             \SiInteractions\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );

@@ -202,7 +202,7 @@ class Board
 
         $Boards[] = self::insertBoard(
             'importIntegrationToken',
-            \Informate\Models\Components\Integrations\Token::class,
+            \Population\Models\Components\Integrations\Token::class,
             \App\Boards\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );

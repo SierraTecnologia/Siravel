@@ -9,7 +9,7 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteractions\Worker\Sync\Database\ImportCollection;
 
-use Informate\Models\Components\Integrations\Token;
+use Population\Models\Components\Integrations\Token;
 
 class ImportRoutine extends ActionCollection
 {

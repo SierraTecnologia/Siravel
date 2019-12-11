@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-use Informate\Models\Components\Integrations\Token;
+use Population\Models\Components\Integrations\Token;
 
 use SiWeapons\Integrations\Github\Github;
 use SiWeapons\Integrations\Amazon\Amazon;

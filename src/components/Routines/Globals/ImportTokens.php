@@ -9,8 +9,8 @@ use SiInteractions\Routines\Tokens\ImportRoutine;
 
 use App\Actions\Action;
 use App\Actions\ActionCollection;
-use Informate\Models\Components\Integrations\Token;
-use Informate\Models\Components\Integrations\TokenAccess;
+use Population\Models\Components\Integrations\Token;
+use Population\Models\Components\Integrations\TokenAccess;
 
 class ImportTokens extends ActionCollection
 {
