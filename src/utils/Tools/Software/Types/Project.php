@@ -3,7 +3,7 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace App\Logic\Modules\Programs;
+namespace SiUtils\Tools\Software;
 
 use PhpOffice\PhpProject\PHPProject;
 

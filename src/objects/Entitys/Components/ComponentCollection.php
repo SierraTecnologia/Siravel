@@ -9,7 +9,7 @@ use Informate\Models\Entytys\Digital\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 
-class ComponentCollection implements \App\Contracts\Robot
+class ComponentCollection implements \SiObjects\Support\Contracts\Robot
 {
     /**
      * Array de Array de Components, o Indice seria o Stage. 

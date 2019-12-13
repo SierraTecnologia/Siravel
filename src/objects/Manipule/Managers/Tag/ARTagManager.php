@@ -3,7 +3,7 @@
 namespace SiObjects\Manipule\Managers\Tag;
 
 use App\Models\Tag;
-use SiObjects\Support\Contracts\TagManager;
+use Informate\Managers\TagManager;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;
 

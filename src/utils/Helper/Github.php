@@ -2,7 +2,7 @@
 
 namespace SiUtils\Helper;
 
-use App\Logic\Tools\Config;
+use SiUtils\Tools\Config;
 use GuzzleHttp\Client;
 
 /**

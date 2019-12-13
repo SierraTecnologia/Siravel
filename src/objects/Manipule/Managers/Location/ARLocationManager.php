@@ -3,7 +3,7 @@
 namespace SiObjects\Manipule\Managers\Location;
 
 use App\Models\Location;
-use SiObjects\Support\Contracts\LocationManager;
+use Informate\Managers\LocationManager;
 use SiObjects\Manipule\Entities\LocationEntity;
 use Informate\ValueObjects\Coordinates;
 use Informate\ValueObjects\Latitude;

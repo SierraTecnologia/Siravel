@@ -2,8 +2,8 @@
 
 namespace SiUtils\Helper;
 
-use App\Logic\Tools\Config;
-use App\Logic\Tools\Builder;
+use SiUtils\Tools\Config;
+use SiUtils\Tools\Builder;
 
 /**
  * Helper class for sending emails using email configuration.

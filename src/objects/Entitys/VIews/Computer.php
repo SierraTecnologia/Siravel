@@ -2,7 +2,7 @@
 
 namespace SiObjects\Entitys\Views;
 
-use App\Contracts\Component;
+use SiObjects\Support\Contracts\Component;
 
 /**
  * User Helper - Provides access to logged in user information in views.

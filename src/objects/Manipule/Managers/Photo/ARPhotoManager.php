@@ -4,8 +4,8 @@ namespace SiObjects\Manipule\Managers\Photo;
 
 use App\Models\Photo;
 use SiInteractions\Services\Image\Contracts\ImageProcessor;
-use SiObjects\Support\Contracts\LocationManager;
-use SiObjects\Support\Contracts\PhotoManager;
+use Informate\Managers\LocationManager;
+use Informate\Managers\PhotoManager;
 use SiObjects\Manipule\Entities\PhotoEntity;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Database\ConnectionInterface as Database;

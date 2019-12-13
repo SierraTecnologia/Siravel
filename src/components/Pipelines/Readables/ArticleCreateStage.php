@@ -4,7 +4,7 @@ namespace SiInteractions\Pipelines\Readables;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
-use App\Logics\Components\Pipeline as PipelineComponent;
+use SiObjects\Entitys\Components\Pipeline as PipelineComponent;
 
 use SiInteractions\Routines\Contracts\Registrator;
 use SiInteractions\Routines\Contracts\Notificator;

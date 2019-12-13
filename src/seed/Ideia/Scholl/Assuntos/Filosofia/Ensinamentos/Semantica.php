@@ -9,7 +9,7 @@ use Informate\Models\Entytys\Digital\Bot\Runner;
 use Illuminate\Support\Facades\Log;
 use MathPHP\Functions\Map\Single;
 
-class Semantica implements \App\Contracts\Robot
+class Semantica implements \SiObjects\Support\Contracts\Robot
 {
     /**
      * Array de Array de Actions, o Indice seria o Stage. 

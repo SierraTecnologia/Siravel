@@ -4,7 +4,7 @@ namespace SiObjects\Manipule\Managers\Subscription;
 
 use SiObjects\Manipule\Builders\SubscriptionBuilder;
 use App\Models\Subscription;
-use SiObjects\Support\Contracts\SubscriptionManager;
+use Informate\Managers\SubscriptionManager;
 use SiObjects\Manipule\Entities\SubscriptionEntity;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;

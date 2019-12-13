@@ -6,7 +6,7 @@ use SiObjects\Manipule\Builders\PostBuilder;
 use App\Models\Photo;
 use App\Models\Post;
 use App\Models\Tag;
-use SiObjects\Support\Contracts\PostManager;
+use Informate\Managers\PostManager;
 use SiObjects\Manipule\Entities\PostEntity;
 use Illuminate\Contracts\Auth\Guard as Auth;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Api\Photo;
 
-use App\Models\Contracts\UserManager;
+use Informate\Managers\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

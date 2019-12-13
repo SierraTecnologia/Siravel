@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Worker\Sync\Database;
 
-use App\Logic\Tools\Databases\Mysql\Mysql as MysqlTool;
+use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Informate\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class BackupCollection

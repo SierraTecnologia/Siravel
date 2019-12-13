@@ -3,14 +3,14 @@
  * @author wsfuyibing <websearch@163.com>
  * @date   2018-05-04
  */
-namespace App\Logic\Modules\Postman\Commands;
+namespace Uniondrug\Postman\Commands;
 
-use App\Logic\Modules\Console\Command;
-use App\Logic\Modules\Postman\Parsers\Collection;
+use Uniondrug\Console\Command;
+use Uniondrug\Postman\Parsers\Collection;
 
 /**
  * 导出POSTMAN格式的API文档
- * @package App\Logic\Modules\Postman\Commands
+ * @package Uniondrug\Postman\Commands
  */
 class Postman extends Command
 {

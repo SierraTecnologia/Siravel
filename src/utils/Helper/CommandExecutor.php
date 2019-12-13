@@ -3,7 +3,7 @@
 namespace SiUtils\Helper;
 
 use Exception;
-use App\Logic\Tools\Logging\BuildLogger;
+use SiUtils\Tools\Logging\BuildLogger;
 use Symfony\Component\Process\Process;
 
 /**

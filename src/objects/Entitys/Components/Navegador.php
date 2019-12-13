@@ -5,15 +5,12 @@
 
 namespace SiObjects\Entitys\Components;
 
-use App\Logic\ComponentsFile;
-use App\Logic\ComponentsDirectory;
+use SiWeapons\Filesystem\Local;
+use SiWeapons\Filesystem\Dropbox;
+use SiWeapons\Filesystem\S3;
+use SiWeapons\Filesystem\Googledrive;
 
-use App\Logic\Connections\Filesystem\Local;
-use App\Logic\Connections\Filesystem\Dropbox;
-use App\Logic\Connections\Filesystem\S3;
-use App\Logic\Connections\Filesystem\Googledrive;
-
-use App\Contracts\Component as ComponentContract;
+use SiObjects\Support\Contracts\Component as ComponentContract;
 
 
 /**

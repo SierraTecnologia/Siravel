@@ -2,9 +2,9 @@
 
 namespace SiUtils\Helper;
 
-use App\Logic\Tools\Config;
-use App\Logic\Tools\Store\Factory;
-use App\Logic\Tools\Store\UserStore;
+use SiUtils\Tools\Config;
+use SiUtils\Tools\Store\Factory;
+use SiUtils\Tools\Store\UserStore;
 
 /**
  * Languages Helper Class - Handles loading strings files and the strings within them.

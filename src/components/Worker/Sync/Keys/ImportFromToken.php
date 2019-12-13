@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Worker\Sync\Keys;
 
-use App\Logic\Tools\Databases\Mysql\Mysql as MysqlTool;
+use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Population\Models\Components\Integrations\Token;
 use SiWeapons\Integrations\Sentry\Sentry;
 use SiWeapons\Integrations\Jira\Jira;
