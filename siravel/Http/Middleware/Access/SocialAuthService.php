@@ -3,10 +3,10 @@
 namespace Siravel\Models\Access;
 
 use Informate\Models\SocialAccount;
-use Siravel\Models\UserRepo;
-use Siravel\Exceptions\SocialDriverNotConfigured;
-use Siravel\Exceptions\SocialSignInAccountNotUsed;
-use Siravel\Exceptions\UserRegistrationException;
+use Population\Models\Components\Book\Auth\UserRepo;
+use SiUtils\Exceptions\SocialDriverNotConfigured;
+use SiUtils\Exceptions\SocialSignInAccountNotUsed;
+use SiUtils\Exceptions\UserRegistrationException;
 use Laravel\Socialite\Contracts\Factory as Socialite;
 use Laravel\Socialite\Contracts\User as SocialUser;
 
@@ -21,7 +21,7 @@ class SocialAuthService
 
     /**
      * SocialAuthService constructor.
-     * @param \App\Models\UserRepo      $userRepo
+     * @param \Population\Models\Components\Book\Auth\UserRepo      $userRepo
      * @param Socialite     $socialite
      * @param SocialAccount $socialAccount
      */

@@ -3,9 +3,9 @@
 namespace Siravel\Models\Access;
 
 use App\Models\User;
-use Siravel\Models\UserRepo;
-use Siravel\Exceptions\ConfirmationEmailException;
-use Siravel\Exceptions\UserRegistrationException;
+use Population\Models\Components\Book\Auth\UserRepo;
+use SiUtils\Exceptions\ConfirmationEmailException;
+use SiUtils\Exceptions\UserRegistrationException;
 use Siravel\Notifications\ConfirmEmail;
 use Carbon\Carbon;
 use Illuminate\Database\Connection as Database;
@@ -18,7 +18,7 @@ class EmailConfirmationService
     /**
      * EmailConfirmationService constructor.
      * @param Database $db
-     * @param \App\Models\UserRepo $users
+     * @param \Population\Models\Components\Book\Auth\UserRepo $users
      */
     public function __construct(Database $db, UserRepo $users)
     {

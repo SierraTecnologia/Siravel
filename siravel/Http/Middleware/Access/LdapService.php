@@ -5,8 +5,8 @@ namespace Siravel\Models\Access;
 use Informate\Models\Access;
 use Siravel\Models\Role;
 use App\Models\User;
-use Siravel\Models\UserRepo;
-use Siravel\Exceptions\LdapException;
+use Population\Models\Components\Book\Auth\UserRepo;
+use SiUtils\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -27,7 +27,7 @@ class LdapService
     /**
      * LdapService constructor.
      * @param Ldap $ldap
-     * @param \App\Models\UserRepo $userRepo
+     * @param \Population\Models\Components\Book\Auth\UserRepo $userRepo
      */
     public function __construct(Access\Ldap $ldap, UserRepo $userRepo)
     {
