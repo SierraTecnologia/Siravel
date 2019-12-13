@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Siravel\Http\Actions;
 
 use Siravel\Http\Resources\PostResource;
 use App\Models\Contracts\PostManager;

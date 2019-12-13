@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Siravel\Http\Actions;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Routing\ResponseFactory;

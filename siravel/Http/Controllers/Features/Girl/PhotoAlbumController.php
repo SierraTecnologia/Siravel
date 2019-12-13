@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Features\Girl;
+namespace Siravel\Http\Controllers\Features\Girl;
 
 use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
 use Informate\Models\Entytys\Digital\Midia\Photo;

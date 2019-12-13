@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Features\Writelabel;
 
 use App\Http\Controllers\Controller;
 use App\Services\EventService;

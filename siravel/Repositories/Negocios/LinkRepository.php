@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Negocios;
+namespace Siravel\Repositories\Negocios;
 
 use Cms;
 use Config;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Negocios;
+namespace Siravel\Repositories\Negocios;
 
 use Carbon\Carbon;
 use App\Repositories\CmsRepository;

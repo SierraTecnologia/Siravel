@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
 use App\Models\Entities\UserEntity;
 use Illuminate\Http\Resources\Json\Resource;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Policies;
+namespace Siravel\Http\Policies;
 
 use App\Models\User;
 

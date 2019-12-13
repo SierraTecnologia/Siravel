@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Siravel\Http\Actions;
 
 use Siravel\Http\Resources\UserPlainResource;
 use App\Models\Contracts\UserManager;

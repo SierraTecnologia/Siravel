@@ -1,5 +1,5 @@
 <?php 
-namespace App\Http\Controllers\Features\Girl;
+namespace Siravel\Http\Controllers\Features\Girl;
 
 class GirlController extends Controller {
 

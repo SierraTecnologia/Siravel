@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Features\Commerce;
+namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

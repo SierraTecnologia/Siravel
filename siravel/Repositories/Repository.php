@@ -1,5 +1,5 @@
 <?php
-namespace App\Repositories;
+namespace Siravel\Repositories;
 
 use App\Repositories\Contracts\RepositoryInterface;
 use App\Models\Model;

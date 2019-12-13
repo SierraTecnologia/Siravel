@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Commerce;
+namespace Siravel\Repositories\Commerce;
 
 use Illuminate\Support\Facades\Schema;
 use App\Models\Commerce\Order;

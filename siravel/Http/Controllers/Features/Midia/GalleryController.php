@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Features\Midia;
+namespace Siravel\Http\Controllers\Features\Midia;
 
 use Config;
 use App\Http\Controllers\Controller;

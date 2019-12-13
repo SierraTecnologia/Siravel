@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Explorer;
+namespace Siravel\Console\Commands\Explorer;
 
 use App\Actions\Instagram\GetMidias;
 use App\Actions\Instagram\GetStories;

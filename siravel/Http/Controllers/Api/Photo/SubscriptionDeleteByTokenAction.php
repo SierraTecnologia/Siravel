@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Siravel\Http\Actions;
 
 use App\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;

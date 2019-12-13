@@ -1,5 +1,5 @@
 <?php
-namespace App\Repositories\Negocios;
+namespace Siravel\Repositories\Negocios;
 
 use App\Repositories\CmsRepository as BaseRepository;
 use App\Models\Negocios\Menu;

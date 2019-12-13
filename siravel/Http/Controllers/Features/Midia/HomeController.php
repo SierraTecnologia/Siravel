@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Features\Midia;
+namespace Siravel\Http\Controllers\Features\Midia;
 
 use App\Models\Blog\Article;
 use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;

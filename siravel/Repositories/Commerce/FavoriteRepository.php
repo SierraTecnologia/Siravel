@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Commerce;
+namespace Siravel\Repositories\Commerce;
 
 use Carbon\Carbon;
 use App\Models\Commerce\Favorite;

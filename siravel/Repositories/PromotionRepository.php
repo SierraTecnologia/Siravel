@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace Siravel\Repositories;
 
 use App\Models\Negocios\Promotion;
 use App\Repositories\CmsRepository;

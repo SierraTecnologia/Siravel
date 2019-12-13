@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Repositories\Contracts;
+namespace Siravel\Repositories\Contracts;
 
 interface RepositoryInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace Siravel\Repositories;
 
 use Carbon\Carbon;
 use App\Models\System\Translation;

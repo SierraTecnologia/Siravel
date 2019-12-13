@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace Siravel\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Travels;
+namespace Siravel\Repositories\Travels;
 
 use Carbon\Carbon;
 use App\Models\Calendar\Travel;

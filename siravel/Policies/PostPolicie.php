@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace Siravel\Policies;
 
 use App\User;
 use App\Post;

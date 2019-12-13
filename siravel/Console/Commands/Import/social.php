@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\Import;
+namespace Siravel\Console\Commands\Import;
 
 use App\Actions\Instagram\GetMidias;
 use Population\Models\Identity\Digital\Account;

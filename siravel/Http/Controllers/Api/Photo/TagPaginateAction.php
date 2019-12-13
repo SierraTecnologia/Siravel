@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Siravel\Http\Actions;
 
 use Siravel\Http\Requests\PaginatedRequest;
 use Siravel\Http\Resources\PaginatedResource;

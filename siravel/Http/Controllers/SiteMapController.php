@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Siravel\Http\Controllers;
 
 use App\Services\CmsService;
 use Illuminate\Http\Response;

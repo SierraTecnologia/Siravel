@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Siravel\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;

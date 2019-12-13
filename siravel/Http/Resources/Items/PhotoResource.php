@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
 use function SiUtils\html_purify;
 use function SiUtils\to_object;

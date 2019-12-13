@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace Siravel\Repositories;
 
 use App\Models\Negocios\Widget;
 use App\Repositories\CmsRepository;

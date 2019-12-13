@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Consumo;
+namespace Siravel\Http\Resources\Consumo;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

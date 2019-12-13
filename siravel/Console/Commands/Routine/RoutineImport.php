@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Routine\Social;
+namespace Siravel\Console\Commands\Routine;
 
 use Illuminate\Console\Command;
 use Informate\Models\MediaSend;
