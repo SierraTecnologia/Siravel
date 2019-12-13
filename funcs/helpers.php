@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Permissions\PermissionService;
+use Population\Models\Components\Book\Permissions\PermissionService;
 
 
 if (!function_exists('redirect')) {
@@ -81,14 +81,14 @@ function signedInUser()
  * @param Ownable $ownable
  * @return mixed
  */
-function userCan(string $permission, \App\Models\Ownable $ownable = null)
+function userCan(string $permission, \Population\Models\Ownable $ownable = null)
 {
     if ($ownable === null) {
         return user() && user()->can($permission);
     }
 
     // Check permission on ownable item
-    $permissionService = app(\App\Models\Permissions\PermissionService::class);
+    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
     return $permissionService->checkOwnableUserAccess($ownable, $permission);
 }
 
@@ -101,7 +101,7 @@ function userCan(string $permission, \App\Models\Ownable $ownable = null)
  */
 function userCanOnAny(string $permission, string $entityClass = null)
 {
-    $permissionService = app(\App\Models\Permissions\PermissionService::class);
+    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
     return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
 }
 

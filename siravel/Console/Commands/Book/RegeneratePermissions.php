@@ -31,7 +31,7 @@ class RegeneratePermissions extends Command
     /**
      * Create a new command instance.
      *
-     * @param \App\Models\\App\Models\Permissions\PermissionService $permissionService
+     * @param \App\Models\\Population\Models\Components\Book\Permissions\PermissionService $permissionService
      */
     public function __construct(PermissionService $permissionService)
     {

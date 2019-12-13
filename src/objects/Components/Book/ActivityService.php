@@ -2,8 +2,8 @@
 
 namespace SiObjects\Components\Book;
 
-use App\Models\Permissions\PermissionService;
-use App\Models\Components\Book\Entity;
+use Population\Models\Components\Book\Permissions\PermissionService;
+use Population\Models\Components\Book\Entity;
 use Session;
 
 class ActivityService

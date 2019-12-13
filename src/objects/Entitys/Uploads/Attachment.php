@@ -2,8 +2,8 @@
 
 namespace SiObjects\Entitys\Uploads;
 
-use App\Models\Components\Book\Page;
-use App\Models\Ownable;
+use Population\Models\Components\Book\Page;
+use Population\Models\Ownable;
 
 class Attachment extends Ownable
 {

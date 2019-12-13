@@ -2,8 +2,8 @@
 
 namespace SiObjects\Components\Book;
 
-use App\Models\Permissions\PermissionService;
-use App\Models\Components\Book\Entity;
+use Population\Models\Components\Book\Permissions\PermissionService;
+use Population\Models\Components\Book\Entity;
 
 /**
  * Class TagRepo
@@ -19,8 +19,8 @@ class TagRepo
     /**
      * TagRepo constructor.
      * @param \SiObjects\Components\Book\Tag $attr
-     * @param \App\Models\Components\Book\Entity $ent
-     * @param \App\Models\Permissions\PermissionService $ps
+     * @param \Population\Models\Components\Book\Entity $ent
+     * @param \Population\Models\Components\Book\Permissions\PermissionService $ps
      */
     public function __construct(Tag $attr, Entity $ent, PermissionService $ps)
     {
@@ -108,7 +108,7 @@ class TagRepo
 
     /**
      * Save an array of tags to an entity
-     * @param \App\Models\Components\Book\Entity $entity
+     * @param \Population\Models\Components\Book\Entity $entity
      * @param array $tags
      * @return array|\Illuminate\Database\Eloquent\Collection
      */

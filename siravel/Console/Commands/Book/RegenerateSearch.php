@@ -26,7 +26,7 @@ class RegenerateSearch extends Command
     /**
      * Create a new command instance.
      *
-     * @param \App\Models\Components\Book\SearchService $searchService
+     * @param \Population\Models\Components\Book\SearchService $searchService
      */
     public function __construct(SearchService $searchService)
     {

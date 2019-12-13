@@ -2,8 +2,8 @@
 
 namespace SiObjects\Components\Book;
 
-use App\Models\Permissions\PermissionService;
-use App\Models\Components\Book\Entity;
+use Population\Models\Components\Book\Permissions\PermissionService;
+use Population\Models\Components\Book\Entity;
 
 class ViewService
 {
@@ -13,7 +13,7 @@ class ViewService
     /**
      * ViewService constructor.
      * @param \SiObjects\Components\Book\View $view
-     * @param \App\Models\Permissions\PermissionService $permissionService
+     * @param \Population\Models\Components\Book\Permissions\PermissionService $permissionService
      */
     public function __construct(View $view, PermissionService $permissionService)
     {

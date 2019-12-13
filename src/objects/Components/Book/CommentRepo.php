@@ -2,7 +2,7 @@
 
 namespace SiObjects\Components\Book;
 
-use App\Models\Components\Book\Entity;
+use Population\Models\Components\Book\Entity;
 
 /**
  * Class CommentRepo
@@ -37,7 +37,7 @@ class CommentRepo
 
     /**
      * Create a new comment on an entity.
-     * @param \App\Models\Components\Book\Entity $entity
+     * @param \Population\Models\Components\Book\Entity $entity
      * @param array $data
      * @return \SiObjects\Components\Book\Comment
      */
@@ -77,7 +77,7 @@ class CommentRepo
 
     /**
      * Get the next local ID relative to the linked entity.
-     * @param \App\Models\Components\Book\Entity $entity
+     * @param \Population\Models\Components\Book\Entity $entity
      * @return int
      */
     protected function getNextLocalId(Entity $entity)
