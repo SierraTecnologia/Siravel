@@ -83,6 +83,7 @@ class SiravelInstallCommand extends Command
 
             if ($str !== false) {
                 $str = str_replace('extends Authenticatable', "extends \Siravel\Models\User", $str);
+                $str = str_replace('extends \Facilitador\Models\User', "extends \Siravel\Models\User", $str);
 
                 file_put_contents(app_path($this->userModelFile), $str);
             }
