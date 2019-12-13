@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Actions;
+namespace Siravel\Http\Controllers\Api\Photo;
 
 use Siravel\Http\Requests\PaginatedRequest;
 use Siravel\Http\Resources\PaginatedResource;

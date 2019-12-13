@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Actions;
+namespace Siravel\Http\Controllers\Api\Photo;
 
 use App\Http\Proxy\Contracts\OAuthProxy;
 use Siravel\Http\Requests\CreateAuthRequest;

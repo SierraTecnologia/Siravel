@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Actions;
+namespace Siravel\Http\Controllers\Api\Photo;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Routing\ResponseFactory;

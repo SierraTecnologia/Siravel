@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Actions;
+namespace Siravel\Http\Controllers\Api\Photo;
 
 use App\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;

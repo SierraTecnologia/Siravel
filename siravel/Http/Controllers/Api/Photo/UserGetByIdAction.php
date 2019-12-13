@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Actions;
+namespace Siravel\Http\Controllers\Api\Photo;
 
 use Siravel\Http\Resources\UserPlainResource;
 use App\Models\Contracts\UserManager;
