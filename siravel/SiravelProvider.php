@@ -38,19 +38,31 @@ class SiravelProvider extends ServiceProvider
     {
 
         $this->publishes([
-            $this->getPublishesPath('resources/tools') => base_path('resources/tools'),
+            $this->getPublishesPath('app/Controllers') => app_path('Http/Controllers/Siravel'),
             $this->getPublishesPath('app/Services') => app_path('Services'),
+        ], ['app',  'sitec', 'sitec-app', 'siravel', 'siravel-app']);
+
+        $this->publishes([
+            $this->getPublishesPath('config') => base_path('config'),
+        ], ['config',  'sitec', 'sitec-config', 'siravel', 'siravel-config']);
+
+        $this->publishes([
+            $this->getPublishesPath('routes') => base_path('routes'),
+        ], ['routes',  'sitec', 'sitec-routes', 'siravel', 'siravel-routes']);
+
+        $this->publishes([
             $this->getPublishesPath('public/js') => base_path('public/js'),
             $this->getPublishesPath('public/css') => base_path('public/css'),
             $this->getPublishesPath('public/img') => base_path('public/img'),
-            $this->getPublishesPath('config') => base_path('config'),
-            $this->getPublishesPath('routes') => base_path('routes'),
-            $this->getPublishesPath('app/Controllers') => app_path('Http/Controllers/Siravel'),
-        ]);
+        ], ['public',  'sitec', 'sitec-public', 'siravel', 'siravel-public']);
+
+        $this->publishes([
+            $this->getPublishesPath('resources/tools') => base_path('resources/tools'),
+        ], ['tools',  'sitec', 'sitec-tools', 'siravel', 'siravel-tools']);
 
         $this->publishes([
             $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
-        ], 'siravel');
+        ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']);
 
         /*
         |--------------------------------------------------------------------------
@@ -151,8 +163,19 @@ class SiravelProvider extends ServiceProvider
     {
         $this->setDependencesAlias();
         (new Collection(self::$providers))->map(function ($provider) {
-            $this->app->register($provider);
+            if (class_exists($provider)) {
+                $this->app->register($provider);
+            }
         });
+
+        // Incluindo Debug
+        if ($this->app->environment('local', 'testing')) {
+            $this->app->register(DuskServiceProvider::class);
+        }
+        
+        if ($this->app->environment('local')) {
+            $this->app->register(DebugService::class);
+        }
     }
     private function setDependencesAlias()
     {
