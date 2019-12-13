@@ -5724,12 +5724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-fileinput.git",
-                "reference": "4ddfc8f53b2c95f9e2325654fd3be8c444dd66b9"
+                "reference": "3b1459d8cd9b467dd43edaac3e99f6a99303145f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/4ddfc8f53b2c95f9e2325654fd3be8c444dd66b9",
-                "reference": "4ddfc8f53b2c95f9e2325654fd3be8c444dd66b9",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-fileinput/zipball/3b1459d8cd9b467dd43edaac3e99f6a99303145f",
+                "reference": "3b1459d8cd9b467dd43edaac3e99f6a99303145f",
                 "shasum": ""
             },
             "type": "library",
@@ -5769,7 +5769,7 @@
                 "progress",
                 "upload"
             ],
-            "time": "2019-12-13T05:57:42+00:00"
+            "time": "2019-12-13T07:19:12+00:00"
         },
         {
             "name": "kassner/log-parser",
@@ -10508,16 +10508,16 @@
         },
         {
             "name": "phpbench/phpbench",
-            "version": "0.16.10",
+            "version": "dev-symfony-5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbench/phpbench.git",
-                "reference": "00c18b1ab87dbda66e8972c8602a14dd08c69914"
+                "reference": "9f4f836fee78ce14eaca3a51be983803bc66db28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/00c18b1ab87dbda66e8972c8602a14dd08c69914",
-                "reference": "00c18b1ab87dbda66e8972c8602a14dd08c69914",
+                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/9f4f836fee78ce14eaca3a51be983803bc66db28",
+                "reference": "9f4f836fee78ce14eaca3a51be983803bc66db28",
                 "shasum": ""
             },
             "require": {
@@ -10533,12 +10533,12 @@
                 "phpbench/container": "~1.2",
                 "phpbench/dom": "~0.2.0",
                 "seld/jsonlint": "^1.1",
-                "symfony/console": "^3.2 || ^4.0",
-                "symfony/debug": "^2.4 || ^3.0 || ^4.0",
-                "symfony/filesystem": "^2.4 || ^3.0 || ^4.0",
-                "symfony/finder": "^2.4 || ^3.0 || ^4.0",
-                "symfony/options-resolver": "^2.6 || ^3.0 || ^4.0",
-                "symfony/process": "^2.1 || ^3.0 || ^4.0",
+                "symfony/console": "^3.2 || ^4.0 || ^5.0",
+                "symfony/debug": "^2.4 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/filesystem": "^2.4 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/finder": "^2.4 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/options-resolver": "^2.6 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/process": "^2.1 || ^3.0 || ^4.0 || ^5.0",
                 "webmozart/path-util": "^2.3"
             },
             "require-dev": {
@@ -10580,7 +10580,7 @@
                 }
             ],
             "description": "PHP Benchmarking Framework",
-            "time": "2019-09-01T08:08:02+00:00"
+            "time": "2019-11-18T14:13:02+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -13384,81 +13384,6 @@
             "time": "2019-06-26T23:37:24+00:00"
         },
         {
-            "name": "rinvex/laravel-support",
-            "version": "v2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rinvex/laravel-support.git",
-                "reference": "82eeee6fc360c655e66273c12def547742f98f2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rinvex/laravel-support/zipball/82eeee6fc360c655e66273c12def547742f98f2e",
-                "reference": "82eeee6fc360c655e66273c12def547742f98f2e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/auth": "~5.8.0",
-                "illuminate/bus": "~5.8.0",
-                "illuminate/contracts": "~5.8.0",
-                "illuminate/http": "~5.8.0",
-                "illuminate/routing": "~5.8.0",
-                "illuminate/support": "~5.8.0",
-                "illuminate/validation": "~5.8.0",
-                "php": "^7.2.0",
-                "spatie/laravel-schemaless-attributes": "^1.4.0",
-                "watson/validating": "^3.2.0"
-            },
-            "require-dev": {
-                "codedungeon/phpunit-result-printer": "^0.26.0",
-                "phpunit/phpunit": "^8.1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/Support/helpers.php"
-                ],
-                "psr-4": {
-                    "Rinvex\\Support\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rinvex LLC",
-                    "email": "help@rinvex.com",
-                    "homepage": "https://rinvex.com"
-                },
-                {
-                    "name": "Abdelrahman Omran",
-                    "email": "me@omranic.com",
-                    "homepage": "https://omranic.com",
-                    "role": "Project Lead"
-                },
-                {
-                    "name": "The Generous Laravel Community",
-                    "homepage": "https://github.com/rinvex/laravel-support/contributors"
-                }
-            ],
-            "description": "Rinvex common support helpers, contracts, and traits required by various Rinvex packages. Validator functionality, and basic controller included out-of-the-box.",
-            "homepage": "https://rinvex.com/marketplace/rinvex-support/",
-            "keywords": [
-                "contract",
-                "helper",
-                "laravel",
-                "mimetype",
-                "rinvex",
-                "support",
-                "timezones",
-                "trait",
-                "validator"
-            ],
-            "time": "2019-06-03T14:47:46+00:00"
-        },
-        {
             "name": "rokde/laravel-slow-query-logger",
             "version": "1.0.1",
             "source": {
@@ -14566,7 +14491,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "658eef58ae41e7b4cb8922d18be9c63a6c0c7c9e"
+                "reference": "f03003ac78e2b32723dcb871890dce3a17f2192a"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14733,7 +14658,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "47a42295f280a169e7c224a6e39825c97e11be0c"
+                "reference": "a0fb451eccc8ae161dc1c25ef239e389994d88f3"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -14772,12 +14697,11 @@
                 "rap2hpoutre/fast-excel": ">=1.3.1",
                 "ricardosierra/changelog": "~1.4",
                 "ricardosierra/minify": "dev-master",
-                "ricardosierra/translation": "dev-master",
                 "ricardosierra/validate": "^0.2",
-                "rinvex/laravel-support": "^2.1",
                 "sierratecnologia/crudmaker": "dev-master",
                 "sierratecnologia/crypto": "dev-master",
                 "sierratecnologia/former": "5.0.2",
+                "sierratecnologia/laravel-support": "dev-master",
                 "sierratecnologia/locaravel": "dev-master",
                 "sierratecnologia/tracking": "dev-master",
                 "socialiteproviders/github": "dev-master",
@@ -15083,7 +15007,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "1b2c31eae6bd1d261d7d1ba854f41c53b216940e"
+                "reference": "9bda03e3e5e7b4211492418cfdfb1d029ed2adca"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15156,6 +15080,95 @@
                 }
             ],
             "description": "informate",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
+            "name": "sierratecnologia/laravel-support",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-support",
+                "reference": "4d7bb9160cde4e1d1d9d643c67b1be4433efb729"
+            },
+            "require": {
+                "illuminate/auth": "^5.8|^6.0",
+                "illuminate/bus": "^5.8|^6.0",
+                "illuminate/contracts": "^5.8|^6.0",
+                "illuminate/http": "^5.8|^6.0",
+                "illuminate/routing": "^5.8|^6.0",
+                "illuminate/support": "^5.8|^6.0",
+                "illuminate/validation": "^5.8|^6.0",
+                "laravel/helpers": "^1.1.0",
+                "php": ">=7.2.0",
+                "ricardosierra/translation": "dev-master",
+                "spatie/laravel-schemaless-attributes": "^1.6.0",
+                "spatie/laravel-translatable": "^4.2",
+                "watson/validating": "^3.3.0"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.26.0",
+                "phpunit/phpunit": "^8.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Support/helpers.php"
+                ],
+                "psr-4": {
+                    "Support\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Support\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SierraTecnologia LLC",
+                    "homepage": "https://sierratecnologia.com",
+                    "email": "help@sierratecnologia.com"
+                },
+                {
+                    "name": "Abdelrahman Omran",
+                    "homepage": "https://omranic.com",
+                    "email": "me@omranic.com",
+                    "role": "Project Lead"
+                },
+                {
+                    "name": "The Generous Laravel Community",
+                    "homepage": "https://github.com/sierratecnologia/laravel-support/contributors"
+                }
+            ],
+            "description": "SierraTecnologia common support helpers, contracts, and traits required by various SierraTecnologia packages. Validator functionality, and basic controller included out-of-the-box.",
+            "homepage": "https://sierratecnologia.com/marketplace/sierratecnologia-support/",
+            "keywords": [
+                "contract",
+                "helper",
+                "laravel",
+                "mimetype",
+                "sierratecnologia",
+                "support",
+                "timezones",
+                "trait",
+                "validator"
+            ],
+            "support": {
+                "email": "help@sierratecnologia.com",
+                "issues": "https://github.com/sierratecnologia/laravel-support/issues",
+                "source": "https://github.com/sierratecnologia/laravel-support",
+                "docs": "https://github.com/sierratecnologia/laravel-support/blob/master/README.md"
+            },
             "transport-options": {
                 "symlink": true
             }
@@ -15260,7 +15273,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "73a136c38a6ed2e4d7b24c9daa846f6fcc2ce401"
+                "reference": "b4859cc9668bc700dea3510e6c47c3bba53679cf"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -16253,6 +16266,79 @@
                 "spatie"
             ],
             "time": "2019-09-16T09:37:47+00:00"
+        },
+        {
+            "name": "spatie/laravel-translatable",
+            "version": "4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-translatable.git",
+                "reference": "3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a",
+                "reference": "3a07be9e1e3cc9566c6d7274b613552d5cbf4b1a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.8.0|^6.0",
+                "illuminate/support": "~5.8.0|^6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "~3.8.0|^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Translatable\\TranslatableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Translatable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "theMohamedSaid@gmail.com",
+                    "role": "Original idea"
+                }
+            ],
+            "description": "A trait to make an Eloquent model hold translations",
+            "homepage": "https://github.com/spatie/laravel-translatable",
+            "keywords": [
+                "eloquent",
+                "i8n",
+                "laravel-translatable",
+                "model",
+                "multilingual",
+                "spatie",
+                "translate"
+            ],
+            "time": "2019-10-03T11:05:01+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -17612,25 +17698,25 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v4.4.1",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "2be23e63f33de16b49294ea6581f462932a77e2f"
+                "reference": "1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/2be23e63f33de16b49294ea6581f462932a77e2f",
-                "reference": "2be23e63f33de16b49294ea6581f462932a77e2f",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68",
+                "reference": "1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3"
+                "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -17662,7 +17748,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2019-10-28T21:57:16+00:00"
+            "time": "2019-11-18T17:27:11+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
