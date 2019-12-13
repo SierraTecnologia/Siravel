@@ -11,7 +11,7 @@ use function SiUtils\Helper\validator_filter_attributes;
 /**
  * Class SubscriptionValidator.
  *
- * @package SiObject\Manipule\Managers\Subscription
+ * @package SiObjects\Manipule\Managers\Subscription
  */
 class SubscriptionValidator
 {

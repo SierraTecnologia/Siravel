@@ -5,7 +5,7 @@ namespace SiObjects\Support\Concerns;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Model;
-use SiObject\Http\Requests\Excel\ExportActionRequest;
+use SiObjects\Http\Requests\Excel\ExportActionRequest;
 
 trait WithHeadings
 {

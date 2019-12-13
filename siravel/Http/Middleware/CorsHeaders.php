@@ -13,7 +13,7 @@ use function App\env_production;
 /**
  * Class CorsHeaders.
  *
- * @package SiObject\Http\Middleware
+ * @package SiObjects\Http\Middleware
  */
 class CorsHeaders
 {

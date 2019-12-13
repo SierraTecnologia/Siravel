@@ -12,7 +12,7 @@ use Illuminate\Database\ConnectionInterface as Database;
 /**
  * Class ARUserManager.
  *
- * @package SiObject\Manipule\Managers\User
+ * @package SiObjects\Manipule\Managers\User
  */
 class ARUserManager implements UserManager
 {

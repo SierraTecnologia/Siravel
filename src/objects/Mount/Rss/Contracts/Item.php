@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObject\Mount\Rss\Contracts;
+namespace SiObjects\Mount\Rss\Contracts;
 
 /**
  * Interface Item.
  *
- * @package SiObject\Mount\Rss\Contracts
+ * @package SiObjects\Mount\Rss\Contracts
  */
 interface Item
 {

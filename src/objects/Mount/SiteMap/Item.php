@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Mount\SiteMap;
+namespace SiObjects\Mount\SiteMap;
 
-use SiObject\Mount\SiteMap\Contracts\Item as ItemContract;
+use SiObjects\Mount\SiteMap\Contracts\Item as ItemContract;
 
 /**
  * Class SiteMapItem.
  *
- * @package SiObject\Mount\SiteMap
+ * @package SiObjects\Mount\SiteMap
  */
 class Item implements ItemContract
 {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\PhotoApp;
 
-use SiObject\Manipule\Managers\Photo\ARPhotoManager;
+use SiObjects\Manipule\Managers\Photo\ARPhotoManager;
 use App\Models\Photo;
 use Carbon\Carbon;
 use Illuminate\Console\Command;

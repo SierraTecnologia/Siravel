@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObject\Mount\Rss\Contracts;
+namespace SiObjects\Mount\Rss\Contracts;
 
 /**
  * Interface Channel.
  *
- * @package SiObject\Mount\Rss\Contracts
+ * @package SiObjects\Mount\Rss\Contracts
  */
 interface Channel
 {

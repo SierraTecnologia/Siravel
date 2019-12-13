@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Http\Middleware;
+namespace SiObjects\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

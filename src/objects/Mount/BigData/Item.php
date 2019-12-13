@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Mount\BigData;
+namespace SiObjects\Mount\BigData;
 
-use SiObject\Mount\BigData\Contracts\Item as ItemContract;
+use SiObjects\Mount\BigData\Contracts\Item as ItemContract;
 
 /**
  * Class BigDataItem.
  *
- * @package SiObject\Mount\BigData
+ * @package SiObjects\Mount\BigData
  */
 class Item implements ItemContract
 {

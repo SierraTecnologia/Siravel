@@ -68,13 +68,13 @@ class HomeServiceProvider extends ServiceProvider
     protected function registerLibServices(): void
     {
         $this->app->bind(
-            \SiObject\Mount\Rss\Contracts\Builder::class,
-            \SiObject\Mount\Rss\Builder::class
+            \SiObjects\Mount\Rss\Contracts\Builder::class,
+            \SiObjects\Mount\Rss\Builder::class
         );
 
         $this->app->bind(
-            \SiObject\Mount\SiteMap\Contracts\Builder::class,
-            \SiObject\Mount\SiteMap\Builder::class
+            \SiObjects\Mount\SiteMap\Contracts\Builder::class,
+            \SiObjects\Mount\SiteMap\Builder::class
         );
     }
 
@@ -87,32 +87,32 @@ class HomeServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             \Core\Contracts\LocationManager::class,
-            \SiObject\Manipule\Managers\Location\ARLocationManager::class
+            \SiObjects\Manipule\Managers\Location\ARLocationManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PostManager::class,
-            \SiObject\Manipule\Managers\Post\ARPostManager::class
+            \SiObjects\Manipule\Managers\Post\ARPostManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PhotoManager::class,
-            \SiObject\Manipule\Managers\Photo\ARPhotoManager::class
+            \SiObjects\Manipule\Managers\Photo\ARPhotoManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\SubscriptionManager::class,
-            \SiObject\Manipule\Managers\Subscription\ARSubscriptionManager::class
+            \SiObjects\Manipule\Managers\Subscription\ARSubscriptionManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\TagManager::class,
-            \SiObject\Manipule\Managers\Tag\ARTagManager::class
+            \SiObjects\Manipule\Managers\Tag\ARTagManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\UserManager::class,
-            \SiObject\Manipule\Managers\User\ARUserManager::class
+            \SiObjects\Manipule\Managers\User\ARUserManager::class
         );
 
         $this->app->bind(
@@ -144,9 +144,9 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \SiObject\Manipule\Rules\ReCaptchaRule::class,
+            \SiObjects\Manipule\Rules\ReCaptchaRule::class,
             function () {
-                return new \SiObject\Manipule\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
+                return new \SiObjects\Manipule\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
             }
         );
     }
@@ -159,8 +159,8 @@ class HomeServiceProvider extends ServiceProvider
     protected function registerApiV1Services(): void
     {
         $this->app->bind(
-            \SiObject\Http\Proxy\Contracts\OAuthProxy::class,
-            \SiObject\Http\Proxy\CookieOAuthProxy::class
+            \SiObjects\Http\Proxy\Contracts\OAuthProxy::class,
+            \SiObjects\Http\Proxy\CookieOAuthProxy::class
         );
     }
 }

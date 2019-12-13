@@ -1,15 +1,15 @@
 <?php
 
-namespace SiObject\Mount\Rss;
+namespace SiObjects\Mount\Rss;
 
-use SiObject\Mount\Rss\Contracts\Builder as BuilderContract;
-use SiObject\Mount\Rss\Contracts\Channel;
-use SiObject\Mount\Rss\Contracts\Item as ItemContract;
+use SiObjects\Mount\Rss\Contracts\Builder as BuilderContract;
+use SiObjects\Mount\Rss\Contracts\Channel;
+use SiObjects\Mount\Rss\Contracts\Item as ItemContract;
 
 /**
  * Class Builder.
  *
- * @package SiObject\Mount\Rss
+ * @package SiObjects\Mount\Rss
  */
 class Builder implements BuilderContract
 {

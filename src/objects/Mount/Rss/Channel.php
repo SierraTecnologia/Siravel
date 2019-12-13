@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Mount\Rss;
+namespace SiObjects\Mount\Rss;
 
-use SiObject\Mount\Rss\Contracts\Channel as ChannelContract;
+use SiObjects\Mount\Rss\Contracts\Channel as ChannelContract;
 
 /**
  * Class Channel.
  *
- * @package SiObject\Mount\Rss
+ * @package SiObjects\Mount\Rss
  */
 class Channel implements ChannelContract
 {

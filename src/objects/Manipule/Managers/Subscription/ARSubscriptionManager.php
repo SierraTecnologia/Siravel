@@ -13,7 +13,7 @@ use function SiUtils\Helper\str_unique;
 /**
  * Class ARSubscriptionManager.
  *
- * @package SiObject\Manipule\Managers\Subscription
+ * @package SiObjects\Manipule\Managers\Subscription
  */
 class ARSubscriptionManager implements SubscriptionManager
 {

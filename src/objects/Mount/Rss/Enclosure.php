@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Mount\Rss;
+namespace SiObjects\Mount\Rss;
 
-use SiObject\Mount\Rss\Contracts\Enclosure as EnclosureContract;
+use SiObjects\Mount\Rss\Contracts\Enclosure as EnclosureContract;
 
 /**
  * Class Enclosure.
  *
- * @package SiObject\Mount\Rss
+ * @package SiObjects\Mount\Rss
  */
 class Enclosure implements EnclosureContract
 {

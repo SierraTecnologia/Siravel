@@ -14,7 +14,7 @@ use function SiUtils\Helper\str_unique;
 /**
  * Class ARPhotoManager.
  *
- * @package SiObject\Manipule\Managers\Photo
+ * @package SiObjects\Manipule\Managers\Photo
  */
 class ARPhotoManager implements PhotoManager
 {

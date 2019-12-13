@@ -3,7 +3,7 @@
 namespace SiObjects\Support\Concerns;
 
 use Laravel\Nova\Http\Requests\ActionRequest;
-use SiObject\Http\Requests\Excel\ExportActionRequest;
+use SiObjects\Http\Requests\Excel\ExportActionRequest;
 
 trait Only
 {

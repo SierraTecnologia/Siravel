@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Manipule\Rules;
+namespace SiObjects\Manipule\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
 /**
  * Class ReCaptchaRule.
  *
- * @package SiObject\Manipule\Rules
+ * @package SiObjects\Manipule\Rules
  */
 class ReCaptchaRule implements Rule
 {

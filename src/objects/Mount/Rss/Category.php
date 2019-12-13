@@ -1,13 +1,13 @@
 <?php
 
-namespace SiObject\Mount\Rss;
+namespace SiObjects\Mount\Rss;
 
-use SiObject\Mount\Rss\Contracts\Category as CategoryContract;
+use SiObjects\Mount\Rss\Contracts\Category as CategoryContract;
 
 /**
  * Class Category.
  *
- * @package SiObject\Mount\Rss
+ * @package SiObjects\Mount\Rss
  */
 class Category implements CategoryContract
 {

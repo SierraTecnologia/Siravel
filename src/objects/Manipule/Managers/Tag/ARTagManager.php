@@ -10,7 +10,7 @@ use Illuminate\Database\ConnectionInterface as Database;
 /**
  * Class ARTagManager.
  *
- * @package SiObject\Manipule\Managers\Tag
+ * @package SiObjects\Manipule\Managers\Tag
  */
 class ARTagManager implements TagManager
 {

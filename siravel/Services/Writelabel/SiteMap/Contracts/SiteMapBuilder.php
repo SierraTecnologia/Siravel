@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\SiteMap\Contracts;
 
-use SiObject\Mount\SiteMap\Contracts\Builder;
+use SiObjects\Mount\SiteMap\Contracts\Builder;
 
 /**
  * Interface SiteMapBuilderService.

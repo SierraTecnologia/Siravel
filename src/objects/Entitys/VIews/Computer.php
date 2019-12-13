@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Entitys\Views;
+namespace SiObjects\Entitys\Views;
 
 use App\Contracts\Component;
 

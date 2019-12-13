@@ -3,8 +3,8 @@
 namespace SiObjects\Manipule\Managers\Photo;
 
 use App\Contants\Tables;
-use SiObject\Manipule\Rules\LatitudeRule;
-use SiObject\Manipule\Rules\LongitudeRule;
+use SiObjects\Manipule\Rules\LatitudeRule;
+use SiObjects\Manipule\Rules\LongitudeRule;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Validation\Factory as ValidatorFactory;
@@ -15,7 +15,7 @@ use function SiUtils\Helper\validator_filter_attributes;
 /**
  * Class PhotoValidator.
  *
- * @package SiObject\Manipule\Managers\Photo
+ * @package SiObjects\Manipule\Managers\Photo
  */
 class PhotoValidator
 {

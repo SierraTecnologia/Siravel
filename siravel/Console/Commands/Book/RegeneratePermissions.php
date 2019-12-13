@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Book;
 
-use Informate\Models\Permissions\PermissionService;
+use Population\Models\Components\Book\Permissions\PermissionService;
 use Illuminate\Console\Command;
 
 class RegeneratePermissions extends Command

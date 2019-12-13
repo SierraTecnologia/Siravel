@@ -2,8 +2,8 @@
 
 namespace SiObjects\Manipule\Managers\Location;
 
-use SiObject\Manipule\Rules\LatitudeRule;
-use SiObject\Manipule\Rules\LongitudeRule;
+use SiObjects\Manipule\Rules\LatitudeRule;
+use SiObjects\Manipule\Rules\LongitudeRule;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\ValidationException;
@@ -12,7 +12,7 @@ use function SiUtils\Helper\validator_filter_attributes;
 /**
  * Class LocationValidator.
  *
- * @package SiObject\Manipule\Managers\Location
+ * @package SiObjects\Manipule\Managers\Location
  */
 class LocationValidator
 {

@@ -2,14 +2,14 @@
 
 namespace Siravel\Services\SiteMap;
 
-use SiObject\Manipule\Managers\Photo\ARPhotoManager;
-use SiObject\Manipule\Managers\Tag\ARTagManager;
+use SiObjects\Manipule\Managers\Photo\ARPhotoManager;
+use SiObjects\Manipule\Managers\Tag\ARTagManager;
 use App\Models\Post;
 use App\Models\Tag;
 use Siravel\Services\SiteMap\Contracts\SiteMapBuilder as SiteMapBuilder;
 use Illuminate\Support\Collection;
-use SiObject\Mount\SiteMap\Contracts\Builder;
-use SiObject\Mount\SiteMap\Item;
+use SiObjects\Mount\SiteMap\Contracts\Builder;
+use SiObjects\Mount\SiteMap\Item;
 use function SiUtils\Helper\url_frontend;
 use function SiUtils\Helper\url_frontend_photo;
 use function SiUtils\Helper\url_frontend_tag;

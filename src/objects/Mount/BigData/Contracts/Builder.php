@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObject\Mount\BigData\Contracts;
+namespace SiObjects\Mount\BigData\Contracts;
 
 /**
  * Interface Builder.
  *
- * @package SiObject\Mount\SiteMap\Contracts
+ * @package SiObjects\Mount\SiteMap\Contracts
  */
 interface Builder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Manipule\Rules;
+namespace SiObjects\Manipule\Rules;
 
 use App\ValueObjects\Longitude;
 use Illuminate\Contracts\Validation\Rule;
@@ -9,7 +9,7 @@ use InvalidArgumentException;
 /**
  * Class LongitudeRule.
  *
- * @package SiObject\Manipule\Rules
+ * @package SiObjects\Manipule\Rules
  */
 class LongitudeRule implements Rule
 {

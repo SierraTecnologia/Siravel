@@ -1,11 +1,11 @@
 <?php
 
-namespace SiObject\Mount\SiteMap\Contracts;
+namespace SiObjects\Mount\SiteMap\Contracts;
 
 /**
  * Interface Item.
  *
- * @package SiObject\Mount\SiteMap\Contracts
+ * @package SiObjects\Mount\SiteMap\Contracts
  */
 interface Item
 {

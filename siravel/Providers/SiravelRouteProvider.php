@@ -4,7 +4,7 @@ namespace Siravel\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use SiObject\Http\Middleware\Analytics;
+use SiObjects\Http\Middleware\Analytics;
 use Siravel\Http\Middleware\isAjax;
 
 class SiravelRouteProvider extends ServiceProvider

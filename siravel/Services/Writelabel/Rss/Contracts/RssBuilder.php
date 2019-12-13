@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\Rss\Contracts;
 
-use SiObject\Mount\Rss\Contracts\Builder;
+use SiObjects\Mount\Rss\Contracts\Builder;
 
 /**
  * Interface RssBuilder.

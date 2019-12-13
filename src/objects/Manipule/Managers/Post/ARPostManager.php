@@ -15,7 +15,7 @@ use Illuminate\Database\ConnectionInterface as Database;
 /**
  * Class ARPostManager.
  *
- * @package SiObject\Manipule\Managers\Post
+ * @package SiObjects\Manipule\Managers\Post
  */
 class ARPostManager implements PostManager
 {

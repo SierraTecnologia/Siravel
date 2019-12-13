@@ -1,6 +1,6 @@
 <?php
 
-namespace SiObject\Mount\BigData;
+namespace SiObjects\Mount\BigData;
 
 use App\Models\Role;
 use App\Models\User;
@@ -12,7 +12,7 @@ use Illuminate\Database\ConnectionInterface as Database;
 /**
  * Class ARUserManager.
  *
- * @package SiObject\Manipule\Managers\User
+ * @package SiObjects\Manipule\Managers\User
  */
 class ARUserManager implements UserManager
 {
