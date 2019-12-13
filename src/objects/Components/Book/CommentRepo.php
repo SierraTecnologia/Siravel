@@ -12,13 +12,13 @@ class CommentRepo
 {
 
     /**
-     * @var \App\Actions\Book\Comment $comment
+     * @var \SiObjects\Components\Book\Comment $comment
      */
     protected $comment;
 
     /**
      * CommentRepo constructor.
-     * @param \App\Actions\Book\Comment $comment
+     * @param \SiObjects\Components\Book\Comment $comment
      */
     public function __construct(Comment $comment)
     {
@@ -28,7 +28,7 @@ class CommentRepo
     /**
      * Get a comment by ID.
      * @param $id
-     * @return \App\Actions\Book\Comment|\Illuminate\Database\Eloquent\Model
+     * @return \SiObjects\Components\Book\Comment|\Illuminate\Database\Eloquent\Model
      */
     public function getById($id)
     {
@@ -39,7 +39,7 @@ class CommentRepo
      * Create a new comment on an entity.
      * @param \App\Models\Components\Book\Entity $entity
      * @param array $data
-     * @return \App\Actions\Book\Comment
+     * @return \SiObjects\Components\Book\Comment
      */
     public function create(Entity $entity, $data = [])
     {
@@ -54,7 +54,7 @@ class CommentRepo
 
     /**
      * Update an existing comment.
-     * @param \App\Actions\Book\Comment $comment
+     * @param \SiObjects\Components\Book\Comment $comment
      * @param array $input
      * @return mixed
      */
@@ -67,7 +67,7 @@ class CommentRepo
 
     /**
      * Delete a comment from the system.
-     * @param \App\Actions\Book\Comment $comment
+     * @param \SiObjects\Components\Book\Comment $comment
      * @return mixed
      */
     public function delete($comment)

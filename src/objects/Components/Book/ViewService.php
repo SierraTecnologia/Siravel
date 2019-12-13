@@ -12,7 +12,7 @@ class ViewService
 
     /**
      * ViewService constructor.
-     * @param \App\Actions\Book\View $view
+     * @param \SiObjects\Components\Book\View $view
      * @param \App\Models\Permissions\PermissionService $permissionService
      */
     public function __construct(View $view, PermissionService $permissionService)

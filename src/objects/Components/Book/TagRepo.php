@@ -18,7 +18,7 @@ class TagRepo
 
     /**
      * TagRepo constructor.
-     * @param \App\Actions\Book\Tag $attr
+     * @param \SiObjects\Components\Book\Tag $attr
      * @param \App\Models\Components\Book\Entity $ent
      * @param \App\Models\Permissions\PermissionService $ps
      */
@@ -129,7 +129,7 @@ class TagRepo
     /**
      * Create a new Tag instance from user input.
      * @param $input
-     * @return \App\Actions\Book\Tag
+     * @return \SiObjects\Components\Book\Tag
      */
     protected function newInstanceFromInput($input)
     {

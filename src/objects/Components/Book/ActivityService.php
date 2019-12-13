@@ -14,7 +14,7 @@ class ActivityService
 
     /**
      * ActivityService constructor.
-     * @param \App\Actions\Book\Activity $activity
+     * @param \SiObjects\Components\Book\Activity $activity
      * @param PermissionService $permissionService
      */
     public function __construct(Activity $activity, PermissionService $permissionService)
