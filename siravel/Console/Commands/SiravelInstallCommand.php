@@ -92,49 +92,43 @@ class SiravelInstallCommand extends Command
             $this->warn('You will need to update this manually.  Change "extends Authenticatable" to "extends \Siravel\Models\User" in your User model');
         }
 
-        $this->info('Dumping the autoloaded files and reloading all new files');
+        // $this->info('Dumping the autoloaded files and reloading all new files');
 
-        $composer = $this->findComposer();
+        // $composer = $this->findComposer();
 
-        $process = new Process($composer.' dump-autoload');
-        $process->setTimeout(null); // Setting timeout to null to prevent installation from stopping at a certain point in time
-        $process->setWorkingDirectory(base_path())->run();
+        // $process = new Process($composer.' dump-autoload');
+        // $process->setTimeout(null); // Setting timeout to null to prevent installation from stopping at a certain point in time
+        // $process->setWorkingDirectory(base_path())->run();
 
-        $this->info('Adding Siravel routes to routes/web.php');
-        $routes_contents = $filesystem->get(base_path('routes/web.php'));
-        if (false === strpos($routes_contents, 'Siravel::routes()')) {
-            $filesystem->append(
-                base_path('routes/web.php'),
-                "\n\nRoute::group(['prefix' => 'admin'], function () {\n    Siravel::routes();\n});\n"
-            );
-        }
-
-        \Route::group(['prefix' => 'admin'], function () {
-            \Siravel::routes();
-        });
-
-        // $this->info('Seeding data into the database');
-        // $this->seed('SiravelDatabaseSeeder');
-
-        // if ($this->option('with-dummy')) {
-        //     $this->info('Publishing dummy content');
-        //     $tags = ['dummy_seeds', 'dummy_content', 'dummy_config', 'dummy_migrations'];
-        //     $this->call('vendor:publish', ['--provider' => SiravelDummyServiceProvider::class, '--tag' => $tags]);
-
-        //     $this->info('Migrating dummy tables');
-        //     $this->call('migrate');
-
-        //     $this->info('Seeding dummy data');
-        //     $this->seed('SiravelDummyDatabaseSeeder');
-        // } else {
-        //     $this->call('vendor:publish', ['--provider' => SiravelServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
+        // $this->info('Adding Siravel routes to routes/web.php');
+        // $routes_contents = $filesystem->get(base_path('routes/web.php'));
+        // if (false === strpos($routes_contents, 'Siravel::routes()')) {
+        //     $filesystem->append(
+        //         base_path('routes/web.php'),
+        //         "\n\nRoute::group(['prefix' => 'admin'], function () {\n    Siravel::routes();\n});\n"
+        //     );
         // }
 
-        $this->info('Setting up the hooks');
-        $this->call('hook:setup');
+        // \Route::group(['prefix' => 'admin'], function () {
+        //     \Siravel::routes();
+        // });
 
-        $this->info('Adding the storage symlink to your public folder');
-        $this->call('storage:link');
+        // // $this->info('Seeding data into the database');
+        // // $this->seed('SiravelDatabaseSeeder');
+
+        // // if ($this->option('with-dummy')) {
+        // //     $this->info('Publishing dummy content');
+        // //     $tags = ['dummy_seeds', 'dummy_content', 'dummy_config', 'dummy_migrations'];
+        // //     $this->call('vendor:publish', ['--provider' => SiravelDummyServiceProvider::class, '--tag' => $tags]);
+
+        // //     $this->info('Migrating dummy tables');
+        // //     $this->call('migrate');
+
+        // //     $this->info('Seeding dummy data');
+        // //     $this->seed('SiravelDummyDatabaseSeeder');
+        // // } else {
+        // //     $this->call('vendor:publish', ['--provider' => SiravelServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
+        // // }
 
         $this->info('Successfully installed Siravel! Enjoy');
     }

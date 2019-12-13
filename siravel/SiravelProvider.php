@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
+use Support\Traits\ConsoleTools;
 
 class SiravelProvider extends ServiceProvider
 {
@@ -134,8 +135,10 @@ class SiravelProvider extends ServiceProvider
         | Register the Commands
         |--------------------------------------------------------------------------
         */
-
-        $this->commands([]);
+        // Register commands
+        $this->registerCommandFolders([
+            base_path('vendor/sierratecnologia/facilitador/src/Console/Commands'),
+        ]);
     }
 
     /**
