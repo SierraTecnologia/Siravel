@@ -2,9 +2,6 @@
 
 namespace SiWeapons\Filesystem;
 
-use App\Logic\ComponentsFile;
-use App\Logic\ComponentsDirectory;
-
 use Illuminate\Filesystem\Filesystem;
 
 /**
