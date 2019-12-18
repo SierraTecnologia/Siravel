@@ -80,8 +80,7 @@ class Integration
     public static function getCodeForPrimaryKey()
     {
         $id = static::$ID;
-        
-        if (!$integration = IntegrationModel::find($id)) {
+        if (!$integration = IntegrationModel::where('id', $id)->first()) {
             $integration = IntegrationModel::create([
                 'id' => $id,
                 'name' => get_called_class(),
