@@ -51,6 +51,7 @@ class StorageAndNotImported extends Command
 		$dir_path = storage_path('data');
 		$dir = new DirectoryIterator($dir_path);
 		foreach ($dir as $fileinfo) {
+			dd($fileinfo, $fileinfo->isDot());
 			if (!$fileinfo->isDot()) {
 		
 			}
