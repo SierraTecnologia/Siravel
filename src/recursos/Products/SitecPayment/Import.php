@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\SitecPayment;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Import extends SitecPayment

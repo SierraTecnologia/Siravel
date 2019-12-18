@@ -6,7 +6,7 @@
 namespace SiSeed\Ideia\Scholl\Assuntos\Logic;
 
 use Informate\Models\Entytys\Digital\Bot\Runner;
-use Illuminate\Support\Facades\Log;
+use Log;
 use MathPHP\Functions\Map\Single;
 
 class Intro implements \SiObjects\Support\Contracts\Robot

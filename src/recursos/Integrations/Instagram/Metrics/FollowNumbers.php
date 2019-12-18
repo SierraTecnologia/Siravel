@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Instagram\Metrics;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class FollowNumbers extends Metric

@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\PhotoAcompanhante;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use QL\QueryList;
 use SiUtils\Tools\Proxy;

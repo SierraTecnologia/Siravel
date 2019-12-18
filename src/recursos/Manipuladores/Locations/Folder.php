@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Manipuladores\Locations;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local;
 

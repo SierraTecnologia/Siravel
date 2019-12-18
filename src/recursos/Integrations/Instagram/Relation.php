@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Instagram;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Relation extends Instagram

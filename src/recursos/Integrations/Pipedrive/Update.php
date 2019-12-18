@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Pipedrive;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Update extends Pipedrive

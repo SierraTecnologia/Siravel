@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Wikipedia;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 /* PHP-Wiki-API: This is a simple class to get short Wikipedia info boxes from a given Keyword.

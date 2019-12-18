@@ -4,7 +4,7 @@ namespace SiWeapons\Channels;
 
 use Illuminate\Notifications\Notification;
 use Siravel\Jobs\Sms;
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class SmsChannel
 {

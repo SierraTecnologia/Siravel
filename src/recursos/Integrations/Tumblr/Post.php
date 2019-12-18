@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Tumblr;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Post extends Tumblr

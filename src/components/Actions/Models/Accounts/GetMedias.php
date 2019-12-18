@@ -8,7 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use App\Notifications\PhoneActivate;
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class GetMedias implements ShouldQueue
 {

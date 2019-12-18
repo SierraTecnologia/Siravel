@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Cloudflare;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use Cloudflare\Zone\Pagerules;
 use Cloudflare\Zone\Dns;

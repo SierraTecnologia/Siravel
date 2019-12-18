@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\SenhorVerdugo;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\Project as ProjectModel;
 use SenhorVerdugoRestApi\Project\ProjectService;
 use SenhorVerdugoRestApi\SenhorVerdugoException;

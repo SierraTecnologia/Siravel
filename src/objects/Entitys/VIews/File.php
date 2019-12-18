@@ -5,7 +5,7 @@
 
 namespace SiObjects\Entitys\Views;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use SiUtils\Tools\Software\FilePrograms;
 
 class File extends Board

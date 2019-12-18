@@ -10,7 +10,7 @@ use App\Pipelines\RegistratorLog;
 use App\Pipelines\NotificationSms;
 use App\Pipelines\NotificationEmail;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class PostRoutine

@@ -6,7 +6,7 @@
 namespace SiInteractions\Actions\Collect;
 
 use Informate\Models\Entytys\Digital\Bot\Runner;
-use Illuminate\Support\Facades\Log;
+use Log;
 use MathPHP\Functions\Map\Single;
 
 class FromDatabase implements \SiObjects\Support\Contracts\Robot

@@ -9,7 +9,7 @@
 namespace SiWeapons\Integrations\Novare;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

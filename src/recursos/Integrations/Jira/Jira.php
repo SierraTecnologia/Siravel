@@ -6,7 +6,7 @@
 namespace SiWeapons\Integrations\Jira;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 use JiraRestApi\Configuration\ArrayConfiguration;

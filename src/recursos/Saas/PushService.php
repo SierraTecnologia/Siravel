@@ -3,7 +3,7 @@
 namespace SiWeapons\Saas;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class PushService extends Service

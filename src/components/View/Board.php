@@ -2,7 +2,7 @@
 
 namespace SiInteractions\View;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Instagram\Instagram;
 use SiWeapons\Integrations\Instagram\Facebook;

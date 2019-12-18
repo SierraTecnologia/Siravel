@@ -5,7 +5,7 @@
 
 namespace SiSeed\Ideia\Scholl\Actions;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class Learn
 {

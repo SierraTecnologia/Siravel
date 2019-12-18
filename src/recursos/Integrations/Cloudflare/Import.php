@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Cloudflare;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Import extends Cloudflare

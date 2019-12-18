@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Dropbox;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Profile extends Dropbox

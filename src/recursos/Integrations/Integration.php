@@ -3,7 +3,7 @@
 namespace SiWeapons\Integrations;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 use Population\Models\Components\Integrations\Token;

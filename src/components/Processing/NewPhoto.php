@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Processing;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiObjects\Support\Trabalhando\Picture;
 

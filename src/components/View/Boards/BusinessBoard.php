@@ -5,7 +5,7 @@
 
 namespace SiInteractions\View\Boards;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class BusinessBoard extends Board
 {

@@ -6,7 +6,7 @@
 namespace SiSeed\Ideia\Scholl\Assuntos\Logic\Ensinamentos;
 
 use Informate\Models\Entytys\Digital\Bot\Runner;
-use Illuminate\Support\Facades\Log;
+use Log;
 use MathPHP\Functions\Map\Single;
 
 class QuestioneTudo implements \SiObjects\Support\Contracts\Robot

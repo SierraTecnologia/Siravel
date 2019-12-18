@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Sentry;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 
 class Import extends Sentry

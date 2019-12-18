@@ -9,7 +9,7 @@ use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use League\Pipeline\PipelineBuilder;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class ArticlePipeline extends Pipeline
 {

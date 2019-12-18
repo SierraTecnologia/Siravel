@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 use Informate\Models\Customer;
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class RoutineTrackingUserDeviseJob implements ShouldQueue
 {

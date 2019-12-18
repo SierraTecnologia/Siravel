@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Jira;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\Project as ProjectModel;
 use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;

@@ -5,7 +5,7 @@
 
 namespace SiObjects\Components\Finder;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class BigReference

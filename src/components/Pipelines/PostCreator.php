@@ -2,7 +2,7 @@
 
 namespace SiInteractions\Pipelines;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 use App\Pipelines\Contracts\Registrator;

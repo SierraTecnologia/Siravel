@@ -11,7 +11,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use App\Models\User;
 use Siravel\Models\Role;
 use Siravel\Services\PaymentGatewayService;
-use Illuminate\Support\Facades\Log;
+use Log;
 use Siravel\Tools\Organizer;
 
 class RoutineOrganizerCreateJob implements ShouldQueue

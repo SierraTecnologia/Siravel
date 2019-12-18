@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Pipelines;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;

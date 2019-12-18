@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\SitecBoss;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Create extends SitecBoss

@@ -2,7 +2,7 @@
 
 namespace SiObjects\Support\Traits;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\Model;
 
 class ActivityTrait extends Model

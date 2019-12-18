@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Zenvia\ZenviaChannel;
 use NotificationChannels\Zenvia\ZenviaMessage;
-use Illuminate\Support\Facades\Log;
+use Log;
 use Siravel\Channels\SmsChannel;
 use Siravel\Channels\Messages\SmsMessage;
 

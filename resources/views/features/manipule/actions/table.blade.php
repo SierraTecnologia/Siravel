@@ -11,7 +11,7 @@
             <td>{{$modelForAction::$apresentationName}}</td>
             <td>{{$modelForAction::count()}}</td>
             <td>
-                <a href="{{ route('siravel.actions.model',str_replace('\\', '_', $modelForAction))}}" class="btn btn-primary">Models</a>
+                <a href="{{ route('siravel.actions.model', str_replace('\\', '_', $modelForAction))}}" class="btn btn-primary">Models</a>
             </td>
         </tr>
         @endforeach

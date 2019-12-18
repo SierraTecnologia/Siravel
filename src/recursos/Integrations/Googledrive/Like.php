@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Googledrive;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Like extends Googledrive

@@ -5,7 +5,7 @@
 
 namespace SiInteractions\Routines\Readables;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Logic\ComponentsPipeline as PipelineComponent;
 use SiInteractions\Routines\ArticlePipeline;
 use SiInteractions\Routines\Readables\RrsImporterStage;

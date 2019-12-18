@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Wikipedia;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class Search extends Wikipedia

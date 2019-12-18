@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\ZohoMail;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 // use Informate\Models\Entytys\Digital\Midia\Video;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;

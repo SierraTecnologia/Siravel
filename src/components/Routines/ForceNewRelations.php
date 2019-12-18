@@ -4,7 +4,7 @@ namespace SiInteractions\Routines;
 
 use App\Board;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 class ForceNewRelations

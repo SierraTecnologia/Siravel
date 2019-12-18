@@ -3,7 +3,7 @@
 namespace SiWeapons\Products\SitecBoss;
 
 use App\Models\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

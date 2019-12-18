@@ -5,7 +5,7 @@
 
 namespace SiInteractions\View\Editores;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class TuiImageEditor
 {

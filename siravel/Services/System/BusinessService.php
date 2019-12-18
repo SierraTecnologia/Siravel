@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Jobs\RoutineOrganizerCreateJob;
 use Population\Models\Identity\Actors\Business;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Log;
+use Log;
 use Illuminate\Support\Facades\Request;
 use Informate\Models\System\Setting;
 

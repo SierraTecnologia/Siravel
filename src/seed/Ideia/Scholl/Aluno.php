@@ -5,7 +5,7 @@
 
 namespace SiSeed\Ideia\Scholl;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class Alunos extends Board
 {

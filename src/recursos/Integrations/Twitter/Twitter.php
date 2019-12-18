@@ -6,7 +6,7 @@
 
 namespace SiWeapons\Integrations\Twitter;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use Abraham\TwitterOAuth\TwitterOAuth;
 

@@ -5,7 +5,7 @@
 
 namespace SiObjects\Entitys\Components;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class Component
 {

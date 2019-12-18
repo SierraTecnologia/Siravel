@@ -3,7 +3,7 @@
 namespace SiWeapons\Integrations\SitecPayment;
 
 use App\Models\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

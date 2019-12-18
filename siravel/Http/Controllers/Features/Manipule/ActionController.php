@@ -35,7 +35,7 @@ class ActionController extends Controller
         $models = $model::all();
 
         return view(
-            'actions.model',
+            'siravel::features.manipule.actions.model',
             compact(
                 'actionsForModels',
                 'models'

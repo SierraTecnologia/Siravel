@@ -8,7 +8,7 @@
 namespace SiWeapons\Integrations\Testlink;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

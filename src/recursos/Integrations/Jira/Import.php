@@ -2,7 +2,7 @@
 
 namespace SiWeapons\Integrations\Jira;
 
-use Illuminate\Support\Facades\Log;
+use Log;
 use App\Models\User;
 
 use Informate\Models\Entytys\Digital\Code\CodeIssueLink;

@@ -9,7 +9,7 @@ use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Population\Models\Components\Integrations\Token;
 use SiWeapons\Integrations\Sentry\Sentry;
 use SiWeapons\Integrations\Jira\Jira;
-use Illuminate\Support\Facades\Log;
+use Log;
 
 class ImportFromToken
 {
