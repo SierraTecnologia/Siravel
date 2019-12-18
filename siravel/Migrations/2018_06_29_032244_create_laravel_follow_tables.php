@@ -20,7 +20,7 @@ class CreateLaravelFollowTables extends Migration
     public function up()
     {
         Schema::create(config('follow.followable_table', 'followables'), function (Blueprint $table) {
-            $userForeignKey = config('follow.users_table_foreign_key', 'user_id');
+            $userForeignKey = config('follow.users_table_foreign_key', 'person_code');
 
             // Laravel 5.8 session user is unsignedBigInteger
             // https://github.com/laravel/framework/pull/28206/files

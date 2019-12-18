@@ -13,22 +13,22 @@ return [
     /*
      * Model class name of users.
      */
-    'user_model' => config('auth.providers.users.model', App\Models\User::class),
+    'user_model' => config('auth.providers.users.model', Population\Models\Identity\Actors\Person::class),
 
     /*
      * Table name of users table.
      */
-    'users_table_name' => 'users',
+    'users_table_name' => 'persons',
 
     /*
      * Primary key of users table.
      */
-    'users_table_primary_key' => 'id',
+    'users_table_primary_key' => 'code',
 
     /*
      * Foreign key of users table.
      */
-    'users_table_foreign_key' => 'user_id',
+    'users_table_foreign_key' => 'person_code', //'user_id',
 
     /*
      * Table name of followable relations.
