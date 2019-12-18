@@ -14664,7 +14664,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "66817c5b1ebdc4b14f1c5f2520b6b80648006650"
+                "reference": "5885df75c087ae9361254dd455932a9ddef18026"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -14715,7 +14715,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "0971b73de4974a99a01ba13e4d51a77934edfe95"
+                "reference": "36076da76105c4ed4604cb13da8d760b6c770929"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14971,7 +14971,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "a92b19e7e470a92e9c04cbac385a8307c404361e"
+                "reference": "4b97d2e8ed01ad9c5a642c6ee277bb5a9b39182f"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15082,7 +15082,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "e68fa0b135759165551353d71aae7e75fe3bb6a5"
+                "reference": "58f88a64156ed8c42b39fcf61c61494da867c4e5"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15313,7 +15313,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "3a5487401539ad56d2029ec2cd51a89eeb3ac1c3"
+                "reference": "31869528c670416fc16f9f48f482d9a1c6731b8f"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15352,7 +15352,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "17b285544a5286b323714892680df8b7c7bc012a"
+                "reference": "627baf29a7c22e8771b483b763c33d64ec5fae99"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -15397,7 +15397,7 @@
             "dist": {
                 "type": "path",
                 "url": "../LaravelSupport",
-                "reference": "8c3b310f84c5a405d9dae0340e2d6973d734a110"
+                "reference": "e4b5fa6c868edba5e434d7ae35578620cdc209c9"
             },
             "require": {
                 "barryvdh/laravel-debugbar": "*",
@@ -15556,7 +15556,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "b6d312575252e5cdf7fd2f208f40d957012f9386"
+                "reference": "57125a205280ff02f940f155f0acd1afa53ad498"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -15593,7 +15593,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "85de91af94b6c0c9a099a45aaea16f765b8ec61f"
+                "reference": "8a8117c538dd793c42ce853462aa68a1d5ddb5ef"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
