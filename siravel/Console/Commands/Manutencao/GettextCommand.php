@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Manutencao;
 
 use File;
 use Illuminate\Console\Command;
@@ -14,7 +14,7 @@ class GettextCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $name = 'gettext';
+	protected $name = 'siravel:gettext';
 
 	/**
 	 * The console command description.

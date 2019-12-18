@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use Illuminate\Console\Command;
 use Psr\Log\LoggerInterface;
@@ -8,7 +8,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class TestScheduler.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class TestScheduler extends Command
 {

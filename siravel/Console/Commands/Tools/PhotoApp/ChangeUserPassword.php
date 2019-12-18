@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use SiObjects\Manipule\Managers\User\ARUserManager;
 use Illuminate\Console\Command;
@@ -8,7 +8,7 @@ use Illuminate\Console\Command;
 /**
  * Class ChangeUserPassword.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class ChangeUserPassword extends Command
 {

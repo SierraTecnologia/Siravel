@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\Import;
+namespace Siravel\Console\Commands\Verify;
 
 use App\Actions\Instagram\GetMidias;
 use Population\Models\Identity\Digital\Account;
@@ -15,7 +15,7 @@ class Data extends Command
      *
      * @var string
      */
-    protected $signature = 'import:data';
+    protected $signature = 'verify:data';
 
     /**
      * The console command description.

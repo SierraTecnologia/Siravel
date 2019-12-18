@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\Book;
+namespace Siravel\Console\Commands\Tools\Book;
 
 use Population\Models\Components\Book\PageRevision;
 use Illuminate\Console\Command;

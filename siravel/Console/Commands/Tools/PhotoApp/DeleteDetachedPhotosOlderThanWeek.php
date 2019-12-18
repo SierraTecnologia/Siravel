@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use SiObjects\Manipule\Managers\Photo\ARPhotoManager;
 use App\Models\Photo;
@@ -11,7 +11,7 @@ use Illuminate\Support\Collection;
 /**
  * Class DeleteDetachedPhotosOlderThanWeek.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class DeleteDetachedPhotosOlderThanWeek extends Command
 {

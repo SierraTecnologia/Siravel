@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Models\Role;
 use SiObjects\Manipule\Entities\UserEntity;
@@ -9,7 +9,7 @@ use Illuminate\Console\Command;
 /**
  * Class CreateRoles.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class CreateRoles extends Command
 {

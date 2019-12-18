@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Models\Photo;
 use SiInteractions\Services\Image\Contracts\ImageProcessor;
@@ -11,7 +11,7 @@ use Throwable;
 /**
  * Class GeneratePhotosMetadata.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class GeneratePhotosMetadata extends Command
 {

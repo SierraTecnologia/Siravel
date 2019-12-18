@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Mail\WeeklySubscription;
 use SiObjects\Manipule\Builders\SubscriptionBuilder;
@@ -16,7 +16,7 @@ use function SiUtils\Helper\url_frontend_unsubscription;
 /**
  * Class SendWeeklySubscriptionMails.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class SendWeeklySubscriptionMails extends Command
 {

@@ -18,17 +18,17 @@ class Kernel extends ConsoleKernel
 //      * @var array
 //      */
 //     protected $commands = [
-//         Commands\PhotoApp\ChangeUserPassword::class,
-//         Commands\PhotoApp\CreateAdministratorUser::class,
-//         Commands\PhotoApp\CreateRoles::class,
-//         Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
-//         Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
-//         Commands\PhotoApp\GeneratePhotosMetadata::class,
-//         Commands\PhotoApp\GenerateRestApiDocumentation::class,
-//         Commands\PhotoApp\SendWeeklySubscriptionMails::class,
-//         Commands\PhotoApp\TestScheduler::class,
+//         Commands\Tools\PhotoApp\ChangeUserPassword::class,
+//         Commands\Tools\PhotoApp\CreateAdministratorUser::class,
+//         Commands\Tools\PhotoApp\CreateRoles::class,
+//         Commands\Tools\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
+//         Commands\Tools\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
+//         Commands\Tools\PhotoApp\GeneratePhotosMetadata::class,
+//         Commands\Tools\PhotoApp\GenerateRestApiDocumentation::class,
+//         Commands\Tools\PhotoApp\SendWeeklySubscriptionMails::class,
+//         Commands\Tools\PhotoApp\TestScheduler::class,
 
-//         Commands\Photoacompanhante::class,
+//         Commands\Verify\Photoacompanhante::class,
 
 
 //         \Laravel\Tinker\Console\TinkerCommand::class,
@@ -37,8 +37,8 @@ class Kernel extends ConsoleKernel
 //          * Me
 //          */
 //         Commands\Explorer\InstagramGetAll::class,
-//         Commands\Import\Data::class,
-//         Commands\Import\Social::class,
+//         Commands\Verify\Data::class,
+//         Commands\Verify\Social::class,
 //     ];
 
     public function __construct(Application $app, Dispatcher $events) {
@@ -57,18 +57,18 @@ class Kernel extends ConsoleKernel
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
 
 
-        $schedule->command(Commands\PhotoApp\TestScheduler::class)
+        $schedule->command(Commands\Tools\PhotoApp\TestScheduler::class)
             ->hourly();
 
-        $schedule->command(Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class)
+        $schedule->command(Commands\Tools\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class)
             ->dailyAt('00:00')
             ->onOneServer();
 
-        $schedule->command(Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class)
+        $schedule->command(Commands\Tools\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class)
             ->dailyAt('00:10')
             ->onOneServer();
 
-        $schedule->command(Commands\PhotoApp\SendWeeklySubscriptionMails::class)
+        $schedule->command(Commands\Tools\PhotoApp\SendWeeklySubscriptionMails::class)
             ->weekly()
             ->sundays()
             ->at('06:00')

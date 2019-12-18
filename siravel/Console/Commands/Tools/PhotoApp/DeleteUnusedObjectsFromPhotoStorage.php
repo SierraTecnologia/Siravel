@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Models\Photo;
 use App\Models\Thumbnail;
@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 /**
  * Class DeleteUnusedObjectsFromPhotoStorage.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class DeleteUnusedObjectsFromPhotoStorage extends Command
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands\PhotoApp;
+namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use SiObjects\Manipule\Managers\User\ARUserManager;
 use App\Models\Role;
@@ -10,7 +10,7 @@ use function SiUtils\Helper\url_frontend_sign_in;
 /**
  * Class CreateAdministratorUser.
  *
- * @package Siravel\Console\Commands\PhotoApp
+ * @package Siravel\Console\Commands\Tools\PhotoApp
  */
 class CreateAdministratorUser extends Command
 {

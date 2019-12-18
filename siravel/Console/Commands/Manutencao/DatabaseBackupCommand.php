@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Manutencao;
 
 use File;
 use Carbon\Carbon;
@@ -14,7 +14,7 @@ class DatabaseBackupCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $name = 'db:backup';
+	protected $name = 'siravel:backup';
 
 	/**
 	 * The console command description.

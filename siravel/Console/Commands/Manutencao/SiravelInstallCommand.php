@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Manutencao;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -63,7 +63,7 @@ class SiravelInstallCommand extends Command
     public function handle(Filesystem $filesystem)
     {
         $this->info('Install after facilitador...');
-        $this->call('facilitador:admin');
+        $this->call('facilitador:install');
 
         $this->info('Publishing the Siravel assets, database, and config files');
 
@@ -71,13 +71,9 @@ class SiravelInstallCommand extends Command
         $tags = ['sitec', 'tools', 'siravel'];
 
         $this->call('vendor:publish', ['--tag' => $tags]);
-        // $this->call('vendor:publish', ['--provider' => SiravelServiceProvider::class, '--tag' => $tags]);
-        $this->call('vendor:publish', ['--provider' => ImageServiceProviderLaravel5::class]);
+        
 
-        $this->info('Migrating the database tables into your application');
-        $this->call('migrate', ['--force' => $this->option('force')]);
-
-        $this->info('Attempting to set Siravel User model as parent to App\User');
+        $this->info('Attempting to set Siravel User model as parent to App\Models\User');
         if (file_exists(app_path($this->userModelFile))) {
             $str = file_get_contents(app_path($this->userModelFile));
 
@@ -91,44 +87,6 @@ class SiravelInstallCommand extends Command
             $this->warn('Unable to locate "app/Models/User.php".  Did you move this file?');
             $this->warn('You will need to update this manually.  Change "extends Authenticatable" to "extends \Siravel\Models\User" in your User model');
         }
-
-        // $this->info('Dumping the autoloaded files and reloading all new files');
-
-        // $composer = $this->findComposer();
-
-        // $process = new Process($composer.' dump-autoload');
-        // $process->setTimeout(null); // Setting timeout to null to prevent installation from stopping at a certain point in time
-        // $process->setWorkingDirectory(base_path())->run();
-
-        // $this->info('Adding Siravel routes to routes/web.php');
-        // $routes_contents = $filesystem->get(base_path('routes/web.php'));
-        // if (false === strpos($routes_contents, 'Siravel::routes()')) {
-        //     $filesystem->append(
-        //         base_path('routes/web.php'),
-        //         "\n\nRoute::group(['prefix' => 'admin'], function () {\n    Siravel::routes();\n});\n"
-        //     );
-        // }
-
-        // \Route::group(['prefix' => 'admin'], function () {
-        //     \Siravel::routes();
-        // });
-
-        // // $this->info('Seeding data into the database');
-        // // $this->seed('SiravelDatabaseSeeder');
-
-        // // if ($this->option('with-dummy')) {
-        // //     $this->info('Publishing dummy content');
-        // //     $tags = ['dummy_seeds', 'dummy_content', 'dummy_config', 'dummy_migrations'];
-        // //     $this->call('vendor:publish', ['--provider' => SiravelDummyServiceProvider::class, '--tag' => $tags]);
-
-        // //     $this->info('Migrating dummy tables');
-        // //     $this->call('migrate');
-
-        // //     $this->info('Seeding dummy data');
-        // //     $this->seed('SiravelDummyDatabaseSeeder');
-        // // } else {
-        // //     $this->call('vendor:publish', ['--provider' => SiravelServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
-        // // }
 
         $this->info('Successfully installed Siravel! Enjoy');
     }

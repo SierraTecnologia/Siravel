@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace Siravel\Console\Commands\Verify;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
@@ -13,7 +13,7 @@ class Photoacompanhante extends Command
      *
      * @var string
      */
-    protected $signature = 'import:photoacompanhante';
+    protected $signature = 'verify:photoacompanhante';
 
     /**
      * The console command description.
