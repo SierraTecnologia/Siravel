@@ -69,5 +69,10 @@ class StorageAndNotImported extends Command
 				dd($file, $registrator);
 			});
 		});
+
+        // (new \SiInteractions\Routines\Globals\BackupAll)->run();
+		(new \SiInteractions\Routines\Globals\ImportTokens)->run();
+		
+        (new \SiInteractions\Routines\Globals\SpiderAllDomains)->run();
 	}
 }
