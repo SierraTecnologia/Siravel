@@ -251,8 +251,8 @@ return [
         */
 
         'use' => [
-            // Facilitador\Support\Reliese\Database\Eloquent\BitBooleans::class,
-            // Facilitador\Support\Reliese\Database\Eloquent\BlamableBehavior::class,
+            // Support\Reliese\Database\Eloquent\BitBooleans::class,
+            // Support\Reliese\Database\Eloquent\BlamableBehavior::class,
         ],
 
         /*
@@ -590,7 +590,7 @@ return [
     //     'snake_attributes' => false,
     //     'qualified_tables' => true,
     //     'use' => [
-    //         Facilitador\Support\Reliese\Database\Eloquent\BitBooleans::class,
+    //         Support\Reliese\Database\Eloquent\BitBooleans::class,
     //     ],
     //     'except' => ['migrations'],
     //     'only' => ['users'],
