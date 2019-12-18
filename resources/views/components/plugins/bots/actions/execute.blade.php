@@ -28,7 +28,7 @@
 
             <div class="pull-right">
 
-                <a class="btn btn-primary" href="{{ route('actions.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('siravel.actions.index') }}"> Back</a>
 
             </div>
 

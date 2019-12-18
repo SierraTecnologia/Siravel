@@ -83,7 +83,7 @@ class SiravelProvider extends ServiceProvider
             $event->menu->add('Siravel');
             $event->menu->add([
                 'text'        => 'Dash',
-                'url'         => 'sitec/dash',
+                'url'         => route('siravel.sitec.dash'),
                 'icon'        => 'dashboard',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
@@ -91,7 +91,7 @@ class SiravelProvider extends ServiceProvider
             ]);
             $event->menu->add([
                 'text'        => 'Profile',
-                'url'         => 'sitec/profile',
+                'url'         => route('siravel.sitec.profile'),
                 'icon'        => 'dashboard',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
@@ -99,7 +99,7 @@ class SiravelProvider extends ServiceProvider
             ]);
             $event->menu->add([
                 'text'        => 'Actors',
-                'url'         => 'actors',
+                'url'         => route('siravel.components.actors.profile'),
                 'icon'        => 'dashboard',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
@@ -120,7 +120,7 @@ class SiravelProvider extends ServiceProvider
                     ],
                     [
                         'text'        => 'Actions',
-                        'url'         => 'actions',
+                        'url'         => route('siravel.actions.index'),
                         'icon'        => 'coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',

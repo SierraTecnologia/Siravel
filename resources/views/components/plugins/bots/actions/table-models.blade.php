@@ -13,7 +13,7 @@
             <td>{{$model->getApresentationName()}}</td>
             <td>
                 @foreach ($actionsForModels as $actionsForModel)
-                    <a href="{{ route('actions.execute', [$model->id, $actionsForModel->cod])}}" class="btn btn-primary">{{$actionsForModel->cod}}</a>
+                    <a href="{{ route('siravel.actions.execute', [$model->id, $actionsForModel->cod])}}" class="btn btn-primary">{{$actionsForModel->cod}}</a>
                 @endforeach
             </td>
         </tr>
