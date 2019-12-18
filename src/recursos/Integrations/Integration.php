@@ -18,6 +18,9 @@ use SiWeapons\Integrations\Sentry\Sentry;
 use SiWeapons\Integrations\Testlink\Testlink;
 use SiWeapons\Integrations\Zoho\Zoho;
 
+
+use Informate\Models\System\Integration as IntegrationModel;
+
 class Integration
 {
 
@@ -71,48 +74,14 @@ class Integration
         return $result;
     }
 
-    // protected $_connection = null;
-
-    // private $error = null;
-
-    // private $errorCode = null;
-
-    // public function __construct(User $organizer)
-    // {
-    //     $this->_connection = $this->getConnection($organizer);
-    // }
-
-    // /**
-    //  * Recupera connecção com a integração
-    //  */
-    // protected function getConnection($organizer = false)
-    // {
-    //     return $this;
-    // }
-
-    // public function getError()
-    // {
-    //     return $this->error;
-    // }
-
-    // public function getUrl()
-    // {
-    //     return static::$url;
-    // }
-
-    // public function getErrorCode()
-    // {
-    //     return $this->errorCode;
-    // }
-
-    // /**
-    //  * Recupera dados em cima de um get de uma api
-    //  */
-    // public function get($path)
-    // {
-    //     // @todo Fazer resultar um object em cia de um path
-    //     $url = $this->url.$path;
-    //     $result = [];
-    //     return $result;
-    // }
+    /**
+     * Recupera dados em cima de um get de uma api
+     */
+    public static function getCodeForPrimaryKey()
+    {
+        $id = self::$ID;
+        
+        $integration = IntegrationModel::firstOrCreate($id);
+        return $integration->id;
+    }
 }

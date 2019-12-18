@@ -4,8 +4,9 @@ namespace SiWeapons\Integrations\Dropbox;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
+use SiWeapons\Integrations\Integration;
 
-class Dropbox
+class Dropbox extends Integration
 {
 
     public static $ID = 1;

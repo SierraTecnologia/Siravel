@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-class Twitter
+use SiWeapons\Integrations\Integration;
+
+class Twitter extends Integration
 {
 
     public static $ID = 6;

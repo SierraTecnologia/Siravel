@@ -4,8 +4,9 @@ namespace SiWeapons\Integrations\Googledrive;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
+use SiWeapons\Integrations\Integration;
 
-class Googledrive
+class Googledrive extends Integration
 {
 
     public static $ID = 3;

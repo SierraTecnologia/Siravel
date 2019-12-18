@@ -5,7 +5,9 @@ namespace SiWeapons\Integrations\Instagram;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class Instagram
+use SiWeapons\Integrations\Integration;
+
+class Instagram extends Integration
 {
 
     public static $ID = 4;

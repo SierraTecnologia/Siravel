@@ -5,7 +5,9 @@ namespace SiWeapons\Integrations\Wikipedia;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class Wikipedia
+use SiWeapons\Integrations\Integration;
+
+class Wikipedia extends Integration
 {
 
     public static $ID = 4;

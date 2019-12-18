@@ -4,8 +4,9 @@ namespace SiWeapons\Integrations\Facebook;
 
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
+use SiWeapons\Integrations\Integration;
 
-class Facebook
+class Facebook extends Integration
 {
 
     public static $ID = 2;

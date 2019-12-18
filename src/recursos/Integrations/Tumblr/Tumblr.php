@@ -5,7 +5,9 @@ namespace SiWeapons\Integrations\Tumblr;
 use Illuminate\Support\Facades\Log;
 use App\Models\User;
 
-class Tumblr
+use SiWeapons\Integrations\Integration;
+
+class Tumblr extends Integration
 {
 
     public static $ID = 5;
