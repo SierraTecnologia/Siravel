@@ -12,34 +12,39 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
  */
 class Kernel extends ConsoleKernel
 {
-    /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands = [
-        Commands\PhotoApp\ChangeUserPassword::class,
-        Commands\PhotoApp\CreateAdministratorUser::class,
-        Commands\PhotoApp\CreateRoles::class,
-        Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
-        Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
-        Commands\PhotoApp\GeneratePhotosMetadata::class,
-        Commands\PhotoApp\GenerateRestApiDocumentation::class,
-        Commands\PhotoApp\SendWeeklySubscriptionMails::class,
-        Commands\PhotoApp\TestScheduler::class,
+//     /**
+//      * The Artisan commands provided by your application.
+//      *
+//      * @var array
+//      */
+//     protected $commands = [
+//         Commands\PhotoApp\ChangeUserPassword::class,
+//         Commands\PhotoApp\CreateAdministratorUser::class,
+//         Commands\PhotoApp\CreateRoles::class,
+//         Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
+//         Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
+//         Commands\PhotoApp\GeneratePhotosMetadata::class,
+//         Commands\PhotoApp\GenerateRestApiDocumentation::class,
+//         Commands\PhotoApp\SendWeeklySubscriptionMails::class,
+//         Commands\PhotoApp\TestScheduler::class,
 
-        Commands\Photoacompanhante::class,
+//         Commands\Photoacompanhante::class,
 
 
-        \Laravel\Tinker\Console\TinkerCommand::class,
+//         \Laravel\Tinker\Console\TinkerCommand::class,
 
-        /**
-         * Me
-         */
-        Commands\Explorer\InstagramGetAll::class,
-        Commands\Import\Data::class,
-        Commands\Import\Social::class,
-    ];
+//         /**
+//          * Me
+//          */
+//         Commands\Explorer\InstagramGetAll::class,
+//         Commands\Import\Data::class,
+//         Commands\Import\Social::class,
+//     ];
+
+    public function __construct(Application $app, Dispatcher $events) {
+        $this->loadCommands('Console/Commands');
+        parent::__construct($app, $events);
+    }
 
     /**
      * Define the application's command schedule.
