@@ -79,9 +79,16 @@ class Integration
      */
     public static function getCodeForPrimaryKey()
     {
-        $id = self::$ID;
+        $id = static::$ID;
         
-        $integration = IntegrationModel::firstOrCreate($id);
+        if (!$integration = IntegrationModel::find($id)) {
+            $integration = IntegrationModel::create([
+                'id' => $id,
+                'name' => get_called_class(),
+            ]);
+        }
+
+
         return $integration->id;
     }
 }

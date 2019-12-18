@@ -20,7 +20,7 @@ class Tumblr extends Integration
         
     }
 
-    public function getConnection()
+    protected function getConnection($token = false)
     {
         return $this->login();
     }
