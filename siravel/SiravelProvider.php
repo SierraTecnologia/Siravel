@@ -9,6 +9,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
 use Support\Traits\ConsoleTools;
 
+use Illuminate\Contracts\Events\Dispatcher;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
+
 class SiravelProvider extends ServiceProvider
 {
     use ConsoleTools;
@@ -37,7 +40,7 @@ class SiravelProvider extends ServiceProvider
     /**
      * Alias the services in the boot.
      */
-    public function boot()
+    public function boot(Dispatcher $events)
     {
 
         $this->publishes([
@@ -67,6 +70,65 @@ class SiravelProvider extends ServiceProvider
             $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
         ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']);
 
+
+        /**
+         * AdminlteMenu
+         */
+
+        
+        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            /**
+             * Pacotes
+             */
+            $event->menu->add('Siravel');
+            $event->menu->add([
+                'text'        => 'Dash',
+                'url'         => 'sitec/dash',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ]);
+            $event->menu->add([
+                'text'        => 'Profile',
+                'url'         => 'sitec/profile',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ]);
+            $event->menu->add([
+                'text'        => 'Actors',
+                'url'         => 'actors',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ]);
+            $event->menu->add([
+                'text'    => 'Bots',
+                'icon'    => 'cog',
+                'nivel' => \App\Models\Role::$GOOD,
+                'submenu' => [
+                    [
+                        'text'        => 'Runners',
+                        'url'         => 'runners',
+                        'icon'        => 'industry',
+                        'icon_color'  => 'red',
+                        'label_color' => 'success',
+                        'nivel' => \App\Models\Role::$GOOD,
+                    ],
+                    [
+                        'text'        => 'Actions',
+                        'url'         => 'actions',
+                        'icon'        => 'coffee',
+                        'icon_color'  => 'red',
+                        'label_color' => 'success',
+                        'nivel' => \App\Models\Role::$GOOD,
+                    ],
+                ]
+            ]);
+        });
         /*
         |--------------------------------------------------------------------------
         | Blade Directives

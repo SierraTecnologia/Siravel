@@ -24,6 +24,16 @@ class DatabaseBackupCommand extends Command
 	protected $description = 'Backup and restore database.';
 
 	/**
+	 * Call fire function
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+		$this->fire();
+	}
+	
+	/**
 	 * Execute the console command.
 	 *
 	 * @return void

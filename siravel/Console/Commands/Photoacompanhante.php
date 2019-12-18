@@ -22,12 +22,22 @@ class Photoacompanhante extends Command
      */
     protected $description = 'Display an inspiring quote';
 
+	/**
+	 * Call fire function
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+		$this->fire();
+    }
+    
     /**
      * Execute the console command.
      *
      * @return mixed
      */
-    public function handle()
+    public function fire()
     {
         $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
 

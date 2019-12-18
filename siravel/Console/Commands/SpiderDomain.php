@@ -37,6 +37,17 @@ class SpiderDomain extends Command
         parent::__construct();
     }
 
+	/**
+	 * Call fire function
+	 *
+	 * @return void
+	 */
+	public function fire()
+	{
+		$this->handle();
+	}
+    
+    
     /**
      * Execute the console command.
      *

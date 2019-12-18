@@ -24,6 +24,16 @@ class GettextCommand extends Command
 	protected $description = 'Compiles Blade templates into PHP for GNU gettext to be able to parse them';
 
 	/**
+	 * Call fire function
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+		$this->fire();
+	}
+	
+	/**
 	 * Execute the console command.
 	 *
 	 * @return void

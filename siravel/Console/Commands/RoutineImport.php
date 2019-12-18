@@ -37,12 +37,21 @@ class RoutineImport extends Command
         parent::__construct();
     }
 
+	/**
+	 * Call fire function
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+		$this->fire();
+    }
     /**
      * Execute the console command.
      *
      * @return mixed
      */
-    public function handle()
+    public function fire()
     {
         // (new \SiInteractions\Routines\Globals\BackupAll)->run();
         (new \SiInteractions\Routines\Globals\ImportTokens)->run();
