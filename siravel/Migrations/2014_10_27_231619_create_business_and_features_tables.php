@@ -12,39 +12,6 @@ class CreateBusinessAndFeaturesTables extends Migration
 	 */
 	public function up()
 	{
-
-        // /**
-        //  * Businesses
-        //  */
-		// Schema::create(config('app.db-prefix', '').'businesses', function (Blueprint $table) {
-		// 	$table->engine = 'InnoDB';
-        //     $table->string('code')->unique();
-        //     $table->primary('code');
-            
-		// 	$table->string('name', 255);
-        //     $table->string('description')->nullable();
-
-        //     $table->string('layoult')->nullable();
-
-        //     $table->string('dominio')->nullable();
-        //     $table->string('subdominio')->nullable();
-
-        //     $table->string('type');
-        //     $table->integer('status')->nullable();
-            
-		// 	$table->timestamps();
-        //     $table->softDeletes();
-		// });
-        
-		// Schema::create(config('app.db-prefix', '').'businessables', function (Blueprint $table) {
-		// 	$table->engine = 'InnoDB';
-		// 	$table->integer('businessable_id');
-		// 	$table->string('businessable_type', 255);
-		// 	$table->string('business_code');
-        //     $table->foreign('business_code')->references('code')->on('businesses');
-		// 	$table->timestamps();
-        //     $table->softDeletes();
-		// });
         
 		// Schema::create(config('app.db-prefix', '').'settings', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';

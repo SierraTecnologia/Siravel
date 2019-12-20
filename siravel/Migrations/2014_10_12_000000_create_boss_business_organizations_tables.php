@@ -13,15 +13,6 @@ class CreateBossBusinessOrganizationsTables extends Migration
      */
     public function up()
     {
-    //     Schema::create('businesses', function (Blueprint $table) {
-    //         $table->increments('id');
-    //         $table->string('name');
-    //         $table->string('slug')->nullable();
-    //         $table->integer('status')->default(1);
-    //         $table->string('site')->nullable();
-    //         $table->timestamps();
-    //     });
-
         /**
          * Businesses
          */
@@ -47,7 +38,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
         
 		Schema::create(config('app.db-prefix', '').'businessables', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
-			$table->integer('businessable_id');
+			$table->string('businessable_id');
 			$table->string('businessable_type', 255);
 			$table->string('business_code');
             $table->foreign('business_code')->references('code')->on('businesses');
@@ -75,6 +66,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
             $table->timestamps();
         });
 
+        // @todo Resolver isso aqui
         Schema::create('business_collaborators', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();

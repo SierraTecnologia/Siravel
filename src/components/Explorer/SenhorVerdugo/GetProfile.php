@@ -6,11 +6,7 @@
 namespace SiInteractions\Explorer\SenhorVerdugo;
 
 use App\Models\User;
-use App\Models\Role;
-use Informate\Models\Entytys\About\Skill;
-use App\Models\Permission;
 use Illuminate\Support\Facades\DB;
-use Informate\Models\System\Integration;
 use Artisan;
 
 class GetProfile
