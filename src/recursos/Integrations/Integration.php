@@ -19,7 +19,7 @@ use SiWeapons\Integrations\Testlink\Testlink;
 use SiWeapons\Integrations\Zoho\Zoho;
 
 
-use Population\Models\Market\Relations\Integration as IntegrationModel;
+use Population\Models\Components\Integrations\Integration as IntegrationModel;
 
 class Integration
 {
@@ -79,22 +79,17 @@ class Integration
      */
     public static function getCodeForPrimaryKey()
     {
-        $id = static::$ID;
-        if (!$integration = IntegrationModel::where('id', $id)->first()) {
-            $integration = IntegrationModel::create([
-                'id' => $id,
-                'name' => get_called_class(),
-                'code' => static::class,
-            ]);
-        }
-
-
+        $integration = IntegrationModel::createIfNotExistAndReturn([
+            'id' => static::$ID,
+            'name' => get_called_class(),
+            'code' => static::class,
+        ]);
         return $integration->id;
     }
     
     public static function registerAll()
     {
-        $realPath = __DIR__;
+        $realPath = __DIR__.'/';
         
         collect(scandir($realPath))
             ->each(function ($item) use ($realPath) {
@@ -102,7 +97,7 @@ class Integration
                 dd($realPath . $item, __NAMESPACE__);
                 if (is_dir($realPath . $item)) {
                     $modelName = $item;
-                    IntegrationModel::create([
+                    IntegrationModel::createIfNotExistAndReturn([
                         'id' => $id,
                         'name' => get_called_class(),
                         'code' => static::class,
