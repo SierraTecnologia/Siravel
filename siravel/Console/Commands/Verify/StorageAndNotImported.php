@@ -8,7 +8,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\BladeCompiler;
 use DirectoryIterator;
 use Finder\Spider\Registrator\PhotoRegistrator;
-use Support\Manipulate\FileManipulate;
+use Support\ClassesHelpers\Traits\Manipulate\FileManipulate;
 
 class StorageAndNotImported extends Command
 {

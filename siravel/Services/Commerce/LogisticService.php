@@ -3,7 +3,7 @@
 namespace Siravel\Services;
 
 use Siravel\Services\StoreLogistics;
-use Siravel\Interfaces\LogisticServiceInterface;
+use Support\ClassesHelpers\Interfaces\LogisticServiceInterface;
 
 class LogisticService implements LogisticServiceInterface
 {

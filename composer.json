@@ -4,12 +4,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.0",
-        "elasticquent/elasticquent": "*",
         "overtrue/laravel-follow": "^1.1",
         "pdepend/pdepend": "*",
-        "php-http/guzzle6-adapter": "*",
         "pusher/pusher-php-server": "~3.4",
-        "waavi/sanitizer": "*",
         "cmgmyr/messenger": "^2.19",
         "bitwasp/bitcoin": "*",
         "sierratecnologia/casa": "dev-master",

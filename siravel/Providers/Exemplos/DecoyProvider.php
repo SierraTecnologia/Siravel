@@ -308,7 +308,7 @@ class DecoyProvider extends BaseServiceProvider
 
         // Build the Breadcrumbs store
         $this->app->singleton('decoy.breadcrumbs', function ($app) {
-            $breadcrumbs = new \Facilitador\Layout\Breadcrumbs();
+            $breadcrumbs = new \Support\Template\Layout\Breadcrumbs();
             $breadcrumbs->set($breadcrumbs->parseURL());
 
             return $breadcrumbs;
