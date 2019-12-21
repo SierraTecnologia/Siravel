@@ -9,6 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Pipedrive extends Integration
 {
+    public static $ID = 14;
     protected function getConnection($token = false)
     {
         $token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';

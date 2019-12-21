@@ -9,6 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class PhotoAcompanhante extends Integration
 {
+    public static $ID = 12;
     protected static $URL = 'https://www.photoacompanhantes.com/';
 
     protected static $PATHS_P1 = [

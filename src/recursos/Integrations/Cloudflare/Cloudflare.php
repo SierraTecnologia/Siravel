@@ -10,7 +10,7 @@ use SiWeapons\Integrations\Integration;
 
 class Cloudflare extends Integration
 {
-    public static $ID = 10;
+    public static $ID = 1;
 
     protected function getConnection($token = false)
     {

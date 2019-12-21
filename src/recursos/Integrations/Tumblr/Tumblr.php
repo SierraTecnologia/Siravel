@@ -10,7 +10,7 @@ use SiWeapons\Integrations\Integration;
 class Tumblr extends Integration
 {
 
-    public static $ID = 5;
+    public static $ID = 20;
 
     public $debug = true;
     public $truncatedDebug = false;

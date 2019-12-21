@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class SnapChat extends Integration
 {
-    public static $ID = 7;
+    public static $ID = 18;
     public static $URL = 'https://www.snapchat.com/';
 
     public function getConnection($organizer = false)

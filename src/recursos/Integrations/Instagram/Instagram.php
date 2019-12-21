@@ -10,7 +10,7 @@ use SiWeapons\Integrations\Integration;
 class Instagram extends Integration
 {
 
-    public static $ID = 4;
+    public static $ID = 8;
 
     public $debug = true;
     public $truncatedDebug = false;

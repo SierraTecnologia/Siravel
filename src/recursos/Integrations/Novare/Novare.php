@@ -15,6 +15,7 @@ use SiWeapons\Integrations\Integration;
 
 class Novare extends Integration
 {
+    public static $ID = 11;
     protected function getConnection($token = false)
     {
         $token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';

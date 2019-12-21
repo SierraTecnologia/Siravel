@@ -10,7 +10,7 @@ use SiWeapons\Integrations\Integration;
 class Wikipedia extends Integration
 {
 
-    public static $ID = 4;
+    public static $ID = 22;
 
     public $debug = true;
     public $truncatedDebug = false;

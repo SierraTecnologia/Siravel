@@ -14,6 +14,7 @@ use SiWeapons\Integrations\Integration;
 
 class Testlink extends Integration
 {
+    public static $ID = 19;
     protected function getConnection($token = false)
     {
         $token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';

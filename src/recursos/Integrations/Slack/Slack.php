@@ -9,8 +9,8 @@ use SiWeapons\Integrations\Integration;
 
 class Slack extends Integration
 {
-    public static $ID = 25;
-    public static $URL = 'https://www.Slack.com/';
+    public static $ID = 17;
+    public static $URL = 'https://www.slack.com/';
 
     public function getConnection($organizer = false)
     {

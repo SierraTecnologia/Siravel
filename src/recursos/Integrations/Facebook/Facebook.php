@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 class Facebook extends Integration
 {
 
-    public static $ID = 2;
+    public static $ID = 3;
     
     public function __construct()
     {

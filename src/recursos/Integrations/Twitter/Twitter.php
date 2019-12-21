@@ -15,7 +15,7 @@ use SiWeapons\Integrations\Integration;
 class Twitter extends Integration
 {
 
-    public static $ID = 6;
+    public static $ID = 21;
 
     public $debug = true;
     public $truncatedDebug = false;

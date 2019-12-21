@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Youtube extends Integration
 {
-    public static $ID = 6;
+    public static $ID = 24;
     public static $URL = 'https://www.youtube.com/';
 
     public function getConnection($organizer = false)

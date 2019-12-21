@@ -13,7 +13,7 @@ use JiraRestApi\Configuration\ArrayConfiguration;
 
 class Jira extends Integration
 {
-    public static $ID = 4;
+    public static $ID = 9;
 
     public $registersForPage = 10;
 

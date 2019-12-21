@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Zoho extends Integration
 {
-    public static $ID = 24;
+    public static $ID = 25;
     public static $URL = 'https://www.zoho.com/';
 
     public function getConnection($organizer = false)

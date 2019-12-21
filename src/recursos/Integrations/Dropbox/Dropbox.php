@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 class Dropbox extends Integration
 {
 
-    public static $ID = 1;
+    public static $ID = 2;
 
     public $debug = true;
     public $truncatedDebug = false;

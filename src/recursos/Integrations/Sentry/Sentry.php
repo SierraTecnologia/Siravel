@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Sentry extends Integration
 {
-    public static $ID = 3;
+    public static $ID = 16;
     public $url = 'sentry.io';
 
     protected function getConnection($token = false)

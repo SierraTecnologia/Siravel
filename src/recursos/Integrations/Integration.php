@@ -17,7 +17,7 @@ use SiWeapons\Integrations\Pipedrive\Pipedrive;
 use SiWeapons\Integrations\Sentry\Sentry;
 use SiWeapons\Integrations\Testlink\Testlink;
 use SiWeapons\Integrations\Zoho\Zoho;
-
+use Support\Discovers\Code\ParseClass;
 
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
 
@@ -36,6 +36,14 @@ class Integration
     {
         $this->_token = $token;
         $this->_connection = $this->getConnection($this->_token);
+    }
+
+    /**
+     * Recupera connecção com a integração
+     */
+    public static function getPrimary()
+    {
+        return static::$ID;
     }
 
     /**
@@ -94,13 +102,13 @@ class Integration
         collect(scandir($realPath))
             ->each(function ($item) use ($realPath) {
                 if (in_array($item, ['.', '..'])) return;
-                dd($realPath . $item, __NAMESPACE__);
                 if (is_dir($realPath . $item)) {
-                    $modelName = $item;
+                    $modelName = __NAMESPACE__.'\\'.$item.'\\'.$item;
+                   
                     IntegrationModel::createIfNotExistAndReturn([
-                        'id' => $id,
-                        'name' => get_called_class(),
-                        'code' => static::class,
+                        'id' =>  call_user_func(array($modelName, 'getPrimary')),
+                        'name' => ParseClass::getClassName($modelName),
+                        'code' => $modelName,
                     ]);
                 }
 

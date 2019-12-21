@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 class Googledrive extends Integration
 {
 
-    public static $ID = 3;
+    public static $ID = 7;
 
     public $debug = true;
     public $truncatedDebug = false;

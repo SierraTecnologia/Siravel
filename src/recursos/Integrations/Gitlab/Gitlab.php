@@ -9,6 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Gitlab extends Integration
 {
+    public static $ID = 4;
     protected function getConnection($token = false)
     {
         return \Gitlab\Client::create('http://git.yourdomain.com')

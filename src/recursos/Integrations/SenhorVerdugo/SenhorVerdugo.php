@@ -9,6 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class SenhorVerdugo extends Integration
 {
+    public static $ID = 15;
     public function getConnection($organizer = false)
     {
         $token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';

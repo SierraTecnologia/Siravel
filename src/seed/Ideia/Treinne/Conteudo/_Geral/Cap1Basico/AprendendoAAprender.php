@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Informate\Models\Entytys\Digital\Code\Project;
 
 use Population\Models\Identity\Actors\Business;
-use Population\Models\Market\Business\Collaborator;
+use Population\Models\Identity\Actors\Business\Collaborator;
 
 use Population\Models\Components\Integrations\Token;
 use Population\Models\Components\Integrations\TokenAccess;

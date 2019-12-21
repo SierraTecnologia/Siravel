@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Gmail extends Integration
 {
-    public static $ID = 6;
+    public static $ID = 5;
     public static $URL = 'https://www.gmail.com/';
 
     public function getConnection($organizer = false)

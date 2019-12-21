@@ -9,7 +9,7 @@ use SiWeapons\Integrations\Integration;
 
 class Google extends Integration
 {
-    public static $ID = 22;
+    public static $ID = 6;
     public static $URL = 'https://www.google.com/';
 
     public function getConnection($organizer = false)
