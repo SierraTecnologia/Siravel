@@ -9,8 +9,8 @@ use SiWeapons\Integrations\Integration;
 
 class ZohoMail extends Integration
 {
-    public static $ID = 26; // Proxima é 28, por causa do camera prive
-    public static $URL = 'https://www.zohoMail.com/';
+    public static $ID = 26; // Proxima é 29, por causa do camera prive e amazon
+    public static $URL = 'https://www.zohomail.com/';
 
     public function getConnection($organizer = false)
     {

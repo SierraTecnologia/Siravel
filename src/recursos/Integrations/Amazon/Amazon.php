@@ -1,14 +1,14 @@
 <?php
 
-namespace SiWeapons\Integrations\CameraPrive;
+namespace SiWeapons\Integrations\Amazon;
 
 use Illuminate\Database\Eloquent\Model;
 use Log;
 use SiWeapons\Integrations\Integration;
 
-class CameraPrive extends Integration
+class Amazon extends Integration
 {
-    public static $ID = 27;
+    public static $ID = 28;
 
     // protected function getConnection($token = false)
     // {
