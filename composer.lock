@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "deb73237009af02170102815761faca2",
+    "content-hash": "349b2d51e94112778d2a3cefd8679c76",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -14725,7 +14725,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "3362e560532cab39101dde9c9338f740369b4f5d"
+                "reference": "aba146a405d80af35cbe284d9500ba0d79198b5f"
             },
             "require": {
                 "php": "^7.3.0",
@@ -15320,7 +15320,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "f0c72599719374fbf3ca1c30ae0a9ce9fe168136"
+                "reference": "a34e2f31524373f700aefe027934c6e0e1d27312"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15662,6 +15662,55 @@
                 }
             ],
             "description": "Tracking",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
+            "name": "sierratecnologia/trainner",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../Trainner",
+                "reference": "dbe07aa9067af230d84179d05be041f0cb349b47"
+            },
+            "require": {
+                "php": "^7.3.0",
+                "sierratecnologia/casa": "dev-master",
+                "sierratecnologia/finder": "dev-master",
+                "sierratecnologia/gamer": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Trainner\\TrainnerProvider"
+                    ],
+                    "dont-discover": [
+                        "laravel/cashier"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Trainner\\": "src/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": [],
+                "post-create-project-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Rebello Sierra",
+                    "email": "contato@ricardosierra.com.br"
+                }
+            ],
+            "description": "trainner",
             "transport-options": {
                 "symlink": true
             }
@@ -21142,6 +21191,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "sierratecnologia/casa": 20,
+        "sierratecnologia/trainner": 20,
+        "sierratecnologia/finder": 20,
         "sierratecnologia/gamer": 20,
         "sierratecnologia/facilitador": 20,
         "ricardosierra/phpwhois": 20
