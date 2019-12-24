@@ -175,7 +175,9 @@ class SiravelProvider extends ServiceProvider
     {
         // Register external packages
         $this->setProviders();
-        $this->loadMigrationsFrom(__DIR__.'/Migrations');
+        
+        // Register Migrations
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
