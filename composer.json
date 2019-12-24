@@ -10,6 +10,8 @@
         "cmgmyr/messenger": "^2.19",
         "bitwasp/bitcoin": "*",
         "sierratecnologia/casa": "dev-master",
+        "sierratecnologia/trainner": "dev-master",
+        "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
         "ricardosierra/phpwhois": "dev-dev"
