@@ -14,13 +14,13 @@ class Git
     {
         return [
             Terminal::class,
-        ]
+        ];
     }
 
     public function related()
     {
         return [
             OpenSource::class,
-        ]
+        ];
     }
 }

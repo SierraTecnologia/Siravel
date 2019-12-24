@@ -1,5 +1,4 @@
 <?php
-<?php
 
 namespace SiObjects\Support\Trabalhando\Database;
 

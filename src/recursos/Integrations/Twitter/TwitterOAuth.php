@@ -1,7 +1,6 @@
 <?php
 
 namespace SiWeapons\Integrations\Twitter;
-<?php
 
 /*
  * Abraham Williams (abraham@abrah.am) http://abrah.am

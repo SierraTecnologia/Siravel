@@ -7,8 +7,6 @@
  * Copyright (c) 2017 Potsky, contributors
  * Licensed under the GPLv3 license.
  */
-?>
-<?php
 
 namespace SiInteractions\Worker\Analyser\Logging\Plugins;
 

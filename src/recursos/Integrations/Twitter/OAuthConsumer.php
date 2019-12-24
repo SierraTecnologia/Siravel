@@ -1,7 +1,7 @@
 <?php
 
 namespace SiWeapons\Integrations\Twitter;
-<?php
+
 // vim: foldmethod=marker
 
 /* Generic exception class

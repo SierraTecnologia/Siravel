@@ -32,8 +32,10 @@ class Actions
         return [
             'human' => [
 
-            ]
-            'bot' => 
+            ],
+            'bot' => [
+
+            ],
         ];
     }
     

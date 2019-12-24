@@ -19,8 +19,8 @@ class Production
 
             ],
             'actions' => [
-                Actions\Gravar::class
-                Actions\Search::class
+                Actions\Gravar::class,
+                Actions\Search::class,
             ],
             'actors'    => $this->actors,
             'scenes'   => $this->scenes,

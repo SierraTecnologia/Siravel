@@ -31,7 +31,7 @@ class Commit
         return [
             [
                 'history' => Escritor::class,
-                'necessidade' => new Escrever('livro')
+                'necessidade' => new Escrever('livro'),
                 'problem' => '',
             ]
         ];
@@ -42,7 +42,7 @@ class Commit
         return [
             [
                 'history' => Escritor::class,
-                'necessidade' => new Escrever('livro')
+                'necessidade' => new Escrever('livro'),
                 'problem' => '',
             ]
         ];
@@ -54,7 +54,7 @@ class Commit
         return [
             'commit' => [
                 'Uma cena acontendo na History',
-            ]
+            ],
             'branch' => [
                 
             ],

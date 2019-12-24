@@ -33,7 +33,10 @@ class CommitReport {
     {
         Commit::all();
 
-        $commitsDoDia = 
+        // @todo Fazer
+        $commitsDoDia = [
+
+        ];
     }
 
     /**

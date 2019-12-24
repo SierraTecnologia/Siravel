@@ -9,7 +9,10 @@ use SiWeapons\Integrations\Integration;
 
 class ZohoMail extends Integration
 {
-    public static $ID = 26; // Proxima é 29, por causa do camera prive e amazon
+    /**
+     * Proxima é 32, por causa do camera prive e amazon, BitBucket, GitHub, Trello
+     */
+    public static $ID = 26;
     public static $URL = 'https://www.zohomail.com/';
 
     public function getConnection($organizer = false)
