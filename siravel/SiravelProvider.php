@@ -26,7 +26,7 @@ class SiravelProvider extends ServiceProvider
         /**
          * SitecLibs
          */
-        \Casa\CasaProvider::class,
+        \Trainner\TrainnerProvider::class,
         \Gamer\GamerProvider::class,
         \Facilitador\FacilitadorProvider::class,
         
