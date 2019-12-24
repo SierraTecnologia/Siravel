@@ -65,14 +65,6 @@ class SiravelInstallCommand extends Command
         $this->info('Install after facilitador...');
         $this->call('facilitador:install');
 
-        $this->info('Publishing the Siravel assets, database, and config files');
-
-        // Publish only relevant resources on install
-        $tags = ['sitec', 'tools', 'siravel'];
-
-        $this->call('vendor:publish', ['--tag' => $tags]);
-        
-
         $this->info('Attempting to set Siravel User model as parent to App\Models\User');
         if (file_exists(app_path($this->userModelFile))) {
             $str = file_get_contents(app_path($this->userModelFile));
