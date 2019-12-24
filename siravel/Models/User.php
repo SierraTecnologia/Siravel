@@ -17,32 +17,11 @@ use Siravel\Support\Traits\Models\HasTask;
 
 class User extends \Facilitador\Models\User
 {
-    /**
-     * Get all of the points for the post.
-     */
-    public function points()
-    {
-        return $this->morphToMany('App\Models\Gamification\Point', 'pointable');
-    }
 
     public function social()
     {
         return $this->hasMany('App\Models\Social');
     }
     
-    /**
-     * Get all of the post's accounts.
-     */
-    public function accounts()
-    {
-        return $this->morphMany('Population\Models\Identity\Digital\Account', 'accountable');
-    }
 
-    /**
-     * Worker e Tarefas
-     */
-    public function workers()
-    {
-        return $this->morphMany('Population\Models\Identity\Rotina\Worker', 'workerable');
-    }
 }
