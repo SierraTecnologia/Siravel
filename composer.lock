@@ -3299,27 +3299,26 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.12",
+            "version": "2.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "a6255605af39f2db7f5cb62e672bd8a7bad8d208"
+                "reference": "834593d5900615639208417760ba6a17299e2497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a6255605af39f2db7f5cb62e672bd8a7bad8d208",
-                "reference": "a6255605af39f2db7f5cb62e672bd8a7bad8d208",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/834593d5900615639208417760ba6a17299e2497",
+                "reference": "834593d5900615639208417760ba6a17299e2497",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "^1.0.1",
-                "php": ">= 5.5"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "dominicsayers/isemail": "dev-master",
-                "phpunit/phpunit": "^4.8.35||^5.7||^6.0",
-                "satooshi/php-coveralls": "^1.0.1",
-                "symfony/phpunit-bridge": "^4.4@dev"
+                "dominicsayers/isemail": "^3.0.7",
+                "phpunit/phpunit": "^4.8.36|^7.5.15",
+                "satooshi/php-coveralls": "^1.0.1"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -3353,7 +3352,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-12-20T12:49:39+00:00"
+            "time": "2019-12-30T08:14:25+00:00"
         },
         {
             "name": "elasticquent/elasticquent",
@@ -3473,16 +3472,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7"
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
-                "reference": "6d893938171a817f4e9bc9e86f2da1e370b7bcd7",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
                 "shasum": ""
             },
             "require": {
@@ -3515,7 +3514,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-03-17T18:48:37+00:00"
+            "time": "2019-12-30T22:54:17+00:00"
         },
         {
             "name": "fgrosse/phpasn1",
@@ -6383,16 +6382,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.4.5",
+            "version": "v3.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "025f953b4902a9b0b172e6d5fe19d0809701259e"
+                "reference": "78516806b280b360996e514565bc0e1f8d3cc7e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/025f953b4902a9b0b172e6d5fe19d0809701259e",
-                "reference": "025f953b4902a9b0b172e6d5fe19d0809701259e",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/78516806b280b360996e514565bc0e1f8d3cc7e3",
+                "reference": "78516806b280b360996e514565bc0e1f8d3cc7e3",
                 "shasum": ""
             },
             "require": {
@@ -6448,7 +6447,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-12-23T19:45:03+00:00"
+            "time": "2019-12-30T22:01:12+00:00"
         },
         {
             "name": "laravel/passport",
@@ -9734,16 +9733,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.12.1",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "063cae9b3a7323579063e7037720f5b52b56c178"
+                "reference": "3b953109fdfc821c1979bc829c8b7421721fef82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/063cae9b3a7323579063e7037720f5b52b56c178",
-                "reference": "063cae9b3a7323579063e7037720f5b52b56c178",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/3b953109fdfc821c1979bc829c8b7421721fef82",
+                "reference": "3b953109fdfc821c1979bc829c8b7421721fef82",
                 "shasum": ""
             },
             "require": {
@@ -9812,7 +9811,7 @@
                 "secret-key cryptography",
                 "side-channel resistant"
             ],
-            "time": "2019-11-07T17:07:24+00:00"
+            "time": "2019-12-30T03:11:08+00:00"
         },
         {
             "name": "patchwork/utf8",
@@ -14676,7 +14675,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "077145c4f978e4678683c7cffe5b4717bc038861"
+                "reference": "6df51b6d377fdd9a6d599324cfbad093b453b850"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -14727,7 +14726,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "4b24a8778a205339bf1e6415d4148dd941e0441e"
+                "reference": "2be9f78913d91938ac9e94887d59fdd11c34919d"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14983,7 +14982,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "d2e10f0373139647ee94dfb719b1b354d9aac1b5"
+                "reference": "6ccf099caaf3fcebebc567144a37e3b7e0921341"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15097,7 +15096,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "1fabafe21b35110c689b2ff747b452d06cc68295"
+                "reference": "59db0c62f3611f07fd8aa65e4d79a91d5c146d2c"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15322,7 +15321,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "dcdf376f2a7acff8a0e4a484eb322c8a7c90c82c"
+                "reference": "00839fa0c6c1239a14a778688b4638e64835fe72"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15361,7 +15360,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "d32402b9c69dc3a2a4228d4664c9ee0941cf5c0b"
+                "reference": "b7955e125d79f69bc78083027c09a2c6246b8dc7"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -15406,7 +15405,7 @@
             "dist": {
                 "type": "path",
                 "url": "../LaravelSupport",
-                "reference": "23bf284aa50d50ef1f44dc0dc578a9e4fe8315b2"
+                "reference": "828034e331b2eab139bfa929e82a45aef82d1611"
             },
             "require": {
                 "barryvdh/laravel-debugbar": "*",
@@ -15512,7 +15511,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-                "reference": "90a909c63320e275221787db275f7b712bc2afeb"
+                "reference": "f0871cb48068db822f53e2def680160345c03467"
             },
             "require": {
                 "doctrine/dbal": ">=2.5",
@@ -15569,7 +15568,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "b0972e58e3567341824b477ff4398e2eb2df1fe5"
+                "reference": "579cd3b530b074d1b7f7c1a8509f0968805d1990"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -15606,7 +15605,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "012e5106db6dcb7a558785b793bcaa1e34b41efa"
+                "reference": "90891591a8cf435ef9a3b53b0a4e9d874f9be697"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -15674,7 +15673,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "38387997c64e827254ea9fedbf636859d193b1e4"
+                "reference": "af1a9ce81b7b8b73ccbc8691aee7827e47805b10"
             },
             "require": {
                 "php": "^7.3.0",
