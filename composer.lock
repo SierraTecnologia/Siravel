@@ -2852,16 +2852,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.10.0",
+            "version": "v2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "0c9a646775ef549eb0a213a4f9bd4381d9b4d934"
+                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0c9a646775ef549eb0a213a4f9bd4381d9b4d934",
-                "reference": "0c9a646775ef549eb0a213a4f9bd4381d9b4d934",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
+                "reference": "c2b8e6e82732a64ecde1cddf9e1e06cb8556e3d8",
                 "shasum": ""
             },
             "require": {
@@ -2940,7 +2940,7 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-            "time": "2019-11-03T16:50:43+00:00"
+            "time": "2020-01-04T12:56:21+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -14677,7 +14677,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "1a77787f79f3dad53403f3a32a969dfa7d430731"
+                "reference": "b4c930c3686b893ee2e6350837b2b7b02b419d9b"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -14728,7 +14728,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "c145241193eaa0ecf66aba8558d20abec36a3ae8"
+                "reference": "5f17e7f16afa32ee1803a07ee581a8eb7a2f1535"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14984,7 +14984,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "b25f66a9b0b558b8a2ea0f3ff3d72b2e43118386"
+                "reference": "c5a99a798f4d454649022c8a6d3d4fa209a85427"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15098,7 +15098,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "591a27cb9d60dbb3d21fa5026046499b4537ed4d"
+                "reference": "19d7872b5b804f9b710e27f1c2eef1e26b13ea6a"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15323,7 +15323,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "05e426b8eb8802259150f06ada23f72016cbff0c"
+                "reference": "cffde1ef281a92f02a72863f63bf823ef793c307"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15362,7 +15362,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "83445f26dd49db193a26cb998af7f2dd34b46db2"
+                "reference": "f849233ae6667f28b7898cc5431c797394791194"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -15407,7 +15407,7 @@
             "dist": {
                 "type": "path",
                 "url": "../LaravelSupport",
-                "reference": "f782e7a59ed03f3b35bc98b6f9ee6e27e2f9cfd4"
+                "reference": "37d5fbcd08f34b7a894c397402da6f399eb18453"
             },
             "require": {
                 "barryvdh/laravel-debugbar": "*",
@@ -15513,7 +15513,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-                "reference": "f0871cb48068db822f53e2def680160345c03467"
+                "reference": "53074c6a34a28740bc4dc143419a52fc60387b99"
             },
             "require": {
                 "doctrine/dbal": ">=2.5",
@@ -15570,7 +15570,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "ef0939bf85fe8e7cc989a6de370dd34f1ccb1c99"
+                "reference": "0d9fd7175c5478bab6995a02179e6cd0454a2d9f"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -15607,7 +15607,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "e695d91d6fc4d7fd898ca8f291e6f4cc1297cb13"
+                "reference": "d37bdba48b45ae7a420a75ca94227227a9f8bc3c"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -15675,7 +15675,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "2f0a2985de6a6a63a3ce106a9ef195d9245084e1"
+                "reference": "f012f82dba14f58b0354457144221caf3119f3da"
             },
             "require": {
                 "php": "^7.3.0",
