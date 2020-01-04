@@ -210,16 +210,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.130.2",
+            "version": "3.130.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "35289d9dd5184dd1106e49f99ef5074a84635b5c"
+                "reference": "916356edb5c30fa564d02de94bde51a9c0bb4469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/35289d9dd5184dd1106e49f99ef5074a84635b5c",
-                "reference": "35289d9dd5184dd1106e49f99ef5074a84635b5c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/916356edb5c30fa564d02de94bde51a9c0bb4469",
+                "reference": "916356edb5c30fa564d02de94bde51a9c0bb4469",
                 "shasum": ""
             },
             "require": {
@@ -290,7 +290,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-12-23T19:12:28+00:00"
+            "time": "2020-01-02T19:13:50+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4475,16 +4475,16 @@
         },
         {
             "name": "graham-campbell/manager",
-            "version": "v4.4.0",
+            "version": "v4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
-                "reference": "54ade447186d47fc8d64fb4163c3ed0f7210c9e8"
+                "reference": "cc229cb30dd3499973dacc17078addd1f6cf1d04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/54ade447186d47fc8d64fb4163c3ed0f7210c9e8",
-                "reference": "54ade447186d47fc8d64fb4163c3ed0f7210c9e8",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/cc229cb30dd3499973dacc17078addd1f6cf1d04",
+                "reference": "cc229cb30dd3499973dacc17078addd1f6cf1d04",
                 "shasum": ""
             },
             "require": {
@@ -4531,7 +4531,7 @@
                 "laravel",
                 "manager"
             ],
-            "time": "2019-12-28T10:42:49+00:00"
+            "time": "2020-01-02T15:51:54+00:00"
         },
         {
             "name": "graham-campbell/markdown",
@@ -8042,16 +8042,16 @@
         },
         {
             "name": "m4tthumphrey/php-gitlab-api",
-            "version": "9.15.0",
+            "version": "9.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/m4tthumphrey/php-gitlab-api.git",
-                "reference": "0b2fc89046bc0cecb1a72728dc6767a28e32705c"
+                "reference": "b6684dcc85e465f2e39be2ccea2e708994a32a95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/m4tthumphrey/php-gitlab-api/zipball/0b2fc89046bc0cecb1a72728dc6767a28e32705c",
-                "reference": "0b2fc89046bc0cecb1a72728dc6767a28e32705c",
+                "url": "https://api.github.com/repos/m4tthumphrey/php-gitlab-api/zipball/b6684dcc85e465f2e39be2ccea2e708994a32a95",
+                "reference": "b6684dcc85e465f2e39be2ccea2e708994a32a95",
                 "shasum": ""
             },
             "require": {
@@ -8068,12 +8068,12 @@
                 "guzzlehttp/psr7": "^1.2",
                 "php-http/guzzle6-adapter": "^1.0 || ^2.0",
                 "php-http/mock-client": "^1.2",
-                "phpunit/phpunit": "^5.7.27 || ^6.5"
+                "phpunit/phpunit": "^5.7.27 || ^7.5.15"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.14-dev"
+                    "dev-master": "9.15-dev"
                 }
             },
             "autoload": {
@@ -8106,7 +8106,7 @@
                 "api",
                 "gitlab"
             ],
-            "time": "2019-11-26T11:19:29+00:00"
+            "time": "2020-01-02T13:40:11+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -9036,23 +9036,25 @@
         },
         {
             "name": "mtdowling/jmespath.php",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jmespath/jmespath.php.git",
-                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac"
+                "reference": "52168cb9472de06979613d365c7f1ab8798be895"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
-                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/52168cb9472de06979613d365c7f1ab8798be895",
+                "reference": "52168cb9472de06979613d365c7f1ab8798be895",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.4.0",
+                "symfony/polyfill-mbstring": "^1.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "composer/xdebug-handler": "^1.2",
+                "phpunit/phpunit": "^4.8.36|^7.5.15"
             },
             "bin": [
                 "bin/jp.php"
@@ -9060,7 +9062,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -9087,7 +9089,7 @@
                 "json",
                 "jsonpath"
             ],
-            "time": "2016-12-03T22:08:25+00:00"
+            "time": "2019-12-30T18:03:34+00:00"
         },
         {
             "name": "mthaml/mthaml",
@@ -10235,16 +10237,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "2e0ad94833ec8473280454590a9011a0cd2dfc56"
+                "reference": "82dbef649ccffd8e4f22e1953c3a5265992b83c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/2e0ad94833ec8473280454590a9011a0cd2dfc56",
-                "reference": "2e0ad94833ec8473280454590a9011a0cd2dfc56",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/82dbef649ccffd8e4f22e1953c3a5265992b83c0",
+                "reference": "82dbef649ccffd8e4f22e1953c3a5265992b83c0",
                 "shasum": ""
             },
             "require": {
@@ -10296,7 +10298,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2019-12-27T19:51:10+00:00"
+            "time": "2020-01-03T11:25:47+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -14675,7 +14677,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "4c2ed1f4f0a6c48278143d60f74d143ec49f4652"
+                "reference": "dbd84bf8c397ce58a7085e68050a4004f5773617"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -14726,7 +14728,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "fb31a15b60aceab5e0bd51a72e708f82b10f8c51"
+                "reference": "d9eefa4859f3c9a2caaaf3463e980e556801a731"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14982,7 +14984,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "27da18fc8db393697a7b6c287459db57e9cd9f31"
+                "reference": "ab5790b84307b941d55d499bbf086b1d8210dcea"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15096,7 +15098,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "a730752aa4e353f5576e16545c84cc93c66d3aa2"
+                "reference": "947378a9ba24005e7c72ab699bcae704eb90c22c"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15321,7 +15323,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "94e0b5bb47ebadd1f543c403117c9abb69002b75"
+                "reference": "c859686a5aa3b547d3c463f271132b8f3aa64dec"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15360,7 +15362,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "d03bff7b787cce047f9732af13bc74eb00f4a8c1"
+                "reference": "5676696ecaf7f618d84712e2ab8c1c1c18d19bef"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -15568,7 +15570,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "0ae6a03e110ec492c9f1f2599c0d44d670a12223"
+                "reference": "d8da5cddb8c94f0979edc569de6b1a121710bcc7"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master"
@@ -15605,7 +15607,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "ebe79c45ad6467cccff13420510e8edb078fef4a"
+                "reference": "af78f519a35d71eb4e9e0a4ca60e58016f298911"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -15673,7 +15675,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "29b20e19c5f35ea246243b5b570962ab1f8ddafd"
+                "reference": "2a74877496ab596d3a2d44f7be946143f8b1530b"
             },
             "require": {
                 "php": "^7.3.0",
@@ -20524,6 +20526,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-11-13T19:16:13+00:00"
         },
         {
@@ -20569,6 +20572,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2019-09-05T20:03:20+00:00"
         },
         {
@@ -20620,6 +20624,7 @@
                 "math",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-math",
             "time": "2018-12-04T15:45:09+00:00"
         },
         {
@@ -20666,6 +20671,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         },
         {
