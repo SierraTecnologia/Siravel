@@ -2,7 +2,6 @@
 
 namespace SiWeapons\Saas;
 
-use Illuminate\Database\Eloquent\Model;
 use Log;
 
 class Service
