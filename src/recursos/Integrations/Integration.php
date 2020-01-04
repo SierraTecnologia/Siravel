@@ -17,7 +17,7 @@ use SiWeapons\Integrations\Pipedrive\Pipedrive;
 use SiWeapons\Integrations\Sentry\Sentry;
 use SiWeapons\Integrations\Testlink\Testlink;
 use SiWeapons\Integrations\Zoho\Zoho;
-use Support\Discovers\Code\ParseClass;
+use Support\Coder\Parser\ParseClass;
 
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
 
