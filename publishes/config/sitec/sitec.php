@@ -3,7 +3,7 @@
 return [
 
     'models' => [
-        // 'comments' => \App\Models\Comment::class,
+        // 'comments' => \Informate\Models\Comment::class,
         // 'categorys' => \App\Models\Category::class,
         // 'weapons' => \Informate\Models\Entytys\Fisicos\Weapon::class,
         // 'users' => \App\Models\User::class,
