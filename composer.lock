@@ -14677,7 +14677,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "dbd84bf8c397ce58a7085e68050a4004f5773617"
+                "reference": "8c9f46b2825125f5c01d83acca66774c36ec65b3"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -14728,7 +14728,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "4f4bf71b49bb70e1dc33cf67731afc37b312b143"
+                "reference": "5a40b398c7b4c4136699c538d0b0f0851b531d46"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14984,7 +14984,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "3707754b45ea5f6e5e5c1c48c45200ac7c94448f"
+                "reference": "84b2dd32df409d8276b27d0667e37df3e71bc52c"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15098,7 +15098,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "947378a9ba24005e7c72ab699bcae704eb90c22c"
+                "reference": "343dc5d7a7ec0db6d2f5b544cca53b7829c66e00"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15323,7 +15323,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "a1f653c74dcf90c2496cc3d234b4e14fc37bef5b"
+                "reference": "630ab789d0895ae451ceb1824871c1ba128f0d4d"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15607,7 +15607,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "af78f519a35d71eb4e9e0a4ca60e58016f298911"
+                "reference": "24f6891eee1990bd45fb3fb5473c0c0895345597"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -15675,7 +15675,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "73266bb1711237a22f100fef9cabee12cebdbf42"
+                "reference": "450638437bbe7025b2cfcd77d4240d5c538801ff"
             },
             "require": {
                 "php": "^7.3.0",
