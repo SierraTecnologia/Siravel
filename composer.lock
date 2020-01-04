@@ -14728,7 +14728,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "d9eefa4859f3c9a2caaaf3463e980e556801a731"
+                "reference": "4f4bf71b49bb70e1dc33cf67731afc37b312b143"
             },
             "require": {
                 "php": "^7.3.0",
@@ -14984,7 +14984,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "ab5790b84307b941d55d499bbf086b1d8210dcea"
+                "reference": "3707754b45ea5f6e5e5c1c48c45200ac7c94448f"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
@@ -15323,7 +15323,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "c859686a5aa3b547d3c463f271132b8f3aa64dec"
+                "reference": "a1f653c74dcf90c2496cc3d234b4e14fc37bef5b"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -15675,7 +15675,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "2a74877496ab596d3a2d44f7be946143f8b1530b"
+                "reference": "73266bb1711237a22f100fef9cabee12cebdbf42"
             },
             "require": {
                 "php": "^7.3.0",
