@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Cms;
 use Config;
 use CryptoService;
-use Informate\Models\Entytys\Digital\Midia\Imagen as Image;
+use Population\Models\Entytys\Digital\Midia\Imagen as Image;
 use Illuminate\Support\Facades\Schema;
 
 class LangRepository

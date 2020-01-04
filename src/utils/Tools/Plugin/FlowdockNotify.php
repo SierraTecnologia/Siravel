@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use Informate\Models\Entytys\Digital\Infra\Ci\Build;
+use Population\Models\Entytys\Digital\Infra\Ci\Build;
 use FlowdockClient\Api\Push\Push;
 use FlowdockClient\Api\Push\TeamInboxMessage;
 use SiUtils\Tools\Plugin;

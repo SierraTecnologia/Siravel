@@ -2,7 +2,7 @@
 
 namespace SiUtils\Helper;
 
-use Informate\Models\Entytys\Digital\Infra\Ci\Build as BaseBuild;
+use Population\Models\Entytys\Digital\Infra\Ci\Build as BaseBuild;
 
 /**
  * The BuildInterpolator class replaces variables in a string with build-specific information.

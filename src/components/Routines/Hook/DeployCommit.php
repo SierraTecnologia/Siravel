@@ -8,7 +8,7 @@ namespace SiInteractions\Routines\Hook;
 use App\Actions\Action;
 use App\Actions\ActionCollection;
 
-use Informate\Models\Entytys\Digital\Code\Commit;
+use Population\Models\Entytys\Digital\Code\Commit;
 
 class DeployCommit extends ActionCollection
 {

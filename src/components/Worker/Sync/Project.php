@@ -6,10 +6,10 @@
 namespace SiInteractions\Worker\Sync;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Informate\Models\Entytys\Digital\Infra\Token;
-use Informate\Models\Entytys\Digital\Infra\SshKey;
+use Population\Models\Entytys\Digital\Infra\Token;
+use Population\Models\Entytys\Digital\Infra\SshKey;
 use SiUtils\Tools\Programs\Git\Admin as GitManiputor;
-use Informate\Models\Entytys\Digital\Code\Project as ProjectModel;
+use Population\Models\Entytys\Digital\Code\Project as ProjectModel;
 class Project
 {
 

@@ -127,7 +127,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'scanDomain',
-            \Informate\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiObjects\Components\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'whoisDomain',
-            \Informate\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiObjects\Components\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'backupDatabase',
-            \Informate\Models\Entytys\Digital\Infra\DatabaseCollection::class,
+            \Population\Models\Entytys\Digital\Infra\DatabaseCollection::class,
             \SiObjects\Components\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'searchLog',
-            \Informate\Models\Entytys\Digital\Infra\Computer::class,
+            \Population\Models\Entytys\Digital\Infra\Computer::class,
             \SiObjects\Components\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'analyseComit',
-            \Informate\Models\Entytys\Digital\Code\Commit::class,
+            \Population\Models\Entytys\Digital\Code\Commit::class,
             \SiObjects\Components\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'deployCommit',
-            \Informate\Models\Entytys\Digital\Code\Commit::class,
+            \Population\Models\Entytys\Digital\Code\Commit::class,
             \SiObjects\Components\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Component
          */
         $components[] = self::insertComponent(
             'syncProject',
-            \Informate\Models\Entytys\Digital\Code\Project::class,
+            \Population\Models\Entytys\Digital\Code\Project::class,
             \SiObjects\Components\Worker\Sync\Project::class,
             self::$hook
         );

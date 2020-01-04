@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Midia;
 
 use App\Models\Blog\Article;
-use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
+use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
 use DB;
 
 class HomeController extends Controller {

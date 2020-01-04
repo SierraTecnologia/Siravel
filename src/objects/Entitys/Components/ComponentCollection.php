@@ -5,7 +5,7 @@
 
 namespace SiObjects\Entitys\Components;
 
-use Informate\Models\Entytys\Digital\Bot\Runner;
+use Population\Models\Entytys\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 

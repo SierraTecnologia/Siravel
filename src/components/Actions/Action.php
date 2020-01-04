@@ -127,7 +127,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'scanDomain',
-            \Informate\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiInteractions\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'whoisDomain',
-            \Informate\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
             \SiInteractions\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'backupDatabase',
-            \Informate\Models\Entytys\Digital\Infra\DatabaseCollection::class,
+            \Population\Models\Entytys\Digital\Infra\DatabaseCollection::class,
             \SiInteractions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'searchLog',
-            \Informate\Models\Entytys\Digital\Infra\Computer::class,
+            \Population\Models\Entytys\Digital\Infra\Computer::class,
             \SiInteractions\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'analyseComit',
-            \Informate\Models\Entytys\Digital\Code\Commit::class,
+            \Population\Models\Entytys\Digital\Code\Commit::class,
             \SiInteractions\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'deployCommit',
-            \Informate\Models\Entytys\Digital\Code\Commit::class,
+            \Population\Models\Entytys\Digital\Code\Commit::class,
             \SiInteractions\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Action
          */
         $actions[] = self::insertAction(
             'syncProject',
-            \Informate\Models\Entytys\Digital\Code\Project::class,
+            \Population\Models\Entytys\Digital\Code\Project::class,
             \SiInteractions\Worker\Sync\Project::class,
             self::$hook
         );

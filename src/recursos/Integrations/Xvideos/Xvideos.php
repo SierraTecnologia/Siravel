@@ -3,7 +3,7 @@
 namespace SiWeapons\Integrations\Xvideos;
 
 use Log;
-// use Informate\Models\Entytys\Digital\Midia\Video;
+// use Population\Models\Entytys\Digital\Midia\Video;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 

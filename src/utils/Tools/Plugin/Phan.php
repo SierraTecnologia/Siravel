@@ -3,9 +3,9 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use Informate\Models\Entytys\Digital\Infra\Ci\Build;
+use Population\Models\Entytys\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
-use Informate\Models\Entytys\Digital\Infra\Ci\BuildError;
+use Population\Models\Entytys\Digital\Infra\Ci\BuildError;
 
 /**
  * Launch Phan.

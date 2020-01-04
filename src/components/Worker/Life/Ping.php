@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Worker\Life;
 
-use Informate\Models\Entytys\Digital\Infra\Domain;
-use Informate\Models\Entytys\Digital\Infra\Url;
-use Informate\Models\Entytys\Digital\Infra\UrlLink;
+use Population\Models\Entytys\Digital\Infra\Domain;
+use Population\Models\Entytys\Digital\Infra\Url;
+use Population\Models\Entytys\Digital\Infra\UrlLink;
 
 /**
  * Ping Class

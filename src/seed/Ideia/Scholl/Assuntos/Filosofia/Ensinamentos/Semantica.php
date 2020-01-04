@@ -5,7 +5,7 @@
 
 namespace SiSeed\Ideia\Scholl\Assuntos\Filosofia\Ensinamentos;
 
-use Informate\Models\Entytys\Digital\Bot\Runner;
+use Population\Models\Entytys\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 

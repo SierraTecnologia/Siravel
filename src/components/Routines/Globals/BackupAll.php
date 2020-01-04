@@ -11,8 +11,8 @@ use App\Actions\Action;
 use App\Actions\ActionCollection;
 use SiInteractions\Worker\Sync\Database\BackupCollection;
 
-use Informate\Models\Entytys\Digital\Infra\Database;
-use Informate\Models\Entytys\Digital\Infra\DatabaseCollection;
+use Population\Models\Entytys\Digital\Infra\Database;
+use Population\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class BackupAll extends ActionCollection
 {

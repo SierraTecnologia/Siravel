@@ -2,9 +2,9 @@
 
 namespace SiInteractions\Worker\Explorer;
 
-use Informate\Models\Entytys\Digital\Infra\Domain;
-use Informate\Models\Entytys\Digital\Infra\SubDomain;
-use Informate\Models\Entytys\Digital\Infra\DomainLink;
+use Population\Models\Entytys\Digital\Infra\Domain;
+use Population\Models\Entytys\Digital\Infra\SubDomain;
+use Population\Models\Entytys\Digital\Infra\DomainLink;
 
 /**
  * Spider Class

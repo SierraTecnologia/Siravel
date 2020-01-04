@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Features\Girl;
 
 use App\Http\Controllers\AdminController;
-use Informate\Models\Entytys\Digital\Midia\Photo;
-use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
+use Population\Models\Entytys\Digital\Midia\Photo;
+use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
 use App\Models\System\Language;
 use Siravel\Http\Requests\Admin\PhotoRequest;
 use Siravel\Http\Requests\Admin\DeleteRequest;

@@ -5,15 +5,15 @@ namespace SiWeapons\Integrations\Jira;
 use Log;
 use App\Models\User;
 
-use Informate\Models\Entytys\Digital\Code\CodeIssueLink;
+use Population\Models\Entytys\Digital\Code\CodeIssueLink;
 use Informate\Models\Actions\Calendar\Spent;
 use Informate\Models\Actions\Calendar\Estimate;
 use Informate\Models\Actions\Calendar\Event;
 
-use Informate\Models\Entytys\Digital\Code\Release;
-use Informate\Models\Entytys\Digital\Code\Issue;
-use Informate\Models\Entytys\Digital\Code\Field as FieldModel;
-use Informate\Models\Entytys\Digital\Code\Project as ProjectModel;
+use Population\Models\Entytys\Digital\Code\Release;
+use Population\Models\Entytys\Digital\Code\Issue;
+use Population\Models\Entytys\Digital\Code\Field as FieldModel;
+use Population\Models\Entytys\Digital\Code\Project as ProjectModel;
 
 use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;

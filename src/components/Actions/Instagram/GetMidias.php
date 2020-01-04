@@ -5,7 +5,7 @@ namespace SiInteractions\Actions\Instagram;
 use Informate\Models\Actions\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
-use Informate\Models\Entytys\Digital\Midia\Imagen as Image;
+use Population\Models\Entytys\Digital\Midia\Imagen as Image;
 
 class GetMidias extends Instagram
 {
