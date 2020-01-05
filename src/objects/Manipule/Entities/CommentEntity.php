@@ -19,8 +19,12 @@ final class CommentEntity extends AbstractEntity
      */
     public function __construct(array $attributes)
     {
-        $this->setId($attributes['id'] ?? null);
-        $this->setValue($attributes['value'] ?? null);
+        if (!is_null($attributes['id'])) {
+            $this->setId($attributes['id']);
+        }
+        if (!is_null($attributes['value'])) {
+            $this->setValue($attributes['value']);
+        }
     }
 
     /**
