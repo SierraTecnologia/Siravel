@@ -2,7 +2,7 @@
 
 return [
 
-    'user_model' => App\Models\User::class,
+    'user_model' => config('sitec.core.models.user', \App\Models\User::class),
 
     'message_model' => Population\Models\Features\Messenger\Message::class,
 
