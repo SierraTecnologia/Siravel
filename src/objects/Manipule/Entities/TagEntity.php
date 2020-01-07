@@ -19,7 +19,9 @@ final class TagEntity extends AbstractEntity
      */
     public function __construct(array $attributes)
     {
-        $this->setId($attributes['id'] ?? null);
+        if (!is_null($attributes['id'])) {
+            $this->setId($attributes['id']);
+        }
         $this->setValue($attributes['value'] ?? null);
     }
 

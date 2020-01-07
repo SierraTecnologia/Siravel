@@ -31,7 +31,9 @@ final class UserEntity extends AbstractEntity
      */
     public function __construct(array $attributes)
     {
-        $this->setId($attributes['id'] ?? null);
+        if (!is_null($attributes['id'])) {
+            $this->setId($attributes['id']);
+        }
         $this->setName($attributes['name'] ?? null);
         $this->setEmail($attributes['email'] ?? null);
         $this->setPasswordHash($attributes['password_hash'] ?? null);

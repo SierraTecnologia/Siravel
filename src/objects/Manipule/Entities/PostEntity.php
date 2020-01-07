@@ -28,7 +28,9 @@ final class PostEntity extends AbstractEntity
      */
     public function __construct(array $attributes)
     {
-        $this->setId($attributes['id'] ?? null);
+        if (!is_null($attributes['id'])) {
+            $this->setId($attributes['id']);
+        }
         $this->setCreatedByUserId($attributes['created_by_user_id'] ?? null);
         $this->setDescription($attributes['description'] ?? null);
         $this->setPhoto(new PhotoEntity($attributes['photo'] ?? null));
