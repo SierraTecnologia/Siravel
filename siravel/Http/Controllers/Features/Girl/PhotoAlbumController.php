@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Girl;
 
 use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
 use Population\Models\Entytys\Digital\Midia\Photo;
-use App\Models\System\Language;
+use RicardoSierra\Translation\Models\Language;
 use App\Http\Controllers\GirlController;
 use Siravel\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;

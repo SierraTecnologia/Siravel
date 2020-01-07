@@ -26,7 +26,7 @@ class NewUsers extends Value
 
 
 
-        return $this->count($request, User::class);
+        return $this->count($request, config('sitec.core.models.user', \App\Models\User::class));
     }
 
     /**

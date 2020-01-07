@@ -53,7 +53,7 @@ class Role extends \Facilitador\Models\Role
     //  */
     // public function users()
     // {
-    //     return $this->belongsToMany(User::class);
+    //     return $this->belongsToMany(config('sitec.core.models.user', \App\Models\User::class));
     // }
 
     // /**

@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Features\Girl;
 use App\Http\Controllers\AdminController;
 use Population\Models\Entytys\Digital\Midia\Photo;
 use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
-use App\Models\System\Language;
+use RicardoSierra\Translation\Models\Language;
 use Siravel\Http\Requests\Admin\PhotoRequest;
 use Siravel\Http\Requests\Admin\DeleteRequest;
 use Siravel\Http\Requests\Admin\ReorderRequest;

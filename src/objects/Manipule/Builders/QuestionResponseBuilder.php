@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @package SiObjects\Manipule\Builders
  */
-class QuestionBuilder extends Builder
+class QuestionResponseBuilder extends Builder
 {
     /**
      * @var string

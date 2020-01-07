@@ -8,7 +8,6 @@ namespace SiSeed\Ideia\Treinne\Conteudo\_Referencias;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Gateway;
-use App\Models\FraudAnalysi;
 use App\Models\TrackingType;
 use Illuminate\Support\Facades\DB;
 
