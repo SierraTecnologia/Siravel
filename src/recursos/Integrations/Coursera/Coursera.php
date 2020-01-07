@@ -10,7 +10,7 @@ use SiWeapons\Integrations\Integration;
 
 class Coursera extends Integration
 {
-    public static $ID = 1;
+    public static $ID = 32;
 
     protected function getConnection($token = false)
     {
