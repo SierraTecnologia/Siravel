@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Integrations\Cloudflare;
+namespace SiWeapons\Integrations\Coursera;
 
 use Illuminate\Database\Eloquent\Model;
 use Log;

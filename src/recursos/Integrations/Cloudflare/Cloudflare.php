@@ -8,7 +8,7 @@ use Cloudflare\API\Auth\APIKey;
 use App\Models\User;
 use SiWeapons\Integrations\Integration;
 
-class Coursera extends Integration
+class Cloudflare extends Integration
 {
     public static $ID = 1;
 
