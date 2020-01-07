@@ -22,7 +22,7 @@ return [
         |
         */
 
-        'country' => Informate\Models\System\Country::class,
+        'country' => RicardoSierra\Translation\Models\Country::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ return [
         |
         */
 
-        'locale' => Informate\Models\System\Locale::class,
+        'locale' => RicardoSierra\Translation\Models\Locale::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
         |
         */
 
-        'language' => Informate\Models\System\Language::class,
+        'language' => RicardoSierra\Translation\Models\Language::class,
 
         /*
         |--------------------------------------------------------------------------
