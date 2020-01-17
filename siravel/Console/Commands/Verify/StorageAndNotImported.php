@@ -70,9 +70,9 @@ class StorageAndNotImported extends Command
 			});
 		});
 
-        // (new \SiInteractions\Routines\Globals\BackupAll)->run();
-		(new \SiInteractions\Routines\Globals\ImportTokens)->run();
+        // (new \Finder\Routines\Globals\BackupAll)->run();
+		(new \Finder\Routines\Globals\ImportTokens)->run();
 		
-        (new \SiInteractions\Routines\Globals\SpiderAllDomains)->run();
+        (new \Finder\Routines\Globals\SpiderAllDomains)->run();
 	}
 }

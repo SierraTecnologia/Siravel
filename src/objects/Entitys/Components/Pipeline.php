@@ -2,8 +2,8 @@
 
 namespace SiObjects\Entitys\Components;
 
-use SiInteractions\Routines\Contracts\Registrator;
-use SiInteractions\Routines\Contracts\Notificator;
+use Finder\Routines\Contracts\Registrator;
+use Finder\Routines\Contracts\Notificator;
 
 /**
  * Class Pipeline

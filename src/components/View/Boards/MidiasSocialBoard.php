@@ -16,9 +16,9 @@ use App\Editores\TuiImageEditor;
 
 
 
-use SiInteractions\Routines\ForceNewRelations;
-use SiInteractions\Routines\GetNewData;
-use SiInteractions\Routines\SendNewData;
+use Finder\Routines\ForceNewRelations;
+use Finder\Routines\GetNewData;
+use Finder\Routines\SendNewData;
 
 use App\Board;
 use SiObjects\Components\Comment;

@@ -6,8 +6,8 @@ use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;
 use SiObjects\Entitys\Components\Pipeline as PipelineComponent;
 
-use SiInteractions\Routines\Contracts\Registrator;
-use SiInteractions\Routines\Contracts\Notificator;
+use Finder\Routines\Contracts\Registrator;
+use Finder\Routines\Contracts\Notificator;
 
 class ArticleCreateStage implements StageInterface
 {

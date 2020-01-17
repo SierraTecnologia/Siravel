@@ -12,9 +12,9 @@ use SiInteractions\Actions\SearchFollows;
 
 
 
-use SiInteractions\Routines\ForceNewRelations;
-use SiInteractions\Routines\GetNewData;
-use SiInteractions\Routines\SendNewData;
+use Finder\Routines\ForceNewRelations;
+use Finder\Routines\GetNewData;
+use Finder\Routines\SendNewData;
 
 use SiObjects\Components\Comment;
 use SiObjects\Components\Post;
