@@ -8,8 +8,8 @@ use SiWeapons\Integrations\Instagram\Instagram;
 use SiWeapons\Integrations\Instagram\Facebook;
 
 
-use SiInteractions\Actions\PublishPost;
-use SiInteractions\Actions\SearchFollows;
+use Finder\Actions\PublishPost;
+use Finder\Actions\SearchFollows;
 
 
 

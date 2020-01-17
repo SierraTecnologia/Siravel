@@ -2,9 +2,9 @@
 
 namespace Siravel\Console\Commands\Explorer;
 
-use App\Actions\Instagram\GetMidias;
-use App\Actions\Instagram\GetStories;
-use App\Actions\Instagram\GetFollowers;
+use Finder\Actions\Instagram\GetMidias;
+use Finder\Actions\Instagram\GetStories;
+use Finder\Actions\Instagram\GetFollowers;
 use Population\Models\Identity\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

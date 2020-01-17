@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Manipule;
 
 use Illuminate\Http\Request;
-use SiInteractions\Actions\Action;
+use Finder\Actions\Action;
 use Population\Models\Entytys\Digital\Bot\Runner;
 
 class ActionController extends Controller

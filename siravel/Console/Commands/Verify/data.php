@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Verify;
 
-use App\Actions\Instagram\GetMidias;
+use Finder\Actions\Instagram\GetMidias;
 use Population\Models\Identity\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
