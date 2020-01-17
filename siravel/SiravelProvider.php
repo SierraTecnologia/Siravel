@@ -9,9 +9,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
 use Support\ClassesHelpers\Traits\Models\ConsoleTools;
 
-use Illuminate\Contracts\Events\Dispatcher;
-use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
-
 class SiravelProvider extends ServiceProvider
 {
     use ConsoleTools;
@@ -38,9 +35,68 @@ class SiravelProvider extends ServiceProvider
     ];
 
     /**
+     * Rotas do Menu
+     */
+    public static $menuItens = [
+        'Siravel' => [
+            [
+                'text'        => 'Dash',
+                'route'       => 'siravel.sitec.dash',
+                'icon'        => 'fas fa-fw fa-gavel',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Profile',
+                'route'       => 'siravel.sitec.profile',
+                'icon'        => 'fas fa-fw fa-gavel',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Actors',
+                'route'       => 'siravel.components.actors.profile',
+                'icon'        => 'fas fa-fw fa-gavel',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+        ],
+        'Ferramentas' => [
+            [
+                'text'        => 'Bots',
+                'icon'        => 'fas fa-fw fa-industry',
+                'icon_color'  => 'red',
+                'label_color' => 'success',
+                // 'nivel' => \App\Models\Role::$GOOD,
+            ],
+            'Bots' => [
+                [
+                    'text'        => 'Runners',
+                    'url'         => 'runners',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+                [
+                    'text'        => 'Actions',
+                    'route'       => 'siravel.actions.index',
+                    'icon'        => 'fas fa-fw fa-coffee',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+            ],
+        ],
+    ];
+
+    /**
      * Alias the services in the boot.
      */
-    public function boot(Dispatcher $events)
+    public function boot()
     {
 
         $this->publishes([
@@ -70,65 +126,6 @@ class SiravelProvider extends ServiceProvider
             $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
         ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']);
 
-
-        /**
-         * AdminlteMenu
-         */
-
-        
-        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-            /**
-             * Pacotes
-             */
-            $event->menu->add('Siravel');
-            $event->menu->add([
-                'text'        => 'Dash',
-                'url'         => route('siravel.sitec.dash'),
-                'icon'        => 'dashboard',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ]);
-            $event->menu->add([
-                'text'        => 'Profile',
-                'url'         => route('siravel.sitec.profile'),
-                'icon'        => 'dashboard',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ]);
-            $event->menu->add([
-                'text'        => 'Actors',
-                'url'         => route('siravel.components.actors.profile'),
-                'icon'        => 'dashboard',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ]);
-            $event->menu->add([
-                'text'    => 'Bots',
-                'icon'    => 'cog',
-                'nivel' => \App\Models\Role::$GOOD,
-                'submenu' => [
-                    [
-                        'text'        => 'Runners',
-                        'url'         => 'runners',
-                        'icon'        => 'industry',
-                        'icon_color'  => 'red',
-                        'label_color' => 'success',
-                        'nivel' => \App\Models\Role::$GOOD,
-                    ],
-                    [
-                        'text'        => 'Actions',
-                        'url'         => route('siravel.actions.index'),
-                        'icon'        => 'coffee',
-                        'icon_color'  => 'red',
-                        'label_color' => 'success',
-                        'nivel' => \App\Models\Role::$GOOD,
-                    ],
-                ]
-            ]);
-        });
         /*
         |--------------------------------------------------------------------------
         | Blade Directives
