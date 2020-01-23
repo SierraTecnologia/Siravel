@@ -29,27 +29,47 @@ class Profile extends Instagram
             //Download user info
             $jsonData = file_get_contents('https://i.instagram.com/api/v1/users/'.$userID.'/info/', false, $context);
             $decodedInfo = json_decode($jsonData);
-            $username = $decodedInfo->user->username;
-            $profilePic = $decodedInfo->user->hd_profile_pic_url_info->url;
-            $follower = $decodedInfo->user->follower_count;
-            $following = $decodedInfo->user->following_count;
-            $full_name = $decodedInfo->user->full_name;
-            $isPrivate = $decodedInfo->user->is_private;
-            $isVerified = $decodedInfo->user->is_verified;
-            $bio = $decodedInfo->user->biography;
-            
-            return [
 
-                'full_name' => $full_name,
-                'bio' => $bio,
-                'follower' => $follower,
-                'following' => $following,
-                'profilePic' => $profilePic,
-                'isPrivate' => $isPrivate,
-                'isVerified' => $isVerified,
-            ];
+            $data = [];
+
+            if (isset($decodedInfo->user->hd_profile_pic_url_info->url)){
+                $data['profilePic'] = $decodedInfo->user->hd_profile_pic_url_info->url;
+            } else {
+                $data['profilePic'] = $decodedInfo->user->profile_pic_url;
+            }
+
+            if (isset($decodedInfo->user->username)){
+                $data['username'] = $decodedInfo->user->username;
+            } 
+
+            if (isset($decodedInfo->user->follower_count)){
+                $data['follower'] = $decodedInfo->user->follower_count;
+            } 
+
+            if (isset($decodedInfo->user->following_count)){
+                $data['following'] = $decodedInfo->user->following_count;
+            } 
+
+            if (isset($decodedInfo->user->full_name)){
+                $data['full_name'] = $decodedInfo->user->full_name;
+            } 
+
+            if (isset($decodedInfo->user->is_private)){
+                $data['isPrivate'] = $decodedInfo->user->is_private;
+            } 
+
+            if (isset($decodedInfo->user->is_verified)){
+                $data['isVerified'] = $decodedInfo->user->is_verified;
+            } 
+
+            if (isset($decodedInfo->user->biography)){
+                $data['bio'] = $decodedInfo->user->biography;
+            }
+            
+            return $data;
             
         } catch (\Exception $e) {
+            dd($e);
             return false;
         }
 
