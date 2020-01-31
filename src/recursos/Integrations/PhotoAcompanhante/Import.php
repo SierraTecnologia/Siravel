@@ -18,7 +18,7 @@ class Import extends PhotoAcompanhante
         // @todo Fazer
         return true;
         QueryList::get($url, '', Proxy::getOpts())->map(function($img){
-            dd($img);
+            dd('Import Img', $img);
         });
     }
 
@@ -32,7 +32,7 @@ class Import extends PhotoAcompanhante
 
 
             $nameAndPhone = $img->find('.anuncio_categoria')->map(function($data){
-                dd($data);
+                dd('Import Data', $data);
             });
         });
 

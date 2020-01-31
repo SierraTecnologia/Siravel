@@ -22,12 +22,12 @@ class Mapping
 
         // Loop all the images
         $ql->find('a')->map(function($a){
-            dd();
+            dd('Mapping A');
             echo $a->alt;  //Print the alt attribute of the image
 
         });
         $ql->find('form')->map(function($form){
-            dd();
+            dd('Mapping B');
             echo $form->alt;  //Print the alt attribute of the image
             $form->find('input')->map(function ($formItem){
 

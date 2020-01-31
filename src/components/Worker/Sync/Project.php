@@ -28,7 +28,7 @@ class Project
 
         if (!$this->project->repositoryIsCloned()){
             $repository = GitManiputor::cloneTo($this->project->getRepositoryPath(), $this->project->getRepository());
-            dd($repository);
+            dd('Project', $repository);
         }
         $repository = GitManiputor::init($this->project->getRepositoryPath());
     }

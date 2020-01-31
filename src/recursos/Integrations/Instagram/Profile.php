@@ -69,7 +69,7 @@ class Profile extends Instagram
             return $data;
             
         } catch (\Exception $e) {
-            dd($e);
+            dd('Exception', $e);
             return false;
         }
 
