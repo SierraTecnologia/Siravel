@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Resources\Entitys;
 
-use SiObjects\Manipule\Entities\SubscriptionEntity;
+use Population\Manipule\Entities\SubscriptionEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\Helper\html_purify;
 use function SiUtils\Helper\to_string;

@@ -3,7 +3,7 @@
 namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Mail\WeeklySubscription;
-use SiObjects\Manipule\Builders\SubscriptionBuilder;
+use Population\Manipule\Builders\SubscriptionBuilder;
 use App\Models\Post;
 use App\Models\Subscription;
 use Carbon\Carbon;

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Resources\Entitys;
 
-use SiObjects\Manipule\Entities\ThumbnailEntity;
+use Population\Manipule\Entities\ThumbnailEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\Storage;
 use function SiUtils\Helper\html_purify;

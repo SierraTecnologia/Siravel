@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Resources\Entitys;
 
-use SiObjects\Manipule\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\Helper\html_purify;
 use function SiUtils\Helper\to_bool;

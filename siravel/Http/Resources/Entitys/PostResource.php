@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Resources\Entitys;
 
-use SiObjects\Manipule\Entities\PostEntity;
-use SiObjects\Manipule\Entities\TagEntity;
+use Population\Manipule\Entities\PostEntity;
+use Population\Manipule\Entities\TagEntity;
 use function SiUtils\Helper\to_object;
 
 /**

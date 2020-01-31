@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Resources\Entitys;
 
-use SiObjects\Manipule\Entities\UserEntity;
+use Population\Manipule\Entities\UserEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\Helper\html_purify;
 use function SiUtils\Helper\to_int;

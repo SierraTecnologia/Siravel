@@ -2,7 +2,7 @@
 
 namespace Siravel\Console\Commands\Tools\PhotoApp;
 
-use SiObjects\Manipule\Managers\User\ARUserManager;
+use Population\Manipule\Managers\User\ARUserManager;
 use App\Models\Role;
 use Illuminate\Console\Command;
 use function SiUtils\Helper\url_frontend_sign_in;

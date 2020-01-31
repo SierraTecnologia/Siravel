@@ -2,8 +2,8 @@
 
 namespace Siravel\Services\SiteMap;
 
-use SiObjects\Manipule\Managers\Photo\ARPhotoManager;
-use SiObjects\Manipule\Managers\Tag\ARTagManager;
+use Population\Manipule\Managers\Photo\ARPhotoManager;
+use Population\Manipule\Managers\Tag\ARTagManager;
 use App\Models\Post;
 use App\Models\Tag;
 use Siravel\Services\SiteMap\Contracts\SiteMapBuilder as SiteMapBuilder;

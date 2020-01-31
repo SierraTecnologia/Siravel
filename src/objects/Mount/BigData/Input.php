@@ -4,15 +4,15 @@ namespace SiObjects\Mount\BigData;
 
 use App\Models\Role;
 use App\Models\User;
-use Informate\Managers\UserManager;
-use SiObjects\Manipule\Entities\UserEntity;
+use Population\Manipule\Managers\UserManager;
+use Population\Manipule\Entities\UserEntity;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Database\ConnectionInterface as Database;
 
 /**
  * Class ARUserManager.
  *
- * @package SiObjects\Manipule\Managers\User
+ * @package Population\Manipule\Managers\User
  */
 class ARUserManager implements UserManager
 {

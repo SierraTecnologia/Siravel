@@ -87,32 +87,32 @@ class HomeServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             \Core\Contracts\LocationManager::class,
-            \SiObjects\Manipule\Managers\Location\ARLocationManager::class
+            \Population\Manipule\Managers\Location\ARLocationManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PostManager::class,
-            \SiObjects\Manipule\Managers\Post\ARPostManager::class
+            \Population\Manipule\Managers\Post\ARPostManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\PhotoManager::class,
-            \SiObjects\Manipule\Managers\Photo\ARPhotoManager::class
+            \Population\Manipule\Managers\Photo\ARPhotoManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\SubscriptionManager::class,
-            \SiObjects\Manipule\Managers\Subscription\ARSubscriptionManager::class
+            \Population\Manipule\Managers\Subscription\ARSubscriptionManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\TagManager::class,
-            \SiObjects\Manipule\Managers\Tag\ARTagManager::class
+            \Population\Manipule\Managers\Tag\ARTagManager::class
         );
 
         $this->app->bind(
             \Core\Contracts\UserManager::class,
-            \SiObjects\Manipule\Managers\User\ARUserManager::class
+            \Population\Manipule\Managers\User\ARUserManager::class
         );
 
         $this->app->bind(
@@ -144,9 +144,9 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \SiObjects\Manipule\Rules\ReCaptchaRule::class,
+            \Population\Manipule\Rules\ReCaptchaRule::class,
             function () {
-                return new \SiObjects\Manipule\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
+                return new \Population\Manipule\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
             }
         );
     }
