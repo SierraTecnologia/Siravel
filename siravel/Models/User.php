@@ -20,7 +20,7 @@ class User extends \Facilitador\Models\User
 
     public function social()
     {
-        return $this->hasMany('App\Models\Social');
+        return $this->hasMany('Informate\Models\System\Social');
     }
     
 
