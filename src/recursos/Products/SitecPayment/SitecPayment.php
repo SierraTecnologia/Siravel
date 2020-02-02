@@ -1,11 +1,11 @@
 <?php
 
-namespace SiWeapons\Integrations\SitecPayment;
+namespace Finder\Spider\Integrations\SitecPayment;
 
 use App\Models\Model;
 use Log;
 use App\Models\User;
-use SiWeapons\Integrations\Integration;
+use Finder\Spider\Integrations\Integration;
 
 class SitecPayment extends Integration
 {

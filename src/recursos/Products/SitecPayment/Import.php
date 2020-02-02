@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Integrations\SitecPayment;
+namespace Finder\Spider\Integrations\SitecPayment;
 
 use Log;
 use App\Models\User;

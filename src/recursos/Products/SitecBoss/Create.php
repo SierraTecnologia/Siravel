@@ -1,6 +1,6 @@
 <?php
 
-namespace SiWeapons\Integrations\SitecBoss;
+namespace Finder\Spider\Integrations\SitecBoss;
 
 use Log;
 use App\Models\User;

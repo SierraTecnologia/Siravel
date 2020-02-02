@@ -5,7 +5,7 @@ namespace SiWeapons\Products\SitecBoss;
 use App\Models\Model;
 use Log;
 use App\Models\User;
-use SiWeapons\Integrations\Integration;
+use Finder\Spider\Integrations\Integration;
 
 class SitecBoss extends Integration
 {

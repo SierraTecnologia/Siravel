@@ -4,7 +4,7 @@ namespace SiObjects\Components\Society;
 
 use Log;
 use App\Models\User;
-use SiWeapons\Integrations\Instagram;
+use Finder\Spider\Integrations\Instagram;
 
 class Relation
 {

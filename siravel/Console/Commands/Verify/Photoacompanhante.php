@@ -4,7 +4,7 @@ namespace Siravel\Console\Commands\Verify;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
-use SiWeapons\Integrations\PhotoAcompanhante\Import;
+use Finder\Spider\Integrations\PhotoAcompanhante\Import;
 
 class Photoacompanhante extends Command
 {

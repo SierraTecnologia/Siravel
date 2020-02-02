@@ -19,7 +19,7 @@ use Population\Models\Identity\Actors\Business\Collaborator;
 use Population\Models\Components\Integrations\Token;
 use Population\Models\Components\Integrations\TokenAccess;
 
-use SiWeapons\Integrations\Cloudflare\Cloudflare;
+use Finder\Spider\Integrations\Cloudflare\Cloudflare;
 
 class ExercicioReceitaParaORatoSairDoLabirinto
 {
