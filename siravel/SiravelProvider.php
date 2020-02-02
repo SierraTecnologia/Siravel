@@ -64,33 +64,6 @@ class SiravelProvider extends ServiceProvider
                 // 'access' => \App\Models\Role::$ADMIN
             ],
         ],
-        'Ferramentas' => [
-            [
-                'text'        => 'Bots',
-                'icon'        => 'fas fa-fw fa-industry',
-                'icon_color'  => 'red',
-                'label_color' => 'success',
-                // 'nivel' => \App\Models\Role::$GOOD,
-            ],
-            'Bots' => [
-                [
-                    'text'        => 'Runners',
-                    'url'         => 'runners',
-                    'icon'        => 'fas fa-fw fa-industry',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    // 'nivel' => \App\Models\Role::$GOOD,
-                ],
-                [
-                    'text'        => 'Actions',
-                    'route'       => 'siravel.actions.index',
-                    'icon'        => 'fas fa-fw fa-coffee',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    // 'nivel' => \App\Models\Role::$GOOD,
-                ],
-            ],
-        ],
     ];
 
     /**
