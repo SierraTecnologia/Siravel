@@ -32,7 +32,6 @@
             "Siravel\\": "siravel/",
             "SiUtils\\": "src/utils/",
             "SiHelper\\": "src/helper/",
-            "SiInteractions\\": "src/components/",
             "SiLogic\\": "src/logic/",
             "SiObjects\\": "src/objects/",
             "SiPlugins\\": "src/plugins/",

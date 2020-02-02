@@ -1,7 +1,7 @@
 # SierraTecnologia Ferramentas
 
 
-## Components - SiInteractions
+## Components - Finder\Components
 
 - todo
 

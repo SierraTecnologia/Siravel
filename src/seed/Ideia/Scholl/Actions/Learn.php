@@ -128,7 +128,7 @@ class Learn
         $actions[] = self::insertAction(
             'scanDomain',
             \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
-            \SiInteractions\Worker\Explorer\Spider::class,
+            \Finder\Components\Worker\Explorer\Spider::class,
             self::$spider
         );
 
@@ -138,7 +138,7 @@ class Learn
         $actions[] = self::insertAction(
             'whoisDomain',
             \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
-            \SiInteractions\Worker\Explorer\Whois::class,
+            \Finder\Components\Worker\Explorer\Whois::class,
             self::$spider
         );
 
@@ -153,7 +153,7 @@ class Learn
         $actions[] = self::insertAction(
             'backupDatabase',
             \Population\Models\Entytys\Digital\Infra\DatabaseCollection::class,
-            \SiInteractions\Worker\Sync\Keys\BackupCollection::class,
+            \Finder\Components\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
 
@@ -163,7 +163,7 @@ class Learn
         $actions[] = self::insertAction(
             'searchLog',
             \Population\Models\Entytys\Digital\Infra\Computer::class,
-            \SiInteractions\Worker\Logging\Logging::class,
+            \Finder\Components\Worker\Logging\Logging::class,
             self::$routine
         );
 
@@ -179,7 +179,7 @@ class Learn
         $actions[] = self::insertAction(
             'analyseComit',
             \Population\Models\Entytys\Digital\Code\Commit::class,
-            \SiInteractions\Worker\Analyser\Analyser::class,
+            \Finder\Components\Worker\Analyser\Analyser::class,
             self::$hook
         );
 
@@ -189,7 +189,7 @@ class Learn
         $actions[] = self::insertAction(
             'deployCommit',
             \Population\Models\Entytys\Digital\Code\Commit::class,
-            \SiInteractions\Worker\Deploy\Deploy::class,
+            \Finder\Components\Worker\Deploy\Deploy::class,
             self::$hook
         );
 
@@ -203,7 +203,7 @@ class Learn
         $actions[] = self::insertAction(
             'importIntegrationToken',
             \Population\Models\Components\Integrations\Token::class,
-            \SiInteractions\Worker\Sync\Keys\ImportFromToken::class,
+            \Finder\Components\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );
 
@@ -213,7 +213,7 @@ class Learn
         $actions[] = self::insertAction(
             'syncProject',
             \Population\Models\Entytys\Digital\Code\Project::class,
-            \SiInteractions\Worker\Sync\Project::class,
+            \Finder\Components\Worker\Sync\Project::class,
             self::$hook
         );
 

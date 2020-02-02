@@ -23,7 +23,7 @@ class ModuleController extends Controller
      */
     public function index($moduleName)
     {
-        $board = \SiInteractions\View\Board($this->getModule($moduleName));
+        $board = \Finder\Components\View\Board($this->getModule($moduleName));
         return view('features.home', compact('board'));
     }
     

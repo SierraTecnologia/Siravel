@@ -8,7 +8,7 @@
 
 Arquivos Compativeis com o Laravel
 
-## SiInteractions
+## Finder\Components
 
 Integracoes
 

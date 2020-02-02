@@ -3,7 +3,7 @@
 namespace Siravel\Console\Commands\Tools\PhotoApp;
 
 use App\Models\Photo;
-use SiInteractions\Services\Image\Contracts\ImageProcessor;
+use Finder\Components\Services\Image\Contracts\ImageProcessor;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Throwable;
