@@ -6,9 +6,9 @@ use Log;
 use App\Models\User;
 
 use Finder\Models\Digital\Code\CodeIssueLink;
-use Informate\Models\Actions\Calendar\Spent;
-use Informate\Models\Actions\Calendar\Estimate;
-use Informate\Models\Actions\Calendar\Event;
+use Casa\Models\Registers\Spent;
+use Casa\Models\Calendar\Estimate;
+use Casa\Models\Calendar\Event;
 
 use Finder\Models\Digital\Code\Release;
 use Finder\Models\Digital\Code\Issue;
