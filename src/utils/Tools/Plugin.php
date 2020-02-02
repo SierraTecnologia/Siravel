@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools;
 
-use Population\Models\Entytys\Digital\Infra\Ci\Build;
+use Finder\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin\Codeception;
 
 /**

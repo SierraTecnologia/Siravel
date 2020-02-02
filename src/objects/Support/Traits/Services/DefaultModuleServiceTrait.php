@@ -60,7 +60,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Population\Models\Entytys\Digital\Midia\Imagen')->find($id)) {
+        if ($image = app('Finder\Models\Digital\Midia\Imagen')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 
@@ -78,7 +78,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Population\Models\Entytys\Digital\Midia\Imagen')->find($id)) {
+        if ($image = app('Finder\Models\Digital\Midia\Imagen')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 

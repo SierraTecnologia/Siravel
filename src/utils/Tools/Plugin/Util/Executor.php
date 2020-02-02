@@ -6,7 +6,7 @@ use SiUtils\Tools\Store\Factory as StoreFactory;
 use Exception;
 use SiUtils\Helper\Lang;
 use SiUtils\Tools\Logging\BuildLogger;
-use Population\Models\Entytys\Digital\Infra\Ci\Build;
+use Finder\Models\Digital\Infra\Ci\Build;
 use SiUtils\Tools\Plugin;
 use SiUtils\Tools\Store\BuildStore;
 

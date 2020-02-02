@@ -4,7 +4,7 @@ namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
-use Population\Models\Entytys\Digital\Midia\Imagen as Image;
+use Finder\Models\Digital\Midia\Imagen as Image;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ImagesRequest extends FormRequest

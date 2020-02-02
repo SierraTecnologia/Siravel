@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
-use Population\Models\Entytys\Digital\Midia\Photo;
+use Finder\Models\Digital\Midia\PhotoAlbum;
+use Finder\Models\Digital\Midia\Photo;
 use RicardoSierra\Translation\Models\Language;
 use App\Http\Controllers\GirlController;
 use Siravel\Http\Requests\Admin\PhotoAlbumRequest;

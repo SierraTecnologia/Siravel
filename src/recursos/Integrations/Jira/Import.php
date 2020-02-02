@@ -5,15 +5,15 @@ namespace SiWeapons\Integrations\Jira;
 use Log;
 use App\Models\User;
 
-use Population\Models\Entytys\Digital\Code\CodeIssueLink;
+use Finder\Models\Digital\Code\CodeIssueLink;
 use Informate\Models\Actions\Calendar\Spent;
 use Informate\Models\Actions\Calendar\Estimate;
 use Informate\Models\Actions\Calendar\Event;
 
-use Population\Models\Entytys\Digital\Code\Release;
-use Population\Models\Entytys\Digital\Code\Issue;
-use Population\Models\Entytys\Digital\Code\Field as FieldModel;
-use Population\Models\Entytys\Digital\Code\Project as ProjectModel;
+use Finder\Models\Digital\Code\Release;
+use Finder\Models\Digital\Code\Issue;
+use Finder\Models\Digital\Code\Field as FieldModel;
+use Finder\Models\Digital\Code\Project as ProjectModel;
 
 use JiraRestApi\Project\ProjectService;
 use JiraRestApi\JiraException;
@@ -45,10 +45,10 @@ class Import extends Jira
             foreach ($prjs as $p) {
                 Log::info(print_r($p, true));
                 // Project Key:USS, Id:10021, Name:User Shipping Service, projectCategory: Desenvolvimento
-                if (!$projModel = ProjectModel::where('slug', $p->key)->first()){
+                if (!$projModel = ProjectModel::where('projectPathKey', $p->key)->first()){
                     $projModel = ProjectModel::create([
                         'name' => $p->name,
-                        'slug' => $p->key,
+                        'projectPathKey' => $p->key,
                     ]);
                 }
                 $this->projectVersions($projModel);

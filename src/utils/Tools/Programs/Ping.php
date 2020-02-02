@@ -4,7 +4,7 @@ namespace SiUtils\Tools;
 
 use JJG\Ping as PingLib;
 
-use Population\Models\Entytys\Digital\Infra\Computer;
+use Finder\Models\Digital\Infra\Computer;
 
 /**
  * Ping Class

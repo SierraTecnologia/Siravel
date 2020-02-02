@@ -3,7 +3,7 @@
 namespace SiUtils\Tools\Plugin;
 
 use SiUtils\Tools\Builder;
-use Population\Models\Entytys\Digital\Infra\Ci\Build;
+use Finder\Models\Digital\Infra\Ci\Build;
 use GuzzleHttp\Client;
 
 /**

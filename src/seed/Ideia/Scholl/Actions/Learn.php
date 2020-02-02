@@ -127,7 +127,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'scanDomain',
-            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Finder\Models\Digital\Infra\Domain::class, // Ou Url
             \Finder\Components\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'whoisDomain',
-            \Population\Models\Entytys\Digital\Infra\Domain::class, // Ou Url
+            \Finder\Models\Digital\Infra\Domain::class, // Ou Url
             \Finder\Components\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'backupDatabase',
-            \Population\Models\Entytys\Digital\Infra\DatabaseCollection::class,
+            \Finder\Models\Digital\Infra\DatabaseCollection::class,
             \Finder\Components\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'searchLog',
-            \Population\Models\Entytys\Digital\Infra\Computer::class,
+            \Finder\Models\Digital\Infra\Computer::class,
             \Finder\Components\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'analyseComit',
-            \Population\Models\Entytys\Digital\Code\Commit::class,
+            \Finder\Models\Digital\Code\Commit::class,
             \Finder\Components\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'deployCommit',
-            \Population\Models\Entytys\Digital\Code\Commit::class,
+            \Finder\Models\Digital\Code\Commit::class,
             \Finder\Components\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Learn
          */
         $actions[] = self::insertAction(
             'syncProject',
-            \Population\Models\Entytys\Digital\Code\Project::class,
+            \Finder\Models\Digital\Code\Project::class,
             \Finder\Components\Worker\Sync\Project::class,
             self::$hook
         );

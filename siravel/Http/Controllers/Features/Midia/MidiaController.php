@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Midia;
 
-use Population\Models\Entytys\Digital\Midia\Photo;
-use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
+use Finder\Models\Digital\Midia\Photo;
+use Finder\Models\Digital\Midia\PhotoAlbum;
 use Finder\Services\Midia\MidiaService;
 use App\Http\Controllers\Controller;
 

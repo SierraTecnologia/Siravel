@@ -13,7 +13,7 @@ return [
         'accounts' => \Population\Models\Identity\Digital\Account::class,
         'passwords' => \Population\Models\Identity\Digital\Password::class,
         'phones' => \Population\Models\Identity\Digital\Phone::class,
-        'dominios' => \Population\Models\Entytys\Digital\Infra\Domain::class,
+        'dominios' => \Finder\Models\Digital\Infra\Domain::class,
         'emails' => \Population\Models\Identity\Digital\Email::class,
         'bibliotecas' => \Population\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Informate\Models\Entytys\Category\BibliotecaType::class,
@@ -35,16 +35,16 @@ return [
         'tatuages' => \Population\Models\Identity\Fisicos\Tatuage::class,
 
         // Internet
-        'urls' => \Population\Models\Entytys\Digital\Internet\Url::class,
-        'url_links' => \Population\Models\Entytys\Digital\Internet\UrlLink::class,
+        'urls' => \Finder\Models\Digital\Internet\Url::class,
+        'url_links' => \Finder\Models\Digital\Internet\UrlLink::class,
 
         // Midias
-        'files' => \Population\Models\Entytys\Digital\Midia\File::class,
-        'images' => \Population\Models\Entytys\Digital\Midia\Imagen::class,
-        'photos' => \Population\Models\Entytys\Digital\Midia\Photo::class,
-        'photo_albums' => \Population\Models\Entytys\Digital\Midia\PhotoAlbum::class,
-        'thumbnails' => \Population\Models\Entytys\Digital\Midia\Thumbnail::class,
-        'videos' => \Population\Models\Entytys\Digital\Midia\Video::class,
+        'files' => \Finder\Models\Digital\Midia\File::class,
+        'images' => \Finder\Models\Digital\Midia\Imagen::class,
+        'photos' => \Finder\Models\Digital\Midia\Photo::class,
+        'photo_albums' => \Finder\Models\Digital\Midia\PhotoAlbum::class,
+        'thumbnails' => \Finder\Models\Digital\Midia\Thumbnail::class,
+        'videos' => \Finder\Models\Digital\Midia\Video::class,
 
 
         // Components
