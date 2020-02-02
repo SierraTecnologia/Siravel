@@ -36,9 +36,9 @@ class Jira extends Integration
     {
         return new ArrayConfiguration(
             array(
-                 'jiraHost' => 'https://getbilo.atlassian.net',
+                 'jiraHost' => $token->account->customize_url,
                  // for basic authorization:
-                 'jiraUser' => $token->account,
+                 'jiraUser' => $token->account->email,
                  'jiraPassword' => $token->token,
                  // to enable session cookie authorization (with basic authorization only)
                 //  'cookieAuthEnabled' => true,
