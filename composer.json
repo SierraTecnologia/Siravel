@@ -4,7 +4,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.0",
-        "overtrue/laravel-follow": "^1.1",
         "pdepend/pdepend": "*",
         "pusher/pusher-php-server": "~3.4",
         "cmgmyr/messenger": "^2.19",
