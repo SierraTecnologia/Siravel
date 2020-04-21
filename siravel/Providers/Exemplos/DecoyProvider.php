@@ -178,7 +178,7 @@ class DecoyProvider extends BaseServiceProvider
 
         // Add Decoy's custom Fields to Former so they can be invoked using the "Former::"
         // namespace and so we can take advantage of sublassing Former's Field class.
-        $this->app['former.dispatcher']->addRepository('Facilitador\Fields\\');
+        $this->app['former.dispatcher']->addRepository('Support\Elements\Fields\\');
     }
 
     /**
