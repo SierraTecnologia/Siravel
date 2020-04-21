@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Access;
 
-use Informate\Models\Access;
+use Siravel\Models\Access;
 use Siravel\Models\Role;
 use App\Models\User;
 use Population\Models\Components\Book\Auth\UserRepo;
