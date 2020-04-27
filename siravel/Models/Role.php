@@ -3,7 +3,7 @@
 namespace Siravel\Models;
 
 // use Illuminate\Database\Eloquent\Model;
-// use TCG\Voyager\Facades\Voyager;
+// use Facilitador\Facades\Voyager;
 
 class Role extends \Facilitador\Models\Role
 {

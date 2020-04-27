@@ -247,6 +247,10 @@ function sortUrl($path, $data, $overrideData = [])
  */
 function markup($source)
 {
+    if (is_null($source) || empty($source)) {
+        return '';
+    }
+    
 	return with(new \League\CommonMark\CommonMarkConverter())->convertToHtml($source);
 }
 

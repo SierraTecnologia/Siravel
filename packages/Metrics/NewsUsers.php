@@ -5,7 +5,7 @@ namespace App\Nova\Metrics;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Nova\Metrics\Value;
-use TCG\Voyager\Models\Post;
+use Facilitador\Models\Post;
 
 class NewUsers extends Value
 {
