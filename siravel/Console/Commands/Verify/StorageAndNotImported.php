@@ -8,11 +8,11 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\Compilers\BladeCompiler;
 use DirectoryIterator;
 use Finder\Spider\Registrator\PhotoRegistrator;
-use Support\Traits\Manipulate\FileManipulate;
+use Support\Helpers\Extratores\FileExtractor;
+use Support\Components\Coders\Parser\ParseClass;
 
 class StorageAndNotImported extends Command
 {
-	use FileManipulate;
 
 	/**
 	 * The console command name.
