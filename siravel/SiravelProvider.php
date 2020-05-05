@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
-use Support\Helpers\Traits\Models\ConsoleTools;
+use Support\Traits\Providers\ConsoleTools;
 
 class SiravelProvider extends ServiceProvider
 {
