@@ -79,7 +79,7 @@ class Builder implements LoggerAwareInterface
     protected $interpolator;
 
     /**
-     * @var \PHPCensor\Store\BuildStore
+     * @var \SiUtils\Tools\Store\BuildStore
      */
     protected $store;
 

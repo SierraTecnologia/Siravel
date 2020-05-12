@@ -13,7 +13,8 @@
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
-        "ricardosierra/phpwhois": "dev-dev"
+        "ricardosierra/phpwhois": "dev-dev",
+        "php-censor/php-censor": "dev-master"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
