@@ -13,8 +13,7 @@
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
-        "ricardosierra/phpwhois": "dev-dev",
-        "php-censor/php-censor": "*"
+        "ricardosierra/phpwhois": "dev-dev"
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
@@ -25,7 +24,8 @@
         "orchestra/testbench-browser-kit": ">=3.6"
     },
     "suggest": {
-        "sierratecnologia/payment-laravel": "Pagamento"
+        "sierratecnologia/payment-laravel": "Pagamento",
+        "php-censor/php-censor": "Php Censor"
     },
     "autoload": {
         "psr-4": {
