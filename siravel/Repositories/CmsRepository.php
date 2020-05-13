@@ -54,7 +54,7 @@ class CmsRepository
             $model = $model->orderBy('created_at', 'desc');
         }
 
-        return $model->paginate(config('cms.pagination', 25));
+        return $model->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**
@@ -65,9 +65,9 @@ class CmsRepository
     public function published()
     {
         return $this->model->where('is_published', 1)
-            ->where('published_at', '<=', Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s'))
+            ->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))
             ->orderBy('created_at', 'desc')
-            ->paginate(config('cms.pagination', 24));
+            ->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 24));
     }
 
     /**
@@ -81,7 +81,7 @@ class CmsRepository
             $query = $this->model->where('is_published', 1);
 
             if (Schema::hasColumn($this->model->getTable(), 'published_at')) {
-                $query->where('published_at', '<=', Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s'));
+                $query->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'));
             }
 
             return $query->orderBy('created_at', 'desc')->get();
@@ -214,7 +214,7 @@ class CmsRepository
     public function parseTemplate($payload, $currentBlocks, $module)
     {
         if (isset($payload['template'])) {
-            $content = file_get_contents(base_path('resources/themes/'.config('cms.frontend-theme').'/'.$module.'/'.$payload['template'].'.blade.php'));
+            $content = file_get_contents(base_path('resources/themes/'.\Illuminate\Support\Facades\Config::get('cms.frontend-theme').'/'.$module.'/'.$payload['template'].'.blade.php'));
 
             preg_match_all('/->block\((.*)\)/', $content, $pageMethodMatches);
             preg_match_all('/\@block\((.*)\)/', $content, $bladeMatches);

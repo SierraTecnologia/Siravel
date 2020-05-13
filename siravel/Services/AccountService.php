@@ -21,11 +21,11 @@ class AccountService
     public function __construct()
     {
         $this->user = auth()->user();
-        $this->config = config('plans');
+        $this->config = \Illuminate\Support\Facades\Config::get('plans');
         $this->subscription = $this->user->meta->subscription($this->config['subscription_name']);
         $this->inBillingCycle = false;
 
-        SierraTecnologia::setApiKey(config('services.sitecpayment.secret'));
+        SierraTecnologia::setApiKey(\Illuminate\Support\Facades\Config::get('services.sitecpayment.secret'));
     }
 
     /**

@@ -18,7 +18,7 @@
                     <td>${{ siravel()->subscriptionPlan($subscription)->amount }} / {{ siravel()->subscriptionPlan($subscription)->frequency }}</td>
                     <td class="text-right">
                         @if (is_null($subscription->ends_at)) {!! siravel()->cancelSubscriptionBtn($subscription, 'btn btn-sm btn-danger float-right raw-margin-left-8') !!} @endif
-                        <a class="btn btn-sm btn-secondary float-right" href="{!! route(config('cms.backend-route-prefix', 'cms').'.plans.edit', [siravel()->subscriptionPlan($subscription)->id]) !!}"><i class="fa fa-pencil"></i> Review Plan</a>
+                        <a class="btn btn-sm btn-secondary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.plans.edit', [siravel()->subscriptionPlan($subscription)->id]) !!}"><i class="fa fa-pencil"></i> Review Plan</a>
                     </td>
                 </tr>
             @endif

@@ -49,7 +49,7 @@ class ModuleController extends Controller
 
     public function getModule($name)
     {
-        $features = config('cms.features');
+        $features = \Illuminate\Support\Facades\Config::get('cms.features');
         return $features['travels'];
     }
 }

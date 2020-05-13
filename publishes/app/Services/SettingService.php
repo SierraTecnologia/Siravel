@@ -41,7 +41,7 @@ class SettingService
     public function get($key, $default = false)
     {
         if ($default === false) {
-            $default = config('setting-defaults.' . $key, false);
+            $default = \Illuminate\Support\Facades\Config::get('setting-defaults.' . $key, false);
         }
 
         if (isset($this->localCache[$key])) {
@@ -240,7 +240,7 @@ class SettingService
      */
     protected function getOverrideValue($key)
     {
-        if ($key === 'registration-enabled' && config('auth.method') === 'ldap') {
+        if ($key === 'registration-enabled' && \Illuminate\Support\Facades\Config::get('auth.method') === 'ldap') {
             return false;
         }
         return null;

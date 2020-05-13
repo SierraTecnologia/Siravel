@@ -39,8 +39,8 @@ trait DefaultModuleServiceTrait
                 $widget->content .= '<a href="'.url('admin/widgets/'.$widget->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
             }
 
-            if (config('app.locale') !== config('cms.default-language') && $widget->translation(config('app.locale'))) {
-                return $widget->translationData(config('app.locale'))->content;
+            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('cms.default-language') && $widget->translation(\Illuminate\Support\Facades\Config::get('app.locale'))) {
+                return $widget->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))->content;
             } else {
                 return $widget->content;
             }

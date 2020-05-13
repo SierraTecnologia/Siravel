@@ -398,7 +398,7 @@ class CartService
             $total += $this->getItemSubtotal($item);
         }
 
-        if (config('siravel.taxes_include_shipping')) {
+        if (\Illuminate\Support\Facades\Config::get('siravel.taxes_include_shipping')) {
             $total += app(StoreLogistics::class)->shipping($this->cartRepo()->user);
         }
 

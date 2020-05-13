@@ -37,7 +37,7 @@ class OrderService
      */
     public function paginated()
     {
-        return $this->repo->paginated(config('cms.pagination', 25));
+        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**
@@ -61,7 +61,7 @@ class OrderService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, config('cms.pagination', 25));
+        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**

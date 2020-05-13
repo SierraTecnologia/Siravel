@@ -16,7 +16,7 @@ class SierraTecnologiaService
         $this->plan = $plan;
         $this->coupon = $coupon;
         $this->refund = $refund;
-        $this->sitecpayment->setApiKey(config('services.sitecpayment.secret'));
+        $this->sitecpayment->setApiKey(\Illuminate\Support\Facades\Config::get('services.sitecpayment.secret'));
     }
 
     /*

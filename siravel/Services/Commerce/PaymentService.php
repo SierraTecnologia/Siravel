@@ -61,7 +61,7 @@ class PaymentService
         }
 
         $result = $user->meta->charge(($cart->getCartTotal() * 100), [
-            'currency' => config('siravel.currency', 'usd'),
+            'currency' => \Illuminate\Support\Facades\Config::get('siravel.currency', 'usd'),
         ]);
 
         if ($result) {

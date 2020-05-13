@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => config('sitec.core.models.user', \App\Models\User::class),
+            'model' => \Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class),
         ],
 
         // 'users' => [

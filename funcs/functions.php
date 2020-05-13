@@ -108,7 +108,7 @@ function validator_filter_attributes(array $attributes, array $rules): array
  */
 function url_storage(string $path): string
 {
-    return config('main.storage.url') . $path;
+    return \Illuminate\Support\Facades\Config::get('main.storage.url') . $path;
 }
 
 /**
@@ -119,7 +119,7 @@ function url_storage(string $path): string
  */
 function url_frontend(string $path = ''): string
 {
-    return config('main.frontend.url') . $path;
+    return \Illuminate\Support\Facades\Config::get('main.frontend.url') . $path;
 }
 
 /**

@@ -52,10 +52,10 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
-        $defaultLang = config('app.locale');
-        config()->set('app.default_locale', $defaultLang);
+        $defaultLang = \Illuminate\Support\Facades\Config::get('app.locale');
+        \Illuminate\Support\Facades\Config::get()->set('app.default_locale', $defaultLang);
 
-        if (user()->isDefault() && config('app.auto_detect_locale')) {
+        if (user()->isDefault() && \Illuminate\Support\Facades\Config::get('app.auto_detect_locale')) {
             $locale = $this->autoDetectLocale($request, $defaultLang);
         } else {
             $locale = setting()->getUser(user(), 'language', $defaultLang);
@@ -63,7 +63,7 @@ class Localization
 
         // Set text direction
         if (in_array($locale, $this->rtlLocales)) {
-            config()->set('app.rtl', true);
+            \Illuminate\Support\Facades\Config::get()->set('app.rtl', true);
         }
 
         app()->setLocale($locale);
@@ -81,7 +81,7 @@ class Localization
      */
     protected function autoDetectLocale(Request $request, string $default)
     {
-        $availableLocales = config('app.locales');
+        $availableLocales = \Illuminate\Support\Facades\Config::get('app.locales');
         foreach ($request->getLanguages() as $lang) {
             if (in_array($lang, $availableLocales)) {
                 return $lang;

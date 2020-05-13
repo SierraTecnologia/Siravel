@@ -23,7 +23,7 @@ class LanguageService extends Service
             return '';
         }
 
-        $activeHtml = config('app.locale');
+        $activeHtml = \Illuminate\Support\Facades\Config::get('app.locale');
 
         $html = '<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languages">';
             foreach ($languages as $language) {
@@ -60,7 +60,7 @@ class LanguageService extends Service
             return $cacheLanguage;
         }
 
-        return config('app.locale');
+        return \Illuminate\Support\Facades\Config::get('app.locale');
     }
 
     public function getAllLanguages()

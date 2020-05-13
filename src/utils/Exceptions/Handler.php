@@ -90,7 +90,7 @@ class Handler extends ExceptionHandler
     private function getErrorMessage($exception)
     {
         Log::info('Enviando para o cliente a mensagem: '.$exception->getMessage());
-        // if (config('app.env')=='production'){
+        // if (\Illuminate\Support\Facades\Config::get('app.env')=='production'){
         //     return self::$DEFAULT_MESSAGE;
         // }
         return $exception->getMessage();
@@ -104,7 +104,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
-        if (config('app.env')=='production' && app()->bound('sentry') && $this->shouldReport($exception)) {
+        if (\Illuminate\Support\Facades\Config::get('app.env')=='production' && app()->bound('sentry') && $this->shouldReport($exception)) {
             // Slack Report
             Log::channel('slack')->error('[PaymentService Fatal Error] Fatal erro: '.$exception->getMessage());
 
@@ -142,7 +142,7 @@ class Handler extends ExceptionHandler
 
         // Handle pretty exceptions which will show a friendly application-fitting page
         // Which will include the basic message to point the user roughly to the cause.
-        if ($this->isExceptionType($exception, PrettyException::class)  && !config('app.debug')) {
+        if ($this->isExceptionType($exception, PrettyException::class)  && !\Illuminate\Support\Facades\Config::get('app.debug')) {
             $message = $this->getOriginalMessage($exception);
             $code = ($exception->getCode() === 0) ? 500 : $exception->getCode();
             return response()->view('errors/' . $code, ['message' => $message], $code);
@@ -198,7 +198,7 @@ class Handler extends ExceptionHandler
         // // Convert all non-http exceptions to a proper 500 http exception
         // // if we don't do this exceptions are shown as a default template
         // // instead of our own view in resources/views/errors/500.blade.php
-        // if ($this->shouldReport($exception) && !$this->isHttpException($exception) && !config('app.debug')) {
+        // if ($this->shouldReport($exception) && !$this->isHttpException($exception) && !\Illuminate\Support\Facades\Config::get('app.debug')) {
         //     $exception = new HttpException(500, 'Whoops!');
         // }
 
@@ -206,7 +206,7 @@ class Handler extends ExceptionHandler
 
         
 		// If debug is enabled in local environment dump stack trace
-		if(config('app.debug') and app()->environment('local'))
+		if(\Illuminate\Support\Facades\Config::get('app.debug') and app()->environment('local'))
 			return (class_exists('Whoops\\Run')) ? $this->whoops($exception) : parent::render($request, $e);
 
 		if ($exception instanceof ModelNotFoundException)

@@ -53,7 +53,7 @@ class Controller extends BaseController
             return User::where('token', $_GET['VERSION'])->first();
         }
         
-        return $this->_version = config('app.version');
+        return $this->_version = \Illuminate\Support\Facades\Config::get('app.version');
     }
 
     /**

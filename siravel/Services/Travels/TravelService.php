@@ -104,9 +104,9 @@ class TravelService
                     if (is_array($content)) {
                         $itemString = '';
                         foreach ($content as $item) {
-                            if (config('app.locale') !== config('cms.default-language')) {
-                                if ($item->translationData(config('app.locale'))) {
-                                    $itemString .= '<a href="'.URL::to('travels/travel/'.$item->id).'">'.$item->translationData(config('app.locale'))->title.'</a><br>';
+                            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
+                                if ($item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))) {
+                                    $itemString .= '<a href="'.URL::to('travels/travel/'.$item->id).'">'.$item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))->title.'</a><br>';
                                 }
                             } else {
                                 $itemString .= '<a href="'.URL::to('travels/travel/'.$item->id).'">'.$item->title.'</a><br>';

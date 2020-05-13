@@ -41,7 +41,7 @@ class ContactRepository
             $model = $model->orderBy('created_at', 'desc');
         }
 
-        return $model->paginate(config('sicms.pagination', 25));
+        return $model->paginate(\Illuminate\Support\Facades\Config::get('sicms.pagination', 25));
     }
 
     /**
@@ -122,7 +122,7 @@ class ContactRepository
      */
     public function update($contact, $payload)
     {
-        if (!empty($payload['lang']) && $payload['lang'] !== config('sicms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('sicms.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($contact->id, 'App\Models\Contact', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

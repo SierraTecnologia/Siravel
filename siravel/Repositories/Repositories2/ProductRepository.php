@@ -48,7 +48,7 @@ class ProductRepository
             $model = $this->model->orderBy('created_at', 'desc');
         }
 
-        return $model->paginate(config('cms.pagination', 25));
+        return $model->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**

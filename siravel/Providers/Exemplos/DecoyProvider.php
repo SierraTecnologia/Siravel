@@ -25,7 +25,7 @@ class DecoyProvider extends BaseServiceProvider
         $this->registerDirectories();
 
         // Register the routes.
-        if (config('decoy.core.register_routes') && !$this->app->routesAreCached()) {
+        if (\Illuminate\Support\Facades\Config::get('decoy.core.register_routes') && !$this->app->routesAreCached()) {
             $this->app['decoy.router']->registerAll();
         }
 
@@ -153,7 +153,7 @@ class DecoyProvider extends BaseServiceProvider
         ]);
 
         // Point to the Gate policy
-        $this->app[Gate::class]->define('decoy.auth', config('decoy.core.policy'));
+        $this->app[Gate::class]->define('decoy.auth', \Illuminate\Support\Facades\Config::get('decoy.core.policy'));
     }
 
     /**
@@ -266,7 +266,7 @@ class DecoyProvider extends BaseServiceProvider
 
         // Registers explicit rotues and wildcarding routing
         $this->app->singleton('decoy.router', function ($app) {
-            $dir = config('decoy.core.dir');
+            $dir = \Illuminate\Support\Facades\Config::get('decoy.core.dir');
 
             return new \Facilitador\Routing\Router($dir);
         });
@@ -276,7 +276,7 @@ class DecoyProvider extends BaseServiceProvider
             $request = $app['request'];
 
             return new \Facilitador\Routing\Wildcard(
-                config('decoy.core.dir'),
+                \Illuminate\Support\Facades\Config::get('decoy.core.dir'),
                 $request->getMethod(),
                 $request->path()
             );
@@ -284,7 +284,7 @@ class DecoyProvider extends BaseServiceProvider
 
         // Return the active user account
         $this->app->singleton('decoy.user', function ($app) {
-            $guard = config('decoy.core.guard');
+            $guard = \Illuminate\Support\Facades\Config::get('decoy.core.guard');
 
             return $app['auth']->guard($guard)->user();
         });

@@ -90,7 +90,7 @@ class CmsService
      *
      * @return mixed
      */
-    public function config($key)
+    public function \Illuminate\Support\Facades\Config::get($key)
     {
         $splitKey = explode('.', $key);
 

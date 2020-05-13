@@ -11,7 +11,7 @@ class PlanController extends Controller
 
     public function __construct(PlanService $service)
     {
-        if (!config('commerce.subscriptions')) {
+        if (!\Illuminate\Support\Facades\Config::get('commerce.subscriptions')) {
             return back()->send();
         }
         $this->service = $service;

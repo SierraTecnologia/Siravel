@@ -161,7 +161,7 @@ return [
             ],
             'currency' => [
                 'type' => 'select',
-                'options' => config('siravel.currencies', [
+                'options' => \Illuminate\Support\Facades\Config::get('siravel.currencies', [
                     'AUD' => 'aud',
                     'CAD' => 'cad',
                     'USD' => 'usd',

@@ -1,10 +1,10 @@
 
 <div class="page-editor flex-fill flex" id="page-editor"
      drafts-enabled="{{ $draftsEnabled ? 'true' : 'false' }}"
-     drawio-enabled="{{ config('services.drawio') ? 'true' : 'false' }}"
+     drawio-enabled="{{ \Illuminate\Support\Facades\Config::get('services.drawio') ? 'true' : 'false' }}"
      editor-type="{{ setting('app-editor') }}"
      page-id="{{ $model->id or 0 }}"
-     text-direction="{{ config('app.rtl') ? 'rtl' : 'ltr' }}"
+     text-direction="{{ \Illuminate\Support\Facades\Config::get('app.rtl') ? 'rtl' : 'ltr' }}"
      page-new-draft="{{ $model->draft or 0 }}"
      page-update-draft="{{ $model->isDraft or 0 }}">
 
@@ -87,7 +87,7 @@
                     <div class="editor-toolbar">
                         <span class="float left">{{ trans('entities.pages_md_editor') }}</span>
                         <div class="float right buttons">
-                            @if(config('services.drawio'))
+                            @if(\Illuminate\Support\Facades\Config::get('services.drawio'))
                                 <button class="text-button" type="button" data-action="insertDrawing">@icon('drawing'){{ trans('entities.pages_md_insert_drawing') }}</button>
                                 &nbsp;|&nbsp
                             @endif

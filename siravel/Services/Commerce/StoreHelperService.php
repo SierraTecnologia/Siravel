@@ -18,7 +18,7 @@ class StoreHelperService
 
     public function storeUrl($url)
     {
-        return url(config('siravel.store_url_prefix').'/'.$url);
+        return url(\Illuminate\Support\Facades\Config::get('siravel.store_url_prefix').'/'.$url);
     }
 
     public function customer()

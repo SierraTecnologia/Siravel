@@ -15,7 +15,7 @@ class AttachmentService extends UploadService
      */
     protected function getStorage()
     {
-        $storageType = config('filesystems.default');
+        $storageType = \Illuminate\Support\Facades\Config::get('filesystems.default');
 
         // Override default location if set to local public to ensure not visible.
         if ($storageType === 'local') {

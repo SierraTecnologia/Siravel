@@ -32,9 +32,9 @@ class LdapService
     public function __construct(Access\Ldap $ldap, UserRepo $userRepo)
     {
         $this->ldap = $ldap;
-        $this->config = config('services.ldap');
+        $this->config = \Illuminate\Support\Facades\Config::get('services.ldap');
         $this->userRepo = $userRepo;
-        $this->enabled = config('auth.method') === 'ldap';
+        $this->enabled = \Illuminate\Support\Facades\Config::get('auth.method') === 'ldap';
     }
 
     /**
@@ -180,7 +180,7 @@ class LdapService
         }
 
         // Check LDAP extension in installed
-        if (!function_exists('ldap_connect') && config('app.env') !== 'testing') {
+        if (!function_exists('ldap_connect') && \Illuminate\Support\Facades\Config::get('app.env') !== 'testing') {
             throw new LdapException(trans('errors.ldap_extension_not_installed'));
         }
 

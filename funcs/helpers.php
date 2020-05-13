@@ -46,7 +46,7 @@ function versioned_asset($file = '')
     }
 
     $additional = '';
-    if (config('app.env') === 'development') {
+    if (\Illuminate\Support\Facades\Config::get('app.env') === 'development') {
         $additional = sha1_file(public_path($file));
     }
 
@@ -134,7 +134,7 @@ function baseUrl($path, $forceAppDomain = false)
     }
 
     $path = trim($path, '/');
-    $base = rtrim(config('app.url'), '/');
+    $base = rtrim(\Illuminate\Support\Facades\Config::get('app.url'), '/');
 
     // Remove non-specified domain if forced and we have a domain
     if ($isFullUrl && $forceAppDomain) {
@@ -146,7 +146,7 @@ function baseUrl($path, $forceAppDomain = false)
     }
 
     // Return normal url path if not specified in config
-    if (config('app.url') === '') {
+    if (\Illuminate\Support\Facades\Config::get('app.url') === '') {
         return url($path);
     }
 
@@ -160,7 +160,7 @@ function baseUrl($path, $forceAppDomain = false)
  */
 function theme_path($path = '')
 {
-    $theme = config('view.theme');
+    $theme = \Illuminate\Support\Facades\Config::get('view.theme');
     if (!$theme) {
         return false;
     }

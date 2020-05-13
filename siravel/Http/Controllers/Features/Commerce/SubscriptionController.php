@@ -14,7 +14,7 @@ class SubscriptionController extends Controller
 
     public function __construct(PlanService $service)
     {
-        if (!config('commerce.subscriptions')) {
+        if (!\Illuminate\Support\Facades\Config::get('commerce.subscriptions')) {
             return back()->send();
         }
         $this->service = $service;
@@ -48,7 +48,7 @@ class SubscriptionController extends Controller
      */
     public function allSubscriptions()
     {
-        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
+        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination'));
 
         return view('features.commerce.subscriptions.all')->with('subscriptions', $subscriptions);
     }

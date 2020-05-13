@@ -72,7 +72,7 @@ class CouponService
                     'code' => $coupon->id,
                     'amount' => $coupon->amount_off,
                     'limit' => $coupon->max_redemptions ?? 1,
-                    'currency' => config('siravel.currency'),
+                    'currency' => \Illuminate\Support\Facades\Config::get('siravel.currency'),
                     'for_subscriptions' => true,
                 ]);
             }
@@ -86,7 +86,7 @@ class CouponService
      */
     public function paginated()
     {
-        return $this->model->paginate(config('cms.pagination', 25));
+        return $this->model->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**
@@ -106,7 +106,7 @@ class CouponService
             $query->orWhere($attribute, 'LIKE', '%'.$payload.'%');
         }
 
-        return $query->paginate(config('cms.pagination', 25));
+        return $query->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**
@@ -120,7 +120,7 @@ class CouponService
     {
         try {
             $payload['sitecpayment_id'] = $payload['code'];
-            $payload['currency'] = config('siravel.currency');
+            $payload['currency'] = \Illuminate\Support\Facades\Config::get('siravel.currency');
 
             if (empty($payload['start_date'])) {
                 $payload['start_date'] = Carbon::now();

@@ -66,7 +66,7 @@ trait Translatable
      */
     public function afterCreate($payload)
     {
-        if (config('gpower.auto-translate', false)) {
+        if (\Illuminate\Support\Facades\Config::get('gpower.auto-translate', false)) {
             $entry = $payload->toArray();
 
             unset($entry['created_at']);
@@ -76,9 +76,9 @@ trait Translatable
             unset($entry['published_at']);
             unset($entry['id']);
 
-            foreach (config('gpower.languages') as $code => $language) {
-                if ($code != config('gpower.default-language')) {
-                    $tr = new TranslateClient(config('gpower.default-language'), $code);
+            foreach (\Illuminate\Support\Facades\Config::get('gpower.languages') as $code => $language) {
+                if ($code != \Illuminate\Support\Facades\Config::get('gpower.default-language')) {
+                    $tr = new TranslateClient(\Illuminate\Support\Facades\Config::get('gpower.default-language'), $code);
                     $translation = [
                         'lang' => $code,
                         'template' => 'show',

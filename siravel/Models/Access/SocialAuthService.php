@@ -174,7 +174,7 @@ class SocialAuthService
     {
         $lowerName = strtolower($driver);
         $configPrefix = 'services.' . $lowerName . '.';
-        $config = [config($configPrefix . 'client_id'), config($configPrefix . 'client_secret'), config('services.callback_url')];
+        $config = [\Illuminate\Support\Facades\Config::get($configPrefix . 'client_id'), \Illuminate\Support\Facades\Config::get($configPrefix . 'client_secret'), \Illuminate\Support\Facades\Config::get('services.callback_url')];
         return !in_array(false, $config) && !in_array(null, $config);
     }
 
@@ -200,7 +200,7 @@ class SocialAuthService
      */
     public function getDriverName($driver)
     {
-        return config('services.' . strtolower($driver) . '.name');
+        return \Illuminate\Support\Facades\Config::get('services.' . strtolower($driver) . '.name');
     }
 
     /**
@@ -210,7 +210,7 @@ class SocialAuthService
      */
     public function driverAutoRegisterEnabled(string $driver)
     {
-        return config('services.' . strtolower($driver) . '.auto_register') === true;
+        return \Illuminate\Support\Facades\Config::get('services.' . strtolower($driver) . '.auto_register') === true;
     }
 
     /**
@@ -220,7 +220,7 @@ class SocialAuthService
      */
     public function driverAutoConfirmEmailEnabled(string $driver)
     {
-        return config('services.' . strtolower($driver) . '.auto_confirm') === true;
+        return \Illuminate\Support\Facades\Config::get('services.' . strtolower($driver) . '.auto_confirm') === true;
     }
 
     /**
@@ -259,7 +259,7 @@ class SocialAuthService
     {
         $driver = $this->socialite->driver($driverName);
 
-        if ($driverName === 'google' && config('services.google.select_account')) {
+        if ($driverName === 'google' && \Illuminate\Support\Facades\Config::get('services.google.select_account')) {
             $driver->with(['prompt' => 'select_account']);
         }
 

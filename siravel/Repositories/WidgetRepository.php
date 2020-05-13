@@ -18,7 +18,7 @@ class WidgetRepository extends CmsRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = config('cms.db-prefix').'widgets';
+        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'widgets';
     }
 
     /**
@@ -47,7 +47,7 @@ class WidgetRepository extends CmsRepository
     {
         $payload['name'] = htmlentities($payload['name']);
 
-        if (!empty($payload['lang']) && $payload['lang'] !== config('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($widget->id, 'App\Models\Negocios\Widget', $payload['lang'], $payload);
         } else {
             unset($payload['lang']);

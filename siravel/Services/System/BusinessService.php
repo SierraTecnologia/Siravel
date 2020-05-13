@@ -37,7 +37,7 @@ class BusinessService extends Service
 
     public function isHability()
     {
-        $config = config('sitec-tools.configs.multi-tenant');
+        $config = \Illuminate\Support\Facades\Config::get('sitec-tools.configs.multi-tenant');
         if (!$config) {
             return false;
         }
@@ -258,9 +258,9 @@ class BusinessService extends Service
         }
 
         return null;
-        //return User::where('token', config('business.default'))->first();
+        //return User::where('token', \Illuminate\Support\Facades\Config::get('business.default'))->first();
         // bilo -> 3a0cafad9715806584cf60bf6c04200a
-        // Passepague -> config('business.default')
+        // Passepague -> \Illuminate\Support\Facades\Config::get('business.default')
     }
 
     // /**

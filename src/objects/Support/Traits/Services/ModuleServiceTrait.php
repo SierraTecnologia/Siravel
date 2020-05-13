@@ -44,7 +44,7 @@ trait ModuleServiceTrait
         $configArray = @include base_path(Config::get('cms.module-directory').'/'.ucfirst($module).'/config.php');
 
         if (!$configArray) {
-            return config('cms.features.'.$module.'.'.$path);
+            return \Illuminate\Support\Facades\Config::get('cms.features.'.$module.'.'.$path);
         }
 
         return self::assignArrayByPath($configArray, $path);
@@ -61,7 +61,7 @@ trait ModuleServiceTrait
     {
         $links = '';
 
-        $modules = config('cms.features', []);
+        $modules = \Illuminate\Support\Facades\Config::get('cms.features', []);
 
         foreach ($ignoredFeatures as $ignoredModule) {
             if (in_array(strtolower($ignoredModule), array_keys($modules))) {

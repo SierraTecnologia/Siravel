@@ -15,7 +15,7 @@ class MenuRepository extends BaseRepository
 	public function __construct(Menu $model)
 	{
 		$this->model = $model;
-		$this->table = config('cms.db-prefix').'menus';
+		$this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'menus';
 	}
 
 	/**
@@ -121,7 +121,7 @@ class MenuRepository extends BaseRepository
 // 				}
 // 			}
 // 			// 缓存菜单数据
-// 			Cache::forever(config('admin.globals.cache.menuList'),$menuList);
+// 			Cache::forever(\Illuminate\Support\Facades\Config::get('admin.globals.cache.menuList'),$menuList);
 // 			return $menuList;
 			
 // 		}
@@ -136,8 +136,8 @@ class MenuRepository extends BaseRepository
 // 	public function getMenuList()
 // 	{
 // 		// 判断数据是否缓存
-// 		if (Cache::has(config('admin.globals.cache.menuList'))) {
-// 			return Cache::get(config('admin.globals.cache.menuList'));
+// 		if (Cache::has(\Illuminate\Support\Facades\Config::get('admin.globals.cache.menuList'))) {
+// 			return Cache::get(\Illuminate\Support\Facades\Config::get('admin.globals.cache.menuList'));
 // 		}
 // 		return $this->sortMenuSetCache();
 // 	}
@@ -201,7 +201,7 @@ class MenuRepository extends BaseRepository
     // public function __construct(Menu $model)
     // {
     //     $this->model = $model;
-    //     $this->table = config('cms.db-prefix').'menus';
+    //     $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'menus';
     // }
 
     // /**

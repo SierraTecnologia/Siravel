@@ -95,7 +95,7 @@ class DatabaseBackupCommand extends Command
 	protected function getConnection($name)
 	{
 		// Make sure connection exists
-		if( ! $connection = config("database.connections.$name"))
+		if( ! $connection = \Illuminate\Support\Facades\Config::get("database.connections.$name"))
 		{
 			$this->error("Unknown connection '$name'");
 
@@ -209,7 +209,7 @@ class DatabaseBackupCommand extends Command
 			['list', 'l', InputOption::VALUE_NONE, 'List saved backups'],
 			['restore', 'r', InputOption::VALUE_REQUIRED, 'Restore a backup'],
 			['force', 'f', InputOption::VALUE_NONE, 'Do not prompt for confimation when restoring a backup'],
-			['connection', 'c', InputOption::VALUE_REQUIRED, 'Database connection name', config('database.default')],
+			['connection', 'c', InputOption::VALUE_REQUIRED, 'Database connection name', \Illuminate\Support\Facades\Config::get('database.default')],
 		];
 	}
 }

@@ -36,7 +36,7 @@
 
     @if (Session::has('coupon_code'))
     <tr>
-        <td><b>Coupon <a href="{{ url(config('siravel.store_url_prefix').'/coupon/remove') }}"><span class="fa fa-close"></span></a></b></td>
+        <td><b>Coupon <a href="{{ url(\Illuminate\Support\Facades\Config::get('siravel.store_url_prefix').'/coupon/remove') }}"><span class="fa fa-close"></span></a></b></td>
         <td class="text-right">-${!! siravel()->couponValue() !!}</td>
     </tr>
     @endif

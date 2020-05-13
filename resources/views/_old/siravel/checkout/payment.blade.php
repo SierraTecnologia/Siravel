@@ -61,7 +61,7 @@
 
 @section('pre-javascript')
     <script type="text/javascript" src="https://js.sitecpayment.com/v2/"></script>
-    <script> SierraTecnologia.setPublishableKey('{{ config("services.sitecpayment.key") }}'); </script>
+    <script> SierraTecnologia.setPublishableKey('{{ \Illuminate\Support\Facades\Config::get("services.sitecpayment.key") }}'); </script>
 @stop
 
 @section('javascript')

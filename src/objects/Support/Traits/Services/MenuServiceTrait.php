@@ -54,13 +54,13 @@ trait MenuServiceTrait
             } else {
                 $page = Page::find($link->page_id);
                 if ($page) {
-                    if (config('app.locale') == config('Cms.default-language', $this->config('Cms.default-language'))) {
+                    if (\Illuminate\Support\Facades\Config::get('app.locale') == \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->\Illuminate\Support\Facades\Config::get('Cms.default-language'))) {
                         $response .= '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
                         $processedLinks[] = '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
-                    } elseif (config('app.locale') != config('Cms.default-language', $this->config('Cms.default-language'))) {
-                        if ($page->translation(config('app.locale'))) {
-                            $response .= '<a href="'.URL::to('page/'.$page->translation(config('app.locale'))->data->url)."\">$link->name</a>";
-                            $processedLinks[] = '<a href="'.URL::to('page/'.$page->translation(config('app.locale'))->data->url)."\">$link->name</a>";
+                    } elseif (\Illuminate\Support\Facades\Config::get('app.locale') != \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->\Illuminate\Support\Facades\Config::get('Cms.default-language'))) {
+                        if ($page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))) {
+                            $response .= '<a href="'.URL::to('page/'.$page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))->data->url)."\">$link->name</a>";
+                            $processedLinks[] = '<a href="'.URL::to('page/'.$page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))->data->url)."\">$link->name</a>";
                         }
                     }
                 }
@@ -70,7 +70,7 @@ trait MenuServiceTrait
         /**
          * Features
          */
-        foreach (config('cms.features', []) as $module => $config) {
+        foreach (\Illuminate\Support\Facades\Config::get('cms.features', []) as $module => $config) {
             $link = $module;
 
             if (isset($config['url'])) {

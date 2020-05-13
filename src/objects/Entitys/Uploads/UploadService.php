@@ -29,7 +29,7 @@ abstract class UploadService
      */
     protected function getStorage()
     {
-        $storageType = config('filesystems.default');
+        $storageType = \Illuminate\Support\Facades\Config::get('filesystems.default');
         return $this->fileSystem->disk($storageType);
     }
 

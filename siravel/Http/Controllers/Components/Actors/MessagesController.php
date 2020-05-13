@@ -103,7 +103,7 @@ class MessagesController extends Controller
 
         // Notify user by Email
         $job = (new SendNotifyMail('new_message', Auth::user(), $recipient, null, null, $message))
-                                ->delay(config('phphub.notify_delay'));
+                                ->delay(\Illuminate\Support\Facades\Config::get('phphub.notify_delay'));
         dispatch($job);
 
         // notifications count

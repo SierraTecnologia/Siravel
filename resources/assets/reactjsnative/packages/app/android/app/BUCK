@@ -33,7 +33,7 @@ android_library(
     ],
 )
 
-android_build_config(
+android_build_\Illuminate\Support\Facades\Config::get(
     name = "build_config",
     package = "com.myawesomeproject",
 )

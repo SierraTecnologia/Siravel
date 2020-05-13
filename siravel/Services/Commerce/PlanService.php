@@ -74,7 +74,7 @@ class PlanService
      */
     public function paginated()
     {
-        return $this->model->paginate(config('cms.pagination', 25));
+        return $this->model->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**
@@ -94,7 +94,7 @@ class PlanService
             $query->orWhere($attribute, 'LIKE', '%'.$payload.'%');
         }
 
-        return $query->paginate(config('cms.pagination', 25));
+        return $query->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
     }
 
     /**

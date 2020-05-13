@@ -16,7 +16,7 @@ class PagesRequest extends FormRequest
      */
     public function authorize()
     {
-        if (config('app.env') !== 'testing') {
+        if (\Illuminate\Support\Facades\Config::get('app.env') !== 'testing') {
             return Gate::allows('cms', Auth::user());
         }
 

@@ -46,7 +46,7 @@ class ImageService extends UploadService
      */
     protected function getStorage($type = '')
     {
-        $storageType = config('filesystems.default');
+        $storageType = \Illuminate\Support\Facades\Config::get('filesystems.default');
 
         // Override default location if set to local public to ensure not visible.
         if ($type === 'system' && $storageType === 'local_secure') {
@@ -329,9 +329,9 @@ class ImageService extends UploadService
      */
     protected function getAvatarUrl()
     {
-        $url = trim(config('services.avatar_url'));
+        $url = trim(\Illuminate\Support\Facades\Config::get('services.avatar_url'));
 
-        if (empty($url) && !config('services.disable_services')) {
+        if (empty($url) && !\Illuminate\Support\Facades\Config::get('services.disable_services')) {
             $url = 'https://www.gravatar.com/avatar/${hash}?s=${size}&d=identicon';
         }
 
@@ -425,13 +425,13 @@ class ImageService extends UploadService
     private function getPublicUrl($filePath)
     {
         if ($this->storageUrl === null) {
-            $storageUrl = config('filesystems.url');
+            $storageUrl = \Illuminate\Support\Facades\Config::get('filesystems.url');
 
             // Get the standard public s3 url if s3 is set as storage type
             // Uses the nice, short URL if bucket name has no periods in otherwise the longer
             // region-based url will be used to prevent http issues.
-            if ($storageUrl == false && config('filesystems.default') === 's3') {
-                $storageDetails = config('filesystems.disks.s3');
+            if ($storageUrl == false && \Illuminate\Support\Facades\Config::get('filesystems.default') === 's3') {
+                $storageDetails = \Illuminate\Support\Facades\Config::get('filesystems.disks.s3');
                 if (strpos($storageDetails['bucket'], '.') === false) {
                     $storageUrl = 'https://' . $storageDetails['bucket'] . '.s3.amazonaws.com';
                 } else {

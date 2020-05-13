@@ -20,7 +20,7 @@ class OrderController extends Controller
      */
     public function allOrders()
     {
-        $orders = $this->orders->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
+        $orders = $this->orders->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination'));
 
         return view('features.commerce.orders.all')->with('orders', $orders);
     }

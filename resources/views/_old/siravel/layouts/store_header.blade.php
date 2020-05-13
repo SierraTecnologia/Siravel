@@ -1,6 +1,6 @@
 <div class="row mb-4">
     <div class="col-md-12">
-        <h3><a class="nav-link float-left" href="{!! route('siravel.home') !!}">{{ config('siravel.name', 'My Store') }}</a></h3>
+        <h3><a class="nav-link float-left" href="{!! route('siravel.home') !!}">{{ \Illuminate\Support\Facades\Config::get('siravel.name', 'My Store') }}</a></h3>
         <nav class="nav float-right">
             <a class="nav-link" href="{!! route('siravel.cart.contents') !!}">
                 <span class="fa fa-shopping-cart"></span>
