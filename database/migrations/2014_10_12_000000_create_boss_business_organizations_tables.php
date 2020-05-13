@@ -16,7 +16,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
         /**
          * Businesses
          */
-		Schema::create(config('app.db-prefix', '').'businesses', function (Blueprint $table) {
+		Schema::create('businesses', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->string('code')->unique();
             $table->primary('code');
@@ -36,7 +36,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
             $table->softDeletes();
 		});
         
-		Schema::create(config('app.db-prefix', '').'businessables', function (Blueprint $table) {
+		Schema::create('businessables', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->string('businessable_id');
 			$table->string('businessable_type', 255);

@@ -13,7 +13,7 @@ class CreateBusinessAndFeaturesTables extends Migration
 	public function up()
 	{
         
-		// Schema::create(config('app.db-prefix', '').'settings', function (Blueprint $table) {
+		// Schema::create('settings', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';
         //     $table->string('code'); //->unique();
         //     // $table->primary('code');
@@ -26,7 +26,7 @@ class CreateBusinessAndFeaturesTables extends Migration
 		// 	$table->primary(['code', 'business_code']);
         // });
         
-		Schema::create(config('app.db-prefix', '').'features', function (Blueprint $table) {
+		Schema::create('features', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->string('code')->unique();
             $table->primary('code');
@@ -35,7 +35,7 @@ class CreateBusinessAndFeaturesTables extends Migration
             $table->softDeletes();
 		});
         
-		Schema::create(config('app.db-prefix', '').'featureables', function (Blueprint $table) {
+		Schema::create('featureables', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->string('featureable_id');
 			$table->string('featureable_type', 255);
@@ -48,7 +48,7 @@ class CreateBusinessAndFeaturesTables extends Migration
         // /**
         //  * Cards
         //  */
-		// Schema::create(config('app.db-prefix', '').'cards', function (Blueprint $table) {
+		// Schema::create('cards', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';
         //     $table->increments('id')->unsigned();
             
@@ -73,7 +73,7 @@ class CreateBusinessAndFeaturesTables extends Migration
         //     $table->softDeletes();
 		// });
         
-		// Schema::create(config('app.db-prefix', '').'cardables', function (Blueprint $table) {
+		// Schema::create('cardables', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';
 		// 	$table->increments('id')->unsigned();
 		// 	$table->integer('card_id')->unsigned();
@@ -83,7 +83,7 @@ class CreateBusinessAndFeaturesTables extends Migration
 		// 	$table->timestamps();
         //     $table->softDeletes();
         // });
-        // Schema::create(config('app.db-prefix', '').'cardSlides', function (Blueprint $table) {
+        // Schema::create('cardSlides', function (Blueprint $table) {
         //     $table->increments('id');
         //     $table->string('title');
         //     $table->string('image');
@@ -97,7 +97,7 @@ class CreateBusinessAndFeaturesTables extends Migration
         // /**
         //  * Gambles
         //  */
-		// Schema::create(config('app.db-prefix', '').'gambles', function (Blueprint $table) {
+		// Schema::create('gambles', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';
 		// 	$table->increments('id')->unsigned();
             
@@ -110,7 +110,7 @@ class CreateBusinessAndFeaturesTables extends Migration
 		// 	$table->timestamps();
         //     $table->softDeletes();
 		// });
-		// Schema::create(config('app.db-prefix', '').'gamble_actions', function (Blueprint $table) {
+		// Schema::create('gamble_actions', function (Blueprint $table) {
 		// 	$table->engine = 'InnoDB';
 		// 	$table->increments('id')->unsigned();
         //     $table->unsignedInteger('cupons');
