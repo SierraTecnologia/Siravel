@@ -2,7 +2,7 @@
 
 namespace SiUtils\Tools;
 
-require 'Net/SSH2.php';
+use phpseclib3\Net\SSH2;
 
 use Finder\Models\Digital\Infra\Computer;
 
@@ -24,7 +24,7 @@ class Ssh extends Bash
     public function getConnection()
     {
         if (!$this->connection) {
-            $this->connection = new \Net_SSH2($this->computer->host);
+            $this->connection = new SSH2($this->computer->host);
             if ($this->computer->key) {
                 if ($this->connection->login($this->computer->username, $this->computer->key->getKey())) {
                     return $this->connection;
