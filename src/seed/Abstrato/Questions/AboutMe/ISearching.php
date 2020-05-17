@@ -19,20 +19,26 @@ class ISearching extends Questions
 
     public function init()
     {
-        $questions[] = Question::firstOrCreate([
+        $questions[] = Question::firstOrCreate(
+            [
             'question' => 'Quais Praticas sonhas toda hora ?',
             'options' => 'options::model-Taste'
-        ]);
+            ]
+        );
 
-        $questions[] = Question::firstOrCreate([
+        $questions[] = Question::firstOrCreate(
+            [
             'question' => 'A quantos anos prática bdsm ?',
             'options' => 'integer'
-        ]);
+            ]
+        );
 
-        $questions[] = Question::firstOrCreate([
+        $questions[] = Question::firstOrCreate(
+            [
             'question' => 'Descreva sua melhor experiência com BDSM',
             'options' => 'text'
-        ]);
+            ]
+        );
 
         return $questions;
     }

@@ -60,7 +60,7 @@ class TeamService
      * Search the teams
      *
      * @param integer $userId
-     * @param string $input
+     * @param string  $input
      *
      * @return \Illuminate\Support\Collection|null|static|Team
      */
@@ -82,19 +82,21 @@ class TeamService
      * Create a team
      *
      * @param integer $userId
-     * @param array $input
+     * @param array   $input
      *
      * @return \Illuminate\Support\Collection|null|static|Team
      */
     public function create($userId, $input)
     {
         try {
-            $team = DB::transaction(function () use ($userId, $input) {
-                $input['user_id'] = $userId;
-                $team = $this->model->create($input);
-                $this->userService->joinTeam($team->id, $userId);
-                return $team;
-            });
+            $team = DB::transaction(
+                function () use ($userId, $input) {
+                    $input['user_id'] = $userId;
+                    $team = $this->model->create($input);
+                    $this->userService->joinTeam($team->id, $userId);
+                    return $team;
+                }
+            );
 
             return $team;
         } catch (Exception $e) {
@@ -130,7 +132,7 @@ class TeamService
      * Update a team
      *
      * @param integer $id
-     * @param array $input
+     * @param array   $input
      *
      * @return Team
      */
@@ -145,7 +147,7 @@ class TeamService
     /**
      * Delete a team
      *
-     * @param User $user
+     * @param User    $user
      * @param integer $id
      *
      * @return boolean
@@ -166,9 +168,9 @@ class TeamService
     /**
      * Invite a team member
      *
-     * @param User $admin
+     * @param User    $admin
      * @param integer $id
-     * @param string $email
+     * @param string  $email
      *
      * @return boolean
      */
@@ -200,7 +202,7 @@ class TeamService
     /**
      * Remove a team member
      *
-     * @param User $admin
+     * @param User    $admin
      * @param integer $id
      * @param integer $userId
      *

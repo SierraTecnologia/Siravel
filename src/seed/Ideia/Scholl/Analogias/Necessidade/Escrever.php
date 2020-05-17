@@ -11,9 +11,11 @@ class Escrever
 
     public function __construct(Reinado $reinado)
     {
-        $this->setContext([
+        $this->setContext(
+            [
             ''
-        ]);
+            ]
+        );
     }
     
     public function getProblema()

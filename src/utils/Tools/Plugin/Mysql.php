@@ -71,9 +71,10 @@ class Mysql extends Plugin
     }
 
     /**
-    * Connects to MySQL and runs a specified set of queries.
-    * @return bool
-    */
+     * Connects to MySQL and runs a specified set of queries.
+     *
+     * @return bool
+     */
     public function execute()
     {
         try {

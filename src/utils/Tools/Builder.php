@@ -319,12 +319,13 @@ class Builder implements LoggerAwareInterface
 
         if (isset($trend[1])) {
             $previousBuild = $this->store->getById($trend[1]['build_id']);
-            if ($previousBuild &&
-                !in_array(
+            if ($previousBuild 
+                && !in_array(
                     $previousBuild->getStatus(),
                     [Build::STATUS_PENDING, Build::STATUS_RUNNING],
                     true
-                )) {
+                )
+            ) {
                 $this->build->setErrorsTotalPrevious((int)$trend[1]['count']);
             }
         }
@@ -365,10 +366,10 @@ class Builder implements LoggerAwareInterface
     /**
      * Find a binary required by a plugin.
      *
-     * @param array|string $binary
-     * @param string       $priorityPath
-     * @param string       $binaryPath
-     * @param array        $binaryName
+     * @param  array|string $binary
+     * @param  string       $priorityPath
+     * @param  string       $binaryPath
+     * @param  array        $binaryName
      * @return string
      *
      * @throws \Exception when no binary has been found.
@@ -435,12 +436,13 @@ class Builder implements LoggerAwareInterface
             ) . '/';
         }
 
-        if (!empty($this->config['build_settings']['priority_path']) &&
-            in_array(
+        if (!empty($this->config['build_settings']['priority_path']) 
+            && in_array(
                 $this->config['build_settings']['priority_path'],
                 Plugin::AVAILABLE_PRIORITY_PATHS,
                 true
-            )) {
+            )
+        ) {
             $this->priorityPath = $this->config['build_settings']['priority_path'];
         }
 

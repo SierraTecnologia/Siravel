@@ -7,6 +7,7 @@ use Population\Models\Components\Book\Entity;
 
 /**
  * Class TagRepo
+ *
  * @package App\Repos
  */
 class TagRepo
@@ -18,8 +19,9 @@ class TagRepo
 
     /**
      * TagRepo constructor.
-     * @param \SiObjects\Components\Book\Tag $attr
-     * @param \Population\Models\Components\Book\Entity $ent
+     *
+     * @param \SiObjects\Components\Book\Tag                                   $attr
+     * @param \Population\Models\Components\Book\Entity                        $ent
      * @param \Population\Models\Components\Book\Permissions\PermissionService $ps
      */
     public function __construct(Tag $attr, Entity $ent, PermissionService $ps)
@@ -31,9 +33,10 @@ class TagRepo
 
     /**
      * Get an entity instance of its particular type.
-     * @param $entityType
-     * @param $entityId
-     * @param string $action
+     *
+     * @param  $entityType
+     * @param  $entityId
+     * @param  string $action
      * @return \Illuminate\Database\Eloquent\Model|null|static
      */
     public function getEntity($entityType, $entityId, $action = 'view')
@@ -46,8 +49,9 @@ class TagRepo
 
     /**
      * Get all tags for a particular entity.
-     * @param string $entityType
-     * @param int $entityId
+     *
+     * @param  string $entityType
+     * @param  int    $entityId
      * @return mixed
      */
     public function getForEntity($entityType, $entityId)
@@ -63,7 +67,8 @@ class TagRepo
     /**
      * Get tag name suggestions from scanning existing tag names.
      * If no search term is given the 50 most popular tag names are provided.
-     * @param $searchTerm
+     *
+     * @param  $searchTerm
      * @return array
      */
     public function getNameSuggestions($searchTerm = false)
@@ -84,8 +89,9 @@ class TagRepo
      * Get tag value suggestions from scanning existing tag values.
      * If no search is given the 50 most popular values are provided.
      * Passing a tagName will only find values for a tags with a particular name.
-     * @param $searchTerm
-     * @param $tagName
+     *
+     * @param  $searchTerm
+     * @param  $tagName
      * @return array
      */
     public function getValueSuggestions($searchTerm = false, $tagName = false)
@@ -108,8 +114,9 @@ class TagRepo
 
     /**
      * Save an array of tags to an entity
-     * @param \Population\Models\Components\Book\Entity $entity
-     * @param array $tags
+     *
+     * @param  \Population\Models\Components\Book\Entity $entity
+     * @param  array                                     $tags
      * @return array|\Illuminate\Database\Eloquent\Collection
      */
     public function saveTagsToEntity(Entity $entity, $tags = [])
@@ -128,7 +135,8 @@ class TagRepo
 
     /**
      * Create a new Tag instance from user input.
-     * @param $input
+     *
+     * @param  $input
      * @return \SiObjects\Components\Book\Tag
      */
     protected function newInstanceFromInput($input)

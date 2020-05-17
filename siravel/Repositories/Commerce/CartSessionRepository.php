@@ -13,10 +13,12 @@ class CartSessionRepository
     public function __construct()
     {
         if (is_null(Session::get('cart'))) {
-            Session::put([
+            Session::put(
+                [
                 'cart' => [],
                 'synced' => false,
-            ]);
+                ]
+            );
         }
 
         $this->user = null;
@@ -62,23 +64,27 @@ class CartSessionRepository
             }
         }
 
-        $match = $this->findMatch([
+        $match = $this->findMatch(
+            [
             'entity_id' => $id,
             'entity_type' => $type,
             'product_variants' => $variableArray,
-        ]);
+            ]
+        );
 
         if ($match) {
             $newQuantity = $match->quantity + $quantity;
             $this->changeItemQuantity($match->id, $newQuantity);
         } else {
-            $payload = json_encode([
+            $payload = json_encode(
+                [
                 'id' => rand(111111, 999999),
                 'entity_id' => $id,
                 'entity_type' => $type,
                 'product_variants' => $variableArray,
                 'quantity' => $quantity,
-            ]);
+                ]
+            );
 
             array_push($cart, $payload);
 
@@ -91,7 +97,7 @@ class CartSessionRepository
     /**
      * Find a matching item
      *
-     * @param  array $params
+     * @param array $params
      *
      * @return mixed
      */
@@ -101,9 +107,9 @@ class CartSessionRepository
         foreach ($cart as $key => $item) {
             $product = json_decode($item);
 
-            if ($product->entity_id == $params['entity_id'] &&
-                $product->entity_type == $params['entity_type'] &&
-                $product->product_variants == $params['product_variants']
+            if ($product->entity_id == $params['entity_id'] 
+                && $product->entity_type == $params['entity_type'] 
+                && $product->product_variants == $params['product_variants']
             ) {
                 return $product;
             }

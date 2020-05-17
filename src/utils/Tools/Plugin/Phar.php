@@ -14,18 +14,21 @@ class Phar extends Plugin
 {
     /**
      * Phar Filename
+     *
      * @var string
      */
     protected $filename;
 
     /**
      * Regular Expression Filename Capture
+     *
      * @var string
      */
     protected $regexp;
 
     /**
      * Stub Filename
+     *
      * @var string
      */
     protected $stub;
@@ -135,6 +138,7 @@ class Phar extends Plugin
 
     /**
      * Get stub content for the Phar file.
+     *
      * @return string
      */
     public function getStubContent()
@@ -149,6 +153,7 @@ class Phar extends Plugin
 
     /**
      * Run the phar plugin.
+     *
      * @return bool
      */
     public function execute()

@@ -26,15 +26,17 @@ class Aprendizado
 
     public static function run()
     {
-       self::playlistOne();
+        self::playlistOne();
     }
 
     public static function playlistOne()
     {
         // Começando aos 40, de Fabio Akita
-        Video::firstOrCreate([
+        Video::firstOrCreate(
+            [
             'name' => 'O Mercado de TI para Iniciantes em Programação | Série "Começando aos 40"',
             'url'              => 'https://www.youtube.com/watch?v=O76ZfAIEukE&list=PLdsnXVqbHDUc7htGFobbZoNen3r_wm3ki',
-        ]);
+            ]
+        );
     }
 }

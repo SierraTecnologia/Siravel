@@ -17,20 +17,22 @@ class TranslationRepository
     /**
      * Create or Update an entry
      *
-     * @param  integer $entityId
-     * @param  string $entityType
-     * @param  string $lang
-     * @param  array $payload
+     * @param integer $entityId
+     * @param string  $entityType
+     * @param string  $lang
+     * @param array   $payload
      *
      * @return boolean
      */
     public function createOrUpdate($entityId, $entityType, $lang, $payload)
     {
-        $translation = $this->model->firstOrCreate([
+        $translation = $this->model->firstOrCreate(
+            [
             'entity_id' => $entityId,
             'entity_type' => $entityType,
             'language' => $lang,
-        ]);
+            ]
+        );
 
         unset($payload['_method']);
         unset($payload['_token']);
@@ -43,8 +45,8 @@ class TranslationRepository
     /**
      * Find by URL
      *
-     * @param  string $url
-     * @param  string $type
+     * @param string $url
+     * @param string $type
      *
      * @return Object|null
      */
@@ -62,8 +64,8 @@ class TranslationRepository
     /**
      * Find an entity by its Id
      *
-     * @param  integer $entityId
-     * @param  string $entityType
+     * @param integer $entityId
+     * @param string  $entityType
      *
      * @return Object|null
      */
@@ -81,8 +83,8 @@ class TranslationRepository
     /**
      * Get entities by type and language
      *
-     * @param  string $lang
-     * @param  string $type
+     * @param string $lang
+     * @param string $type
      *
      * @return Illuminate\Support\Collection
      */

@@ -50,7 +50,7 @@ return [
     'maint_image_cleanup_ignore_revisions' => 'Ignorovat obrázky v revizích',
     'maint_image_cleanup_run' => 'Spustit pročištění',
     'maint_image_cleanup_warning' => 'Nalezeno :count potenciálně nepoužitých obrázků. Jste si jistí, že je chcete smazat?',
-    	
+        
     'maint_image_cleanup_success' => 'Potenciálně nepoužité obrázky byly smazány. Celkem :count.',
     'maint_image_cleanup_nothing_found' => 'Žádné potenciálně nepoužité obrázky nebyly nalezeny. Nic nebylo smazáno.',
 

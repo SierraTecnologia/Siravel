@@ -27,7 +27,7 @@ class Perfil
 
     public static function run()
     {
-       self::skills();
+        self::skills();
     }
 
     public static function skills()

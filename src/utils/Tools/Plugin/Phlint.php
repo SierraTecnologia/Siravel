@@ -16,7 +16,9 @@ use SiUtils\Tools\Plugin;
  */
 class Phlint extends Plugin
 {
-    /** @var int */
+    /**
+     * @var int 
+     */
     protected $allowedErrors = 0;
 
     /**
@@ -82,7 +84,7 @@ class Phlint extends Plugin
     }
 
     /**
-     * @param string $output
+     * @param  string $output
      * @return array
      */
     protected function processReport($output)

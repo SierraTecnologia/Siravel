@@ -15,7 +15,7 @@ interface Builder
     public function getItems(): array;
 
     /**
-     * @param array $items
+     * @param  array $items
      * @return $this
      */
     public function setItems(array $items);

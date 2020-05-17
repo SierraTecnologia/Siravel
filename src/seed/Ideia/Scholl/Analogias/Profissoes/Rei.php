@@ -11,9 +11,11 @@ class Rei
 
     public function history()
     {
-        $this->setContext([
+        $this->setContext(
+            [
             ''
-        ]);
+            ]
+        );
     }
     
     public function personagens()

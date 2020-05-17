@@ -23,52 +23,52 @@ Autoloader::register();
 
 class FilePrograms
 {
-    public function __construct($file)
-    {
+public function __construct($file)
+{
         
-    }
+}
 
-    public function getRequirements()
-    {
-        return array(
-            'php'   => array('PHP 5.3.0', version_compare(phpversion(), '5.3.0', '>=')),
-            'xml'   => array('PHP extension XML', extension_loaded('xml')),
-            'zip'   => array('PHP extension ZipArchive (optional)', extension_loaded('zip')),
-            'xmlw'  => array('PHP extension XMLWriter (optional)', extension_loaded('xmlwriter')),
-        );
-    }
+public function getRequirements()
+{
+    return array(
+        'php'   => array('PHP 5.3.0', version_compare(phpversion(), '5.3.0', '>=')),
+        'xml'   => array('PHP extension XML', extension_loaded('xml')),
+        'zip'   => array('PHP extension ZipArchive (optional)', extension_loaded('zip')),
+        'xmlw'  => array('PHP extension XMLWriter (optional)', extension_loaded('xmlwriter')),
+    );
+}
 
-    public function getExtension($extension)
-    {
-        $returnWrites = [];
-        $types = $this->getTypes;
-        foreach($types as $type) {
-            $writes = (new $type)->getWrites($class, $type);
-            foreach ($writes as $writerNameClass=>$extensionWriterClass)
-            {
-                if ($extensionWriterClass==$extension) {
-                    if (!isset($returnWrites[$type])) {
-                        $returnWrites[$type] = [];
-                    }
-                    $returnWrites[$type][] = $writerNameClass;
+public function getExtension($extension)
+{
+    $returnWrites = [];
+    $types = $this->getTypes;
+    foreach($types as $type) {
+        $writes = (new $type)->getWrites($class, $type);
+        foreach ($writes as $writerNameClass=>$extensionWriterClass)
+        {
+            if ($extensionWriterClass==$extension) {
+                if (!isset($returnWrites[$type])) {
+                    $returnWrites[$type] = [];
                 }
+                $returnWrites[$type][] = $writerNameClass;
             }
         }
-        return $returnWrites;
     }
+    return $returnWrites;
+}
 
-    public function getTypes()
-    {
-        return [
-            Types\Project::class
-        ];
-    }
+public function getTypes()
+{
+    return [
+        Types\Project::class
+    ];
+}
 
-    public function run()
-    {
-        $this->header();
-        $this->getRequirements();
-        if (!CLI) {
+public function run()
+{
+    $this->header();
+    $this->getRequirements();
+    if (!CLI) {
         ?>
         <div class="jumbotron">
         <p>Welcome to PHPProject, a library written in pure PHP that provides a set of classes to write to and read from different document file formats, i.e. GanttProject (.gan) and MS Project (.mpx).</p>
@@ -79,77 +79,77 @@ class FilePrograms
         </p>
         </div>
         <?php
-        }
-        if (!CLI) {
-            echo "<h3>Requirement check:</h3>";
-            echo "<ul>";
-            foreach ($requirements as $key => $value) {
-                list($label, $result) = $value;
-                $status = $result ? 'passed' : 'failed';
-                echo "<li>{$label} ... <span class='{$status}'>{$status}</span></li>";
-            }
-            echo "</ul>";
-            include_once 'Sample_Footer.php';
-        } else {
-            echo 'Requirement check:' . PHP_EOL;
-            foreach ($requirements as $key => $value) {
-                list($label, $result) = $value;
-                $status = $result ? '32m passed' : '31m failed';
-                echo "{$label} ... \033[{$status}\033[0m" . PHP_EOL;
-            }
-        }
-
-
     }
-    public function reader()
-    {
-        // Create new PHPProject object
-        echo date('H:i:s') . ' Create new PHPProject object'.EOL;
+    if (!CLI) {
+        echo "<h3>Requirement check:</h3>";
+        echo "<ul>";
+        foreach ($requirements as $key => $value) {
+            list($label, $result) = $value;
+            $status = $result ? 'passed' : 'failed';
+            echo "<li>{$label} ... <span class='{$status}'>{$status}</span></li>";
+        }
+        echo "</ul>";
+        include_once 'Sample_Footer.php';
+    } else {
+        echo 'Requirement check:' . PHP_EOL;
+        foreach ($requirements as $key => $value) {
+            list($label, $result) = $value;
+            $status = $result ? '32m passed' : '31m failed';
+            echo "{$label} ... \033[{$status}\033[0m" . PHP_EOL;
+        }
+    }
+
+
+}
+public function reader()
+{
+    // Create new PHPProject object
+    echo date('H:i:s') . ' Create new PHPProject object'.EOL;
         
-        $objReader = IOFactory::createReader('GanttProject');
-        $objPHPProject = $objReader->load($this->file->getTmp());
+    $objReader = IOFactory::createReader('GanttProject');
+    $objPHPProject = $objReader->load($this->file->getTmp());
 
-        // Set properties
-        echo date('H:i:s') . ' Get properties'.EOL;
-        echo 'Creator > '.$objPHPProject->getProperties()->getCreator().EOL;
-        echo 'LastModifiedBy > '.$objPHPProject->getProperties()->getLastModifiedBy().EOL;
-        echo 'Title > '.$objPHPProject->getProperties()->getTitle().EOL;
-        echo 'Subject > '.$objPHPProject->getProperties()->getSubject().EOL;
-        echo 'Description > '.$objPHPProject->getProperties()->getDescription().EOL;
-        echo EOL;
-        // Add some data
-        echo date('H:i:s') . ' Get some data'.EOL;
-        echo 'StartDate > '.$objPHPProject->getInformations()->getStartDate().EOL;
-        echo 'EndDate > '.$objPHPProject->getInformations()->getEndDate().EOL;
-        echo EOL;
-        // Ressources
-        echo date('H:i:s') . ' Get ressources'.EOL;
-        foreach ($objPHPProject->getAllResources() as $oResource){
-            echo 'Resource : '.$oResource->getTitle().EOL;
-        }
-        echo EOL;
-        // Tasks
-        echo date('H:i:s') . ' Get tasks'.EOL;
-        foreach ($objPHPProject->getAllTasks() as $oTask){
-            echoTask($objPHPProject, $oTask);
-        }
-        // Echo done
-        echo date('H:i:s') . ' Done reading file.'.EOL;
-        if (!CLI) {
-            include_once 'Sample_Footer.php';
-        }
+    // Set properties
+    echo date('H:i:s') . ' Get properties'.EOL;
+    echo 'Creator > '.$objPHPProject->getProperties()->getCreator().EOL;
+    echo 'LastModifiedBy > '.$objPHPProject->getProperties()->getLastModifiedBy().EOL;
+    echo 'Title > '.$objPHPProject->getProperties()->getTitle().EOL;
+    echo 'Subject > '.$objPHPProject->getProperties()->getSubject().EOL;
+    echo 'Description > '.$objPHPProject->getProperties()->getDescription().EOL;
+    echo EOL;
+    // Add some data
+    echo date('H:i:s') . ' Get some data'.EOL;
+    echo 'StartDate > '.$objPHPProject->getInformations()->getStartDate().EOL;
+    echo 'EndDate > '.$objPHPProject->getInformations()->getEndDate().EOL;
+    echo EOL;
+    // Ressources
+    echo date('H:i:s') . ' Get ressources'.EOL;
+    foreach ($objPHPProject->getAllResources() as $oResource){
+        echo 'Resource : '.$oResource->getTitle().EOL;
     }
+    echo EOL;
+    // Tasks
+    echo date('H:i:s') . ' Get tasks'.EOL;
+    foreach ($objPHPProject->getAllTasks() as $oTask){
+        echoTask($objPHPProject, $oTask);
+    }
+    // Echo done
+    echo date('H:i:s') . ' Done reading file.'.EOL;
+    if (!CLI) {
+        include_once 'Sample_Footer.php';
+    }
+}
 
-    public function header()
+public function header()
     {
 
         // Set writers
         $writers = $this->getWrites();
 
         // Return to the caller script when runs by CLI
-        if (CLI) {
-            return;
-        }
+if (CLI) {
+    return;
+}
 
         // Set titles and names
         $pageHeading = str_replace('_', ' ', SCRIPT_FILENAME);
@@ -159,17 +159,17 @@ class FilePrograms
 
         // Populate samples
         $files = '';
-        if ($handle = opendir('.')) {
-            while (false !== ($file = readdir($handle))) {
-                if (preg_match('/^Sample_\d+_/', $file)) {
-                    $name = str_replace('_', ' ', preg_replace('/(Sample_|\.php)/', '', $file));
-                    $files .= "<li><a href='{$file}'>{$name}</a></li>";
-                }
-            }
-            closedir($handle);
+if ($handle = opendir('.')) {
+    while (false !== ($file = readdir($handle))) {
+        if (preg_match('/^Sample_\d+_/', $file)) {
+            $name = str_replace('_', ' ', preg_replace('/(Sample_|\.php)/', '', $file));
+            $files .= "<li><a href='{$file}'>{$name}</a></li>";
         }
+    }
+    closedir($handle);
+}
 
-        ?>
+?>
         <title><?php echo $pageTitle; ?></title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />

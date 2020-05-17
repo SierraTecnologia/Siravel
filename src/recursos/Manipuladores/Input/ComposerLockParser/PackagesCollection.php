@@ -78,7 +78,9 @@ class PackagesCollection extends ArrayObject
             return $this->indexedBy['name'];
         }
 
-        /** @var Package $package */
+        /**
+ * @var Package $package 
+*/
         foreach($this->getArrayCopy() as $package) {
             if (!($package instanceof Package)) {
                 continue;
@@ -98,7 +100,9 @@ class PackagesCollection extends ArrayObject
             return $this->indexedBy['namespace'];
         }
 
-        /** @var Package $package */
+        /**
+ * @var Package $package 
+*/
         foreach($this->getArrayCopy() as $package) {
             if (!($package instanceof Package)) {
                 continue;

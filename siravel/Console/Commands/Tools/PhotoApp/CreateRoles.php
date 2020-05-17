@@ -35,10 +35,12 @@ class CreateRoles extends Command
     public function handle(): void
     {
         if (!Role::exists()) {
-            Role::insert([
+            Role::insert(
+                [
                 ['name' => UserEntity::ROLE_ADMINISTRATOR],
                 ['name' => UserEntity::ROLE_CUSTOMER],
-            ]);
+                ]
+            );
         }
     }
 }

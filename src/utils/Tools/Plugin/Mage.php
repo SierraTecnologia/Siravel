@@ -12,8 +12,8 @@ use \PHPCensor\Plugin;
 /**
  * Integrates PHPCensor with Mage: https://github.com/andres-montanez/Magallanes
  *
- * @package      PHPCensor
- * @subpackage   Plugins
+ * @package    PHPCensor
+ * @subpackage Plugins
  */
 class Mage extends Plugin
 {
@@ -70,6 +70,7 @@ class Mage extends Plugin
 
     /**
      * Get mage log lines
+     *
      * @return array
      * @throws \Exception
      */
@@ -85,9 +86,11 @@ class Mage extends Plugin
             throw new \Exception('Log dir read fail');
         }
 
-        $list = array_filter($list, function ($name) {
-            return preg_match('/^log-\d+-\d+\.log$/', $name);
-        });
+        $list = array_filter(
+            $list, function ($name) {
+                return preg_match('/^log-\d+-\d+\.log$/', $name);
+            }
+        );
         if (empty($list)) {
             throw new \Exception('Log dir filter fail');
         }

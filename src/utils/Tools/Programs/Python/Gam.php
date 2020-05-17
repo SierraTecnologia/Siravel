@@ -5,12 +5,12 @@
  * https://github.com/jay0lee/GAM/tree/master/src
  */
 
- class Gam
- {
-     protected $repositoryUrl = 'https://git.io/install-gam';
+class Gam
+{
+    protected $repositoryUrl = 'https://git.io/install-gam';
 
-     public function installCommand()
-     {
+    public function installCommand()
+    {
         return 'bash <(curl -s -S -L '.$this->repositoryUrl.')';
-     }
- }
+    }
+}

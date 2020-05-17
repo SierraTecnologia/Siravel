@@ -7,7 +7,8 @@ use Finder\Models\Digital\Midia\PhotoAlbum;
 use Finder\Services\Midia\MidiaService;
 use App\Http\Controllers\Controller;
 
-class MidiaController extends Controller {
+class MidiaController extends Controller
+{
 
 
     public function __construct(MidiaService $service)
@@ -57,11 +58,11 @@ class MidiaController extends Controller {
 
 
     // public function show($id)
-	// {
+    // {
     //     $photo_album = PhotoAlbum::find($id);
     //     $photos = Photo::where('photo_album_id', $id)->get();
 
     //     return view('features.photo.view_album',compact('photos','photo_album'));
-	// }
+    // }
 
 }

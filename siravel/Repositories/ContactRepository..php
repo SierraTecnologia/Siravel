@@ -116,7 +116,7 @@ class ContactRepository
      * Updates Contact into database.
      *
      * @param Contact $contact
-     * @param array $input
+     * @param array   $input
      *
      * @return Contact
      */

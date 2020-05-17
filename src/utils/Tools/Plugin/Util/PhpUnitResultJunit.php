@@ -40,30 +40,30 @@ class PhpUnitResultJunit extends PhpUnitResult
         $severity = self::SEVERITY_PASS;
         foreach ($testCase as $child) {
             switch ($child->getName()) {
-                case 'failure':
-                    $severity = self::SEVERITY_FAIL;
-                    break 2;
-                case 'error':
-                    if ('PHPUnit\Framework\RiskyTestError' == $child['type']) { // == because convertion to string is desired
-                        $severity = self::SEVERITY_RISKY;
-                    } else {
-                        $severity = self::SEVERITY_ERROR;
-                    }
-                    break 2;
-                case 'skipped':
-                    // skipped and ignored, can not distinguish
-                    $severity = self::SEVERITY_SKIPPED;
-                    break 2;
-                case 'warning':
-                    $severity = self::SEVERITY_WARN;
-                    break 2;
-                case 'system-out':
-                case 'system-err':
-                    // not results
-                    continue 2;
-                default:
-                    $severity = 'UNKNOWN RESULT TYPE: '.$child->getName();
-                    break 2;
+            case 'failure':
+                $severity = self::SEVERITY_FAIL;
+                break 2;
+            case 'error':
+                if ('PHPUnit\Framework\RiskyTestError' == $child['type']) { // == because convertion to string is desired
+                    $severity = self::SEVERITY_RISKY;
+                } else {
+                    $severity = self::SEVERITY_ERROR;
+                }
+                break 2;
+            case 'skipped':
+                // skipped and ignored, can not distinguish
+                $severity = self::SEVERITY_SKIPPED;
+                break 2;
+            case 'warning':
+                $severity = self::SEVERITY_WARN;
+                break 2;
+            case 'system-out':
+            case 'system-err':
+                // not results
+                continue 2;
+            default:
+                $severity = 'UNKNOWN RESULT TYPE: '.$child->getName();
+                break 2;
             }
         }
 
@@ -116,16 +116,16 @@ class PhpUnitResultJunit extends PhpUnitResult
         $msg = '';
         foreach ($testCase as $child) {
             switch ($child->getName()) {
-                case 'system-out':
-                case 'system-err':
-                    // not results
-                    continue 2;
-                default:
-                    $msg = (string)$child['message']; // according to xsd
-                    if ('' === $msg) {
-                        $msg = (string)$child;
-                    }
-                    break 2;
+            case 'system-out':
+            case 'system-err':
+                // not results
+                continue 2;
+            default:
+                $msg = (string)$child['message']; // according to xsd
+                if ('' === $msg) {
+                    $msg = (string)$child;
+                }
+                break 2;
             }
         }
 

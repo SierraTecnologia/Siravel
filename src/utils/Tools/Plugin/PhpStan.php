@@ -16,13 +16,15 @@ use SiUtils\Tools\Plugin;
  */
 class PhpStan extends Plugin
 {
-    /** @var int */
+    /**
+     * @var int 
+     */
     protected $allowedErrors = 0;
 
     /**
      * @param Builder $builder
-     * @param Build $build
-     * @param array $options
+     * @param Build   $build
+     * @param array   $options
      *
      * @throws \Exception
      */
@@ -75,11 +77,13 @@ class PhpStan extends Plugin
                         if (\strlen($message['message']) > $len) {
                             $len = \strlen($message['message']);
                         }
-                        $out .= \vsprintf(' %d%s %s' . PHP_EOL, [
+                        $out .= \vsprintf(
+                            ' %d%s %s' . PHP_EOL, [
                             $message['line'],
                             \str_repeat(' ', 6 - \strlen($message['line'])),
                             $message['message']
-                        ]);
+                            ]
+                        );
 
                         $this->build->reportError(
                             $this->builder,
@@ -92,11 +96,15 @@ class PhpStan extends Plugin
                     }
                     $separator = \str_repeat('-', 6) . ' ' . \str_repeat('-', $len + 2) . PHP_EOL;
 
-                    $this->builder->logFailure(\vsprintf('%s Line   %s' . PHP_EOL . '%s', [
-                        $separator,
-                        $file,
-                        $separator . $out . $separator
-                    ]));
+                    $this->builder->logFailure(
+                        \vsprintf(
+                            '%s Line   %s' . PHP_EOL . '%s', [
+                            $separator,
+                            $file,
+                            $separator . $out . $separator
+                            ]
+                        )
+                    );
                 }
             }
         }
@@ -130,7 +138,7 @@ class PhpStan extends Plugin
     }
 
     /**
-     * @param string $output
+     * @param  string $output
      * @return array
      */
     protected function processReport($output)

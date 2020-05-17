@@ -68,6 +68,7 @@ class HipchatNotify extends Plugin
 
     /**
      * Run the HipChat plugin.
+     *
      * @return bool
      */
     public function execute()

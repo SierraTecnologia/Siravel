@@ -6,11 +6,11 @@ use SiUtils\Tools\Bash;
 
 /**
  * Docker Class
- * 
  *
- * @class  Mysql
+ * @class Mysql
  */
-class Docker {
+class Docker
+{
 
     protected $local = false;
 

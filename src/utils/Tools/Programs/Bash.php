@@ -5,9 +5,10 @@ namespace SiUtils\Tools;
 /**
  * Bash Class
  *
- * @class  Bash
+ * @class Bash
  */
-class Bash {
+class Bash
+{
 
     protected $localDir = false;
 

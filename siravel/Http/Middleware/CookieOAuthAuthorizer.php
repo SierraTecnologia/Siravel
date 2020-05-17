@@ -16,8 +16,8 @@ class CookieOAuthAuthorizer
     /**
      * Handle an incoming request.
      *
-     * @param Request $request
-     * @param Closure $next
+     * @param  Request $request
+     * @param  Closure $next
      * @return Response
      */
     public function handle($request, Closure $next)
@@ -32,7 +32,7 @@ class CookieOAuthAuthorizer
     /**
      * Convert an authorization cookie to a header for a request.
      *
-     * @param Request $request
+     * @param  Request $request
      * @return void
      */
     private function convertAuthorizationCookieToHeader($request): void

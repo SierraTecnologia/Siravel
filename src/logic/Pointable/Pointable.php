@@ -9,10 +9,12 @@ class Pointable
 {
     public static function acoes()
     {
-        PointType::create([
+        PointType::create(
+            [
             'description' => 'Interaja com Alguem',
             'points' => 1
-        ]);
+            ]
+        );
     }
 
     /** 
@@ -20,21 +22,27 @@ class Pointable
      */
     public static function sobreVoce()
     {
-        PointType::create([
+        PointType::create(
+            [
             'description' => 'Preencha seu Whatsapp',
             'points' => 1
-        ]);
-        PointType::create([
+            ]
+        );
+        PointType::create(
+            [
             'description' => 'Complete 100% o seu Perfil',
             'points' => 1
-        ]);
+            ]
+        );
     }
 
     public static function feedbacks()
     {
-        PointType::create([
+        PointType::create(
+            [
             'description' => 'De uma boa sugestão para o sistema.',
             'points' => 1
-        ]);
+            ]
+        );
     }
 }

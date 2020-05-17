@@ -10,6 +10,7 @@ use Uniondrug\Structs\StructInterface;
 
 /**
  * 解析属性
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Property extends Base
@@ -48,6 +49,7 @@ class Property extends Base
 
     /**
      * 属性默认值
+     *
      * @return int
      */
     public function defaultValue()
@@ -55,23 +57,23 @@ class Property extends Base
         $t = $this->annotation->validator !== null ? $this->annotation->validator->type : $this->annotation->type;
         $v = '';
         switch ($t) {
-            case 'int' :
-            case 'integer' :
-                $v = '0';
-                break;
-            case 'double' :
-            case 'float' :
-                $v = '0.0';
-                break;
-            case 'date' :
-                $v = '0000-00-00';
-                break;
-            case 'datetime' :
-                $v = '0000-00-00 00:00:00';
-                break;
-            case 'time' :
-                $v = '00:00';
-                break;
+        case 'int' :
+        case 'integer' :
+            $v = '0';
+            break;
+        case 'double' :
+        case 'float' :
+            $v = '0.0';
+            break;
+        case 'date' :
+            $v = '0000-00-00';
+            break;
+        case 'datetime' :
+            $v = '0000-00-00 00:00:00';
+            break;
+        case 'time' :
+            $v = '00:00';
+            break;
         }
         return $v;
     }

@@ -134,6 +134,7 @@ class SensiolabsInsight extends Plugin
 
     /**
      * Execute Sensiolabs Insight.
+     *
      * @param $binaryPath
      */
     protected function executeSensiolabsInsight($binaryPath)

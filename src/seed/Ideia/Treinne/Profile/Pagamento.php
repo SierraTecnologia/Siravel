@@ -27,7 +27,7 @@ class Pagamento
 
     public static function run()
     {
-       self::skills();
+        self::skills();
     }
 
     public static function porDinheiro($pesoValor = 1)

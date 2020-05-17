@@ -20,20 +20,26 @@ class AboutMe extends Questions
     public function init()
     {
         return [
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 'question' => 'Quais Praticas sonhas toda hora ?',
                 'options' => 'options::model-Taste'
-            ]),
+                ]
+            ),
 
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 'question' => 'A quantos anos prática bdsm ?',
                 'options' => 'integer'
-            ]),
+                ]
+            ),
 
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 'question' => 'Descreva sua melhor experiência com BDSM',
                 'options' => 'text'
-            ]),
+                ]
+            ),
         ];
     }
 

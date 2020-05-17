@@ -37,9 +37,9 @@ Minha dinâmica | @parent
                                 @include('activities.types._' . snake_case(class_basename($activity->type)))
                             @endunless
                             <?php
-                                if ($activity->type == 'BlogHasNewArticle') {
-                                    $indentifiers[] = $activity->indentifier;
-                                }
+                            if ($activity->type == 'BlogHasNewArticle') {
+                                $indentifiers[] = $activity->indentifier;
+                            }
                             ?>
                         @endforeach
                     </ul>

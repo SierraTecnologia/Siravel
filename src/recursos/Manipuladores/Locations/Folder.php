@@ -16,8 +16,9 @@ class Folder
     /**
      * Undocumented function
      *
-     * @param [type] $raizLocation
-     * @param boolean $computer Caso falso entao é o local
+     * @param [type]  $raizLocation
+     * @param boolean $computer     Caso falso entao é o
+     *                              local
      */
     public function __construct($raizLocation, $computer = false)
     {

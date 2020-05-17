@@ -27,7 +27,7 @@ class Livros
 
     public static function run()
     {
-       self::resumos();
+        self::resumos();
     }
 
     public static function resumos()

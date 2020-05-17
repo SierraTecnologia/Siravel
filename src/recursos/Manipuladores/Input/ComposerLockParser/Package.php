@@ -4,7 +4,8 @@ namespace SiWeapons\Manipuladores\Input\ComposerLockParser;
 
 use DateTime;
 
-class Package {
+class Package
+{
 
     /**
      * @var string
@@ -93,8 +94,8 @@ class Package {
 
     private function __construct(string $name, string $version, array $source, array $dist, array $require,
         array $requireDev, array $suggest, string $type, array $extra, array $autoload, string $notificationUrl, array $license, array $authors, string $description, string $homepage,
-        array $keywords, $time)
-    {
+        array $keywords, $time
+    ) {
         $this->name = $name;
         $this->version = $version;
         $this->source = $source;

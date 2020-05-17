@@ -177,7 +177,9 @@ class PhpUnitOptions
      */
     public function getDirectories(Builder $builder)
     {
-        /** @deprecated Option "directory" is deprecated and will be deleted in version 2.0. Use the option "directories" instead. */
+        /**
+ * @deprecated Option "directory" is deprecated and will be deleted in version 2.0. Use the option "directories" instead. 
+*/
         if (!empty($this->options['directory']) && empty($this->options['directories'])) {
             $builder->logWarning(
                 '[DEPRECATED] Option "path" is deprecated and will be deleted in version 2.0. Use the option "directory" instead.'

@@ -113,8 +113,8 @@ class XMPP extends Plugin
     public function findConfigFile()
     {
         if (file_exists($this->builder->buildPath . '.sendxmpprc')) {
-            if (md5(file_get_contents($this->builder->buildPath . '.sendxmpprc'))
-                !== md5($this->getConfigFormat())) {
+            if (md5(file_get_contents($this->builder->buildPath . '.sendxmpprc'))!== md5($this->getConfigFormat())
+            ) {
                 return null;
             }
 
@@ -179,7 +179,7 @@ class XMPP extends Plugin
     }
 
     /**
-     * @param $messageFile
+     * @param  $messageFile
      * @return int
      */
     protected function buildMessage($messageFile)

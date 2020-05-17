@@ -31,7 +31,7 @@ class Executor
     protected $store;
 
     /**
-     * @param Factory $pluginFactory
+     * @param Factory     $pluginFactory
      * @param BuildLogger $logger
      */
     public function __construct(Factory $pluginFactory, BuildLogger $logger, BuildStore $store = null)
@@ -110,7 +110,9 @@ class Executor
      */
     protected function getBranchSpecificPlugins($config, $stage, $pluginsToExecute)
     {
-        /** @var \PHPCensor\Model\Build $build */
+        /**
+ * @var \PHPCensor\Model\Build $build 
+*/
         $build        = $this->pluginFactory->getResourceFor('PHPCensor\Model\Build');
         $branch       = $build->getBranch();
         $branchConfig = $this->getBranchSpecificConfig($config, $branch);
@@ -127,24 +129,24 @@ class Executor
 
         switch ($runOption) {
             // Replace standard plugin set for this stage with just the branch-specific ones:
-            case 'replace':
-                $pluginsToExecute   = [];
-                $pluginsToExecute[] = $plugins;
-                break;
+        case 'replace':
+            $pluginsToExecute   = [];
+            $pluginsToExecute[] = $plugins;
+            break;
 
             // Run branch-specific plugins before standard plugins:
-            case 'before':
-                array_unshift($pluginsToExecute, $plugins);
-                break;
+        case 'before':
+            array_unshift($pluginsToExecute, $plugins);
+            break;
 
             // Run branch-specific plugins after standard plugins:
-            case 'after':
-                array_push($pluginsToExecute, $plugins);
-                break;
+        case 'after':
+            array_push($pluginsToExecute, $plugins);
+            break;
 
-            default:
-                array_push($pluginsToExecute, $plugins);
-                break;
+        default:
+            array_push($pluginsToExecute, $plugins);
+            break;
         }
 
         return $pluginsToExecute;
@@ -152,8 +154,9 @@ class Executor
 
     /**
      * Execute the list of plugins found for a given testing stage.
-     * @param $plugins
-     * @param $stage
+     *
+     * @param  $plugins
+     * @param  $stage
      * @return bool
      * @throws \Exception
      */
@@ -239,9 +242,9 @@ class Executor
     /**
      * Change the status of a plugin for a given stage.
      *
-     * @param string $stage The builder stage.
+     * @param string $stage  The builder stage.
      * @param string $plugin The plugin name.
-     * @param int $status The new status.
+     * @param int    $status The new status.
      */
     protected function setPluginStatus($stage, $plugin, $status)
     {
@@ -269,7 +272,9 @@ class Executor
      */
     private function getBuildSummary()
     {
-        /** @var Build $build */
+        /**
+ * @var Build $build 
+*/
         $build = $this->pluginFactory->getResourceFor('PHPCensor\Model\Build');
         $metas = $this->store->getMeta('plugin-summary', $build->getProjectId(), $build->getId());
         return isset($metas[0]['meta_value']) ? $metas[0]['meta_value'] : [];
@@ -282,7 +287,9 @@ class Executor
      */
     private function setBuildSummary($summary)
     {
-        /** @var Build $build */
+        /**
+ * @var Build $build 
+*/
         $build = $this->pluginFactory->getResourceFor('PHPCensor\Model\Build');
         $this->store->setMeta($build->getId(), 'plugin-summary', json_encode($summary));
     }

@@ -53,7 +53,7 @@ trait ModuleServiceTrait
     /**
      * Module Links.
      *
-     * @param array $ignoredFeatures   A list of ignored links
+     * @param array $ignoredFeatures A list of ignored links
      *
      * @return string
      */

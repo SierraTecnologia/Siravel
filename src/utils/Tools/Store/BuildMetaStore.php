@@ -28,8 +28,8 @@ class BuildMetaStore extends Store
     /**
      * Get a BuildMeta by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return null|BuildMeta
      */
@@ -41,8 +41,8 @@ class BuildMetaStore extends Store
     /**
      * Get a single BuildMeta by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return null|BuildMeta
      *
@@ -68,8 +68,8 @@ class BuildMetaStore extends Store
     }
 
     /**
-     * @param int $buildId
-     * @param string  $key
+     * @param int    $buildId
+     * @param string $key
      *
      * @return null|BuildMeta
      *
@@ -102,9 +102,9 @@ class BuildMetaStore extends Store
     /**
      * Get multiple BuildMeta by BuildId.
      *
-     * @param int $buildId
-     * @param int $limit
-     * @param string  $useConnection
+     * @param int    $buildId
+     * @param int    $limit
+     * @param string $useConnection
      *
      * @return array
      *

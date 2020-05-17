@@ -229,9 +229,11 @@ class File
             'old_index' => $this->oldIndex,
             'new_index' => $this->newIndex,
             'is_binary' => $this->isBinary,
-            'changes' => array_map(function (FileChange $change) {
-                return $change->toArray();
-            }, $this->changes),
+            'changes' => array_map(
+                function (FileChange $change) {
+                    return $change->toArray();
+                }, $this->changes
+            ),
         );
     }
 

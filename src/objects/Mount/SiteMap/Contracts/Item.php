@@ -25,7 +25,7 @@ interface Item
     );
 
     /**
-     * @param string $value
+     * @param  string $value
      * @return $this
      */
     public function setLocation(string $value);
@@ -41,7 +41,7 @@ interface Item
     public function hasLocation(): bool;
 
     /**
-     * @param string $value
+     * @param  string $value
      * @return $this
      */
     public function setLastModified(string $value);
@@ -57,7 +57,7 @@ interface Item
     public function hasLastModified(): bool;
 
     /**
-     * @param string $value
+     * @param  string $value
      * @return $this
      */
     public function setChangeFrequency(string $value);
@@ -73,7 +73,7 @@ interface Item
     public function hasChangeFrequency(): bool;
 
     /**
-     * @param string $value
+     * @param  string $value
      * @return $this
      */
     public function setPriority(string $value);

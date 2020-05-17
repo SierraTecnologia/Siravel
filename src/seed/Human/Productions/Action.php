@@ -8,7 +8,8 @@ namespace SiSeed\Human\Productions;
 class Action
 {
 
-    public function attributes(){
+    public function attributes()
+    {
         return [
             Attributes\Time::class(),
             Attributes\Target::class(),

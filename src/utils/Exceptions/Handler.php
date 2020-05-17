@@ -10,66 +10,66 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
-	/**
-	 * A list of the exception types that should not be reported to log.
-	 *
-	 * @var array
-	 */
-	protected $dontReport = [
-		HttpException::class,
+    /**
+     * A list of the exception types that should not be reported to log.
+     *
+     * @var array
+     */
+    protected $dontReport = [
+    HttpException::class,
         ModelNotFoundException::class,
         ValidationException::class,
-	];
+    ];
 
-	protected $httpCodes = [
-		0   => 'Unknown error',
-		// [Informational 1xx]
-		100 => 'Continue',
-		101 => 'Switching Protocols',
-		// [Successful 2xx]
-		200 => 'OK',
-		201 => 'Created',
-		202 => 'Accepted',
-		203 => 'Non-Authoritative Information',
-		204 => 'No Content',
-		205 => 'Reset Content',
-		206 => 'Partial Content',
-		// [Redirection 3xx]
-		300 => 'Multiple Choices',
-		301 => 'Moved Permanently',
-		302 => 'Found',
-		303 => 'See Other',
-		304 => 'Not Modified',
-		305 => 'Use Proxy',
-		306 => '(Unused)',
-		307 => 'Temporary Redirect',
-		// [Client Error 4xx]
-		400 => 'Bad Request',
-		401 => 'Unauthorized',
-		402 => 'Payment Required',
-		403 => 'Forbidden',
-		404 => 'Not Found',
-		405 => 'Method Not Allowed',
-		406 => 'Not Acceptable',
-		407 => 'Proxy Authentication Required',
-		408 => 'Request Timeout',
-		409 => 'Conflict',
-		410 => 'Gone',
-		411 => 'Length Required',
-		412 => 'Precondition Failed',
-		413 => 'Request Entity Too Large',
-		414 => 'Request-URI Too Long',
-		415 => 'Unsupported Media Type',
-		416 => 'Requested Range Not Satisfiable',
-		417 => 'Expectation Failed',
-		// [Server Error 5xx]
-		500 => 'Internal Server Error',
-		501 => 'Not Implemented',
-		502 => 'Bad Gateway',
-		503 => 'Service Unavailable',
-		504 => 'Gateway Timeout',
-		505 => 'HTTP Version Not Supported'
-	];
+    protected $httpCodes = [
+    0   => 'Unknown error',
+    // [Informational 1xx]
+    100 => 'Continue',
+    101 => 'Switching Protocols',
+    // [Successful 2xx]
+    200 => 'OK',
+    201 => 'Created',
+    202 => 'Accepted',
+    203 => 'Non-Authoritative Information',
+    204 => 'No Content',
+    205 => 'Reset Content',
+    206 => 'Partial Content',
+    // [Redirection 3xx]
+    300 => 'Multiple Choices',
+    301 => 'Moved Permanently',
+    302 => 'Found',
+    303 => 'See Other',
+    304 => 'Not Modified',
+    305 => 'Use Proxy',
+    306 => '(Unused)',
+    307 => 'Temporary Redirect',
+    // [Client Error 4xx]
+    400 => 'Bad Request',
+    401 => 'Unauthorized',
+    402 => 'Payment Required',
+    403 => 'Forbidden',
+    404 => 'Not Found',
+    405 => 'Method Not Allowed',
+    406 => 'Not Acceptable',
+    407 => 'Proxy Authentication Required',
+    408 => 'Request Timeout',
+    409 => 'Conflict',
+    410 => 'Gone',
+    411 => 'Length Required',
+    412 => 'Precondition Failed',
+    413 => 'Request Entity Too Large',
+    414 => 'Request-URI Too Long',
+    415 => 'Unsupported Media Type',
+    416 => 'Requested Range Not Satisfiable',
+    417 => 'Expectation Failed',
+    // [Server Error 5xx]
+    500 => 'Internal Server Error',
+    501 => 'Not Implemented',
+    502 => 'Bad Gateway',
+    503 => 'Service Unavailable',
+    504 => 'Gateway Timeout',
+    505 => 'HTTP Version Not Supported'
+    ];
 
     public static $DEFAULT_MESSAGE = 'Algo que não esta certo deu errado! Por favor, entre em contato conosco.';
 
@@ -99,7 +99,7 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Exception  $exception
+     * @param  \Exception $exception
      * @return void
      */
     public function report(Exception $exception)
@@ -127,8 +127,8 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Exception               $exception
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
@@ -155,9 +155,9 @@ class Handler extends ExceptionHandler
 
 
 
-        if ($exception instanceof TokenMismatchException){
+        if ($exception instanceof TokenMismatchException) {
             // Redirect to a form. Here is an example of how I handle mine
-            return redirect($request->fullUrl())->with('csrf_error',"Oops! Seems you couldn't submit form for a long time. Please try again.");
+            return redirect($request->fullUrl())->with('csrf_error', "Oops! Seems you couldn't submit form for a long time. Please try again.");
         }
         
         // if ($exception instanceof ModelNotFoundException/* && $request->wantsJson()*/) {
@@ -205,49 +205,53 @@ class Handler extends ExceptionHandler
         // return parent::render($request, $exception);
 
         
-		// If debug is enabled in local environment dump stack trace
-		if(\Illuminate\Support\Facades\Config::get('app.debug') and app()->environment('local'))
-			return (class_exists('Whoops\\Run')) ? $this->whoops($exception) : parent::render($request, $e);
+        // If debug is enabled in local environment dump stack trace
+        if(\Illuminate\Support\Facades\Config::get('app.debug') and app()->environment('local')) {
+            return (class_exists('Whoops\\Run')) ? $this->whoops($exception) : parent::render($request, $e);
+        }
 
-		if ($exception instanceof ModelNotFoundException)
+        if ($exception instanceof ModelNotFoundException) {
             $exception = new NotFoundHttpException($exception->getMessage(), $exception);
+        }
 
-		// HTTP exceptions are are normally intentionally thrown and its safe to show their message
-		if($this->isHttpException($exception))
-		{
-			$code = $exception->getStatusCode();
-			$message = $exception->getMessage();
+        // HTTP exceptions are are normally intentionally thrown and its safe to show their message
+        if($this->isHttpException($exception)) {
+            $code = $exception->getStatusCode();
+            $message = $exception->getMessage();
 
-			if(empty($message))
-				$message = (isset($this->httpCodes[$code])) ? $this->httpCodes[$code] : $this->httpCodes[500];
-		}
-		// Other exceptions are usually unexpected errors and is best not to show their message but instead disguise them as error 500.
-		else
-		{
-			$code = $exception->getCode();
+            if(empty($message)) {
+                $message = (isset($this->httpCodes[$code])) ? $this->httpCodes[$code] : $this->httpCodes[500];
+            }
+        }
+        // Other exceptions are usually unexpected errors and is best not to show their message but instead disguise them as error 500.
+        else
+        {
+            $code = $exception->getCode();
 
-			if( ! isset($this->httpCodes[$code]))
-				$code = 500;
+            if(! isset($this->httpCodes[$code])) {
+                $code = 500;
+            }
 
-			$message = $this->httpCodes[$code];
-		}
+            $message = $this->httpCodes[$code];
+        }
 
-		// If a custom view exist use it, otherwise use generic error page
-		$view = (view()->exists("errors/$code")) ? "errors/$code" : 'layouts/error';
+        // If a custom view exist use it, otherwise use generic error page
+        $view = (view()->exists("errors/$code")) ? "errors/$code" : 'layouts/error';
 
-		// Data for the view
-		$data = [
-			'title' => $message,
-			'code'  => $code
-		];
+        // Data for the view
+        $data = [
+        'title' => $message,
+        'code'  => $code
+        ];
 
-		return response()->view($view, $data, $code);
-	}
+        return response()->view($view, $data, $code);
+    }
 
     /**
      * Check the exception chain to compare against the original exception type.
-     * @param Exception $e
-     * @param $type
+     *
+     * @param  Exception $e
+     * @param  $type
      * @return bool
      */
     protected function isExceptionType(Exception $e, $type)
@@ -262,7 +266,8 @@ class Handler extends ExceptionHandler
 
     /**
      * Get original exception message.
-     * @param Exception $e
+     *
+     * @param  Exception $e
      * @return string
      */
     protected function getOriginalMessage(Exception $e)
@@ -276,8 +281,8 @@ class Handler extends ExceptionHandler
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
+     * @param  \Illuminate\Http\Request                 $request
+     * @param  \Illuminate\Auth\AuthenticationException $exception
      * @return \Illuminate\Http\Response
      */
     protected function unauthenticated($request, \Illuminate\Auth\AuthenticationException $exception)
@@ -293,8 +298,8 @@ class Handler extends ExceptionHandler
     /**
      * Convert a validation exception into a JSON response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Validation\ValidationException  $exception
+     * @param  \Illuminate\Http\Request                   $request
+     * @param  \Illuminate\Validation\ValidationException $exception
      * @return \Illuminate\Http\JsonResponse
      */
     protected function invalidJson($request, \Illuminate\Validation\ValidationException $exception)
@@ -302,18 +307,18 @@ class Handler extends ExceptionHandler
         return response()->json($exception->errors(), $exception->status);
     }
 
-	/**
-	 * Render an exception into an HTTP response using Whoops.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	protected function whoops(Exception $e)
-	{
-		$whoops = new \Whoops\Run;
-		$handler = new \Whoops\Handler\PrettyPageHandler;
-		$handler->setEditor('sublime');
-		$whoops->pushHandler($handler);
+    /**
+     * Render an exception into an HTTP response using Whoops.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected function whoops(Exception $e)
+    {
+        $whoops = new \Whoops\Run;
+        $handler = new \Whoops\Handler\PrettyPageHandler;
+        $handler->setEditor('sublime');
+        $whoops->pushHandler($handler);
 
-		return response($whoops->handleException($e), $e->getStatusCode(), $e->getHeaders());
-	}
+        return response($whoops->handleException($e), $e->getStatusCode(), $e->getHeaders());
+    }
 }

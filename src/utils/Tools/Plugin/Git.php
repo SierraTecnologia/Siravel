@@ -23,6 +23,7 @@ class Git extends Plugin
     
     /**
      * Run the Git plugin.
+     *
      * @return bool
      */
     public function execute()
@@ -45,24 +46,25 @@ class Git extends Plugin
 
     /**
      * Determine which action to run, and run it.
-     * @param $action
-     * @param array $options
+     *
+     * @param  $action
+     * @param  array $options
      * @return bool
      */
     protected function runAction($action, array $options = [])
     {
         switch ($action) {
-            case 'merge':
-                return $this->runMergeAction($options);
+        case 'merge':
+            return $this->runMergeAction($options);
 
-            case 'tag':
-                return $this->runTagAction($options);
+        case 'tag':
+            return $this->runTagAction($options);
 
-            case 'pull':
-                return $this->runPullAction($options);
+        case 'pull':
+            return $this->runPullAction($options);
 
-            case 'push':
-                return $this->runPushAction($options);
+        case 'push':
+            return $this->runPushAction($options);
         }
 
 
@@ -71,7 +73,8 @@ class Git extends Plugin
 
     /**
      * Handle a merge action.
-     * @param $options
+     *
+     * @param  $options
      * @return bool
      */
     protected function runMergeAction($options)
@@ -85,7 +88,8 @@ class Git extends Plugin
 
     /**
      * Handle a tag action.
-     * @param $options
+     *
+     * @param  $options
      * @return bool
      */
     protected function runTagAction($options)
@@ -107,7 +111,8 @@ class Git extends Plugin
 
     /**
      * Handle a pull action.
-     * @param $options
+     *
+     * @param  $options
      * @return bool
      */
     protected function runPullAction($options)
@@ -128,7 +133,8 @@ class Git extends Plugin
 
     /**
      * Handle a push action.
-     * @param $options
+     *
+     * @param  $options
      * @return bool
      */
     protected function runPushAction($options)

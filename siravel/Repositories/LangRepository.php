@@ -47,8 +47,8 @@ class LangRepository
     }
 
     /**
-     * @param  mixed  $locale (optional)
-     * @param  string $column (optional)
+     * @param  mixed  $locale   (optional)
+     * @param  string $column   (optional)
      * @param  string $inLocale (optional)
      * @return array
      */
@@ -96,14 +96,14 @@ class LangRepository
      */
     public static function getCurrent()
     {
-//        if ($cookieLocale = self::getCookie()) {
-//            return current(self::get($cookieLocale));
-//        }
-//
-//        if (!empty(Yii::app()->user->model()->language)) {
-//            $userLocale = Yii::app()->user->model()->language;
-//            return current(self::get($userLocale));
-//        }
+        //        if ($cookieLocale = self::getCookie()) {
+        //            return current(self::get($cookieLocale));
+        //        }
+        //
+        //        if (!empty(Yii::app()->user->model()->language)) {
+        //            $userLocale = Yii::app()->user->model()->language;
+        //            return current(self::get($userLocale));
+        //        }
 
 
         if (session('language')!==null) {

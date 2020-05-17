@@ -33,8 +33,8 @@ class BuildStore extends Store
     /**
      * Get a Build by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return null|Build
      */
@@ -46,8 +46,8 @@ class BuildStore extends Store
     /**
      * Get a single Build by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return Build|null
      *
@@ -75,9 +75,9 @@ class BuildStore extends Store
     /**
      * Get multiple Build by ProjectId.
      *
-     * @param int $projectId
-     * @param int $limit
-     * @param string  $useConnection
+     * @param int    $projectId
+     * @param int    $limit
+     * @param string $useConnection
      *
      * @return array
      *
@@ -113,9 +113,9 @@ class BuildStore extends Store
     /**
      * Get multiple Build by Status.
      *
-     * @param int $status
-     * @param int $limit
-     * @param string  $useConnection
+     * @param int    $status
+     * @param int    $limit
+     * @param string $useConnection
      *
      * @return array
      *
@@ -177,7 +177,7 @@ class BuildStore extends Store
     }
 
     /**
-     * @param int $projectId
+     * @param int    $projectId
      * @param string $branch
      *
      * @return null|Build
@@ -340,9 +340,11 @@ class BuildStore extends Store
             }
 
             foreach ($projects as $idx => $project) {
-                $projects[$idx] = array_filter($project, function ($val) {
-                    return ($val['latest'][0]->getStatus() != Build::STATUS_SUCCESS);
-                });
+                $projects[$idx] = array_filter(
+                    $project, function ($val) {
+                        return ($val['latest'][0]->getStatus() != Build::STATUS_SUCCESS);
+                    }
+                );
             }
 
             $projects = array_filter($projects);
@@ -356,8 +358,8 @@ class BuildStore extends Store
     /**
      * Return an array of builds for a given project and commit ID.
      *
-     * @param int $projectId
-     * @param string  $commitId
+     * @param int    $projectId
+     * @param string $commitId
      *
      * @return array
      */
@@ -410,11 +412,11 @@ class BuildStore extends Store
     /**
      * Return build metadata by key, project and optionally build id.
      *
-     * @param string       $key
-     * @param int      $projectId
-     * @param int|null $buildId
-     * @param string|null  $branch
-     * @param int      $numResults
+     * @param string      $key
+     * @param int         $projectId
+     * @param int|null    $buildId
+     * @param string|null $branch
+     * @param int         $numResults
      *
      * @return array|null
      */
@@ -453,25 +455,29 @@ class BuildStore extends Store
         if ($stmt->execute()) {
             $rtn = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            /** @var BuildErrorStore $errorStore */
+            /**
+ * @var BuildErrorStore $errorStore 
+*/
             $errorStore = Factory::getStore('BuildError');
 
             $rtn = array_reverse($rtn);
-            $rtn = array_map(function ($item) use ($key, $errorStore, $buildId) {
-                $item['meta_value'] = json_decode($item['meta_value'], true);
-                if ('plugin-summary' === $key) {
-                    foreach ($item['meta_value'] as $stage => $stageData) {
-                        foreach ($stageData as $plugin => $pluginData) {
-                            $item['meta_value'][$stage][$plugin]['errors'] = $errorStore->getErrorTotalForBuild(
-                                $buildId,
-                                $plugin
-                            );
+            $rtn = array_map(
+                function ($item) use ($key, $errorStore, $buildId) {
+                    $item['meta_value'] = json_decode($item['meta_value'], true);
+                    if ('plugin-summary' === $key) {
+                        foreach ($item['meta_value'] as $stage => $stageData) {
+                            foreach ($stageData as $plugin => $pluginData) {
+                                $item['meta_value'][$stage][$plugin]['errors'] = $errorStore->getErrorTotalForBuild(
+                                    $buildId,
+                                    $plugin
+                                );
+                            }
                         }
                     }
-                }
 
-                return $item;
-            }, $rtn);
+                    return $item;
+                }, $rtn
+            );
 
             if (!count($rtn)) {
                 return null;
@@ -486,13 +492,15 @@ class BuildStore extends Store
     /**
      * Set a metadata value for a given project and build ID.
      *
-     * @param int $buildId
-     * @param string  $key
-     * @param string  $value
+     * @param int    $buildId
+     * @param string $key
+     * @param string $value
      */
     public function setMeta($buildId, $key, $value)
     {
-        /** @var BuildMetaStore $store */
+        /**
+ * @var BuildMetaStore $store 
+*/
         $store = Factory::getStore('BuildMeta');
         $meta  = $store->getByKey($buildId, $key);
         if (is_null($meta)) {

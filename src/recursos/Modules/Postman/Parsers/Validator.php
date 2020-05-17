@@ -7,6 +7,7 @@ namespace Uniondrug\Postman\Parsers;
 
 /**
  * 解析属性
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Validator

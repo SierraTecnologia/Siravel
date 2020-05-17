@@ -10,6 +10,7 @@ use Uniondrug\Postman\Parsers\Collection;
 
 /**
  * 导出POSTMAN格式的API文档
+ *
  * @package Uniondrug\Postman\Commands
  */
 class Postman extends Command

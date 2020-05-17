@@ -39,7 +39,7 @@ class Factory
      * file returns a function then $this will be passed to it.
      * This enables the config file to call any public methods.
      *
-     * @param $configPath
+     * @param  $configPath
      * @return bool - true if the function exists else false.
      */
     public function addConfigFromFile($configPath)
@@ -47,7 +47,7 @@ class Factory
         // The file is expected to return a function which can
         // act on the pluginFactory to register any resources needed.
         if (file_exists($configPath)) {
-            $configFunction = require($configPath);
+            $configFunction = include $configPath;
             if (is_callable($configFunction)) {
                 $configFunction($this);
                 return true;
@@ -58,6 +58,7 @@ class Factory
 
     /**
      * Get most recently used factory options.
+     *
      * @return mixed
      */
     public function getLastOptions()
@@ -91,10 +92,14 @@ class Factory
                     $argsToUse = $this->addArgFromParam($argsToUse, $param);
                 }
             }
-            /** @var Plugin $plugin */
+            /**
+ * @var Plugin $plugin 
+*/
             $plugin = $reflectedPlugin->newInstanceArgs($argsToUse);
         } else {
-            /** @var Plugin $plugin */
+            /**
+ * @var Plugin $plugin 
+*/
             $plugin = $reflectedPlugin->newInstance();
         }
 
@@ -134,8 +139,9 @@ class Factory
 
     /**
      * Get an internal resource ID.
-     * @param null $type
-     * @param null $name
+     *
+     * @param  null $type
+     * @param  null $name
      * @return string
      */
     private function getInternalID($type = null, $name = null)
@@ -146,8 +152,8 @@ class Factory
     }
 
     /**
-     * @param string $type
-     * @param string $name
+     * @param  string $type
+     * @param  string $name
      * @return mixed
      */
     public function getResourceFor($type = null, $name = null)
@@ -171,7 +177,7 @@ class Factory
     }
 
     /**
-     * @param \ReflectionParameter $param
+     * @param  \ReflectionParameter $param
      * @return null|string
      */
     private function getParamType(\ReflectionParameter $param)
@@ -189,8 +195,8 @@ class Factory
     }
 
     /**
-     * @param $existingArgs
-     * @param \ReflectionParameter $param
+     * @param  $existingArgs
+     * @param  \ReflectionParameter $param
      * @return array
      * @throws \DomainException
      */

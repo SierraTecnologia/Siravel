@@ -14,6 +14,7 @@ class VueFinder
     private $config;
     /**
      * VueFinder constructor.
+     *
      * @param Filesystem $storage
      */
     public function __construct(Filesystem $storage)
@@ -22,24 +23,28 @@ class VueFinder
         $this->request = Request::createFromGlobals();
     }
     /**
-     * @param $files
+     * @param  $files
      * @return array
      */
     public function directories($files)
     {
-        return array_filter($files, function ($item) {
-            return $item['type'] == 'dir';
-        });
+        return array_filter(
+            $files, function ($item) {
+                return $item['type'] == 'dir';
+            }
+        );
     }
     /**
-     * @param $files
+     * @param  $files
      * @return array
      */
     public function files($files)
     {
-        return array_filter($files, function ($item) {
-            return $item['type'] == 'file';
-        });
+        return array_filter(
+            $files, function ($item) {
+                return $item['type'] == 'file';
+            }
+        );
     }
     /**
      * @param $config
@@ -74,23 +79,25 @@ class VueFinder
             $this->directories($listcontent),
             $this->files($listcontent)
         );
-        $files = array_map(function ($node) use ($types) {
-            if ($node['type'] == 'file' && isset($node['extension'])) {
-                $node['type'] = $types[mb_strtolower($node['extension'])] ?? 'file';
-            }
-            if ($node['type'] == 'dir') {
-                $node['type'] = 'folder';
-            }
-            if ($this->config['publicPaths'] && $node['type'] != 'folder') {
-                foreach ($this->config['publicPaths'] as $path => $domain) {
-                    $path = str_replace('/', '\/', $path);
-                    if (preg_match('/^'.$path.'/i', $node['path'])) {
-                        $node['fileUrl'] = preg_replace('/^'.$path.'/i', $domain, $node['path']);
+        $files = array_map(
+            function ($node) use ($types) {
+                if ($node['type'] == 'file' && isset($node['extension'])) {
+                    $node['type'] = $types[mb_strtolower($node['extension'])] ?? 'file';
+                }
+                if ($node['type'] == 'dir') {
+                    $node['type'] = 'folder';
+                }
+                if ($this->config['publicPaths'] && $node['type'] != 'folder') {
+                    foreach ($this->config['publicPaths'] as $path => $domain) {
+                        $path = str_replace('/', '\/', $path);
+                        if (preg_match('/^'.$path.'/i', $node['path'])) {
+                            $node['fileUrl'] = preg_replace('/^'.$path.'/i', $domain, $node['path']);
+                        }
                     }
                 }
-            }
-            return $node;
-        }, $files);
+                return $node;
+            }, $files
+        );
         return new JsonResponse(compact('root', 'parent', 'dirname', 'files'));
     }
     /**
@@ -194,7 +201,7 @@ class VueFinder
         return array_merge(...$types);
     }
     /**
-     * @param $path
+     * @param  $path
      * @return StreamedResponse
      * @throws \League\Flysystem\FileNotFoundException
      */
@@ -208,10 +215,12 @@ class VueFinder
         $response->headers->set('Content-Type', $mimeType);
         $response->headers->set('Content-Transfer-Encoding', 'binary');
         $response->headers->set('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
-        $response->setCallback(function () use ($stream) {
-            ob_end_clean();
-            fpassthru($stream);
-        });
+        $response->setCallback(
+            function () use ($stream) {
+                ob_end_clean();
+                fpassthru($stream);
+            }
+        );
         return $response;
     }
 }

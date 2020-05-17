@@ -97,10 +97,12 @@ class Pdepend extends Plugin
         }
 
         if (!is_writable($this->buildLocation)) {
-            throw new \Exception(sprintf(
-                'The location %s is not writable or does not exist.',
-                $this->buildLocation
-            ));
+            throw new \Exception(
+                sprintf(
+                    'The location %s is not writable or does not exist.',
+                    $this->buildLocation
+                )
+            );
         }
 
         $pdepend = $this->executable;

@@ -6,7 +6,8 @@
 namespace SiSeed;
 
 class Seed
-{    
+{
+    
 
     public static function getDataClasses()
     {
@@ -15,9 +16,11 @@ class Seed
 
     public function run()
     {
-        collect(self::getDataClasses())->map(function ($class) {
-            (new $class)->run();
-        });
+        collect(self::getDataClasses())->map(
+            function ($class) {
+                (new $class)->run();
+            }
+        );
     }
 
 }

@@ -22,14 +22,14 @@ class Photoacompanhante extends Command
      */
     protected $description = 'Display an inspiring quote';
 
-	/**
-	 * Call fire function
-	 *
-	 * @return void
-	 */
-	public function handle()
-	{
-		$this->fire();
+    /**
+     * Call fire function
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        $this->fire();
     }
     
     /**

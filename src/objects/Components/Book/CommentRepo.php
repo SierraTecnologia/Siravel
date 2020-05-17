@@ -6,6 +6,7 @@ use Population\Models\Components\Book\Entity;
 
 /**
  * Class CommentRepo
+ *
  * @package App\Repos
  */
 class CommentRepo
@@ -18,6 +19,7 @@ class CommentRepo
 
     /**
      * CommentRepo constructor.
+     *
      * @param \SiObjects\Components\Book\Comment $comment
      */
     public function __construct(Comment $comment)
@@ -27,7 +29,8 @@ class CommentRepo
 
     /**
      * Get a comment by ID.
-     * @param $id
+     *
+     * @param  $id
      * @return \SiObjects\Components\Book\Comment|\Illuminate\Database\Eloquent\Model
      */
     public function getById($id)
@@ -37,8 +40,9 @@ class CommentRepo
 
     /**
      * Create a new comment on an entity.
-     * @param \Population\Models\Components\Book\Entity $entity
-     * @param array $data
+     *
+     * @param  \Population\Models\Components\Book\Entity $entity
+     * @param  array                                     $data
      * @return \SiObjects\Components\Book\Comment
      */
     public function create(Entity $entity, $data = [])
@@ -54,8 +58,9 @@ class CommentRepo
 
     /**
      * Update an existing comment.
-     * @param \SiObjects\Components\Book\Comment $comment
-     * @param array $input
+     *
+     * @param  \SiObjects\Components\Book\Comment $comment
+     * @param  array                              $input
      * @return mixed
      */
     public function update($comment, $input)
@@ -67,7 +72,8 @@ class CommentRepo
 
     /**
      * Delete a comment from the system.
-     * @param \SiObjects\Components\Book\Comment $comment
+     *
+     * @param  \SiObjects\Components\Book\Comment $comment
      * @return mixed
      */
     public function delete($comment)
@@ -77,7 +83,8 @@ class CommentRepo
 
     /**
      * Get the next local ID relative to the linked entity.
-     * @param \Population\Models\Components\Book\Entity $entity
+     *
+     * @param  \Population\Models\Components\Book\Entity $entity
      * @return int
      */
     protected function getNextLocalId(Entity $entity)

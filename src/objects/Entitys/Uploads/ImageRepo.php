@@ -16,10 +16,11 @@ class ImageRepo
 
     /**
      * ImageRepo constructor.
-     * @param Image $image
-     * @param ImageService $imageService
+     *
+     * @param Image                                                            $image
+     * @param ImageService                                                     $imageService
      * @param \Population\Models\Components\Book\Permissions\PermissionService $permissionService
-     * @param \Population\Models\Components\Book\Page $page
+     * @param \Population\Models\Components\Book\Page                          $page
      */
     public function __construct(Image $image, ImageService $imageService, PermissionService $permissionService, Page $page)
     {
@@ -32,7 +33,8 @@ class ImageRepo
 
     /**
      * Get an image with the given id.
-     * @param $id
+     *
+     * @param  $id
      * @return mixed
      */
     public function getById($id)
@@ -43,9 +45,10 @@ class ImageRepo
     /**
      * Execute a paginated query, returning in a standard format.
      * Also runs the query through the restriction system.
-     * @param $query
-     * @param int $page
-     * @param int $pageSize
+     *
+     * @param  $query
+     * @param  int $page
+     * @param  int $pageSize
      * @return array
      */
     private function returnPaginated($query, $page = 0, $pageSize = 24)
@@ -55,9 +58,11 @@ class ImageRepo
         $hasMore = count($images) > $pageSize;
 
         $returnImages = $images->take(24);
-        $returnImages->each(function ($image) {
-            $this->loadThumbs($image);
-        });
+        $returnImages->each(
+            function ($image) {
+                $this->loadThumbs($image);
+            }
+        );
 
         return [
             'images'  => $returnImages,
@@ -67,10 +72,11 @@ class ImageRepo
 
     /**
      * Gets a load images paginated, filtered by image type.
-     * @param string $type
-     * @param int $page
-     * @param int $pageSize
-     * @param bool|int $userFilter
+     *
+     * @param  string   $type
+     * @param  int      $page
+     * @param  int      $pageSize
+     * @param  bool|int $userFilter
      * @return array
      */
     public function getPaginatedByType($type, $page = 0, $pageSize = 24, $userFilter = false)
@@ -86,10 +92,11 @@ class ImageRepo
 
     /**
      * Search for images by query, of a particular type.
-     * @param string $type
-     * @param int $page
-     * @param int $pageSize
-     * @param string $searchTerm
+     *
+     * @param  string $type
+     * @param  int    $page
+     * @param  int    $pageSize
+     * @param  string $searchTerm
      * @return array
      */
     public function searchPaginatedByType($type, $searchTerm, $page = 0, $pageSize = 24)
@@ -101,10 +108,11 @@ class ImageRepo
     /**
      * Get gallery images with a particular filter criteria such as
      * being within the current book or page.
-     * @param $filter
-     * @param $pageId
-     * @param int $pageNum
-     * @param int $pageSize
+     *
+     * @param  $filter
+     * @param  $pageId
+     * @param  int $pageNum
+     * @param  int $pageSize
      * @return array
      */
     public function getGalleryFiltered($filter, $pageId, $pageNum = 0, $pageSize = 24)
@@ -125,9 +133,10 @@ class ImageRepo
 
     /**
      * Save a new image into storage and return the new image.
-     * @param UploadedFile $uploadFile
-     * @param  string $type
-     * @param int $uploadedTo
+     *
+     * @param  UploadedFile $uploadFile
+     * @param  string       $type
+     * @param  int          $uploadedTo
      * @return Image
      * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
@@ -141,8 +150,9 @@ class ImageRepo
 
     /**
      * Save a drawing the the database;
-     * @param string $base64Uri
-     * @param int $uploadedTo
+     *
+     * @param  string $base64Uri
+     * @param  int    $uploadedTo
      * @return Image
      * @throws \SiUtils\Exceptions\ImageUploadException
      */
@@ -156,8 +166,9 @@ class ImageRepo
 
     /**
      * Update the details of an image via an array of properties.
-     * @param Image $image
-     * @param array $updateDetails
+     *
+     * @param  Image $image
+     * @param  array $updateDetails
      * @return Image
      * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
@@ -173,7 +184,8 @@ class ImageRepo
 
     /**
      * Destroys an Image object along with its revisions, files and thumbnails.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @return bool
      * @throws \Exception
      */
@@ -186,7 +198,8 @@ class ImageRepo
 
     /**
      * Load thumbnails onto an image object.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
      */
@@ -202,10 +215,11 @@ class ImageRepo
      * Get the thumbnail for an image.
      * If $keepRatio is true only the width will be used.
      * Checks the cache then storage to avoid creating / accessing the filesystem on every check.
-     * @param Image $image
-     * @param int $width
-     * @param int $height
-     * @param bool $keepRatio
+     *
+     * @param  Image $image
+     * @param  int   $width
+     * @param  int   $height
+     * @param  bool  $keepRatio
      * @return string
      * @throws \SiUtils\Exceptions\ImageUploadException
      * @throws \Exception
@@ -221,7 +235,8 @@ class ImageRepo
 
     /**
      * Get the raw image data from an Image.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @return null|string
      */
     public function getImageData(Image $image)
@@ -235,7 +250,8 @@ class ImageRepo
 
     /**
      * Check if the provided image type is valid.
-     * @param $type
+     *
+     * @param  $type
      * @return bool
      */
     public function isValidType($type)

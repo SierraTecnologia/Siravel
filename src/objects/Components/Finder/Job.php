@@ -16,7 +16,8 @@ class Job
         
     }
 
-    public function getFollows(){
+    public function getFollows()
+    {
         
     }
 

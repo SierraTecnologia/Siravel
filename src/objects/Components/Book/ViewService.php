@@ -12,7 +12,8 @@ class ViewService
 
     /**
      * ViewService constructor.
-     * @param \SiObjects\Components\Book\View $view
+     *
+     * @param \SiObjects\Components\Book\View                                  $view
      * @param \Population\Models\Components\Book\Permissions\PermissionService $permissionService
      */
     public function __construct(View $view, PermissionService $permissionService)
@@ -23,7 +24,8 @@ class ViewService
 
     /**
      * Add a view to the given entity.
-     * @param Entity $entity
+     *
+     * @param  Entity $entity
      * @return int
      */
     public function add(Entity $entity)
@@ -40,20 +42,25 @@ class ViewService
         }
 
         // Otherwise create new view count
-        $entity->views()->save($this->view->create([
-            'user_id' => $user->id,
-            'views' => 1
-        ]));
+        $entity->views()->save(
+            $this->view->create(
+                [
+                'user_id' => $user->id,
+                'views' => 1
+                ]
+            )
+        );
 
         return 1;
     }
 
     /**
      * Get the entities with the most views.
-     * @param int $count
-     * @param int $page
-     * @param Entity|false|array $filterModel
-     * @param string $action - used for permission checking
+     *
+     * @param  int                $count
+     * @param  int                $page
+     * @param  Entity|false|array $filterModel
+     * @param  string             $action      - used for permission checking
      * @return
      */
     public function getPopular($count = 10, $page = 0, $filterModel = false, $action = 'view')
@@ -76,9 +83,10 @@ class ViewService
 
     /**
      * Get all recently viewed entities for the current user.
-     * @param int $count
-     * @param int $page
-     * @param Entity|bool $filterModel
+     *
+     * @param  int         $count
+     * @param  int         $page
+     * @param  Entity|bool $filterModel
      * @return mixed
      */
     public function getUserRecentlyViewed($count = 10, $page = 0, $filterModel = false)

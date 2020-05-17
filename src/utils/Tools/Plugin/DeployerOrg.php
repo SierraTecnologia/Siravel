@@ -59,7 +59,7 @@ class DeployerOrg extends \PHPCensor\Plugin
      * $validationRes['message'] Message to log
      * $validationRes['successful'] Plugin status that is connected with error
      *
-     *  @return array validation result
+     * @return array validation result
      */
     protected function validateConfig()
     {

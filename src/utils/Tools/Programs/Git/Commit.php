@@ -35,7 +35,7 @@ class Commit extends Revision
      * Constructor.
      *
      * @param SiUtils\Tools\Programs\Git\Repository $repository Repository of the commit
-     * @param string                  $hash       Hash of the commit
+     * @param string                                $hash       Hash of the commit
      */
     public function __construct(Repository $repository, $hash, array $data = array())
     {
@@ -221,9 +221,11 @@ class Commit extends Revision
         }
 
         $branchesName = explode("\n", trim(str_replace('*', '', $result)));
-        $branchesName = array_filter($branchesName, function ($v) {
-            return false === StringHelper::strpos($v, '->');
-        });
+        $branchesName = array_filter(
+            $branchesName, function ($v) {
+                return false === StringHelper::strpos($v, '->');
+            }
+        );
         $branchesName = array_map('trim', $branchesName);
 
         $references = $this->repository->getReferences();

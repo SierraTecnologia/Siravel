@@ -36,7 +36,7 @@ class Service
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         $result = curl_exec($curl);
         curl_close($curl);
-        if ($returnObject){
+        if ($returnObject) {
             return json_decode($result);
         }
         return json_decode($result, true);
@@ -47,21 +47,23 @@ class Service
         $data = (is_array($data)) ? http_build_query($data) : $data; 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $this->url .'/'.$endPoint);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
-        'Authorization: Basic '.$authenticationToken));
+        curl_setopt(
+            $curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+            'Authorization: Basic '.$authenticationToken)
+        );
         // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
         // 'Authorization: Basic NGEwMGZmMjItY2NkNy0xMWUzLTk5ZDUtMDAwYzI5NDBlNjJj'));
         // NTViNjJiYjAtNDAyNy00NmM0LWJmNmUtYWI4OTRkODExMWUz
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($curl, CURLOPT_HEADER, FALSE);
-        curl_setopt($curl, CURLOPT_POST, TRUE);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $result = curl_exec($curl);
         curl_close($curl);
 
-        if ($returnObject){
+        if ($returnObject) {
             return json_decode($result);
         }
         return json_decode($result, true);
@@ -80,7 +82,7 @@ class Service
         }
         curl_close($curl);
 
-        if ($returnObject){
+        if ($returnObject) {
             return json_decode($result);
         }
         return json_decode($result, true);

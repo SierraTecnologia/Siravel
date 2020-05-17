@@ -29,8 +29,9 @@ class Email
 
     /**
      * Set the email's To: header.
-     * @param string $email
-     * @param string|null $name
+     *
+     * @param  string      $email
+     * @param  string|null $name
      * @return $this
      */
     public function setEmailTo($email, $name = null)
@@ -42,8 +43,9 @@ class Email
 
     /**
      * Add an address to the email's CC header.
-     * @param string $email
-     * @param string|null $name
+     *
+     * @param  string      $email
+     * @param  string|null $name
      * @return $this
      */
     public function addCc($email, $name = null)
@@ -55,7 +57,8 @@ class Email
 
     /**
      * Set the email subject.
-     * @param string $subject
+     *
+     * @param  string $subject
      * @return $this
      */
     public function setSubject($subject)
@@ -67,7 +70,8 @@ class Email
 
     /**
      * Set the email body.
-     * @param string $body
+     *
+     * @param  string $body
      * @return $this
      */
     public function setBody($body)
@@ -79,7 +83,8 @@ class Email
 
     /**
      * Set whether or not the email body is HTML.
-     * @param bool $isHtml
+     *
+     * @param  bool $isHtml
      * @return $this
      */
     public function setHtml($isHtml = false)

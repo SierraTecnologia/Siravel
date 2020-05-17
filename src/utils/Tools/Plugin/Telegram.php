@@ -30,9 +30,9 @@ class Telegram extends \PHPCensor\Plugin
     /**
      * Standard Constructor
      *
-     * @param Builder $builder
-     * @param Build   $build
-     * @param array   $options
+     * @param  Builder $builder
+     * @param  Build   $build
+     * @param  array   $options
      * @throws \Exception
      */
     public function __construct(Builder $builder, Build $build, array $options = [])
@@ -69,6 +69,7 @@ class Telegram extends \PHPCensor\Plugin
 
     /**
      * Run Telegram plugin.
+     *
      * @return bool
      */
     public function execute()
@@ -83,12 +84,14 @@ class Telegram extends \PHPCensor\Plugin
                 'text'       => $message,
                 'parse_mode' => 'Markdown',
             ];
-            $client->post(('https://api.telegram.org' . $url), [
+            $client->post(
+                ('https://api.telegram.org' . $url), [
                 'headers' => [
                     'Content-Type' => 'application/json',
                 ],
                 'json' => $params,
-            ]);
+                ]
+            );
 
             if ($this->sendLog) {
                 $params = [
@@ -96,12 +99,14 @@ class Telegram extends \PHPCensor\Plugin
                     'text'       => $this->buildMsg,
                     'parse_mode' => 'Markdown',
                 ];
-                $client->post(('https://api.telegram.org' . $url), [
+                $client->post(
+                    ('https://api.telegram.org' . $url), [
                     'headers' => [
                         'Content-Type' => 'application/json',
                     ],
                     'json' => $params,
-                ]);
+                    ]
+                );
             }
         }
 
@@ -110,6 +115,7 @@ class Telegram extends \PHPCensor\Plugin
 
     /**
      * Build message.
+     *
      * @return string
      */
     private function buildMessage()

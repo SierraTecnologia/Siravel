@@ -49,6 +49,7 @@ class Sqlite extends Plugin
 
     /**
      * Connects to SQLite and runs a specified set of queries.
+     *
      * @return bool
      */
     public function execute()

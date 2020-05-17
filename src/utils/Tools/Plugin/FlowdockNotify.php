@@ -47,6 +47,7 @@ class FlowdockNotify extends Plugin
 
     /**
      * Run the Flowdock plugin.
+     *
      * @return bool
      * @throws \Exception
      */

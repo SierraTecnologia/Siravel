@@ -9,6 +9,7 @@ use Uniondrug\Postman\Parsers\Annotation;
 
 /**
  * 解析基类
+ *
  * @package Uniondrug\Postman\Parsers\Abstracts
  */
 abstract class Base
@@ -19,6 +20,7 @@ abstract class Base
     public $annotation;
     /**
      * 换行符
+     *
      * @var string
      */
     public $crlf = "\n";

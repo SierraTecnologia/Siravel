@@ -33,7 +33,7 @@ class DeleteDetachedPhotosOlderThanWeek extends Command
     /**
      * Execute the console command.
      *
-     * @param ARPhotoManager $photoManager
+     * @param  ARPhotoManager $photoManager
      * @return void
      */
     public function handle(ARPhotoManager $photoManager): void
@@ -42,11 +42,15 @@ class DeleteDetachedPhotosOlderThanWeek extends Command
             ->newQuery()
             ->whereCreatedAtLessThan(Carbon::now()->addWeek(-1))
             ->whereHasNoPosts()
-            ->chunk($this->option('chunk_size'), function (Collection $photos) use ($photoManager) {
-                $photos->each(function (Photo $photo) use ($photoManager) {
-                    $this->comment("Deleting photo {$photo->id}...");
-                    $photoManager->deleteById($photo->id);
-                });
-            });
+            ->chunk(
+                $this->option('chunk_size'), function (Collection $photos) use ($photoManager) {
+                    $photos->each(
+                        function (Photo $photo) use ($photoManager) {
+                            $this->comment("Deleting photo {$photo->id}...");
+                            $photoManager->deleteById($photo->id);
+                        }
+                    );
+                }
+            );
     }
 }

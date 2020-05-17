@@ -76,10 +76,10 @@ class Email extends Plugin
     }
 
     /**
-     * @param string $toAddress Single address to send to
+     * @param string   $toAddress Single address to send to
      * @param string[] $ccList
-     * @param string $subject Email subject
-     * @param string $body Email body
+     * @param string   $subject   Email subject
+     * @param string   $body      Email body
      *
      * @return int
      */
@@ -104,7 +104,7 @@ class Email extends Plugin
     /**
      * Send an email to a list of specified subjects.
      *
-     * @param array $toAddresses
+     * @param array  $toAddresses
      *   List of destination addresses for message.
      * @param string $subject
      *   Mail subject
@@ -129,6 +129,7 @@ class Email extends Plugin
 
     /**
      * Get the list of email addresses to send to.
+     *
      * @return array
      */
     protected function getEmailAddresses()
@@ -137,10 +138,12 @@ class Email extends Plugin
         $committer = $this->build->getCommitterEmail();
 
         $this->builder->logDebug(sprintf("Committer email: '%s'", $committer));
-        $this->builder->logDebug(sprintf(
-            "Committer option: '%s'",
-            (!empty($this->options['committer']) && $this->options['committer']) ? 'true' : 'false'
-        ));
+        $this->builder->logDebug(
+            sprintf(
+                "Committer option: '%s'",
+                (!empty($this->options['committer']) && $this->options['committer']) ? 'true' : 'false'
+            )
+        );
 
         if (!empty($this->options['committer']) && $this->options['committer']) {
             if ($committer) {
@@ -148,10 +151,12 @@ class Email extends Plugin
             }
         }
 
-        $this->builder->logDebug(sprintf(
-            "Addresses option: '%s'",
-            (!empty($this->options['addresses']) && is_array($this->options['addresses'])) ? implode(', ', $this->options['addresses']) : 'false'
-        ));
+        $this->builder->logDebug(
+            sprintf(
+                "Addresses option: '%s'",
+                (!empty($this->options['addresses']) && is_array($this->options['addresses'])) ? implode(', ', $this->options['addresses']) : 'false'
+            )
+        );
 
         if (!empty($this->options['addresses']) && is_array($this->options['addresses'])) {
             foreach ($this->options['addresses'] as $address) {
@@ -159,10 +164,12 @@ class Email extends Plugin
             }
         }
 
-        $this->builder->logDebug(sprintf(
-            "Default mailTo option: '%s'",
-            !empty($this->options['default_mailto_address']) ? $this->options['default_mailto_address'] : 'false'
-        ));
+        $this->builder->logDebug(
+            sprintf(
+                "Default mailTo option: '%s'",
+                !empty($this->options['default_mailto_address']) ? $this->options['default_mailto_address'] : 'false'
+            )
+        );
 
         if (empty($addresses) && !empty($this->options['default_mailto_address'])) {
             $addresses[] = $this->options['default_mailto_address'];

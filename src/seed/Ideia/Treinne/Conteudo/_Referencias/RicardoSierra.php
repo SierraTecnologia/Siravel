@@ -27,15 +27,15 @@ class RicardoSierra
 
     public static function run()
     {
-       self::skill();
+        self::skill();
     }
 
     public static function skill()
     {
-       $this->skill = [
+        $this->skill = [
             'prog' => 10,
             'empreendedorismo' => 10,
             'marketing' => 10,
-       ];
+        ];
     }
 }

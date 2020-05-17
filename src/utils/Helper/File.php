@@ -9,7 +9,8 @@ use SiUtils\Tools\Config;
  */
 class File
 {
-    public static function createFile($dir, $contents){
+    public static function createFile($dir, $contents)
+    {
         $parts = explode('/', $dir);
         $file = array_pop($parts);
         $dir = '';

@@ -20,7 +20,8 @@ class AboutSession extends Questions
     public function init()
     {
         return [
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 'question' => 'O companheiro te passou confiança ?',
                 'type' => 'seguranca',
                 'options' => 'bool',
@@ -33,13 +34,16 @@ class AboutSession extends Questions
                 ],
 
                 'obs' => 'Perguntar no inicia dos Relacionamentos'
-            ]),
+                ]
+            ),
 
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 'question' => 'Suas espectativas foram atingidas ? Descreva como foi a Sessão:',
                 'type' => 'espectativa',
                 'options' => 'text'
-            ]),
+                ]
+            ),
         ];
     }
 

@@ -28,8 +28,8 @@ class ProjectGroupStore extends Store
     /**
      * Get a ProjectGroup by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return null|ProjectGroup
      */
@@ -41,8 +41,8 @@ class ProjectGroupStore extends Store
     /**
      * Get a single ProjectGroup by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return ProjectGroup|null
      *
@@ -71,8 +71,8 @@ class ProjectGroupStore extends Store
     /**
      * Get a single ProjectGroup by title.
      *
-     * @param int $title
-     * @param string  $useConnection
+     * @param int    $title
+     * @param string $useConnection
      *
      * @return ProjectGroup|null
      *

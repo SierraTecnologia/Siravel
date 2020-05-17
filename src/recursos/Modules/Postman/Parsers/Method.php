@@ -9,6 +9,7 @@ use Uniondrug\Postman\Parsers\Abstracts\Base;
 
 /**
  * 解析方法
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Method extends Base
@@ -36,6 +37,7 @@ class Method extends Base
 
     /**
      * Method constructor.
+     *
      * @param Collection        $collection
      * @param Controller        $controller
      * @param \ReflectionMethod $reflect
@@ -203,6 +205,7 @@ class Method extends Base
 
     /**
      * 文档头信息
+     *
      * @return string
      */
     private function headerText()
@@ -301,6 +304,7 @@ class Method extends Base
 
     /**
      * 入参Code片段
+     *
      * @return string
      */
     private function inputCode()
@@ -320,6 +324,7 @@ class Method extends Base
 
     /**
      * 出参Text文档
+     *
      * @return string
      */
     private function outputText()
@@ -344,6 +349,7 @@ class Method extends Base
 
     /**
      * 出参Code片段
+     *
      * @return string
      */
     private function outputCode()

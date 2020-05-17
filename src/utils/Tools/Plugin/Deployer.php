@@ -46,8 +46,8 @@ class Deployer extends Plugin
     }
 
     /**
-    * Copies files from the root of the build directory into the target folder
-    */
+     * Copies files from the root of the build directory into the target folder
+     */
     public function execute()
     {
         if (empty($this->webhookUrl)) {

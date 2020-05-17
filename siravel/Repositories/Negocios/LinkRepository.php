@@ -52,9 +52,11 @@ class LinkRepository extends BaseRepository
 
         $order = json_decode($link->menu->order);
         array_push($order, $link->id);
-        $link->menu->update([
+        $link->menu->update(
+            [
             'order' => json_encode($order),
-        ]);
+            ]
+        );
 
         return $link;
     }

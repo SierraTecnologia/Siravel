@@ -46,7 +46,7 @@ class PlanController extends GirlController
     public function store(PlanRequest $request)
     {
 
-        $plan = new Plan ($request->except('password','password_confirmation'));
+        $plan = new Plan($request->except('password', 'password_confirmation'));
         $plan->password = bcrypt($request->password);
         $plan->confirmation_code = str_random(32);
         $plan->save();
@@ -55,7 +55,7 @@ class PlanController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $plan
+     * @param  $plan
      * @return Response
      */
     public function edit(Plan $plan)
@@ -66,7 +66,7 @@ class PlanController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param $plan
+     * @param  $plan
      * @return Response
      */
     public function update(PlanRequest $request, Plan $plan)
@@ -79,13 +79,13 @@ class PlanController extends GirlController
                 $plan->password = bcrypt($password);
             }
         }
-        $plan->update($request->except('password','password_confirmation'));
+        $plan->update($request->except('password', 'password_confirmation'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $plan
+     * @param  $plan
      * @return Response
      */
 
@@ -97,7 +97,7 @@ class PlanController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $plan
+     * @param  $plan
      * @return Response
      */
     public function destroy(Plan $plan)
@@ -116,9 +116,11 @@ class PlanController extends GirlController
 
         return Datatables::of($plans)
             ->edit_column('confirmed', '@if ($confirmed=="1") <span class="glyphicon glyphicon-ok"></span> @else <span class=\'glyphicon glyphicon-remove\'></span> @endif')
-            ->add_column('actions', '@if ($id!="1")<a href="{{{ url(\'girl/plan/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
+            ->add_column(
+                'actions', '@if ($id!="1")<a href="{{{ url(\'girl/plan/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                     <a href="{{{ url(\'girl/plan/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
-                @endif')
+                @endif'
+            )
             ->remove_column('id')
             ->make();
     }

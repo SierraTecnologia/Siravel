@@ -15,7 +15,7 @@ interface Channel
     public function getTitle(): string;
 
     /**
-     * @param string $title
+     * @param  string $title
      * @return $this
      */
     public function setTitle(string $title);
@@ -26,7 +26,7 @@ interface Channel
     public function getLink(): string;
 
     /**
-     * @param string $link
+     * @param  string $link
      * @return $this
      */
     public function setLink(string $link);
@@ -37,7 +37,7 @@ interface Channel
     public function getDescription(): string;
 
     /**
-     * @param string $description
+     * @param  string $description
      * @return $this
      */
     public function setDescription(string $description);

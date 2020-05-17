@@ -54,7 +54,7 @@ class RoomRepository extends CmsRepository
     /**
      * Updates Room into database.
      *
-     * @param Room $room
+     * @param Room  $room
      * @param array $input
      *
      * @return Room

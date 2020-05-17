@@ -87,6 +87,7 @@ class Phing extends Plugin
 
     /**
      * Converts an array of targets into a string.
+     *
      * @return string
      */
     private function targetsToString()
@@ -133,6 +134,7 @@ class Phing extends Plugin
 
     /**
      * Get phing build file path.
+     *
      * @return string
      */
     public function getBuildFilePath()
@@ -155,6 +157,7 @@ class Phing extends Plugin
     {
         /**
          * fix the problem when execute phing out of the build dir
+         *
          * @ticket 748
          */
         if (!isset($this->properties['project.basedir'])) {

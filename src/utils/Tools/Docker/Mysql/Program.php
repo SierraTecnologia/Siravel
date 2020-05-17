@@ -7,9 +7,10 @@ use SiUtils\Tools\Bash;
 /**
  * Program Class
  *
- * @class  Program
+ * @class Program
  */
-class Program {
+class Program
+{
 
     protected $dockerFile = false;
 

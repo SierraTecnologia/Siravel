@@ -7,7 +7,7 @@ define("BRANCH", "refs/heads/master");                                 // The br
 define("LOGFILE", "deploy.log");                                       // The name of the file you want to log to.
 define("GIT", "/usr/bin/git");                                         // The path to the git executable
 define("AFTER_PULL", "");                                              // A command to execute after successfully pulling
-require_once("deployer.php");
+require_once "deployer.php";
 
 
 $content = file_get_contents("php://input");
@@ -30,9 +30,11 @@ date_default_timezone_set("UTC");
 fputs($file, date("d-m-Y (H:i:s)", $time) . "\n");
 
 // function to forbid access
-function forbid($file, $reason) {
+function forbid($file, $reason)
+{
     // explain why
-    if ($reason) fputs($file, "=== ERROR: " . $reason . " ===\n");
+    if ($reason) { fputs($file, "=== ERROR: " . $reason . " ===\n");
+    }
     fputs($file, "*** ACCESS DENIED ***" . "\n\n\n");
     fclose($file);
 
@@ -42,7 +44,8 @@ function forbid($file, $reason) {
 }
 
 // function to return OK
-function ok() {
+function ok()
+{
     ob_start();
     header("HTTP/1.1 200 OK");
     header("Connection: close");
@@ -55,13 +58,13 @@ function ok() {
 // Check for a GitHub signature
 if (!empty(TOKEN) && isset($_SERVER["HTTP_X_HUB_SIGNATURE"]) && $token !== hash_hmac($algo, $content, TOKEN)) {
     forbid($file, "X-Hub-Signature does not match TOKEN");
-// Check for a GitLab token
+    // Check for a GitLab token
 } elseif (!empty(TOKEN) && isset($_SERVER["HTTP_X_GITLAB_TOKEN"]) && $token !== TOKEN) {
     forbid($file, "X-GitLab-Token does not match TOKEN");
-// Check for a $_GET token
+    // Check for a $_GET token
 } elseif (!empty(TOKEN) && isset($_GET["token"]) && $token !== TOKEN) {
     forbid($file, "\$_GET[\"token\"] does not match TOKEN");
-// if none of the above match, but a token exists, exit
+    // if none of the above match, but a token exists, exit
 } elseif (!empty(TOKEN) && !isset($_SERVER["HTTP_X_HUB_SIGNATURE"]) && !isset($_SERVER["HTTP_X_GITLAB_TOKEN"]) && !isset($_GET["token"])) {
     forbid($file, "No token detected");
 } else {

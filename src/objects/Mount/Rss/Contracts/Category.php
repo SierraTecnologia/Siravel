@@ -15,7 +15,7 @@ interface Category
     public function getValue(): string;
 
     /**
-     * @param string $value
+     * @param  string $value
      * @return $this
      */
     public function setValue(string $value);

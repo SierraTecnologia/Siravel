@@ -28,11 +28,13 @@ foreach ($fileNames as $fileName) {
 
 /**
  * Format the contents of a single translation file in the given language.
- * @param string $lang
- * @param string $fileName
+ *
+ * @param  string $lang
+ * @param  string $fileName
  * @return string
  */
-function formatFileContents(string $lang, string $fileName) : string {
+function formatFileContents(string $lang, string $fileName) : string
+{
     $enLines = loadLangFileLines('en', $fileName);
     $langContent = loadLang($lang, $fileName);
     $enContent = loadLang('en', $fileName);
@@ -50,7 +52,8 @@ function formatFileContents(string $lang, string $fileName) : string {
         $trimLine = trim($line);
         if ($mode === 'header') {
             $formatted[$index] = $line;
-            if (str_replace(' ', '', $trimLine) === 'return[') $mode = 'body';
+            if (str_replace(' ', '', $trimLine) === 'return[') { $mode = 'body';
+            }
         }
 
         if ($mode === 'body') {
@@ -58,7 +61,8 @@ function formatFileContents(string $lang, string $fileName) : string {
             $arrayEndMatch = preg_match('/]\s*,\s*$/', $trimLine);
 
             if ($skipArray) {
-                if ($arrayEndMatch) $skipArray = false;
+                if ($arrayEndMatch) { $skipArray = false;
+                }
                 continue;
             }
 
@@ -85,7 +89,8 @@ function formatFileContents(string $lang, string $fileName) : string {
                 }
                 $arrayKeys[] = $matches[1];
                 $formatted[$index] = str_repeat(" ", $indent * 4) . str_pad("'{$matches[1]}'", $longestKeyLength) . "=> [";
-                if ($arrayEndMatch !== 1) continue;
+                if ($arrayEndMatch !== 1) { continue;
+                }
             }
             if ($arrayEndMatch === 1) {
                 unsetArrayByKeys($langContent, $arrayKeys);
@@ -104,7 +109,8 @@ function formatFileContents(string $lang, string $fileName) : string {
                 $key = $matches[1];
                 $keys = array_merge($arrayKeys, [$key]);
                 $langVal = getTranslationByKeys($langContent, $keys);
-                if (empty($langVal)) continue;
+                if (empty($langVal)) { continue;
+                }
 
                 $keyPad = $longestKeyLength;
                 if (count($arrayKeys) === 0) {
@@ -125,9 +131,11 @@ function formatFileContents(string $lang, string $fileName) : string {
     $formatted = array_replace(array_fill(0, $arraySize, ''), $formatted);
 
     // Add remaining translations
-    $langContent = array_filter($langContent, function($item) {
-        return !is_null($item) && !empty($item);
-    });
+    $langContent = array_filter(
+        $langContent, function ($item) {
+            return !is_null($item) && !empty($item);
+        }
+    );
     if (count($langContent) > 0) {
         $formatted[] = '';
         $formatted[] = "\t// Unmatched";
@@ -147,13 +155,15 @@ function formatFileContents(string $lang, string $fileName) : string {
 
 /**
  * Format a translation line.
- * @param string $key
- * @param string $value
- * @param int $indent
- * @param int $keyPad
+ *
+ * @param  string $key
+ * @param  string $value
+ * @param  int    $indent
+ * @param  int    $keyPad
  * @return string
  */
-function formatTranslationLine(string $key, string $value, int $indent = 1, int $keyPad = 1) : string {
+function formatTranslationLine(string $key, string $value, int $indent = 1, int $keyPad = 1) : string
+{
     $start = str_repeat(" ", $indent * 4) . str_pad("'{$key}'", $keyPad, ' ');
     if (strpos($value, "\n") !== false) {
         $escapedValue = '"' .  str_replace("\n", '\n', $value)  . '"';
@@ -167,10 +177,12 @@ function formatTranslationLine(string $key, string $value, int $indent = 1, int 
 /**
  * Find the longest key in the array and provide the length
  * for all keys to be used when printed.
- * @param array $array
+ *
+ * @param  array $array
  * @return int
  */
-function calculateKeyPadding(array $array) : int {
+function calculateKeyPadding(array $array) : int
+{
     $top = 0;
     foreach ($array as $key => $value) {
         $keyLen = strlen($key);
@@ -183,11 +195,13 @@ function calculateKeyPadding(array $array) : int {
  * Format an translation array with the given key.
  * Simply prints as an old-school php array.
  * Used as a last-resort backup to save unused translations.
- * @param string $key
- * @param array $array
+ *
+ * @param  string $key
+ * @param  array  $array
  * @return string
  */
-function formatTranslationArray(string $key, array $array) : string {
+function formatTranslationArray(string $key, array $array) : string
+{
     $arrayPHP = var_export($array, true);
     return "    '{$key}' => {$arrayPHP},";
 }
@@ -195,15 +209,18 @@ function formatTranslationArray(string $key, array $array) : string {
 /**
  * Find a string translation value within a multi-dimensional array
  * by traversing the given array of keys.
- * @param array $translations
- * @param array $keys
+ *
+ * @param  array $translations
+ * @param  array $keys
  * @return string|array
  */
-function getTranslationByKeys(array $translations, array $keys)  {
+function getTranslationByKeys(array $translations, array $keys)
+{
     $val = $translations;
     foreach ($keys as $key) {
         $val = $val[$key] ?? '';
-        if ($val === '') return '';
+        if ($val === '') { return '';
+        }
     }
     return $val;
 }
@@ -211,28 +228,33 @@ function getTranslationByKeys(array $translations, array $keys)  {
 /**
  * Unset an inner item of a multi-dimensional array by
  * traversing the given array of keys.
+ *
  * @param array $input
  * @param array $keys
  */
-function unsetArrayByKeys(array &$input, array $keys) {
+function unsetArrayByKeys(array &$input, array $keys)
+{
     $val = &$input;
     $lastIndex = count($keys) - 1;
     foreach ($keys as $index => &$key) {
         if ($index === $lastIndex && is_array($val)) {
             unset($val[$key]);
         }
-        if (!is_array($val)) return;
+        if (!is_array($val)) { return;
+        }
         $val = &$val[$key] ?? [];
     }
 }
 
 /**
  * Write the given content to a translation file.
+ *
  * @param string $lang
  * @param string $fileName
  * @param string $content
  */
-function writeLangFile(string $lang, string $fileName, string $content) {
+function writeLangFile(string $lang, string $fileName, string $content)
+{
     $path = __DIR__ . "/{$lang}/{$fileName}.php";
     if (!file_exists($path)) {
         errorOut("Expected translation file '{$path}' does not exist");
@@ -242,42 +264,50 @@ function writeLangFile(string $lang, string $fileName, string $content) {
 
 /**
  * Load the contents of a language file as an array of text lines.
- * @param string $lang
- * @param string $fileName
+ *
+ * @param  string $lang
+ * @param  string $fileName
  * @return array
  */
-function loadLangFileLines(string $lang, string $fileName) : array {
+function loadLangFileLines(string $lang, string $fileName) : array
+{
     $path = __DIR__ . "/{$lang}/{$fileName}.php";
     if (!file_exists($path)) {
         errorOut("Expected translation file '{$path}' does not exist");
     }
     $lines = explode("\n", file_get_contents($path));
-    return array_map(function($line) {
-        return trim($line, "\r");
-    }, $lines);
+    return array_map(
+        function ($line) {
+            return trim($line, "\r");
+        }, $lines
+    );
 }
 
 /**
  * Load the contents of a language file
- * @param string $lang
- * @param string $fileName
+ *
+ * @param  string $lang
+ * @param  string $fileName
  * @return array
  */
-function loadLang(string $lang, string $fileName) : array {
+function loadLang(string $lang, string $fileName) : array
+{
     $path = __DIR__ . "/{$lang}/{$fileName}.php";
     if (!file_exists($path)) {
         errorOut("Expected translation file '{$path}' does not exist");
     }
 
-    $fileData = include($path);
+    $fileData = include $path;
     return $fileData;
 }
 
 /**
  * Fetch an array containing the names of all translation files without the extension.
+ *
  * @return array
  */
-function getTranslationFileNames() : array {
+function getTranslationFileNames() : array
+{
     $dir = __DIR__ . "/en";
     if (!file_exists($dir)) {
         errorOut("Expected directory '{$dir}' does not exist");
@@ -294,10 +324,12 @@ function getTranslationFileNames() : array {
 
 /**
  * Format a locale to follow the lowercase_UPERCASE standard
- * @param string $lang
+ *
+ * @param  string $lang
  * @return string
  */
-function formatLocale(string $lang) : string {
+function formatLocale(string $lang) : string
+{
     $langParts = explode('_', strtoupper($lang));
     $langParts[0] = strtolower($langParts[0]);
     return implode('_', $langParts);
@@ -305,26 +337,32 @@ function formatLocale(string $lang) : string {
 
 /**
  * Dump a variable then die.
+ *
  * @param $content
  */
-function dd($content) {
+function dd($content)
+{
     print_r($content);
     exit(1);
 }
 
 /**
  * Log out some information text in blue
+ *
  * @param $text
  */
-function info($text) {
+function info($text)
+{
     echo "\e[34m" . $text . "\e[0m\n";
 }
 
 /**
  * Log out an error in red and exit.
+ *
  * @param $text
  */
-function errorOut($text) {
+function errorOut($text)
+{
     echo "\e[31m" . $text . "\e[0m\n";
     exit(1);
 }

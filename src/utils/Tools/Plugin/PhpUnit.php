@@ -173,10 +173,12 @@ class PhpUnit extends Plugin implements ZeroConfigPluginInterface
             }
 
             if (!is_writable($this->buildLocation)) {
-                throw new \Exception(sprintf(
-                    'The location %s is not writable or does not exist.',
-                    $this->buildLocation
-                ));
+                throw new \Exception(
+                    sprintf(
+                        'The location %s is not writable or does not exist.',
+                        $this->buildLocation
+                    )
+                );
             }
         }
 
@@ -185,9 +187,10 @@ class PhpUnit extends Plugin implements ZeroConfigPluginInterface
         $success   = $this->builder->executeCommand($cmd, $arguments, $directory);
         $output    = $this->builder->getLastOutput();
 
-        if ($fileSystem->exists($this->buildLocation) &&
-            $options->getOption('coverage') &&
-            $allowPublicArtifacts) {
+        if ($fileSystem->exists($this->buildLocation) 
+            && $options->getOption('coverage') 
+            && $allowPublicArtifacts
+        ) {
             $fileSystem->remove($this->buildBranchLocation);
             $fileSystem->mirror($this->buildLocation, $this->buildBranchLocation);
         }
@@ -203,11 +206,13 @@ class PhpUnit extends Plugin implements ZeroConfigPluginInterface
                 $matches
             );
 
-            $this->build->storeMeta((self::pluginName() . '-coverage'), [
+            $this->build->storeMeta(
+                (self::pluginName() . '-coverage'), [
                 'classes' => !empty($matches[1]) ? $matches[1] : '0.00',
                 'methods' => !empty($matches[2]) ? $matches[2] : '0.00',
                 'lines'   => !empty($matches[3]) ? $matches[3] : '0.00',
-            ]);
+                ]
+            );
 
             if ($allowPublicArtifacts) {
                 $this->builder->logSuccess(

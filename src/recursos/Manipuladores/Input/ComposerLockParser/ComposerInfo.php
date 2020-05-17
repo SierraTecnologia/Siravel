@@ -2,7 +2,8 @@
 
 namespace SiWeapons\Manipuladores\Input\ComposerLockParser;
 
-class ComposerInfo {
+class ComposerInfo
+{
 
     /**
      * @var string
@@ -80,7 +81,8 @@ class ComposerInfo {
         }
     }
 
-    private function getJsonLastErrorMsg() {
+    private function getJsonLastErrorMsg()
+    {
         $errors = array(
             JSON_ERROR_NONE             => null,
             JSON_ERROR_DEPTH            => 'Maximum stack depth exceeded',

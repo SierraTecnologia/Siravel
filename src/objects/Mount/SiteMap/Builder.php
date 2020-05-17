@@ -30,9 +30,11 @@ class Builder implements BuilderContract
      */
     public function setItems(array $items)
     {
-        $this->items = array_map(function (ItemContract $item) {
-            return $item;
-        }, $items);
+        $this->items = array_map(
+            function (ItemContract $item) {
+                return $item;
+            }, $items
+        );
 
         return $this;
     }

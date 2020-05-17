@@ -70,11 +70,11 @@ return [
      */
     'book' => 'Boek',
     'books' => 'Boeken',
-	'x_books' => ':count Boek|:count Boeken',
+    'x_books' => ':count Boek|:count Boeken',
     'books_empty' => 'Er zijn geen boeken aangemaakt',
     'books_popular' => 'Populaire Boeken',
     'books_recent' => 'Recente Boeken',
-	'books_new' => 'Nieuwe Boeken',
+    'books_new' => 'Nieuwe Boeken',
     'books_popular_empty' => 'De meest populaire boeken worden hier weergegeven.',
     'books_create' => 'Nieuw Boek Aanmaken',
     'books_delete' => 'Boek Verwijderen',

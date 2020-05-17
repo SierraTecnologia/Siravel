@@ -54,6 +54,7 @@ class Campfire extends Plugin
 
     /**
      * Run the Campfire plugin.
+     *
      * @return bool|mixed
      */
     public function execute()
@@ -69,6 +70,7 @@ class Campfire extends Plugin
 
     /**
      * Join a Campfire room.
+     *
      * @param $roomId
      */
     public function joinRoom($roomId)
@@ -78,6 +80,7 @@ class Campfire extends Plugin
 
     /**
      * Leave a Campfire room.
+     *
      * @param $roomId
      */
     public function leaveRoom($roomId)
@@ -87,9 +90,10 @@ class Campfire extends Plugin
 
     /**
      * Send a message to a campfire room.
-     * @param $message
-     * @param $roomId
-     * @param bool $isPaste
+     *
+     * @param  $message
+     * @param  $roomId
+     * @param  bool $isPaste
      * @return bool|mixed
      */
     public function speak($message, $roomId, $isPaste = false)
@@ -107,8 +111,9 @@ class Campfire extends Plugin
 
     /**
      * Make a request to Campfire.
-     * @param $page
-     * @param null $data
+     *
+     * @param  $page
+     * @param  null $data
      * @return bool|mixed
      */
     private function getPageByPost($page, $data = null)

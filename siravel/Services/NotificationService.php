@@ -21,7 +21,7 @@ class NotificationService
     /**
      * All notifications
      *
-     * @return  Collection
+     * @return Collection
      */
     public function all()
     {
@@ -31,7 +31,7 @@ class NotificationService
     /**
      * Paginated notifications
      *
-     * @return  PaginatedCollection
+     * @return PaginatedCollection
      */
     public function paginated()
     {
@@ -42,7 +42,7 @@ class NotificationService
      * User based paginated notifications
      *
      * @param  integer $id
-     * @return  PaginatedCollection
+     * @return PaginatedCollection
      */
     public function userBasedPaginated($id)
     {
@@ -53,7 +53,7 @@ class NotificationService
      * User based notifications
      *
      * @param  integer $id
-     * @return  Collection
+     * @return Collection
      */
     public function userBased($id)
     {
@@ -63,9 +63,9 @@ class NotificationService
     /**
      * Search notifications
      *
-     * @param  string $input
+     * @param  string  $input
      * @param  integer $id
-     * @return  Collection
+     * @return Collection
      */
     public function search($input, $id)
     {
@@ -89,10 +89,10 @@ class NotificationService
      * Create a notificaton
      *
      * @param  integer $userId
-     * @param  string $flag
-     * @param  string $title
-     * @param  string $details
-     * @return  void
+     * @param  string  $flag
+     * @param  string  $title
+     * @param  string  $details
+     * @return void
      */
     public function notify($userId, $flag, $title, $details)
     {
@@ -110,7 +110,7 @@ class NotificationService
      * Create a notification
      *
      * @param  array $input
-     * @return  boolean|exception
+     * @return boolean|exception
      */
     public function create($input)
     {
@@ -124,10 +124,14 @@ class NotificationService
                     $this->model->create($input);
                 }
 
-                $user->notify(new GeneralNotification([
-                    'title' => $input['title'],
-                    'details' => $input['details'],
-                ]));
+                $user->notify(
+                    new GeneralNotification(
+                        [
+                        'title' => $input['title'],
+                        'details' => $input['details'],
+                        ]
+                    )
+                );
 
                 return true;
             }
@@ -135,10 +139,14 @@ class NotificationService
             $input['uuid'] = Crypto::uuid();
 
             $user = $this->userService->find($input['user_id']);
-            $user->notify(new GeneralNotification([
-                'title' => $input['title'],
-                'details' => $input['details'],
-            ]));
+            $user->notify(
+                new GeneralNotification(
+                    [
+                    'title' => $input['title'],
+                    'details' => $input['details'],
+                    ]
+                )
+            );
 
             return $this->model->create($input);
         } catch (Exception $e) {
@@ -150,7 +158,7 @@ class NotificationService
      * Get a user
      *
      * @param  integer $id
-     * @return  User
+     * @return User
      */
     public function getUser($id)
     {
@@ -161,7 +169,7 @@ class NotificationService
      * Find a notification
      *
      * @param  integer $id
-     * @return  Notification
+     * @return Notification
      */
     public function find($id)
     {
@@ -172,7 +180,7 @@ class NotificationService
      * Find a notification by UUID
      *
      * @param  string $uuid
-     * @return  Notification
+     * @return Notification
      */
     public function findByUuid($uuid)
     {
@@ -183,8 +191,8 @@ class NotificationService
      * Update a notification
      *
      * @param  integer $id
-     * @param  array $input
-     * @return  Notification
+     * @param  array   $input
+     * @return Notification
      */
     public function update($id, $input)
     {
@@ -192,10 +200,14 @@ class NotificationService
         $notification->update($input);
 
         $user = $this->userService->find($notification->user_id);
-        $user->notify(new GeneralNotification([
-            'title' => $input['title'],
-            'details' => $input['details'],
-        ]));
+        $user->notify(
+            new GeneralNotification(
+                [
+                'title' => $input['title'],
+                'details' => $input['details'],
+                ]
+            )
+        );
 
         return $notification;
     }
@@ -204,7 +216,7 @@ class NotificationService
      * Mark notification as read
      *
      * @param  integer $id
-     * @return  boolean
+     * @return boolean
      */
     public function markAsRead($id)
     {
@@ -216,7 +228,7 @@ class NotificationService
      * Destroy a Notification
      *
      * @param  integer $id
-     * @return  boolean
+     * @return boolean
      */
     public function destroy($id)
     {
@@ -226,7 +238,7 @@ class NotificationService
     /**
      * Users as Select options array
      *
-     * @return  Array
+     * @return Array
      */
     public function usersAsOptions()
     {

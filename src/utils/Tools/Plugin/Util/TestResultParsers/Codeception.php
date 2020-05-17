@@ -8,7 +8,7 @@ use SiUtils\Helper\Xml;
 /**
  * Class Codeception
  *
- * @author  Adam Cooper <adam@networkpie.co.uk>
+ * @author Adam Cooper <adam@networkpie.co.uk>
  */
 class Codeception implements ParserInterface
 {

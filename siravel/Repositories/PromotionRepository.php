@@ -39,7 +39,7 @@ class PromotionRepository extends CmsRepository
      * Updates Promotion in the database
      *
      * @param Promotions $widget
-     * @param array $payload
+     * @param array      $payload
      *
      * @return Promotions
      */

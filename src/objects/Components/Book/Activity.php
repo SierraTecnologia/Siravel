@@ -27,6 +27,7 @@ class Activity extends Model
 
     /**
      * Get the user this activity relates to.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
@@ -45,7 +46,8 @@ class Activity extends Model
 
     /**
      * Checks if another Activity matches the general information of another.
-     * @param $activityB
+     *
+     * @param  $activityB
      * @return bool
      */
     public function isSimilarTo($activityB)

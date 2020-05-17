@@ -14,6 +14,7 @@ class MailerFactory
 
     /**
      * Set the mailer factory configuration.
+     *
      * @param array $config
      */
     public function __construct($config = [])
@@ -27,6 +28,7 @@ class MailerFactory
 
     /**
      * Returns an instance of Swift_Mailer based on the config.s
+     *
      * @return \Swift_Mailer
      */
     public function getSwiftMailerFromConfig()
@@ -40,7 +42,9 @@ class MailerFactory
                 $encryptionType = null;
             }
 
-            /** @var \Swift_SmtpTransport $transport */
+            /**
+ * @var \Swift_SmtpTransport $transport 
+*/
             $transport = \Swift_SmtpTransport::newInstance(
                 $this->getMailConfig('smtp_address'),
                 $this->getMailConfig('smtp_port'),
@@ -58,7 +62,8 @@ class MailerFactory
 
     /**
      * Return a specific configuration value by key.
-     * @param $configName
+     *
+     * @param  $configName
      * @return null|string
      */
     public function getMailConfig($configName)
@@ -69,16 +74,16 @@ class MailerFactory
             // Check defaults
 
             switch ($configName) {
-                case 'smtp_address':
-                    return "";
-                case 'default_mailto_address':
-                    return null;
-                case 'smtp_port':
-                    return '25';
-                case 'smtp_encryption':
-                    return null;
-                default:
-                    return "";
+            case 'smtp_address':
+                return "";
+            case 'default_mailto_address':
+                return null;
+            case 'smtp_port':
+                return '25';
+            case 'smtp_encryption':
+                return null;
+            default:
+                return "";
             }
         }
     }

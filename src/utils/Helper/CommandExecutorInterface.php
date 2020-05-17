@@ -24,10 +24,10 @@ interface CommandExecutorInterface
     /**
      * Find a binary required by a plugin.
      *
-     * @param array|string $binary
-     * @param string       $priorityPath
-     * @param string       $binaryPath
-     * @param array        $binaryName
+     * @param  array|string $binary
+     * @param  string       $priorityPath
+     * @param  string       $binaryPath
+     * @param  array        $binaryName
      * @return string
      *
      * @throws \Exception when no binary has been found.

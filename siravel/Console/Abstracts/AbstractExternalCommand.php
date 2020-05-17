@@ -16,39 +16,45 @@ class AbstractExternalCommand
 {
     /**
      * CLI tool.
+     *
      * @var CLImate CLImate instance.
      */
     protected $cli;
 
     /**
      * Analyser.
+     *
      * @var Analyser analyser instance.
      */
     protected $analyser;
 
     /**
      * Command line arguments.
+     *
      * @var array list of arguments.
      */
     protected $arguments;
 
     /**
      * Analysis targets paths.
+     *
      * @var array list of files and directories paths.
      */
     protected $analysedPaths;
 
     /**
      * Composer binaries directory path.
+     *
      * @var string directory path.
      */
     protected $binariesPath;
 
     /**
      * Set dependencies and initialize CLI.
-     * @param CLImate $climate CLImate instance.
-     * @param string $binariesPath Composer binaries path.
-     * @param array $arguments command line arguments.
+     *
+     * @param CLImate $climate      CLImate instance.
+     * @param string  $binariesPath Composer binaries path.
+     * @param array   $arguments    command line arguments.
      */
     public function __construct(CLImate $climate, $binariesPath, array $arguments)
     {
@@ -64,6 +70,7 @@ class AbstractExternalCommand
 
     /**
      * Run Code-Analyser command.
+     *
      * @return boolean true if it didn't find code issues or ran successfully.
      */
     public function run()
@@ -92,7 +99,8 @@ class AbstractExternalCommand
 
     /**
      * Create a DiffOutputFilter based on a git-diff param.
-     * @param string $gitDiff git diff arguments.
+     *
+     * @param  string $gitDiff git diff arguments.
      * @return DiffOutputFilter filter instance.
      */
     protected function getGitDiffFilter($gitDiff)
@@ -114,6 +122,7 @@ class AbstractExternalCommand
 
     /**
      * Initialize output.
+     *
      * @throws UnexpectedValueException on invalid format value.
      * @return AbstractOutput
      */
@@ -138,6 +147,7 @@ class AbstractExternalCommand
 
     /**
      * Command line arguments list for CLImate.
+     *
      * @return array CLI list of arguments.
      */
     protected function getArguments()
@@ -185,6 +195,7 @@ class AbstractExternalCommand
 
     /**
      * Get a list of paths to be ignored by the analysis.
+     *
      * @return string[] a list of file and/or directory paths.
      */
     public function getIgnoredPaths()
@@ -196,7 +207,8 @@ class AbstractExternalCommand
 
     /**
      * Parse a string of comma separated files and/or directories to be analysed.
-     * @param string $pathsString the path argument value.
+     *
+     * @param  string $pathsString the path argument value.
      * @return void
      */
     protected function setAnalysedPathsFromString($pathsString)
@@ -208,7 +220,8 @@ class AbstractExternalCommand
 
     /**
      * Set target files and/or directories to be analysed. Fix relative paths.
-     * @param string[] $paths target paths.
+     *
+     * @param  string[] $paths target paths.
      * @return void
      */
     protected function setAnalysedPaths(array $paths)
@@ -224,6 +237,7 @@ class AbstractExternalCommand
 
     /**
      * Analysis target paths.
+     *
      * @return string[] a list of analysed paths (usually just one).
      */
     public function getAnalysedPaths()
@@ -233,6 +247,7 @@ class AbstractExternalCommand
 
     /**
      * Running script path.
+     *
      * @return string current script directory.
      */
     public function getWorkingDirectory()
@@ -242,6 +257,7 @@ class AbstractExternalCommand
 
     /**
      * Output format.
+     *
      * @return string format type.
      */
     public function getOutputFormat()
@@ -251,6 +267,7 @@ class AbstractExternalCommand
 
     /**
      * CLI output description.
+     *
      * @return string description.
      */
     public function getDescription()
@@ -260,6 +277,7 @@ class AbstractExternalCommand
 
     /**
      * Analyser instance.
+     *
      * @return Analyser instance.
      */
     public function getAnalyser()
@@ -277,6 +295,7 @@ class AbstractExternalCommand
 
     /**
      * List of output format classes.
+     *
      * @return array array where the key is a format and its value the class.
      */
     protected function getOutputFormatClasses()
@@ -292,7 +311,8 @@ class AbstractExternalCommand
 
     /**
      * Get argument value from user informed arguments.
-     * @param string $name argument name.
+     *
+     * @param  string $name argument name.
      * @return Mixed argument value.
      */
     protected function getArgumentValue($name)
@@ -302,7 +322,8 @@ class AbstractExternalCommand
 
     /**
      * Check if the user supplied an argument.
-     * @param string $name argument name.
+     *
+     * @param  string $name argument name.
      * @return boolean if the argument has informed or not.
      */
     protected function hasArgumentValue($name)

@@ -96,7 +96,11 @@ class MysqlToPhinx
     protected function getTables($mysqli)
     {
         $res = $mysqli->query('SHOW TABLES');
-        return array_map(function($a) { return $a[0]; }, $res->fetch_all());
+        return array_map(
+            function ($a) {
+                return $a[0]; 
+            }, $res->fetch_all()
+        );
     }
 
     protected function getTableMigration($table, $mysqli, $indent)
@@ -193,36 +197,36 @@ class MysqlToPhinx
         $type = getMySQLColumnType($columndata);
 
         switch($type) {
-            case 'tinyint':
-            case 'smallint':
-            case 'int':
-            case 'mediumint':
-                return 'integer';
+        case 'tinyint':
+        case 'smallint':
+        case 'int':
+        case 'mediumint':
+            return 'integer';
 
-            case 'timestamp':
-                return 'timestamp';
+        case 'timestamp':
+            return 'timestamp';
 
-            case 'date':
-                return 'date';
+        case 'date':
+            return 'date';
 
-            case 'datetime':
-                return 'datetime';
+        case 'datetime':
+            return 'datetime';
 
-            case 'enum':
-                return 'enum';
+        case 'enum':
+            return 'enum';
 
-            case 'char':
-                return 'char';
+        case 'char':
+            return 'char';
 
-            case 'text':
-            case 'tinytext':
-                return 'text';
+        case 'text':
+        case 'tinytext':
+            return 'text';
 
-            case 'varchar':
-                return 'string';
+        case 'varchar':
+            return 'string';
 
-            default:
-                return '[' . $type . ']';
+        default:
+            return '[' . $type . ']';
         }
     }
 
@@ -251,39 +255,39 @@ class MysqlToPhinx
         // limit / length
         $limit = 0;
         switch (getMySQLColumnType($columndata)) {
-            case 'tinyint':
-                $limit = 'MysqlAdapter::INT_TINY';
-                break;
+        case 'tinyint':
+            $limit = 'MysqlAdapter::INT_TINY';
+            break;
 
-            case 'smallint':
-                $limit = 'MysqlAdapter::INT_SMALL';
-                break;
+        case 'smallint':
+            $limit = 'MysqlAdapter::INT_SMALL';
+            break;
 
-            case 'mediumint':
-                $limit = 'MysqlAdapter::INT_MEDIUM';
-                break;
+        case 'mediumint':
+            $limit = 'MysqlAdapter::INT_MEDIUM';
+            break;
 
-            case 'bigint':
-                $limit = 'MysqlAdapter::INT_BIG';
-                break;
+        case 'bigint':
+            $limit = 'MysqlAdapter::INT_BIG';
+            break;
 
-            case 'tinytext':
-                $limit = 'MysqlAdapter::TEXT_TINY';
-                break;
+        case 'tinytext':
+            $limit = 'MysqlAdapter::TEXT_TINY';
+            break;
 
-            case 'mediumtext':
-                $limit = 'MysqlAdapter::TEXT_MEDIUM';
-                break;
+        case 'mediumtext':
+            $limit = 'MysqlAdapter::TEXT_MEDIUM';
+            break;
 
-            case 'longtext':
-                $limit = 'MysqlAdapter::TEXT_LONG';
-                break;
+        case 'longtext':
+            $limit = 'MysqlAdapter::TEXT_LONG';
+            break;
 
-            default:
-                $pattern = '/\((\d+)\)$/';
-                if (1 === preg_match($pattern, $columndata['Type'], $match)) {
-                    $limit = $match[1];
-                }
+        default:
+            $pattern = '/\((\d+)\)$/';
+            if (1 === preg_match($pattern, $columndata['Type'], $match)) {
+                $limit = $match[1];
+            }
         }
         if ($limit) {
             $attributes[] = '\'limit\' => ' . $limit;
@@ -320,7 +324,8 @@ class MysqlToPhinx
 
     protected function getForeignKeys($table, $mysqli)
     {
-        $res = $mysqli->query("SELECT
+        $res = $mysqli->query(
+            "SELECT
             cols.TABLE_NAME,
             cols.COLUMN_NAME,
             refs.REFERENCED_TABLE_NAME,
@@ -345,7 +350,8 @@ class MysqlToPhinx
             AND cols.TABLE_SCHEMA = DATABASE()
             AND refs.REFERENCED_TABLE_NAME IS NOT NULL
             AND cons.CONSTRAINT_TYPE = 'FOREIGN KEY'
-        ;");
+        ;"
+        );
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 

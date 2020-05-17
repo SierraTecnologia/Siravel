@@ -38,5 +38,5 @@ return [
     'book_sort_notification'      => 'Boek Succesvol Gesorteerd',
 
     // Other
-    'commented_on'                => 'reactie op',												
+    'commented_on'                => 'reactie op',                                                
 ];

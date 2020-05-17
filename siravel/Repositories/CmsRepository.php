@@ -93,7 +93,7 @@ class CmsRepository
     /**
      * Search the columns of a given table
      *
-     * @param  array $payload
+     * @param array $payload
      *
      * @return array
      */
@@ -175,8 +175,8 @@ class CmsRepository
     /**
      * Convert block payloads into json
      *
-     * @param  array $payload
-     * @param  string $module
+     * @param array  $payload
+     * @param string $module
      *
      * @return array
      */
@@ -206,8 +206,8 @@ class CmsRepository
     /**
      * Parse the template for blocks.
      *
-     * @param  array $payload
-     * @param  array $currentBlocks
+     * @param array $payload
+     * @param array $currentBlocks
      *
      * @return array
      */

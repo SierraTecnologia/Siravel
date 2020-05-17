@@ -144,8 +144,8 @@ class TechnicalDebt extends Plugin implements ZeroConfigPluginInterface
     }
 
     /**
-    * Runs the plugin
-    */
+     * Runs the plugin
+     */
     public function execute()
     {
         $success    = true;
@@ -175,7 +175,9 @@ class TechnicalDebt extends Plugin implements ZeroConfigPluginInterface
         $this->builder->logDebug("Ignored path: ".json_encode($this->ignore, true));
         $errorCount = 0;
 
-        /** @var \SplFileInfo $file */
+        /**
+ * @var \SplFileInfo $file 
+*/
         foreach ($iterator as $file) {
             $filePath  = $file->getRealPath();
             $extension = $file->getExtension();

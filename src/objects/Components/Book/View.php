@@ -11,6 +11,7 @@ class View extends Model
 
     /**
      * Get all owning viewable models.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function viewable()

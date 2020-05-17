@@ -65,8 +65,10 @@ class RevisionList implements \IteratorAggregate, \Countable
 
     public function getAsTextArray()
     {
-        return array_map(function ($revision) {
-            return $revision->getRevision();
-        }, $this->revisions);
+        return array_map(
+            function ($revision) {
+                return $revision->getRevision();
+            }, $this->revisions
+        );
     }
 }

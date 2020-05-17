@@ -147,20 +147,24 @@ class Admin
     private static function getProcess($command, array $args = array(), array $options = array())
     {
         $is_windows = defined('PHP_WINDOWS_VERSION_BUILD');
-        $options = array_merge(array(
+        $options = array_merge(
+            array(
             'environment_variables' => $is_windows ? array('PATH' => getenv('PATH')) : array(),
             'command' => 'git',
             'process_timeout' => 3600,
-        ), $options);
+            ), $options
+        );
 
         $commandline = array_merge(array($options['command'], $command), $args);
 
         // Backward compatible layer for Symfony Process < 4.0.
         if (class_exists('Symfony\Component\Process\ProcessBuilder')) {
-            $commandline = implode(' ', array_map(
-                'Symfony\Component\Process\ProcessUtils::escapeArgument',
-                $commandline
-            ));
+            $commandline = implode(
+                ' ', array_map(
+                    'Symfony\Component\Process\ProcessUtils::escapeArgument',
+                    $commandline
+                )
+            );
         }
 
         $process = new Process($commandline);

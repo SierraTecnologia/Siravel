@@ -11,6 +11,7 @@ class Comment extends Ownable
 
     /**
      * Get the entity that this comment belongs to
+     *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function entity()
@@ -20,6 +21,7 @@ class Comment extends Ownable
 
     /**
      * Check if a comment has been updated since creation.
+     *
      * @return bool
      */
     public function isUpdated()
@@ -29,6 +31,7 @@ class Comment extends Ownable
 
     /**
      * Get created date as a relative diff.
+     *
      * @return mixed
      */
     public function getCreatedAttribute()
@@ -38,6 +41,7 @@ class Comment extends Ownable
 
     /**
      * Get updated date as a relative diff.
+     *
      * @return mixed
      */
     public function getUpdatedAttribute()

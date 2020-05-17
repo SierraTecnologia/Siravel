@@ -56,6 +56,7 @@ class Pgsql extends Plugin
 
     /**
      * Connects to PgSQL and runs a specified set of queries.
+     *
      * @return bool
      */
     public function execute()

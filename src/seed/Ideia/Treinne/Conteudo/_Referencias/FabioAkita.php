@@ -27,29 +27,29 @@ class FabioAkita
 
     public static function run()
     {
-       self::skill();
+        self::skill();
     }
 
     public static function skill()
     {
-       $this->skill = [
+        $this->skill = [
             'prog' => 10,
             'empreendedorismo' => 10,
             'marketing' => 10,
-       ];
+        ];
     }
 
     public static function videos()
     {
-       $this->videos = [
+        $this->videos = [
             'url' => 'https://www.youtube.com/watch?v=O4CWVQLbi48&list=PLdsnXVqbHDUcrE56CH8sXaPF3TTqoBP2z&index=6',
-       ];
+        ];
 
 
 
-       $this->videos = [
+        $this->videos = [
            'O que eu devo estudar? Vou conseguir emprego?',
            'url' => 'https://www.youtube.com/watch?v=Ll1uAZ-WRa0&list=PLdsnXVqbHDUcrE56CH8sXaPF3TTqoBP2z&index=7'
-       ];
+        ];
     }
 }

@@ -26,10 +26,12 @@ class FavoriteRepository
      */
     public function add($productId)
     {
-        return $this->model->firstOrCreate([
+        return $this->model->firstOrCreate(
+            [
             'product_id' => $productId,
             'user_id' => auth()->user()->id
-        ]);
+            ]
+        );
     }
 
     /**
@@ -41,9 +43,11 @@ class FavoriteRepository
      */
     public function remove($productId)
     {
-        return $this->model->where([
+        return $this->model->where(
+            [
             'product_id' => $productId,
             'user_id' => auth()->user()->id
-        ])->delete();
+            ]
+        )->delete();
     }
 }

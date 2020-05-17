@@ -12,57 +12,67 @@ use Uniondrug\Postman\Parsers\Abstracts\Base;
 
 /**
  * 解析控制器
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Collection extends Base
 {
     /**
      * 是否发布文档
+     *
      * @var bool
      */
     public $publishTo = 'docs/api';
     public $publishPostmanTo = 'docs';
     /**
      * 名称
+     *
      * @var string
      */
     public $name = '';
     /**
      * SDK类名
      * 如: mbs2
+     *
      * @var string
      */
     public $sdk = '';
     /**
      * SDK路径
      * 如: module
+     *
      * @var string
      */
     public $sdkPath = '';
     /**
      * SDK服务名
      * 如: mbs2.module
+     *
      * @var string
      */
     public $sdkService = '';
     /**
      * 目标应用文档连接前缀
+     *
      * @var string
      */
     public $sdkLink = '';
     public $prefix = '';
     /**
      * 描述
+     *
      * @var string
      */
     public $description = '';
     /**
      * 域名
+     *
      * @var string
      */
     public $host = '';
     /**
      * 是否鉴权
+     *
      * @var bool
      */
     public $auth = false;
@@ -81,6 +91,7 @@ class Collection extends Base
 
     /**
      * Controller constructor.
+     *
      * @param string $path 项目路径
      */
     public function __construct(string $path)
@@ -211,12 +222,14 @@ class Collection extends Base
 
     /**
      * JSON配置文件
+     *
      * @return \stdClass
      */
     private function initPostmanJson()
     {
         /**
          * 1. 初始化POSTMAN配置
+         *
          * @var Container $di
          */
         $di = Di::getDefault();
@@ -232,17 +245,21 @@ class Collection extends Base
             $appNameDesc[] = $appNameArr[$i];
         }
         $sdkPath = array_pop($appNameArr);
-        if (!in_array($sdkPath, [
+        if (!in_array(
+            $sdkPath, [
             'backend',
             'module',
             'union'
-        ])
+            ]
+        )
         ) {
             $this->console->warning("应用名称在配置文件[config/app.php]中的[appName]字段值不合法, 必须以module、union、backend结尾");
         }
-        $sdkClass = preg_replace_callback("/[\.|\-](\w)/", function($a){
-            return strtoupper($a[1]);
-        }, implode('.', $appNameArr));
+        $sdkClass = preg_replace_callback(
+            "/[\.|\-](\w)/", function ($a) {
+                return strtoupper($a[1]);
+            }, implode('.', $appNameArr)
+        );
         // 1.2 赋初始值
         $data->auth = "NO";
         $data->name = $appName;
@@ -269,6 +286,7 @@ class Collection extends Base
 
     /**
      * 扫描Controller目录
+     *
      * @param string $path
      */
     private function scanner($path)

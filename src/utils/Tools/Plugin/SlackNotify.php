@@ -77,6 +77,7 @@ class SlackNotify extends Plugin
 
     /**
      * Run the Slack plugin.
+     *
      * @return bool
      */
     public function execute()
@@ -112,18 +113,22 @@ class SlackNotify extends Plugin
             }
 
             // Build up the attachment data
-            $attachment = new Attachment([
+            $attachment = new Attachment(
+                [
                 'fallback' => $body,
                 'pretext'  => $body,
                 'color'    => $color,
                 'fields'   => [
-                    new AttachmentField([
+                    new AttachmentField(
+                        [
                         'title' => 'Status',
                         'value' => $status,
                         'short' => false
-                    ])
+                        ]
+                    )
                 ]
-            ]);
+                ]
+            );
 
             $message->attach($attachment);
 

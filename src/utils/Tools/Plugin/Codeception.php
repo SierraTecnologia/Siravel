@@ -63,7 +63,9 @@ class Codeception extends Plugin implements ZeroConfigPluginInterface
             $this->args = (string) $options['args'];
         }
 
-        /** @deprecated Option "path" is deprecated and will be deleted in version 2.0. Use the option "output_path" instead. */
+        /**
+ * @deprecated Option "path" is deprecated and will be deleted in version 2.0. Use the option "output_path" instead. 
+*/
         if (isset($options['path']) && !isset($options['output_path'])) {
             $this->builder->logWarning(
                 '[DEPRECATED] Option "path" is deprecated and will be deleted in version 2.0. Use the option "output_path" instead.'
@@ -93,7 +95,8 @@ class Codeception extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Try and find the codeception YML config file.
-     * @param $buildPath
+     *
+     * @param  $buildPath
      * @return null|string
      */
     public static function findConfigFile($buildPath)

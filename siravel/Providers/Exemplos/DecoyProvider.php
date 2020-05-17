@@ -42,15 +42,21 @@ class DecoyProvider extends BaseServiceProvider
         // mutated by Decoy logic.  This is important, in particular, so the
         // Validation observer can alter validation rules before the onValidation
         // callback runs.
-        $this->app['events']->listen('eloquent.*',
-            'Facilitador\Observers\ModelCallbacks');
-        $this->app['events']->listen('decoy::model.*',
-            'Facilitador\Observers\ModelCallbacks');
+        $this->app['events']->listen(
+            'eloquent.*',
+            'Facilitador\Observers\ModelCallbacks'
+        );
+        $this->app['events']->listen(
+            'decoy::model.*',
+            'Facilitador\Observers\ModelCallbacks'
+        );
 
         // Log model change events after others in case they modified the record
         // before being saved.
-        $this->app['events']->listen('eloquent.*',
-            'Facilitador\Observers\Changes');
+        $this->app['events']->listen(
+            'eloquent.*',
+            'Facilitador\Observers\Changes'
+        );
     }
 
     /**
@@ -61,19 +67,25 @@ class DecoyProvider extends BaseServiceProvider
     public function registerDirectories()
     {
         // Publish config files
-        $this->publishes([
+        $this->publishes(
+            [
              __DIR__.'/../../publishes/config/decoy' => config_path('decoy')
-        ], 'config');
+            ], 'config'
+        );
 
         // Publish decoy css and js to public directory
-        $this->publishes([
+        $this->publishes(
+            [
             __DIR__.'/../../dist/decoy' => public_path('assets/decoy')
-        ], 'assets');
+            ], 'assets'
+        );
 
         // Publish lanaguage files
-        $this->publishes([
+        $this->publishes(
+            [
             __DIR__.'/../../resources/lang' => resource_path('lang/vendor/decoy')
-        ], 'lang');
+            ], 'lang'
+        );
 
         // Register views
         $this->loadViewsFrom(__DIR__.'/../../resources/views/decoy', 'decoy');
@@ -104,16 +116,20 @@ class DecoyProvider extends BaseServiceProvider
         $this->registerMiddlewares();
 
         // Use Decoy's auth by default, while at an admin path
-        Config::set('auth.defaults', [
+        Config::set(
+            'auth.defaults', [
             'guard'     => 'decoy',
             'passwords' => 'decoy',
-        ]);
+            ]
+        );
 
         // Set the default mailer settings
-        Config::set('mail.from', [
+        Config::set(
+            'mail.from', [
             'address' => Config::get('decoy.core.mail_from_address'),
             'name' => Config::get('decoy.core.mail_from_name'),
-        ]);
+            ]
+        );
 
         // Config Former
         $this->configureFormer();
@@ -135,22 +151,28 @@ class DecoyProvider extends BaseServiceProvider
     public function bootAuth()
     {
         // Inject Decoy's auth config
-        Config::set('auth.guards.decoy', [
+        Config::set(
+            'auth.guards.decoy', [
             'driver'   => 'session',
             'provider' => 'decoy',
-        ]);
+            ]
+        );
 
-        Config::set('auth.providers.decoy', [
+        Config::set(
+            'auth.providers.decoy', [
             'driver' => 'eloquent',
             'model'  => \Facilitador\Models\Decoy\Admin::class,
-        ]);
+            ]
+        );
 
-        Config::set('auth.passwords.decoy', [
+        Config::set(
+            'auth.passwords.decoy', [
             'provider' => 'decoy',
             'email'    => 'decoy::emails.reset',
             'table'    => 'password_resets',
             'expire'   => 60,
-        ]);
+            ]
+        );
 
         // Point to the Gate policy
         $this->app[Gate::class]->define('decoy.auth', \Illuminate\Support\Facades\Config::get('decoy.core.policy'));
@@ -170,8 +192,10 @@ class DecoyProvider extends BaseServiceProvider
         Config::set('former.TwitterBootstrap3.labelWidths', []);
 
         // Change Former's required field HTML
-        Config::set('former.required_text', ' <span class="glyphicon glyphicon-exclamation-sign js-tooltip required" title="' .
-            __('decoy::login.form.required') . '"></span>');
+        Config::set(
+            'former.required_text', ' <span class="glyphicon glyphicon-exclamation-sign js-tooltip required" title="' .
+            __('decoy::login.form.required') . '"></span>'
+        );
 
         // Make pushed checkboxes have an empty string as their value
         Config::set('former.unchecked_value', '');
@@ -188,16 +212,26 @@ class DecoyProvider extends BaseServiceProvider
      */
     protected function delegateAdminObservers()
     {
-        $this->app['events']->listen('eloquent.saving:*',
-            'Facilitador\Observers\Localize');
-        $this->app['events']->listen('eloquent.saving:*',
-            'Facilitador\Observers\Encoding@onSaving');
-        $this->app['events']->listen('eloquent.saved:*',
-            'Facilitador\Observers\ManyToManyChecklist');
-        $this->app['events']->listen('eloquent.deleted:*',
-            'Facilitador\Observers\Encoding@onDeleted');
-        $this->app['events']->listen('decoy::model.validating:*',
-            'Facilitador\Observers\ValidateExistingFiles@onValidating');
+        $this->app['events']->listen(
+            'eloquent.saving:*',
+            'Facilitador\Observers\Localize'
+        );
+        $this->app['events']->listen(
+            'eloquent.saving:*',
+            'Facilitador\Observers\Encoding@onSaving'
+        );
+        $this->app['events']->listen(
+            'eloquent.saved:*',
+            'Facilitador\Observers\ManyToManyChecklist'
+        );
+        $this->app['events']->listen(
+            'eloquent.deleted:*',
+            'Facilitador\Observers\Encoding@onDeleted'
+        );
+        $this->app['events']->listen(
+            'decoy::model.validating:*',
+            'Facilitador\Observers\ValidateExistingFiles@onValidating'
+        );
     }
 
     /**
@@ -219,29 +253,37 @@ class DecoyProvider extends BaseServiceProvider
         }
 
         // This group is used by public decoy routes
-        $this->app['router']->middlewareGroup('decoy.public', [
+        $this->app['router']->middlewareGroup(
+            'decoy.public', [
             'web',
-        ]);
+            ]
+        );
 
         // The is the starndard auth protected group
-        $this->app['router']->middlewareGroup('decoy.protected', [
+        $this->app['router']->middlewareGroup(
+            'decoy.protected', [
             'web',
             'decoy.auth',
             'decoy.save-redirect',
             'decoy.edit-redirect',
-        ]);
+            ]
+        );
 
         // Require a logged in admin session but no CSRF token
-        $this->app['router']->middlewareGroup('decoy.protected_endpoint', [
+        $this->app['router']->middlewareGroup(
+            'decoy.protected_endpoint', [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Session\Middleware\StartSession::class,
             'decoy.auth',
-        ]);
+            ]
+        );
 
         // An open endpoint, like used by Zendcoder
-        $this->app['router']->middlewareGroup('decoy.endpoint', [
+        $this->app['router']->middlewareGroup(
+            'decoy.endpoint', [
             'api'
-        ]);
+            ]
+        );
     }
 
     /**
@@ -260,59 +302,75 @@ class DecoyProvider extends BaseServiceProvider
         $this->registerPackages();
 
         // Register HTML view helpers as "Decoy".  So they get invoked like: `Decoy::title()`
-        $this->app->singleton('decoy', function ($app) {
-            return new \Facilitador\Helpers;
-        });
+        $this->app->singleton(
+            'decoy', function ($app) {
+                return new \Facilitador\Helpers;
+            }
+        );
 
         // Registers explicit rotues and wildcarding routing
-        $this->app->singleton('decoy.router', function ($app) {
-            $dir = \Illuminate\Support\Facades\Config::get('decoy.core.dir');
+        $this->app->singleton(
+            'decoy.router', function ($app) {
+                $dir = \Illuminate\Support\Facades\Config::get('decoy.core.dir');
 
-            return new \Facilitador\Routing\Router($dir);
-        });
+                return new \Facilitador\Routing\Router($dir);
+            }
+        );
 
         // Wildcard router
-        $this->app->singleton('decoy.wildcard', function ($app) {
-            $request = $app['request'];
+        $this->app->singleton(
+            'decoy.wildcard', function ($app) {
+                $request = $app['request'];
 
-            return new \Facilitador\Routing\Wildcard(
-                \Illuminate\Support\Facades\Config::get('decoy.core.dir'),
-                $request->getMethod(),
-                $request->path()
-            );
-        });
+                return new \Facilitador\Routing\Wildcard(
+                    \Illuminate\Support\Facades\Config::get('decoy.core.dir'),
+                    $request->getMethod(),
+                    $request->path()
+                );
+            }
+        );
 
         // Return the active user account
-        $this->app->singleton('decoy.user', function ($app) {
-            $guard = \Illuminate\Support\Facades\Config::get('decoy.core.guard');
+        $this->app->singleton(
+            'decoy.user', function ($app) {
+                $guard = \Illuminate\Support\Facades\Config::get('decoy.core.guard');
 
-            return $app['auth']->guard($guard)->user();
-        });
+                return $app['auth']->guard($guard)->user();
+            }
+        );
 
         // Return a redirect response with extra stuff
-        $this->app->singleton('decoy.acl_fail', function ($app) {
-            return $app['redirect']
-                ->guest(route('decoy::account@login'))
-                ->withErrors([ 'error message' => __('decoy::login.error.login_first')]);
-        });
+        $this->app->singleton(
+            'decoy.acl_fail', function ($app) {
+                return $app['redirect']
+                    ->guest(route('decoy::account@login'))
+                    ->withErrors([ 'error message' => __('decoy::login.error.login_first')]);
+            }
+        );
 
         // Register URL Generators as "DecoyURL".
-        $this->app->singleton('decoy.url', function ($app) {
-            return new \Facilitador\Routing\UrlGenerator($app['request']->path());
-        });
+        $this->app->singleton(
+            'decoy.url', function ($app) {
+                return new \Facilitador\Routing\UrlGenerator($app['request']->path());
+            }
+        );
 
         // Build the Elements collection
-        $this->app->singleton('decoy.elements', function ($app) {
-            return with(new \Facilitador\Collections\Elements)->setModel(Models\Element::class);
-        });
+        $this->app->singleton(
+            'decoy.elements', function ($app) {
+                return with(new \Facilitador\Collections\Elements)->setModel(Models\Element::class);
+            }
+        );
 
         // Build the Breadcrumbs store
-        $this->app->singleton('decoy.breadcrumbs', function ($app) {
-            $breadcrumbs = new \Support\Template\Layout\Breadcrumbs();
-            $breadcrumbs->set($breadcrumbs->parseURL());
+        $this->app->singleton(
+            'decoy.breadcrumbs', function ($app) {
+                $breadcrumbs = new \Support\Template\Layout\Breadcrumbs();
+                $breadcrumbs->set($breadcrumbs->parseURL());
 
-            return $breadcrumbs;
-        });
+                return $breadcrumbs;
+            }
+        );
 
         // Register Decoy's custom handling of some exception
         $this->app->singleton(ExceptionHandler::class, \Facilitador\Exceptions\Handler::class);

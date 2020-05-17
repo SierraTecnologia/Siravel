@@ -15,7 +15,7 @@ interface Enclosure
     public function getUrl(): string;
 
     /**
-     * @param string $url
+     * @param  string $url
      * @return $this;
      */
     public function setUrl(string $url);
@@ -26,7 +26,7 @@ interface Enclosure
     public function getLength(): string;
 
     /**
-     * @param string $length
+     * @param  string $length
      * @return $this;
      */
     public function setLength(string $length);
@@ -37,7 +37,7 @@ interface Enclosure
     public function getType(): string;
 
     /**
-     * @param string $type
+     * @param  string $type
      * @return $this;
      */
     public function setType(string $type);

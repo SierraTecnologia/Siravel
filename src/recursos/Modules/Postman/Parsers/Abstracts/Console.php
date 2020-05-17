@@ -7,6 +7,7 @@ namespace Uniondrug\Postman\Parsers\Abstracts;
 
 /**
  * 控制台消息
+ *
  * @package Uniondrug\Postman\Parsers\Abstracts
  */
 class Console

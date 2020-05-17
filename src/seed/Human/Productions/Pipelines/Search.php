@@ -11,7 +11,6 @@ class Search
     public function init()
     {
         $this->makeAction(
-            
         );
     }
     

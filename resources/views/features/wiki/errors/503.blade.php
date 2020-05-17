@@ -4,14 +4,14 @@
 
 @section('body')
 <div id="maintenance" class="row">
-	<div class="large-8 columns large-centered text-center">
-		<ul class="pricing-table">
-			<li class="title">{{ \Illuminate\Support\Facades\Config::get('app.name') }}</li>
-			<li class="price">{{ _('Site down for maintenance') }}</li>
-			<li class="description">{{ _('Sorry, our site is currently undergoing scheduled maintenance') }}.</li>
-			<li class="cta-button"><a class="button" href="{!! URL::current() !!}">{{ _('Please visit us again in a few minutes') }}</a></li>
-		</ul>
-	</div>
+    <div class="large-8 columns large-centered text-center">
+        <ul class="pricing-table">
+            <li class="title">{{ \Illuminate\Support\Facades\Config::get('app.name') }}</li>
+            <li class="price">{{ _('Site down for maintenance') }}</li>
+            <li class="description">{{ _('Sorry, our site is currently undergoing scheduled maintenance') }}.</li>
+            <li class="cta-button"><a class="button" href="{!! URL::current() !!}">{{ _('Please visit us again in a few minutes') }}</a></li>
+        </ul>
+    </div>
 </div>
 @stop
 

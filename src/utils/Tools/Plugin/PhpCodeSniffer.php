@@ -147,8 +147,9 @@ class PhpCodeSniffer extends Plugin implements ZeroConfigPluginInterface
 
         $phpcs = $this->executable;
 
-        if ((!defined('DEBUG_MODE') || !DEBUG_MODE) &&
-            !(bool)$this->build->getExtra('debug')) {
+        if ((!defined('DEBUG_MODE') || !DEBUG_MODE) 
+            && !(bool)$this->build->getExtra('debug')
+        ) {
             $this->builder->logExecOutput(false);
         }
 
@@ -189,6 +190,7 @@ class PhpCodeSniffer extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Process options and produce an arguments string for PHPCS.
+     *
      * @return array
      */
     protected function getFlags()
@@ -230,7 +232,8 @@ class PhpCodeSniffer extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Process the PHPCS output report.
-     * @param $output
+     *
+     * @param  $output
      * @return array
      * @throws \Exception
      */

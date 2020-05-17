@@ -52,12 +52,14 @@ class CreateAdministratorUser extends Command
      */
     public function handle(): void
     {
-        $this->userManager->create([
+        $this->userManager->create(
+            [
             'role_id' => (new Role)->newQuery()->whereNameAdministrator()->firstOrFail()->id,
             'name' => $this->ask('Enter user\'s name'),
             'email' => $this->ask('Enter user\'s email'),
             'password' => $this->secret('Enter user\'s password'),
-        ]);
+            ]
+        );
 
         $signInUrl = url_frontend_sign_in();
 

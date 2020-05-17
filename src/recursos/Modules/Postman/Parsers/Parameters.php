@@ -9,6 +9,7 @@ use Uniondrug\Structs\Struct;
 
 /**
  * 参数解析
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Parameters
@@ -46,8 +47,8 @@ class Parameters
     ];
 
     /**
-     * @param string $sn Struct Class Name
-     * @param string $ns Namespace
+     * @param  string $sn Struct Class Name
+     * @param  string $ns Namespace
      * @throws \Exception
      */
     public function __construct(Method $method, $sn, $ns)
@@ -85,7 +86,7 @@ class Parameters
     }
 
     /**
-     * @param boolean $mock 是否填充MOCK数据
+     * @param  boolean $mock 是否填充MOCK数据
      * @return array
      */
     public function toArray($mock = true)
@@ -123,7 +124,7 @@ class Parameters
         $text = '> '.$this->reflect->name.$this->method->eol;
         $text .= $this->thead($input).$this->method->crlf;
         foreach ($this->properties as $property) {
-            if ($property->annotation->isExecuted){
+            if ($property->annotation->isExecuted) {
                 continue;
             }
             $text .= $this->tbody($input, $property).$this->method->crlf;
@@ -155,8 +156,8 @@ class Parameters
     }
 
     /**
-     * @param boolean  $input
-     * @param Property $property
+     * @param  boolean  $input
+     * @param  Property $property
      * @return string
      */
     private function tbody($input, $property)
@@ -171,8 +172,9 @@ class Parameters
 
     /**
      * 标签过滤
-     * @param Property $property
-     * @param string   $tag
+     *
+     * @param  Property $property
+     * @param  string   $tag
      * @return string
      */
     private function tbodyTags($property, $tag)
@@ -185,7 +187,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withRequired($property)
@@ -195,7 +197,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withName($property)
@@ -209,7 +211,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withType($property)
@@ -225,7 +227,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withFilterType($property)
@@ -237,7 +239,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withFilterOption($property)
@@ -249,7 +251,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return string
      */
     protected function withDesc($property)
@@ -262,7 +264,7 @@ class Parameters
     }
 
     /**
-     * @param Property $property
+     * @param  Property $property
      * @return mixed
      */
     protected function withValue($property)

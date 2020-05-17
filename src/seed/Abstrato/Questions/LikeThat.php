@@ -17,7 +17,8 @@ class LikeThat extends Questions
     public function initQuestions()
     {
         return [
-            Question::firstOrCreate([
+            Question::firstOrCreate(
+                [
                 // 'question' => 'O companheiro te passou confiança ?',
                 // 'type' => 'seguranca',
                 // 'options' => 'bool',
@@ -30,7 +31,8 @@ class LikeThat extends Questions
                 // ],
 
                 // 'obs' => 'Perguntar no inicia dos Relacionamentos'
-            ]),
+                ]
+            ),
         ];
     }
 

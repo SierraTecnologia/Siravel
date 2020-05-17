@@ -27,11 +27,11 @@ class ExercicioReceitaParaORatoSairDoLabirinto
 
     public static function run()
     {
-       self::about();
+        self::about();
     }
 
     public static function about()
     {
-       $this->text = '';
+        $this->text = '';
     }
 }

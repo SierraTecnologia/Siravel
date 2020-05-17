@@ -19,10 +19,12 @@ class ExcelController extends Controller
      */
     public function download(Request $request, ResponseFactory $response): BinaryFileResponse
     {
-        $data = $this->validate($request, [
+        $data = $this->validate(
+            $request, [
             'path'     => 'required',
             'filename' => 'required',
-        ]);
+            ]
+        );
 
         return $response->download(
             $data['path'],

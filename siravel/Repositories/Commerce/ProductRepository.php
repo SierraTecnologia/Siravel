@@ -93,7 +93,7 @@ class ProductRepository
      */
     public function find($id)
     {
-        if (!$model = $this->model->find($id)){
+        if (!$model = $this->model->find($id)) {
             return abort(404);
         }
         return $model;

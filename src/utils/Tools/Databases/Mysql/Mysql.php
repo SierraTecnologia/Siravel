@@ -7,9 +7,10 @@ use SiUtils\Tools\Bash;
 /**
  * Mysql Class
  *
- * @class  Mysql
+ * @class Mysql
  */
-class Mysql {
+class Mysql
+{
 
     public static $TYPEID = 1;
 
@@ -40,7 +41,8 @@ class Mysql {
         return $string;
     }
 
-    public function backup(){
+    public function backup()
+    {
 
             /**
              * Instantiate Backup and perform backup
@@ -51,9 +53,9 @@ class Mysql {
             // Set script max execution time
             set_time_limit(900); // 15 minutes
 
-            if (php_sapi_name() != "cli") {
-                echo '<div style="font-family: monospace;">';
-            }
+        if (php_sapi_name() != "cli") {
+            echo '<div style="font-family: monospace;">';
+        }
 
             $backupDatabase = new Backup(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, CHARSET);
             $result = $backupDatabase->backupTables(TABLES, BACKUP_DIR) ? 'OK' : 'KO';
@@ -62,13 +64,14 @@ class Mysql {
             // Use $output variable for further processing, for example to send it by email
             $output = $backupDatabase->getOutput();
 
-            if (php_sapi_name() != "cli") {
-                echo '</div>';
-            }
+        if (php_sapi_name() != "cli") {
+            echo '</div>';
+        }
 
     }
 
-    public function restore(){
+    public function restore()
+    {
 
         /**
          * Instantiate Restore and perform backup

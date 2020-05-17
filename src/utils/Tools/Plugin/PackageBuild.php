@@ -36,8 +36,8 @@ class PackageBuild extends Plugin
     }
 
     /**
-    * Executes Composer and runs a specified command (e.g. install / update)
-    */
+     * Executes Composer and runs a specified command (e.g. install / update)
+     */
     public function execute()
     {
         $path  = $this->builder->buildPath;
@@ -61,13 +61,13 @@ class PackageBuild extends Plugin
 
         foreach ($this->format as $format) {
             switch ($format) {
-                case 'tar':
-                    $cmd = 'tar cfz "%s/%s.tar.gz" ./*';
-                    break;
-                default:
-                case 'zip':
-                    $cmd = 'zip -rq "%s/%s.zip" ./*';
-                    break;
+            case 'tar':
+                $cmd = 'tar cfz "%s/%s.tar.gz" ./*';
+                break;
+            default:
+            case 'zip':
+                $cmd = 'zip -rq "%s/%s.zip" ./*';
+                break;
             }
 
             $success = $this->builder->executeCommand($cmd, $this->directory, $filename);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @param $value
+ * @param  $value
  * @return bool
  */
 function to_bool($value): bool
@@ -10,7 +10,7 @@ function to_bool($value): bool
 }
 
 /**
- * @param $value
+ * @param  $value
  * @return null|int
  */
 function to_int($value): ?int
@@ -31,7 +31,7 @@ function to_int($value): ?int
 }
 
 /**
- * @param $value
+ * @param  $value
  * @return null|float
  */
 function to_float($value): ?float
@@ -52,7 +52,7 @@ function to_float($value): ?float
 }
 
 /**
- * @param $value
+ * @param  $value
  * @return null|string
  */
 function to_string($value): ?string
@@ -61,7 +61,7 @@ function to_string($value): ?string
 }
 
 /**
- * @param $value
+ * @param  $value
  * @return null|array
  */
 function to_array($value): ?array
@@ -70,8 +70,8 @@ function to_array($value): ?array
 }
 
 /**
- * @param $value
- * @param string $className
+ * @param  $value
+ * @param  string $className
  * @return null|object
  */
 function to_object($value, string $className)

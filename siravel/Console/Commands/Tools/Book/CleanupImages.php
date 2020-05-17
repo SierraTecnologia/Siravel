@@ -30,6 +30,7 @@ class CleanupImages extends Command
 
     /**
      * Create a new command instance.
+     *
      * @param \SiObjects\Entitys\Uploads\ImageService $imageService
      */
     public function __construct(ImageService $imageService)

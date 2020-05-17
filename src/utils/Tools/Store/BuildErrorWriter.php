@@ -57,12 +57,12 @@ class BuildErrorWriter
     /**
      * Write error
      *
-     * @param string    $plugin
-     * @param string    $message
-     * @param int   $severity
-     * @param string    $file
-     * @param int   $lineStart
-     * @param int   $lineEnd
+     * @param string   $plugin
+     * @param string   $message
+     * @param int      $severity
+     * @param string   $file
+     * @param int      $lineStart
+     * @param int      $lineEnd
      * @param DateTime $createdDate
      */
     public function write(
@@ -78,7 +78,9 @@ class BuildErrorWriter
             $createdDate = new DateTime();
         }
 
-        /** @var BuildErrorStore $errorStore */
+        /**
+ * @var BuildErrorStore $errorStore 
+*/
         $errorStore = Factory::getStore('BuildError');
         $hash       = BuildError::generateHash($plugin, $file, $lineStart, $lineEnd, $severity, $message);
 

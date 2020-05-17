@@ -11,6 +11,7 @@ class AttachmentService extends UploadService
 
     /**
      * Get the storage that will be used for storing files.
+     *
      * @return \Illuminate\Contracts\Filesystem\Filesystem
      */
     protected function getStorage()
@@ -27,7 +28,8 @@ class AttachmentService extends UploadService
 
     /**
      * Get an attachment from storage.
-     * @param Attachment $attachment
+     *
+     * @param  Attachment $attachment
      * @return string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
@@ -38,8 +40,9 @@ class AttachmentService extends UploadService
 
     /**
      * Store a new attachment upon user upload.
-     * @param UploadedFile $uploadedFile
-     * @param int $page_id
+     *
+     * @param  UploadedFile $uploadedFile
+     * @param  int          $page_id
      * @return Attachment
      * @throws FileUploadException
      */
@@ -49,7 +52,8 @@ class AttachmentService extends UploadService
         $attachmentPath = $this->putFileInStorage($uploadedFile);
         $largestExistingOrder = Attachment::where('uploaded_to', '=', $page_id)->max('order');
 
-        $attachment = Attachment::forceCreate([
+        $attachment = Attachment::forceCreate(
+            [
             'name' => $attachmentName,
             'path' => $attachmentPath,
             'extension' => $uploadedFile->getClientOriginalExtension(),
@@ -57,7 +61,8 @@ class AttachmentService extends UploadService
             'created_by' => user()->id,
             'updated_by' => user()->id,
             'order' => $largestExistingOrder + 1
-        ]);
+            ]
+        );
 
         return $attachment;
     }
@@ -65,8 +70,9 @@ class AttachmentService extends UploadService
     /**
      * Store a upload, saving to a file and deleting any existing uploads
      * attached to that file.
-     * @param UploadedFile $uploadedFile
-     * @param Attachment $attachment
+     *
+     * @param  UploadedFile $uploadedFile
+     * @param  Attachment   $attachment
      * @return Attachment
      * @throws FileUploadException
      */
@@ -89,15 +95,17 @@ class AttachmentService extends UploadService
 
     /**
      * Save a new File attachment from a given link and name.
-     * @param string $name
-     * @param string $link
-     * @param int $page_id
+     *
+     * @param  string $name
+     * @param  string $link
+     * @param  int    $page_id
      * @return Attachment
      */
     public function saveNewFromLink($name, $link, $page_id)
     {
         $largestExistingOrder = Attachment::where('uploaded_to', '=', $page_id)->max('order');
-        return Attachment::forceCreate([
+        return Attachment::forceCreate(
+            [
             'name' => $name,
             'path' => $link,
             'external' => true,
@@ -106,11 +114,13 @@ class AttachmentService extends UploadService
             'created_by' => user()->id,
             'updated_by' => user()->id,
             'order' => $largestExistingOrder + 1
-        ]);
+            ]
+        );
     }
 
     /**
      * Updates the file ordering for a listing of attached files.
+     *
      * @param array $attachmentList
      * @param $pageId
      */
@@ -124,8 +134,9 @@ class AttachmentService extends UploadService
 
     /**
      * Update the details of a file.
-     * @param Attachment $attachment
-     * @param $requestData
+     *
+     * @param  Attachment $attachment
+     * @param  $requestData
      * @return Attachment
      */
     public function updateFile(Attachment $attachment, $requestData)
@@ -144,7 +155,8 @@ class AttachmentService extends UploadService
 
     /**
      * Delete a File from the database and storage.
-     * @param Attachment $attachment
+     *
+     * @param  Attachment $attachment
      * @throws Exception
      */
     public function deleteFile(Attachment $attachment)
@@ -161,6 +173,7 @@ class AttachmentService extends UploadService
     /**
      * Delete a file from the filesystem it sits on.
      * Cleans any empty leftover folders.
+     *
      * @param Attachment $attachment
      */
     protected function deleteFileInStorage(Attachment $attachment)
@@ -176,7 +189,8 @@ class AttachmentService extends UploadService
 
     /**
      * Store a file in storage with the given filename
-     * @param UploadedFile $uploadedFile
+     *
+     * @param  UploadedFile $uploadedFile
      * @return string
      * @throws FileUploadException
      */

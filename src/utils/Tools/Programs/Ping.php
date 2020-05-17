@@ -10,9 +10,10 @@ use Finder\Models\Digital\Infra\Computer;
  * Ping Class
  * geerlingguy/ping
  *
- * @class  Ping
+ * @class Ping
  */
-class Ping {
+class Ping
+{
 
     protected $host = false;
 

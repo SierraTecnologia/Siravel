@@ -99,8 +99,9 @@ class PhpTalLint extends Plugin
 
     /**
      * Lint an item (file or directory) by calling the appropriate method.
-     * @param $item
-     * @param $itemPath
+     *
+     * @param  $item
+     * @param  $itemPath
      * @return bool
      */
     protected function lintItem($item, $itemPath)
@@ -120,7 +121,8 @@ class PhpTalLint extends Plugin
 
     /**
      * Run phptal lint against a directory of files.
-     * @param $path
+     *
+     * @param  $path
      * @return bool
      */
     protected function lintDirectory($path)
@@ -149,7 +151,8 @@ class PhpTalLint extends Plugin
 
     /**
      * Run phptal lint against a specific file.
-     * @param $path
+     *
+     * @param  $path
      * @return bool
      */
     protected function lintFile($path)
@@ -202,6 +205,7 @@ class PhpTalLint extends Plugin
 
     /**
      * Process options and produce an arguments string for PHPTAL Lint.
+     *
      * @return array
      */
     protected function getFlags()

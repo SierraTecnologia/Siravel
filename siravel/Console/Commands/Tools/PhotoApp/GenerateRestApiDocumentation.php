@@ -34,13 +34,15 @@ class GenerateRestApiDocumentation extends Command
      */
     public function handle(): void
     {
-        $command = implode(' ', [
+        $command = implode(
+            ' ', [
             base_path('node_modules/.bin/apidoc'),
             '-i',
             './src/api/',
             '-o',
             './docs/rest_api/dist',
-        ]);
+            ]
+        );
 
         $process = new Process($command);
 

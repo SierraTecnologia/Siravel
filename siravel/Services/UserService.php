@@ -152,17 +152,21 @@ class UserService
     public function create($user, $password, $role = 'member', $sendEmail = true)
     {
         try {
-            DB::transaction(function () use ($user, $password, $role, $sendEmail) {
-                $this->userMeta->firstOrCreate([
-                    'user_id' => $user->id,
-                ]);
+            DB::transaction(
+                function () use ($user, $password, $role, $sendEmail) {
+                    $this->userMeta->firstOrCreate(
+                        [
+                        'user_id' => $user->id,
+                        ]
+                    );
 
-                $this->assignRole($role, $user->id);
+                    $this->assignRole($role, $user->id);
 
-                if ($sendEmail) {
-                    event(new UserRegisteredEmail($user, $password));
+                    if ($sendEmail) {
+                        event(new UserRegisteredEmail($user, $password));
+                    }
                 }
-            });
+            );
 
             $this->setAndSendUserActivationToken($user);
 
@@ -187,32 +191,34 @@ class UserService
         }
 
         try {
-            return DB::transaction(function () use ($userId, $payload) {
-                $user = $this->model->find($userId);
+            return DB::transaction(
+                function () use ($userId, $payload) {
+                    $user = $this->model->find($userId);
 
-                if (isset($payload['meta']['marketing']) && ($payload['meta']['marketing'] == 1 || $payload['meta']['marketing'] == 'on')) {
-                    $payload['meta']['marketing'] = 1;
-                } else {
-                    $payload['meta']['marketing'] = 0;
+                    if (isset($payload['meta']['marketing']) && ($payload['meta']['marketing'] == 1 || $payload['meta']['marketing'] == 'on')) {
+                        $payload['meta']['marketing'] = 1;
+                    } else {
+                        $payload['meta']['marketing'] = 0;
+                    }
+
+                    if (isset($payload['meta']['terms_and_cond']) && ($payload['meta']['terms_and_cond'] == 1 || $payload['meta']['terms_and_cond'] == 'on')) {
+                        $payload['meta']['terms_and_cond'] = 1;
+                    } else {
+                        $payload['meta']['terms_and_cond'] = 0;
+                    }
+
+                    $userMetaResult = (isset($payload['meta'])) ? $user->meta->update($payload['meta']) : true;
+
+                    $user->update($payload);
+
+                    if (isset($payload['roles'])) {
+                        $this->unassignAllRoles($userId);
+                        $this->assignRole($payload['roles'], $userId);
+                    }
+
+                    return $user;
                 }
-
-                if (isset($payload['meta']['terms_and_cond']) && ($payload['meta']['terms_and_cond'] == 1 || $payload['meta']['terms_and_cond'] == 'on')) {
-                    $payload['meta']['terms_and_cond'] = 1;
-                } else {
-                    $payload['meta']['terms_and_cond'] = 0;
-                }
-
-                $userMetaResult = (isset($payload['meta'])) ? $user->meta->update($payload['meta']) : true;
-
-                $user->update($payload);
-
-                if (isset($payload['roles'])) {
-                    $this->unassignAllRoles($userId);
-                    $this->assignRole($payload['roles'], $userId);
-                }
-
-                return $user;
-            });
+            );
         } catch (Exception $e) {
             throw new Exception('We were unable to update your profile', 1);
         }
@@ -227,15 +233,19 @@ class UserService
     {
         $password = substr(md5(rand(1111, 9999)), 0, 10);
 
-        return DB::transaction(function () use ($password, $info) {
-            $user = $this->model->create([
-                'email' => $info['email'],
-                'name' => $info['name'],
-                'password' => bcrypt($password),
-            ]);
+        return DB::transaction(
+            function () use ($password, $info) {
+                $user = $this->model->create(
+                    [
+                    'email' => $info['email'],
+                    'name' => $info['name'],
+                    'password' => bcrypt($password),
+                    ]
+                );
 
-            return $this->create($user, $password, $info['roles'], true);
-        });
+                return $this->create($user, $password, $info['roles'], true);
+            }
+        );
     }
 
     /**
@@ -248,14 +258,16 @@ class UserService
     public function destroy($id)
     {
         try {
-            return DB::transaction(function () use ($id) {
-                $this->unassignAllRoles($id);
+            return DB::transaction(
+                function () use ($id) {
+                    $this->unassignAllRoles($id);
 
-                $userMetaResult = $this->userMeta->where('user_id', $id)->delete();
-                $userResult = $this->model->find($id)->delete();
+                    $userMetaResult = $this->userMeta->where('user_id', $id)->delete();
+                    $userResult = $this->model->find($id)->delete();
 
-                return $userMetaResult && $userResult;
-            });
+                    return $userMetaResult && $userResult;
+                }
+            );
         } catch (Exception $e) {
             throw new Exception('We were unable to delete this profile', 1);
         }
@@ -310,9 +322,11 @@ class UserService
     {
         $token = md5(str_random(40));
 
-        $user->meta()->update([
+        $user->meta()->update(
+            [
             'activation_token' => $token,
-        ]);
+            ]
+        );
 
         $user->notify(new ActivateUserEmail($token));
     }

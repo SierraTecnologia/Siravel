@@ -27,7 +27,7 @@ class Init
 
     public static function run()
     {
-       self::about();
+        self::about();
     }
     
     /**

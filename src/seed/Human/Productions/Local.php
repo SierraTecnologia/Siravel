@@ -10,7 +10,8 @@ class Local
         
     }
 
-    public function attributes(){
+    public function attributes()
+    {
         return [
             Production::class(),
             Attributes\Target::class(),

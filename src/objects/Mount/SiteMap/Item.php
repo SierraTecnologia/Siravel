@@ -24,8 +24,7 @@ class Item implements ItemContract
         string $lastModified = '',
         string $changeFrequency = '',
         string $priority = ''
-    )
-    {
+    ) {
         $this->setLocation($location);
         $this->setLastModified($lastModified);
         $this->setChangeFrequency($changeFrequency);

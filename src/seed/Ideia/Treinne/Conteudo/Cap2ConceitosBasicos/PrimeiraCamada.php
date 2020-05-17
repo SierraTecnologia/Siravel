@@ -42,30 +42,36 @@ class PrimeiraCamada
         $this->text('Primeira camada. Operações e entradas e Saidas');
 
         $this->text('Tipos de Entradas e Saidas:');
-        $this->options([
+        $this->options(
+            [
             'texto' => 'string',
             'inteiro' => 'int',
             'decimal' => 'float',
             'verdadeiroOuFalso' => 'bolleano'
-        ]);
+            ]
+        );
 
         $this->text('Operações:');
-        $this->options([
+        $this->options(
+            [
             'atribuição' => '=',
             'soma' => '=',
             'subtração' => '=',
             'soma' => '='
-        ]);
+            ]
+        );
 
         $this->text('Condições e Loopings:');
-        $this->code(function (){
-            $idade = 3;
-            if ($idade > 18) {
-                return 'Maior que 18';
-            }
+        $this->code(
+            function () {
+                $idade = 3;
+                if ($idade > 18) {
+                    return 'Maior que 18';
+                }
 
-            return 'Menor que 18';
-        });
+                return 'Menor que 18';
+            }
+        );
     }
     
 

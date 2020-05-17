@@ -14,8 +14,9 @@ class ActivityService
 
     /**
      * ActivityService constructor.
+     *
      * @param \SiObjects\Components\Book\Activity $activity
-     * @param PermissionService $permissionService
+     * @param PermissionService                   $permissionService
      */
     public function __construct(Activity $activity, PermissionService $permissionService)
     {
@@ -26,10 +27,11 @@ class ActivityService
 
     /**
      * Add activity data to database.
+     *
      * @param Entity $entity
-     * @param        $activityKey
-     * @param int $bookId
-     * @param bool $extra
+     * @param $activityKey
+     * @param int    $bookId
+     * @param bool   $extra
      */
     public function add(Entity $entity, $activityKey, $bookId = 0, $extra = false)
     {
@@ -46,8 +48,9 @@ class ActivityService
 
     /**
      * Adds a activity history with a message & without binding to a entity.
-     * @param            $activityKey
-     * @param int $bookId
+     *
+     * @param $activityKey
+     * @param int        $bookId
      * @param bool|false $extra
      */
     public function addMessage($activityKey, $bookId = 0, $extra = false)
@@ -67,7 +70,8 @@ class ActivityService
      * Removes the entity attachment from each of its activities
      * and instead uses the 'extra' field with the entities name.
      * Used when an entity is deleted.
-     * @param Entity $entity
+     *
+     * @param  Entity $entity
      * @return mixed
      */
     public function removeEntity(Entity $entity)
@@ -84,8 +88,9 @@ class ActivityService
 
     /**
      * Gets the latest activity.
-     * @param int $count
-     * @param int $page
+     *
+     * @param  int $count
+     * @param  int $page
      * @return array
      */
     public function latest($count = 20, $page = 0)
@@ -100,9 +105,10 @@ class ActivityService
     /**
      * Gets the latest activity for an entity, Filtering out similar
      * items to prevent a message activity list.
-     * @param Entity $entity
-     * @param int $count
-     * @param int $page
+     *
+     * @param  Entity $entity
+     * @param  int    $count
+     * @param  int    $page
      * @return array
      */
     public function entityActivity($entity, $count = 20, $page = 0)
@@ -124,9 +130,10 @@ class ActivityService
     /**
      * Get latest activity for a user, Filtering out similar
      * items.
-     * @param $user
-     * @param int $count
-     * @param int $page
+     *
+     * @param  $user
+     * @param  int $count
+     * @param  int $page
      * @return array
      */
     public function userActivity($user, $count = 20, $page = 0)
@@ -139,7 +146,8 @@ class ActivityService
 
     /**
      * Filters out similar activity.
-     * @param Activity[] $activities
+     *
+     * @param  Activity[] $activities
      * @return array
      */
     protected function filterSimilar($activities)
@@ -162,6 +170,7 @@ class ActivityService
 
     /**
      * Flashes a notification message to the session if an appropriate message is available.
+     *
      * @param $activityKey
      */
     protected function setNotification($activityKey)

@@ -15,7 +15,7 @@ interface Builder
     public function getChannel(): Channel;
 
     /**
-     * @param Channel $channel
+     * @param  Channel $channel
      * @return $this
      */
     public function setChannel(Channel $channel);
@@ -26,7 +26,7 @@ interface Builder
     public function getItems(): array;
 
     /**
-     * @param array $items
+     * @param  array $items
      * @return $this
      */
     public function setItems(array $items);

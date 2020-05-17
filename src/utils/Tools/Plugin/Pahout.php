@@ -14,20 +14,26 @@ use SiUtils\Tools\Plugin;
  */
 class Pahout extends Plugin
 {
-    /** @var string */
+    /**
+ * @var string 
+*/
     const TAB = "\t";
 
-    /** @var string */
+    /**
+     * @var string 
+     */
     protected $directory;
 
-    /** @var int */
+    /**
+     * @var int 
+     */
     protected $allowedWarnings;
 
     /**
      * @param Builder $builder
-     * @param Build $build
+     * @param Build   $build
      *
-     * @param array $options
+     * @param array   $options
      *
      * @throws \Exception
      */
@@ -110,8 +116,8 @@ class Pahout extends Plugin
     }
 
     /**
-     * @param string $stage
-     * @param Build $build
+     * @param  string $stage
+     * @param  Build  $build
      * @return bool
      */
     public static function canExecuteOnStage($stage, Build $build)
@@ -120,7 +126,7 @@ class Pahout extends Plugin
     }
 
     /**
-     * @param string $output
+     * @param  string $output
      * @return array
      */
     protected function processReport($output)
@@ -135,13 +141,15 @@ class Pahout extends Plugin
 
             foreach ($data['hints'] as $hint) {
                 $hints[] = [
-                    'full_message' => \vsprintf('%s:%d' . \PHP_EOL . self::TAB . '%s: %s [%s]', [
+                    'full_message' => \vsprintf(
+                        '%s:%d' . \PHP_EOL . self::TAB . '%s: %s [%s]', [
                         $hint['filename'],
                         $hint['lineno'],
                         $hint['type'],
                         $hint['message'],
                         $hint['link']
-                    ]),
+                        ]
+                    ),
                     'message'   => $hint['message'],
                     'file'      => $hint['filename'],
                     'line_from' => $hint['lineno']

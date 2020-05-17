@@ -15,7 +15,7 @@ interface Item
     public function getTitle(): string;
 
     /**
-     * @param string $title
+     * @param  string $title
      * @return $this
      */
     public function setTitle(string $title);
@@ -26,7 +26,7 @@ interface Item
     public function getLink(): string;
 
     /**
-     * @param string $link
+     * @param  string $link
      * @return $this
      */
     public function setLink(string $link);
@@ -37,7 +37,7 @@ interface Item
     public function getDescription(): string;
 
     /**
-     * @param string $description
+     * @param  string $description
      * @return $this
      */
     public function setDescription(string $description);
@@ -48,7 +48,7 @@ interface Item
     public function getGuid(): string;
 
     /**
-     * @param string $guid
+     * @param  string $guid
      * @return $this
      */
     public function setGuid(string $guid);
@@ -59,7 +59,7 @@ interface Item
     public function getEnclosure(): Enclosure;
 
     /**
-     * @param Enclosure $enclosure
+     * @param  Enclosure $enclosure
      * @return $this
      */
     public function setEnclosure(Enclosure $enclosure);
@@ -70,7 +70,7 @@ interface Item
     public function getCategories(): array;
 
     /**
-     * @param array $categories
+     * @param  array $categories
      * @return $this
      */
     public function setCategories(array $categories);

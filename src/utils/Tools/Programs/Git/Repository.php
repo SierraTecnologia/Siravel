@@ -114,14 +114,16 @@ class Repository
     public function __construct($dir, $options = array())
     {
         $is_windows = defined('PHP_WINDOWS_VERSION_BUILD');
-        $options = array_merge(array(
+        $options = array_merge(
+            array(
             'working_dir' => null,
             'debug' => true,
             'logger' => null,
             'environment_variables' => $is_windows ? array('PATH' => getenv('path')) : array(),
             'command' => 'git',
             'process_timeout' => 3600,
-        ), $options);
+            ), $options
+        );
 
         if (null !== $options['logger'] && !$options['logger'] instanceof LoggerInterface) {
             throw new InvalidArgumentException(sprintf('Argument "logger" passed to Repository should be a Psr\Log\LoggerInterface. A %s was provided', is_object($options['logger']) ? get_class($options['logger']) : gettype($options['logger'])));
@@ -657,10 +659,12 @@ class Repository
 
         // For version < 3.3, the Process only accepts a simple string
         // as commandline, and escaping has to happen manually.
-        $commandline = implode(' ', array_map(
-            'Symfony\Component\Process\ProcessUtils::escapeArgument',
-            $arguments
-        ));
+        $commandline = implode(
+            ' ', array_map(
+                'Symfony\Component\Process\ProcessUtils::escapeArgument',
+                $arguments
+            )
+        );
 
         return $commandline;
     }

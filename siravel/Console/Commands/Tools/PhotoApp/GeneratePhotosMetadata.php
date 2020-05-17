@@ -33,23 +33,27 @@ class GeneratePhotosMetadata extends Command
     /**
      * Execute the console command.
      *
-     * @param ImageProcessor $imageProcessor
+     * @param  ImageProcessor $imageProcessor
      * @return void
      */
     public function handle(ImageProcessor $imageProcessor): void
     {
         (new Photo)
             ->newQuery()
-            ->chunk($this->option('chunk_size'), function (Collection $photos) use ($imageProcessor) {
-                $photos->each(function (Photo $photo) use ($imageProcessor) {
-                    try {
-                        $this->comment("Processing photo {$photo->id}...");
-                        $photo->metadata = $imageProcessor->open($photo->path)->getMetadata();
-                        $photo->save();
-                    } catch (Throwable $e) {
-                        $this->error($e->getMessage());
-                    }
-                });
-            });
+            ->chunk(
+                $this->option('chunk_size'), function (Collection $photos) use ($imageProcessor) {
+                    $photos->each(
+                        function (Photo $photo) use ($imageProcessor) {
+                            try {
+                                $this->comment("Processing photo {$photo->id}...");
+                                $photo->metadata = $imageProcessor->open($photo->path)->getMetadata();
+                                $photo->save();
+                            } catch (Throwable $e) {
+                                $this->error($e->getMessage());
+                            }
+                        }
+                    );
+                }
+            );
     }
 }

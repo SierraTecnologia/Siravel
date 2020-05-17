@@ -50,9 +50,11 @@ class ProjectManager extends Base
 
     public function mountReleases()
     {
-        $input = new \ChangeLog\IO\File([
+        $input = new \ChangeLog\IO\File(
+            [
             'file' => $this->locationFolder->getLocation('CHANGELOG.md'),
-        ]);
+            ]
+        );
         
         $parser = new \ChangeLog\Parser\KeepAChangeLog();
         

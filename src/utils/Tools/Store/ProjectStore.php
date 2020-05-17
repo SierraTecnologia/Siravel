@@ -32,8 +32,8 @@ class ProjectStore extends Store
     /**
      * Get a Project by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return Project|null
      */
@@ -45,8 +45,8 @@ class ProjectStore extends Store
     /**
      * Get a single Project by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return Project|null
      *
@@ -74,8 +74,8 @@ class ProjectStore extends Store
     /**
      * Get a single Project by Ids.
      *
-     * @param int[] $values
-     * @param string    $useConnection
+     * @param int[]  $values
+     * @param string $useConnection
      *
      * @throws HttpException
      *
@@ -103,9 +103,9 @@ class ProjectStore extends Store
     /**
      * Get multiple Project by Title.
      *
-     * @param string  $title
-     * @param int $limit
-     * @param string  $useConnection
+     * @param string $title
+     * @param int    $limit
+     * @param string $useConnection
      *
      * @return array
      *
@@ -202,10 +202,10 @@ class ProjectStore extends Store
     /**
      * Get multiple Project by GroupId.
      *
-     * @param int $groupId
-     * @param bool $archived
-     * @param int $limit
-     * @param string  $useConnection
+     * @param int    $groupId
+     * @param bool   $archived
+     * @param int    $limit
+     * @param string $useConnection
      *
      * @return array
      *

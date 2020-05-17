@@ -52,9 +52,11 @@ class MemberRepository extends BaseRepository
 
         $order = json_decode($link->menu->order);
         array_push($order, $link->id);
-        $link->menu->update([
+        $link->menu->update(
+            [
             'order' => json_encode($order),
-        ]);
+            ]
+        );
 
         return $link;
     }
@@ -62,8 +64,8 @@ class MemberRepository extends BaseRepository
     /**
      * Updates Members into database.
      *
-     * @param Member  $link
-     * @param array $input
+     * @param Member $link
+     * @param array  $input
      *
      * @return Member
      */

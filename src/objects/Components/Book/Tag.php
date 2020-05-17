@@ -6,6 +6,7 @@ use App\Models\Model;
 
 /**
  * Class Attribute
+ *
  * @package App
  */
 class Tag extends Model
@@ -14,6 +15,7 @@ class Tag extends Model
 
     /**
      * Get the entity that this tag belongs to
+     *
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function entity()

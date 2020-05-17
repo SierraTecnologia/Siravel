@@ -7,6 +7,7 @@ class Translator extends \Illuminate\Translation\Translator
 
     /**
      * Mapping of locales to their base locales
+     *
      * @var array
      */
     protected $baseLocaleMap = [
@@ -16,9 +17,9 @@ class Translator extends \Illuminate\Translation\Translator
     /**
      * Get the translation for a given key.
      *
-     * @param  string  $key
-     * @param  array   $replace
-     * @param  string  $locale
+     * @param  string $key
+     * @param  array  $replace
+     * @param  string $locale
      * @return string|array|null
      */
     public function trans($key, array $replace = [], $locale = null)
@@ -35,9 +36,10 @@ class Translator extends \Illuminate\Translation\Translator
     /**
      * Merge the fallback translations, and base translations if existing,
      * into the provided core key => value array of translations content.
-     * @param array $translationArray
-     * @param string $key
-     * @param null $locale
+     *
+     * @param  array  $translationArray
+     * @param  string $key
+     * @param  null   $locale
      * @return array
      */
     protected function mergeBackupTranslations(array $translationArray, string $key, $locale = null)
@@ -52,7 +54,7 @@ class Translator extends \Illuminate\Translation\Translator
     /**
      * Get the array of locales to be checked.
      *
-     * @param  string|null  $locale
+     * @param  string|null $locale
      * @return array
      */
     protected function localeArray($locale)
@@ -64,7 +66,7 @@ class Translator extends \Illuminate\Translation\Translator
     /**
      * Get the locale to extend for the given locale.
      *
-     * @param string $locale
+     * @param  string $locale
      * @return string|null
      */
     protected function getBaseLocale($locale)

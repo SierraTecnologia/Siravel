@@ -43,7 +43,7 @@ class PageService extends BaseService
     /**
      * Get a page name by ID
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return string
      */

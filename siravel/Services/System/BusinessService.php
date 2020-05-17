@@ -23,12 +23,14 @@ class BusinessService extends Service
         }
 
         // Get Settings
-        Setting::all()->each(function ($item) {
-            Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-            if (!empty($item->getAppAtribute('config'))) {
-                Config::set($item->getAppAtribute('config'), $item->value);
+        Setting::all()->each(
+            function ($item) {
+                Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
+                if (!empty($item->getAppAtribute('config'))) {
+                    Config::set($item->getAppAtribute('config'), $item->value);
+                }
             }
-        });
+        );
 
         if ($this->business->features) {
             $this->features = $this->business->features->all();
@@ -71,7 +73,7 @@ class BusinessService extends Service
             return false;
         }
 
-        if (!$default = CacheService::getUniversal('business-default')){
+        if (!$default = CacheService::getUniversal('business-default')) {
             $default = 'HotelByNow';
         }
         if (!$business = \App\Models\Negocios\Business::where('code', $default)->first()) {
@@ -176,13 +178,13 @@ class BusinessService extends Service
     public static function getBusinessUser()
     {
         //@todo Mudar
-        if (\App::runningInConsole() ){
+        if (\App::runningInConsole() ) {
             Log::notice('Rodando em Console');
             return null;
         }
         $business = self::getViaParamsToken();
 
-        if (!$business && self::isBlockUrl()){
+        if (!$business && self::isBlockUrl()) {
             return abort(403);
         }
 
@@ -198,7 +200,7 @@ class BusinessService extends Service
         if (!empty(self::$BLOCK_PARTIAL_URLS)) {
             foreach(self::$BLOCK_PARTIAL_URLS as $value) {
                 // Verifica se a url começa com o path mencionado
-                if (substr(Request::path(),0,strlen($value))==$value) {
+                if (substr(Request::path(), 0, strlen($value))==$value) {
                     return true;
                 }
             }

@@ -53,7 +53,7 @@ return [
     'grid_view' => '网格视图',
     'list_view' => '列表视图',
     'default' => '默认',
-	
+    
     /**
      * Header
      */

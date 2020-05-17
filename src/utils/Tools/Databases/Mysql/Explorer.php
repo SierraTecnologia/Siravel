@@ -10,11 +10,13 @@ use SiUtils\Tools\Bash;
 /**
  * Explorer Class using Mysqli
  *
- * @class  Explorer
+ * @class Explorer
  */
-class Explorer {
+class Explorer
+{
 
-    function login($loginParams) {
+    function login($loginParams)
+    {
         $connection = @mysqli_connect($loginParams['svr'], $loginParams['name'], $loginParams['psw'])
         or die("<p>initial host/db connection problem</p>"."<br/><br/><button type='button' id='nav' onclick='retry()'>Try again</button>"); //button runs logout so user can return to login screen
         if(errorCheck($connection)) {
@@ -39,7 +41,8 @@ class Explorer {
         return true;
     }
 
-    function load_db($first) {
+    function load_db($first)
+    {
         if($first) {
             setDbSession();
         }
@@ -55,12 +58,13 @@ class Explorer {
         while($table = mysqli_fetch_array($result)) { // go through each row that was returned in $result
             echo "<button type='button' onclick='loadTable(&quot;" . $table[0] . "&quot;)'>" . $table[0]  . "</button>";
             echo "<br>";    // print the table that was returned on that row.
-         }
+        }
     }
 
 
 
-    function getDatabases($first) {
+    function getDatabases($first)
+    {
         if($first) {
             setSession();
         }
@@ -69,7 +73,7 @@ class Explorer {
         $available = array();
         $index = 0;
         echo "<button type='button' id='nav' onclick='logout()'>LOGOUT</button>";
-        while( $row = mysqli_fetch_row( $result ) ){
+        while( $row = mysqli_fetch_row($result) ){
             if (($row[0]!="information_schema") && ($row[0]!="mysql")) {
                 $index += 1;
                 echo "<button type='button' onclick='loadDB(&quot;" . $row[0] . "&quot;)'>" . $row[0] . "</button>";
@@ -80,7 +84,8 @@ class Explorer {
 
 
 
-    function loadTable() {
+    function loadTable()
+    {
         $connection = login(getSession());
         $db = getDbSession();
         mysqli_select_db($connection, $db);
@@ -88,7 +93,7 @@ class Explorer {
         $table = getTableSession();
         echo "<button type='button' id='nav' onclick='reloadTables()'>RETURN TO TABLES</button>";
         $query = "SELECT * FROM " . $table;
-        $result1 = mysqli_query($connection, $query) or die (mysqli_error($connection));
+        $result1 = mysqli_query($connection, $query) or die(mysqli_error($connection));
         //iterate over all the rows
         $collumns = 0;
         $index = 0;

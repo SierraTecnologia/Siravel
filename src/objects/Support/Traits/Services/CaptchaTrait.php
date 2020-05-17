@@ -5,7 +5,8 @@ namespace SiObjects\Support\Traits\Services;
 use Illuminate\Support\Facades\Input;
 use ReCaptcha\ReCaptcha;
 
-trait CaptchaTrait {
+trait CaptchaTrait
+{
 
     public function captchaCheck()
     {

@@ -3,7 +3,8 @@
  * https://raw.githubusercontent.com/daniloaz/myphp-backup/master/myphp-backup.php
  * This file contains the Backup class wich performs
  * a partial or complete backup of any given MySQL database
- * @author Daniel López Azaña <daniloaz@gmail.com>
+ *
+ * @author  Daniel López Azaña <daniloaz@gmail.com>
  * @version 1.0
  */
 
@@ -26,7 +27,8 @@ define("BATCH_SIZE", 1000); // Batch size when selecting rows from database in o
 /**
  * The Backup class
  */
-class Backup {
+class Backup
+{
     /**
      * Host where the database is located
      */
@@ -90,7 +92,8 @@ class Backup {
     /**
      * Constructor initializes database
      */
-    public function __construct($host, $username, $passwd, $dbName, $charset = 'utf8') {
+    public function __construct($host, $username, $passwd, $dbName, $charset = 'utf8')
+    {
         $this->host                    = $host;
         $this->username                = $username;
         $this->passwd                  = $passwd;
@@ -105,7 +108,8 @@ class Backup {
         $this->output                  = '';
     }
 
-    protected function initializeDatabase() {
+    protected function initializeDatabase()
+    {
         try {
             $conn = mysqli_connect($this->host, $this->username, $this->passwd, $this->dbName);
             if (mysqli_connect_errno()) {
@@ -126,9 +130,11 @@ class Backup {
     /**
      * Backup the whole database or just some tables
      * Use '*' for whole database or 'table1 table2 table3...'
+     *
      * @param string $tables
      */
-    public function backupTables($tables = '*') {
+    public function backupTables($tables = '*')
+    {
         try {
             /**
              * Tables to export
@@ -180,7 +186,7 @@ class Backup {
                     
                     $query = 'SELECT * FROM `' . $table . '` LIMIT ' . ($b * $this->batchSize - $this->batchSize) . ',' . $this->batchSize;
                     $result = mysqli_query($this->conn, $query);
-                    $realBatchSize = mysqli_num_rows ($result); // Last batch size can be different from $this->batchSize
+                    $realBatchSize = mysqli_num_rows($result); // Last batch size can be different from $this->batchSize
                     $numFields = mysqli_num_fields($result);
 
                     if ($realBatchSize !== 0) {
@@ -193,13 +199,13 @@ class Backup {
                                 for($j=0; $j<$numFields; $j++) {
                                     if (isset($row[$j])) {
                                         $row[$j] = addslashes($row[$j]);
-                                        $row[$j] = str_replace("\n","\\n",$row[$j]);
-                                        $row[$j] = str_replace("\r","\\r",$row[$j]);
-                                        $row[$j] = str_replace("\f","\\f",$row[$j]);
-                                        $row[$j] = str_replace("\t","\\t",$row[$j]);
-                                        $row[$j] = str_replace("\v","\\v",$row[$j]);
-                                        $row[$j] = str_replace("\a","\\a",$row[$j]);
-                                        $row[$j] = str_replace("\b","\\b",$row[$j]);
+                                        $row[$j] = str_replace("\n", "\\n", $row[$j]);
+                                        $row[$j] = str_replace("\r", "\\r", $row[$j]);
+                                        $row[$j] = str_replace("\f", "\\f", $row[$j]);
+                                        $row[$j] = str_replace("\t", "\\t", $row[$j]);
+                                        $row[$j] = str_replace("\v", "\\v", $row[$j]);
+                                        $row[$j] = str_replace("\a", "\\a", $row[$j]);
+                                        $row[$j] = str_replace("\b", "\\b", $row[$j]);
                                         if ($row[$j] == 'true' or $row[$j] == 'false' or preg_match('/^-?[0-9]+$/', $row[$j]) or $row[$j] == 'NULL' or $row[$j] == 'null') {
                                             $sql .= $row[$j];
                                         } else {
@@ -286,10 +292,13 @@ class Backup {
 
     /**
      * Save SQL to file
+     *
      * @param string $sql
      */
-    protected function saveFile(&$sql) {
-        if (!$sql) return false;
+    protected function saveFile(&$sql)
+    {
+        if (!$sql) { return false;
+        }
 
         try {
 
@@ -313,7 +322,8 @@ class Backup {
      * @param integer $level GZIP compression level (default: 9)
      * @return string New filename (with .gz appended) if success, or false if operation fails
      */
-    protected function gzipBackupFile($level = 9) {
+    protected function gzipBackupFile($level = 9)
+    {
         if (!$this->gzipBackupFile) {
             return true;
         }
@@ -325,7 +335,7 @@ class Backup {
 
         $mode = 'wb' . $level;
         if ($fpOut = gzopen($dest, $mode)) {
-            if ($fpIn = fopen($source,'rb')) {
+            if ($fpIn = fopen($source, 'rb')) {
                 while (!feof($fpIn)) {
                     gzwrite($fpOut, fread($fpIn, 1024 * 256));
                 }
@@ -347,9 +357,9 @@ class Backup {
 
     /**
      * Prints message forcing output buffer flush
-     *
      */
-    public function obfPrint ($msg = '', $lineBreaksBefore = 0, $lineBreaksAfter = 1) {
+    public function obfPrint($msg = '', $lineBreaksBefore = 0, $lineBreaksAfter = 1)
+    {
         if (!$msg) {
             return false;
         }
@@ -387,7 +397,7 @@ class Backup {
 
 
         if (php_sapi_name() != "cli") {
-            if( ob_get_level() > 0 ) {
+            if(ob_get_level() > 0 ) {
                 ob_flush();
             }
         }
@@ -399,9 +409,9 @@ class Backup {
 
     /**
      * Returns full execution output
-     *
      */
-    public function getOutput() {
+    public function getOutput()
+    {
         return $this->output;
     }
 }

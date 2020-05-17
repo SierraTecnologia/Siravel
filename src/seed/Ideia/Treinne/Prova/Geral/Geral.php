@@ -27,14 +27,16 @@ class Geral
 
     public static function run()
     {
-       self::provas();
+        self::provas();
     }
 
     public static function provas()
     {
         // Testa oq o aluno sabe sobre git
-        Prova::firstOrCreate([
+        Prova::firstOrCreate(
+            [
             'name'              => 'Git',
-        ]);
+            ]
+        );
     }
 }

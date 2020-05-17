@@ -17,27 +17,32 @@ class Acordo
      * Contratos
      */
 
-    public function description($text){
+    public function description($text)
+    {
 
     }
 
     // Duração de Contrato
-    public function juramento($text){
+    public function juramento($text)
+    {
 
     }
 
     // Sobre os Bens
-    public function concordo($text){
+    public function concordo($text)
+    {
 
     }
 
     // Direitos de Imagens
-    public function obrigacoes($text){
+    public function obrigacoes($text)
+    {
 
     }
 
     // Direitos de Imagens
-    public function consequencias($text){
+    public function consequencias($text)
+    {
 
     }
 
@@ -51,8 +56,8 @@ class Acordo
     /**
      * Executar
      *
-     * @param [type] $bottom
-     * @param [type] $dom
+     * @param  [type] $bottom
+     * @param  [type] $dom
      * @return void
      */
     public function executeContract($bottom, $dom)

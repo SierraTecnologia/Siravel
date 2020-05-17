@@ -11,7 +11,8 @@ class Build
 {
     /**
      * Returns a more human-friendly version of a plugin name.
-     * @param $name
+     *
+     * @param  $name
      * @return mixed
      */
     public function formatPluginName($name)

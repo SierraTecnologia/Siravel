@@ -38,7 +38,9 @@ trait WithFilename
      */
     protected function withDefaultFilename(ActionRequest $request)
     {
-        /** @var resource $resource */
+        /**
+ * @var resource $resource 
+*/
         $resource = $request->resource();
         $filename = $resource::uriKey();
 

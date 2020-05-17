@@ -24,11 +24,12 @@ class ImageService extends UploadService
 
     /**
      * ImageService constructor.
-     * @param Image $image
+     *
+     * @param Image        $image
      * @param ImageManager $imageTool
-     * @param FileSystem $fileSystem
-     * @param Cache $cache
-     * @param HttpFetcher $http
+     * @param FileSystem   $fileSystem
+     * @param Cache        $cache
+     * @param HttpFetcher  $http
      */
     public function __construct(Image $image, ImageManager $imageTool, FileSystem $fileSystem, Cache $cache, HttpFetcher $http)
     {
@@ -41,7 +42,8 @@ class ImageService extends UploadService
 
     /**
      * Get the storage that will be used for storing images.
-     * @param string $type
+     *
+     * @param  string $type
      * @return \Illuminate\Contracts\Filesystem\Filesystem
      */
     protected function getStorage($type = '')
@@ -58,9 +60,10 @@ class ImageService extends UploadService
 
     /**
      * Saves a new image from an upload.
-     * @param UploadedFile $uploadedFile
-     * @param  string $type
-     * @param int $uploadedTo
+     *
+     * @param  UploadedFile $uploadedFile
+     * @param  string       $type
+     * @param  int          $uploadedTo
      * @return mixed
      * @throws ImageUploadException
      */
@@ -73,10 +76,11 @@ class ImageService extends UploadService
 
     /**
      * Save a new image from a uri-encoded base64 string of data.
-     * @param string $base64Uri
-     * @param string $name
-     * @param string $type
-     * @param int $uploadedTo
+     *
+     * @param  string $base64Uri
+     * @param  string $name
+     * @param  string $type
+     * @param  int    $uploadedTo
      * @return Image
      * @throws ImageUploadException
      */
@@ -92,9 +96,10 @@ class ImageService extends UploadService
 
     /**
      * Gets an image from url and saves it to the database.
-     * @param             $url
-     * @param string      $type
-     * @param bool|string $imageName
+     *
+     * @param  $url
+     * @param  string      $type
+     * @param  bool|string $imageName
      * @return mixed
      * @throws \Exception
      */
@@ -111,10 +116,11 @@ class ImageService extends UploadService
 
     /**
      * Saves a new image
-     * @param string $imageName
-     * @param string $imageData
-     * @param string $type
-     * @param int $uploadedTo
+     *
+     * @param  string $imageName
+     * @param  string $imageData
+     * @param  string $type
+     * @param  int    $uploadedTo
      * @return Image
      * @throws ImageUploadException
      */
@@ -164,7 +170,8 @@ class ImageService extends UploadService
 
     /**
      * Checks if the image is a gif. Returns true if it is, else false.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @return boolean
      */
     protected function isGif(Image $image)
@@ -176,10 +183,11 @@ class ImageService extends UploadService
      * Get the thumbnail for an image.
      * If $keepRatio is true only the width will be used.
      * Checks the cache then storage to avoid creating / accessing the filesystem on every check.
-     * @param Image $image
-     * @param int $width
-     * @param int $height
-     * @param bool $keepRatio
+     *
+     * @param  Image $image
+     * @param  int   $width
+     * @param  int   $height
+     * @param  bool  $keepRatio
      * @return string
      * @throws Exception
      * @throws ImageUploadException
@@ -213,10 +221,12 @@ class ImageService extends UploadService
         }
 
         if ($keepRatio) {
-            $thumb->resize($width, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
+            $thumb->resize(
+                $width, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                }
+            );
         } else {
             $thumb->fit($width, $height);
         }
@@ -231,7 +241,8 @@ class ImageService extends UploadService
 
     /**
      * Get the raw data content from an image.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @return string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
@@ -244,7 +255,8 @@ class ImageService extends UploadService
 
     /**
      * Destroy an image along with its revisions, thumbnails and remaining folders.
-     * @param Image $image
+     *
+     * @param  Image $image
      * @throws Exception
      */
     public function destroy(Image $image)
@@ -256,7 +268,8 @@ class ImageService extends UploadService
     /**
      * Destroys an image at the given path.
      * Searches for image thumbnails in addition to main provided path..
-     * @param string $path
+     *
+     * @param  string $path
      * @return bool
      */
     protected function destroyImagesFromPath(string $path)
@@ -268,10 +281,12 @@ class ImageService extends UploadService
         $allImages = collect($storage->allFiles($imageFolder));
 
         // Delete image files
-        $imagesToDelete = $allImages->filter(function ($imagePath) use ($imageFileName) {
-            $expectedIndex = strlen($imagePath) - strlen($imageFileName);
-            return strpos($imagePath, $imageFileName) === $expectedIndex;
-        });
+        $imagesToDelete = $allImages->filter(
+            function ($imagePath) use ($imageFileName) {
+                $expectedIndex = strlen($imagePath) - strlen($imageFileName);
+                return strpos($imagePath, $imageFileName) === $expectedIndex;
+            }
+        );
         $storage->delete($imagesToDelete->all());
 
         // Cleanup of empty folders
@@ -287,8 +302,9 @@ class ImageService extends UploadService
 
     /**
      * Save an avatar image from an external service.
-     * @param \App\Models\User $user
-     * @param int $size
+     *
+     * @param  \App\Models\User $user
+     * @param  int              $size
      * @return Image
      * @throws Exception
      */
@@ -315,6 +331,7 @@ class ImageService extends UploadService
 
     /**
      * Check if fetching external avatars is enabled.
+     *
      * @return bool
      */
     public function avatarFetchEnabled()
@@ -325,6 +342,7 @@ class ImageService extends UploadService
 
     /**
      * Get the URL to fetch avatars from.
+     *
      * @return string|mixed
      */
     protected function getAvatarUrl()
@@ -344,9 +362,10 @@ class ImageService extends UploadService
      * Could be much improved to be more specific but kept it generic for now to be safe.
      *
      * Returns the path of the images that would be/have been deleted.
-     * @param bool $checkRevisions
-     * @param bool $dryRun
-     * @param array $types
+     *
+     * @param  bool  $checkRevisions
+     * @param  bool  $dryRun
+     * @param  array $types
      * @return array
      */
     public function deleteUnusedImages($checkRevisions = true, $dryRun = true, $types = ['gallery', 'drawio'])
@@ -355,32 +374,35 @@ class ImageService extends UploadService
         $deletedPaths = [];
 
         $this->image->newQuery()->whereIn('type', $types)
-            ->chunk(1000, function ($images) use ($types, $checkRevisions, &$deletedPaths, $dryRun) {
-                foreach ($images as $image) {
-                    $searchQuery = '%' . basename($image->path) . '%';
-                    $inPage = DB::table('pages')
-                         ->where('html', 'like', $searchQuery)->count() > 0;
-                    $inRevision = false;
-                    if ($checkRevisions) {
-                        $inRevision =  DB::table('page_revisions')
-                             ->where('html', 'like', $searchQuery)->count() > 0;
-                    }
+            ->chunk(
+                1000, function ($images) use ($types, $checkRevisions, &$deletedPaths, $dryRun) {
+                    foreach ($images as $image) {
+                        $searchQuery = '%' . basename($image->path) . '%';
+                        $inPage = DB::table('pages')
+                            ->where('html', 'like', $searchQuery)->count() > 0;
+                        $inRevision = false;
+                        if ($checkRevisions) {
+                            $inRevision =  DB::table('page_revisions')
+                                ->where('html', 'like', $searchQuery)->count() > 0;
+                        }
 
-                    if (!$inPage && !$inRevision) {
-                        $deletedPaths[] = $image->path;
-                        if (!$dryRun) {
-                            $this->destroy($image);
+                        if (!$inPage && !$inRevision) {
+                            $deletedPaths[] = $image->path;
+                            if (!$dryRun) {
+                                $this->destroy($image);
+                            }
                         }
                     }
                 }
-            });
+            );
         return $deletedPaths;
     }
 
     /**
      * Convert a image URI to a Base64 encoded string.
      * Attempts to find locally via set storage method first.
-     * @param string $uri
+     *
+     * @param  string $uri
      * @return null|string
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
@@ -419,7 +441,8 @@ class ImageService extends UploadService
 
     /**
      * Gets a public facing url for an image by checking relevant environment variables.
-     * @param string $filePath
+     *
+     * @param  string $filePath
      * @return string
      */
     private function getPublicUrl($filePath)

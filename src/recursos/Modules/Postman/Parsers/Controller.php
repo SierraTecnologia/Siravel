@@ -9,6 +9,7 @@ use Uniondrug\Postman\Parsers\Abstracts\Base;
 
 /**
  * 解析控制器
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Controller extends Base
@@ -29,8 +30,9 @@ class Controller extends Base
 
     /**
      * Controller constructor.
+     *
      * @param Collection $collection
-     * @param string     $class 控制器类名
+     * @param string     $class      控制器类名
      */
     public function __construct(Collection $collection, string $class)
     {
@@ -81,6 +83,7 @@ class Controller extends Base
 
     /**
      * 读取索引
+     *
      * @return string
      */
     public function getIndex($curr = false)
@@ -154,6 +157,7 @@ class Controller extends Base
 
     /**
      * 转为POSTMAN文件
+     *
      * @return array
      */
     public function toPostman()

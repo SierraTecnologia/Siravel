@@ -1,9 +1,11 @@
 /**
  * Created by sierra on 04/06/17.
  */
-function isElementInViewport(el) {
-    if (!el)
+function isElementInViewport(el)
+{
+    if (!el) {
         return false;
+    }
     var rect = el.getBoundingClientRect();
     return (
         rect.top >= 0 &&
@@ -12,20 +14,25 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
-function loadItemsInView() {
+function loadItemsInView()
+{
     //Select elements by the row id.
-    $("#row [data-src]").each(function () {
-        var isVisible = isElementInViewport(this);
-        if (isVisible) {
-            if ($(this).attr("src") == undefined) {
-                $(this).attr("src", $(this).data("src"));
+    $("#row [data-src]").each(
+        function () {
+            var isVisible = isElementInViewport(this);
+            if (isVisible) {
+                if ($(this).attr("src") == undefined) {
+                    $(this).attr("src", $(this).data("src"));
+                }
             }
         }
-    });
+    );
 }
 
 //Example of calling loadItemsInView() from within window.onscroll()
-$(window).on("scroll", function () {
-    loadItemsInView();
-});
+$(window).on(
+    "scroll", function () {
+        loadItemsInView();
+    }
+);
 loadItemsInView();

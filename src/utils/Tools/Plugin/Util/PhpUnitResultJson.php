@@ -74,24 +74,24 @@ class PhpUnitResultJson extends PhpUnitResult
     {
         $status = $event['status'];
         switch ($status) {
-            case 'fail':
-                $severity = self::SEVERITY_FAIL;
-                break;
-            case 'error':
-                if (strpos($event['message'], 'Skipped') === 0 || strpos($event['message'], 'Incomplete') === 0) {
-                    $severity = self::SEVERITY_SKIPPED;
-                } else {
-                    $severity = self::SEVERITY_ERROR;
-                }
-                break;
-            case 'pass':
-                $severity = self::SEVERITY_PASS;
-                break;
-            case 'warning':
-                $severity = self::SEVERITY_PASS;
-                break;
-            default:
-                throw new \Exception("Unexpected PHPUnit test status: {$status}");
+        case 'fail':
+            $severity = self::SEVERITY_FAIL;
+            break;
+        case 'error':
+            if (strpos($event['message'], 'Skipped') === 0 || strpos($event['message'], 'Incomplete') === 0) {
+                $severity = self::SEVERITY_SKIPPED;
+            } else {
+                $severity = self::SEVERITY_ERROR;
+            }
+            break;
+        case 'pass':
+            $severity = self::SEVERITY_PASS;
+            break;
+        case 'warning':
+            $severity = self::SEVERITY_PASS;
+            break;
+        default:
+            throw new \Exception("Unexpected PHPUnit test status: {$status}");
                 break;
         }
 

@@ -51,13 +51,15 @@ if (count($langContent) > 0) {
     outputFlatArray($langContent, $lang);
 }
 
-function outputFlatArray($arr, $lang) {
+function outputFlatArray($arr, $lang)
+{
     $grouped = [];
     foreach ($arr as $key => $val) {
         $explodedKey = explode('.', $key);
         $group = $explodedKey[0];
         $path = implode('.', array_slice($explodedKey, 1));
-        if (!isset($grouped[$group])) $grouped[$group] = [];
+        if (!isset($grouped[$group])) { $grouped[$group] = [];
+        }
         $grouped[$group][$path] = $val;
     }
     foreach ($grouped as $filename => $arr) {
@@ -66,29 +68,33 @@ function outputFlatArray($arr, $lang) {
     }
 }
 
-function formatLang($lang) {
+function formatLang($lang)
+{
     $langParts = explode('_', strtoupper($lang));
     $langParts[0] = strtolower($langParts[0]);
     return implode('_', $langParts);
 }
 
-function loadLang(string $lang) {
+function loadLang(string $lang)
+{
     $dir = __DIR__ . "/{$lang}";
     if (!file_exists($dir)) {
-       errorOut("Expected directory '{$dir}' does not exist");
+        errorOut("Expected directory '{$dir}' does not exist");
     }
     $files = scandir($dir);
     $data = [];
     foreach ($files as $file) {
-        if (substr($file, -4) !== '.php') continue;
-        $fileData = include ($dir . '/' . $file);
+        if (substr($file, -4) !== '.php') { continue;
+        }
+        $fileData = include $dir . '/' . $file;
         $name = substr($file, 0, -4);
         $data[$name] = $fileData;
     }
     return flattenArray($data);
 }
 
-function flattenArray(array $arr) {
+function flattenArray(array $arr)
+{
     $data = [];
     foreach ($arr as $key => $arrItem) {
         if (!is_array($arrItem)) {
@@ -104,11 +110,13 @@ function flattenArray(array $arr) {
     return $data;
 }
 
-function info($text) {
+function info($text)
+{
     echo "\e[34m" . $text . "\e[0m\n";
 }
 
-function errorOut($text) {
+function errorOut($text)
+{
     echo "\e[31m" . $text . "\e[0m\n";
     exit(1);
 }

@@ -72,32 +72,44 @@ class SiravelProvider extends ServiceProvider
     public function boot()
     {
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getPublishesPath('app/Controllers') => app_path('Http/Controllers/Siravel'),
             $this->getPublishesPath('app/Services') => app_path('Services'),
-        ], ['app',  'sitec', 'sitec-app', 'siravel', 'siravel-app']);
+            ], ['app',  'sitec', 'sitec-app', 'siravel', 'siravel-app']
+        );
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getPublishesPath('config') => base_path('config'),
-        ], ['config',  'sitec', 'sitec-config', 'siravel', 'siravel-config']);
+            ], ['config',  'sitec', 'sitec-config', 'siravel', 'siravel-config']
+        );
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getPublishesPath('routes') => base_path('routes'),
-        ], ['routes',  'sitec', 'sitec-routes', 'siravel', 'siravel-routes']);
+            ], ['routes',  'sitec', 'sitec-routes', 'siravel', 'siravel-routes']
+        );
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getPublishesPath('public/js') => base_path('public/js'),
             $this->getPublishesPath('public/css') => base_path('public/css'),
             $this->getPublishesPath('public/img') => base_path('public/img'),
-        ], ['public',  'sitec', 'sitec-public', 'siravel', 'siravel-public']);
+            ], ['public',  'sitec', 'sitec-public', 'siravel', 'siravel-public']
+        );
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getPublishesPath('resources/tools') => base_path('resources/tools'),
-        ], ['tools',  'sitec', 'sitec-tools', 'siravel', 'siravel-tools']);
+            ], ['tools',  'sitec', 'sitec-tools', 'siravel', 'siravel-tools']
+        );
 
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
-        ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']);
+            ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']
+        );
 
         /*
         |--------------------------------------------------------------------------
@@ -135,7 +147,8 @@ class SiravelProvider extends ServiceProvider
 
         Blade::directive('markdown', function ($expression) {
             return "<?php echo Markdown::convertToHtml($expression); ?>";
-        }); */
+        }); 
+*/
     }
 
     /**
@@ -152,9 +165,11 @@ class SiravelProvider extends ServiceProvider
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
         $this->loadViewsFrom($viewsPath, 'siravel');
-        $this->publishes([
+        $this->publishes(
+            [
             $viewsPath => base_path('resources/views/vendor/siravel'),
-        ], 'views');
+            ], 'views'
+        );
 
         if (is_dir(base_path('resources/siravel'))) {
             $this->app->view->addNamespace('siravel-frontend', base_path('resources/siravel'));
@@ -164,7 +179,7 @@ class SiravelProvider extends ServiceProvider
 
 
         // Configs
-        $this->app->config->set('siravel.modules.siravel', include(__DIR__.'/config.php'));
+        $this->app->config->set('siravel.modules.siravel', include __DIR__.'/config.php');
 
         /*
         |--------------------------------------------------------------------------
@@ -172,9 +187,11 @@ class SiravelProvider extends ServiceProvider
         |--------------------------------------------------------------------------
         */
         // Register commands
-        $this->registerCommandFolders([
+        $this->registerCommandFolders(
+            [
             base_path('vendor/sierratecnologia/tools/siravel/Console/Commands') => '\Siravel\Console\Commands',
-        ]);
+            ]
+        );
     }
 
 }

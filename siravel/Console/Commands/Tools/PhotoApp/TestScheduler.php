@@ -29,7 +29,7 @@ class TestScheduler extends Command
     /**
      * Execute the console command.
      *
-     * @param LoggerInterface $logger
+     * @param  LoggerInterface $logger
      * @return void
      */
     public function handle(LoggerInterface $logger): void

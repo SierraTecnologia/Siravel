@@ -45,7 +45,7 @@ class DeleteUnusedObjectsFromPhotoStorage extends Command
     /**
      * DeleteUnusedObjectsFromPhotoStorage constructor.
      *
-     * @param Config $config
+     * @param Config  $config
      * @param Storage $storage
      */
     public function __construct(Config $config, Storage $storage)
@@ -83,9 +83,11 @@ class DeleteUnusedObjectsFromPhotoStorage extends Command
     {
         $directories = array_diff($this->getAllDirectoriesFromStorage(), $this->getAllDirectoriesFromDataProvider());
 
-        return array_filter(array_unique($directories), function ($directory) {
-            return Str::length($directory) > 0;
-        });
+        return array_filter(
+            array_unique($directories), function ($directory) {
+                return Str::length($directory) > 0;
+            }
+        );
     }
 
     /**
@@ -109,11 +111,15 @@ class DeleteUnusedObjectsFromPhotoStorage extends Command
 
         (new Photo)
             ->newQuery()
-            ->chunk($this->option('chunk_size'), function (Collection $photos) use (&$directories) {
-                $photos->each(function (Photo $photo) use (&$directories) {
-                    $directories[] = pathinfo($photo->path, PATHINFO_DIRNAME);
-                });
-            });
+            ->chunk(
+                $this->option('chunk_size'), function (Collection $photos) use (&$directories) {
+                    $photos->each(
+                        function (Photo $photo) use (&$directories) {
+                            $directories[] = pathinfo($photo->path, PATHINFO_DIRNAME);
+                        }
+                    );
+                }
+            );
 
         return array_values($directories);
     }
@@ -127,9 +133,11 @@ class DeleteUnusedObjectsFromPhotoStorage extends Command
     {
         $files = array_diff($this->getAllFilesFromStorage(), $this->getAllFilesFromDataProvider());
 
-        return array_filter(array_unique($files), function ($directory) {
-            return Str::length($directory) > 0;
-        });
+        return array_filter(
+            array_unique($files), function ($directory) {
+                return Str::length($directory) > 0;
+            }
+        );
     }
 
     /**
@@ -153,14 +161,20 @@ class DeleteUnusedObjectsFromPhotoStorage extends Command
 
         (new Photo)
             ->newQuery()
-            ->chunk($this->option('chunk_size'), function (Collection $photos) use (&$files) {
-                $photos->each(function (Photo $photo) use (&$files) {
-                    $files[] = $photo->path;
-                    $photo->thumbnails->each(function (Thumbnail $thumbnail) use (&$files) {
-                        $files[] = $thumbnail->path;
-                    });
-                });
-            });
+            ->chunk(
+                $this->option('chunk_size'), function (Collection $photos) use (&$files) {
+                    $photos->each(
+                        function (Photo $photo) use (&$files) {
+                            $files[] = $photo->path;
+                            $photo->thumbnails->each(
+                                function (Thumbnail $thumbnail) use (&$files) {
+                                    $files[] = $thumbnail->path;
+                                }
+                            );
+                        }
+                    );
+                }
+            );
 
         return array_values($files);
     }

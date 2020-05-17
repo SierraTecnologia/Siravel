@@ -52,19 +52,29 @@ class SendWeeklySubscriptionMails extends Command
         if ($postsExists) {
             (new Subscription)
                 ->newQuery()
-                ->when($this->option('email'), function (SubscriptionBuilder $query) {
-                    return $query->whereEmailIn($this->option('email'));
-                })
-                ->chunk($this->option('chunk_size'), function (Collection $subscriptions) {
-                    $subscriptions->each(function (Subscription $subscription) {
-                        $this->comment("Queuing subscription mail to {$subscription->email}...");
-                        Mail::queue(new WeeklySubscription([
-                            'website_url' => url_frontend(),
-                            'subscriber_email' => $subscription->email,
-                            'unsubscribe_url' => url_frontend_unsubscription($subscription->token),
-                        ]));
-                    });
-                });
+                ->when(
+                    $this->option('email'), function (SubscriptionBuilder $query) {
+                        return $query->whereEmailIn($this->option('email'));
+                    }
+                )
+                ->chunk(
+                    $this->option('chunk_size'), function (Collection $subscriptions) {
+                        $subscriptions->each(
+                            function (Subscription $subscription) {
+                                $this->comment("Queuing subscription mail to {$subscription->email}...");
+                                Mail::queue(
+                                    new WeeklySubscription(
+                                        [
+                                        'website_url' => url_frontend(),
+                                        'subscriber_email' => $subscription->email,
+                                        'unsubscribe_url' => url_frontend_unsubscription($subscription->token),
+                                        ]
+                                    )
+                                );
+                            }
+                        );
+                    }
+                );
         }
     }
 }

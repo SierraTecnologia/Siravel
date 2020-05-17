@@ -7,6 +7,7 @@ use Finder\Routines\Contracts\Notificator;
 
 /**
  * Class Pipeline
+ *
  * @package SiObjects\Entitys\Components
  */
 class Pipeline
@@ -29,7 +30,7 @@ class Pipeline
         return $this->result;
     }
     /**
-     * @param string $result
+     * @param  string $result
      * @return static
      */
     public function setResult($result)
@@ -38,7 +39,7 @@ class Pipeline
         return $this;
     }
     /**
-     * @param $result
+     * @param  $result
      * @return $this
      */
     public function addResult($result)

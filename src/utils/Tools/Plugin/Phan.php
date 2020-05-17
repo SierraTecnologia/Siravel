@@ -132,7 +132,7 @@ class Phan extends Plugin
     /**
      * Transform severity from Phan to PHP-Censor.
      *
-     * @param  int $severity
+     * @param int $severity
      *
      * @return int
      */

@@ -5,8 +5,9 @@ namespace App\Helps;
 /**
  * Scp Class
  *
- * @class  Scp
+ * @class Scp
  */
-class Scp {
+class Scp
+{
 
 }

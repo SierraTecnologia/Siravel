@@ -48,7 +48,7 @@ class Navegador /* implements ComponentContract*/
 
     private function getConnection($connection = false)
     {
-        if ($connection===false){
+        if ($connection===false) {
             return $this->connection = new Local;
         }
         return $this->connection = new $connection;
@@ -71,8 +71,8 @@ class Navegador /* implements ComponentContract*/
     }
 
     /**
-     * @param Directory $dir
-     * @param function $function
+     * @param Directory  $dir
+     * @param function   $function
      * @param bool|array $ignore
      */
     public function executeAPartirDe($init, Array $dirs, $function, $ignore = false)
@@ -83,8 +83,8 @@ class Navegador /* implements ComponentContract*/
     }
 
     /**
-     * @param Directory $dir
-     * @param function $function
+     * @param Directory  $dir
+     * @param function   $function
      * @param bool|array $ignore
      */
     public function executeForEachContentForManyDirs(Array $dirs, $function, $ignore = false)
@@ -95,9 +95,9 @@ class Navegador /* implements ComponentContract*/
     }
 
     /**
-     * @param Directory $dir
-     * @param function $function
-     * @param bool|array $ignore List with ignore files
+     * @param Directory  $dir
+     * @param function   $function
+     * @param bool|array $ignore   List with ignore files
      */
     public function executeForEachContentForDir(Directory $dir, $function, $ignore = false, $initFile = false)
     {
@@ -130,7 +130,7 @@ class Navegador /* implements ComponentContract*/
     }
 
     /**
-     * @param string $file
+     * @param string     $file
      * @param bool|array $ignore List with ignore files or part file names
      */
     public function permitIn($file, $ignore)

@@ -173,8 +173,10 @@ class TransactionRepository
 
         app(LogisticService::class)->afterRefundRequest($transaction);
 
-        return $transaction->update([
+        return $transaction->update(
+            [
             'refund_requested' => true,
-        ]);
+            ]
+        );
     }
 }

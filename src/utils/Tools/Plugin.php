@@ -88,8 +88,9 @@ abstract class Plugin
         $this->ignore     = $this->normalizeIgnore();
 
         // Plugin option overwrite builder options for priority_path and binary_path
-        if (!empty($options['priority_path']) &&
-            in_array($options['priority_path'], self::AVAILABLE_PRIORITY_PATHS, true)) {
+        if (!empty($options['priority_path']) 
+            && in_array($options['priority_path'], self::AVAILABLE_PRIORITY_PATHS, true)
+        ) {
             $this->priorityPath = $options['priority_path'];
         } else {
             $this->priorityPath = $this->builder->priorityPath;
@@ -174,10 +175,13 @@ abstract class Plugin
             return $this->builder->directory;
         }
 
-        /** @deprecated Option "path" is deprecated and will be deleted in version 2.0. Use the option "directory" instead. */
-        if (!empty($this->options['path']) &&
-            empty($this->options['directory']) &&
-            Codeception::pluginName() !== static::pluginName()) {
+        /**
+ * @deprecated Option "path" is deprecated and will be deleted in version 2.0. Use the option "directory" instead. 
+*/
+        if (!empty($this->options['path']) 
+            && empty($this->options['directory']) 
+            && Codeception::pluginName() !== static::pluginName()
+        ) {
             $this->builder->logWarning(
                 '[DEPRECATED] Option "path" is deprecated and will be deleted in version 2.0. Use the option "directory" instead.'
             );
@@ -229,30 +233,32 @@ abstract class Plugin
 
         $baseDirectory = $this->builder->buildPath;
 
-        array_walk($ignore, function (&$value) use ($baseDirectory) {
-            $value = $this->builder->interpolate($value);
+        array_walk(
+            $ignore, function (&$value) use ($baseDirectory) {
+                $value = $this->builder->interpolate($value);
 
-            if ('/' !== substr($value, 0, 1)) {
-                $value = $baseDirectory . $value;
-            }
+                if ('/' !== substr($value, 0, 1)) {
+                    $value = $baseDirectory . $value;
+                }
 
-            clearstatcache(true);
-            $realPath = realpath($value);
+                clearstatcache(true);
+                $realPath = realpath($value);
 
-            $value = (false !== $realPath)
+                $value = (false !== $realPath)
                 ? $realPath
                 : $value;
 
-            $value = str_replace("/./", '/', $value);
-            $value = rtrim(
-                str_replace(
-                    '//',
-                    '/',
-                    str_replace($baseDirectory, '', $value)
-                ),
-                '/\\'
-            );
-        });
+                $value = str_replace("/./", '/', $value);
+                $value = rtrim(
+                    str_replace(
+                        '//',
+                        '/',
+                        str_replace($baseDirectory, '', $value)
+                    ),
+                    '/\\'
+                );
+            }
+        );
 
         return array_unique($ignore);
     }

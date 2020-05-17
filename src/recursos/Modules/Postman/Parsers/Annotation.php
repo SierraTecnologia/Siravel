@@ -9,33 +9,39 @@ use Uniondrug\Postman\Parsers\Abstracts\Base;
 
 /**
  * 解析注释
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Annotation extends Base
 {
     /**
      * 标题
+     *
      * @var string
      */
     public $name = '';
     public $aliasName = null;
     /**
      * 描述
+     *
      * @var string
      */
     public $description = '';
     /**
      * 入参结构体
+     *
      * @var string
      */
     public $input = '';
     /**
      * 出参结构体
+     *
      * @var string
      */
     public $output = '';
     /**
      * 请求方式
+     *
      * @var string
      */
     public $method = '';
@@ -43,16 +49,19 @@ class Annotation extends Base
     public $isPostMethod = false;
     /**
      * 请求路径
+     *
      * @var string
      */
     public $path = '';
     /**
      * 路径前缀
+     *
      * @var string
      */
     public $prefix = '';
     /**
      * 类型名称
+     *
      * @var string
      */
     public $type = 'string';
@@ -65,6 +74,7 @@ class Annotation extends Base
     public $ver = '';
     /**
      * 是否为数组类型
+     *
      * @var bool
      */
     public $isArrayType = false;
@@ -98,6 +108,7 @@ class Annotation extends Base
 
     /**
      * Annotation constructor.
+     *
      * @param \ReflectionClass|\ReflectionMethod|\ReflectionProperty $reflect
      */
     public function __construct($reflect)
@@ -245,12 +256,14 @@ class Annotation extends Base
         $this->path === '' && $this->path = '/';
         $this->method = strtoupper($m[1]);
         $this->method === 'ROUTE' && $this->method = 'POST';
-        $this->isPostMethod = in_array($this->method, [
+        $this->isPostMethod = in_array(
+            $this->method, [
             'DELETE',
             'POST',
             'PUT',
             'PATCH'
-        ]);
+            ]
+        );
     }
 
     /**
@@ -361,7 +374,7 @@ class Annotation extends Base
     }
 
     /**
-     * @param string $s
+     * @param  string $s
      * @return array
      */
     private function formatInfo($s)
@@ -381,18 +394,21 @@ class Annotation extends Base
 
     /**
      * 格式化路径
-     * @param string $s
+     *
+     * @param  string $s
      * @return string
      */
     private function formatPath($s)
     {
-        $s = preg_replace([
+        $s = preg_replace(
+            [
             "/'|\"/",
             "/[\/]+$/"
-        ], [
+            ], [
             "",
             ""
-        ], $s);
+            ], $s
+        );
         $s = trim($s);
         if ($s !== '') {
             if ($s[0] !== '/') {
@@ -403,7 +419,7 @@ class Annotation extends Base
     }
 
     /**
-     * @param string $s
+     * @param  string $s
      * @return string
      */
     private function formatStruct($s)

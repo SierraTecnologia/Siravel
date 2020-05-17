@@ -28,14 +28,16 @@ class SeparandoEmCamadas
 
     public static function run()
     {
-       self::about();
+        self::about();
     }
 
     public static function about()
     {
-        $this->text([
+        $this->text(
+            [
             'name' => 'O que faz alguem ser foda, não é ter sorte.'.
                 'E sim, a arte de se colocar no lugar de qualquer outra pessoa, e descobrir alguma forma de tirar beneficio disso !',
-        ]);
+            ]
+        );
     }
 }

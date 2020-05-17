@@ -8,6 +8,7 @@ namespace Siravel\Exception;
 
 use Exception;
 
-class NoFaceException extends Exception {
+class NoFaceException extends Exception
+{
 
 }

@@ -20,4 +20,4 @@ class Alpaca
     {
         return 'bash <(curl -s -S -L '.$this->repositoryUrl.')';
     }
- }
+}

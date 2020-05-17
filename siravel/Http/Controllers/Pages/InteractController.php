@@ -6,57 +6,57 @@ use Illuminate\Http\Request;
 
 class InteractController extends Controller
 {
-	public function index(Request $request)
-	{
+    public function index(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
 
 
 
 
-	public function completeProfile(Request $request)
-	{
+    public function completeProfile(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
-	public function opineSobre(Request $request)
-	{
+    public function opineSobre(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
-	public function desejos(Request $request)
-	{
+    public function desejos(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
 
 
 
-	public function insertData(Request $request)
-	{
+    public function insertData(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
 
 
@@ -67,13 +67,13 @@ class InteractController extends Controller
      * Interacao
      */
 
-	public function question(Request $request)
-	{
+    public function question(Request $request)
+    {
         $links = [];
         return view(
             'siravel::pages.interact.index',
             compact('links')
         );
-	}
+    }
 
 }

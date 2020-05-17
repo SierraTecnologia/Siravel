@@ -9,10 +9,10 @@ if (!function_exists('redirect')) {
      * Overrides the default laravel redirect helper.
      * Ensures it redirects even when the app is in a subdirectory.
      *
-     * @param  string|null  $to
-     * @param  int     $status
-     * @param  array   $headers
-     * @param  bool    $secure
+     * @param  string|null $to
+     * @param  int         $status
+     * @param  array       $headers
+     * @param  bool        $secure
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     function redirect($to = null, $status = 302, $headers = [], $secure = null)
@@ -57,6 +57,7 @@ function versioned_asset($file = '')
 /**
  * Helper method to get the current User.
  * Defaults to public 'Guest' user if not logged in.
+ *
  * @return \App\Models\User
  */
 function user()
@@ -66,6 +67,7 @@ function user()
 
 /**
  * Check if current user is a signed in user.
+ *
  * @return bool
  */
 function signedInUser()
@@ -77,8 +79,9 @@ function signedInUser()
  * Check if the current user has a permission.
  * If an ownable element is passed in the jointPermissions are checked against
  * that particular item.
- * @param string $permission
- * @param Ownable $ownable
+ *
+ * @param  string  $permission
+ * @param  Ownable $ownable
  * @return mixed
  */
 function userCan(string $permission, \Population\Models\Ownable $ownable = null)
@@ -95,8 +98,9 @@ function userCan(string $permission, \Population\Models\Ownable $ownable = null)
 /**
  * Check if the current user has the given permission
  * on any item in the system.
- * @param string $permission
- * @param string|null $entityClass
+ *
+ * @param  string      $permission
+ * @param  string|null $entityClass
  * @return bool
  */
 function userCanOnAny(string $permission, string $entityClass = null)
@@ -122,8 +126,9 @@ function userCanOnAny(string $permission, string $entityClass = null)
 
 /**
  * Helper to create url's relative to the applications root path.
- * @param string $path
- * @param bool $forceAppDomain
+ *
+ * @param  string $path
+ * @param  bool   $forceAppDomain
  * @return string
  */
 function baseUrl($path, $forceAppDomain = false)
@@ -155,7 +160,8 @@ function baseUrl($path, $forceAppDomain = false)
 
 /**
  * Get a path to a theme resource.
- * @param string $path
+ *
+ * @param  string $path
  * @return string|boolean
  */
 function theme_path($path = '')
@@ -174,16 +180,19 @@ function theme_path($path = '')
  * to the 'resources/assets/icons' folder.
  *
  * Returns an empty string if icon file not found.
- * @param $name
- * @param array $attrs
+ *
+ * @param  $name
+ * @param  array $attrs
  * @return mixed
  */
 function icon($name, $attrs = [])
 {
-    $attrs = array_merge([
+    $attrs = array_merge(
+        [
         'class' => 'svg-icon',
         'data-icon' => $name
-    ], $attrs);
+        ], $attrs
+    );
     $attrString = ' ';
     foreach ($attrs as $attrName => $attr) {
         $attrString .=  $attrName . '="' . $attr . '" ';
@@ -205,9 +214,10 @@ function icon($name, $attrs = [])
  * Generate a url with multiple parameters for sorting purposes.
  * Works out the logic to set the correct sorting direction
  * Discards empty parameters and allows overriding.
- * @param $path
- * @param array $data
- * @param array $overrideData
+ *
+ * @param  $path
+ * @param  array $data
+ * @param  array $overrideData
  * @return string
  */
 function sortUrl($path, $data, $overrideData = [])
@@ -251,7 +261,7 @@ function markup($source)
         return '';
     }
     
-	return with(new \League\CommonMark\CommonMarkConverter())->convertToHtml($source);
+    return with(new \League\CommonMark\CommonMarkConverter())->convertToHtml($source);
 }
 
 /**
@@ -262,7 +272,7 @@ function markup($source)
  */
 function pagination_links($presenter)
 {
-	return with(new \Stolz\LaravelFormBuilder\Pagination($presenter));
+    return with(new \Stolz\LaravelFormBuilder\Pagination($presenter));
 }
 
 /**
@@ -273,35 +283,35 @@ function pagination_links($presenter)
  */
 function tree(array $nodes, Closure $render = null)
 {
-	$output = '<ul class="no-bullet">';
-	foreach($nodes as $node)
-	{
-		// Get name
-		$name = (is_null($render)) ? $node['name'] : $render($node);
+    $output = '<ul class="no-bullet">';
+    foreach($nodes as $node)
+    {
+        // Get name
+        $name = (is_null($render)) ? $node['name'] : $render($node);
 
-		// Render node
-		$output .= '<li>' . $name;
+        // Render node
+        $output .= '<li>' . $name;
 
-		// Render children
-		if($node['children'])
-			$output .= tree($node['children'], $render);
+        // Render children
+        if($node['children']) {
+            $output .= tree($node['children'], $render);
+        }
 
-		$output .= '</li>';
-	}
+        $output .= '</li>';
+    }
 
-	return $output .'</ul>';
+    return $output .'</ul>';
 }
 
-if ( ! function_exists('_'))
-{
-	/**
-	 * Dummy gettext alias. Workaround until HHVM supports Gettext PHP extension.
-	 *
-	 * @param  string
-	 * @return string
-	 */
-	function _($s)
-	{
-		return $s;
-	}
+if (! function_exists('_')) {
+    /**
+     * Dummy gettext alias. Workaround until HHVM supports Gettext PHP extension.
+     *
+     * @param  string
+     * @return string
+     */
+    function _($s)
+    {
+        return $s;
+    }
 }

@@ -35,8 +35,8 @@ class CleanBuild extends Plugin
     }
 
     /**
-    * Executes Composer and runs a specified command (e.g. install / update)
-    */
+     * Executes Composer and runs a specified command (e.g. install / update)
+     */
     public function execute()
     {
         $cmd = 'rm -Rf "%s"';

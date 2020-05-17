@@ -15,20 +15,20 @@ use Auth;
 
 class ActivityController extends Controller
 {
-	public function index(Request $request)
-	{
+    public function index(Request $request)
+    {
         switch ($request->view) {
-            case 'all':
-                $activities = Activity::recent()->paginate(50);
-                break;
+        case 'all':
+            $activities = Activity::recent()->paginate(50);
+            break;
 
-            case 'mine':
-                $activities = Auth::user()->activities();
-                break;
+        case 'mine':
+            $activities = Auth::user()->activities();
+            break;
 
-            default:
-                $activities = Auth::user()->subscribedActivityFeeds();
-                break;
+        default:
+            $activities = Auth::user()->subscribedActivityFeeds();
+            break;
         }
 
         $links  = Link::allFromCache();
@@ -39,6 +39,6 @@ class ActivityController extends Controller
         $images = Image::fromActivities($activities);
 
         return view('siravel::components.modules.activities.index', compact('activities', 'links', 'banners', 'active_users', 'hot_topics', 'images'));
-	}
+    }
 
 }

@@ -12,7 +12,7 @@ trait ActivationTrait
     public function initiateEmailActivation(User $user)
     {
 
-        if ( !\Illuminate\Support\Facades\Config::get('settings.activation')  || !$this->validateEmail($user)) {
+        if (!\Illuminate\Support\Facades\Config::get('settings.activation')  || !$this->validateEmail($user)) {
 
             return true;
 

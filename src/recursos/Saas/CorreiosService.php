@@ -19,7 +19,7 @@ class CorreiosService extends Service
     public function validateCep($cep)
     {
         $cep = Filter::cep($cep);
-        if (!$cep = $this->get($cep.'/json')){
+        if (!$cep = $this->get($cep.'/json')) {
             return [
                 "erro" => true
             ];

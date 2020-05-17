@@ -81,9 +81,11 @@ trait WithHeadings
 
             // Attempt to replace the attribute name by the resource field name.
             // Fallback to the attribute name, when none is found.
-            return $attributes->map(function (string $attribute) use ($request) {
-                return $request->findHeading($attribute, $attribute);
-            })->toArray();
+            return $attributes->map(
+                function (string $attribute) use ($request) {
+                    return $request->findHeading($attribute, $attribute);
+                }
+            )->toArray();
         };
     }
 }

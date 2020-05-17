@@ -28,7 +28,7 @@ class ComoSerFoda
     public static function run()
     {
         $this->mandamento(
-           'Foque no certo. Isole todo seu ambiente. ',
+            'Foque no certo. Isole todo seu ambiente. ',
             self::isolamento()
         );
 

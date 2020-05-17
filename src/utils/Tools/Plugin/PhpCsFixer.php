@@ -178,7 +178,9 @@ class PhpCsFixer extends Plugin
             $parser = new Parser();
             $parsed = $parser->parse($item['diff']);
 
-            /** @var \SebastianBergmann\Diff\Diff $diffItem */
+            /**
+ * @var \SebastianBergmann\Diff\Diff $diffItem 
+*/
             $diffItem = $parsed[0];
             foreach ($diffItem->getChunks() as $chunk) {
                 $firstModifiedLine = $chunk->getStart();
@@ -189,17 +191,19 @@ class PhpCsFixer extends Plugin
                 }
                 $chunkDiff = [];
                 foreach ($chunk->getLines() as $line) {
-                    /** @var Line $line */
+                    /**
+ * @var Line $line 
+*/
                     switch ($line->getType()) {
-                        case Line::ADDED:
-                            $symbol = '+';
-                            break;
-                        case Line::REMOVED:
-                            $symbol = '-';
-                            break;
-                        default:
-                            $symbol = ' ';
-                            break;
+                    case Line::ADDED:
+                        $symbol = '+';
+                        break;
+                    case Line::REMOVED:
+                        $symbol = '-';
+                        break;
+                    default:
+                        $symbol = ' ';
+                        break;
                     }
                     $chunkDiff[] = $symbol . $line->getContent();
                     if ($foundChanges) {

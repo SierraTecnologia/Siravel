@@ -23,6 +23,7 @@ class PhpMessDetector extends Plugin implements ZeroConfigPluginInterface
     /**
      * Array of PHPMD rules. Can be one of the builtins (codesize, unusedcode, naming, design, controversial)
      * or a filename (detected by checking for a / in it), either absolute or relative to the project root.
+     *
      * @var array
      */
     protected $rules;
@@ -95,6 +96,7 @@ class PhpMessDetector extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Override a default setting.
+     *
      * @param $options
      * @param $key
      */
@@ -149,6 +151,7 @@ class PhpMessDetector extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Try and process the rules parameter from .php-censor.yml.
+     *
      * @return bool
      */
     protected function tryAndProcessRules()
@@ -169,6 +172,7 @@ class PhpMessDetector extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Execute PHP Mess Detector.
+     *
      * @param $binaryPath
      */
     protected function executePhpMd($binaryPath)
@@ -190,8 +194,9 @@ class PhpMessDetector extends Plugin implements ZeroConfigPluginInterface
             $suffixes = ' --suffixes ' . implode(',', $this->suffixes);
         }
 
-        if ((!defined('DEBUG_MODE') || !DEBUG_MODE) &&
-            !(bool)$this->build->getExtra('debug')) {
+        if ((!defined('DEBUG_MODE') || !DEBUG_MODE) 
+            && !(bool)$this->build->getExtra('debug')
+        ) {
             $this->builder->logExecOutput(false);
         }
 

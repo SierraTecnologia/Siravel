@@ -48,9 +48,9 @@ class AppRssBuilder implements RssBuilder
     /**
      * AppRssBuilder constructor.
      *
-     * @param Config $config
-     * @param Storage $storage
-     * @param Builder $rssBuilder
+     * @param Config       $config
+     * @param Storage      $storage
+     * @param Builder      $rssBuilder
      * @param PhotoManager $photoManager
      */
     public function __construct(Config $config, Storage $storage, Builder $rssBuilder, PhotoManager $photoManager)
@@ -98,30 +98,36 @@ class AppRssBuilder implements RssBuilder
             ->orderByCreatedAtDesc()
             ->take(100)
             ->get()
-            ->map(function (Post $post) {
-                return $post->toEntity();
-            })
-            ->map(function (PostEntity $post) {
-                return (new Item)
-                    ->setTitle($post->getDescription())
-                    ->setDescription((string) $post->getPhoto()->getMetadata())
-                    ->setLink(url_frontend_photo($post->getId()))
-                    ->setGuid(url_frontend_photo($post->getId()))
-                    ->setPubDate($post->getPhoto()->getCreatedAt()->toAtomString())
-                    ->setEnclosure(
-                        (new Enclosure)
-                            ->setUrl(url_storage($this->storage->url($post->getPhoto()->getThumbnails()->first()->getPath())))
-                            ->setType('image/jpeg')
-                            ->setLength($this->storage->size($post->getPhoto()->getThumbnails()->first()->getPath()))
-                    )
-                    ->setCategories(
-                        $post->getTags()
-                            ->map(function (TagEntity $tag) {
-                                return (new Category)->setValue($tag->getValue());
-                            })
+            ->map(
+                function (Post $post) {
+                    return $post->toEntity();
+                }
+            )
+            ->map(
+                function (PostEntity $post) {
+                    return (new Item)
+                        ->setTitle($post->getDescription())
+                        ->setDescription((string) $post->getPhoto()->getMetadata())
+                        ->setLink(url_frontend_photo($post->getId()))
+                        ->setGuid(url_frontend_photo($post->getId()))
+                        ->setPubDate($post->getPhoto()->getCreatedAt()->toAtomString())
+                        ->setEnclosure(
+                            (new Enclosure)
+                                ->setUrl(url_storage($this->storage->url($post->getPhoto()->getThumbnails()->first()->getPath())))
+                                ->setType('image/jpeg')
+                                ->setLength($this->storage->size($post->getPhoto()->getThumbnails()->first()->getPath()))
+                        )
+                        ->setCategories(
+                            $post->getTags()
+                                ->map(
+                                    function (TagEntity $tag) {
+                                        return (new Category)->setValue($tag->getValue());
+                                    }
+                                )
                             ->toArray()
-                    );
-            })
+                        );
+                }
+            )
             ->toArray();
     }
 }

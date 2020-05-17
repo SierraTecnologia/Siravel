@@ -6,7 +6,9 @@ Vue.use(VuePhotoSwipe)
 
 import App from './App.vue'
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+new Vue(
+    {
+        el: '#app',
+        render: h => h(App)
+    }
+)

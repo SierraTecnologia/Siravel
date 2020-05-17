@@ -13,10 +13,14 @@ use SiUtils\Tools\Plugin;
  */
 class Psalm extends Plugin
 {
-    /** @var int */
+    /**
+     * @var int 
+     */
     protected $allowedErrors;
 
-    /** @var int */
+    /**
+     * @var int 
+     */
     protected $allowedWarnings;
 
     /**
@@ -120,7 +124,7 @@ class Psalm extends Plugin
     }
 
     /**
-     * @param string $output
+     * @param  string $output
      * @return array
      */
     protected function processReport($output)
@@ -137,14 +141,16 @@ class Psalm extends Plugin
                 }
 
                 ${$value['severity'].'s'}[] = [
-                    'full_message' => \vsprintf('%s - %s:%d:%d - %s' . \PHP_EOL . '%s', [
+                    'full_message' => \vsprintf(
+                        '%s - %s:%d:%d - %s' . \PHP_EOL . '%s', [
                         $value['type'],
                         $value['file_name'],
                         $value['line_from'],
                         $value['column_from'],
                         $value['message'],
                         $value['snippet']
-                    ]),
+                        ]
+                    ),
                     'message'   => $value['message'],
                     'file'      => $value['file_name'],
                     'line_from' => $value['line_from'],

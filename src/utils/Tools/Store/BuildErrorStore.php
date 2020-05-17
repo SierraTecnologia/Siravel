@@ -29,8 +29,8 @@ class BuildErrorStore extends Store
     /**
      * Get a BuildError by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return null|BuildError
      */
@@ -42,8 +42,8 @@ class BuildErrorStore extends Store
     /**
      * Get a single BuildError by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return null|BuildError
      *
@@ -192,9 +192,9 @@ class BuildErrorStore extends Store
     }
 
     /**
-     * @param int $buildId
-     * @param int $severity
-     * @param string  $isNew
+     * @param int    $buildId
+     * @param int    $severity
+     * @param string $isNew
      *
      * @return array
      */
@@ -233,9 +233,9 @@ class BuildErrorStore extends Store
     }
 
     /**
-     * @param int $buildId
-     * @param string  $plugin
-     * @param string  $isNew
+     * @param int    $buildId
+     * @param string $plugin
+     * @param string $isNew
      *
      * @return array
      */
@@ -276,7 +276,7 @@ class BuildErrorStore extends Store
     /**
      * Check if a build error is new.
      *
-     * @param int $projectId
+     * @param int    $projectId
      * @param string $hash
      *
      * @return bool
@@ -304,7 +304,7 @@ class BuildErrorStore extends Store
     }
 
     /**
-     * @param $buildId
+     * @param  $buildId
      * @return array
      * @throws Exception
      */

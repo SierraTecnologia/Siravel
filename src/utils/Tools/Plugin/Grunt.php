@@ -45,7 +45,9 @@ class Grunt extends Plugin
             $options['executable'] = $options['grunt'];
         }
 
-        /** @deprecated Option "grunt" is deprecated and will be deleted in version 2.0. Use the option "binary_path" and "binary_name" instead. */
+        /**
+ * @deprecated Option "grunt" is deprecated and will be deleted in version 2.0. Use the option "binary_path" and "binary_name" instead. 
+*/
         if (isset($options['grunt'])) {
             $this->builder->logWarning(
                 '[DEPRECATED] Option "grunt" is deprecated and will be deleted in version 2.0. Use the option "binary_path" and "binary_name" instead.'

@@ -30,6 +30,7 @@ class AccountService
 
     /**
      * Sets the persepctive to the current billing cycle
+     *
      * @return Account
      */
     public function currentBillingCycle()
@@ -40,6 +41,7 @@ class AccountService
 
     /**
      * Validates a user can access
+     *
      * @param  string $area
      * @return bool
      */
@@ -56,6 +58,7 @@ class AccountService
 
     /**
      * Validates a user cannot access
+     *
      * @param  string $area
      * @return bool
      */
@@ -70,6 +73,7 @@ class AccountService
 
     /**
      * Get a clause
+     *
      * @param  string $key
      * @return int
      */
@@ -80,6 +84,7 @@ class AccountService
 
     /**
      * Get a model's limit
+     *
      * @param  string $model
      * @return int
      */
@@ -90,6 +95,7 @@ class AccountService
 
     /**
      * Check if user is in their limits
+     *
      * @param  string $model
      * @return bool
      */
@@ -132,6 +138,7 @@ class AccountService
 
     /**
      * Credits used by user
+     *
      * @param  string $model
      * @return int
      */
@@ -170,6 +177,7 @@ class AccountService
 
     /**
      * Checks credits available for user
+     *
      * @param  string $model
      * @return int
      */
@@ -181,9 +189,10 @@ class AccountService
 
     /**
      * Subscription clause method
-     * @param  string $key
+     *
+     * @param  string  $key
      * @param  Closure $method
-     * @param  string $model
+     * @param  string  $model
      * @return void
      */
     public function clause($key, $method, $model = null)

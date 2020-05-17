@@ -29,6 +29,7 @@ class RoleService
 
     /**
      * All roles
+     *
      * @return \Illuminate\Support\Collection|null|static|Role
      */
     public function all()
@@ -38,6 +39,7 @@ class RoleService
 
     /**
      * Paginated roles
+     *
      * @return \Illuminate\Support\Collection|null|static|Role
      */
     public function paginated()
@@ -47,6 +49,7 @@ class RoleService
 
     /**
      * Find a role
+     *
      * @param  integer $id
      * @return \Illuminate\Support\Collection|null|static|Role
      */
@@ -58,6 +61,7 @@ class RoleService
 
     /**
      * Search the roles
+     *
      * @param  string $input
      * @return \Illuminate\Support\Collection|null|static|Role
      */
@@ -115,7 +119,7 @@ class RoleService
     /**
      * Update a role
      *
-     * @param  int $id
+     * @param  int   $id
      * @param  array $input
      * @return boolean
      */
@@ -142,16 +146,18 @@ class RoleService
     public function destroy($id)
     {
         try {
-            $result = DB::transaction(function () use ($id) {
-                $result = false;
-                $userCount = count($this->userService->findByRoleID($id));
+            $result = DB::transaction(
+                function () use ($id) {
+                    $result = false;
+                    $userCount = count($this->userService->findByRoleID($id));
 
-                if ($userCount == 0) {
-                    $result = $this->model->find($id)->delete();
+                    if ($userCount == 0) {
+                        $result = $this->model->find($id)->delete();
+                    }
+
+                    return $result;
                 }
-
-                return $result;
-            });
+            );
         } catch (Exception $e) {
             throw new Exception("We were unable to delete this role", 1);
         }

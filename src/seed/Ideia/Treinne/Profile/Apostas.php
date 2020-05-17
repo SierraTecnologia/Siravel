@@ -27,7 +27,7 @@ class Apostas
 
     public static function run()
     {
-       self::seismeses();
+        self::seismeses();
     }
 
     public static function seismeses()

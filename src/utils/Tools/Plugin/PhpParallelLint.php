@@ -104,6 +104,7 @@ class PhpParallelLint extends Plugin implements ZeroConfigPluginInterface
 
     /**
      * Produce an argument string for PHP Parallel Lint.
+     *
      * @return array
      */
     protected function getFlags()

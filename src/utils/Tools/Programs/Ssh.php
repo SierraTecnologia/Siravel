@@ -2,16 +2,17 @@
 
 namespace SiUtils\Tools;
 
-include('Net/SSH2.php');
+require 'Net/SSH2.php';
 
 use Finder\Models\Digital\Infra\Computer;
 
 /**
  * Bash Class
  *
- * @class  Bash
+ * @class Bash
  */
-class Ssh extends Bash {
+class Ssh extends Bash
+{
 
     protected $computer = false;
 

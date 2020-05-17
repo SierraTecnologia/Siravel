@@ -29,8 +29,8 @@ class EnvironmentStore extends Store
     /**
      * Get a Environment by primary key (Id)
      *
-     * @param int $key
-     * @param string  $useConnection
+     * @param int    $key
+     * @param string $useConnection
      *
      * @return null|Environment
      */
@@ -42,8 +42,8 @@ class EnvironmentStore extends Store
     /**
      * Get a single Environment by Id.
      *
-     * @param int $id
-     * @param string  $useConnection
+     * @param int    $id
+     * @param string $useConnection
      *
      * @return null|Environment
      *
@@ -71,8 +71,8 @@ class EnvironmentStore extends Store
     /**
      * Get multiple Environment by Project id.
      *
-     * @param int $projectId
-     * @param string  $useConnection
+     * @param int    $projectId
+     * @param string $useConnection
      *
      * @return array
      *

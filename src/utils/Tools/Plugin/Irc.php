@@ -49,6 +49,7 @@ class Irc extends Plugin
 
     /**
      * Run IRC plugin.
+     *
      * @return bool
      */
     public function execute()
@@ -80,8 +81,8 @@ class Irc extends Plugin
     }
 
     /**
-     * @param resource $socket
-     * @param array $commands
+     * @param  resource $socket
+     * @param  array    $commands
      * @return bool
      */
     private function executeIrcCommands($socket, array $commands)
@@ -108,8 +109,8 @@ class Irc extends Plugin
 
     /**
      *
-     * @param resource $socket
-     * @param string $command
+     * @param  resource $socket
+     * @param  string   $command
      * @return bool
      */
     private function executeIrcCommand($socket, $command)

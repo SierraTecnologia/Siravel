@@ -16,6 +16,7 @@ abstract class UploadService
 
     /**
      * FileService constructor.
+     *
      * @param $fileSystem
      */
     public function __construct(FileSystem $fileSystem)
@@ -25,6 +26,7 @@ abstract class UploadService
 
     /**
      * Get the storage that will be used for storing images.
+     *
      * @return FileSystemInstance
      */
     protected function getStorage()
@@ -35,7 +37,8 @@ abstract class UploadService
 
     /**
      * Check whether or not a folder is empty.
-     * @param $path
+     *
+     * @param  $path
      * @return bool
      */
     protected function isFolderEmpty($path)

@@ -30,8 +30,8 @@ class Wipe extends Plugin
     }
 
     /**
-    * Wipes a directory's contents
-    */
+     * Wipes a directory's contents
+     */
     public function execute()
     {
         $build = $this->builder->buildPath;

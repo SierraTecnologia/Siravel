@@ -26,14 +26,14 @@ class LanguageService extends Service
         $activeHtml = \Illuminate\Support\Facades\Config::get('app.locale');
 
         $html = '<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languages">';
-            foreach ($languages as $language) {
-                $active = '';
-                if ($language->code == $actual) {
-                    $active = ' active';
-                    $activeHtml = $language->code;
-                }
-                $html .= '<a class="dropdown-item'.$active.'" href="'.route('language.set', ['language' => $language->code]).'">'.$language->name.'</a>';
+        foreach ($languages as $language) {
+            $active = '';
+            if ($language->code == $actual) {
+                $active = ' active';
+                $activeHtml = $language->code;
             }
+            $html .= '<a class="dropdown-item'.$active.'" href="'.route('language.set', ['language' => $language->code]).'">'.$language->name.'</a>';
+        }
         $html .= '</div>';
 
         return '<li class="nav-item dropdown">'.

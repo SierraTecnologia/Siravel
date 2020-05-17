@@ -11,12 +11,14 @@ class Localization
 
     /**
      * Array of right-to-left locales
+     *
      * @var array
      */
     protected $rtlLocales = ['ar'];
 
     /**
      * Map of App locale names to best-estimate system locale names.
+     *
      * @var array
      */
     protected $localeMap = [
@@ -46,8 +48,8 @@ class Localization
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure                 $next
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -75,8 +77,9 @@ class Localization
     /**
      * Autodetect the visitors locale by matching locales in their headers
      * against the locales supported by App.
-     * @param Request $request
-     * @param string $default
+     *
+     * @param  Request $request
+     * @param  string  $default
      * @return string
      */
     protected function autoDetectLocale(Request $request, string $default)
@@ -93,6 +96,7 @@ class Localization
     /**
      * Set the system date locale for localized date formatting.
      * Will try both the standard locale name and the UTF8 variant.
+     *
      * @param string $locale
      */
     protected function setSystemDateLocale(string $locale)

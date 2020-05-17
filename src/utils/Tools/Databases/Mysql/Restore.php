@@ -6,7 +6,8 @@
 /**
  * This file contains the Restore class wich performs
  * a partial or complete restoration of any given MySQL database
- * @author Daniel López Azaña <daniloaz@gmail.com>
+ *
+ * @author  Daniel López Azaña <daniloaz@gmail.com>
  * @version 1.0
  */
 
@@ -25,7 +26,8 @@
 /**
  * The Restore class
  */
-class Restore {
+class Restore
+{
     /**
      * Host where the database is located
      */
@@ -64,7 +66,8 @@ class Restore {
     /**
      * Constructor initializes database
      */
-    function __construct($host, $username, $passwd, $dbName, $charset = 'utf8') {
+    function __construct($host, $username, $passwd, $dbName, $charset = 'utf8')
+    {
         $this->host                    = $host;
         $this->username                = $username;
         $this->passwd                  = $passwd;
@@ -79,7 +82,8 @@ class Restore {
     /**
      * Destructor re-enables foreign key checks
      */
-    function __destructor() {
+    function __destructor()
+    {
         /**
          * Re-enable foreign key checks 
          */
@@ -88,7 +92,8 @@ class Restore {
         }
     }
 
-    protected function initializeDatabase() {
+    protected function initializeDatabase()
+    {
         try {
             $conn = mysqli_connect($this->host, $this->username, $this->passwd, $this->dbName);
             if (mysqli_connect_errno()) {
@@ -117,9 +122,11 @@ class Restore {
     /**
      * Backup the whole database or just some tables
      * Use '*' for whole database or 'table1 table2 table3...'
+     *
      * @param string $tables
      */
-    public function restoreDb() {
+    public function restoreDb()
+    {
         try {
             $sql = '';
             $multiLineComment = false;
@@ -192,7 +199,8 @@ class Restore {
      *
      * @return string New filename (without .gz appended and without backup directory) if success, or false if operation fails
      */
-    protected function gunzipBackupFile() {
+    protected function gunzipBackupFile()
+    {
         // Raising this value may increase performance
         $bufferSize = 4096; // read 4kb at a time
         $error = false;
@@ -234,9 +242,9 @@ class Restore {
 
     /**
      * Prints message forcing output buffer flush
-     *
      */
-    public function obfPrint ($msg = '', $lineBreaksBefore = 0, $lineBreaksAfter = 1) {
+    public function obfPrint($msg = '', $lineBreaksBefore = 0, $lineBreaksAfter = 1)
+    {
         if (!$msg) {
             return false;
         }

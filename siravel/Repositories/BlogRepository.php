@@ -39,7 +39,7 @@ class BlogRepository extends CmsRepository
     /**
      * Blog tags, with similar name
      *
-     * @param  string $tag
+     * @param string $tag
      *
      * @return Illuminate\Support\Collection
      */

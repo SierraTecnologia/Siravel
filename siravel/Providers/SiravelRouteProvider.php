@@ -38,11 +38,13 @@ class SiravelRouteProvider extends ServiceProvider
         // @todo ja add na dependencia
         //$router->middleware('siravel-analytics', Analytics::class);
 
-        $router->group([
+        $router->group(
+            [
             'namespace' => $this->namespace,
-        ], function ($router) {
-            $router->middleware('isAjax', isAjax::class);
-            require __DIR__.'/../Routes/web.php';
-        });
+            ], function ($router) {
+                $router->middleware('isAjax', isAjax::class);
+                include __DIR__.'/../Routes/web.php';
+            }
+        );
     }
 }

@@ -9,6 +9,7 @@ use Uniondrug\Postman\Parsers\Abstracts\Base;
 
 /**
  * SDK列表
+ *
  * @package Uniondrug\Postman\Parsers
  */
 class Sdkx extends Base
@@ -64,6 +65,7 @@ class Sdkx extends Base
 
     /**
      * 生成SDK文件
+     *
      * @return string
      */
     private function renderClass(string $class)
@@ -122,7 +124,8 @@ TEMP;
 
     /**
      * 生成方法
-     * @param array
+     *
+     * @param  array
      * @return string
      */
     private function renderMethod(array $datas)

@@ -39,7 +39,7 @@ class WidgetRepository extends CmsRepository
      * Updates Widget in the database
      *
      * @param Widgets $widget
-     * @param array $payload
+     * @param array   $payload
      *
      * @return Widgets
      */

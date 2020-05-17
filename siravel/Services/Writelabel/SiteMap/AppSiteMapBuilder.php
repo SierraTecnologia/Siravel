@@ -39,9 +39,9 @@ class AppSiteMapBuilder implements SiteMapBuilder
     /**
      * AppSiteMapBuilder constructor.
      *
-     * @param Builder $siteMapBuilder
+     * @param Builder        $siteMapBuilder
      * @param ARPhotoManager $photoManager
-     * @param ARTagManager $tagManager
+     * @param ARTagManager   $tagManager
      */
     public function __construct(Builder $siteMapBuilder, ARPhotoManager $photoManager, ARTagManager $tagManager)
     {
@@ -81,32 +81,40 @@ class AppSiteMapBuilder implements SiteMapBuilder
         (new Post)
             ->newQuery()
             ->whereIsPublished()
-            ->chunk(50, function (Collection $posts) use ($items) {
-                $posts->each(function (Post $post) use ($items) {
-                    $items->push(
-                        (new Item)
-                            ->setLocation(url_frontend_photo($post->id))
-                            ->setLastModified($post->updated_at->toAtomString())
-                            ->setChangeFrequency('weekly')
-                            ->setPriority('0.7')
+            ->chunk(
+                50, function (Collection $posts) use ($items) {
+                    $posts->each(
+                        function (Post $post) use ($items) {
+                            $items->push(
+                                (new Item)
+                                    ->setLocation(url_frontend_photo($post->id))
+                                    ->setLastModified($post->updated_at->toAtomString())
+                                    ->setChangeFrequency('weekly')
+                                    ->setPriority('0.7')
+                            );
+                        }
                     );
-                });
-            });
+                }
+            );
 
         (new Tag)
             ->newQuery()
             ->defaultSelect()
             ->orderByPopularity()
-            ->chunk(50, function (Collection $tags) use ($items) {
-                $tags->each(function (Tag $tag) use ($items) {
-                    $items->push(
-                        (new Item)
-                            ->setLocation(url_frontend_tag($tag->value))
-                            ->setChangeFrequency('weekly')
-                            ->setPriority('0.4')
+            ->chunk(
+                50, function (Collection $tags) use ($items) {
+                    $tags->each(
+                        function (Tag $tag) use ($items) {
+                            $items->push(
+                                (new Item)
+                                    ->setLocation(url_frontend_tag($tag->value))
+                                    ->setChangeFrequency('weekly')
+                                    ->setPriority('0.4')
+                            );
+                        }
                     );
-                });
-            });
+                }
+            );
 
         $this->siteMapBuilder->setItems($items->toArray());
 

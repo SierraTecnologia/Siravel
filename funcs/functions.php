@@ -3,8 +3,8 @@
 /**
  * Get a unique string (based on cryptographically secure pseudo-random function).
  *
- * @param int $length
- * @param string $alphabet
+ * @param  int    $length
+ * @param  string $alphabet
  * @return string
  * @throws InvalidArgumentException
  * @throws Exception
@@ -29,7 +29,7 @@ function str_unique(int $length = 40, string $alphabet = 'ABCDEFGHIJKLMNOPQRSTUV
 /**
  * Remove all malicious code from HTML string.
  *
- * @param mixed $html
+ * @param  mixed $html
  * @return string|null
  */
 function html_purify($html): ?string
@@ -48,8 +48,8 @@ function html_purify($html): ?string
  *
  * @example array_filter_structure(['key_0' => 'value', 'key_1' => 'value'], ['key_0']); // ['key_0' => 'value']
  *
- * @param array $array
- * @param array $schema
+ * @param  array $array
+ * @param  array $schema
  * @return array
  */
 function array_filter_schema(array $array, array $schema): array
@@ -74,7 +74,7 @@ function array_filter_schema(array $array, array $schema): array
  *
  * @example array_remove_dot_notation(['key_0.key_1' => 'value']); // ['key_0' => ['key_1' => 'value']]
  *
- * @param array $array
+ * @param  array $array
  * @return array
  */
 function array_remove_dot_notation(array $array): array
@@ -91,8 +91,8 @@ function array_remove_dot_notation(array $array): array
 /**
  * Remove attributes that have no validation rules.
  *
- * @param array $attributes
- * @param array $rules
+ * @param  array $attributes
+ * @param  array $rules
  * @return array
  */
 function validator_filter_attributes(array $attributes, array $rules): array
@@ -103,7 +103,7 @@ function validator_filter_attributes(array $attributes, array $rules): array
 /**
  * Get file storage url.
  *
- * @param string $path
+ * @param  string $path
  * @return string
  */
 function url_storage(string $path): string
@@ -114,7 +114,7 @@ function url_storage(string $path): string
 /**
  * Get main frontend page url.
  *
- * @param string $path
+ * @param  string $path
  * @return string
  */
 function url_frontend(string $path = ''): string
@@ -135,7 +135,7 @@ function url_frontend_sign_in(): string
 /**
  * Get photo frontend page url.
  *
- * @param int $id
+ * @param  int $id
  * @return string
  */
 function url_frontend_photo(int $id): string
@@ -146,7 +146,7 @@ function url_frontend_photo(int $id): string
 /**
  * Get search by tag frontend page url.
  *
- * @param string $tag
+ * @param  string $tag
  * @return string
  */
 function url_frontend_tag(string $tag): string
@@ -157,7 +157,7 @@ function url_frontend_tag(string $tag): string
 /**
  * Get unsubscription frontend page url.
  *
- * @param string $token
+ * @param  string $token
  * @return string
  */
 function url_frontend_unsubscription(string $token): string

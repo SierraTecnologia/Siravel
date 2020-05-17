@@ -31,7 +31,7 @@ class File
     {
         $options = '';
 
-        if ($this->isDirectory()){
+        if ($this->isDirectory()) {
             $options = ' -r';
         }
 

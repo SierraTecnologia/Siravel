@@ -22,8 +22,9 @@ class CsvMysqlImporter
             die('File not found. Make sure you specified the correct path.');
         }
 
-        try {	
-            $pdo = new PDO("mysql:host=$database_host;dbname=$database_name", 
+        try {    
+            $pdo = new PDO(
+                "mysql:host=$database_host;dbname=$database_name", 
                 $database_username, $database_password,
                 array(
                     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
@@ -50,7 +51,7 @@ class CsvMysqlImporter
             $sql = "INSERT INTO $database_table($columns) VALUES($values)";
             $query = $pdo->prepare($sql);
             for ($i=0; $i < count($row); $i++) {
-                $query->bindParam($values_array[$i], $row[$i]);	
+                $query->bindParam($values_array[$i], $row[$i]);    
             }
             $query->execute();
             $count++;

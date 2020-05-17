@@ -11,6 +11,7 @@ class Attachment extends Ownable
 
     /**
      * Get the downloadable file name for this upload.
+     *
      * @return mixed|string
      */
     public function getFileName()
@@ -23,6 +24,7 @@ class Attachment extends Ownable
 
     /**
      * Get the page this file was uploaded to.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function page()
@@ -32,6 +34,7 @@ class Attachment extends Ownable
 
     /**
      * Get the url of this file.
+     *
      * @return string
      */
     public function getUrl()
