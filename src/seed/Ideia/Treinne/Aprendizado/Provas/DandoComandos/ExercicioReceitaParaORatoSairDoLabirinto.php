@@ -32,6 +32,6 @@ class ExercicioReceitaParaORatoSairDoLabirinto
 
     public static function about()
     {
-        $this->text = '';
+        $text = '';
     }
 }

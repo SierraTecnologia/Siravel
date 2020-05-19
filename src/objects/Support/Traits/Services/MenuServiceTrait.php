@@ -54,10 +54,10 @@ trait MenuServiceTrait
             } else {
                 $page = Page::find($link->page_id);
                 if ($page) {
-                    if (\Illuminate\Support\Facades\Config::get('app.locale') == \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->\Illuminate\Support\Facades\Config::get('Cms.default-language'))) {
+                    if (\Illuminate\Support\Facades\Config::get('app.locale') == \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->config('Cms.default-language'))) {
                         $response .= '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
                         $processedLinks[] = '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
-                    } elseif (\Illuminate\Support\Facades\Config::get('app.locale') != \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->\Illuminate\Support\Facades\Config::get('Cms.default-language'))) {
+                    } elseif (\Illuminate\Support\Facades\Config::get('app.locale') != \Illuminate\Support\Facades\Config::get('Cms.default-language', $this->config('Cms.default-language'))) {
                         if ($page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))) {
                             $response .= '<a href="'.URL::to('page/'.$page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))->data->url)."\">$link->name</a>";
                             $processedLinks[] = '<a href="'.URL::to('page/'.$page->translation(\Illuminate\Support\Facades\Config::get('app.locale'))->data->url)."\">$link->name</a>";

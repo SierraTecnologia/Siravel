@@ -9,7 +9,7 @@ use Finder\Models\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 
-class ConhecimentoSobDemanda implements \SiObjects\Support\Contracts\Robot
+class ConhecimentoSobDemanda implements \Finder\Contracts\Action\Robot
 {
     /**
      * Array de Array de Actions, o Indice seria o Stage. 

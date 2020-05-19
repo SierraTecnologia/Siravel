@@ -10,15 +10,13 @@ use SiWeapons\Filesystem\Dropbox;
 use SiWeapons\Filesystem\S3;
 use SiWeapons\Filesystem\Googledrive;
 
-use SiObjects\Support\Contracts\Component as ComponentContract;
-
 
 /**
  * User Helper - Provides access to logged in user information in views.
  *
  * @author Ricardo Sierra <ricardo@sierratecnologia.com>
  */
-class Navegador /* implements ComponentContract*/
+class Navegador
 {
     protected $actualLocale = false;
     protected $connection = false;
