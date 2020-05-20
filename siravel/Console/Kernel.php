@@ -57,27 +57,6 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
 
-
-        $schedule->command(Commands\Tools\PhotoApp\TestScheduler::class)
-            ->hourly();
-
-        $schedule->command(Commands\Tools\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class)
-            ->dailyAt('00:00')
-            ->onOneServer();
-
-        $schedule->command(Commands\Tools\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class)
-            ->dailyAt('00:10')
-            ->onOneServer();
-
-        $schedule->command(Commands\Tools\PhotoApp\SendWeeklySubscriptionMails::class)
-            ->weekly()
-            ->sundays()
-            ->at('06:00')
-            ->onOneServer();
-
-
-        $schedule->command('import:photoacompanhante')
-            ->hourly();
     }
 
     /**

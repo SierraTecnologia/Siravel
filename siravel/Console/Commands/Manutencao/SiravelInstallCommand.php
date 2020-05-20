@@ -17,7 +17,7 @@ class SiravelInstallCommand extends Command
      *
      * @var string
      */
-    protected $name = 'siravel:install';
+    protected $name = 'sitec:siravel:install';
 
     /**
      * The console command description.

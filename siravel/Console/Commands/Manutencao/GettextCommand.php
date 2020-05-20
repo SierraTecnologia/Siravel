@@ -14,7 +14,7 @@ class GettextCommand extends Command
      *
      * @var string
      */
-    protected $name = 'siravel:gettext';
+    protected $name = 'sitec:siravel:gettext';
 
     /**
      * The console command description.

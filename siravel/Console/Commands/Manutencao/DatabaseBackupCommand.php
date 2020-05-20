@@ -14,7 +14,7 @@ class DatabaseBackupCommand extends Command
      *
      * @var string
      */
-    protected $name = 'siravel:backup';
+    protected $name = 'sitec:siravel:backup';
 
     /**
      * The console command description.
