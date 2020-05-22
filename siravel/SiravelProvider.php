@@ -38,32 +38,32 @@ class SiravelProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Siravel' => [
-            [
-                'text'        => 'Dash',
-                'route'       => 'siravel.sitec.dash',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Profile',
-                'route'       => 'siravel.sitec.profile',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Actors',
-                'route'       => 'siravel.components.actors.profile',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-        ],
+        // 'Siravel' => [
+        //     [
+        //         'text'        => 'Dash',
+        //         'route'       => 'siravel.sitec.dash',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'label_color' => 'success',
+        //         // 'access' => \App\Models\Role::$ADMIN
+        //     ],
+        //     [
+        //         'text'        => 'Profile',
+        //         'route'       => 'siravel.sitec.profile',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'label_color' => 'success',
+        //         // 'access' => \App\Models\Role::$ADMIN
+        //     ],
+        //     [
+        //         'text'        => 'Actors',
+        //         'route'       => 'siravel.components.actors.profile',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'label_color' => 'success',
+        //         // 'access' => \App\Models\Role::$ADMIN
+        //     ],
+        // ],
     ];
 
     /**
