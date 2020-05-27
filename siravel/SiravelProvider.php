@@ -64,6 +64,40 @@ class SiravelProvider extends ServiceProvider
         //         // 'access' => \App\Models\Role::$ADMIN
         //     ],
         // ],
+        'Painel|200' => [
+            [
+                'text' => 'User',
+                'icon' => 'fas fa-fw fa-bomb',
+                'icon_color' => "blue",
+                'label_color' => "success",
+            ],
+            'User' => [
+                [
+                    'text'        => 'Home',
+                    'url'       => '/',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Profile',
+                    'route'       => 'facilitador.profile',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Logout',
+                    'route'       => 'facilitador.logout',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+            ],
+        ],
     ];
 
     /**
