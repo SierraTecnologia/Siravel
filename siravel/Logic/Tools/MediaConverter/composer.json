@@ -1,0 +1,13 @@
+{
+    "name": "wapmorgan/media-converter",
+    "description": "Audio and video editor, converter to popular formats and preview maker",
+    "license": "GPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "wapmorgan\\MediaConverter\\": "src/"
+        }
+    },
+    "require": {
+        "sybio/gif-creator": "1.0.0"
+    }
+}
