@@ -3,7 +3,7 @@
 namespace Siravel\Repositories\Commerce;
 
 use Siravel\Models\Commerce\Product;
-use App\Repositories\Commerce\FavoriteRepository;
+use Siravel\Repositories\Commerce\FavoriteRepository;
 use Illuminate\Support\Facades\Schema;
 
 class ProductRepository

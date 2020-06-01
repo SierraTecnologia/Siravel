@@ -2,7 +2,7 @@
 
 namespace Mattmangoni\NovaBlogifyTool\Resources;
 
-use App\Nova\Resource;
+use Siravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;

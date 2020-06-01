@@ -8,8 +8,8 @@ use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Siravel\Http\Requests\LinksRequest;
-use App\Services\ValidationService;
-use App\Repositories\Negocios\LinkRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class LinksController extends BaseController

@@ -4,10 +4,10 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Redirect;
 use Illuminate\Http\Request;
-use App\Interfaces\Helpers\StoreHelper;
+use Siravel\Interfaces\Helpers\StoreHelper;
 use Siravel\Http\Controllers\Controller;
-use App\Services\Commerce\CartService;
-use App\Services\CmsResponseService;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\CmsResponseService;
 
 class CartController extends Controller
 {

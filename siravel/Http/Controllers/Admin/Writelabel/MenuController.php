@@ -6,11 +6,11 @@ use Exception;
 use Illuminate\Http\Request;
 use Cms;
 use Siravel\Models\Negocios\Menu;
-use App\Repositories\Negocios\LinkRepository;
-use App\Repositories\Negocios\MenuRepository;
+use Siravel\Repositories\Negocios\LinkRepository;
+use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
-use App\Services\CmsResponseService;
-use App\Services\ValidationService;
+use Siravel\Services\CmsResponseService;
+use Siravel\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class MenuController extends BaseController

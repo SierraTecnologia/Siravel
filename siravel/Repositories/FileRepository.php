@@ -6,8 +6,8 @@ use Auth;
 use Config;
 use CryptoService;
 use Siravel\Models\Digital\Midia\File;
-use App\Repositories\CmsRepository;
-use App\Services\Midia\FileService;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class FileRepository extends CmsRepository

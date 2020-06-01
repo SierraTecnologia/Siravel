@@ -12,10 +12,10 @@ use CryptoService;
 use Siravel\Models\Digital\Midia\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
-use App\Services\Midia\FileService;
-use App\Services\ValidationService;
-use App\Repositories\FileRepository;
-use App\Services\CmsResponseService;
+use Siravel\Services\Midia\FileService;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\FileRepository;
+use Siravel\Services\CmsResponseService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FilesController extends BaseController

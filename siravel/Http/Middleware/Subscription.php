@@ -9,7 +9,7 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Applicaion;
 
-use App\AssignedRoles;
+use Siravel\AssignedRoles;
 
 class Subscription
 {

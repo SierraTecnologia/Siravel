@@ -8,9 +8,9 @@ use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Siravel\Http\Requests\MemberRequest;
-use App\Services\ValidationService;
+use Siravel\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
-use App\Repositories\Negocios\MemberRepository;
+use Siravel\Repositories\Negocios\MemberRepository;
 
 class MemberController extends BaseController
 {

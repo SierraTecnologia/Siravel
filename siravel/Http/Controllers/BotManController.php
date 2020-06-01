@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers;
 
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
-use App\Conversations\ExampleConversation;
+use Siravel\Conversations\ExampleConversation;
 
 class BotManController extends Controller
 {

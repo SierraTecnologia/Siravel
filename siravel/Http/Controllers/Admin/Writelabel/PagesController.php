@@ -6,8 +6,8 @@ use Cms;
 use Siravel\Models\Negocios\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;
-use App\Services\ValidationService;
-use App\Repositories\Negocios\PageRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\Negocios\PageRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class PagesController extends BaseController

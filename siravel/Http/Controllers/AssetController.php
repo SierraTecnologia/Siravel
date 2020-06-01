@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers;
 
 use Illuminate\Filesystem\Filesystem;
-use App\Services\AssetService;
+use Siravel\Services\AssetService;
 
 class AssetController extends SitecController
 {

@@ -3,15 +3,15 @@
 namespace Siravel\Http\Controllers\Auth;
 
 use Siravel\Http\Controllers\Controller;
-use App\Mail\PleaseConfirmYourEmail;
+use Siravel\Mail\PleaseConfirmYourEmail;
 use Siravel\Models\User;
 use Siravel\Models\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use App\Services\Traits\CaptchaTrait;
-use App\Services\Traits\ActivationTrait;
+use Siravel\Services\Traits\CaptchaTrait;
+use Siravel\Services\Traits\ActivationTrait;
 
 class RegisterController extends Controller
 {

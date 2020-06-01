@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Admin\Interaction;
 
 use Siravel\Http\Controllers\Controller;
-use App\Services\ContactService;
-use App\Repositories\ContactRepository;
+use Siravel\Services\ContactService;
+use Siravel\Repositories\ContactRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ContactController extends BaseController

@@ -7,7 +7,7 @@ use Config;
 use CryptoService;
 use Siravel\Models\Digital\Midia\Image;
 use Siravel\Models\Tag;
-use App\Services\Midia\FileService;
+use Siravel\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class ImageRepository extends CmsRepository

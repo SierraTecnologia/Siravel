@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Admin\Calendar;
 
 use Siravel\Http\Controllers\Controller;
-use App\Services\EventService;
-use App\Repositories\EventRepository;
+use Siravel\Services\EventService;
+use Siravel\Repositories\EventRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class EventsController extends Controller

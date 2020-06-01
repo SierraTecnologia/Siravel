@@ -3,7 +3,7 @@
 namespace Siravel\Models\Blog;
 
 use Siravel\Models\Builders\PostBuilder;
-use App\Contants\Tables;
+use Siravel\Contants\Tables;
 use Carbon\Carbon;
 use Siravel\Models\Entities\PostEntity;
 use Siravel\Models\CmsModel as BaseModel;

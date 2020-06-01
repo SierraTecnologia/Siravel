@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers;
 
-use App\Services\CmsService;
+use Siravel\Services\CmsService;
 use Illuminate\Http\Response;
 
 class SiteMapController extends SitecController

@@ -6,8 +6,8 @@ use Cms;
 use Siravel\Models\Blog\Blog;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\BlogRequest;
-use App\Services\ValidationService;
-use App\Repositories\BlogRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\BlogRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class BlogController extends BaseController

@@ -5,9 +5,9 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 use Exception;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Controller;
-use App\Services\Commerce\CartService;
-use App\Services\Commerce\PaymentService;
-use App\Services\Commerce\CustomerProfileService;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\Commerce\PaymentService;
+use Siravel\Services\Commerce\CustomerProfileService;
 
 class CheckoutController extends Controller
 {

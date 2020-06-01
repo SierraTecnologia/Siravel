@@ -4,8 +4,8 @@ namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Siravel\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\Commerce\OrderItemService;
-use App\Services\Commerce\OrderService;
+use Siravel\Services\Commerce\OrderItemService;
+use Siravel\Services\Commerce\OrderService;
 
 class OrderItemController extends Controller
 {

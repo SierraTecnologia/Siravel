@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Carbon\Carbon;
 use Siravel\Models\Negocios\Faq;
-use App\Repositories\CmsRepository;
+use Siravel\Repositories\CmsRepository;
 
 class FaqRepository extends CmsRepository
 {

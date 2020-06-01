@@ -5,10 +5,10 @@ namespace Siravel\Http\Controllers\Admin\Commerce;
 use Cms;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
-use App\Repositories\ImageRepository;
-use App\Repositories\Commerce\ProductVariantRepository;
+use Siravel\Repositories\ImageRepository;
+use Siravel\Repositories\Commerce\ProductVariantRepository;
 use Siravel\Http\Requests\Commerce\ProductRequest;
-use App\Services\Commerce\ProductService;
+use Siravel\Services\Commerce\ProductService;
 
 class ProductController extends SitecController
 {

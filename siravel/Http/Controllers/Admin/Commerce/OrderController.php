@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Siravel\Http\Controllers\SitecController;
-use App\Services\Commerce\OrderItemService;
-use App\Services\Commerce\OrderService;
+use Siravel\Services\Commerce\OrderItemService;
+use Siravel\Services\Commerce\OrderService;
 use Illuminate\Http\Request;
 
 class OrderController extends SitecController

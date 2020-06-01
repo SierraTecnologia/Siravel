@@ -3,7 +3,7 @@
 namespace Siravel\Models\Blog;
 
 use Siravel\Models\CmsModel;
-use App\Services\Normalizer;
+use Siravel\Services\Normalizer;
 use Siravel\Models\Traits\Translatable;
 use Informate\Models\System\Archive;
 use Siravel\Models\Traits\ArchiveTrait;

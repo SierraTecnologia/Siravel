@@ -6,7 +6,7 @@ use Auth;
 use Gate;
 use Exception;
 use Illuminate\Http\Request;
-use App\Services\TeamService;
+use Siravel\Services\TeamService;
 use Siravel\Http\Requests\TeamCreateRequest;
 use Siravel\Http\Controllers\Controller;
 use Siravel\Http\Requests\UserInviteRequest;

@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Siravel\Http\Controllers\Controller;
-use App\Repositories\Commerce\ProductRepository;
+use Siravel\Repositories\Commerce\ProductRepository;
 
 class ProductController extends Controller
 {

@@ -3,8 +3,8 @@
 namespace Siravel\Repositories;
 
 use Siravel\Models\Negocios\Widget;
-use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\TranslationRepository;
 
 class WidgetRepository extends CmsRepository
 {

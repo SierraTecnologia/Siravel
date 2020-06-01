@@ -4,8 +4,8 @@ namespace App\Repositories;
 
 use Carbon\Carbon;
 use Siravel\Models\Calendar\Event;
-use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\TranslationRepository;
 
 class EventRepository extends CmsRepository
 {

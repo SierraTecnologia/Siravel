@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Admin\Commerce;
 use Siravel\Http\Controllers\SitecController;
 use Siravel\Http\Requests\Commerce\CouponRequest;
 use Siravel\Http\Requests\Commerce\PlanRequest;
-use App\Services\Commerce\CouponService;
+use Siravel\Services\Commerce\CouponService;
 use Illuminate\Http\Request;
 
 class CouponController extends SitecController

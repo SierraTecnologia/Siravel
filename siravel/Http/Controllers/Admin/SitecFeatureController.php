@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Cms;
 use Informate\Models\System\Archive;
-use App\Services\Midia\FileService;
+use Siravel\Services\Midia\FileService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;

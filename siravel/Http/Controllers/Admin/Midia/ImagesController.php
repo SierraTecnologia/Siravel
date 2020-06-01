@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 use Cms;
 use Storage;
 use Siravel\Models\Digital\Midia\Image;
-use App\Repositories\ImageRepository;
+use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use App\Services\CmsResponseService;
-use App\Services\ValidationService;
+use Siravel\Services\CmsResponseService;
+use Siravel\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController

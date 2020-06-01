@@ -4,8 +4,8 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Controller;
-use App\Services\Commerce\FavoriteService;
-use App\Services\CmsResponseService;
+use Siravel\Services\Commerce\FavoriteService;
+use Siravel\Services\CmsResponseService;
 
 class FavoriteController extends Controller
 {

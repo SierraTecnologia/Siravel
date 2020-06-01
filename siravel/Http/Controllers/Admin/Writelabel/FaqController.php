@@ -7,8 +7,8 @@ use Cms;
 use Siravel\Models\Negocios\Faq;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FaqRequest;
-use App\Repositories\FaqRepository;
-use App\Services\ValidationService;
+use Siravel\Repositories\FaqRepository;
+use Siravel\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FaqController extends BaseController

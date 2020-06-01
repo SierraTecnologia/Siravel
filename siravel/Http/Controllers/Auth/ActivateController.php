@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Auth;
 
-use App\Services\UserService;
+use Siravel\Services\UserService;
 use Siravel\Services\System\ActivateService;
 use Siravel\Http\Controllers\Controller;
 

@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\System;
 
-use App\Notifications\ActivateUserEmail;
+use Siravel\Notifications\ActivateUserEmail;
 use Siravel\Services\UserService;
 use Illuminate\Support\Str;
 

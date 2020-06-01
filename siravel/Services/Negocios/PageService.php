@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\Negocios;
 
-use App\Repositories\Negocios\PageRepository;
+use Siravel\Repositories\Negocios\PageRepository;
 use Siravel\Services\BaseService;
 use Illuminate\Support\Facades\Config;
 

@@ -7,8 +7,8 @@ use Config;
 use CryptoService;
 use Siravel\Models\Negocios\Link;
 use Illuminate\Support\Facades\Schema;
-use App\Repositories\CmsRepository as BaseRepository;
-use App\Repositories\TranslationRepository;
+use Siravel\Repositories\CmsRepository as BaseRepository;
+use Siravel\Repositories\TranslationRepository;
 
 class LinkRepository extends BaseRepository
 {

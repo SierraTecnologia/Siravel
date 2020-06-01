@@ -4,8 +4,8 @@ namespace Siravel\Repositories\Travels\Rooms;
 
 use Carbon\Carbon;
 use Siravel\Models\Calendar\Room;
-use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\TranslationRepository;
 
 class RoomRepository extends CmsRepository
 {

@@ -9,8 +9,8 @@ use Exception;
 use Siravel\Models\User;
 use Siravel\Models\UserMeta;
 use Siravel\Models\Role;
-use App\Events\UserRegisteredEmail;
-use App\Notifications\ActivateUserEmail;
+use Siravel\Events\UserRegisteredEmail;
+use Siravel\Notifications\ActivateUserEmail;
 use Illuminate\Support\Facades\Schema;
 
 class UserService

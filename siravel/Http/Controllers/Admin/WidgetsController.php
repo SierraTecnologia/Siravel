@@ -6,8 +6,8 @@ use Cms;
 use Illuminate\Http\Request;
 use Siravel\Models\Widget;
 use Siravel\Http\Requests\WidgetRequest;
-use App\Services\ValidationService;
-use App\Repositories\WidgetRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\WidgetRepository;
 use theme;
 
 class WidgetsController extends Controller

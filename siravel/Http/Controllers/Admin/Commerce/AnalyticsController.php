@@ -2,11 +2,11 @@
 
 namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use App\Services\UserService;
+use Siravel\Services\UserService;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
-use App\Services\Commerce\AnalyticsService;
-use App\Services\Commerce\TransactionService;
+use Siravel\Services\Commerce\AnalyticsService;
+use Siravel\Services\Commerce\TransactionService;
 
 class AnalyticsController extends SitecController
 {

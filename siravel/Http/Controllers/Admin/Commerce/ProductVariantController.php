@@ -7,8 +7,8 @@ use Response;
 use Illuminate\Http\Request;
 use Siravel\Models\Commerce\Products;
 use Siravel\Http\Controllers\SitecController;
-use App\Repositories\Commerce\ProductRepository;
-use App\Repositories\Commerce\ProductVariantRepository;
+use Siravel\Repositories\Commerce\ProductRepository;
+use Siravel\Repositories\Commerce\ProductVariantRepository;
 
 class ProductVariantController extends SitecController
 {

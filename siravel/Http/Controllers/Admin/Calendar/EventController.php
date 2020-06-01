@@ -7,8 +7,8 @@ use Cms;
 use Siravel\Models\Calendar\Event;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\EventRequest;
-use App\Services\ValidationService;
-use App\Repositories\EventRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\EventRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class EventController extends BaseController

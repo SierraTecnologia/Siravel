@@ -3,7 +3,7 @@
 namespace Siravel\Policies;
 
 use Siravel\Models\User;
-use App\Post;
+use Siravel\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy

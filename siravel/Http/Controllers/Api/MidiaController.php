@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use App\Plugins\Integrations\SitecPayment\SitecPayment;
+use Siravel\Plugins\Integrations\SitecPayment\SitecPayment;
 use Auth;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\File;

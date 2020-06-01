@@ -3,7 +3,7 @@
 namespace App\Services\Traits;
 
 use Illuminate\Support\Facades\Config;
-use App\Facades\CryptoServiceFacade;
+use Siravel\Facades\CryptoServiceFacade;
 
 trait ModuleServiceTrait
 {

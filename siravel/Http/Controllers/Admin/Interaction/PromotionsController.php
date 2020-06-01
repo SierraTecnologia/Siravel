@@ -6,8 +6,8 @@ use Cms;
 use Illuminate\Http\Request;
 use Siravel\Models\Promotion;
 use Siravel\Http\Requests\PromotionRequest;
-use App\Services\ValidationService;
-use App\Repositories\PromotionRepository;
+use Siravel\Services\ValidationService;
+use Siravel\Repositories\PromotionRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class PromotionsController extends BaseController

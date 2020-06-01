@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\BusinessNewSubscription;
+use Siravel\Events\BusinessNewSubscription;
 use Siravel\Models\Notification;
 use Siravel\Services\System\BusinessService;
 

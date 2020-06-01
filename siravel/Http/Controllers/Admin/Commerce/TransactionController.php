@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Siravel\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\Commerce\TransactionService;
+use Siravel\Services\Commerce\TransactionService;
 
 class TransactionController extends Controller
 {

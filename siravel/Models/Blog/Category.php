@@ -4,7 +4,7 @@ namespace Siravel\Models\Blog;
 
 use Siravel\Models\Model;
 use Siravel\Models\User;
-use App\System\Language;
+use Siravel\System\Language;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

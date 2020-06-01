@@ -5,9 +5,9 @@ namespace Siravel\Repositories;
 use Carbon\Carbon;
 use Cms;
 use Siravel\Models\Blog\Blog;
-use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
-use App\Services\Midia\FileService;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\TranslationRepository;
+use Siravel\Services\Midia\FileService;
 
 class BlogRepository extends CmsRepository
 {

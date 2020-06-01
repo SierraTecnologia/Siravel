@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Api\Photo;
 
 use Siravel\Http\Requests\ContactMessageRequest;
-use App\Mail\ContactMessage;
+use Siravel\Mail\ContactMessage;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

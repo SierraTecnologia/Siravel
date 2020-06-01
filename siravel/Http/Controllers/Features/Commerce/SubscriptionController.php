@@ -4,8 +4,8 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Siravel\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\Commerce\LogisticService;
-use App\Services\Commerce\PlanService;
+use Siravel\Services\Commerce\LogisticService;
+use Siravel\Services\Commerce\PlanService;
 use SierraTecnologia\Crypto\Services\Crypto;
 
 class SubscriptionController extends Controller

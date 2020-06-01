@@ -11,7 +11,7 @@ use Siravel\Http\Requests\Admin\DeleteRequest;
 use Siravel\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use App\Helpers\Thumbnail;
+use Siravel\Helpers\Thumbnail;
 use Illuminate\Support\Facades\DB;
 use Datatables;
 

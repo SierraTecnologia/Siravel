@@ -10,8 +10,8 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\Zenvia\ZenviaChannel;
 use NotificationChannels\Zenvia\ZenviaMessage;
 use Illuminate\Support\Facades\Log;
-use App\Channels\SmsChannel;
-use App\Channels\Messages\SmsMessage;
+use Siravel\Channels\SmsChannel;
+use Siravel\Channels\Messages\SmsMessage;
 
 class ServiceDied extends Notification implements ShouldQueue
 {

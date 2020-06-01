@@ -3,16 +3,16 @@
 namespace Siravel\Repositories\Negocios;
 
 use Carbon\Carbon;
-use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
-use App\Services\Midia\FileService;
+use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\TranslationRepository;
+use Siravel\Services\Midia\FileService;
 
 use Cms;
 use Config;
 use CryptoService;
 use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Schema;
-use App\Repositories\CmsRepository as BaseRepository;
+use Siravel\Repositories\CmsRepository as BaseRepository;
 
 
 class PageRepository extends BaseRepository
