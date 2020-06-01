@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,24 +38,20 @@ class SettingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store($slugSetting, SettingRequest $request)
     {
-        if ($settingInstance = Setting::where('slug', $slugSetting)->first()) {
-            $settingInstance->update(
-                [
+        if ($settingInstance = Setting::where('slug', $slugSetting)->first()){
+            $settingInstance->update([
                 'value'       => $request->value
-                ]
-            );
+            ]);
         } else {
-            Setting::create(
-                [
+            Setting::create([
                 'slug'       => $slugSetting,
                 'value'       => $request->value
-                ]
-            );
+            ]);
         }
 
         flash()->overlay('Setting configure successfully.');
@@ -66,7 +62,7 @@ class SettingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Setting $setting)
