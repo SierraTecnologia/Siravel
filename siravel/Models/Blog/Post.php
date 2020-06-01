@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models\Blog;
+namespace Siravel\Models\Blog;
 
-use App\Models\Builders\PostBuilder;
+use Siravel\Models\Builders\PostBuilder;
 use App\Contants\Tables;
 use Carbon\Carbon;
-use App\Models\Entities\PostEntity;
-use App\Models\CmsModel as BaseModel;
+use Siravel\Models\Entities\PostEntity;
+use Siravel\Models\CmsModel as BaseModel;
 use Illuminate\Support\Collection;
 
-use App\Models\Traits\BusinessTrait;
+use Siravel\Models\Traits\BusinessTrait;
 
 /**
  * Class Post.
@@ -25,7 +25,7 @@ use App\Models\Traits\BusinessTrait;
  * @property Collection photos
  * @property Photo photo
  * @property Collection tags
- * @package App\Models
+ * @package Siravel\Models
  */
 class Post extends BaseModel
 {

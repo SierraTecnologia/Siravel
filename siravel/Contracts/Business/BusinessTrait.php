@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Traits;
+namespace Siravel\Models\Traits;
 
 use Illuminate\Support\Facades\Log;
-use App\Models\Model;
+use Siravel\Models\Model;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
 

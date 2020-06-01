@@ -6,8 +6,8 @@ use DB;
 use Exception;
 use Illuminate\Support\Str;
 use Siravel\Services\UserService;
-use App\Models\User;
-use App\Models\Team;
+use Siravel\Models\User;
+use Siravel\Models\Team;
 use Illuminate\Support\Facades\Schema;
 
 class TeamService

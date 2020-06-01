@@ -1,7 +1,7 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php namespace Siravel\Http\Controllers\Admin;
 
-use App\Models\Blog\Article;
-use App\Models\Blog\Category;
+use Siravel\Models\Blog\Article;
+use Siravel\Models\Blog\Category;
 use Siravel\Models\Identity\Girl;
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Digital\Midia\PhotoAlbum;

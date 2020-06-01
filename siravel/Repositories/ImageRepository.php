@@ -6,7 +6,7 @@ use Cms;
 use Config;
 use CryptoService;
 use Siravel\Models\Digital\Midia\Image;
-use App\Models\Tag;
+use Siravel\Models\Tag;
 use App\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 

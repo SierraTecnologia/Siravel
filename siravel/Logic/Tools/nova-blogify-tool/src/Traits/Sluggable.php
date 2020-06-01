@@ -2,7 +2,7 @@
 
 namespace Mattmangoni\NovaBlogifyTool\Traits;
 
-use App\Models\Model;
+use Siravel\Models\Model;
 
 trait Sluggable
 {

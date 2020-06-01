@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
-use App\Models\Entities\TagEntity;
+use Siravel\Models\Entities\TagEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_string;
@@ -10,7 +10,7 @@ use function SiUtils\to_string;
 /**
  * Class TagPlainResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class TagPlainResource extends Resource
 {

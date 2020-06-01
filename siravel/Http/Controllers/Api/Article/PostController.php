@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Articles\Api;
+namespace Siravel\Http\Controllers\Articles\Api;
 
-use App\Models\Post;
+use Siravel\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 
 class PostController extends Controller
 {

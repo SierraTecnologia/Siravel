@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
-use App\Models\Entities\LocationEntity;
+use Siravel\Models\Entities\LocationEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_float;
@@ -10,7 +10,7 @@ use function SiUtils\to_float;
 /**
  * Class LocationPlainResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class LocationPlainResource extends Resource
 {

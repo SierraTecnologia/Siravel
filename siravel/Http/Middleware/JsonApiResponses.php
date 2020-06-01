@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 /**
  * Class JsonApiResponses.
  *
- * @package App\Http\Middleware
+ * @package Siravel\Http\Middleware
  */
 class JsonApiResponses
 {

@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 use Redirect;
 use Illuminate\Http\Request;
 use App\Interfaces\Helpers\StoreHelper;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\Commerce\CartService;
 use App\Services\CmsResponseService;
 

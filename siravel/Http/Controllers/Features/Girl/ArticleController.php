@@ -2,9 +2,9 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use App\Http\Controllers\AdminController;
-use App\Models\Blog\Article;
-use App\Models\Blog\Category;
+use Siravel\Http\Controllers\AdminController;
+use Siravel\Models\Blog\Article;
+use Siravel\Models\Blog\Category;
 use RicardoSierra\Translation\Models\Language;
 use Illuminate\Support\Facades\Input;
 use Siravel\Http\Requests\Admin\ArticleRequest;

@@ -2,7 +2,7 @@
 
 namespace Mattmangoni\NovaBlogifyTool\Models;
 
-use App\Models\Model;
+use Siravel\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Mattmangoni\NovaBlogifyTool\Traits\Sluggable;
 use Illuminate\Database\Eloquent\Relations\HasMany;

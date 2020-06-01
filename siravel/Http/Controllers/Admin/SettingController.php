@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\SettingRequest;
-use App\Models\Setting;
+use Siravel\Http\Controllers\Controller;
+use Siravel\Http\Requests\Admin\SettingRequest;
+use Siravel\Models\Setting;
 
 class SettingController extends Controller
 {

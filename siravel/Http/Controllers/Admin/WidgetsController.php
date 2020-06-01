@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
 use Cms;
 use Illuminate\Http\Request;
-use App\Models\Widget;
-use App\Http\Requests\WidgetRequest;
+use Siravel\Models\Widget;
+use Siravel\Http\Requests\WidgetRequest;
 use App\Services\ValidationService;
 use App\Repositories\WidgetRepository;
 use theme;

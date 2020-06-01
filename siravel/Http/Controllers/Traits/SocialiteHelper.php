@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Traits;
 use Auth;
 use Socialite;
 use Illuminate\Http\Request;
-use App\Models\User;
+use Siravel\Models\User;
 use Flash;
 
 trait SocialiteHelper

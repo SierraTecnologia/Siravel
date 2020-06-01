@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use App\Http\Controllers\SitecController;
+use Siravel\Http\Controllers\SitecController;
 use App\Services\Commerce\OrderItemService;
 use App\Services\Commerce\OrderService;
 use Illuminate\Http\Request;

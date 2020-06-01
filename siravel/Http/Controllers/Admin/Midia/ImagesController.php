@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Midia;
+namespace Siravel\Http\Controllers\Admin\Midia;
 
 use Config;
 use CryptoService;
@@ -10,10 +10,10 @@ use Cms;
 use Storage;
 use Siravel\Models\Digital\Midia\Image;
 use App\Repositories\ImageRepository;
-use App\Http\Requests\ImagesRequest;
+use Siravel\Http\Requests\ImagesRequest;
 use App\Services\CmsResponseService;
 use App\Services\ValidationService;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController
 {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Api\Photo;
 
-use App\Models\Contracts\PostManager;
+use Siravel\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class PostDeleteByIdAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class PostDeleteByIdAction
 {

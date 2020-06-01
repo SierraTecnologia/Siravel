@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Api\Photo;
 
-use App\Http\Proxy\Contracts\OAuthProxy;
+use Siravel\Http\Proxy\Contracts\OAuthProxy;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 /**
  * Class AuthDeleteAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class AuthDeleteAction
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use App\Services\UserService;
 use Illuminate\Http\Request;
-use App\Http\Controllers\SitecController;
+use Siravel\Http\Controllers\SitecController;
 use App\Services\Commerce\AnalyticsService;
 use App\Services\Commerce\TransactionService;
 

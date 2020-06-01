@@ -1,10 +1,10 @@
-<?php namespace App\Http\Controllers\Girl;
+<?php namespace Siravel\Http\Controllers\Girl;
 
 use Siravel\Models\Digital\Midia\PhotoAlbum;
 use Siravel\Models\Digital\Midia\Photo;
 use RicardoSierra\Translation\Models\Language;
-use App\Http\Controllers\GirlController;
-use App\Http\Requests\Admin\PhotoAlbumRequest;
+use Siravel\Http\Controllers\GirlController;
+use Siravel\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

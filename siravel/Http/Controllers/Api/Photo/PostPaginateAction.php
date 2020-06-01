@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Api\Photo;
 use Siravel\Http\Requests\PaginatedRequest;
 use Siravel\Http\Resources\PaginatedResource;
 use Siravel\Http\Resources\PostResource;
-use App\Models\Contracts\PostManager;
+use Siravel\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
@@ -13,7 +13,7 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class PostPaginateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class PostPaginateAction
 {

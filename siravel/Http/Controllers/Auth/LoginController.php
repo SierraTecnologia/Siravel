@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
-use App\Models\User;
+use Siravel\Models\User;
 use Validator;
 use Auth;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;

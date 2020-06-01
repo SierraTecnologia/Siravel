@@ -4,14 +4,14 @@ namespace Siravel\Http\Controllers\Api\Photo;
 
 use Siravel\Http\Requests\ReCaptchaRequest;
 use Siravel\Http\Resources\SubscriptionPlainResource;
-use App\Models\Contracts\SubscriptionManager;
+use Siravel\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class SubscriptionCreateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class SubscriptionCreateAction
 {

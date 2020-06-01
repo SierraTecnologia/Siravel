@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserCreateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class UserCreateAction
 {

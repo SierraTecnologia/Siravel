@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Writelabel;
+namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use URL;
 use Cms;
-use App\Models\Negocios\Faq;
+use Siravel\Models\Negocios\Faq;
 use Illuminate\Http\Request;
-use App\Http\Requests\FaqRequest;
+use Siravel\Http\Requests\FaqRequest;
 use App\Repositories\FaqRepository;
 use App\Services\ValidationService;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FaqController extends BaseController
 {

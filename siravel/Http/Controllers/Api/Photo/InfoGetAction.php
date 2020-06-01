@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class InfoGetAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class InfoGetAction
 {

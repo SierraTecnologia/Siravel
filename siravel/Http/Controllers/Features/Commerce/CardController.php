@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\Commerce\CustomerProfileService;
 
 class CardController extends Controller

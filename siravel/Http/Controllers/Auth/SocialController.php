@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
-use App\Http\ControllersController;
+use Siravel\Http\ControllersController;
 use App\Services\Traits\ActivationTrait;
-use App\Models\Social;
-use App\Models\User;
-use App\Models\Role;
+use Siravel\Models\Social;
+use Siravel\Models\User;
+use Siravel\Models\Role;
 
 class SocialController extends SitecController
 {

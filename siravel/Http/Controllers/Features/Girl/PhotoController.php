@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use App\Http\Controllers\AdminController;
+use Siravel\Http\Controllers\AdminController;
 use Finder\Models\Digital\Midia\Photo;
 use Finder\Models\Digital\Midia\PhotoAlbum;
 use RicardoSierra\Translation\Models\Language;

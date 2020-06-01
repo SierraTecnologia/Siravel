@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Carbon\Carbon;
 use Cms;
-use App\Models\Blog\Blog;
+use Siravel\Models\Blog\Blog;
 use App\Repositories\CmsRepository;
 use App\Repositories\TranslationRepository;
 use App\Services\Midia\FileService;
@@ -61,7 +61,7 @@ class BlogRepository extends CmsRepository
         $tags = [];
 
         if (app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
-            $blogs = $this->translationRepo->getEntitiesByTypeAndLang(app()->getLocale(), 'App\Models\Blog\Blog');
+            $blogs = $this->translationRepo->getEntitiesByTypeAndLang(app()->getLocale(), 'Siravel\Models\Blog\Blog');
         } else {
             $blogs = $this->model->orderBy('published_at', 'desc')->get();
         }
@@ -116,7 +116,7 @@ class BlogRepository extends CmsRepository
         $blog = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))->first();
 
         if (!$blog) {
-            $blog = $this->translationRepo->findByUrl($url, 'App\Models\Blog\Blog');
+            $blog = $this->translationRepo->findByUrl($url, 'Siravel\Models\Blog\Blog');
         }
 
         return $blog;
@@ -156,7 +156,7 @@ class BlogRepository extends CmsRepository
         }
 
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($blog->id, 'App\Models\Blog\Blog', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($blog->id, 'Siravel\Models\Blog\Blog', $payload['lang'], $payload);
         } else {
             $payload['url'] = Cms::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

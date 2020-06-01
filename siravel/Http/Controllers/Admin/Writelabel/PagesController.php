@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Writelabel;
+namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Cms;
-use App\Models\Negocios\Page;
+use Siravel\Models\Negocios\Page;
 use Illuminate\Http\Request;
-use App\Http\Requests\PagesRequest;
+use Siravel\Http\Requests\PagesRequest;
 use App\Services\ValidationService;
 use App\Repositories\Negocios\PageRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class PagesController extends BaseController
 {

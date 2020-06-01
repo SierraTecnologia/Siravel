@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserGetByIdAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class UserGetByIdAction
 {

@@ -2,9 +2,9 @@
 
 namespace Siravel\Services\Rss;
 
-use App\Models\Post;
+use Siravel\Models\Post;
 use Siravel\Services\Rss\Contracts\RssBuilder;
-use App\Models\Contracts\PhotoManager;
+use Siravel\Models\Contracts\PhotoManager;
 use Population\Manipule\Entities\PostEntity;
 use Population\Manipule\Entities\TagEntity;
 use Illuminate\Config\Repository as Config;

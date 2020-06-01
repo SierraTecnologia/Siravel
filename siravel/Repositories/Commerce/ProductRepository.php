@@ -2,7 +2,7 @@
 
 namespace Siravel\Repositories\Commerce;
 
-use App\Models\Commerce\Product;
+use Siravel\Models\Commerce\Product;
 use App\Repositories\Commerce\FavoriteRepository;
 use Illuminate\Support\Facades\Schema;
 

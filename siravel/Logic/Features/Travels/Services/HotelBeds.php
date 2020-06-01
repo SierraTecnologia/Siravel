@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Hotel;
-use App\Models\Room;
+use Siravel\Models\Hotel;
+use Siravel\Models\Room;
 use hotelbeds\hotel_api_sdk\HotelApiClient;
 use hotelbeds\hotel_api_sdk\model\Destination;
 use hotelbeds\hotel_api_sdk\model\Occupancy;

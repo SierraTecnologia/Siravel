@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http;
+namespace Siravel\Http;
 
-use App\Http\Middleware\Authenticate;
-use App\Http\Middleware\CheckIsUserActivated;
+use Siravel\Http\Middleware\Authenticate;
+use Siravel\Http\Middleware\CheckIsUserActivated;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -26,13 +26,13 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
+            \Siravel\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            \Siravel\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\Language::class,
+            \Siravel\Http\Middleware\Language::class,
         ],
 
         'api' => [
@@ -54,19 +54,19 @@ class Kernel extends HttpKernel
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \Siravel\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'activated' => CheckIsUserActivated::class,
-        'cms' => \App\Http\Middleware\Cms::class,
-        'cms-api' => \App\Http\Middleware\CmsApi::class,
-        'analytics' => \App\Http\Middleware\Analytics::class,
-        'trackings' => \App\Http\Middleware\Trackings::class,
-        'language' => \App\Http\Middleware\Language::class,
-        'business' => \App\Http\Middleware\Business::class,
-        'subscription' => \App\Http\Middleware\Subscription::class,
-        'admin' => \App\Http\Middleware\Admin::class,
-        'root' => \App\Http\Middleware\Root::class,
+        'cms' => \Siravel\Http\Middleware\Cms::class,
+        'cms-api' => \Siravel\Http\Middleware\CmsApi::class,
+        'analytics' => \Siravel\Http\Middleware\Analytics::class,
+        'trackings' => \Siravel\Http\Middleware\Trackings::class,
+        'language' => \Siravel\Http\Middleware\Language::class,
+        'business' => \Siravel\Http\Middleware\Business::class,
+        'subscription' => \Siravel\Http\Middleware\Subscription::class,
+        'admin' => \Siravel\Http\Middleware\Admin::class,
+        'root' => \Siravel\Http\Middleware\Root::class,
     ];
 }

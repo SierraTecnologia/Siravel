@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Requests\Commerce;
 
-use App\Models\Commerce\Product;
+use Siravel\Models\Commerce\Product;
 
 class ProductRequest extends CommerceRequest
 {

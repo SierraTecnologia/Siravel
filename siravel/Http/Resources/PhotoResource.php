@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
 use function SiUtils\html_purify;
 use function SiUtils\to_object;
@@ -9,7 +9,7 @@ use function SiUtils\to_string;
 /**
  * Class PhotoResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class PhotoResource extends PhotoPlainResource
 {

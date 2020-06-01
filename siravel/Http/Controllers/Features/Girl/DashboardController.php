@@ -2,10 +2,10 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use App\Http\Controllers\GirlController;
-use App\Models\Blog\Article;
-use App\Models\Blog\Category;
-use App\Models\User;
+use Siravel\Http\Controllers\GirlController;
+use Siravel\Models\Blog\Article;
+use Siravel\Models\Blog\Category;
+use Siravel\Models\User;
 use Finder\Models\Digital\Midia\Photo;
 use Finder\Models\Digital\Midia\PhotoAlbum;
 

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Calendar;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Siravel\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;

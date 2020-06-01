@@ -141,9 +141,9 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \App\Http\Rules\ReCaptchaRule::class,
+            \Siravel\Http\Rules\ReCaptchaRule::class,
             function () {
-                return new \App\Http\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
+                return new \Siravel\Http\Rules\ReCaptchaRule(env('GOOGLE_RECAPTCHA_SECRET_KEY'));
             }
         );
     }
@@ -156,8 +156,8 @@ class HomeServiceProvider extends ServiceProvider
     protected function registerApiV1Services(): void
     {
         $this->app->bind(
-            \App\Http\Proxy\Contracts\OAuthProxy::class,
-            \App\Http\Proxy\CookieOAuthProxy::class
+            \Siravel\Http\Proxy\Contracts\OAuthProxy::class,
+            \Siravel\Http\Proxy\CookieOAuthProxy::class
         );
     }
 }

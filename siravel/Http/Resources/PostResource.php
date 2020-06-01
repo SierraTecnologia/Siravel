@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
-use App\Models\Entities\PostEntity;
-use App\Models\Entities\TagEntity;
+use Siravel\Models\Entities\PostEntity;
+use Siravel\Models\Entities\TagEntity;
 use function SiUtils\to_object;
 
 /**
  * Class PostResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class PostResource extends PostPlainResource
 {

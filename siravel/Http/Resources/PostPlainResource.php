@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
-use App\Models\Entities\PostEntity;
+use Siravel\Models\Entities\PostEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_bool;
@@ -12,7 +12,7 @@ use function SiUtils\to_string;
 /**
  * Class PostPlainResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class PostPlainResource extends Resource
 {

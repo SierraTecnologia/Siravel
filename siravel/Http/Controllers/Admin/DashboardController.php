@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
 use Siravel\Services\System\AnalyticsService;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
-use App\Models\Blog\Blog;
+use Siravel\Models\Blog\Blog;
 use Siravel\Models\Digital\Midia\Photo;
-use App\Models\Negocios\Subscription;
-use App\Models\Negocios\Page;
-use App\Models\UserMeta;
+use Siravel\Models\Negocios\Subscription;
+use Siravel\Models\Negocios\Page;
+use Siravel\Models\UserMeta;
 
 class DashboardController extends Controller
 {

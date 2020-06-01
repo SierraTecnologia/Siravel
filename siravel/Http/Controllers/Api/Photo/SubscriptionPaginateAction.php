@@ -5,14 +5,14 @@ namespace Siravel\Http\Controllers\Api\Photo;
 use Siravel\Http\Requests\PaginatedRequest;
 use Siravel\Http\Resources\PaginatedResource;
 use Siravel\Http\Resources\SubscriptionPlainResource;
-use App\Models\Contracts\SubscriptionManager;
+use Siravel\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class SubscriptionPaginateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class SubscriptionPaginateAction
 {

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Requests;
 
-use App\Http\Rules\ReCaptchaRule;
+use Siravel\Http\Rules\ReCaptchaRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**

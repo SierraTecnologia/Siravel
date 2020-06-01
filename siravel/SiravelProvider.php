@@ -45,7 +45,7 @@ class SiravelProvider extends ServiceProvider
         //         'icon'        => 'fas fa-fw fa-gavel',
         //         'icon_color'  => 'blue',
         //         'label_color' => 'success',
-        //         // 'access' => \App\Models\Role::$ADMIN
+        //         // 'access' => \Siravel\Models\Role::$ADMIN
         //     ],
         //     [
         //         'text'        => 'Profile',
@@ -53,7 +53,7 @@ class SiravelProvider extends ServiceProvider
         //         'icon'        => 'fas fa-fw fa-gavel',
         //         'icon_color'  => 'blue',
         //         'label_color' => 'success',
-        //         // 'access' => \App\Models\Role::$ADMIN
+        //         // 'access' => \Siravel\Models\Role::$ADMIN
         //     ],
         //     [
         //         'text'        => 'Actors',
@@ -61,7 +61,7 @@ class SiravelProvider extends ServiceProvider
         //         'icon'        => 'fas fa-fw fa-gavel',
         //         'icon_color'  => 'blue',
         //         'label_color' => 'success',
-        //         // 'access' => \App\Models\Role::$ADMIN
+        //         // 'access' => \Siravel\Models\Role::$ADMIN
         //     ],
         // ],
         // 'Painel|200' => [
@@ -78,7 +78,7 @@ class SiravelProvider extends ServiceProvider
         //             'icon'        => 'fas fa-fw fa-industry',
         //             'icon_color'  => 'blue',
         //             'label_color' => 'success',
-        //             // 'access' => \App\Models\Role::$ADMIN
+        //             // 'access' => \Siravel\Models\Role::$ADMIN
         //         ],
         //         [
         //             'text'        => 'Profile',
@@ -86,7 +86,7 @@ class SiravelProvider extends ServiceProvider
         //             'icon'        => 'fas fa-fw fa-industry',
         //             'icon_color'  => 'blue',
         //             'label_color' => 'success',
-        //             // 'access' => \App\Models\Role::$ADMIN
+        //             // 'access' => \Siravel\Models\Role::$ADMIN
         //         ],
         //         [
         //             'text'        => 'Logout',
@@ -94,7 +94,7 @@ class SiravelProvider extends ServiceProvider
         //             'icon'        => 'fas fa-fw fa-industry',
         //             'icon_color'  => 'blue',
         //             'label_color' => 'success',
-        //             // 'access' => \App\Models\Role::$ADMIN
+        //             // 'access' => \Siravel\Models\Role::$ADMIN
         //         ],
         //     ],
         // ],

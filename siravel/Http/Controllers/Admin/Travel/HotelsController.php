@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Travel;
+namespace Siravel\Http\Controllers\Admin\Travel;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class HotelsController extends Controller
 {
@@ -18,7 +18,7 @@ class HotelsController extends Controller
      */
     public function index()
     {
-        $hotels = \App\Models\Hotel::all();
+        $hotels = \Siravel\Models\Hotel::all();
 
         return view('admin.hotels.index', compact('hotels'));
     }
@@ -42,9 +42,9 @@ class HotelsController extends Controller
      */
     public function store(Request $request)
     {
-        $hotel = new \App\Models\Hotel();
+        $hotel = new \Siravel\Models\Hotel();
 
-        $validation = Validator::make(Input::all(), \App\Models\Hotel::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Hotel::rules());
 
         $hotel->name = $request->name;
         $hotel->code = $request->code;
@@ -70,7 +70,7 @@ class HotelsController extends Controller
      */
     public function edit($id)
     {
-        $hotel = \App\Models\Hotel::findOrfail($id);
+        $hotel = \Siravel\Models\Hotel::findOrfail($id);
 
         return view('admin.hotels.edit', compact('hotel'));
     }
@@ -84,9 +84,9 @@ class HotelsController extends Controller
      */
     public function update(Request $request)
     {
-        $hotel = \App\Models\Hotel::findOrfail($request->hotel_id);
+        $hotel = \Siravel\Models\Hotel::findOrfail($request->hotel_id);
 
-        $validation = Validator::make(Input::all(), \App\Models\Hotel::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Hotel::rules());
 
         $hotel->name = $request->name;
         $hotel->code = $request->code;
@@ -111,7 +111,7 @@ class HotelsController extends Controller
      */
     public function destroy($id)
     {
-        $hotel = \App\Models\Hotel::findOrfail($id);
+        $hotel = \Siravel\Models\Hotel::findOrfail($id);
 
         $hotel->delete();
 

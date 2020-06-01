@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
 class ForgotPasswordController extends ResetPasswordController
 {

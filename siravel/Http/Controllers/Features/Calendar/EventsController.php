@@ -2,10 +2,10 @@
 
 namespace Siravel\Http\Controllers\Features\Calendar;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\EventService;
 use App\Repositories\EventRepository;
-use App\Http\Controllers\Features\Controller as BaseController;
+use Siravel\Http\Controllers\Features\Controller as BaseController;
 
 class EventsController extends BaseController
 {

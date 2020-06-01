@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Blog;
+namespace Siravel\Http\Controllers\Admin\Blog;
 
 use Cms;
-use App\Models\Blog\Blog;
+use Siravel\Models\Blog\Blog;
 use Illuminate\Http\Request;
-use App\Http\Requests\BlogRequest;
+use Siravel\Http\Requests\BlogRequest;
 use App\Services\ValidationService;
 use App\Repositories\BlogRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class BlogController extends BaseController
 {

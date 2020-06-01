@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Writelabel;
+namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Cms;
 use Exception;
-use App\Models\Negocios\Link;
+use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
-use App\Http\Requests\MemberRequest;
+use Siravel\Http\Requests\MemberRequest;
 use App\Services\ValidationService;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 use App\Repositories\Negocios\MemberRepository;
 
 class MemberController extends BaseController

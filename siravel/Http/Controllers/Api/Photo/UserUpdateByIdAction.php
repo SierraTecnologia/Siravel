@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserUpdateByIdAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class UserUpdateByIdAction
 {

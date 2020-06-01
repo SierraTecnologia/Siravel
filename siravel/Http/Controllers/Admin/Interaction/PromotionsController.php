@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Interaction;
+namespace Siravel\Http\Controllers\Admin\Interaction;
 
 use Cms;
 use Illuminate\Http\Request;
-use App\Models\Promotion;
-use App\Http\Requests\PromotionRequest;
+use Siravel\Models\Promotion;
+use Siravel\Http\Requests\PromotionRequest;
 use App\Services\ValidationService;
 use App\Repositories\PromotionRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class PromotionsController extends BaseController
 {

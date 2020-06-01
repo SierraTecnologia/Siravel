@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
 use Siravel\Services\System\VersionService;
 

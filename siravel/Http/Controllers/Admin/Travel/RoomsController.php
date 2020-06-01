@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Travel;
+namespace Siravel\Http\Controllers\Admin\Travel;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class RoomsController extends Controller
 {
@@ -18,7 +18,7 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $rooms = \App\Models\Room::all();
+        $rooms = \Siravel\Models\Room::all();
 
         return view('admin.rooms.index', compact('rooms'));
     }
@@ -42,9 +42,9 @@ class RoomsController extends Controller
      */
     public function store(Request $request)
     {
-        $room = new \App\Models\Room();
+        $room = new \Siravel\Models\Room();
 
-        $validation = Validator::make(Input::all(), \App\Models\Room::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Room::rules());
 
         $room->name = $request->name;
         $room->code = $request->code;
@@ -69,7 +69,7 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
-        $room = \App\Models\Room::findOrfail($id);
+        $room = \Siravel\Models\Room::findOrfail($id);
 
         return view('admin.rooms.edit', compact('room'));
     }
@@ -83,9 +83,9 @@ class RoomsController extends Controller
      */
     public function update(Request $request)
     {
-        $room = \App\Models\Room::findOrfail($request->room_id);
+        $room = \Siravel\Models\Room::findOrfail($request->room_id);
 
-        $validation = Validator::make(Input::all(), \App\Models\Room::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Room::rules());
 
         $room->name = $request->name;
         $room->code = $request->code;
@@ -110,7 +110,7 @@ class RoomsController extends Controller
      */
     public function destroy($id)
     {
-        $room = \App\Models\Room::findOrfail($id);
+        $room = \Siravel\Models\Room::findOrfail($id);
 
         $room->delete();
 

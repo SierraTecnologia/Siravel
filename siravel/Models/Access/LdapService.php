@@ -4,7 +4,7 @@ namespace Siravel\Models\Access;
 
 use Siravel\Models\Access;
 use Siravel\Models\Role;
-use App\Models\User;
+use Siravel\Models\User;
 use Population\Models\Components\Book\Auth\UserRepo;
 use SiUtils\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -350,7 +350,7 @@ class LdapService
     /**
      * Sync the LDAP groups to the user roles for the current user
      *
-     * @param  \App\Models\User $user
+     * @param  \Siravel\Models\User $user
      * @param  string           $username
      * @throws LdapException
      */
@@ -405,7 +405,7 @@ class LdapService
      * Check a role against an array of group names to see if it matches.
      * Checked against role 'external_auth_id' if set otherwise the name of the role.
      *
-     * @param  \App\Models\Role $role
+     * @param  \Siravel\Models\Role $role
      * @param  array            $groupNames
      * @return bool
      */

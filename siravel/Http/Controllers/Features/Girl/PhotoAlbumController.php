@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Features\Girl;
 use Finder\Models\Digital\Midia\PhotoAlbum;
 use Finder\Models\Digital\Midia\Photo;
 use RicardoSierra\Translation\Models\Language;
-use App\Http\Controllers\GirlController;
+use Siravel\Http\Controllers\GirlController;
 use Siravel\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;

@@ -3,7 +3,7 @@
 namespace Siravel\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\User;
+use Siravel\Models\User;
 
 class UserPolicy
 {

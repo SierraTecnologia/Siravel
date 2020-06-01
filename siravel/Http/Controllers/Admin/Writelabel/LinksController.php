@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Writelabel;
+namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Cms;
 use Exception;
-use App\Models\Negocios\Link;
+use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
-use App\Http\Requests\LinksRequest;
+use Siravel\Http\Requests\LinksRequest;
 use App\Services\ValidationService;
 use App\Repositories\Negocios\LinkRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class LinksController extends BaseController
 {

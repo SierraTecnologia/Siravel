@@ -4,7 +4,7 @@ namespace Siravel\Http\Requests;
 
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Notification;
+use Siravel\Models\Notification;
 
 class NotificationUpdateRequest extends FormRequest
 {

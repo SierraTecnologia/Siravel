@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Travel;
+namespace Siravel\Http\Controllers\Admin\Travel;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class TravelsController extends Controller
 {
@@ -18,7 +18,7 @@ class TravelsController extends Controller
      */
     public function index()
     {
-        $travels = \App\Models\Travel::all();
+        $travels = \Siravel\Models\Travel::all();
 
         return view('admin.travels.index', compact('travels'));
     }
@@ -42,9 +42,9 @@ class TravelsController extends Controller
      */
     public function store(Request $request)
     {
-        $travel = new \App\Models\Travel();
+        $travel = new \Siravel\Models\Travel();
 
-        $validation = Validator::make(Input::all(), \App\Models\Travel::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Travel::rules());
 
         $travel->destine = $request->destine;
         $travel->date_init = Carbon::createFromFormat('d/m/Y', $request->dateInit)->toDateString();
@@ -74,7 +74,7 @@ class TravelsController extends Controller
      */
     public function edit($id)
     {
-        $travel = \App\Models\Travel::findOrfail($id);
+        $travel = \Siravel\Models\Travel::findOrfail($id);
 
         return view('admin.travels.edit', compact('travel'));
     }
@@ -88,9 +88,9 @@ class TravelsController extends Controller
      */
     public function update(Request $request)
     {
-        $travel = \App\Models\Travel::findOrfail($request->travel_id);
+        $travel = \Siravel\Models\Travel::findOrfail($request->travel_id);
 
-        $validation = Validator::make(Input::all(), \App\Models\Travel::rules());
+        $validation = Validator::make(Input::all(), \Siravel\Models\Travel::rules());
 
         $travel->destine = $request->destine;
         $travel->date_init = Carbon::createFromFormat('d/m/Y', $request->dateInit)->toDateString();
@@ -120,7 +120,7 @@ class TravelsController extends Controller
      */
     public function destroy($id)
     {
-        $travel = \App\Models\Travel::findOrfail($id);
+        $travel = \Siravel\Models\Travel::findOrfail($id);
 
         $travel->delete();
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Mail\PleaseConfirmYourEmail;
-use App\Models\User;
-use App\Models\Role;
+use Siravel\Models\User;
+use Siravel\Models\Role;
 use Illuminate\Foundation\Auth\SubscriptsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Validator;
 use App\Services\Traits\CaptchaTrait;
 use App\Services\Traits\ActivationTrait;
 
-use App\Http\Requests\SubscriptionRequest;
+use Siravel\Http\Requests\SubscriptionRequest;
 
-use App\Models\Commerce\Plan;
+use Siravel\Models\Commerce\Plan;
 use Illuminate\Support\Facades\Auth;
 
 class SubscriptionController extends Controller

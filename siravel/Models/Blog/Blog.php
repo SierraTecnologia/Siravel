@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models\Blog;
+namespace Siravel\Models\Blog;
 
-use App\Models\CmsModel;
+use Siravel\Models\CmsModel;
 use App\Services\Normalizer;
-use App\Models\Traits\Translatable;
+use Siravel\Models\Traits\Translatable;
 use Informate\Models\System\Archive;
-use App\Models\Traits\ArchiveTrait;
+use Siravel\Models\Traits\ArchiveTrait;
 
-use App\Models\Traits\BusinessTrait;
+use Siravel\Models\Traits\BusinessTrait;
 
 class Blog extends CmsModel
 {

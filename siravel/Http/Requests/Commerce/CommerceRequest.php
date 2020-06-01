@@ -4,7 +4,7 @@ namespace Siravel\Http\Requests\Commerce;
 
 use Illuminate\Support\Facades\Gate;
 use Siravel\Http\Requests\Request;
-use App\Models\Feature;
+use Siravel\Models\Feature;
 
 abstract class CommerceRequest extends Request
 {

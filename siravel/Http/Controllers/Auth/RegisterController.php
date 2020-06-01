@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Mail\PleaseConfirmYourEmail;
-use App\Models\User;
-use App\Models\Role;
+use Siravel\Models\User;
+use Siravel\Models\Role;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -124,7 +124,7 @@ class RegisterController extends Controller
      * The user has been registered.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\Models\User                $user
+     * @param  \Siravel\Models\User                $user
      * @return void
      */
     protected function registered(Request $request, $user)

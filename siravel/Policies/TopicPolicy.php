@@ -3,8 +3,8 @@
 namespace Siravel\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\User;
-use App\Models\Topic;
+use Siravel\Models\User;
+use Siravel\Models\Topic;
 
 class TopicPolicy
 {

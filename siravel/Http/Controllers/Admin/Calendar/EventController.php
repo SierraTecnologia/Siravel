@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Calendar;
+namespace Siravel\Http\Controllers\Admin\Calendar;
 
 use URL;
 use Cms;
-use App\Models\Calendar\Event;
+use Siravel\Models\Calendar\Event;
 use Illuminate\Http\Request;
-use App\Http\Requests\EventRequest;
+use Siravel\Http\Requests\EventRequest;
 use App\Services\ValidationService;
 use App\Repositories\EventRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class EventController extends BaseController
 {

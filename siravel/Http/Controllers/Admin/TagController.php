@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
-use App\Models\Tag;
+use Siravel\Models\Tag;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 
 class TagController extends Controller
 {

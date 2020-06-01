@@ -10,7 +10,7 @@ use App\Services\Midia\FileService;
 use Cms;
 use Config;
 use CryptoService;
-use App\Models\Negocios\Page;
+use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Schema;
 use App\Repositories\CmsRepository as BaseRepository;
 
@@ -69,15 +69,15 @@ class PageRepository extends BaseRepository
         $page = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))->first();
 
         if ($page && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
-            $page = $this->translationRepo->findByEntityId($page->id, 'App\Models\Negocios\Page');
+            $page = $this->translationRepo->findByEntityId($page->id, 'Siravel\Models\Negocios\Page');
         }
 
         if (!$page) {
-            $page = $this->translationRepo->findByUrl($url, 'App\Models\Negocios\Page');
+            $page = $this->translationRepo->findByUrl($url, 'Siravel\Models\Negocios\Page');
         }
 
         if ($url === 'home' && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
-            $page = $this->translationRepo->findByUrl($url, 'App\Models\Negocios\Page');
+            $page = $this->translationRepo->findByUrl($url, 'Siravel\Models\Negocios\Page');
         }
 
         return $page;
@@ -105,7 +105,7 @@ class PageRepository extends BaseRepository
         $payload['title'] = htmlentities($payload['title']);
 
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($page->id, 'App\Models\Negocios\Page', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($page->id, 'Siravel\Models\Negocios\Page', $payload['lang'], $payload);
         } else {
             $payload['url'] = Cms::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

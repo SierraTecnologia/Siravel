@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\Commerce\TransactionService;
 

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Requests\Commerce;
 
-use App\Models\Commerce\Plan;
+use Siravel\Models\Commerce\Plan;
 
 class PlanRequest extends CommerceRequest
 {

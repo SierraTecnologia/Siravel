@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
-use App\Http\ControllersController;
+use Siravel\Http\ControllersController;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Contact;
 

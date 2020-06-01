@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\Commerce\PlanService;
-use App\Http\Requests\Commerce\PlanRequest;
+use Siravel\Http\Requests\Commerce\PlanRequest;
 
 class PlanController extends Controller
 {

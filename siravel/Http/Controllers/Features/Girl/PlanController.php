@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use App\Http\Controllers\GirlController;
-use App\Models\Plan;
+use Siravel\Http\Controllers\GirlController;
+use Siravel\Models\Plan;
 use Siravel\Http\Requests\Admin\PlanRequest;
 use Datatables;
 

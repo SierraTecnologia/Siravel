@@ -4,7 +4,7 @@ namespace Siravel\Models;
 
 use Illuminate\Notifications\Notifiable;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-// use App\Models\Model;
+// use Siravel\Models\Model;
 // use Illuminate\Contracts\Auth\Access\Authorizable;
 // use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as UserAuthenticatable;

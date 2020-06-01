@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Cms;
 use Illuminate\Http\Request;
-use App\Http\Controllers\SitecController;
+use Siravel\Http\Controllers\SitecController;
 use App\Repositories\ImageRepository;
 use App\Repositories\Commerce\ProductVariantRepository;
-use App\Http\Requests\Commerce\ProductRequest;
+use Siravel\Http\Requests\Commerce\ProductRequest;
 use App\Services\Commerce\ProductService;
 
 class ProductController extends SitecController

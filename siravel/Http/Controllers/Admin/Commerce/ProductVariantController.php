@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
 use Cms;
 use Response;
 use Illuminate\Http\Request;
-use App\Models\Commerce\Products;
-use App\Http\Controllers\SitecController;
+use Siravel\Models\Commerce\Products;
+use Siravel\Http\Controllers\SitecController;
 use App\Repositories\Commerce\ProductRepository;
 use App\Repositories\Commerce\ProductVariantRepository;
 

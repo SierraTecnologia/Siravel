@@ -7,7 +7,7 @@ use Auth;
 use Config;
 use Exception;
 use Siravel\Services\UserService;
-use App\Models\Role;
+use Siravel\Models\Role;
 use Illuminate\Support\Facades\Schema;
 
 class RoleService

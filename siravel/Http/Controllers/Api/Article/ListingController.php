@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Articles\Api;
+namespace Siravel\Http\Controllers\Articles\Api;
 
-use App\Models\User;
-use App\Models\Tag;
-use App\Models\Category;
+use Siravel\Models\User;
+use Siravel\Models\Tag;
+use Siravel\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 
 class ListingController extends Controller
 {

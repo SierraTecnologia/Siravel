@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Midia;
 
-use App\Models\Blog\Article;
+use Siravel\Models\Blog\Article;
 use Finder\Models\Digital\Midia\PhotoAlbum;
 use DB;
 

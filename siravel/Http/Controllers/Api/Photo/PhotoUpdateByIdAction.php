@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Api\Photo;
 
 use Siravel\Http\Resources\PhotoResource;
-use App\Models\Contracts\PhotoManager;
+use Siravel\Models\Contracts\PhotoManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 /**
  * Class PhotoUpdateByIdAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class PhotoUpdateByIdAction
 {

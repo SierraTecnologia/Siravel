@@ -4,8 +4,8 @@ namespace Siravel\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-use App\Models\User;
-use App\Models\Blog;
+use Siravel\Models\User;
+use Siravel\Models\Blog;
 use Gate;
 
 class BlogPolicy

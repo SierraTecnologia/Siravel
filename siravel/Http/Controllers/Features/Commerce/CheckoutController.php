@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Exception;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\Commerce\CartService;
 use App\Services\Commerce\PaymentService;
 use App\Services\Commerce\CustomerProfileService;

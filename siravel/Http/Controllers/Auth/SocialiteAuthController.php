@@ -3,7 +3,7 @@
  * Meio duplicado em relacao a essa
  */
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
 use DB;
 use URL;
@@ -11,8 +11,8 @@ use Auth;
 use Config;
 use Socialite;
 use App\Services\UserService;
-use App\Models\User;
-use App\Http\Controllers\Controller;
+use Siravel\Models\User;
+use Siravel\Http\Controllers\Controller;
 
 class SocialiteAuthController extends Controller
 {

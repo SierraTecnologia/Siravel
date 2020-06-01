@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Models\Negocios\Subscription;
+use Siravel\Models\Negocios\Subscription;
 use Illuminate\Queue\SerializesModels;
 
 class BusinessNewSubscription
@@ -14,7 +14,7 @@ class BusinessNewSubscription
     /**
      * Create a new event instance.
      *
-     * @param  \App\Models\Negocios\Subscription  $subscription
+     * @param  \Siravel\Models\Negocios\Subscription  $subscription
      * @return void
      */
     public function __construct(Subscription $subscription)

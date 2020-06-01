@@ -13,7 +13,7 @@ class Base
      * @var array
      */
     protected $modelAdmins = [
-        \App\Models\Production::class,
+        \Siravel\Models\Production::class,
     ];
 
     public function getAdminMenu()

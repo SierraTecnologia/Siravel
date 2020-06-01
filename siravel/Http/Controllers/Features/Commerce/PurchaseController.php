@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use Auth;
 use App\Repositories\Commerce\TransactionRepository;
 

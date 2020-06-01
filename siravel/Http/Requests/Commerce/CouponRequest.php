@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Requests\Commerce;
 
-use App\Models\Commerce\Coupon;
+use Siravel\Models\Commerce\Coupon;
 
 class CouponRequest extends CommerceRequest
 {

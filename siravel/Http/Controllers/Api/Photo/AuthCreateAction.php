@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Api\Photo;
 
-use App\Http\Proxy\Contracts\OAuthProxy;
+use Siravel\Http\Proxy\Contracts\OAuthProxy;
 use Siravel\Http\Requests\CreateAuthRequest;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Response;
@@ -10,7 +10,7 @@ use Illuminate\Http\Response;
 /**
  * Class AuthCreateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class AuthCreateAction
 {

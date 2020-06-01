@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
-use App\Models\Negocios\Faq;
+use Siravel\Models\Negocios\Faq;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FaqRequest extends FormRequest

@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Api\Photo;
 use Siravel\Http\Requests\PaginatedRequest;
 use Siravel\Http\Resources\PaginatedResource;
 use Siravel\Http\Resources\TagPlainResource;
-use App\Models\Contracts\TagManager;
+use Siravel\Models\Contracts\TagManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 /**
  * Class TagPaginateAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class TagPaginateAction
 {

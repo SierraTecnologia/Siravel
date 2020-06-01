@@ -2,12 +2,12 @@
 
 namespace Siravel\Http\Policies;
 
-use App\Models\User;
+use Siravel\Models\User;
 
 /**
  * Class ResourcePolicy.
  *
- * @package App\Http\Policies
+ * @package Siravel\Http\Policies
  */
 class ResourcePolicy
 {

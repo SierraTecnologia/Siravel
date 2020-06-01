@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
-use App\Models\Entities\PhotoEntity;
+use Siravel\Models\Entities\PhotoEntity;
 use Illuminate\Http\Resources\Json\Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_int;
@@ -11,7 +11,7 @@ use function SiUtils\to_string;
 /**
  * Class PhotoPlainResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class PhotoPlainResource extends Resource
 {

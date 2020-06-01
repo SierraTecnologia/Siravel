@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 /**
  * Class CookieOAuthAuthorizer.
  *
- * @package App\Http\Middleware
+ * @package Siravel\Http\Middleware
  */
 class CookieOAuthAuthorizer
 {

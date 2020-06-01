@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Midia;
+namespace Siravel\Http\Controllers\Admin\Midia;
 
 use Cms;
 use Config;
@@ -11,12 +11,12 @@ use Exception;
 use CryptoService;
 use Siravel\Models\Digital\Midia\File;
 use Illuminate\Http\Request;
-use App\Http\Requests\FileRequest;
+use Siravel\Http\Requests\FileRequest;
 use App\Services\Midia\FileService;
 use App\Services\ValidationService;
 use App\Repositories\FileRepository;
 use App\Services\CmsResponseService;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FilesController extends BaseController
 {

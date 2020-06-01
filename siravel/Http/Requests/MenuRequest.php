@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
-use App\Models\Negocios\Menu;
+use Siravel\Models\Negocios\Menu;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MenuRequest extends FormRequest

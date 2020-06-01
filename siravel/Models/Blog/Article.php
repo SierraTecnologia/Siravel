@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Models\Blog;
+namespace Siravel\Models\Blog;
 
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use App\Models\User;
+use Siravel\Models\User;
 use RicardoSierra\Translation\Models\Language;
-use App\Models\CmsModel as BaseModel;
+use Siravel\Models\CmsModel as BaseModel;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Overtrue\LaravelFollow\Traits\CanBeVoted;
 use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
 
-use App\Models\Traits\BusinessTrait;
+use Siravel\Models\Traits\BusinessTrait;
 
 class Article extends BaseModel {
 

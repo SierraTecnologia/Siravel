@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace Siravel\Http;
 
 use JeroenNoten\LaravelAdminLte\Menu\Builder;
 use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;

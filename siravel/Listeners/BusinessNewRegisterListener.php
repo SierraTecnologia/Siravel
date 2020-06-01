@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\BusinessNewRegister;
-use App\Models\Notification;
+use Siravel\Models\Notification;
 use Siravel\Services\System\BusinessService;
 
 class BusinessNewRegisterListener

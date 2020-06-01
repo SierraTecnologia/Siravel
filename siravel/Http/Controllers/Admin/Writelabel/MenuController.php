@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Writelabel;
+namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Exception;
 use Illuminate\Http\Request;
 use Cms;
-use App\Models\Negocios\Menu;
+use Siravel\Models\Negocios\Menu;
 use App\Repositories\Negocios\LinkRepository;
 use App\Repositories\Negocios\MenuRepository;
-use App\Http\Requests\MenuRequest;
+use Siravel\Http\Requests\MenuRequest;
 use App\Services\CmsResponseService;
 use App\Services\ValidationService;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class MenuController extends BaseController
 {

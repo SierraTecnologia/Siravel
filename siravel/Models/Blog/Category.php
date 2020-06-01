@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Blog;
+namespace Siravel\Models\Blog;
 
-use App\Models\Model;
-use App\Models\User;
+use Siravel\Models\Model;
+use Siravel\Models\User;
 use App\System\Language;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;

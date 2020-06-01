@@ -13,9 +13,9 @@ class Base
      * @var array
      */
     protected $modelAdmins = [
-        \App\Models\Hotel::class,
-        \App\Models\Room::class,
-        \App\Models\Travel::class,
+        \Siravel\Models\Hotel::class,
+        \Siravel\Models\Room::class,
+        \Siravel\Models\Travel::class,
     ];
 
     public function getAdminMenu()

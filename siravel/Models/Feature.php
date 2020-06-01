@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace Siravel\Models;
 
-use App\Models\Model;
-use App\Models\Traits\ComplexRelationamentTrait;
+use Siravel\Models\Model;
+use Siravel\Models\Traits\ComplexRelationamentTrait;
 
 class Feature extends Model
 {
@@ -48,7 +48,7 @@ class Feature extends Model
      */
     public function business()
     {
-        return $this->morphedByMany('App\Models\Negocios\Business', 'featureable');
+        return $this->morphedByMany('Siravel\Models\Negocios\Business', 'featureable');
     }
 
     /**
@@ -56,6 +56,6 @@ class Feature extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'featureable');
+        return $this->morphedByMany('Siravel\Models\User', 'featureable');
     }
 }

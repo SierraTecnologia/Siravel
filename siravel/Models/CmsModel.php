@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace Siravel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
-use App\Models\Negocios\Link;
+use Siravel\Models\Negocios\Link;
 use Informate\Models\System\Archive;
-use App\Models\System\Translation;
+use Siravel\Models\System\Translation;
 
 
 class CmsModel extends Model
@@ -89,12 +89,12 @@ class CmsModel extends Model
         Translation::where('entity_id', $id)->where('entity_type', $type)->delete();
         Archive::where('entity_id', $id)->where('entity_type', $type)->delete();
 
-        Archive::where('entity_type', 'App\Models\System\Translation')
+        Archive::where('entity_type', 'Siravel\Models\System\Translation')
             ->where('entity_data', 'LIKE', '%"entity_id":'.$id.'%')
             ->where('entity_data', 'LIKE', '%"entity_type":"'.$type.'"%')
             ->delete();
 
-        if ($type == 'App\Models\Negocios\Page') {
+        if ($type == 'Siravel\Models\Negocios\Page') {
             Link::where('page_id', $id)->delete();
         }
     }

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Articles\Api;
+namespace Siravel\Http\Controllers\Articles\Api;
 
-use App\Models\User;
+use Siravel\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {

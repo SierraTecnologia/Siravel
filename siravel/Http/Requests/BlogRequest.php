@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Blog\Blog;
+use Siravel\Models\Blog\Blog;
 
 class BlogRequest extends FormRequest
 {

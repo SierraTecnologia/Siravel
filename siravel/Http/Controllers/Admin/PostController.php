@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
-use App\Models\Tag;
-use App\Models\Post;
-use App\Models\Category;
+use Siravel\Models\Tag;
+use Siravel\Models\Post;
+use Siravel\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Requests\PostRequest;
+use Siravel\Http\Controllers\Controller;
 
 class PostController extends Controller
 {

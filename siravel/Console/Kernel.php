@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
     //      */
     //     protected $commands = [
     //         Commands\Tools\PhotoApp\ChangeUserPassword::class,
-    //         Commands\Tools\PhotoApp\CreateAdministrator\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class),
+    //         Commands\Tools\PhotoApp\CreateAdministrator\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \Siravel\Models\User::class),
     //         Commands\Tools\PhotoApp\CreateRoles::class,
     //         Commands\Tools\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
     //         Commands\Tools\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,

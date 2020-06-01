@@ -2,8 +2,8 @@
 
 namespace Siravel\Logic\Activation;
 
-use App\Models\Activation;
-use App\Models\User;
+use Siravel\Models\Activation;
+use Siravel\Models\User;
 use Siravel\Logic\Notifications\SendActivationEmail;
 use Carbon\Carbon;
 

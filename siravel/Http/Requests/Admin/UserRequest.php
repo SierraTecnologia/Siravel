@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Requests\Admin;
 
-use App\Models\User;
+use Siravel\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest

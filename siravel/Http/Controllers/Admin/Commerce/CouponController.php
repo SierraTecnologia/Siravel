@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Commerce;
+namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use App\Http\Controllers\SitecController;
-use App\Http\Requests\Commerce\CouponRequest;
-use App\Http\Requests\Commerce\PlanRequest;
+use Siravel\Http\Controllers\SitecController;
+use Siravel\Http\Requests\Commerce\CouponRequest;
+use Siravel\Http\Requests\Commerce\PlanRequest;
 use App\Services\Commerce\CouponService;
 use Illuminate\Http\Request;
 

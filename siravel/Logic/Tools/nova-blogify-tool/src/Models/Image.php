@@ -2,7 +2,7 @@
 
 namespace Mattmangoni\NovaBlogifyTool\Models;
 
-use App\Models\Model;
+use Siravel\Models\Model;
 
 class Image extends Model
 {

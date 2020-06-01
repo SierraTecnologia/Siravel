@@ -2,7 +2,7 @@
 
 namespace App\Services\Traits;
 
-use App\Models\Negocios\Page;
+use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;

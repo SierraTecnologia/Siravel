@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Access;
 
-use App\Models\User;
+use Siravel\Models\User;
 use Population\Models\Components\Book\Auth\UserRepo;
 use SiUtils\Exceptions\ConfirmationEmailException;
 use SiUtils\Exceptions\UserRegistrationException;
@@ -31,7 +31,7 @@ class EmailConfirmationService
      * Create new confirmation for a user,
      * Also removes any existing old ones.
      *
-     * @param  \App\Models\User $user
+     * @param  \Siravel\Models\User $user
      * @throws ConfirmationEmailException
      */
     public function sendConfirmation(User $user)
@@ -97,7 +97,7 @@ class EmailConfirmationService
     /**
      * Delete all email confirmations that belong to a user.
      *
-     * @param  \App\Models\User $user
+     * @param  \Siravel\Models\User $user
      * @return mixed
      */
     public function deleteConfirmationsByUser(User $user)

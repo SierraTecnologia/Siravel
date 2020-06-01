@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use App\Http\Controllers\AdminController;
+use Siravel\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Input;
 use RicardoSierra\Translation\Models\Language;
 use Siravel\Http\Requests\Admin\LanguageRequest;

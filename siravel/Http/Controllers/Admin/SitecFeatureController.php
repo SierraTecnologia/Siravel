@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
 use Cms;
 use Informate\Models\System\Archive;
@@ -89,10 +89,10 @@ class SitecFeatureController extends Controller
      */
     public function preview($entity, $id)
     {
-        $modelString = 'App\Models\\'.ucfirst($entity);
+        $modelString = 'Siravel\Models\\'.ucfirst($entity);
 
         if (!class_exists($modelString)) {
-            $modelString = 'App\Models\\'.ucfirst($entity).'s';
+            $modelString = 'Siravel\Models\\'.ucfirst($entity).'s';
         }
 
         $model = new $modelString();
@@ -137,7 +137,7 @@ class SitecFeatureController extends Controller
      */
     public function deleteHero($entity, $id)
     {
-        $entity = app('App\Models\\'.ucfirst($entity))->find($id);
+        $entity = app('Siravel\Models\\'.ucfirst($entity))->find($id);
 
         if (app(FileService::class)->delete($entity->hero_image)) {
             $entity->update([

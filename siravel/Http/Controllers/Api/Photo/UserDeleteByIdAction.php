@@ -10,7 +10,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserDeleteByIdAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class UserDeleteByIdAction
 {

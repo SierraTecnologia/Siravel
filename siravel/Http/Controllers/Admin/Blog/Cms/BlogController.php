@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Travels\Cms;
+namespace Siravel\Http\Controllers\Travels\Cms;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Repositories\BlogRepository;
 
 class BlogController extends Controller

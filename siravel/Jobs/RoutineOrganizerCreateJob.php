@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-use App\Models\User;
+use Siravel\Models\User;
 use Siravel\Models\Role;
 use Siravel\Services\PaymentGatewayService;
 use Log;

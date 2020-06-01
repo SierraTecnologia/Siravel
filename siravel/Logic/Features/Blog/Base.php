@@ -13,7 +13,7 @@ class Base
      * @var array
      */
     protected $modelAdmins = [
-        \App\Models\Blog\Blog::class,
+        \Siravel\Models\Blog\Blog::class,
     ];
     
 

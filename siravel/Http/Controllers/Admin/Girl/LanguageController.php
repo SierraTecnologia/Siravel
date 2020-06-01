@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Girl;
+namespace Siravel\Http\Controllers\Girl;
 
-use App\Http\Controllers\AdminController;
+use Siravel\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Input;
 use RicardoSierra\Translation\Models\Language;
-use App\Http\Requests\Admin\LanguageRequest;
-use App\Http\Requests\Admin\DeleteRequest;
-use App\Http\Requests\Admin\ReorderRequest;
+use Siravel\Http\Requests\Admin\LanguageRequest;
+use Siravel\Http\Requests\Admin\DeleteRequest;
+use Siravel\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

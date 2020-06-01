@@ -1,8 +1,8 @@
-<?php namespace App\Http\Controllers\Girl;
+<?php namespace Siravel\Http\Controllers\Girl;
 
-use App\Http\Controllers\GirlController;
-use App\Models\User;
-use App\Http\Requests\Admin\UserRequest;
+use Siravel\Http\Controllers\GirlController;
+use Siravel\Models\User;
+use Siravel\Http\Requests\Admin\UserRequest;
 use Datatables;
 
 

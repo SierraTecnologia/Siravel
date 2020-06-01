@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Interaction;
+namespace Siravel\Http\Controllers\Admin\Interaction;
 
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 use App\Services\ContactService;
 use App\Repositories\ContactRepository;
-use App\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ContactController extends BaseController
 {

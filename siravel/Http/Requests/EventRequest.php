@@ -4,7 +4,7 @@ namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
-use App\Models\Calendar\Event;
+use Siravel\Models\Calendar\Event;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EventRequest extends FormRequest

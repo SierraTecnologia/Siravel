@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Siravel\Http\Controllers\Admin;
 
-use App\Http\ControllersController;
+use Siravel\Http\ControllersController;
 use Hash;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
@@ -17,7 +17,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        $subscriptions = \App\Models\Subscription::all();
+        $subscriptions = \Siravel\Models\Subscription::all();
 
         return view('admin.subscriptions.index', compact('subscriptions'));
     }
@@ -41,7 +41,7 @@ class SubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        $subscription = new \App\Models\Subscription();
+        $subscription = new \Siravel\Models\Subscription();
 
         $subscription->email = $request->email;
         $subscription->name = $request->name;
@@ -61,7 +61,7 @@ class SubscriptionController extends Controller
      */
     public function edit($id)
     {
-        $subscription = \App\Models\Subscription::findOrfail($id);
+        $subscription = \Siravel\Models\Subscription::findOrfail($id);
         $roles = Role::all()->pluck('name');
         $permissions = Permission::all()->pluck('name');
         $subscriptionRoles = $subscription->roles;
@@ -79,7 +79,7 @@ class SubscriptionController extends Controller
      */
     public function update(Request $request)
     {
-        $subscription = \App\Models\Subscription::findOrfail($request->subscription_id);
+        $subscription = \Siravel\Models\Subscription::findOrfail($request->subscription_id);
 
         $subscription->email = $request->email;
         $subscription->name = $request->name;
@@ -99,7 +99,7 @@ class SubscriptionController extends Controller
      */
     public function destroy($id)
     {
-        $subscription = \App\Models\Subscription::findOrfail($id);
+        $subscription = \Siravel\Models\Subscription::findOrfail($id);
 
         $subscription->delete();
 
@@ -115,7 +115,7 @@ class SubscriptionController extends Controller
      */
     public function addRole(Request $request)
     {
-        $subscription = \App\Models\Subscription::findOrfail($request->subscription_id);
+        $subscription = \Siravel\Models\Subscription::findOrfail($request->subscription_id);
         $subscription->assignRole($request->role_name);
 
         return redirect('subscriptions/edit/'.$request->subscription_id);
@@ -130,7 +130,7 @@ class SubscriptionController extends Controller
      */
     public function addPermission(Request $request)
     {
-        $subscription = \App\Models\Subscription::findorfail($request->subscription_id);
+        $subscription = \Siravel\Models\Subscription::findorfail($request->subscription_id);
         $subscription->givePermissionTo($request->permission_name);
 
         return redirect('subscriptions/edit/'.$request->subscription_id);
@@ -145,7 +145,7 @@ class SubscriptionController extends Controller
      */
     public function revokePermission($permission, $subscription_id)
     {
-        $subscription = \App\Models\Subscription::findorfail($subscription_id);
+        $subscription = \Siravel\Models\Subscription::findorfail($subscription_id);
 
         $subscription->revokePermissionTo(str_slug($permission, ' '));
 
@@ -161,7 +161,7 @@ class SubscriptionController extends Controller
      */
     public function revokeRole($role, $subscription_id)
     {
-        $subscription = \App\Models\Subscription::findorfail($subscription_id);
+        $subscription = \Siravel\Models\Subscription::findorfail($subscription_id);
 
         $subscription->removeRole(str_slug($role, ' '));
 

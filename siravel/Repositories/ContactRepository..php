@@ -3,7 +3,7 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use App\Models\Contact;
+use Siravel\Models\Contact;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 
@@ -123,7 +123,7 @@ class ContactRepository
     public function update($contact, $payload)
     {
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('sicms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($contact->id, 'App\Models\Contact', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($contact->id, 'Siravel\Models\Contact', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
             $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? $payload['published_at'] : Carbon::now()->format('Y-m-d h:i:s');

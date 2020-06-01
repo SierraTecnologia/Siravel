@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 /**
  * Class ContactMessageSendAction.
  *
- * @package App\Http\Actions
+ * @package Siravel\Http\Actions
  */
 class ContactMessageSendAction
 {

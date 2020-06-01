@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Policies;
+namespace Siravel\Http\Policies;
 
-use App\Models\User;
+use Siravel\Models\User;
 
 /**
  * Class BusinessPolicy.
  *
- * @package App\Http\Policies
+ * @package Siravel\Http\Policies
  */
 class BusinessPolicy
 {

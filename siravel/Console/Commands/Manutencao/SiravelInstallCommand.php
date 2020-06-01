@@ -65,7 +65,7 @@ class SiravelInstallCommand extends Command
         $this->info('Install after facilitador...');
         $this->call('facilitador:install');
 
-        $this->info('Attempting to set Siravel User model as parent to App\Models\User');
+        $this->info('Attempting to set Siravel User model as parent to Siravel\Models\User');
         if (file_exists(app_path($this->userModelFile))) {
             $str = file_get_contents(app_path($this->userModelFile));
 

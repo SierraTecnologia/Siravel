@@ -1,9 +1,9 @@
-<?php namespace App\Http\Controllers\Girl;
+<?php namespace Siravel\Http\Controllers\Girl;
 
-use App\Http\Controllers\GirlController;
-use App\Models\Blog\Article;
-use App\Models\Blog\Category;
-use App\Models\User;
+use Siravel\Http\Controllers\GirlController;
+use Siravel\Models\Blog\Article;
+use Siravel\Models\Blog\Category;
+use Siravel\Models\User;
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Digital\Midia\PhotoAlbum;
 

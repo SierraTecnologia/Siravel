@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Resources;
+namespace Siravel\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * Class PaginatedResource.
  *
- * @package App\Http\Resources
+ * @package Siravel\Http\Resources
  */
 class PaginatedResource extends ResourceCollection
 {

@@ -5,7 +5,7 @@ namespace Siravel\Repositories\Negocios;
 use Cms;
 use Config;
 use CryptoService;
-use App\Models\UserMeta;
+use Siravel\Models\UserMeta;
 use Illuminate\Support\Facades\Schema;
 use App\Repositories\CmsRepository as BaseRepository;
 use App\Repositories\TranslationRepository;
@@ -74,7 +74,7 @@ class MemberRepository extends BaseRepository
         $payload['external'] = isset($payload['external']) ? $payload['external'] : 0;
 
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
-            return $this->translationRepo->createOrUpdate($link->id, 'App\Models\Negocios\Member', $payload['lang'], $payload);
+            return $this->translationRepo->createOrUpdate($link->id, 'Siravel\Models\Negocios\Member', $payload['lang'], $payload);
         }
 
         unset($payload['lang']);

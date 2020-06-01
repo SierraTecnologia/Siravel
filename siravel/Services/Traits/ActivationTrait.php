@@ -3,7 +3,7 @@
 namespace App\Services\Traits;
 
 use Siravel\Logic\Activation\ActivationRepository;
-use App\Models\User;
+use Siravel\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 trait ActivationTrait

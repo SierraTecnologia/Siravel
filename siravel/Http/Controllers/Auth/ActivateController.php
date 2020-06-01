@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Siravel\Http\Controllers\Auth;
 
 use App\Services\UserService;
 use Siravel\Services\System\ActivateService;
-use App\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Controller;
 
 class ActivateController extends Controller
 {
