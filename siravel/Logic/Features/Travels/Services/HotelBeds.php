@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace Siravel\Services;
 
 use Siravel\Models\Hotel;
 use Siravel\Models\Room;

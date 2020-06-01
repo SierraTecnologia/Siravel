@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace Siravel\Listeners;
 
 use Siravel\Events\BusinessNewRegister;
 use Siravel\Models\Notification;

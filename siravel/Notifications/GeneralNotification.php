@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace Siravel\Notifications;
 
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;

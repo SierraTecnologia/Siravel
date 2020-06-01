@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories;
+namespace Siravel\Repositories;
 
 use Auth;
 use Config;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Siravel\Events;
 
 use Siravel\Models\UserMeta;
 use Illuminate\Queue\SerializesModels;

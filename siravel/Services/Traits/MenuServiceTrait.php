@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Traits;
+namespace Siravel\Services\Traits;
 
 use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Auth;

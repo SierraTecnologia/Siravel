@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Organizer;
+namespace Siravel\Notifications\Organizer;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

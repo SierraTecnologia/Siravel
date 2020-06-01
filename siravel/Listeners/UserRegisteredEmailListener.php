@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace Siravel\Listeners;
 
 use AppEvents\UserRegisteredEmail;
 use AppNotifications\NewAccountEmail;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Traits;
+namespace Siravel\Services\Traits;
 
 use Illuminate\Support\Facades\Config;
 use Siravel\Facades\CryptoServiceFacade;
