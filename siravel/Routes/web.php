@@ -7,8 +7,18 @@ Route::group(
             function () {
                 Route::group(
                     ['prefix' => 'siravel'], function () {
-                        include dirname(__FILE__) . DIRECTORY_SEPARATOR . "web". DIRECTORY_SEPARATOR . "recursos.php";
-                        include dirname(__FILE__) . DIRECTORY_SEPARATOR . "web". DIRECTORY_SEPARATOR . "features.php";
+
+
+                        $loadingRoutes = [
+                            'public',
+                            'admin',
+                            'auth',
+                            'features',
+                            'recursos'
+                        ];
+                        foreach ($loadingRoutes as $loadingRoute) {
+                            include dirname(__FILE__) . DIRECTORY_SEPARATOR . "web". DIRECTORY_SEPARATOR . $loadingRoute.".php";
+                        }
 
                         // include dirname(__FILE__) . DIRECTORY_SEPARATOR . "web". DIRECTORY_SEPARATOR . "wiki.php";
                         // include dirname(__FILE__) . DIRECTORY_SEPARATOR . "web". DIRECTORY_SEPARATOR . "book.php";

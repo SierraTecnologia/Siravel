@@ -13,7 +13,12 @@
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
-        "ricardosierra/phpwhois": "dev-dev"
+        "ricardosierra/phpwhois": "dev-dev",
+        "ricardosierra/changelog": "~1.4",
+        "ricardosierra/discovery": "^1.3",
+        "ricardosierra/translation": "dev-master",
+        "ricardosierra/validate": "^0.2",
+        "sierratecnologia/cms": "~2.1",
     },
     "require-dev": {
         "mockery/mockery": ">=0.9.4",
@@ -39,9 +44,12 @@
             "SiSeed\\": "src/seed/"
         },
         "files": [
-            "funcs/functions.php",
-            "funcs/helpers.php",
-            "funcs/types.php"
+            "helpers/functions.php",
+            "helpers/helpers.php",
+            "helpers/types.php",
+            "helpers/general.php",
+            "helpers/blade.php",
+            "helpers/commerce_helpers.php"
         ]
     },
     "bin": ["bin/code-analyser"],

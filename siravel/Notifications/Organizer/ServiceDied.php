@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Notifications\Organizer;
+namespace App\Notifications\Organizer;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,31 +9,31 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Zenvia\ZenviaChannel;
 use NotificationChannels\Zenvia\ZenviaMessage;
-use Log;
-use Siravel\Channels\SmsChannel;
-use Siravel\Channels\Messages\SmsMessage;
+use Illuminate\Support\Facades\Log;
+use App\Channels\SmsChannel;
+use App\Channels\Messages\SmsMessage;
 
 class ServiceDied extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    protected $_business = null;
+    protected $_organizer = null;
 
     /**
      * Create a new notification instance.
      *
-     * @param  $businessToken
+     * @param $organizerToken
      * @return void
      */
-    public function __construct($business)
+    public function __construct($organizer)
     {
-        $this->_business = $business;
+        $this->_organizer = $organizer;
     }
 
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -44,16 +44,16 @@ class ServiceDied extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toSms($notifiable)
     {
-        $number = \App\Sitec\Filter::phone($notifiable->telefone_celular);
+        $number = \App\Tools\Filter::phone($notifiable->telefone_celular);
 
         $nomeProdutora = '';
-        if (!empty($this->_business) && isset($this->_business->nome)) {
-            $nomeProdutora = $this->_business->nome;
+        if (!empty($this->_organizer) && isset($this->_organizer->nome)){
+            $nomeProdutora = $this->_organizer->nome;
         }
 
         $message = $notifiable->token_sms ." Token SMS ". $nomeProdutora .". Insira o token para validar sua conta.";
@@ -72,7 +72,7 @@ class ServiceDied extends Notification implements ShouldQueue
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function toArray($notifiable)

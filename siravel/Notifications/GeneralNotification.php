@@ -5,14 +5,14 @@ namespace App\Notifications;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ResetPassword extends Notification
+class GeneralNotification extends Notification
 {
     /**
-     * The password reset token.
+     * General notification info
      *
      * @var string
      */
-    public $token;
+    public $info;
 
     /**
      * Create a notification instance.
@@ -20,9 +20,9 @@ class ResetPassword extends Notification
      * @param  string  $token
      * @return void
      */
-    public function __construct($token)
+    public function __construct($info)
     {
-        $this->token = $token;
+        $this->info = $info;
     }
 
     /**
@@ -47,8 +47,10 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url('password/reset', $this->token))
-            ->line('If you did not request a password reset, no further action is required.');
+            ->line('Hey '.$notifiable->name)
+            ->line('We have a notfiication for you.')
+            ->line($this->info['title'])
+            ->line($this->info['details'])
+            ->action('Visit here for more info', url('/user/notifications'));
     }
 }
