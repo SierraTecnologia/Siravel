@@ -9,11 +9,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
 use Support\Traits\Providers\ConsoleTools;
 use Siravel\Services\System\BusinessService;
-use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 
 class SiravelProvider extends ServiceProvider
