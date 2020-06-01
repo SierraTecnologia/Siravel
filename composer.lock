@@ -15125,7 +15125,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "738cc1e440900a41ade5772401c2e8a8536c202c"
+                "reference": "8326a42e086a3cb9e11986a11f6d0d059bdbda3a"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -15230,7 +15230,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "90b747b6f0ac41d9c43f7b66a35f122023c3d95c"
+                "reference": "881022f9d0c5419d77d61e759f1861f4f8fe9fed"
             },
             "require": {
                 "overtrue/laravel-follow": "^1.1",
@@ -15554,7 +15554,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "cc6cc8cb0eef0858d4402fcd3f3e327706fd7cb1"
+                "reference": "5a809128a4bd3409fd44ae97397927158d7e27af"
             },
             "require": {
                 "arrilot/laravel-widgets": "^3.7",
@@ -15709,7 +15709,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "0febd8d39190954e10de68baee0c3a9385fde2ec"
+                "reference": "53e1e35ba081a4b05b976bf997149e25aeaa17f6"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -15935,7 +15935,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "6bd39ada457c9703d1aeaa778bdad50cc9bf21e5"
+                "reference": "54c0c942a4b9b3ce6c74053745ef8ec364536f77"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -16395,7 +16395,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "1db34c388572b26891dc399b84a60014073687a7"
+                "reference": "73330001a4c84e8629ef9f5087d173671bad6832"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master",
@@ -16433,7 +16433,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "d17db318e8199f64950c5c2da7ded2eff80fa6a7"
+                "reference": "cf8baec318cd4c86a7f82d272b002ba5c7fb9fb5"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
@@ -16501,7 +16501,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Trainner",
-                "reference": "d9438aa9903203df548999a7ed24ebdcca14578f"
+                "reference": "d8cdc3b6949d8e437cff52bc671d547bfab9b39b"
             },
             "require": {
                 "php": "^7.3.0",
