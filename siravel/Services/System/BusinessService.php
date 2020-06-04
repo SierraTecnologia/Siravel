@@ -60,7 +60,7 @@ class BusinessService extends Service
             return $this->getDefault();
         }
 
-        if (!$business = \Siravel\Models\Negocios\Business::where('code', $domainSlug)->first()) {
+        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $domainSlug)->first()) {
             // return $this->getDefault(); // @todo
             return false;
         }
@@ -76,7 +76,7 @@ class BusinessService extends Service
         if (!$default = CacheService::getUniversal('business-default')) {
             $default = 'HotelByNow';
         }
-        if (!$business = \Siravel\Models\Negocios\Business::where('code', $default)->first()) {
+        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $default)->first()) {
             return false;
         }
         return $business;

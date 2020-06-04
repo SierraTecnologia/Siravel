@@ -94,19 +94,6 @@ class CreateBossBusinessOrganizationsTables extends Migration
          */
 
         
-		Schema::create(config('app.db-prefix', '').'settings', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-            $table->string('code'); //->unique();
-            // $table->primary('code');
-			$table->string('value')->default(false);
-			$table->string('business_code');
-            $table->foreign('business_code')->references('code')->on('businesses');
-			$table->timestamps();
-			$table->softDeletes();
-			
-			$table->primary(['code', 'business_code']);
-        });
-        
 		Schema::create(config('app.db-prefix', '').'features', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->string('code')->unique();
@@ -175,35 +162,6 @@ class CreateBossBusinessOrganizationsTables extends Migration
         
 
 
-        /**
-         * Gambles
-         */
-		Schema::create(config('app.db-prefix', '').'gambles', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->increments('id')->unsigned();
-            
-			$table->integer('min_participantes')->nullable();
-			$table->boolean('max_participantes')->nullable();
-			$table->string('premio', '');
-            
-			$table->unsignedInteger('user_id')->nullable();
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-			$table->timestamps();
-            $table->softDeletes();
-		});
-		Schema::create(config('app.db-prefix', '').'gamble_actions', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->increments('id')->unsigned();
-            $table->unsignedInteger('cupons');
-            
-
-			$table->unsignedInteger('gamble_id')->nullable();
-			$table->foreign('gamble_id')->references('id')->on('gambles')->onDelete('set null');
-			$table->unsignedInteger('user_id')->nullable();
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
-			$table->timestamps();
-            $table->softDeletes();
-		});
     }
 
     /**

@@ -3,12 +3,12 @@
 namespace Siravel\Models\Blog;
 
 use Siravel\Models\CmsModel;
-use Siravel\Services\Normalizer;
-use Siravel\Models\Traits\Translatable;
+use Facilitador\Services\Normalizer;
+use Facilitador\Traits\Translatable;
 use Informate\Models\System\Archive;
-use Siravel\Models\Traits\ArchiveTrait;
+use Informate\Traits\ArchiveTrait;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Siravel\Contracts\Business\BusinessTrait;
 
 class Blog extends CmsModel
 {

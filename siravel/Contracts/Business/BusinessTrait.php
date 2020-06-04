@@ -1,11 +1,12 @@
 <?php
 
-namespace Siravel\Models\Traits;
+namespace Siravel\Contracts\Business;
 
 use Illuminate\Support\Facades\Log;
 use Siravel\Models\Model;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
+use Informate\Traits\EloquentGetTableNameTrait;
 
 trait BusinessTrait
 {

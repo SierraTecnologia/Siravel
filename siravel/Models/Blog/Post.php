@@ -9,7 +9,7 @@ use Siravel\Models\Entities\PostEntity;
 use Siravel\Models\CmsModel as BaseModel;
 use Illuminate\Support\Collection;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Siravel\Contracts\Business\BusinessTrait;
 
 /**
  * Class Post.

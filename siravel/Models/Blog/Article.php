@@ -14,7 +14,7 @@ use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Overtrue\LaravelFollow\Traits\CanBeVoted;
 use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Siravel\Contracts\Business\BusinessTrait;
 
 class Article extends BaseModel {
 
