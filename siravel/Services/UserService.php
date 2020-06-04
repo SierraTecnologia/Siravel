@@ -7,7 +7,7 @@ use Auth;
 use Session;
 use Exception;
 use Siravel\Models\User;
-use Siravel\Models\UserMeta;
+use Facilitador\Models\UserMeta;
 use Siravel\Models\Role;
 use Siravel\Events\UserRegisteredEmail;
 use Siravel\Notifications\ActivateUserEmail;

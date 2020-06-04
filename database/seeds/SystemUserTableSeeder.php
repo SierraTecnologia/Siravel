@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Services\UserService;
+use Siravel\Services\UserService;
 use App\Models\User;
 use App\Models\Role;
 

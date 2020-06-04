@@ -30,7 +30,7 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 |--------------------------------------------------------------------------
 */
 
-$factory->define(App\Models\UserMeta::class, function (Faker\Generator $faker) {
+$factory->define(Facilitador\Models\UserMeta::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'phone' => $faker->phoneNumber,

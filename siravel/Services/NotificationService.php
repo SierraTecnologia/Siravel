@@ -2,7 +2,7 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\Notification;
+use Facilitador\Models\Notification;
 use AppNotifications\GeneralNotification;
 use Siravel\Services\UserService;
 use Crypto;

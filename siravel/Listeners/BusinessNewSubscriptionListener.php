@@ -3,7 +3,7 @@
 namespace Siravel\Listeners;
 
 use Siravel\Events\BusinessNewSubscription;
-use Siravel\Models\Notification;
+use Facilitador\Models\Notification;
 use Siravel\Services\System\BusinessService;
 
 class BusinessNewSubscriptionListener

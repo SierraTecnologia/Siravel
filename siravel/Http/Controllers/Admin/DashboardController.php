@@ -10,7 +10,7 @@ use Siravel\Models\Blog\Blog;
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Negocios\Subscription;
 use Siravel\Models\Negocios\Page;
-use Siravel\Models\UserMeta;
+use Facilitador\Models\UserMeta;
 
 class DashboardController extends Controller
 {

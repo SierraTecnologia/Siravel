@@ -6,7 +6,7 @@
  * --------------------------------------------------------------------------
 */
 
-$factory->define(App\Models\Notification::class, function (Faker\Generator $faker) {
+$factory->define(Facilitador\Models\Notification::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'flag' => 'info',

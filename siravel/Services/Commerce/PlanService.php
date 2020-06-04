@@ -2,7 +2,7 @@
 
 namespace Siravel\Services;
 
-use Siravel\Models\UserMeta;
+use Facilitador\Models\UserMeta;
 use Siravel\Services\UserService;
 use Exception;
 use Illuminate\Support\Facades\Schema;

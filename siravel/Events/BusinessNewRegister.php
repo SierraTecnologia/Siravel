@@ -2,7 +2,7 @@
 
 namespace Siravel\Events;
 
-use Siravel\Models\UserMeta;
+use Facilitador\Models\UserMeta;
 use Illuminate\Queue\SerializesModels;
 
 class BusinessNewRegister
@@ -14,7 +14,7 @@ class BusinessNewRegister
     /**
      * Create a new event instance.
      *
-     * @param  \Siravel\Models\UserMeta  $subscription
+     * @param  \Facilitador\Models\UserMeta  $subscription
      * @return void
      */
     public function __construct(UserMeta $subscription)
