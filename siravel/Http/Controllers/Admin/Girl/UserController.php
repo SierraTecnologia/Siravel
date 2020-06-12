@@ -46,7 +46,7 @@ class UserController extends GirlController
 
         $user = new User ($request->except('password','password_confirmation'));
         $user->password = bcrypt($request->password);
-        $user->confirmation_code = str_random(32);
+        $user->confirmation_code = \Illuminate\Support\Str::random(32);
         $user->save();
     }
 

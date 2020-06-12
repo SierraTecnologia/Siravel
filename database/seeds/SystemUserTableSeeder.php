@@ -17,7 +17,7 @@ class SystemUserTableSeeder extends Seeder {
             'username'    => 'sierratecnologia',
             'email'         => 'simaster@sierratecnologia.com.br',
             'password'      => Hash::make('123456'),
-            'token'         => str_random(64),
+            'token'         => \Illuminate\Support\Str::random(64),
             'activated'     => true
         ));
         $user->assignRole($adminRole);
@@ -28,7 +28,7 @@ class SystemUserTableSeeder extends Seeder {
             'username'    => 'ricardosierra',
             'email'         => 'clientes@sierratecnologia.com.br',
             'password'      => Hash::make('123456'),
-            'token'         => str_random(64),
+            'token'         => \Illuminate\Support\Str::random(64),
             'activated'     => true
         ));
         $user->assignRole($userRole);

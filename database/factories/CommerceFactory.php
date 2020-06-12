@@ -162,7 +162,7 @@ $factory->define(\App\Models\Commerce\Coupon::class, function (Faker\Generator $
 $factory->define(\App\Models\Commerce\Plan::class, function (Faker\Generator $faker) {
     return [
         'name' => 'cheap hosting',
-        'uuid' => str_random(20),
+        'uuid' => \Illuminate\Support\Str::random(20),
         'amount' => 9999,
         'interval' => 'monthly',
         'currency' => 'usd',

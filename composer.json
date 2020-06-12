@@ -3,27 +3,13 @@
     "description": "Recursos para Desenvolvimento Complexo",
     "license": "MIT",
     "require": {
-        "php": "^7.3.0",
-        "pdepend/pdepend": "*",
-        "bitwasp/bitcoin": "*",
+        "php": ">=7.2",
         "sierratecnologia/casa": "dev-master",
         "sierratecnologia/trainner": "dev-master",
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
-        "sierratecnologia/cms": "~2.1"
-    },
-    "require-dev": {
-        "mockery/mockery": ">=0.9.4",
-        "orchestra/testbench": ">=3.6",
-        "mikey179/vfsstream": ">=1.6",
-        "orchestra/database": ">=3.6",
-        "phpunit/phpunit": ">=7.0",
-        "orchestra/testbench-browser-kit": ">=3.6"
-    },
-    "suggest": {
-        "sierratecnologia/payment-laravel": "Pagamento",
-        "php-censor/php-censor": "Php Censor"
+        "sierratecnologia/cms": "dev-master"
     },
     "autoload": {
         "psr-4": {

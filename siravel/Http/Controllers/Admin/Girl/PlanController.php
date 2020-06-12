@@ -46,7 +46,7 @@ class PlanController extends GirlController
 
         $plan = new Plan ($request->except('password','password_confirmation'));
         $plan->password = bcrypt($request->password);
-        $plan->confirmation_code = str_random(32);
+        $plan->confirmation_code = \Illuminate\Support\Str::random(32);
         $plan->save();
     }
 

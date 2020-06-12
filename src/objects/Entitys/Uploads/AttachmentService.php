@@ -201,9 +201,9 @@ class AttachmentService extends UploadService
         $storage = $this->getStorage();
         $basePath = 'uploads/files/' . Date('Y-m-M') . '/';
 
-        $uploadFileName = str_random(16) . '.' . $uploadedFile->getClientOriginalExtension();
+        $uploadFileName = \Illuminate\Support\Str::random(16) . '.' . $uploadedFile->getClientOriginalExtension();
         while ($storage->exists($basePath . $uploadFileName)) {
-            $uploadFileName = str_random(3) . $uploadFileName;
+            $uploadFileName = \Illuminate\Support\Str::random(3) . $uploadFileName;
         }
 
         $attachmentPath = $basePath . $uploadFileName;

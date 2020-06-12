@@ -133,12 +133,12 @@ class ImageService extends UploadService
         $imagePath = '/uploads/images/' . $type . '/' . Date('Y-m-M') . '/';
 
         while ($storage->exists($imagePath . $imageName)) {
-            $imageName = str_random(3) . $imageName;
+            $imageName = \Illuminate\Support\Str::random(3) . $imageName;
         }
 
         $fullPath = $imagePath . $imageName;
         if ($secureUploads) {
-            $fullPath = $imagePath . str_random(16) . '-' . $imageName;
+            $fullPath = $imagePath . \Illuminate\Support\Str::random(16) . '-' . $imageName;
         }
 
         try {

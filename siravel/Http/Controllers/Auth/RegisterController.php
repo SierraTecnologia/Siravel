@@ -103,8 +103,8 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'token' => str_random(64),
-            'confirmation_token' => str_limit(md5($data['email'] . str_random()), 25, ''),
+            'token' => \Illuminate\Support\Str::random(64),
+            'confirmation_token' => str_limit(md5($data['email'] . \Illuminate\Support\Str::random()), 25, ''),
             'activated' => !config('settings.activation')
         ]);
 

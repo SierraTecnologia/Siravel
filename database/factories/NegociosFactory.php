@@ -9,7 +9,7 @@
 $factory->define(\App\Models\Negocios\Subscription::class, function (Generator $faker) {
     return [
         'email' => $faker->safeEmail,
-        'token' => str_random(64),
+        'token' => \Illuminate\Support\Str::random(64),
     ];
 });
 

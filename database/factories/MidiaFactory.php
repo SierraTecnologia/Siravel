@@ -56,7 +56,7 @@ $factory->define(\Siravel\Models\Digital\Midia\Image::class, function (Faker\Gen
 $factory->define(\Siravel\Models\Digital\Midia\Photo::class, function (Faker\Generator $faker) {
     return [
         'created_by_user_id' => (new \App\Models\User)->newQuery()->inRandomOrder()->firstOrFail()->id,
-        'path' => sprintf('/%s/%s.%s', str_random(12), str_random(5), str_random(3)),
+        'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
         'avg_color' => $faker->hexColor,
         'metadata' => [],
     ];
@@ -64,7 +64,7 @@ $factory->define(\Siravel\Models\Digital\Midia\Photo::class, function (Faker\Gen
 
 $factory->define(\Siravel\Models\Digital\Midia\Thumbnail::class, function (Faker\Generator $faker) {
     return [
-        'path' => sprintf('/%s/%s.%s', str_random(12), str_random(5), str_random(3)),
+        'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
         'width' => $faker->randomNumber(4),
         'height' => $faker->randomNumber(3),
     ];
