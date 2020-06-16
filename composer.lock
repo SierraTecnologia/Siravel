@@ -14043,7 +14043,7 @@
             "dist": {
                 "type": "path",
                 "url": "../entrust",
-                "reference": "a2177acd806f03449b9ea8f81358c4b9bb96443c"
+                "reference": "65b100f5f46572b6a82feb60fa77d3cb81b67bc7"
             },
             "require": {
                 "illuminate/cache": "~5.0|^6.0|^7.0|^8.0",
@@ -14315,7 +14315,7 @@
             "dist": {
                 "type": "path",
                 "url": "../minify",
-                "reference": "b3810ba078c3672b32b362ff8391b2e505c0e775"
+                "reference": "35c47e5db54a6c5a98f68ae5598c974250760c6c"
             },
             "require": {
                 "illuminate/filesystem": "~5.0|^6|^7",
@@ -15803,7 +15803,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "983d4fa76ef33da09da88c10b6d037f200deb297"
+                "reference": "9e76234b9395fe19baf8a4ebbe5b59d3fcd4cfbe"
             },
             "require": {
                 "kassner/log-parser": "^2.0",
@@ -15908,7 +15908,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "24ec7e2d1498d7c8fbb414da33de79758abdb5c2"
+                "reference": "df0042f5ab790084d5ab81ff4f9aa7c5a4d5a0bb"
             },
             "require": {
                 "overtrue/laravel-follow": ">=1.1",
@@ -16119,7 +16119,7 @@
             "dist": {
                 "type": "path",
                 "url": "../CrudMaker",
-                "reference": "886afc7a27d2301af90bf2484aff0c759f6999d0"
+                "reference": "bc1623f61c9264084018620c959dffe2ead966e3"
             },
             "require": {
                 "doctrine/dbal": "^2.5",
@@ -16179,7 +16179,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Crypto",
-                "reference": "56bec353d40fded9d65d3491d0bbf956ca8e6cd4"
+                "reference": "42ae36a8de33d104c6b6e82e5fab79bfd6882944"
             },
             "require": {
                 "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
@@ -16238,7 +16238,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Facilitador",
-                "reference": "04d7fba43f6d586673e841c594ec9fc91aaab636"
+                "reference": "6ad02a362158299f0678c6481cbd99b2b11c8079"
             },
             "require": {
                 "arrilot/laravel-widgets": "^3.0",
@@ -16385,7 +16385,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Finder",
-                "reference": "1d7299a322938b216b4c1740fc673b7a70945008"
+                "reference": "f098c2cb853bbdbebbc95245f874101f791ba51d"
             },
             "require": {
                 "aws/aws-sdk-php": "*",
@@ -16401,6 +16401,7 @@
                 "intervention/image": ">=2.4",
                 "intervention/imagecache": ">=2.3",
                 "jaeger/querylist": ">=4.1",
+                "laravel/framework": "^6.0|^7.0|^8.0",
                 "league/climate": ">=3.4",
                 "league/csv": "^9.0|^8.0|^7.1",
                 "league/flysystem": "*",
@@ -16490,7 +16491,7 @@
             "dist": {
                 "type": "path",
                 "url": "../former",
-                "reference": "192a8cc1a20c80959b8486743ba5922ff004eb12"
+                "reference": "7d19ac79a0597b9645f7e30c3e1c69f3397b6035"
             },
             "require": {
                 "anahkiasen/html-object": ">=1.4",
@@ -16632,7 +16633,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Gamer",
-                "reference": "3defb3e6cfdcae6b76c39e625181add0fcdc1ab2"
+                "reference": "3f7556675b402a89009314de007d55c8194b4c90"
             },
             "require": {
                 "sierratecnologia/audit": "dev-master",
@@ -16722,7 +16723,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "6931bc0279c41cdaf235530a4e7057574f6d9c39"
+                "reference": "f68301124b2854072b7a0f0101352242e40ad10d"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -16768,7 +16769,7 @@
             "dist": {
                 "type": "path",
                 "url": "../LaravelSupport",
-                "reference": "41f95b23d8abb51191cb66227b21dbb1550db224"
+                "reference": "12c60b04ff8ae2dc2c91ebae4f4e4c864834204c"
             },
             "require": {
                 "anahkiasen/html-object": ">=1.4",
@@ -16894,7 +16895,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-                "reference": "0ad7e28109cc7b339df92a87237b69987166ed69"
+                "reference": "4bd139979daa664ffe8f30538f23633c2a243edb"
             },
             "require": {
                 "doctrine/dbal": "^2.0",
@@ -16946,7 +16947,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Muleta",
-                "reference": "ac8106f6c7ba8169adc5bf926238645bbb54a150"
+                "reference": "d19ff2c6e51930d84e065356e08ab68d5d80696f"
             },
             "require": {
                 "php": ">=7.0",
@@ -17150,7 +17151,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "cd88a32e9228b7817ca4a26b236a67720eb6ca28"
+                "reference": "a296febb86d6fcaa99b13dd1fda1c0872a3d8984"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master",
