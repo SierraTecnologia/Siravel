@@ -4,6 +4,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.2",
+        "laravel/framework": "^6.0|^7.0|^8.0",
         "sierratecnologia/casa": "dev-master",
         "sierratecnologia/trainner": "dev-master",
         "sierratecnologia/finder": "dev-master",
