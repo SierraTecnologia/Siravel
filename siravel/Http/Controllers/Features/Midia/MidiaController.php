@@ -2,13 +2,12 @@
 
 namespace Siravel\Http\Controllers\Features\Midia;
 
-use Finder\Models\Digital\Midia\Photo;
-use Finder\Models\Digital\Midia\PhotoAlbum;
-use Finder\Services\Midia\MidiaService;
-use Siravel\Http\Controllers\Controller;
+use Siravel\Models\Digital\Midia\Photo;
+use Siravel\Models\Digital\Midia\PhotoAlbum;
+use App\Services\Midia\MidiaService;
+use Siravel\Http\Controllers\Features\Controller;
 
-class MidiaController extends Controller
-{
+class MidiaController extends Controller {
 
 
     public function __construct(MidiaService $service)
@@ -58,11 +57,11 @@ class MidiaController extends Controller
 
 
     // public function show($id)
-    // {
+	// {
     //     $photo_album = PhotoAlbum::find($id);
     //     $photos = Photo::where('photo_album_id', $id)->get();
 
     //     return view('features.photo.view_album',compact('photos','photo_album'));
-    // }
+	// }
 
 }

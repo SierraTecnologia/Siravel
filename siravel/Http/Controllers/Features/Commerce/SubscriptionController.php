@@ -2,10 +2,10 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Features\Controller;
 use Illuminate\Http\Request;
-use Siravel\Services\Commerce\LogisticService;
-use Siravel\Services\Commerce\PlanService;
+use App\Services\Commerce\LogisticService;
+use App\Services\Commerce\PlanService;
 use SierraTecnologia\Crypto\Services\Crypto;
 
 class SubscriptionController extends Controller
@@ -14,7 +14,7 @@ class SubscriptionController extends Controller
 
     public function __construct(PlanService $service)
     {
-        if (!\Illuminate\Support\Facades\Config::get('commerce.subscriptions')) {
+        if (!config('commerce.subscriptions')) {
             return back()->send();
         }
         $this->service = $service;
@@ -23,7 +23,7 @@ class SubscriptionController extends Controller
     /**
      * Subscribe to a plan
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Illuminate\Http\Response
      */
@@ -48,7 +48,7 @@ class SubscriptionController extends Controller
      */
     public function allSubscriptions()
     {
-        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination'));
+        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
 
         return view('features.commerce.subscriptions.all')->with('subscriptions', $subscriptions);
     }
@@ -56,7 +56,7 @@ class SubscriptionController extends Controller
     /**
      * Get a subscription by name
      *
-     * @param string $name
+     * @param  string $name
      *
      * @return Illuminate\Http\Response
      */
@@ -70,8 +70,8 @@ class SubscriptionController extends Controller
     /**
      * Cancel a subscription
      *
-     * @param Request $request
-     * @param string  $name
+     * @param  Request $request
+     * @param  string $name
      *
      * @return Illuminate\Http\Response
      */

@@ -108,7 +108,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
 			$table->string('featureable_id');
 			$table->string('featureable_type', 255);
 			$table->string('feature_code');
-            $table->foreign('feature_code')->references('code')->on('features');
+            $table->foreign('feature_code')->references('code')->on(config('app.db-prefix', '').'features');
 			$table->timestamps();
             $table->softDeletes();
 		});
@@ -156,7 +156,7 @@ class CreateBossBusinessOrganizationsTables extends Migration
             $table->string('title');
             $table->string('image');
             $table->unsignedInteger('card_id');
-            $table->foreign('card_id')->references('id')->on('cards');
+            $table->foreign('card_id')->references('id')->on(config('app.db-prefix', '').'cards');
             $table->timestamps();
         });
         

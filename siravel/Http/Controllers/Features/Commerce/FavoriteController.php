@@ -3,9 +3,9 @@
 namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Illuminate\Http\Request;
-use Siravel\Http\Controllers\Controller;
-use Siravel\Services\Commerce\FavoriteService;
-use Siravel\Services\CmsResponseService;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Services\Commerce\FavoriteService;
+use App\Services\CmsResponseService;
 
 class FavoriteController extends Controller
 {
@@ -54,7 +54,7 @@ class FavoriteController extends Controller
     /**
      * Remove a product from customer favories
      *
-     * @param Request $request
+     * @param  Request $request
      *
      * @return Illuminate\Http\Response
      */

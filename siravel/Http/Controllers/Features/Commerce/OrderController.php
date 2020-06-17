@@ -2,9 +2,9 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
-use Siravel\Repositories\Commerce\OrderRepository;
-use Siravel\Services\Commerce\OrderService;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Repositories\Commerce\OrderRepository;
+use App\Services\Commerce\OrderService;
 
 class OrderController extends Controller
 {
@@ -20,7 +20,7 @@ class OrderController extends Controller
      */
     public function allOrders()
     {
-        $orders = $this->orders->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination'));
+        $orders = $this->orders->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
 
         return view('features.commerce.orders.all')->with('orders', $orders);
     }
@@ -28,7 +28,7 @@ class OrderController extends Controller
     /**
      * Get a customer order
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Illuminate\Http\Response
      */
@@ -42,7 +42,7 @@ class OrderController extends Controller
     /**
      * Cancel a customer order
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Illuminate\Http\Response
      */

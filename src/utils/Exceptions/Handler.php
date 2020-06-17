@@ -2,76 +2,27 @@
 
 namespace SiUtils\Exceptions;
 
+use Throwable;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+use Illuminate\Auth\AuthenticationException;
+use Sentry\State\Scope;
+use function Sentry\captureException;
+use function Sentry\configureScope;
+use Illuminate\Support\Facades\Log;
+
 class Handler extends ExceptionHandler
 {
-    /**
-     * A list of the exception types that should not be reported to log.
-     *
-     * @var array
-     */
-    protected $dontReport = [
-    HttpException::class,
-        ModelNotFoundException::class,
-        ValidationException::class,
-    ];
-
-    protected $httpCodes = [
-    0   => 'Unknown error',
-    // [Informational 1xx]
-    100 => 'Continue',
-    101 => 'Switching Protocols',
-    // [Successful 2xx]
-    200 => 'OK',
-    201 => 'Created',
-    202 => 'Accepted',
-    203 => 'Non-Authoritative Information',
-    204 => 'No Content',
-    205 => 'Reset Content',
-    206 => 'Partial Content',
-    // [Redirection 3xx]
-    300 => 'Multiple Choices',
-    301 => 'Moved Permanently',
-    302 => 'Found',
-    303 => 'See Other',
-    304 => 'Not Modified',
-    305 => 'Use Proxy',
-    306 => '(Unused)',
-    307 => 'Temporary Redirect',
-    // [Client Error 4xx]
-    400 => 'Bad Request',
-    401 => 'Unauthorized',
-    402 => 'Payment Required',
-    403 => 'Forbidden',
-    404 => 'Not Found',
-    405 => 'Method Not Allowed',
-    406 => 'Not Acceptable',
-    407 => 'Proxy Authentication Required',
-    408 => 'Request Timeout',
-    409 => 'Conflict',
-    410 => 'Gone',
-    411 => 'Length Required',
-    412 => 'Precondition Failed',
-    413 => 'Request Entity Too Large',
-    414 => 'Request-URI Too Long',
-    415 => 'Unsupported Media Type',
-    416 => 'Requested Range Not Satisfiable',
-    417 => 'Expectation Failed',
-    // [Server Error 5xx]
-    500 => 'Internal Server Error',
-    501 => 'Not Implemented',
-    502 => 'Bad Gateway',
-    503 => 'Service Unavailable',
-    504 => 'Gateway Timeout',
-    505 => 'HTTP Version Not Supported'
-    ];
+    protected $sendToSlack = false;
 
     public static $DEFAULT_MESSAGE = 'Algo que não esta certo deu errado! Por favor, entre em contato conosco.';
+    public static $IGNORE_MESSAGES = [
+        'Array to string conversion'
+    ];
 
     /**
      * A list of the inputs that are never flashed for validation exceptions.
@@ -84,29 +35,104 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Colocado para mostrar a mensagem de exception normalmente.
-     * Caso discordemos de alguma por favor alterar
+     * A list of the exception types that should not be reported to log.
+     *
+     * @var array
      */
-    private function getErrorMessage($exception)
-    {
-        Log::info('Enviando para o cliente a mensagem: '.$exception->getMessage());
-        // if (\Illuminate\Support\Facades\Config::get('app.env')=='production'){
-        //     return self::$DEFAULT_MESSAGE;
-        // }
-        return $exception->getMessage();
-    }
+    protected $dontReport = [
+        /**
+         * From Laravel
+         */
+        \Illuminate\Auth\AuthenticationException::class,
+        \Illuminate\Auth\Access\AuthorizationException::class,
+        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
+        \Illuminate\Session\TokenMismatchException::class,
+        \Illuminate\Validation\ValidationException::class,
+        \Tymon\JWTAuth\Exceptions\TokenExpiredException::class,
+        JWTException::class,
+
+        /**
+         * Eu add
+         */
+        HttpException::class,
+        ModelNotFoundException::class,
+        ValidationException::class,
+    ];
+
+    protected $httpCodes = [
+        0   => 'Unknown error',
+        // [Informational 1xx]
+        100 => 'Continue',
+        101 => 'Switching Protocols',
+        // [Successful 2xx]
+        200 => 'OK',
+        201 => 'Created',
+        202 => 'Accepted',
+        203 => 'Non-Authoritative Information',
+        204 => 'No Content',
+        205 => 'Reset Content',
+        206 => 'Partial Content',
+        // [Redirection 3xx]
+        300 => 'Multiple Choices',
+        301 => 'Moved Permanently',
+        302 => 'Found',
+        303 => 'See Other',
+        304 => 'Not Modified',
+        305 => 'Use Proxy',
+        306 => '(Unused)',
+        307 => 'Temporary Redirect',
+        // [Client Error 4xx]
+        400 => 'Bad Request',
+        401 => 'Unauthorized',
+        402 => 'Payment Required',
+        403 => 'Forbidden',
+        404 => 'Not Found',
+        405 => 'Method Not Allowed',
+        406 => 'Not Acceptable',
+        407 => 'Proxy Authentication Required',
+        408 => 'Request Timeout',
+        409 => 'Conflict',
+        410 => 'Gone',
+        411 => 'Length Required',
+        412 => 'Precondition Failed',
+        413 => 'Request Entity Too Large',
+        414 => 'Request-URI Too Long',
+        415 => 'Unsupported Media Type',
+        416 => 'Requested Range Not Satisfiable',
+        417 => 'Expectation Failed',
+        // [Server Error 5xx]
+        500 => 'Internal Server Error',
+        501 => 'Not Implemented',
+        502 => 'Bad Gateway',
+        503 => 'Service Unavailable',
+        504 => 'Gateway Timeout',
+        505 => 'HTTP Version Not Supported'
+    ];
 
     /**
      * Report or log an exception.
      *
-     * @param  \Exception $exception
+     * @param  \Throwable  $exception
      * @return void
+     *
+     * @throws \Exception
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         if (\Illuminate\Support\Facades\Config::get('app.env')=='production' && app()->bound('sentry') && $this->shouldReport($exception)) {
             // Slack Report
             Log::channel('slack')->error('[PaymentService Fatal Error] Fatal erro: '.$exception->getMessage());
+
+            // Slack Report
+            if ($user = auth()->user()) {
+                Log::channel('slack')->error(
+                    '[Passepague Api] Usuário: '.$user->cpf.'('.$user->email.')'.
+                    ' Fatal erro: '.$exception->getMessage()
+                );
+            } else {
+                Log::channel('slack')->error('[Passepague Api] Fatal erro: '.$exception->getMessage());
+            }
 
             // Sentry Report
             // \Sentry\configureScope(function (Scope $scope): void {
@@ -127,11 +153,13 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Exception               $exception
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $exception
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @throws \Throwable
      */
-    public function render($request, Exception $exception)
+    public function render($request, Throwable $exception)
     {
         // Handle notify exceptions which will redirect to the
         // specified location then show a notification message.
@@ -278,22 +306,6 @@ class Handler extends ExceptionHandler
         return $message;
     }
 
-    /**
-     * Convert an authentication exception into an unauthenticated response.
-     *
-     * @param  \Illuminate\Http\Request                 $request
-     * @param  \Illuminate\Auth\AuthenticationException $exception
-     * @return \Illuminate\Http\Response
-     */
-    protected function unauthenticated($request, \Illuminate\Auth\AuthenticationException $exception)
-    {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
-
-        return redirect()->guest('login');
-    }
-
 
     /**
      * Convert a validation exception into a JSON response.
@@ -320,5 +332,49 @@ class Handler extends ExceptionHandler
         $whoops->pushHandler($handler);
 
         return response($whoops->handleException($e), $e->getStatusCode(), $e->getHeaders());
+    }
+
+    /**
+     * Convert an authentication exception into an unauthenticated response.
+     *
+     * @param  \Illuminate\Http\Request                 $request
+     * @param  \Illuminate\Auth\AuthenticationException $exception
+     * @return \Illuminate\Http\Response
+     */
+    protected function unauthenticated($request, \Illuminate\Auth\AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
+
+        return redirect()->guest('login');
+    }
+
+    /**
+     * Colocado para mostrar a mensagem de exception normalmente.
+     * Caso discordemos de alguma por favor alterar
+     */
+    private function getErrorMessage($exception)
+    {
+        if (
+            config('app.env')=='production' &&
+            in_array($exception->getMessage(), self::$IGNORE_MESSAGES)
+        ){
+            if (!$this->sendToSlack) {
+                Log::channel('slack')->info(
+                    'Enviando para o cliente mensagem de erro padrão. Por causa de: '.
+                    $exception->getMessage()
+                );
+                $this->sendToSlack = true;
+            }
+            return self::$DEFAULT_MESSAGE;
+        }
+        if (!$this->sendToSlack) {
+            Log::channel('slack')->info(
+                'Enviando para o cliente a mensagem: '.$exception->getMessage()
+            );
+            $this->sendToSlack = true;
+        }
+        return $exception->getMessage();
     }
 }

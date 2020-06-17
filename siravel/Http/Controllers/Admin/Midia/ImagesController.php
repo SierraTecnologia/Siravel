@@ -8,7 +8,7 @@ use FileService;
 use Illuminate\Http\Request;
 use Cms;
 use Storage;
-use Siravel\Models\Digital\Midia\Image;
+use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
 use Siravel\Services\CmsResponseService;

@@ -2,9 +2,9 @@
 
 namespace Siravel\Http\Controllers\Features\Calendar;
 
-use Siravel\Http\Controllers\Controller;
-use Siravel\Services\EventService;
-use Siravel\Repositories\EventRepository;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Services\EventService;
+use App\Repositories\EventRepository;
 use Siravel\Http\Controllers\Features\Controller as BaseController;
 
 class EventsController extends BaseController
@@ -16,7 +16,7 @@ class EventsController extends BaseController
         $this->eventsRepository = $eventsRepo;
         $this->eventService = $eventService;
 
-        if (!in_array('events', \Illuminate\Support\Facades\Config::get('cms.active-core-features'))) {
+        if (!in_array('events', config('cms.active-core-features'))) {
             return redirect('/')->send();
         }
     }

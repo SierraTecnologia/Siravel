@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Cms;
 use Config;
 use CryptoService;
-use Siravel\Models\Digital\Midia\Image;
+use Facilitador\Models\Image;
 use Siravel\Models\Tag;
 use Siravel\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;

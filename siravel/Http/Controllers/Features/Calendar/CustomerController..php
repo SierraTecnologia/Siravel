@@ -2,14 +2,13 @@
 
 namespace Siravel\Http\Controllers\Features\Calendar;
 
-use Siravel\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Features\Controller;
 use Illuminate\Support\Facades\Input;
-use Siravel\Http\Requests\Admin\ArticleRequest;
+use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class CustomerController extends Controller
-{
+class CustomerController extends Controller {
 
     public function __construct()
     {

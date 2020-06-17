@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
-use Siravel\Services\Commerce\PlanService;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Services\Commerce\PlanService;
 
 class PlanController extends Controller
 {
@@ -11,7 +11,7 @@ class PlanController extends Controller
 
     public function __construct(PlanService $service)
     {
-        if (!\Illuminate\Support\Facades\Config::get('commerce.subscriptions')) {
+        if (!config('commerce.subscriptions')) {
             return back()->send();
         }
         $this->service = $service;

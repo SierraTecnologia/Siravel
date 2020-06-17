@@ -4,10 +4,10 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Redirect;
 use Illuminate\Http\Request;
-use Siravel\Interfaces\Helpers\StoreHelper;
-use Siravel\Http\Controllers\Controller;
-use Siravel\Services\Commerce\CartService;
-use Siravel\Services\CmsResponseService;
+use App\Interfaces\Helpers\StoreHelper;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Services\Commerce\CartService;
+use App\Services\CmsResponseService;
 
 class CartController extends Controller
 {
@@ -38,8 +38,7 @@ class CartController extends Controller
      */
     public function cart()
     {
-        return $this->responseService->apiResponse(
-            'success', [
+        return $this->responseService->apiResponse('success', [
             'count' => $this->cart->itemCount(),
             'contents' => $this->cart->contents(),
             'shipping' => StoreHelper::moneyFormat($this->cart->getCartShipping()),
@@ -47,8 +46,7 @@ class CartController extends Controller
             'tax' => StoreHelper::moneyFormat($this->cart->getCartTax()),
             'subtotal' => StoreHelper::moneyFormat($this->cart->getCartSubTotal()),
             'total' => StoreHelper::moneyFormat($this->cart->getCartTotal()),
-            ]
-        );
+        ]);
     }
 
     /**

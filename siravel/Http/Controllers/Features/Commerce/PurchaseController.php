@@ -2,9 +2,9 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
+use Siravel\Http\Controllers\Features\Controller;
 use Auth;
-use Siravel\Repositories\Commerce\TransactionRepository;
+use App\Repositories\Commerce\TransactionRepository;
 
 class PurchaseController extends Controller
 {
@@ -20,7 +20,7 @@ class PurchaseController extends Controller
      */
     public function allPurchases()
     {
-        $purchases = $this->transactions->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination'));
+        $purchases = $this->transactions->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
 
         return view('features.commerce.purchases.all')
             ->with('purchases', $purchases);

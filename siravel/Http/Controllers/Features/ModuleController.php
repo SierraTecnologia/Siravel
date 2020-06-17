@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers;
+namespace Siravel\Http\Controllers\Features;
 
 use Illuminate\Http\Request;
 
@@ -23,7 +23,7 @@ class ModuleController extends Controller
      */
     public function index($moduleName)
     {
-        $board = \Finder\Components\View\Board($this->getModule($moduleName));
+        $board = \Siravel\Logic\Features\Board($this->getModule($moduleName));
         return view('features.home', compact('board'));
     }
     
@@ -49,7 +49,7 @@ class ModuleController extends Controller
 
     public function getModule($name)
     {
-        $features = \Illuminate\Support\Facades\Config::get('cms.features');
+        $features = config('cms.features');
         return $features['travels'];
     }
 }

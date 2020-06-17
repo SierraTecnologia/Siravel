@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
-use Siravel\Repositories\Commerce\ProductRepository;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Repositories\Commerce\ProductRepository;
 
 class ProductController extends Controller
 {

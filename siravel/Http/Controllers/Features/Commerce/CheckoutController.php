@@ -4,10 +4,10 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Exception;
 use Illuminate\Http\Request;
-use Siravel\Http\Controllers\Controller;
-use Siravel\Services\Commerce\CartService;
-use Siravel\Services\Commerce\PaymentService;
-use Siravel\Services\Commerce\CustomerProfileService;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Services\Commerce\CartService;
+use App\Services\Commerce\PaymentService;
+use App\Services\Commerce\CustomerProfileService;
 
 class CheckoutController extends Controller
 {
@@ -138,13 +138,9 @@ class CheckoutController extends Controller
      */
     public function reCalculateShipping(Request $request)
     {
-        $this->customer->updateProfileAddress(
-            array_merge(
-                $request->address, [
-                'shipping' => true
-                ]
-            )
-        );
+        $this->customer->updateProfileAddress(array_merge($request->address, [
+            'shipping' => true
+        ]));
 
         return back()->with('message', 'Successfully updated');
     }

@@ -2,17 +2,16 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use Siravel\Http\Controllers\AdminController;
-use Siravel\Models\Blog\Article;
-use Siravel\Models\Blog\Category;
+use Siravel\Http\Controllers\Features\AdminController;
+use App\Models\Blog\Article;
+use App\Models\Blog\Category;
 use RicardoSierra\Translation\Models\Language;
 use Illuminate\Support\Facades\Input;
-use Siravel\Http\Requests\Admin\ArticleRequest;
+use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class ArticleController extends AdminController
-{
+class ArticleController extends AdminController {
 
     public function __construct()
     {
@@ -52,7 +51,8 @@ class ArticleController extends AdminController
         $article -> user_id = Auth::id();
 
         $picture = "";
-        if(Input::hasFile('image')) {
+        if(Input::hasFile('image'))
+        {
             $file = Input::file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
@@ -61,7 +61,8 @@ class ArticleController extends AdminController
         $article -> picture = $picture;
         $article -> save();
 
-        if(Input::hasFile('image')) {
+        if(Input::hasFile('image'))
+        {
             $destinationPath = public_path() . '/images/article/'.$article->id.'/';
             Input::file('image')->move($destinationPath, $picture);
         }
@@ -69,27 +70,28 @@ class ArticleController extends AdminController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function edit(Article $article)
     {
         $languages = Language::lists('name', 'id')->toArray();
         $articlecategories = Category::lists('title', 'id')->toArray();
-        return view('features.girl.article.create_edit', compact('article', 'languages', 'articlecategories'));
+        return view('features.girl.article.create_edit',compact('article','languages','articlecategories'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
     public function update(ArticleRequest $request, Article $article)
     {
         $article -> user_id = Auth::id();
         $picture = "";
-        if(Input::hasFile('image')) {
+        if(Input::hasFile('image'))
+        {
             $file = Input::file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
@@ -98,7 +100,8 @@ class ArticleController extends AdminController
         $article -> picture = $picture;
         $article -> update($request->except('image'));
 
-        if(Input::hasFile('image')) {
+        if(Input::hasFile('image'))
+        {
             $destinationPath = public_path() . '/images/article/'.$article->id.'/';
             Input::file('image')->move($destinationPath, $picture);
         }
@@ -107,7 +110,7 @@ class ArticleController extends AdminController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
+     * @param $id
      * @return Response
      */
 
@@ -119,7 +122,7 @@ class ArticleController extends AdminController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
+     * @param $id
      * @return Response
      */
     public function destroy(Article $article)
@@ -135,25 +138,21 @@ class ArticleController extends AdminController
      */
     public function data()
     {
-        $articles = Article::with('category', 'language')
+        $articles = Article::with('category','language')
             ->get()
-            ->map(
-                function ($article) {
-                    return [
+            ->map(function ($article) {
+                return [
                     'id' => $article->id,
                     'title' => $article->title,
                     'category' => isset($article->category)?$article->category->title:"",
                     'language' => isset($article->language)?$article->language->name:"",
                     'created_at' => $article->created_at->format('d.m.Y.'),
-                    ];
-                }
-            );
+                ];
+            });
         return Datatables::of($articles)
-            ->add_column(
-                'actions', '<a href="{{{ url(\'girl/article/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+            ->add_column('actions', '<a href="{{{ url(\'girl/article/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
                     <a href="{{{ url(\'admin/article/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                    <input type="hidden" name="row" value="{{$id}}" id="row">'
-            )
+                    <input type="hidden" name="row" value="{{$id}}" id="row">')
             ->remove_column('id')
 
             ->make();

@@ -1,17 +1,15 @@
-<?php
+<?php namespace Siravel\Http\Controllers\Features\Girl;
 
-namespace Siravel\Http\Controllers\Features\Girl;
-
-use Siravel\Http\Controllers\AdminController;
-use Finder\Models\Digital\Midia\Photo;
-use Finder\Models\Digital\Midia\PhotoAlbum;
+use Siravel\Http\Controllers\Features\AdminController;
+use Siravel\Models\Digital\Midia\Photo;
+use Siravel\Models\Digital\Midia\PhotoAlbum;
 use RicardoSierra\Translation\Models\Language;
-use Siravel\Http\Requests\Admin\PhotoRequest;
-use Siravel\Http\Requests\Admin\DeleteRequest;
-use Siravel\Http\Requests\Admin\ReorderRequest;
+use App\Http\Requests\Admin\PhotoRequest;
+use App\Http\Requests\Admin\DeleteRequest;
+use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use Siravel\Helpers\Thumbnail;
+use App\Helpers\Thumbnail;
 use Illuminate\Support\Facades\DB;
 use Datatables;
 
@@ -117,7 +115,7 @@ class PhotoController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
+     * @param $id
      * @return Response
      */
 
@@ -129,7 +127,7 @@ class PhotoController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
+     * @param $id
      * @return Response
      */
     public function destroy(Photo $photo)
@@ -145,11 +143,10 @@ class PhotoController extends GirlController
      */
     public function data()
     {
-        $photos = Photo::with('album', 'language')
+        $photos = Photo::with('album','language')
             ->get()
-            ->map(
-                function ($photo) {
-                    return [
+            ->map(function ($photo) {
+                return [
                     'id' => $photo->id,
                     'title' => $photo->title,
                     'album_cover' => $photo->album_cover,
@@ -157,15 +154,12 @@ class PhotoController extends GirlController
                     'album' => isset($photo->album) ? $photo->album->title : "",
                     'language' => isset($photo->language) ? $photo->language->name : "",
                     'created_at' => $photo->created_at->format('d.m.Y.'),
-                    ];
-                }
-            );
+                ];
+            });
         return Datatables::of($photos)
-            ->add_column(
-                'actions', '<a href="{{{ url(\'girl/photo/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
+            ->add_column('actions', '<a href="{{{ url(\'girl/photo/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                 <a href="{{{ url(\'girl/photo/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
-                <input type="hidden" name="row" value="{{$id}}" id="row">'
-            )
+                <input type="hidden" name="row" value="{{$id}}" id="row">')
             ->remove_column('id')
             ->make();
     }

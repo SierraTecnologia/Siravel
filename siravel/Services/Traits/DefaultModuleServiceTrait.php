@@ -60,7 +60,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Siravel\Models\Digital\Midia\Image')->find($id)) {
+        if ($image = app('Facilitador\Models\Image')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 
@@ -78,7 +78,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Siravel\Models\Digital\Midia\Image')->find($id)) {
+        if ($image = app('Facilitador\Models\Image')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 

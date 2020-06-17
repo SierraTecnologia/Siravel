@@ -1,16 +1,13 @@
-<?php
+<?php namespace Siravel\Http\Controllers\Features\Girl;
 
-namespace Siravel\Http\Controllers\Features\Girl;
+use Siravel\Http\Controllers\Features\GirlController;
+use App\Models\Blog\Article;
+use App\Models\Blog\Category;
+use App\Models\User;
+use Siravel\Models\Digital\Midia\Photo;
+use Siravel\Models\Digital\Midia\PhotoAlbum;
 
-use Siravel\Http\Controllers\GirlController;
-use Siravel\Models\Blog\Article;
-use Siravel\Models\Blog\Category;
-use Siravel\Models\User;
-use Finder\Models\Digital\Midia\Photo;
-use Finder\Models\Digital\Midia\PhotoAlbum;
-
-class DashboardController extends GirlController
-{
+class DashboardController extends GirlController {
 
     public function __construct()
     {
@@ -18,8 +15,8 @@ class DashboardController extends GirlController
         view()->share('type', '');
     }
 
-    public function index()
-    {
+	public function index()
+	{
         $title = "Dashboard";
 
         $fas = '';
@@ -30,6 +27,6 @@ class DashboardController extends GirlController
         $users = User::count();
         $photo = Photo::count();
         $photoalbum = PhotoAlbum::count();
-        return view('features.girl.dashboard.index',  compact('title', 'news', 'newscategory', 'photo', 'photoalbum', 'users'));
-    }
+		return view('features.girl.dashboard.index',  compact('title','news','newscategory','photo','photoalbum','users'));
+	}
 }

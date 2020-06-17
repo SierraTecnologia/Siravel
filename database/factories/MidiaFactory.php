@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Siravel\Models\Digital\Midia\File::class, function (Faker\Generator $faker) {
+$factory->define(\Finder\Models\Digital\Midia\File::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumbFile',
@@ -29,7 +29,7 @@ $factory->define(\Siravel\Models\Digital\Midia\File::class, function (Faker\Gene
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Siravel\Models\Digital\Midia\Image::class, function (Faker\Generator $faker) {
+$factory->define(\Facilitador\Models\Image::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumb',

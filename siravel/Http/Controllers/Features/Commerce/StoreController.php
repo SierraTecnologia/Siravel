@@ -2,9 +2,9 @@
 
 namespace Siravel\Http\Controllers\Features\Commerce;
 
-use Siravel\Http\Controllers\Controller;
-use Siravel\Repositories\Commerce\ProductRepository;
-use Siravel\Services\Commerce\PlanService;
+use Siravel\Http\Controllers\Features\Controller;
+use App\Repositories\Commerce\ProductRepository;
+use App\Services\Commerce\PlanService;
 
 class StoreController extends Controller
 {
