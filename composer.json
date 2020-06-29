@@ -10,6 +10,7 @@
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
+        "sierratecnologia/locaravel": "dev-master",
         "sierratecnologia/cms": "dev-master"
     },
     "autoload": {

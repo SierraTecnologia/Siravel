@@ -11,6 +11,7 @@ use Support\Models\Base;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Throwable;
 use Illuminate\Support\Facades\Schema;
+use Auth;
 use Siravel\Services\System\BusinessService;
 
 /**

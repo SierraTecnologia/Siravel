@@ -28,6 +28,7 @@ class SiravelProvider extends ServiceProvider
         /**
          * SitecLibs
          */
+        \Locaravel\LocaravelProvider::class,
         \Trainner\TrainnerProvider::class,
         \Gamer\GamerProvider::class,
         \Facilitador\FacilitadorProvider::class,
