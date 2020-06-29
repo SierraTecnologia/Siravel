@@ -9,7 +9,7 @@ use Redirect;
 use Response;
 use Exception;
 use CryptoService;
-use Siravel\Models\Digital\Midia\File;
+use Finder\Models\Digital\Midia\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
 use Siravel\Services\Midia\FileService;

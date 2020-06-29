@@ -5,7 +5,7 @@ namespace Siravel\Repositories\Negocios;
 use Carbon\Carbon;
 use Siravel\Repositories\CmsRepository;
 use Siravel\Repositories\TranslationRepository;
-use Siravel\Services\Midia\FileService;
+use Finder\Services\Midia\FileService;
 
 use Cms;
 use Config;

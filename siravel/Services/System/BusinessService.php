@@ -8,8 +8,10 @@ use Siravel\Jobs\RoutineOrganizerCreateJob;
 use Population\Models\Identity\Actors\Business;
 use Illuminate\Support\Facades\Config;
 use Log;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Request;
 use Informate\Models\System\Setting;
+use Exception;
 
 class BusinessService extends Service
 {
@@ -18,138 +20,8 @@ class BusinessService extends Service
 
     public function __construct()
     {
-        if (!VersionService::isInstall() || !$this->business = $this->detectedBusiness()) {
-            return false;
-        }
-
-        // Get Settings
-        Setting::all()->each(
-            function ($item) {
-                Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-                if (!empty($item->getAppAtribute('config'))) {
-                    Config::set($item->getAppAtribute('config'), $item->value);
-                }
-            }
-        );
-
-        if ($this->business->features) {
-            $this->features = $this->business->features->all();
-        }
+        $this->loadBusiness();
     }
-
-    public function isHability()
-    {
-        $config = \Illuminate\Support\Facades\Config::get('sitec-tools.configs.multi-tenant');
-        if (!$config) {
-            return false;
-        }
-        return true;
-    }
-
-    private function detectedBusiness()
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
-
-        /**
-         * Localhost ou terminal, retorna o padrao
-         */
-        if ($domainSlug == 'localhost' || app()->runningInConsole()) {
-            return $this->getDefault();
-        }
-
-        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $domainSlug)->first()) {
-            // return $this->getDefault(); // @todo
-            return false;
-        }
-        return $business;
-    }
-
-    private function getDefault()
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-
-        if (!$default = CacheService::getUniversal('business-default')) {
-            $default = 'HotelByNow';
-        }
-        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $default)->first()) {
-            return false;
-        }
-        return $business;
-    }
-
-    /**
-     * Faz o business padrão voltar a ser o original do sistema
-     *
-     * @return void
-     */
-    public function clearDefault()
-    {
-        CacheService::clearUniversal('business-default');
-        return true;
-    }
-
-    /**
-     * Transforma no Business padrão do Sistema
-     *
-     * @return void
-     */
-    public function makeDefault(Business $business)
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        CacheService::setUniversal('business-default', $business->code);
-        $this->business = $business;
-        return true;
-    }
-
-    public function isDefault(Business $business)
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        return $business->code === $this->getBusiness()->code;
-    }
-
-    public function userAsColaborator(User $user)
-    {
-        // @todo Fazer 
-        return true;
-    }
-
-    public function hasFeature(string $key)
-    {
-        if (!empty($this->features)) {
-            foreach ($this->features as $feature) {
-                if ($feature->code === $key) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public function getCode()
-    {
-        return $this->business->code;
-    }
-
-    public function getBusiness()
-    {
-        return $this->business;
-    }
-
-    public function userHasPermission($user)
-    {
-        
-    }
-
 
     // Ignora as urls mencionadas
     public static $IGNORE_URLS = [
@@ -296,4 +168,157 @@ class BusinessService extends Service
         return new $class($businessUser->businessUrl, $companyToken, $businessUser->token);
     }
 
+    public function hasBusiness()
+    {
+        return $this->business ? true : false;
+    }
+
+    public function isHability()
+    {
+        $config = \Illuminate\Support\Facades\Config::get('sitec-tools.configs.multi-tenant', true);
+        if (!$config) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
+     * Faz o business padrão voltar a ser o original do sistema
+     *
+     * @return void
+     */
+    public function clearDefault()
+    {
+        CacheService::clearUniversal('business-default');
+        return true;
+    }
+
+    /**
+     * Transforma no Business padrão do Sistema
+     *
+     * @return void
+     */
+    public function makeDefault(Business $business)
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+        CacheService::setUniversal('business-default', $business->code);
+        $this->business = $business;
+        return true;
+    }
+
+    public function isDefault(Business $business)
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+        return $business->code === $this->getBusiness()->code;
+    }
+
+    public function userAsColaborator(User $user)
+    {
+        // @todo Fazer 
+        return true;
+    }
+
+    public function hasFeature(string $key)
+    {
+        if (!empty($this->features)) {
+            foreach ($this->features as $feature) {
+                if ($feature->code === $key) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public function getCode()
+    {
+        if (!$this->hasBusiness() && !$this->loadBusiness()) {
+            throw new Exception('Não detectado o business');
+        }
+        return $this->getBusiness()->code;
+    }
+
+    public function getBusiness()
+    {
+        return $this->business;
+    }
+
+    public function userHasPermission($user)
+    {
+        
+    }
+
+
+
+    private function loadBusiness()
+    {
+        if (!VersionService::isInstall()) {
+            return false;
+            // throw new Exception('Não está instalado o siravel');
+        }
+        if (!$this->business = $this->detectedBusiness()) {
+            return false;
+            // throw new Exception('Não detectado o business');
+        }
+
+        if (Schema::hasTable('settings')) {
+            // Get Settings
+            Setting::all()->each(
+                function ($item) {
+                    Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
+                    if (!empty($item->getAppAtribute('config'))) {
+                        Config::set($item->getAppAtribute('config'), $item->value);
+                    }
+                }
+            );
+        }
+
+        if ($this->business->features) {
+            $this->features = $this->business->features->all();
+        }
+        return true;
+    }
+
+    private function detectedBusiness()
+    {
+        // @todo
+        // if (!$this->isHability()) {
+        //     return false;
+        // }
+        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
+
+        /**
+         * Localhost ou terminal, retorna o padrao
+         */
+        if ($domainSlug == 'localhost' || app()->runningInConsole()) {
+            return $this->getDefault();
+        }
+
+        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $domainSlug)->first()) {
+            // return $this->getDefault(); // @todo
+            return false;
+        }
+        return $business;
+    }
+
+    private function getDefault()
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+
+        if (!$default = CacheService::getUniversal('business-default')) {
+            $default = 'HotelByNow';
+        }
+        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $default)->first()) {
+            return false;
+        }
+        return $business;
+    }
 }

@@ -3,7 +3,7 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use Siravel\Models\System\Translation;
+use RicardoSierra\Translation\Models\Translation;
 
 class TranslationRepository
 {

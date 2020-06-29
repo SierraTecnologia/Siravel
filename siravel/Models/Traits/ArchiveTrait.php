@@ -1,28 +1,14 @@
 <?php
 
-namespace Siravel\Models;
+namespace Siravel\Models\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
-use Siravel\Models\Negocios\Link;
+use App\Models\Model;
 use Informate\Models\System\Archive;
-use RicardoSierra\Translation\Models\Translation;
+use App\Models\System\Translation;
 
-
-class CmsModel extends Model
+class ArchiveTrait extends Model
 {
-    public function getBlocksAttribute($value)
-    {
-        $blocks = json_decode($value, true);
-
-        if (is_null($blocks)) {
-            $blocks = [];
-        }
-
-        return $blocks;
-    }
-
-
     /**
      * Model contructuor.
      *
@@ -32,23 +18,9 @@ class CmsModel extends Model
     {
         parent::__construct($attributes);
 
-        if (!empty(config('cms.db-prefix', ''))) {
+        if (config('cms.db-prefix', '')) {
             $this->table = config('cms.db-prefix', '').$this->table;
         }
-    }
-
-    /**
-     * Get a model as a translatable object
-     *
-     * @return Object
-     */
-    public function asObject()
-    {
-        if (! is_null(request('lang')) && request('lang') !== config('cms.default-language', 'en')) {
-            return $this->translationData(request('lang'));
-        }
-
-        return $this;
     }
 
     /**
@@ -89,47 +61,9 @@ class CmsModel extends Model
         Translation::where('entity_id', $id)->where('entity_type', $type)->delete();
         Archive::where('entity_id', $id)->where('entity_type', $type)->delete();
 
-        Archive::where('entity_type', 'RicardoSierra\Translation\Models\Translation')
+        Archive::where('entity_type', 'App\Models\System\Translation')
             ->where('entity_data', 'LIKE', '%"entity_id":'.$id.'%')
             ->where('entity_data', 'LIKE', '%"entity_type":"'.$type.'"%')
             ->delete();
-
-        if ($type == 'Siravel\Models\Negocios\Page') {
-            Link::where('page_id', $id)->delete();
-        }
-    }
-
-    /**
-     * A method for getting / setting blocks
-     *
-     * @param  string $slug
-     * @return string
-     */
-    public function block($slug)
-    {
-        $block = $this->findABlock($slug);
-
-        if (!$block) {
-            $this->update([
-                'blocks' => json_encode(array_merge($this->blocks, [ $slug => '' ]))
-            ]);
-        }
-
-        return $block;
-    }
-
-    /**
-     * Find a block based on slug
-     *
-     * @param  string $slug
-     * @return string
-     */
-    public function findABlock($slug)
-    {
-        if (isset($this->blocks[$slug])) {
-            return $this->blocks[$slug];
-        }
-
-        return false;
     }
 }

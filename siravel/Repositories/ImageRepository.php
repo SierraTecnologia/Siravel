@@ -7,7 +7,7 @@ use Config;
 use CryptoService;
 use Facilitador\Models\Image;
 use Siravel\Models\Tag;
-use Siravel\Services\Midia\FileService;
+use Finder\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class ImageRepository extends CmsRepository

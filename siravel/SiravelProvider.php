@@ -189,9 +189,6 @@ class SiravelProvider extends ServiceProvider
         }); 
 */
 
-        // Carrega o Negócio caso não tenha carregado antes
-        BusinessService::getSingleton();
-
         $theme = Config::get('cms.frontend-theme');
         
         View::addLocation(base_path('resources/themes/'.$theme));
@@ -258,6 +255,24 @@ class SiravelProvider extends ServiceProvider
 
         $this->registerApiV1Services();
 
+
+        // BUsiness
+        $loader = AliasLoader::getInstance();
+        $loader->alias('BusinessService', \Siravel\Facades\BusinessServiceFacade::class);
+        $this->app->singleton(BusinessService::class, function () {
+            return new BusinessService();
+        });
+        $this->app['events']->listen(
+            'eloquent.*',
+            'Siravel\Observers\BusinessCallbacks'
+        );
+        $this->app['events']->listen(
+            'siravel::model.*',
+            'Siravel\Observers\BusinessCallbacks'
+        );
+
+        
+
         // Configs
         $this->app->config->set('siravel.modules.siravel', include __DIR__.'/config.php');
 
@@ -272,6 +287,7 @@ class SiravelProvider extends ServiceProvider
             base_path('vendor/sierratecnologia/tools/siravel/Console/Commands') => '\Siravel\Console\Commands',
             ]
         );
+        
     }
 
 

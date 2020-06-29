@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin\Calendar;
 
 use URL;
 use Cms;
-use Siravel\Models\Calendar\Event;
+use Informate\Models\Event;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\EventRequest;
 use Siravel\Services\ValidationService;

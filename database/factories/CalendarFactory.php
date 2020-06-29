@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Calendar\Event::class, function (Faker\Generator $faker) {
+$factory->define(\Informate\Models\Event::class, function (Faker\Generator $faker) {
     return [
         'start_date' => '2016-10-31',
         'end_date' => '2016-10-31',

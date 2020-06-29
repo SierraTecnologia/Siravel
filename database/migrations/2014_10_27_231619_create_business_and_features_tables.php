@@ -26,29 +26,28 @@ class CreateBusinessAndFeaturesTables extends Migration
         //     $table->primary(['code', 'business_code']);
         // });
 
-        // @todo em algum lugar ja esta puxando
-        // Schema::create(
-        //     'features', function (Blueprint $table) {
-        //         $table->engine = 'InnoDB';
-        //         $table->string('code')->unique();
-        //         $table->primary('code');
-        //         $table->string('name', 255);
-        //         $table->timestamps();
-        //         $table->softDeletes();
-        //     }
-        // );
+        Schema::create(
+            'features', function (Blueprint $table) {
+                $table->engine = 'InnoDB';
+                $table->string('code')->unique();
+                $table->primary('code');
+                $table->string('name', 255);
+                $table->timestamps();
+                $table->softDeletes();
+            }
+        );
         
-        // Schema::create(
-        //     'featureables', function (Blueprint $table) {
-        //         $table->engine = 'InnoDB';
-        //         $table->string('featureable_id');
-        //         $table->string('featureable_type', 255);
-        //         $table->string('feature_code');
-        //         $table->foreign('feature_code')->references('code')->on('features');
-        //         $table->timestamps();
-        //         $table->softDeletes();
-        //     }
-        // );
+        Schema::create(
+            'featureables', function (Blueprint $table) {
+                $table->engine = 'InnoDB';
+                $table->string('featureable_id');
+                $table->string('featureable_type', 255);
+                $table->string('feature_code');
+                $table->foreign('feature_code')->references('code')->on('features');
+                $table->timestamps();
+                $table->softDeletes();
+            }
+        );
 
     }
 
@@ -59,7 +58,8 @@ class CreateBusinessAndFeaturesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('identity_girls');
+        Schema::drop('featureables');
+        Schema::drop('features');
     }
 
 }
