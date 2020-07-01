@@ -2,7 +2,7 @@
 
 namespace SiHelper\Help\Dicionario\Seguranca\Informacao;
 
-class Bot extends Informacao
+class Publica extends Informacao
 {
     public function __construct()
     {
