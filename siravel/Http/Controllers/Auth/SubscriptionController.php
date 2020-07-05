@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Auth;
 use Siravel\Http\Controllers\Controller;
 use Siravel\Mail\PleaseConfirmYourEmail;
 use Siravel\Models\User;
-use Siravel\Models\Role;
+use Facilitador\Models\Role;
 use Illuminate\Foundation\Auth\SubscriptsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;

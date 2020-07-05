@@ -5,6 +5,7 @@ namespace Siravel\Repositories;
 use Carbon\Carbon;
 use Siravel\Models\Negocios\Faq;
 use Siravel\Repositories\CmsRepository;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 
 class FaqRepository extends CmsRepository
 {
@@ -14,11 +15,11 @@ class FaqRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Faq $model, TranslationRepository $translationRepo)
+    public function __construct(Faq $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'faqs';
+        $this->table = 'faqs';
     }
 
     /**

@@ -14,7 +14,7 @@ class CmsRepository
 
     public $table;
 
-    public function __construct(TranslationRepository $translationRepo)
+    public function __construct(ModelTranslationRepository $translationRepo)
     {
         $this->translationRepo = $translationRepo;
     }

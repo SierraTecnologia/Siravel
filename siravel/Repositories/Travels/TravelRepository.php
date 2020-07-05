@@ -15,7 +15,7 @@ class TravelRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Travel $model, TranslationRepository $translationRepo)
+    public function __construct(Travel $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

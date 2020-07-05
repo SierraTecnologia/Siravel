@@ -18,7 +18,7 @@ class LinkRepository extends BaseRepository
 
     public $table;
 
-    public function __construct(Link $model, TranslationRepository $translationRepo)
+    public function __construct(Link $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'links';

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Siravel\Models\Negocios;
 
 use Illuminate\Support\Facades\Auth;
 use Support\Models\Base as BaseModel;

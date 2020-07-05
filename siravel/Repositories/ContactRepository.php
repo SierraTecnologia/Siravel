@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Siravel\Models\Contact;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 
 class ContactRepository
 {
@@ -13,7 +14,7 @@ class ContactRepository
 
     public function __construct()
     {
-        $this->translationRepo = app(TranslationRepository::class);
+        $this->translationRepo = app(ModelTranslationRepository::class);
     }
 
     /**

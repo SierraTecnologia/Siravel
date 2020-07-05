@@ -9,7 +9,7 @@ use Siravel\Http\ControllersController;
 use Siravel\Services\Traits\ActivationTrait;
 use Siravel\Models\Social;
 use Siravel\Models\User;
-use Siravel\Models\Role;
+use Facilitador\Models\Role;
 
 class SocialController extends SitecController
 {

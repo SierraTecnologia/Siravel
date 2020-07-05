@@ -14,7 +14,7 @@ class PromotionRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Promotion $model, TranslationRepository $translationRepo)
+    public function __construct(Promotion $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

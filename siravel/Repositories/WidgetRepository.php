@@ -14,7 +14,7 @@ class WidgetRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Widget $model, TranslationRepository $translationRepo)
+    public function __construct(Widget $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

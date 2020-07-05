@@ -17,7 +17,7 @@ class BlogRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Blog $model, TranslationRepository $translationRepo)
+    public function __construct(Blog $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

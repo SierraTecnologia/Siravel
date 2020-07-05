@@ -11,6 +11,6 @@ class CalendarSeeder extends Seeder
      */
     public function run()
     {
-		factory(Informate\Models\Event::class, rand(1, 10))->create();
+		factory(Casa\Models\Calendar\Event::class, rand(1, 10))->create();
     }
 }

@@ -23,7 +23,7 @@ class PageRepository extends BaseRepository
 
     public $table;
 
-    public function __construct(Page $model, TranslationRepository $translationRepo)
+    public function __construct(Page $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

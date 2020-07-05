@@ -18,7 +18,7 @@ class MemberRepository extends BaseRepository
 
     public $table;
 
-    public function __construct(UserMeta $model, TranslationRepository $translationRepo)
+    public function __construct(UserMeta $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'user_metas';

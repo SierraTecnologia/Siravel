@@ -13,7 +13,7 @@ use Throwable;
 use Illuminate\Support\Facades\Schema;
 use Auth;
 use Siravel\Services\System\BusinessService;
-
+use Siravel\Scopes\BusinessScope;
 /**
  * Call no-op classes on models for all event types.  This just simplifies
  * the handling of model events for models.
@@ -79,6 +79,11 @@ class BusinessCallbacks
         if (!app()->bound(BusinessService::class)) {
             return false;
         }
+
+        if (!Schema::hasColumn($model->getTable(), 'business_code'))
+        {
+            return false;
+        }
           
 
         // Get the action from the event name
@@ -90,19 +95,15 @@ class BusinessCallbacks
         $method = 'on'.Str::studly($action);
 
         if ($method == 'onBooting') {
-            
-            // @todo add booting
+            $model::addGlobalScope(new BusinessScope);
             return true;
         }
 
         if ($method == 'onCreating') {
             $business = app()->make(BusinessService::class);
-            if (Schema::hasColumn($model->getTable(), 'business_code'))
-            {
-                $model->business_code = $business->getCode();
-                if (Auth::check()) {
-                    // @todo Verifica se tem acesso
-                }
+            $model->business_code = $business->getCode();
+            if (Auth::check()) {
+                // @todo Verifica se tem acesso
             }
             return true;
         }

@@ -15,7 +15,7 @@ class RoomRepository extends CmsRepository
 
     public $table;
 
-    public function __construct(Room $model, TranslationRepository $translationRepo)
+    public function __construct(Room $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;

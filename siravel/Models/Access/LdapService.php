@@ -3,7 +3,7 @@
 namespace Siravel\Models\Access;
 
 use Siravel\Models\Access;
-use Siravel\Models\Role;
+use Facilitador\Models\Role;
 use Siravel\Models\User;
 use Population\Models\Components\Book\Auth\UserRepo;
 use SiUtils\Exceptions\LdapException;
@@ -405,7 +405,7 @@ class LdapService
      * Check a role against an array of group names to see if it matches.
      * Checked against role 'external_auth_id' if set otherwise the name of the role.
      *
-     * @param  \Siravel\Models\Role $role
+     * @param  \Facilitador\Models\Role $role
      * @param  array            $groupNames
      * @return bool
      */

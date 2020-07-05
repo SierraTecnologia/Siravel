@@ -267,21 +267,22 @@ class BusinessService extends Service
             // throw new Exception('Não detectado o business');
         }
 
-        if (Schema::hasTable('settings')) {
-            // Get Settings
-            Setting::all()->each(
-                function ($item) {
-                    Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-                    if (!empty($item->getAppAtribute('config'))) {
-                        Config::set($item->getAppAtribute('config'), $item->value);
-                    }
-                }
-            );
-        }
+        // @todo
+        // if (Schema::hasTable('settings')) {
+        //     // Get Settings
+        //     Setting::all()->each(
+        //         function ($item) {
+        //             Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
+        //             if (!empty($item->getAppAtribute('config'))) {
+        //                 Config::set($item->getAppAtribute('config'), $item->value);
+        //             }
+        //         }
+        //     );
+        // }
 
-        if ($this->business->features) {
-            $this->features = $this->business->features->all();
-        }
+        // if ($this->business->features) {
+        //     $this->features = $this->business->features->all();
+        // }
         return true;
     }
 

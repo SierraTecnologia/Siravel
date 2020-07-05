@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Cms;
-use Siravel\Models\Negocios\Page;
+use Siravel\Models\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;
 use Siravel\Services\ValidationService;

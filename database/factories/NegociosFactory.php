@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Subscription::class, function (Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Subscription::class, function (Generator $faker) {
     return [
         'email' => $faker->safeEmail,
         'token' => \Illuminate\Support\Str::random(64),
@@ -19,7 +19,7 @@ $factory->define(\App\Models\Negocios\Subscription::class, function (Generator $
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Faq::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Faq::class, function (Faker\Generator $faker) {
     return [
         'question'        => $faker->sentence,
         'answer'         => $faker->paragraph(60),
@@ -36,7 +36,7 @@ $factory->define(\App\Models\Negocios\Faq::class, function (Faker\Generator $fak
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Link::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Link::class, function (Faker\Generator $faker) {
     return [
         'name' => 'dumb',
         'external' => 1,
@@ -56,7 +56,7 @@ $factory->define(\App\Models\Negocios\Link::class, function (Faker\Generator $fa
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Siravel\Models\Page::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Page::class, function (Faker\Generator $faker) {
     return [
         'title' => 'dumb',
         'url' => 'dumb',
@@ -76,7 +76,7 @@ $factory->define(\Siravel\Models\Page::class, function (Faker\Generator $faker) 
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Menu::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Menu::class, function (Faker\Generator $faker) {
     return [
         'name' => 'dumb menu',
         'slug' => 'testerSLUG',
@@ -93,7 +93,7 @@ $factory->define(\App\Models\Negocios\Menu::class, function (Faker\Generator $fa
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Promotion::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Promotion::class, function (Faker\Generator $faker) {
     return [
         'published_at' => $faker->datetime()->format('Y-m-d H:i'),
         'finished_at' => $faker->datetime()->format('Y-m-d H:i'),
@@ -111,7 +111,7 @@ $factory->define(\App\Models\Negocios\Promotion::class, function (Faker\Generato
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Widget::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Negocios\Widget::class, function (Faker\Generator $faker) {
     return [
         'name' => 'test',
         'slug' => 'tester',
