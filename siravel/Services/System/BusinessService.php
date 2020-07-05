@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Config;
 use Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Request;
-use Informate\Models\System\Setting;
+use Facilitador\Models\Setting;
 use Exception;
 
 class BusinessService extends Service

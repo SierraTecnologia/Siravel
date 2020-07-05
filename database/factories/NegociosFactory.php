@@ -56,7 +56,7 @@ $factory->define(\App\Models\Negocios\Link::class, function (Faker\Generator $fa
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Negocios\Page::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Page::class, function (Faker\Generator $faker) {
     return [
         'title' => 'dumb',
         'url' => 'dumb',

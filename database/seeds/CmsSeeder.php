@@ -11,7 +11,7 @@ class CmsSeeder extends Seeder
      */
     public function run()
     {
-		factory(App\Models\Negocios\Page::class, rand(1, 10))->create();
+		factory(Siravel\Models\Page::class, rand(1, 10))->create();
 		factory(App\Models\Negocios\Menu::class, rand(1, 10))->create();
     }
 }
