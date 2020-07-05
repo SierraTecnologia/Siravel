@@ -93,26 +93,6 @@ class CreateBossBusinessOrganizationsTables extends Migration
          * Pego do CMS
          */
 
-        
-		Schema::create(config('app.db-prefix', '').'features', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-            $table->string('code')->unique();
-            $table->primary('code');
-			$table->string('name', 255);
-			$table->timestamps();
-            $table->softDeletes();
-		});
-        
-		Schema::create(config('app.db-prefix', '').'featureables', function (Blueprint $table) {
-			$table->engine = 'InnoDB';
-			$table->string('featureable_id');
-			$table->string('featureable_type', 255);
-			$table->string('feature_code');
-            $table->foreign('feature_code')->references('code')->on(config('app.db-prefix', '').'features');
-			$table->timestamps();
-            $table->softDeletes();
-		});
-
         /**
          * Cards
          */
