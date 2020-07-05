@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Cms;
 use Siravel\Models\Blog\Blog;
 use Siravel\Repositories\CmsRepository;
-use Siravel\Repositories\TranslationRepository;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 use Finder\Services\Midia\FileService;
 
 class BlogRepository extends CmsRepository

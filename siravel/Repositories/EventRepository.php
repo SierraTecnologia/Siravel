@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Carbon\Carbon;
 use Informate\Models\Event;
 use Siravel\Repositories\CmsRepository;
-use Siravel\Repositories\TranslationRepository;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 
 class EventRepository extends CmsRepository
 {

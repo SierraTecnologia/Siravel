@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Siravel\Models\Negocios\Promotion;
 use Siravel\Repositories\CmsRepository;
-use Siravel\Repositories\TranslationRepository;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 
 class PromotionRepository extends CmsRepository
 {

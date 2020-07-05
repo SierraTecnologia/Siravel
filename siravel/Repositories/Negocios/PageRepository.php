@@ -4,7 +4,7 @@ namespace Siravel\Repositories\Negocios;
 
 use Carbon\Carbon;
 use Siravel\Repositories\CmsRepository;
-use Siravel\Repositories\TranslationRepository;
+use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
 use Finder\Services\Midia\FileService;
 
 use Cms;

@@ -4,7 +4,7 @@ namespace Siravel\Models\Blog;
 
 use Siravel\Models\CmsModel;
 use Facilitador\Services\Normalizer;
-use Facilitador\Traits\Translatable;
+use RicardoSierra\Translation\Traits\HasTranslation;
 use Informate\Models\System\Archive;
 use Informate\Traits\ArchiveTrait;
 
@@ -12,7 +12,7 @@ use Siravel\Contracts\Business\BusinessTrait;
 
 class Blog extends CmsModel
 {
-    use Translatable, BusinessTrait;
+    use HasTranslation, BusinessTrait;
 
     public $table = 'blogs';
 
@@ -25,6 +25,7 @@ class Blog extends CmsModel
         'url' => 'required|string',
     ];
 
+    // @todo add translation
     protected $appends = [
         'translations',
     ];
