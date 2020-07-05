@@ -91,8 +91,6 @@ class Page extends BaseModel
      */
     public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
 
-    protected $guarded = [];
-
     public function save(array $options = [])
     {
         // If no author has been assigned, assign the current user's id as the author of the post
