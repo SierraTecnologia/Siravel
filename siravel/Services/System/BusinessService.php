@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Request;
 use Facilitador\Models\Setting;
 use Exception;
 
-class BusinessService extends Service
+class BusinessService
 {
     private $business = false;
     public $features = [];

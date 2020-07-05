@@ -39,7 +39,7 @@ class MenuFilter implements FilterInterface
             return true;
         }
 
-        return \Siravel\Services\System\BusinessService::getSingleton()->hasFeature($feature);
+        return app(\Siravel\Services\System\BusinessService::class)->hasFeature($feature);
     }
 
     private function verifyLevel($item, $user)

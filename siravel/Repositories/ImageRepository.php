@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Cms;
 use Config;
-use CryptoService;
+use Crypto;
 use Facilitador\Models\Image;
 use Siravel\Models\Tag;
 use Finder\Services\Midia\FileService;
@@ -114,7 +114,7 @@ class ImageRepository extends CmsRepository
             $input['is_published'] = 1;
         }
 
-        $input['location'] = CryptoService::decrypt($savedFile['name']);
+        $input['location'] = Crypto::decrypt($savedFile['name']);
         $input['storage_location'] = config('cms.storage-location');
         $input['original_name'] = $savedFile['original'];
         $input['tags'] = explode(',', $input['tags']);

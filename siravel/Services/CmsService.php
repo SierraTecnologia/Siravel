@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
-use Siravel\Facades\CryptoServiceFacade;
+use Crypto;
 use SiObjects\Support\Traits\Services\DefaultModuleServiceTrait;
 use SiObjects\Support\Traits\Services\LangServiceTrait;
 use SiObjects\Support\Traits\Services\MenuServiceTrait;
@@ -40,7 +40,7 @@ class CmsService
             return base_path(__DIR__.'/../Assets/'.$path);
         }
 
-        return url('asset/'.CryptoServiceFacade::url_encode($path).'/'.CryptoServiceFacade::url_encode($contentType));
+        return url('asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
     }
 
     /**

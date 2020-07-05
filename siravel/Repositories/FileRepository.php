@@ -4,7 +4,7 @@ namespace Siravel\Repositories;
 
 use Auth;
 use Config;
-use CryptoService;
+use Crypto;
 use Finder\Models\Digital\Midia\File;
 use Siravel\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
@@ -36,7 +36,7 @@ class FileRepository extends CmsRepository
         foreach ($payload['location'] as $file) {
             $filePayload = $payload;
             $filePayload['name'] = $file['original'];
-            $filePayload['location'] = CryptoService::decrypt($file['name']);
+            $filePayload['location'] = Crypto::decrypt($file['name']);
             $filePayload['mime'] = $file['mime'];
             $filePayload['size'] = $file['size'];
             $filePayload['order'] = 0;
@@ -88,7 +88,7 @@ class FileRepository extends CmsRepository
 
         foreach ($files as $file) {
             array_push($allFiles, [
-                'file_identifier' => CryptoService::url_encode($file->name).'/'.CryptoService::url_encode($file->location),
+                'file_identifier' => Crypto::url_encode($file->name).'/'.Crypto::url_encode($file->location),
                 'file_name' => $file->name,
                 'file_date' => $file->created_at->format('F jS, Y'),
             ]);

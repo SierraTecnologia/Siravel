@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin\Midia;
 
 use Config;
-use CryptoService;
+use Crypto;
 use FileService;
 use Illuminate\Http\Request;
 use Cms;
@@ -124,7 +124,7 @@ class ImagesController extends BaseController
         if (!$validation['errors']) {
             $file = $request->file('location');
             $fileSaved = app(FileService::class)->saveFile($file, 'public/images', [], true);
-            $fileSaved['name'] = CryptoService::encrypt($fileSaved['name']);
+            $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
             $response = app(CmsResponseService::class)->apiResponse('success', $fileSaved);

@@ -9,7 +9,7 @@ use Finder\Services\Midia\FileService;
 
 use Cms;
 use Config;
-use CryptoService;
+use Crypto;
 use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Schema;
 use Siravel\Repositories\CmsRepository as BaseRepository;

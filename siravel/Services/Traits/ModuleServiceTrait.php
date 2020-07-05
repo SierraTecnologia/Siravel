@@ -3,7 +3,7 @@
 namespace Siravel\Services\Traits;
 
 use Illuminate\Support\Facades\Config;
-use Siravel\Facades\CryptoServiceFacade;
+use Crypto;
 
 trait ModuleServiceTrait
 {
@@ -27,7 +27,7 @@ trait ModuleServiceTrait
         // @todo
         return $assetPath;
 
-        return url('admin/asset/'.CryptoServiceFacade::url_encode($assetPath).'/'.CryptoServiceFacade::url_encode($contentType).'/?isModule=true');
+        return url('admin/asset/'.Crypto::url_encode($assetPath).'/'.Crypto::url_encode($contentType).'/?isModule=true');
     }
 
     /**

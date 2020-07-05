@@ -4,7 +4,7 @@ namespace Siravel\Repositories\Negocios;
 
 use Cms;
 use Config;
-use CryptoService;
+use Crypto;
 use Siravel\Models\Negocios\Link;
 use Illuminate\Support\Facades\Schema;
 use Siravel\Repositories\CmsRepository as BaseRepository;

@@ -13,7 +13,7 @@ class Business extends Model
      */
     public function isDefault()
     {
-        return \Siravel\Services\System\BusinessService::getSingleton()->isDefault($this);
+        return app(\Siravel\Services\System\BusinessService::class)->isDefault($this);
     }
 
 }

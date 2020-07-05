@@ -5,7 +5,7 @@ namespace Siravel\Services\System;
 use Illuminate\Support\Facades\Config;
 use SiPlugins\ProjectManager\ProjectManager;
 
-class VersionService extends Service
+class VersionService
 {
     protected $projectManager = false;
 

@@ -8,7 +8,7 @@ use Storage;
 use Redirect;
 use Response;
 use Exception;
-use CryptoService;
+use Crypto;
 use Finder\Models\Digital\Midia\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
@@ -116,7 +116,7 @@ class FilesController extends BaseController
         if (!$validation['errors']) {
             $file = $request->file('location');
             $fileSaved = $this->fileService->saveFile($file, 'files/');
-            $fileSaved['name'] = CryptoService::encrypt($fileSaved['name']);
+            $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
             $response = $this->responseService->apiResponse('success', $fileSaved);
