@@ -7,7 +7,7 @@ use Config;
 use Crypto;
 use Facilitador\Models\Image;
 use Siravel\Models\Tag;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class ImageRepository extends CmsRepository

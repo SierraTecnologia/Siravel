@@ -7,7 +7,7 @@ use Config;
 use Crypto;
 use Stalker\Models\File;
 use Siravel\Repositories\CmsRepository;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class FileRepository extends CmsRepository

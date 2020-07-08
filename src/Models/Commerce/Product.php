@@ -5,7 +5,7 @@ namespace Siravel\Models\Commerce;
 use Facilitador\Models\Image;
 use App\Models\ProductImage;
 use App\Models\CmsModel;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 use App\Services\Commerce\CartService;
 use App\Services\Commerce\ProductService;
 

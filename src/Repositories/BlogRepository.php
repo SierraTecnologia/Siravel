@@ -7,7 +7,7 @@ use Cms;
 use Siravel\Models\Blog\Blog;
 use Siravel\Repositories\CmsRepository;
 use Translation\Repositories\ModelTranslationRepository;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 
 class BlogRepository extends CmsRepository
 {

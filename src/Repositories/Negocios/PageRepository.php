@@ -5,7 +5,7 @@ namespace Siravel\Repositories\Negocios;
 use Carbon\Carbon;
 use Siravel\Repositories\CmsRepository;
 use Translation\Repositories\ModelTranslationRepository;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 
 use Cms;
 use Config;
