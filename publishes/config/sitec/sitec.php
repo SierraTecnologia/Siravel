@@ -39,12 +39,12 @@ return [
         'url_links' => \Finder\Models\Digital\Internet\UrlLink::class,
 
         // Midias
-        'files' => \Artista\Models\File::class,
-        'images' => \Artista\Models\Imagen::class,
-        'photos' => \Artista\Models\Photo::class,
-        'photo_albums' => \Artista\Models\PhotoAlbum::class,
-        'thumbnails' => \Artista\Models\Thumbnail::class,
-        'videos' => \Artista\Models\Video::class,
+        'files' => \Stalker\Models\File::class,
+        'images' => \Stalker\Models\Imagen::class,
+        'photos' => \Stalker\Models\Photo::class,
+        'photo_albums' => \Stalker\Models\PhotoAlbum::class,
+        'thumbnails' => \Stalker\Models\Thumbnail::class,
+        'videos' => \Stalker\Models\Video::class,
 
 
         // Components

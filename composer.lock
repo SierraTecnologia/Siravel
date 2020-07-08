@@ -15845,7 +15845,7 @@
             "time": "2019-11-01T13:20:14+00:00"
         },
         {
-            "name": "sierratecnologia/artista",
+            "name": "sierratecnologia/stalker",
             "version": "dev-master",
             "dist": {
                 "type": "path",
@@ -15921,13 +15921,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Artista\\ArtistaProvider"
+                        "Stalker\\ArtistaProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Artista\\": "src/"
+                    "Stalker\\": "src/"
                 }
             },
             "scripts": {
@@ -16590,7 +16590,7 @@
                 "sebastian/diff": "*",
                 "sebastian/phpcpd": "*",
                 "sensiolabs/security-checker": "*",
-                "sierratecnologia/artista": "dev-master",
+                "sierratecnologia/stalker": "dev-master",
                 "sierratecnologia/crypto": "dev-master",
                 "spatie/crawler": "*",
                 "spatie/laravel-medialibrary": "^7.0",

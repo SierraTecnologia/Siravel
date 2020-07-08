@@ -9,7 +9,7 @@ use Redirect;
 use Response;
 use Exception;
 use Crypto;
-use Artista\Models\File;
+use Stalker\Models\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
 use Siravel\Services\Midia\FileService;

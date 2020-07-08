@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Artista\Models\File::class, function (Faker\Generator $faker) {
+$factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumbFile',

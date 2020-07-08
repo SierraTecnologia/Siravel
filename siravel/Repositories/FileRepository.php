@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Auth;
 use Config;
 use Crypto;
-use Artista\Models\File;
+use Stalker\Models\File;
 use Siravel\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
