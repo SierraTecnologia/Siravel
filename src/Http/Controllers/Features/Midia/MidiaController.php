@@ -2,8 +2,8 @@
 
 namespace Siravel\Http\Controllers\Features\Midia;
 
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\PhotoAlbum;
+use Stalker\Models\Photo;
+use Stalker\Models\PhotoAlbum;
 use App\Services\Midia\MidiaService;
 use Siravel\Http\Controllers\Features\Controller;
 

@@ -4,8 +4,8 @@ use Siravel\Http\Controllers\GirlController;
 use Siravel\Models\Blog\Article;
 use Siravel\Models\Blog\Category;
 use Siravel\Models\User;
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\PhotoAlbum;
+use Stalker\Models\Photo;
+use Stalker\Models\PhotoAlbum;
 
 class DashboardController extends GirlController {
 

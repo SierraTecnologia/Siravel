@@ -1,7 +1,7 @@
 <?php namespace Siravel\Http\Controllers\Features\Girl;
 
-use Siravel\Models\Digital\Midia\PhotoAlbum;
-use Siravel\Models\Digital\Midia\Photo;
+use Stalker\Models\PhotoAlbum;
+use Stalker\Models\Photo;
 use Translation\Models\Language;
 use Siravel\Http\Controllers\Features\GirlController;
 use App\Http\Requests\Admin\PhotoAlbumRequest;

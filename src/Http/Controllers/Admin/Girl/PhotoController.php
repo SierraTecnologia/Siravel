@@ -1,8 +1,8 @@
 <?php namespace Siravel\Http\Controllers\Girl;
 
 use Siravel\Http\Controllers\AdminController;
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\PhotoAlbum;
+use Stalker\Models\Photo;
+use Stalker\Models\PhotoAlbum;
 use Translation\Models\Language;
 use Siravel\Http\Requests\Admin\PhotoRequest;
 use Siravel\Http\Requests\Admin\DeleteRequest;

@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\Thumbnail;
+use Stalker\Models\Photo;
+use Stalker\Models\Thumbnail;
 use App\Models\Tag;
 /**
  * Class ProtoSeeder

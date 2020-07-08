@@ -29,7 +29,7 @@ $factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) 
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Facilitador\Models\Image::class, function (Faker\Generator $faker) {
+$factory->define(\Stalker\Models\Image::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumb',
@@ -53,7 +53,7 @@ $factory->define(\Facilitador\Models\Image::class, function (Faker\Generator $fa
 |
 */
 
-$factory->define(\Siravel\Models\Digital\Midia\Photo::class, function (Faker\Generator $faker) {
+$factory->define(\Stalker\Models\Photo::class, function (Faker\Generator $faker) {
     return [
         'created_by_user_id' => (new \App\Models\User)->newQuery()->inRandomOrder()->firstOrFail()->id,
         'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
@@ -62,7 +62,7 @@ $factory->define(\Siravel\Models\Digital\Midia\Photo::class, function (Faker\Gen
     ];
 });
 
-$factory->define(\Siravel\Models\Digital\Midia\Thumbnail::class, function (Faker\Generator $faker) {
+$factory->define(\Stalker\Models\Thumbnail::class, function (Faker\Generator $faker) {
     return [
         'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
         'width' => $faker->randomNumber(4),

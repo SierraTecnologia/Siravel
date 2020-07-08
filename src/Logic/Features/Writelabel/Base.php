@@ -13,7 +13,7 @@ class Base
      * @var array
      */
     protected $modelAdmins = [
-        \Siravel\Models\Digital\Midia\Photo::class,
+        \Stalker\Models\Photo::class,
     ];
 
     public function getAdminMenu()

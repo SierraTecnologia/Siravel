@@ -4,7 +4,6 @@ namespace Siravel\Models\Blog;
 
 use Siravel\Models\Model;
 // use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Facilitador\Facades\Facilitador;
@@ -44,23 +43,13 @@ class Category extends Model
 	}
 
 	/**
-	 * Get the author.
-	 *
-	 * @return User
-	 */
-	public function author()
-	{
-		return $this->belongsTo(User::class, 'user_id');
-	}
-
-	/**
 	 * Get the slider's images.
 	 *
 	 * @return array
 	 */
 	public function articles()
 	{
-		return $this->hasMany(Article::class,'article_category_id');
+		return $this->hasMany(Article::class, 'category_id');
 	}
 
 	/**

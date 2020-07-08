@@ -75,7 +75,6 @@ $factory->define(\Siravel\Models\Blog\Blog::class, function (Faker\Generator $fa
 
 $factory->define(Siravel\Models\Blog\Category::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => 1,
         'title' => $faker->sentence,
         'slug' => $faker->slug,
     ];

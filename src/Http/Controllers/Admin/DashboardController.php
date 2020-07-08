@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
 use Siravel\Models\Blog\Blog;
-use Siravel\Models\Digital\Midia\Photo;
+use Stalker\Models\Photo;
 use Siravel\Models\Negocios\Subscription;
 use Siravel\Models\Negocios\Page;
 use Facilitador\Models\UserMeta;
