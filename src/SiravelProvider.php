@@ -274,7 +274,7 @@ class SiravelProvider extends ServiceProvider
         // Register commands
         $this->registerCommandFolders(
             [
-            base_path('vendor/sierratecnologia/tools/siravel/Console/Commands') => '\Siravel\Console\Commands',
+            base_path('vendor/sierratecnologia/siravel/src/Console/Commands') => '\Siravel\Console\Commands',
             ]
         );
         

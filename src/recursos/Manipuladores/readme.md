@@ -1,1 +1,0 @@
-# Manipular pastas e arquivos

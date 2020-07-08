@@ -1,5 +1,5 @@
 {
-    "name": "sierratecnologia/tools",
+    "name": "sierratecnologia/siravel",
     "description": "Recursos para Desenvolvimento Complexo",
     "license": "MIT",
     "require": {
@@ -10,19 +10,11 @@
         "sierratecnologia/finder": "dev-master",
         "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
-        "sierratecnologia/locaravel": "dev-master",
-        "sierratecnologia/cms": "dev-master"
+        "sierratecnologia/locaravel": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Siravel\\": "siravel/",
-            "SiUtils\\": "src/utils/",
-            "SiHelper\\": "src/helper/",
-            "SiLogic\\": "src/logic/",
-            "SiObjects\\": "src/objects/",
-            "SiPlugins\\": "src/plugins/",
-            "SiWeapons\\": "src/recursos/",
-            "SiSeed\\": "src/seed/"
+            "Siravel\\": "src/"
         },
         "files": [
             "helpers/functions.php",

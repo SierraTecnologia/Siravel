@@ -1,1 +1,0 @@
-Criado para gerenciar tudo que esta nesse repositorio
