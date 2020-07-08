@@ -26,9 +26,12 @@ class Article extends BaseModel {
 	protected $dates = ['deleted_at'];
 
 	protected $sluggable = [
-		'build_from' => 'title',
 		'save_to'    => 'slug',
+		'build_from' => 'title',
 	];
+
+
+    protected $translatable = ['slug', 'title'];
 
 	protected $guarded  = array('id');
 

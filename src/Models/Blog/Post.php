@@ -66,6 +66,8 @@ class Post extends BaseModel
         'photos.thumbnails',
     ];
 
+    protected $translatable = ['description'];
+    
     /**
      * @inheritdoc
      */

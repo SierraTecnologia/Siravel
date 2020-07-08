@@ -18,6 +18,8 @@ class Blog extends CmsModel
 
     public $primaryKey = 'id';
 
+    protected $translatable = ['title'];
+
     protected $guarded = [];
 
     public static $rules = [
