@@ -17,9 +17,11 @@ class BusinessService
 {
     private $business = false;
     public $features = [];
+    public $run = 1;
 
     public function __construct()
     {
+        Log::warning('PAUPAUPAU');
         $this->loadBusiness();
     }
 
@@ -175,7 +177,7 @@ class BusinessService
 
     public function isHability()
     {
-        $config = \Illuminate\Support\Facades\Config::get('sitec-tools.configs.multi-tenant', true);
+        $config = \Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
         if (!$config) {
             return false;
         }

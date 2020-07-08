@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Finder\Models\Digital\Midia\File::class, function (Faker\Generator $faker) {
+$factory->define(\Artista\Models\File::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumbFile',

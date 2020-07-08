@@ -39,12 +39,12 @@ return [
         'url_links' => \Finder\Models\Digital\Internet\UrlLink::class,
 
         // Midias
-        'files' => \Finder\Models\Digital\Midia\File::class,
-        'images' => \Finder\Models\Digital\Midia\Imagen::class,
-        'photos' => \Finder\Models\Digital\Midia\Photo::class,
-        'photo_albums' => \Finder\Models\Digital\Midia\PhotoAlbum::class,
-        'thumbnails' => \Finder\Models\Digital\Midia\Thumbnail::class,
-        'videos' => \Finder\Models\Digital\Midia\Video::class,
+        'files' => \Artista\Models\File::class,
+        'images' => \Artista\Models\Imagen::class,
+        'photos' => \Artista\Models\Photo::class,
+        'photo_albums' => \Artista\Models\PhotoAlbum::class,
+        'thumbnails' => \Artista\Models\Thumbnail::class,
+        'videos' => \Artista\Models\Video::class,
 
 
         // Components

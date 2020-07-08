@@ -24,19 +24,8 @@ class SiravelProvider extends ServiceProvider
 
     public static $providers = [
         \Siravel\Providers\SiravelRouteProvider::class,
-        
-        /**
-         * SitecLibs
-         */
-        \Locaravel\LocaravelProvider::class,
-        \Trainner\TrainnerProvider::class,
-        \Gamer\GamerProvider::class,
         \Facilitador\FacilitadorProvider::class,
         
-        /**
-         * Serviços
-         */
-        \Cmgmyr\Messenger\MessengerServiceProvider::class,
 
     ];
 

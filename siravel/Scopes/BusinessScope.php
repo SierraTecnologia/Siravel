@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 use Siravel\Services\System\BusinessService;
+use Illuminate\Support\Facades\Schema;
 
 class BusinessScope implements Scope
 {
@@ -19,13 +20,13 @@ class BusinessScope implements Scope
     */
     public function apply(Builder $builder, Model $model)
     {
-        $business = app(BusinessService::class);
         if (Schema::hasColumn($model->getTable(), 'business_code'))
         {
+            $business = app(BusinessService::class);
             $builder->where('business_code',  $business->getCode());
-            if (Auth::check()) {
-                // @todo Verifica se tem acesso
-            }
+            // if (Auth::check()) {
+            //     // @todo Verifica se tem acesso
+            // }
         }
 
         // // no luck here as well

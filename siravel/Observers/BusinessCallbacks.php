@@ -77,12 +77,12 @@ class BusinessCallbacks
 
         // Ignore
         if (!app()->bound(BusinessService::class)) {
-            return false;
+            return true;
         }
 
         if (!Schema::hasColumn($model->getTable(), 'business_code'))
         {
-            return false;
+            return true;
         }
           
 
