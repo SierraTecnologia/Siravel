@@ -33,6 +33,12 @@ class CreatePagesTable extends Migration
     
                 $table->text('blocks')->nullable();
                 $table->string('hero_image')->nullable();
+
+                // Translation
+                $table->string('language_code');
+                $table->string('country_code')->nullable();
+                $table->foreign('language_code')->references('code')->on('languages');
+                $table->foreign('country_code')->references('code')->on('countries');
     
                 $table->enum('status', Page::$statuses)->default(Page::STATUS_INACTIVE);
                 $table->timestamps();

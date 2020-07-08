@@ -3,19 +3,34 @@
 namespace Siravel\Models\Blog;
 
 use Siravel\Models\Model;
-use Siravel\Models\User;
-use Siravel\System\Language;
+// use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Facilitador\Facades\Facilitador;
+use Translation\Traits\HasTranslations;
 
 class Category extends Model
 {
-
     use SoftDeletes;
+    use HasTranslations;
+
+    protected $table = 'categories';
+
+    protected $translatable = ['slug', 'name'];
+
+    protected $fillable = ['slug', 'name'];
 
     protected $dates = ['deleted_at'];
 
-	protected $guarded  = array('id');
+    protected $guarded  = array('id');
+    
+
+    public function parentId()
+    {
+        return $this->belongsTo(self::class);
+    }
+
 
 	/**
 	 * Returns a formatted post content entry,
@@ -53,18 +68,10 @@ class Category extends Model
 	 *
 	 * @return array
 	 */
-	public function posts()
-	{
-		return $this->hasMany(Article::class,'article_category_id');
-	}
-
-	/**
-	 * Get the category's language.
-	 *
-	 * @return Language
-	 */
-	public function language()
-	{
-		return $this->belongsTo(Language::class,'language_code');
-	}
+    public function posts()
+    {
+        return $this->hasMany(Facilitador::modelClass('Post'))
+            ->published()
+            ->orderBy('created_at', 'DESC');
+    }
 }

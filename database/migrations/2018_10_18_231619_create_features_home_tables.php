@@ -26,37 +26,21 @@ class CreateFeaturesHomeTables extends Migration
                 $table->softDeletes();
             });
         }
-        if (!Schema::hasTable('pages')) {
-            Schema::create('pages', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('title');
-                $table->string('url');
-                $table->text('entry')->nullable();
-                $table->string('seo_description')->nullable();
-                $table->string('seo_keywords')->nullable();
-                $table->boolean('is_published')->default(0);
-                $table->datetime('published_at')->nullable();
-                $table->text('blocks')->nullable();
-                $table->string('hero_image')->nullable();
-                $table->string('business_code');
-                $table->foreign('business_code')->references('code')->on('businesses');
-                $table->nullableTimestamps();
-                $table->softDeletes();
-            });
-        }
-        if (!Schema::hasTable('menus')) {
-            Schema::create('menus', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('name');
-                $table->string('slug');
-                $table->string('value');
-                $table->integer('user_id')->unsigned()->nullable();
-                $table->string('business_code');
-                $table->foreign('business_code')->references('code')->on('businesses');
-                $table->nullableTimestamps();
-                $table->softDeletes();
-            });
-        }
+
+        // @todo facilitador
+        // if (!Schema::hasTable('menus')) {
+        //     Schema::create('menus', function (Blueprint $table) {
+        //         $table->increments('id');
+        //         $table->string('name');
+        //         $table->string('slug');
+        //         $table->string('value');
+        //         $table->integer('user_id')->unsigned()->nullable();
+        //         $table->string('business_code');
+        //         $table->foreign('business_code')->references('code')->on('businesses');
+        //         $table->nullableTimestamps();
+        //         $table->softDeletes();
+        //     });
+        // }
         if (!Schema::hasTable('links')) {
             Schema::create('links', function (Blueprint $table) {
                 $table->increments('id');

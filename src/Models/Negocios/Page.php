@@ -3,19 +3,16 @@
 namespace Siravel\Models\Negocios;
 
 use Illuminate\Support\Facades\Auth;
-use Support\Models\Base as BaseModel;
+use Siravel\Models\CmsModel as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 use Lang;
-use Translation\Traits\HasTranslations;
 use App\Services\Normalizer;
 use Siravel\Models\Traits\BusinessTrait;
 
 class Page extends BaseModel
 {
     use SoftDeletes, BusinessTrait;
-
-    use HasTranslations;
 
     public $table = 'pages';
 
@@ -64,12 +61,6 @@ class Page extends BaseModel
     {
         return url(str_replace('public/', 'storage/', $this->hero_image));
     }
-
-    public function history()
-    {
-        return Archive::where('entity_type', get_class($this))->where('entity_id', $this->id)->get();
-    }
-
 
 
 

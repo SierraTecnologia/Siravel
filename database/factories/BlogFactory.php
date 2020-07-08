@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\App\Models\Blog\Blog::class, function (Faker\Generator $faker) {
+$factory->define(\Siravel\Models\Blog\Blog::class, function (Faker\Generator $faker) {
     return [
         'title' => 'dumb',
         'entry' => $faker->paragraph().' '.$faker->paragraph(),
@@ -73,9 +73,8 @@ $factory->define(\App\Models\Blog\Blog::class, function (Faker\Generator $faker)
 |
 */
 
-$factory->define(App\Models\Blog\Category::class, function (Faker\Generator $faker) {
+$factory->define(Siravel\Models\Blog\Category::class, function (Faker\Generator $faker) {
     return [
-        'language_code' => 'BR',
         'user_id' => 1,
         'title' => $faker->sentence,
         'slug' => $faker->slug,
@@ -89,7 +88,7 @@ $factory->define(App\Models\Blog\Category::class, function (Faker\Generator $fak
 */
 
 
-$factory->define(Informate\Models\Comment::class, function (Generator $faker) {
+$factory->define(Facilitador\Models\Comment::class, function (Generator $faker) {
     return [
         'user_id' => rand(1, 10),
         'post_id' => rand(1, 25),

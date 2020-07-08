@@ -37,6 +37,13 @@ class CreateFeaturesBlogsTables extends Migration
             $table->integer('subscriber_count')->unsigned()->default(0);
             $table->tinyInteger('is_recommended')->unsigned()->default(0);
             $table->tinyInteger('is_blocked')->unsigned()->default(0);
+
+            // Translation
+            $table->string('language_code');
+            $table->string('country_code')->nullable();
+            $table->foreign('language_code')->references('code')->on('languages');
+            $table->foreign('country_code')->references('code')->on('countries');
+
             $table->timestamps();
         });
 
@@ -54,9 +61,6 @@ class CreateFeaturesBlogsTables extends Migration
             $table->boolean('is_published')->default(false);
 			$table->integer('position')->nullable();
             
-			// $table->string('language_code');
-            // $table->foreign('language_code')->references('code')->on('languages');
-            
 			$table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             
@@ -66,6 +70,12 @@ class CreateFeaturesBlogsTables extends Migration
 			$table->unsignedInteger('category_id')->nullable();
 			$table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
 	
+            // Translation
+            $table->string('language_code');
+            $table->string('country_code')->nullable();
+            $table->foreign('language_code')->references('code')->on('languages');
+            $table->foreign('country_code')->references('code')->on('countries');
+            
 			$table->timestamps();
             $table->softDeletes();
 		});

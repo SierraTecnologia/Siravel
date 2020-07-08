@@ -28,6 +28,13 @@ class CreatePostsTable extends Migration
                 $table->text('meta_keywords');
                 $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
                 $table->boolean('featured')->default(0);
+
+                // Translation
+                $table->string('language_code');
+                $table->string('country_code')->nullable();
+                $table->foreign('language_code')->references('code')->on('languages');
+                $table->foreign('country_code')->references('code')->on('countries');
+
                 $table->timestamps();
 
                 //$table->foreign('author_id')->references('id')->on('users');

@@ -5,8 +5,7 @@ namespace Siravel\Models\Blog;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use Siravel\Models\User;
-use Translation\Models\Language;
+use App\Models\User;
 use Siravel\Models\CmsModel as BaseModel;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
@@ -79,15 +78,6 @@ class Article extends BaseModel {
 		return $this->belongsTo(User::class, 'user_id');
 	}
 
-	/**
-	 * Get the post's language.
-	 *
-	 * @return Language
-	 */
-	public function language()
-	{
-		return $this->belongsTo(Language::class,'language_code');
-	}
 
 	/**
 	 * Get the post's category.
@@ -96,7 +86,7 @@ class Article extends BaseModel {
 	 */
 	public function category()
 	{
-		return $this->belongsTo(Category::class,'article_category_id');
+		return $this->belongsTo(Category::class,'category_id');
 	}
 
 }

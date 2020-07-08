@@ -7,10 +7,12 @@ use Illuminate\Support\Facades\Log;
 use Siravel\Models\Negocios\Link;
 use Informate\Models\System\Archive;
 use Translation\Models\Translation;
-
+use Translation\Traits\HasTranslations;
 
 class CmsModel extends Model
 {
+    use HasTranslations;
+
     public function getBlocksAttribute($value)
     {
         $blocks = json_decode($value, true);
@@ -35,20 +37,6 @@ class CmsModel extends Model
         if (!empty(config('cms.db-prefix', ''))) {
             $this->table = config('cms.db-prefix', '').$this->table;
         }
-    }
-
-    /**
-     * Get a model as a translatable object
-     *
-     * @return Object
-     */
-    public function asObject()
-    {
-        if (! is_null(request('lang')) && request('lang') !== config('cms.default-language', 'en')) {
-            return $this->translationData(request('lang'));
-        }
-
-        return $this;
     }
 
     /**
@@ -86,6 +74,7 @@ class CmsModel extends Model
         $type = get_class($payload);
         $id = $payload->id;
 
+        // @todo ta no translation
         Translation::where('entity_id', $id)->where('entity_type', $type)->delete();
         Archive::where('entity_id', $id)->where('entity_type', $type)->delete();
 
@@ -97,6 +86,11 @@ class CmsModel extends Model
         if ($type == 'Siravel\Models\Negocios\Page') {
             Link::where('page_id', $id)->delete();
         }
+    }
+    
+    public function history()
+    {
+        return Archive::where('entity_type', get_class($this))->where('entity_id', $this->id)->get();
     }
 
     /**
