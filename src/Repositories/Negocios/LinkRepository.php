@@ -8,7 +8,7 @@ use Crypto;
 use Siravel\Models\Negocios\Link;
 use Illuminate\Support\Facades\Schema;
 use Siravel\Repositories\CmsRepository as BaseRepository;
-use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
+use Translation\Repositories\ModelTranslationRepository;
 
 class LinkRepository extends BaseRepository
 {

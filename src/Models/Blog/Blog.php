@@ -4,7 +4,7 @@ namespace Siravel\Models\Blog;
 
 use Siravel\Models\CmsModel;
 use Facilitador\Services\Normalizer;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 use Informate\Models\System\Archive;
 use Informate\Traits\ArchiveTrait;
 

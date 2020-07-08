@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Siravel\Models\Negocios\Link;
 use Informate\Models\System\Archive;
-use RicardoSierra\Translation\Models\Translation;
+use Translation\Models\Translation;
 
 
 class CmsModel extends Model
@@ -89,7 +89,7 @@ class CmsModel extends Model
         Translation::where('entity_id', $id)->where('entity_type', $type)->delete();
         Archive::where('entity_id', $id)->where('entity_type', $type)->delete();
 
-        Archive::where('entity_type', 'RicardoSierra\Translation\Models\Translation')
+        Archive::where('entity_type', 'Translation\Models\Translation')
             ->where('entity_data', 'LIKE', '%"entity_id":'.$id.'%')
             ->where('entity_data', 'LIKE', '%"entity_type":"'.$type.'"%')
             ->delete();

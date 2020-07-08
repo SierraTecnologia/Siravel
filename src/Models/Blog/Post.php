@@ -193,7 +193,7 @@ class Post extends BaseModel
 // use Illuminate\Support\Facades\Auth;
 // use Facilitador\Facades\Facilitador;
 // use Facilitador\Traits\Resizable;
-// use RicardoSierra\Translation\Traits\HasTranslations;
+// use Translation\Traits\HasTranslations;
 
 // class Post extends Model
 // {

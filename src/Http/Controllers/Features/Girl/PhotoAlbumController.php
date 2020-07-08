@@ -2,7 +2,7 @@
 
 use Siravel\Models\Digital\Midia\PhotoAlbum;
 use Siravel\Models\Digital\Midia\Photo;
-use RicardoSierra\Translation\Models\Language;
+use Translation\Models\Language;
 use Siravel\Http\Controllers\Features\GirlController;
 use App\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;

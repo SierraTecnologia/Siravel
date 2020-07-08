@@ -3,7 +3,7 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
+use Translation\Repositories\ModelTranslationRepository;
 use Illuminate\Support\Facades\Schema;
 
 class CmsRepository

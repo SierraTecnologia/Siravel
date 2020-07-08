@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Girl;
 
 use Siravel\Http\Controllers\Features\AdminController;
 use Illuminate\Support\Facades\Input;
-use RicardoSierra\Translation\Models\Language;
+use Translation\Models\Language;
 use App\Http\Requests\Admin\LanguageRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;

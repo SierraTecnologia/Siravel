@@ -6,7 +6,7 @@ use App\Models\CmsModel as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 use Lang;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 
 use Siravel\Models\Traits\BusinessTrait;
 

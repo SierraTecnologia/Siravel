@@ -3,7 +3,7 @@
 use Siravel\Http\Controllers\Features\AdminController;
 use Siravel\Models\Digital\Midia\Photo;
 use Siravel\Models\Digital\Midia\PhotoAlbum;
-use RicardoSierra\Translation\Models\Language;
+use Translation\Models\Language;
 use App\Http\Requests\Admin\PhotoRequest;
 use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;

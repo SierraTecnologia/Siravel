@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Fa;
 
 use App\Models\Blog\Category;
-use RicardoSierra\Translation\Models\Language;
+use Translation\Models\Language;
 use Siravel\Http\Controllers\Features\AdminController;
 use App\Http\Requests\Admin\ArticleCategoryRequest;
 use App\Http\Requests\Admin\DeleteRequest;

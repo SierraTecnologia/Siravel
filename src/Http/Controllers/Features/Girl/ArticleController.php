@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Features\Girl;
 use Siravel\Http\Controllers\Features\AdminController;
 use App\Models\Blog\Article;
 use App\Models\Blog\Category;
-use RicardoSierra\Translation\Models\Language;
+use Translation\Models\Language;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;

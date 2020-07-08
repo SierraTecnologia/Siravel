@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Carbon\Carbon;
 use Casa\Models\Calendar\Event;
 use Siravel\Repositories\CmsRepository;
-use RicardoSierra\Translation\Repositories\ModelTranslationRepository;
+use Translation\Repositories\ModelTranslationRepository;
 
 class EventRepository extends CmsRepository
 {

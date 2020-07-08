@@ -7,7 +7,7 @@ use Support\Models\Base as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 use Lang;
-use RicardoSierra\Translation\Traits\HasTranslations;
+use Translation\Traits\HasTranslations;
 use App\Services\Normalizer;
 use Siravel\Models\Traits\BusinessTrait;
 
