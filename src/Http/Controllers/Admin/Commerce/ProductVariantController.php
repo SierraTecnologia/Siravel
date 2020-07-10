@@ -15,14 +15,14 @@ class ProductVariantController extends SitecController
     /**
      * Product Repository.
      *
-     * @var App\Repositories\Commerce\ProductRepository
+     * @var Siravel\Repositories\Commerce\ProductRepository
      */
     public $productRepository;
 
     /**
      * Product Variant Repository.
      *
-     * @var App\Repositories\Commerce\ProductVariantRepository
+     * @var Siravel\Repositories\Commerce\ProductVariantRepository
      */
     public $productVariantRepository;
 
@@ -47,15 +47,15 @@ class ProductVariantController extends SitecController
         $product = $this->productRepository->find($id);
 
         if (empty($product)) {
-            Cms::notification('Product not found', 'warning');
+            Siravel::notification('Product not found', 'warning');
 
             return redirect(route('cms.products.index'));
         }
 
         if ($this->productVariantRepository->addVariant($product, $request->all())) {
-            Cms::notification('Variant successfully added.', 'success');
+            Siravel::notification('Variant successfully added.', 'success');
         } else {
-            Cms::notification('Failed to add variant. Missing Key or Value.', 'warning');
+            Siravel::notification('Failed to add variant. Missing Key or Value.', 'warning');
         }
 
         return redirect(route(config('cms.backend-route-prefix', 'cms').'.products.edit', $id).'?tab=variants');

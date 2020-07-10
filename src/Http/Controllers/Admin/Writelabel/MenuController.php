@@ -10,7 +10,7 @@ use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
 use Siravel\Services\CmsResponseService;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class MenuController extends BaseController
@@ -82,16 +82,16 @@ class MenuController extends BaseController
 
             if (!$validation['errors']) {
                 $menu = $this->repository->store($request->all());
-                Cms::notification('Menu saved successfully.', 'success');
+                Siravel::notification('Menu saved successfully.', 'success');
 
                 if (!$menu) {
-                    Cms::notification('Menu could not be saved.', 'danger');
+                    Siravel::notification('Menu could not be saved.', 'danger');
                 }
             } else {
                 return $validation['redirect'];
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Menu could not be saved.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Menu could not be saved.', 'danger');
         }
 
         return redirect(route('admin.menus.edit', [$menu->id]));
@@ -109,7 +109,7 @@ class MenuController extends BaseController
         $menu = $this->repository->find($id);
 
         if (empty($menu)) {
-            Cms::notification('Menu not found', 'warning');
+            Siravel::notification('Menu not found', 'warning');
 
             return redirect(route('admin.menus.index'));
         }
@@ -133,19 +133,19 @@ class MenuController extends BaseController
             $menu = $this->repository->find($id);
 
             if (empty($menu)) {
-                Cms::notification('Menu not found', 'warning');
+                Siravel::notification('Menu not found', 'warning');
 
                 return redirect(route('admin.menus.index'));
             }
 
             $menu = $this->repository->update($menu, $request->all());
-            Cms::notification('Menu updated successfully.', 'success');
+            Siravel::notification('Menu updated successfully.', 'success');
 
             if (!$menu) {
-                Cms::notification('Menu could not be updated.', 'danger');
+                Siravel::notification('Menu could not be updated.', 'danger');
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Menu could not be updated.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Menu could not be updated.', 'danger');
         }
 
         return redirect(route('admin.menus.edit', [$id]));
@@ -163,14 +163,14 @@ class MenuController extends BaseController
         $menu = $this->repository->find($id);
 
         if (empty($menu)) {
-            Cms::notification('Menu not found', 'warning');
+            Siravel::notification('Menu not found', 'warning');
 
             return redirect(route('admin.menus.index'));
         }
 
         $menu->delete();
 
-        Cms::notification('Menu deleted successfully.');
+        Siravel::notification('Menu deleted successfully.');
 
         return redirect(route('admin.menus.index'));
     }

@@ -1,6 +1,6 @@
 <?php namespace Siravel\Http\Controllers\Features\Girl;
 
-use Siravel\Http\Controllers\Features\GirlController;
+use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\User;
 use App\Http\Requests\Admin\UserRequest;
 use Datatables;

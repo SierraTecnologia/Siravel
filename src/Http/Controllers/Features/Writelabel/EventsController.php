@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
 use Siravel\Http\Controllers\Features\Controller;
-use App\Services\EventService;
-use App\Repositories\EventRepository;
+use Siravel\Services\EventService;
+use Siravel\Repositories\EventRepository;
 
 class EventsController extends Controller
 {

@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Translation\Repositories\ModelTranslationRepository;
 use Illuminate\Support\Facades\Schema;
 
-class CmsRepository
+class SiravelRepository
 {
     public $translationRepo;
 

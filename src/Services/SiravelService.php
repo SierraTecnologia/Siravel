@@ -14,7 +14,7 @@ use SiObjects\Support\Traits\Services\LangServiceTrait;
 use SiObjects\Support\Traits\Services\MenuServiceTrait;
 use SiObjects\Support\Traits\Services\ModuleServiceTrait;
 
-class CmsService
+class SiravelService
 {
     use LangServiceTrait;
     use MenuServiceTrait;
@@ -23,7 +23,7 @@ class CmsService
 
     public function __construct()
     {
-        $this->imageRepo = App::make('App\Repositories\ImageRepository');
+        $this->imageRepo = App::make('Siravel\Repositories\ImageRepository');
     }
 
     /**
@@ -39,7 +39,6 @@ class CmsService
         if (!$fullURL) {
             return base_path(__DIR__.'/../Assets/'.$path);
         }
-
         return url('asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
     }
 

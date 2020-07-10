@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redirect;
 use Mail;
 use Validator;
 use View;
-use App\Services\HotelBeds;
+use Siravel\Services\HotelBeds;
 use Carbon\Carbon;
 
 class TravelsController extends Controller

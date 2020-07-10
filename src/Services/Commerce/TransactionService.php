@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
-use Informate\Models\Order;
-use Siravel\Repositories\TransactionRepository;
+use Siravel\Models\Commerce\Order;
+use Siravel\Repositories\Commerce\TransactionRepository;
 
 class TransactionService
 {
@@ -41,7 +41,7 @@ class TransactionService
      */
     public function paginated()
     {
-        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->paginated(config('cms.pagination', 25));
     }
 
     /**
@@ -53,7 +53,7 @@ class TransactionService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->search($payload, config('cms.pagination', 25));
     }
 
     /**
@@ -127,11 +127,9 @@ class TransactionService
         $refund = app(SierraTecnologiaService::class)->refund($transaction->provider_id, $amount);
 
         if ($refund) {
-            $transaction->update(
-                [
+            $transaction->update([
                 'refund_date' => Carbon::now(),
-                ]
-            );
+            ]);
 
             app(LogisticService::class)->afterRefund($transaction);
 

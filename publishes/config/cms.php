@@ -162,9 +162,9 @@ return [
     */
 
     'site-mapped-modules' => [
-        'blog' => 'App\Repositories\BlogRepository',
-        'page' => 'App\Repositories\Negocios\PageRepository',
-        'events' => 'App\Repositories\EventRepository',
+        'blog' => 'Siravel\Repositories\BlogRepository',
+        'page' => 'Siravel\Repositories\Negocios\PageRepository',
+        'events' => 'Siravel\Repositories\EventRepository',
     ],
 
 

@@ -8,7 +8,6 @@
     Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
         Route::get('/', 'DashboardController@index');
         Route::get('/home', ['as' => 'home', 'uses' => 'DashboardController@index']);
-        Route::get('/analytics', 'DashboardController@analytics');
 
         Route::resource('settings', 'SettingController', ['except' => ['show', 'create', 'store', 'edit']]);
         Route::get('settings/configure/{slugSetting}', 'SettingController@configure')->name('settings.configure');
@@ -20,6 +19,7 @@
         Route::get('help', 'PageController@help');
         Route::get('changelog', 'PageController@changelog');
 
+        Route::get('cms'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
         /*
         |--------------------------------------------------------------------------
         | Common Features

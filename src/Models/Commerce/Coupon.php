@@ -4,7 +4,7 @@ namespace Siravel\Models\Commerce;
 
 use Carbon\Carbon;
 use App\Models\CmsModel;
-use App\Services\Commerce\CartService;
+use Siravel\Services\Commerce\CartService;
 
 use Siravel\Models\Traits\BusinessTrait;
 

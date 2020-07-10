@@ -24,5 +24,5 @@
 
 @section('javascript')
     @parent
-    <script type="text/javascript" src="{{ Cms::moduleAsset('siravel', 'js/coupons.js', 'application/javascript') }}"></script>
+    <script type="text/javascript" src="{{ Siravel::moduleAsset('siravel', 'js/coupons.js', 'application/javascript') }}"></script>
 @endsection

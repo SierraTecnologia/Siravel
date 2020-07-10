@@ -12,8 +12,8 @@ use Crypto;
 use Stalker\Models\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
-use Siravel\Services\Midia\FileService;
-use Siravel\Services\ValidationService;
+use Stalker\Services\Midia\FileService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\FileRepository;
 use Siravel\Services\CmsResponseService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
@@ -95,7 +95,7 @@ class FilesController extends BaseController
             return $validation['redirect'];
         }
 
-        Cms::notification('File saved successfully.', 'success');
+        Siravel::notification('File saved successfully.', 'success');
 
         return redirect(route('admin.files.index'));
     }
@@ -158,7 +158,7 @@ class FilesController extends BaseController
         $files = $this->repository->find($id);
 
         if (empty($files)) {
-            Cms::notification('File not found', 'warning');
+            Siravel::notification('File not found', 'warning');
 
             return redirect(route('admin.files.index'));
         }
@@ -179,14 +179,14 @@ class FilesController extends BaseController
         $files = $this->repository->find($id);
 
         if (empty($files)) {
-            Cms::notification('File not found', 'warning');
+            Siravel::notification('File not found', 'warning');
 
             return redirect(route('admin.files.index'));
         }
 
         $files = $this->repository->update($files, $request->all());
 
-        Cms::notification('File updated successfully.', 'success');
+        Siravel::notification('File updated successfully.', 'success');
 
         return Redirect::back();
     }
@@ -203,7 +203,7 @@ class FilesController extends BaseController
         $files = $this->repository->find($id);
 
         if (empty($files)) {
-            Cms::notification('File not found', 'warning');
+            Siravel::notification('File not found', 'warning');
 
             return redirect(route('admin.files.index'));
         }
@@ -216,7 +216,7 @@ class FilesController extends BaseController
 
         $files->delete();
 
-        Cms::notification('File deleted successfully.', 'success');
+        Siravel::notification('File deleted successfully.', 'success');
 
         return redirect(route('admin.files.index'));
     }

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
-use App\Services\Rss\Contracts\RssBuilder;
+use Siravel\Services\Rss\Contracts\RssBuilder;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Response;

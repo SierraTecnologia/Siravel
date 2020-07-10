@@ -2,7 +2,6 @@
 
 namespace Siravel\Services;
 
-use Lang;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;

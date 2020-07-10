@@ -1,6 +1,6 @@
 <?php namespace Siravel\Http\Controllers\Features\Girl;
 
-use Siravel\Http\Controllers\Features\GirlController;
+use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\Blog\Article;
 use App\Models\Blog\Category;
 use App\Models\User;
@@ -20,7 +20,7 @@ class DashboardController extends GirlController {
         $title = "Dashboard";
 
         $fas = '';
-        $
+        
 
         $news = Article::count();
         $newscategory = Category::count();

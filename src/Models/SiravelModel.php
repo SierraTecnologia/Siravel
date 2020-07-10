@@ -9,7 +9,7 @@ use Informate\Models\System\Archive;
 use Translation\Models\Translation;
 use Translation\Traits\HasTranslations;
 
-class CmsModel extends Model
+class SiravelModel extends Model
 {
     use HasTranslations;
 

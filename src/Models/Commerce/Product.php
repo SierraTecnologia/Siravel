@@ -6,8 +6,8 @@ use Facilitador\Models\Image;
 use App\Models\ProductImage;
 use App\Models\CmsModel;
 use Stalker\Services\Midia\FileService;
-use App\Services\Commerce\CartService;
-use App\Services\Commerce\ProductService;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\Commerce\ProductService;
 
 use Siravel\Models\Traits\BusinessTrait;
 

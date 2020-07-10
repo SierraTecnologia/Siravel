@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Siravel\Services\StoreLogistics;
-use Support\Utils\Interfaces\LogisticServiceInterface;
+use App\Interfaces\LogisticServiceInterface;
 
 class LogisticService implements LogisticServiceInterface
 {

@@ -6,7 +6,7 @@ use Cms;
 use Siravel\Models\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\Negocios\PageRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -75,13 +75,13 @@ class PagesController extends BaseController
 
         if (!$validation['errors']) {
             $pages = $this->repository->store($request->all());
-            Cms::notification('Page saved successfully.', 'success');
+            Siravel::notification('Page saved successfully.', 'success');
         } else {
             return $validation['redirect'];
         }
 
         if (!$pages) {
-            Cms::notification('Page could not be saved.', 'warning');
+            Siravel::notification('Page could not be saved.', 'warning');
         }
 
         return redirect(route('admin.pages.edit', [$pages->id]));
@@ -99,7 +99,7 @@ class PagesController extends BaseController
         $page = $this->repository->find($id);
 
         if (empty($page)) {
-            Cms::notification('Page not found', 'warning');
+            Siravel::notification('Page not found', 'warning');
 
             return redirect(route('admin.pages.index'));
         }
@@ -120,16 +120,16 @@ class PagesController extends BaseController
         $pages = $this->repository->find($id);
 
         if (empty($pages)) {
-            Cms::notification('Page not found', 'warning');
+            Siravel::notification('Page not found', 'warning');
 
             return redirect(route('admin.pages.index'));
         }
 
         $pages = $this->repository->update($pages, $request->all());
-        Cms::notification('Page updated successfully.', 'success');
+        Siravel::notification('Page updated successfully.', 'success');
 
         if (!$pages) {
-            Cms::notification('Page could not be saved.', 'warning');
+            Siravel::notification('Page could not be saved.', 'warning');
         }
 
         return redirect(url()->previous());
@@ -147,14 +147,14 @@ class PagesController extends BaseController
         $pages = $this->repository->find($id);
 
         if (empty($pages)) {
-            Cms::notification('Page not found', 'warning');
+            Siravel::notification('Page not found', 'warning');
 
             return redirect(route('admin.pages.index'));
         }
 
         $pages->delete();
 
-        Cms::notification('Page deleted successfully.', 'success');
+        Siravel::notification('Page deleted successfully.', 'success');
 
         return redirect(route('admin.pages.index'));
     }

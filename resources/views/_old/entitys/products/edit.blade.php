@@ -2,7 +2,7 @@
 
 @section('stylesheets')
     @parent
-    <link rel="stylesheet" type="text/css" href="{{ Cms::moduleAsset('siravel', 'css/store.css', 'text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Siravel::moduleAsset('siravel', 'css/store.css', 'text/css') }}">
 @stop
 
 @section('pageTitle') Products @stop
@@ -20,6 +20,6 @@
 @section('javascript')
 
     @parent
-    {!! Minify::javascript(Cms::moduleAsset('siravel', 'js/products.js', 'application/javascript')) !!}
+    {!! Minify::javascript(Siravel::moduleAsset('siravel', 'js/products.js', 'application/javascript')) !!}
 
 @endsection

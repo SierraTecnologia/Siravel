@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
-use Informate\Models\Coupon;
-use Informate\Models\Transaction;
-use Siravel\Services\TransactionService;
+use Siravel\Models\Commerce\Coupon;
+use Siravel\Models\Commerce\Transaction;
+use Siravel\Services\Commerce\TransactionService;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -60,15 +60,12 @@ class PaymentService
             $coupon = json_encode(app(Coupon::class)->where('code', Session::get('coupon_code'))->first());
         }
 
-        $result = $user->meta->charge(
-            ($cart->getCartTotal() * 100), [
-            'currency' => \Illuminate\Support\Facades\Config::get('siravel.currency', 'usd'),
-            ]
-        );
+        $result = $user->meta->charge(($cart->getCartTotal() * 100), [
+            'currency' => config('commerce.currency', 'usd'),
+        ]);
 
         if ($result) {
-            $transaction = $this->transactionService->create(
-                [
+            $transaction = $this->transactionService->create([
                 'uuid' => Crypto::uuid(),
                 'provider' => 'sitecpayment',
                 'state' => 'success',
@@ -83,8 +80,7 @@ class PaymentService
                 'cart' => json_encode($cart->contents()),
                 'response' => json_encode($result),
                 'user_id' => $user->id,
-                ]
-            );
+            ]);
 
             $cart->removeCoupon();
 
@@ -115,31 +111,26 @@ class PaymentService
     {
         $customerService = app(CustomerProfileService::class);
 
-        $shippingAddress = json_encode(
-            [
+        $shippingAddress = json_encode([
             'street' => $customerService->shippingAddress('street'),
             'postal' => $customerService->shippingAddress('postal'),
             'city' => $customerService->shippingAddress('city'),
             'state' => $customerService->shippingAddress('state'),
             'country' => $customerService->shippingAddress('country'),
-            ]
-        );
+        ]);
 
-        $order = $this->orderService->create(
-            [
+        $order = $this->orderService->create([
             'uuid' => Crypto::uuid(),
             'user_id' => $user->id,
             'transaction_id' => $transaction->id,
             'details' => json_encode($items),
             'shipping_address' => $shippingAddress,
-            ]
-        );
+        ]);
 
         foreach ($items as $product) {
             $productCost = $this->orderItemService->getCostDetails($product);
 
-            $this->orderItemService->create(
-                [
+            $this->orderItemService->create([
                 'order_id' => $order->id,
                 'product_id' => $product->id,
                 'transaction_id' => $transaction->id,
@@ -149,8 +140,7 @@ class PaymentService
                 'shipping' => $productCost['shipping'],
                 'tax' => $productCost['tax'],
                 'total' => $productCost['total'],
-                ]
-            );
+            ]);
         }
 
         return $this->logistic->afterPlaceOrder($user, $transaction, $items);

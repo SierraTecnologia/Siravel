@@ -8,7 +8,7 @@ use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Siravel\Http\Requests\LinksRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -61,16 +61,16 @@ class LinksController extends BaseController
 
             if (!$validation['errors']) {
                 $links = $this->repository->store($request->all());
-                Cms::notification('Link saved successfully.', 'success');
+                Siravel::notification('Link saved successfully.', 'success');
 
                 if (!$links) {
-                    Cms::notification('Link could not be saved.', 'danger');
+                    Siravel::notification('Link could not be saved.', 'danger');
                 }
             } else {
                 return $validation['redirect'];
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Link could not be saved.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Link could not be saved.', 'danger');
         }
 
         return redirect(route('admin.menus.edit', [$request->get('menu_id')]));
@@ -88,7 +88,7 @@ class LinksController extends BaseController
         $links = $this->repository->find($id);
 
         if (empty($links)) {
-            Cms::notification('Link not found', 'warning');
+            Siravel::notification('Link not found', 'warning');
 
             return redirect(route('admin.links.index'));
         }
@@ -110,19 +110,19 @@ class LinksController extends BaseController
             $links = $this->repository->find($id);
 
             if (empty($links)) {
-                Cms::notification('Link not found', 'warning');
+                Siravel::notification('Link not found', 'warning');
 
                 return redirect(route('admin.links.index'));
             }
 
             $links = $this->repository->update($links, $request->all());
-            Cms::notification('Link updated successfully.', 'success');
+            Siravel::notification('Link updated successfully.', 'success');
 
             if (!$links) {
-                Cms::notification('Link could not be updated.', 'danger');
+                Siravel::notification('Link could not be updated.', 'danger');
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Links could not be updated.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Links could not be updated.', 'danger');
         }
 
         return redirect(route('admin.links.edit', [$id]));
@@ -141,7 +141,7 @@ class LinksController extends BaseController
         $menu = $link->menu_id;
 
         if (empty($link)) {
-            Cms::notification('Link not found', 'warning');
+            Siravel::notification('Link not found', 'warning');
 
             return redirect(route('admin.menus.index'));
         }
@@ -156,7 +156,7 @@ class LinksController extends BaseController
 
         $link->delete();
 
-        Cms::notification('Link deleted successfully.', 'success');
+        Siravel::notification('Link deleted successfully.', 'success');
 
         return redirect(route('admin.menus.edit', [$link->menu_id]));
     }

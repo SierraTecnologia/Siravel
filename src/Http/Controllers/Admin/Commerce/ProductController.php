@@ -168,14 +168,14 @@ class ProductController extends SitecController
         }
 
         if (empty($image)) {
-            Cms::notification('Image not found', 'warning');
+            Siravel::notification('Image not found', 'warning');
 
             return back();
         }
 
         $image->delete();
 
-        Cms::notification('Image deleted successfully.', 'success');
+        Siravel::notification('Image deleted successfully.', 'success');
 
         return back();
     }

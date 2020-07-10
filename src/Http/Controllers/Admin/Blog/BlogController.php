@@ -6,7 +6,7 @@ use Cms;
 use Siravel\Models\Blog\Blog;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\BlogRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\BlogRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -80,13 +80,13 @@ class BlogController extends BaseController
 
         if (!$validation['errors']) {
             $blog = $this->repository->store($request->all());
-            Cms::notification('Blog saved successfully.', 'success');
+            Siravel::notification('Blog saved successfully.', 'success');
         } else {
             return $validation['redirect'];
         }
 
         if (!$blog) {
-            Cms::notification('Blog could not be saved.', 'warning');
+            Siravel::notification('Blog could not be saved.', 'warning');
         }
 
         return redirect(route('admin.blog.edit', [$blog->id]));
@@ -104,7 +104,7 @@ class BlogController extends BaseController
         $blog = $this->repository->find($id);
 
         if (empty($blog)) {
-            Cms::notification('Blog not found', 'warning');
+            Siravel::notification('Blog not found', 'warning');
 
             return redirect(route('admin.blog.index'));
         }
@@ -125,7 +125,7 @@ class BlogController extends BaseController
         $blog = $this->repository->find($id);
 
         if (empty($blog)) {
-            Cms::notification('Blog not found', 'warning');
+            Siravel::notification('Blog not found', 'warning');
 
             return redirect(route('admin.blog.index'));
         }
@@ -135,10 +135,10 @@ class BlogController extends BaseController
         if (!$validation['errors']) {
             $blog = $this->repository->update($blog, $request->all());
 
-            Cms::notification('Blog updated successfully.', 'success');
+            Siravel::notification('Blog updated successfully.', 'success');
 
             if (! $blog) {
-                Cms::notification('Blog could not be saved.', 'warning');
+                Siravel::notification('Blog could not be saved.', 'warning');
             }
         } else {
             return $validation['redirect'];
@@ -159,14 +159,14 @@ class BlogController extends BaseController
         $blog = $this->repository->find($id);
 
         if (empty($blog)) {
-            Cms::notification('Blog not found', 'warning');
+            Siravel::notification('Blog not found', 'warning');
 
             return redirect(route('admin.blog.index'));
         }
 
         $blog->delete();
 
-        Cms::notification('Blog deleted successfully.', 'success');
+        Siravel::notification('Blog deleted successfully.', 'success');
 
         return redirect(route('admin.blog.index'));
     }

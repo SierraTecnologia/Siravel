@@ -4,7 +4,6 @@ namespace Siravel\Models\Negocios;
 
 use App\Models\Model;
 use function key_exists;
-use Lang;
 
 use Siravel\Models\Traits\BusinessTrait;
 use Translation\Traits\HasTranslations;

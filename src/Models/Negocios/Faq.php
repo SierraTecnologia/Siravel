@@ -2,11 +2,9 @@
 
 namespace Siravel\Models\Negocios;
 
-use App\Models\CmsModel as BaseModel;
+use Siravel\Models\CmsModel as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
-use Lang;
-use Translation\Traits\HasTranslations;
 
 use Siravel\Models\Traits\BusinessTrait;
 
@@ -18,8 +16,6 @@ use Siravel\Models\Traits\BusinessTrait;
 class Faq extends BaseModel
 {
     use SoftDeletes, BusinessTrait;
-
-    use HasTranslations;
 
     public $table = 'faqs';
 

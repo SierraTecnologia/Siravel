@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Blog;
 
 use Siravel\Http\Controllers\Features\Controller;
-use App\Repositories\BlogRepository;
+use Siravel\Repositories\BlogRepository;
 
 class BlogController extends Controller
 {

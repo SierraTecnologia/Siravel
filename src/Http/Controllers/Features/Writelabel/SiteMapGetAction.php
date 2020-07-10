@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
-use App\Services\SiteMap\Contracts\SiteMapBuilder;
+use Siravel\Services\SiteMap\Contracts\SiteMapBuilder;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Response;

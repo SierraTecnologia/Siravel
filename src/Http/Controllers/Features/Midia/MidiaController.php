@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Midia;
 
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
-use App\Services\Midia\MidiaService;
+use Siravel\Services\Midia\MidiaService;
 use Siravel\Http\Controllers\Features\Controller;
 
 class MidiaController extends Controller {

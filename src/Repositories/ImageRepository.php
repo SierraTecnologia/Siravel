@@ -103,7 +103,7 @@ class ImageRepository extends CmsRepository
         $savedFile = $input['location'];
 
         if (!$savedFile) {
-            Cms::notification('Image could not be saved.', 'danger');
+            Siravel::notification('Image could not be saved.', 'danger');
 
             return false;
         }
@@ -138,7 +138,7 @@ class ImageRepository extends CmsRepository
             $savedFile = app(FileService::class)->saveFile($input['location'], 'public/images', [], true);
 
             if (!$savedFile) {
-                Cms::notification('Image could not be updated.', 'danger');
+                Siravel::notification('Image could not be updated.', 'danger');
 
                 return false;
             }

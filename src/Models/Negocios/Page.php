@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Siravel\Models\CmsModel as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
-use Lang;
-use App\Services\Normalizer;
+use Siravel\Services\Normalizer;
 use Siravel\Models\Traits\BusinessTrait;
 
 class Page extends BaseModel

@@ -42,7 +42,7 @@ class PageRepository extends BaseRepository
         $payload = $this->parseBlocks($payload, 'pages');
 
         $payload['title'] = htmlentities($payload['title']);
-        $payload['url'] = Cms::convertToURL($payload['url']);
+        $payload['url'] = Siravel::convertToURL($payload['url']);
         $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
         $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? Carbon::parse($payload['published_at'])->format('Y-m-d H:i:s') : Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s');
 
@@ -107,7 +107,7 @@ class PageRepository extends BaseRepository
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($page->id, 'Siravel\Models\Negocios\Page', $payload['lang'], $payload);
         } else {
-            $payload['url'] = Cms::convertToURL($payload['url']);
+            $payload['url'] = Siravel::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
             $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? Carbon::parse($payload['published_at'])->format('Y-m-d H:i:s') : Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s');
 

@@ -7,7 +7,7 @@ use Cms;
 use Casa\Models\Calendar\Event;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\EventRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\EventRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -76,13 +76,13 @@ class EventController extends BaseController
 
         if (!$validation['errors']) {
             $event = $this->repository->store($request->all());
-            Cms::notification('Event saved successfully.', 'success');
+            Siravel::notification('Event saved successfully.', 'success');
         } else {
             return $validation['redirect'];
         }
 
         if (!$event) {
-            Cms::notification('Event could not be saved.', 'warning');
+            Siravel::notification('Event could not be saved.', 'warning');
         }
 
         return redirect(route('admin.events.edit', [$event->id]));
@@ -100,7 +100,7 @@ class EventController extends BaseController
         $event = $this->repository->find($id);
 
         if (empty($event)) {
-            Cms::notification('Event not found', 'warning');
+            Siravel::notification('Event not found', 'warning');
 
             return redirect(route('admin.events.index'));
         }
@@ -121,16 +121,16 @@ class EventController extends BaseController
         $event = $this->repository->find($id);
 
         if (empty($event)) {
-            Cms::notification('Event not found', 'warning');
+            Siravel::notification('Event not found', 'warning');
 
             return redirect(route('admin.events.index'));
         }
 
         $event = $this->repository->update($event, $request->all());
-        Cms::notification('Event updated successfully.', 'success');
+        Siravel::notification('Event updated successfully.', 'success');
 
         if (!$event) {
-            Cms::notification('Event could not be saved.', 'warning');
+            Siravel::notification('Event could not be saved.', 'warning');
         }
 
         return redirect(URL::previous());
@@ -148,14 +148,14 @@ class EventController extends BaseController
         $event = $this->repository->find($id);
 
         if (empty($event)) {
-            Cms::notification('Event not found', 'warning');
+            Siravel::notification('Event not found', 'warning');
 
             return redirect(route('admin.events.index'));
         }
 
         $event->delete();
 
-        Cms::notification('Event deleted successfully.', 'success');
+        Siravel::notification('Event deleted successfully.', 'success');
 
         return redirect(route('admin.events.index'));
     }

@@ -89,7 +89,7 @@ class BlogRepository extends CmsRepository
         $payload = $this->parseBlocks($payload, 'blog');
 
         $payload['title'] = htmlentities($payload['title']);
-        $payload['url'] = Cms::convertToURL($payload['url']);
+        $payload['url'] = Siravel::convertToURL($payload['url']);
         $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
         $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? Carbon::parse($payload['published_at'])->format('Y-m-d H:i:s') : Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s');
 
@@ -158,7 +158,7 @@ class BlogRepository extends CmsRepository
         if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($blog->id, 'Siravel\Models\Blog\Blog', $payload['lang'], $payload);
         } else {
-            $payload['url'] = Cms::convertToURL($payload['url']);
+            $payload['url'] = Siravel::convertToURL($payload['url']);
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;
             $payload['published_at'] = (isset($payload['published_at']) && !empty($payload['published_at'])) ? Carbon::parse($payload['published_at'])->format('Y-m-d H:i:s') : Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s');
 

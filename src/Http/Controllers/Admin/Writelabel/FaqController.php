@@ -8,7 +8,7 @@ use Siravel\Models\Negocios\Faq;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FaqRequest;
 use Siravel\Repositories\FaqRepository;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FaqController extends BaseController
@@ -76,13 +76,13 @@ class FaqController extends BaseController
 
         if (!$validation['errors']) {
             $faq = $this->repository->store($request->all());
-            Cms::notification('Faq saved successfully.', 'success');
+            Siravel::notification('Faq saved successfully.', 'success');
         } else {
             return $validation['redirect'];
         }
 
         if (!$faq) {
-            Cms::notification('Faq could not be saved.', 'warning');
+            Siravel::notification('Faq could not be saved.', 'warning');
         }
 
         return redirect(route('admin.faqs.edit', [$faq->id]));
@@ -100,7 +100,7 @@ class FaqController extends BaseController
         $faq = $this->repository->find($id);
 
         if (empty($faq)) {
-            Cms::notification('Faq not found', 'warning');
+            Siravel::notification('Faq not found', 'warning');
 
             return redirect(route('admin.faqs.index'));
         }
@@ -121,7 +121,7 @@ class FaqController extends BaseController
         $faq = $this->repository->find($id);
 
         if (empty($faq)) {
-            Cms::notification('Faq not found', 'warning');
+            Siravel::notification('Faq not found', 'warning');
 
             return redirect(route('admin.faqs.index'));
         }
@@ -130,10 +130,10 @@ class FaqController extends BaseController
 
         if (!$validation['errors']) {
             $faq = $this->repository->update($faq, $request->all());
-            Cms::notification('Faq updated successfully.', 'success');
+            Siravel::notification('Faq updated successfully.', 'success');
 
             if (!$faq) {
-                Cms::notification('Faq could not be saved.', 'warning');
+                Siravel::notification('Faq could not be saved.', 'warning');
             }
         } else {
             return $validation['redirect'];
@@ -154,14 +154,14 @@ class FaqController extends BaseController
         $faq = $this->repository->find($id);
 
         if (empty($faq)) {
-            Cms::notification('Faq not found', 'warning');
+            Siravel::notification('Faq not found', 'warning');
 
             return redirect(route('admin.faqs.index'));
         }
 
         $faq->delete();
 
-        Cms::notification('Faq deleted successfully.', 'success');
+        Siravel::notification('Faq deleted successfully.', 'success');
 
         return redirect(route('admin.faqs.index'));
     }

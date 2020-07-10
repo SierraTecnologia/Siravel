@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Carbon\Carbon;
 use SierraTecnologia\Error\InvalidRequest;
 use SierraTecnologia\Crypto\Services\Crypto;
-use Informate\Models\Refund;
-use Siravel\Repositories\OrderItemRepository;
-use Siravel\Services\CartService;
-use Siravel\Services\LogisticService;
-use Siravel\Services\TransactionService;
+use Siravel\Models\Commerce\Refund;
+use Siravel\Repositories\Commerce\OrderItemRepository;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\Commerce\LogisticService;
+use Siravel\Services\Commerce\TransactionService;
 
 class OrderItemService
 {
@@ -35,7 +35,7 @@ class OrderItemService
      */
     public function paginated()
     {
-        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->paginated(config('cms.pagination', 25));
     }
 
     /**
@@ -59,7 +59,7 @@ class OrderItemService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->search($payload, config('cms.pagination', 25));
     }
 
     /**
@@ -109,7 +109,7 @@ class OrderItemService
     /**
      * Cancel an order Item
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return bool
      */
@@ -134,15 +134,12 @@ class OrderItemService
             $refund = app(TransactionService::class)->refund($transaction->uuid, $amount);
 
             if ($refund) {
-                $orderItem->update(
-                    [
+                $orderItem->update([
                     'was_refunded' => true,
                     'status' => 'cancelled',
-                    ]
-                );
+                ]);
 
-                app(Refund::class)->create(
-                    [
+                app(Refund::class)->create([
                     'transaction_id' => $transaction->id,
                     'order_item_id' => $orderItem->id,
                     'provider_id' => $refund->id,
@@ -151,22 +148,17 @@ class OrderItemService
                     'provider' => 'SierraTecnologia',
                     'charge' => $refund->charge,
                     'currency' => $refund->currency,
-                    ]
-                );
+                ]);
 
                 $orderItem->load('order');
 
                 if (!$orderItem->order->hasActiveOrderItems()) {
-                    $orderItem->order->update(
-                        [
+                    $orderItem->order->update([
                         'status' => 'cancelled',
-                        ]
-                    );
-                    $orderItem->order->transaction()->update(
-                        [
+                    ]);
+                    $orderItem->order->transaction()->update([
                         'refund_date' => Carbon::now(),
-                        ]
-                    );
+                    ]);
                 }
 
                 app(LogisticService::class)->afterRefund($transaction);
@@ -188,7 +180,7 @@ class OrderItemService
     /**
      * Get the price details of a product
      *
-     * @param Product $product
+     * @param  Product $product
      *
      * @return array
      */

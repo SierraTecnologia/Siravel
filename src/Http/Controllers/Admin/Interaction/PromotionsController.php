@@ -6,7 +6,7 @@ use Cms;
 use Illuminate\Http\Request;
 use Siravel\Models\Promotion;
 use Siravel\Http\Requests\PromotionRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\PromotionRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -79,7 +79,7 @@ class PromotionsController extends BaseController
             return $validation['redirect'];
         }
 
-        Cms::notification('Promotions saved successfully.', 'success');
+        Siravel::notification('Promotions saved successfully.', 'success');
 
         return redirect(route('admin.promotions.edit', [$promotion->id]));
     }
@@ -96,7 +96,7 @@ class PromotionsController extends BaseController
         $promotion = $this->repository->find($id);
 
         if (empty($promotion)) {
-            Cms::notification('Promotions not found', 'warning');
+            Siravel::notification('Promotions not found', 'warning');
 
             return redirect(route('admin.promotions.index'));
         }
@@ -117,14 +117,14 @@ class PromotionsController extends BaseController
         $promotion = $this->repository->find($id);
 
         if (empty($promotion)) {
-            Cms::notification('Promotions not found', 'warning');
+            Siravel::notification('Promotions not found', 'warning');
 
             return redirect(route('admin.promotions.index'));
         }
 
         $promotion = $this->repository->update($promotion, $request->all());
 
-        Cms::notification('Promotions updated successfully.', 'success');
+        Siravel::notification('Promotions updated successfully.', 'success');
 
         return redirect(url()->previous());
     }
@@ -141,14 +141,14 @@ class PromotionsController extends BaseController
         $promotion = $this->repository->find($id);
 
         if (empty($promotion)) {
-            Cms::notification('Promotions not found', 'warning');
+            Siravel::notification('Promotions not found', 'warning');
 
             return redirect(route('admin.promotions.index'));
         }
 
         $promotion->delete();
 
-        Cms::notification('Promotions deleted successfully.', 'success');
+        Siravel::notification('Promotions deleted successfully.', 'success');
 
         return redirect(route('admin.promotions.index'));
     }

@@ -6,8 +6,8 @@ use Redirect;
 use Illuminate\Http\Request;
 use App\Interfaces\Helpers\StoreHelper;
 use Siravel\Http\Controllers\Features\Controller;
-use App\Services\Commerce\CartService;
-use App\Services\CmsResponseService;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\CmsResponseService;
 
 class CartController extends Controller
 {

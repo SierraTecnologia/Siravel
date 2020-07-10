@@ -3,9 +3,9 @@
 namespace Siravel\Http\Middleware;
 
 use Closure;
-use Config;
+use Gate;
 
-class CmsApi
+class Siravel
 {
     /**
      * Handle an incoming request.
@@ -17,9 +17,9 @@ class CmsApi
      */
     public function handle($request, Closure $next)
     {
-        if (Config::get('cms.api-token') == $request->get('token')) {
+        // if (Gate::allows('cms')) {
             return $next($request);
-        }
+        // }
 
         return response('Unauthorized.', 401);
     }

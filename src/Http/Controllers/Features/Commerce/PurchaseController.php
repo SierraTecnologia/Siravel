@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Siravel\Http\Controllers\Features\Controller;
 use Auth;
-use App\Repositories\Commerce\TransactionRepository;
+use Siravel\Repositories\Commerce\TransactionRepository;
 
 class PurchaseController extends Controller
 {

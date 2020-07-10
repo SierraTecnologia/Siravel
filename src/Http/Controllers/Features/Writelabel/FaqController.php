@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
 use Illuminate\Http\Request;
-use App\Repositories\FaqRepository;
+use Siravel\Repositories\FaqRepository;
 
 
 class FaqController extends Controller

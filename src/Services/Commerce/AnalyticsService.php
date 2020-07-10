@@ -1,20 +1,18 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Carbon\Carbon;
 use SierraTecnologia\Cashier\Subscription;
-use Informate\Models\Transaction;
+use Siravel\Models\Commerce\Transaction;
 
 class AnalyticsService
 {
     public function balanceValues($transactions)
     {
-        $collected = $transactions->groupBy(
-            function ($item) {
-                return $item->created_at->format('d-M-y');
-            }
-        );
+        $collected = $transactions->groupBy(function ($item) {
+            return $item->created_at->format('d-M-y');
+        });
 
         $balanceValues = [
             'refunds' => 0,
@@ -36,11 +34,9 @@ class AnalyticsService
 
     public function getTransactionsByDays($transactions)
     {
-        $collected = $transactions->groupBy(
-            function ($item) {
-                return $item->created_at->format('d-M-y');
-            }
-        );
+        $collected = $transactions->groupBy(function ($item) {
+            return $item->created_at->format('d-M-y');
+        });
 
         $transactionDays = collect();
         $transactionsByDay = collect();

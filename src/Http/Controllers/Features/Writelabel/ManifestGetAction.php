@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
-use App\Services\Manifest\Contracts\Manifest;
+use Siravel\Services\Manifest\Contracts\Manifest;
 use Illuminate\Routing\ResponseFactory;
 
 /**

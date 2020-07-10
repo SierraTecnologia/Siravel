@@ -3,7 +3,7 @@
 namespace Siravel\Models\Commerce;
 
 use App\Models\CmsModel;
-use App\Services\Commerce\ProductService;
+use Siravel\Services\Commerce\ProductService;
 
 use Siravel\Models\Traits\BusinessTrait;
 

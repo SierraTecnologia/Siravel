@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
-use Siravel\Repositories\FavoriteRepository;
+use Siravel\Repositories\Commerce\FavoriteRepository;
 
 class FavoriteService
 {

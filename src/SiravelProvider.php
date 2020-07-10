@@ -10,9 +10,12 @@ use Illuminate\Support\Collection;
 use Support\Traits\Providers\ConsoleTools;
 use Siravel\Services\System\BusinessService;
 
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 
 class SiravelProvider extends ServiceProvider
 {
@@ -23,7 +26,11 @@ class SiravelProvider extends ServiceProvider
     ];
 
     public static $providers = [
+        \Siravel\Providers\SiravelBusinessProvider::class,
+        \Siravel\Providers\SiravelServiceProvider::class,
+        \Siravel\Providers\SiravelEventProvider::class,
         \Siravel\Providers\SiravelRouteProvider::class,
+        \Siravel\Providers\SiravelModuleProvider::class,
         \Facilitador\FacilitadorProvider::class,
         
 
@@ -100,6 +107,7 @@ class SiravelProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
 
         $this->publishes(
             [
@@ -145,40 +153,37 @@ class SiravelProvider extends ServiceProvider
         | Blade Directives
         |--------------------------------------------------------------------------
         */
-        /**
         Blade::directive('menu', function ($expression) {
-            return "<?php echo Cms::menu($expression); ?>";
+            return "<?php echo Siravel::menu($expression); ?>";
         });
 
         Blade::directive('features', function () {
-            return '<?php echo Cms::moduleLinks(); ?>';
+            return '<?php echo Siravel::moduleLinks(); ?>';
         });
 
         Blade::directive('widget', function ($expression) {
-            return "<?php echo Cms::widget($expression); ?>";
+            return "<?php echo Siravel::widget($expression); ?>";
         });
 
         Blade::directive('image', function ($expression) {
-            return "<?php echo Cms::image($expression); ?>";
+            return "<?php echo Siravel::image($expression); ?>";
         });
 
         Blade::directive('image_link', function ($expression) {
-            return "<?php echo Cms::imageLink($expression); ?>";
+            return "<?php echo Siravel::imageLink($expression); ?>";
         });
 
         Blade::directive('images', function ($expression) {
-            return "<?php echo Cms::images($expression); ?>";
+            return "<?php echo Siravel::images($expression); ?>";
         });
 
         Blade::directive('edit', function ($expression) {
-            return "<?php echo Cms::editBtn($expression); ?>";
+            return "<?php echo Siravel::editBtn($expression); ?>";
         });
 
         Blade::directive('markdown', function ($expression) {
             return "<?php echo Markdown::convertToHtml($expression); ?>";
         }); 
-*/
-
         $theme = Config::get('cms.frontend-theme');
         
         View::addLocation(base_path('resources/themes/'.$theme));
@@ -245,21 +250,6 @@ class SiravelProvider extends ServiceProvider
 
         $this->registerApiV1Services();
 
-
-        // BUsiness
-        $loader = AliasLoader::getInstance();
-        $loader->alias('BusinessService', \Siravel\Facades\BusinessServiceFacade::class);
-        $this->app->singleton(BusinessService::class, function () {
-            return new BusinessService();
-        });
-        $this->app['events']->listen(
-            'eloquent.*',
-            'Siravel\Observers\BusinessCallbacks'
-        );
-        $this->app['events']->listen(
-            'siravel::model.*',
-            'Siravel\Observers\BusinessCallbacks'
-        );
 
         
 
@@ -366,11 +356,11 @@ class SiravelProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \App\Services\Image\Contracts\ImageProcessor::class,
-            \App\Services\Image\ImagineImageProcessor::class
+            \Siravel\Services\Image\Contracts\ImageProcessor::class,
+            \Siravel\Services\Image\ImagineImageProcessor::class
         );
 
-        $this->app->when(\App\Services\Image\ImagineImageProcessor::class)
+        $this->app->when(\Siravel\Services\Image\ImagineImageProcessor::class)
             ->needs('$config')
             ->give(function (Application $app) {
                 return [
@@ -379,18 +369,18 @@ class SiravelProvider extends ServiceProvider
             });
 
         $this->app->bind(
-            \App\Services\Manifest\Contracts\Manifest::class,
-            \App\Services\Manifest\AppManifest::class
+            \Siravel\Services\Manifest\Contracts\Manifest::class,
+            \Siravel\Services\Manifest\AppManifest::class
         );
 
         $this->app->bind(
-            \App\Services\SiteMap\Contracts\SiteMapBuilder::class,
-            \App\Services\SiteMap\AppSiteMapBuilder::class
+            \Siravel\Services\SiteMap\Contracts\SiteMapBuilder::class,
+            \Siravel\Services\SiteMap\AppSiteMapBuilder::class
         );
 
         $this->app->bind(
-            \App\Services\Rss\Contracts\RssBuilder::class,
-            \App\Services\Rss\AppRssBuilder::class
+            \Siravel\Services\Rss\Contracts\RssBuilder::class,
+            \Siravel\Services\Rss\AppRssBuilder::class
         );
 
         $this->app->bind(

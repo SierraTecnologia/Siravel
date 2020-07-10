@@ -12,7 +12,7 @@ use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
 use Siravel\Services\CmsResponseService;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController
@@ -91,18 +91,18 @@ class ImagesController extends BaseController
                     ]);
                 }
 
-                Cms::notification('Image saved successfully.', 'success');
+                Siravel::notification('Image saved successfully.', 'success');
 
                 if (!$imageSaved) {
-                    Cms::notification('Image was not saved.', 'danger');
+                    Siravel::notification('Image was not saved.', 'danger');
                 }
             } else {
-                Cms::notification('Image could not be saved', 'danger');
+                Siravel::notification('Image could not be saved', 'danger');
 
                 return $validation['redirect'];
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
         }
 
         return redirect(route('admin.images.index'));
@@ -147,7 +147,7 @@ class ImagesController extends BaseController
         $images = $this->repository->find($id);
 
         if (empty($images)) {
-            Cms::notification('Image not found', 'warning');
+            Siravel::notification('Image not found', 'warning');
 
             return redirect(route('admin.images.index'));
         }
@@ -168,10 +168,10 @@ class ImagesController extends BaseController
         try {
             $images = $this->repository->find($id);
 
-            Cms::notification('Image updated successfully.', 'success');
+            Siravel::notification('Image updated successfully.', 'success');
 
             if (empty($images)) {
-                Cms::notification('Image not found', 'warning');
+                Siravel::notification('Image not found', 'warning');
 
                 return redirect(route('admin.images.index'));
             }
@@ -179,10 +179,10 @@ class ImagesController extends BaseController
             $images = $this->repository->update($images, $request->all());
 
             if (!$images) {
-                Cms::notification('Image could not be updated', 'danger');
+                Siravel::notification('Image could not be updated', 'danger');
             }
         } catch (Exception $e) {
-            Cms::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
+            Siravel::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
         }
 
         return redirect(route('admin.images.edit', $id));
@@ -206,7 +206,7 @@ class ImagesController extends BaseController
         }
 
         if (empty($image)) {
-            Cms::notification('Image not found', 'warning');
+            Siravel::notification('Image not found', 'warning');
 
             return redirect(route('admin.images.index'));
         }
@@ -214,7 +214,7 @@ class ImagesController extends BaseController
         $image->forgetCache();
         $image->delete();
 
-        Cms::notification('Image deleted successfully.', 'success');
+        Siravel::notification('Image deleted successfully.', 'success');
 
         return redirect(route('admin.images.index'));
     }
@@ -242,7 +242,7 @@ class ImagesController extends BaseController
             $image->delete();
         }
 
-        Cms::notification('Bulk Image deletes completed successfully.', 'success');
+        Siravel::notification('Bulk Image deletes completed successfully.', 'success');
 
         return redirect(route('admin.images.index'));
     }

@@ -59,7 +59,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'activated' => CheckIsUserActivated::class,
-        'cms' => \Siravel\Http\Middleware\Cms::class,
+        'cms' => \Siravel\Http\Middleware\Siravel::class,
         'cms-api' => \Siravel\Http\Middleware\CmsApi::class,
         'analytics' => \Siravel\Http\Middleware\Analytics::class,
         'trackings' => \Siravel\Http\Middleware\Trackings::class,

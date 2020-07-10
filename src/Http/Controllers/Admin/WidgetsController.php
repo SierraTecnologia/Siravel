@@ -6,7 +6,7 @@ use Cms;
 use Illuminate\Http\Request;
 use Siravel\Models\Widget;
 use Siravel\Http\Requests\WidgetRequest;
-use Siravel\Services\ValidationService;
+use Facilitador\Services\ValidationService;
 use Siravel\Repositories\WidgetRepository;
 use theme;
 
@@ -79,7 +79,7 @@ class WidgetsController extends Controller
             return $validation['redirect'];
         }
 
-        Cms::notification('Widgets saved successfully.', 'success');
+        Siravel::notification('Widgets saved successfully.', 'success');
 
         return redirect(route('admin.widgets.edit', [$widgets->id]));
     }
@@ -96,7 +96,7 @@ class WidgetsController extends Controller
         $widget = $this->repository->find($id);
 
         if (empty($widget)) {
-            Cms::notification('Widgets not found', 'warning');
+            Siravel::notification('Widgets not found', 'warning');
 
             return redirect(route('admin.widgets.index'));
         }
@@ -117,14 +117,14 @@ class WidgetsController extends Controller
         $widgets = $this->repository->find($id);
 
         if (empty($widgets)) {
-            Cms::notification('Widgets not found', 'warning');
+            Siravel::notification('Widgets not found', 'warning');
 
             return redirect(route('admin.widgets.index'));
         }
 
         $widgets = $this->repository->update($widgets, $request->all());
 
-        Cms::notification('Widgets updated successfully.', 'success');
+        Siravel::notification('Widgets updated successfully.', 'success');
 
         return redirect(url()->previous());
     }
@@ -141,14 +141,14 @@ class WidgetsController extends Controller
         $widgets = $this->repository->find($id);
 
         if (empty($widgets)) {
-            Cms::notification('Widgets not found', 'warning');
+            Siravel::notification('Widgets not found', 'warning');
 
             return redirect(route('admin.widgets.index'));
         }
 
         $widgets->delete();
 
-        Cms::notification('Widgets deleted successfully.', 'success');
+        Siravel::notification('Widgets deleted successfully.', 'success');
 
         return redirect(route('admin.widgets.index'));
     }

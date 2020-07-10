@@ -3,8 +3,8 @@
 namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Siravel\Http\Controllers\Features\Controller;
-use App\Repositories\Commerce\OrderRepository;
-use App\Services\Commerce\OrderService;
+use Siravel\Repositories\Commerce\OrderRepository;
+use Siravel\Services\Commerce\OrderService;
 
 class OrderController extends Controller
 {

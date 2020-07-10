@@ -3,6 +3,6 @@
 if (!function_exists('commerce')) {
     function commerce()
     {
-        return app(App\Services\Commerce\StoreHelperService::class);
+        return app(Siravel\Services\Commerce\StoreHelperService::class);
     }
 }

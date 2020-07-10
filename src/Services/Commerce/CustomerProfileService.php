@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Illuminate\Support\Facades\Session;
 

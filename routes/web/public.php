@@ -5,38 +5,14 @@
 | Basic WriteLabels Pages
 |--------------------------------------------------------------------------
 */
-Route::get('cms', 'SitecFeatureController@sendHome');
-Route::get('cms', 'SitecFeatureController@sendHome');
 Route::get('{module}/rss', 'RssController@index');
 Route::get('site-map', 'SiteMapController@index');
-Route::get('cms'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
-
-/*
-|--------------------------------------------------------------------------
-| Config Pages
-|--------------------------------------------------------------------------
-*/
-
-Route::get('language/set/{language}', 'SitecFeatureController@setLanguage')->name('language.set');
-
-/*
-|--------------------------------------------------------------------------
-| Public Assets
-|--------------------------------------------------------------------------
-*/
-
-Route::get('public-preview/{encFileName}', 'AssetController@asPreview');
-Route::get('public-asset/{encFileName}', 'AssetController@asPublic');
-Route::get('public-download/{encFileName}/{encRealFileName}', 'AssetController@asDownload');
-Route::get('asset/{path}/{contentType}', 'AssetController@asset');
-Route::group(['prefix' => 'sitec'], function () {
-    Route::get('asset/{path}/{contentType}', 'AssetController@asset');
-});
 
 
-Route::get('midia-preview/{encFileName}', 'MidiaController@asPreview');
-Route::get('midia-full/{encFileName}', 'MidiaController@asFull');
-Route::get('midia-download/{encFileName}/{encRealFileName}', 'MidiaController@asDownload');
+// @todo
+// Route::get('midia-preview/{encFileName}', 'MidiaController@asPreview');
+// Route::get('midia-full/{encFileName}', 'MidiaController@asFull');
+// Route::get('midia-download/{encFileName}/{encRealFileName}', 'MidiaController@asDownload');
 
 
 
@@ -63,17 +39,17 @@ Route::group(['namespace' => 'Features', 'middleware' => ['language', 'analytics
         Route::get('faqs', 'FaqController@all');
     });
 
-    /**
-     * Midia
-     */
-    Route::group(['namespace' => 'Midia', 'as' => 'midia.'], function () {
-        Route::get('gallery', 'GalleryController@all');
-        Route::get('gallery/{tag}', 'GalleryController@show');
+    // /**
+    //  * Midia @todo
+    //  */
+    // Route::group(['namespace' => 'Midia', 'as' => 'midia.'], function () {
+    //     Route::get('gallery', 'GalleryController@all');
+    //     Route::get('gallery/{tag}', 'GalleryController@show');
         
-        Route::get('midia-preview/{midiaId}', 'MidiaController@asPreview');
-        Route::get('midia-full/{midiaId}', 'MidiaController@asFull');
-        Route::get('midia-download/{midiaId}/{encRealFileName}', 'MidiaController@asDownload');
-    });
+    //     Route::get('midia-preview/{midiaId}', 'MidiaController@asPreview');
+    //     Route::get('midia-full/{midiaId}', 'MidiaController@asFull');
+    //     Route::get('midia-download/{midiaId}/{encRealFileName}', 'MidiaController@asDownload');
+    // });
 
     /**
      * Blog

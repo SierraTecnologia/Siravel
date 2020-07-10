@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Siravel\Services\StoreLogistics;
-use Informate\Models\Coupon;
-use Informate\Models\Currency;
-use Informate\Models\Variant;
-use Siravel\Repositories\CartRepository;
-use Siravel\Repositories\CartSessionRepository;
-use Siravel\Repositories\TransactionRepository;
-use SiObjects\Support\Concerns\CartHtmlGenerator;
+use Siravel\Models\Commerce\Coupon;
+use Siravel\Models\Commerce\Currency;
+use Siravel\Models\Commerce\Variant;
+use Siravel\Repositories\Commerce\CartRepository;
+use Siravel\Repositories\Commerce\CartSessionRepository;
+use Siravel\Repositories\Commerce\TransactionRepository;
+use Siravel\Services\Commerce\Concerns\CartHtmlGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -206,14 +206,10 @@ class CartService
             $productVariants = Variant::where('product_id', $id)->get();
 
             foreach ($productVariants as $variant) {
-                array_push(
-                    $variants, json_encode(
-                        [
-                        'variant' => $this->getId($variant),
-                        'value' => $this->getDefaultValue($variant),
-                        ]
-                    )
-                );
+                array_push($variants, json_encode([
+                    'variant' => $this->getId($variant),
+                    'value' => $this->getDefaultValue($variant),
+                ]));
             }
         }
 
@@ -340,7 +336,7 @@ class CartService
     /**
      * Get an item shipping
      *
-     * @param Product $item
+     * @param  Product $item
      *
      * @return int
      */
@@ -352,7 +348,7 @@ class CartService
     /**
      * Get an item tax
      *
-     * @param Product $item
+     * @param  Product $item
      *
      * @return int
      */
@@ -367,7 +363,7 @@ class CartService
     /**
      * Get an item subtotal
      *
-     * @param Product $item
+     * @param  Product $item
      *
      * @return int
      */
@@ -402,7 +398,7 @@ class CartService
             $total += $this->getItemSubtotal($item);
         }
 
-        if (\Illuminate\Support\Facades\Config::get('siravel.taxes_include_shipping')) {
+        if (config('commerce.taxes_include_shipping')) {
             $total += app(StoreLogistics::class)->shipping($this->cartRepo()->user);
         }
 

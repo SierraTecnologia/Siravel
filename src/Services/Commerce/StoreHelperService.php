@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
-use Informate\Models\Plan;
-use Siravel\Services\CartService;
-use Siravel\Services\CustomerProfileService;
-use Siravel\Services\LogisticService;
+use Siravel\Models\Commerce\Plan;
+use Siravel\Services\Commerce\CartService;
+use Siravel\Services\Commerce\CustomerProfileService;
+use Siravel\Services\Commerce\LogisticService;
 
 class StoreHelperService
 {
@@ -18,7 +18,7 @@ class StoreHelperService
 
     public function storeUrl($url)
     {
-        return url(\Illuminate\Support\Facades\Config::get('siravel.store_url_prefix').'/'.$url);
+        return url(config('commerce.store_url_prefix').'/'.$url);
     }
 
     public function customer()
@@ -42,15 +42,13 @@ class StoreHelperService
 
         if (!Cache::has($key)) {
             $invoice = auth()->user()->meta->upcomingInvoice($subscription->name);
-            Cache::put(
-                $key, [
+            Cache::put($key, [
                 'total' => round(($invoice->total / 100), 2),
                 'attempt_count' => $invoice->attempt_count,
                 'period_start' => $invoice->period_start,
                 'period_end' => $invoice->period_end,
                 'date' => Carbon::createFromTimestamp($invoice->date),
-                ], 25
-            );
+            ], 25);
         }
 
         return Cache::get($key);

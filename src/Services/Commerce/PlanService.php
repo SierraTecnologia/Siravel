@@ -1,14 +1,14 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
-use Facilitador\Models\UserMeta;
+use App\Models\UserMeta;
 use Siravel\Services\UserService;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
-use Informate\Models\Plan;
-use SierraTecnologia\Cms\Services\CmsService;
+use Siravel\Models\Commerce\Plan;
+use Siravel\Services\CmsService;
 
 class PlanService
 {
@@ -52,8 +52,7 @@ class PlanService
             $localPlan = $this->model->getPlansBySierraTecnologiaId($plan->id);
 
             if (!$localPlan) {
-                $this->model->create(
-                    [
+                $this->model->create([
                     'uuid' => crypto_uuid(),
                     'name' => $plan->id,
                     'price' => $plan->amount,
@@ -63,8 +62,7 @@ class PlanService
                     'subscription_name' => $plan->id,
                     'descriptor' => $plan->statement_descriptor,
                     'description' => $plan->statement_descriptor,
-                    ]
-                );
+                ]);
             }
         }
     }
@@ -76,7 +74,7 @@ class PlanService
      */
     public function paginated()
     {
-        return $this->model->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->model->paginate(config('cms.pagination', 25));
     }
 
     /**
@@ -96,7 +94,7 @@ class PlanService
             $query->orWhere($attribute, 'LIKE', '%'.$payload.'%');
         }
 
-        return $query->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $query->paginate(config('cms.pagination', 25));
     }
 
     /**
@@ -120,7 +118,7 @@ class PlanService
 
             return $this->model->create($payload);
         } catch (Exception $e) {
-            dd('Erro ao Criar', $e->getMessage());
+            dd($e->getMessage());
             throw new Exception('Could not generate new plan', 1);
         }
 
@@ -212,7 +210,7 @@ class PlanService
     /**
      * Get subscribers.
      *
-     * @param Informate\Models\Plan $plan
+     * @param Siravel\Models\Commerce\Plan $plan
      *
      * @return Illuminate\Support\Collection
      */

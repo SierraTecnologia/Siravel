@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin;
 
-use Siravel\Services\System\AnalyticsService;
+use Tracking\Services\AnalyticsService;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;

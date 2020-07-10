@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CmsSeeder extends Seeder
+class SiravelSeeder extends Seeder
 {
     /**
      * Run the database seeds.

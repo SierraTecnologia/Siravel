@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
-use Informate\Models\Refund;
+use Siravel\Models\Commerce\Refund;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\Config;
-use Siravel\Services\TransactionService;
-use Siravel\Repositories\OrderRepository;
+use Siravel\Services\Commerce\TransactionService;
+use Siravel\Repositories\Commerce\OrderRepository;
 
 class OrderService
 {
@@ -37,7 +37,7 @@ class OrderService
      */
     public function paginated()
     {
-        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->paginated(config('cms.pagination', 25));
     }
 
     /**
@@ -61,7 +61,7 @@ class OrderService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->search($payload, config('cms.pagination', 25));
     }
 
     /**
@@ -117,8 +117,7 @@ class OrderService
                 $refund = $this->transactions->refund($order->transaction('uuid'), $order->remainingValue());
 
                 if ($refund) {
-                    $refundRecord = app(Refund::class)->create(
-                        [
+                    $refundRecord = app(Refund::class)->create([
                         'transaction_id' => $order->transaction('id'),
                         'provider_id' => $refund->id,
                         'uuid' => Crypto::uuid(),
@@ -126,25 +125,20 @@ class OrderService
                         'provider' => 'SierraTecnologia',
                         'charge' => $refund->charge,
                         'currency' => $refund->currency,
-                        ]
-                    );
+                    ]);
 
                     foreach ($order->items as $item) {
-                        $item->update(
-                            [
+                        $item->update([
                             'was_refunded' => true,
                             'status' => 'cancelled',
                             'refund_id' => $refundRecord->id,
-                            ]
-                        );
+                        ]);
                     }
 
-                    return $this->update(
-                        $order->id, [
+                    return $this->update($order->id, [
                         'status' => 'cancelled',
                         'is_shipped' => false,
-                        ]
-                    );
+                    ]);
                 }
             }
         }

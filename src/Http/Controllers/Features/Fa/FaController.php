@@ -6,7 +6,9 @@
 
 namespace Siravel\Http\Controllers\Features\Fa;
 
-class FaController extends Controller {
+use Siravel\Http\Controllers\Features\Controller as BaseController;
+
+class FaController extends BaseController {
 
     public function index()
     {

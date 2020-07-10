@@ -3,7 +3,7 @@
 use Stalker\Models\PhotoAlbum;
 use Stalker\Models\Photo;
 use Translation\Models\Language;
-use Siravel\Http\Controllers\Features\GirlController;
+use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;

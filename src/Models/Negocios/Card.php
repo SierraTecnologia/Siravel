@@ -5,7 +5,6 @@ namespace Siravel\Models\Negocios;
 use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
-use Lang;
 
 use Siravel\Models\Traits\BusinessTrait;
 

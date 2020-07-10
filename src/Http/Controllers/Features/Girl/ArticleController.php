@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Girl;
 
-use Siravel\Http\Controllers\Features\AdminController;
+use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\Blog\Article;
 use App\Models\Blog\Category;
 use Translation\Models\Language;
@@ -11,7 +11,7 @@ use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class ArticleController extends AdminController {
+class ArticleController extends GirlController {
 
     public function __construct()
     {

@@ -4,7 +4,7 @@ namespace Siravel\Services;
 
 use Illuminate\Support\Facades\Response;
 
-class CmsResponseService
+class SiravelResponseService
 {
     /**
      * Generate an api response.

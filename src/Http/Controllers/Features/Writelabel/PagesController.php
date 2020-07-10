@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Writelabel;
 
 use Illuminate\Http\Request;
-use App\Repositories\Negocios\PageRepository;
+use Siravel\Repositories\Negocios\PageRepository;
 use Cms;
 
 class PagesController extends Controller
@@ -24,7 +24,7 @@ class PagesController extends Controller
      */
     public function home()
     {
-        Cms::notification('Ola');
+        Siravel::notification('Ola');
         $page = $this->repository->findPagesByURL('home');
 
         $view = view('features.writelabel.pages.home');

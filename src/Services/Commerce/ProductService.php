@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Services;
+namespace Siravel\Services\Commerce;
 
-use SierraTecnologia\Cms\Facades\CmsServiceFacade as Cms;
+use App\Facades\CmsServiceFacade as Cms;
 use Illuminate\Support\Facades\Config;
-use SierraTecnologia\Cms\Services\FileService;
-use Siravel\Repositories\ProductRepository;
-use Siravel\Repositories\ProductVariantRepository;
+use Stalker\Services\Midia\FileService;
+use Siravel\Repositories\Commerce\ProductRepository;
+use Siravel\Repositories\Commerce\ProductVariantRepository;
 
 class ProductService
 {
@@ -32,7 +32,7 @@ class ProductService
      */
     public function paginated()
     {
-        return $this->repo->paginated(\Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->paginated(config('cms.pagination', 25));
     }
 
     /**
@@ -44,7 +44,7 @@ class ProductService
      */
     public function search($payload)
     {
-        return $this->repo->search($payload, \Illuminate\Support\Facades\Config::get('cms.pagination', 25));
+        return $this->repo->search($payload, config('cms.pagination', 25));
     }
 
     /**
@@ -56,7 +56,7 @@ class ProductService
      */
     public function create($payload)
     {
-        $payload['url'] = Cms::convertToURL($payload['url']);
+        $payload['url'] = Siravel::convertToURL($payload['url']);
 
         if (isset($payload['file'])) {
             $downloadFile = app(FileService::class)->saveFile($payload['file'], 'downloads');
@@ -105,7 +105,7 @@ class ProductService
     {
         $product = $this->repo->find($id);
 
-        $payload['url'] = Cms::convertToURL($payload['url']);
+        $payload['url'] = Siravel::convertToURL($payload['url']);
 
         if (isset($payload['hero_image'])) {
             $heroFile = app(FileService::class)->saveFile($payload['hero_image'], 'heroes', [], true);
@@ -176,7 +176,7 @@ class ProductService
      */
     public static function productDetails($product)
     {
-        return view('siravel-frontend::products.details', ['product' => $product])->render();
+        return view('features.commerce.products.details', ['product' => $product])->render();
     }
 
     /**
@@ -208,9 +208,9 @@ class ProductService
 
         foreach ($variants as $variant) {
             if (self::isArrayVariant($variant->value)) {
-                $variantHtml .= view('siravel-frontend::products.variants.select', ['variant' => $variant])->render();
+                $variantHtml .= view('features.commerce.products.variants.select', ['variant' => $variant])->render();
             } else {
-                $variantHtml .= view('siravel-frontend::products.variants.other', ['variant' => $variant])->render();
+                $variantHtml .= view('features.commerce.products.variants.other', ['variant' => $variant])->render();
             }
         }
 
