@@ -2,11 +2,11 @@
 
 namespace Siravel\Models\Commerce;
 
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Cart extends CmsModel
+class Cart extends SiravelModel
 {
     use BusinessTrait;
     

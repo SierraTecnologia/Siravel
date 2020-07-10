@@ -3,13 +3,13 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use Cms;
+use Siravel;
 use Siravel\Models\Blog\Blog;
-use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
 use Stalker\Services\Midia\FileService;
 
-class BlogRepository extends CmsRepository
+class BlogRepository extends SiravelRepository
 {
     public $model;
 

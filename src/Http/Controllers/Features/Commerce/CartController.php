@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 use App\Interfaces\Helpers\StoreHelper;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\CartService;
-use Siravel\Services\CmsResponseService;
+use Siravel\Services\SiravelResponseService;
 
 class CartController extends Controller
 {
     protected $cartService;
 
-    public function __construct(CartService $cartService, CmsResponseService $cmsResponseService)
+    public function __construct(CartService $cartService, SiravelResponseService $cmsResponseService)
     {
         $this->cart = $cartService;
         $this->responseService = $cmsResponseService;

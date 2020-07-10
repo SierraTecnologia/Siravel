@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin;
 
-use Cms;
+use Siravel;
 use Informate\Models\System\Archive;
 use Stalker\Services\Midia\FileService;
 use Illuminate\Http\Request;

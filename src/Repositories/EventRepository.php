@@ -4,10 +4,10 @@ namespace Siravel\Repositories;
 
 use Carbon\Carbon;
 use Casa\Models\Calendar\Event;
-use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
 
-class EventRepository extends CmsRepository
+class EventRepository extends SiravelRepository
 {
     public $model;
 

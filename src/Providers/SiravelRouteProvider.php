@@ -14,7 +14,7 @@ class SiravelRouteProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Siravel\Controllers';
+    protected $namespace = 'Siravel\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

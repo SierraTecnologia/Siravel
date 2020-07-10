@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Blog;
 
-use Siravel\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Facilitador\Services\Normalizer;
 use Translation\Traits\HasTranslations;
 use Informate\Models\System\Archive;
@@ -10,7 +10,7 @@ use Informate\Traits\ArchiveTrait;
 
 use Siravel\Contracts\Business\BusinessTrait;
 
-class Blog extends CmsModel
+class Blog extends SiravelModel
 {
     use BusinessTrait;
 

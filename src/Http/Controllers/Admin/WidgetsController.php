@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin;
 
-use Cms;
+use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Models\Widget;
 use Siravel\Http\Requests\WidgetRequest;

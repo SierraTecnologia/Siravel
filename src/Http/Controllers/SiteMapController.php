@@ -2,14 +2,14 @@
 
 namespace Siravel\Http\Controllers;
 
-use Siravel\Services\CmsService;
+use Siravel\Services\SiravelService;
 use Illuminate\Http\Response;
 
 class SiteMapController extends SitecController
 {
     protected $service;
 
-    public function __construct(CmsService $service)
+    public function __construct(SiravelService $service)
     {
         parent::__construct();
 

@@ -2,7 +2,7 @@
 
 namespace Siravel\Repositories;
 
-use Cms;
+use Siravel;
 use Config;
 use Crypto;
 use Facilitador\Models\Image;
@@ -10,7 +10,7 @@ use Siravel\Models\Tag;
 use Stalker\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;
 
-class ImageRepository extends CmsRepository
+class ImageRepository extends SiravelRepository
 {
     public $model;
 

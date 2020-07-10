@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use URL;
-use Cms;
+use Siravel;
 use Siravel\Models\Negocios\Faq;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FaqRequest;

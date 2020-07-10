@@ -8,6 +8,6 @@ class SiravelServiceFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'CmsService';
+        return 'SiravelService';
     }
 }

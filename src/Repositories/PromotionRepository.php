@@ -3,10 +3,10 @@
 namespace Siravel\Repositories;
 
 use Siravel\Models\Negocios\Promotion;
-use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
 
-class PromotionRepository extends CmsRepository
+class PromotionRepository extends SiravelRepository
 {
     public $model;
 

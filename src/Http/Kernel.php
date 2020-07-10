@@ -58,12 +58,13 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        /**
+         * My
+         */
         'activated' => CheckIsUserActivated::class,
         'cms' => \Siravel\Http\Middleware\Siravel::class,
         'cms-api' => \Siravel\Http\Middleware\CmsApi::class,
-        'analytics' => \Siravel\Http\Middleware\Analytics::class,
-        'trackings' => \Siravel\Http\Middleware\Trackings::class,
-        'language' => \Siravel\Http\Middleware\Language::class,
         'business' => \Siravel\Http\Middleware\Business::class,
         'subscription' => \Siravel\Http\Middleware\Subscription::class,
         'admin' => \Siravel\Http\Middleware\Admin::class,

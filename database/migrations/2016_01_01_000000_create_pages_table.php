@@ -40,8 +40,11 @@ class CreatePagesTable extends Migration
                 $table->foreign('language_code')->references('code')->on('languages');
                 $table->foreign('country_code')->references('code')->on('countries');
     
+                $table->dateTime('published_at')->nullable();
+
                 $table->enum('status', Page::$statuses)->default(Page::STATUS_INACTIVE);
                 $table->timestamps();
+                $table->softDeletes();
             }
         );
     }

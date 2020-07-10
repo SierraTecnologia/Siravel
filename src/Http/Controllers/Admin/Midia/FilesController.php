@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Midia;
 
-use Cms;
+use Siravel;
 use Config;
 use Storage;
 use Redirect;
@@ -15,7 +15,7 @@ use Siravel\Http\Requests\FileRequest;
 use Stalker\Services\Midia\FileService;
 use Facilitador\Services\ValidationService;
 use Siravel\Repositories\FileRepository;
-use Siravel\Services\CmsResponseService;
+use Siravel\Services\SiravelResponseService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FilesController extends BaseController
@@ -24,7 +24,7 @@ class FilesController extends BaseController
         FileRepository $repository,
         FileService $fileService,
         ValidationService $validationService,
-        CmsResponseService $cmsResponseService
+        SiravelResponseService $cmsResponseService
     ) {
         parent::__construct();
         $this->repository = $repository;

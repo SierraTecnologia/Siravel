@@ -3,13 +3,13 @@
 namespace Siravel\Models\Commerce;
 
 use App\Models\User;
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Siravel\Models\Commerce\OrderItem;
 use Siravel\Models\Commerce\Transaction;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Order extends CmsModel
+class Order extends SiravelModel
 {
     use BusinessTrait;
     

@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Interaction;
 
-use Cms;
+use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Models\Promotion;
 use Siravel\Http\Requests\PromotionRequest;

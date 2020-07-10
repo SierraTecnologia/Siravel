@@ -3,12 +3,12 @@
 namespace Siravel\Models\Commerce;
 
 use Carbon\Carbon;
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Siravel\Services\Commerce\CartService;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Coupon extends CmsModel
+class Coupon extends SiravelModel
 {
     use BusinessTrait;
     

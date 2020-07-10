@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
 use Siravel\Models\Commerce\Plan;
-use Siravel\Services\CmsService;
+use Siravel\Services\SiravelService;
 
 class PlanService
 {
@@ -107,7 +107,7 @@ class PlanService
     public function create($payload)
     {
         try {
-            $name = app(CmsService::class)->convertToURL($payload['name']);
+            $name = app(SiravelService::class)->convertToURL($payload['name']);
 
             $payload['sitecpayment_id'] = $name;
             $payload['uuid'] = crypto_uuid();

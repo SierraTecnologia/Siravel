@@ -6,12 +6,12 @@ use Config;
 use Crypto;
 use FileService;
 use Illuminate\Http\Request;
-use Cms;
+use Siravel;
 use Storage;
 use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use Siravel\Services\CmsResponseService;
+use Siravel\Services\SiravelResponseService;
 use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -127,9 +127,9 @@ class ImagesController extends BaseController
             $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
-            $response = app(CmsResponseService::class)->apiResponse('success', $fileSaved);
+            $response = app(SiravelResponseService::class)->apiResponse('success', $fileSaved);
         } else {
-            $response = app(CmsResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
+            $response = app(SiravelResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
         }
 
         return $response;
@@ -261,12 +261,12 @@ class ImagesController extends BaseController
     public function apiList(Request $request)
     {
         if (config('cms.api-key') != $request->header('cms')) {
-            return app(CmsResponseService::class)->apiResponse('error', []);
+            return app(SiravelResponseService::class)->apiResponse('error', []);
         }
 
         $images =  $this->repository->apiPrepared();
 
-        return app(CmsResponseService::class)->apiResponse('success', $images);
+        return app(SiravelResponseService::class)->apiResponse('success', $images);
     }
 
     /**
@@ -280,6 +280,6 @@ class ImagesController extends BaseController
     {
         $image = $this->repository->apiStore($request->all());
 
-        return app(CmsResponseService::class)->apiResponse('success', $image);
+        return app(SiravelResponseService::class)->apiResponse('success', $image);
     }
 }

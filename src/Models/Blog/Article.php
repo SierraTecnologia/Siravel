@@ -6,7 +6,7 @@ namespace Siravel\Models\Blog;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\User;
-use Siravel\Models\CmsModel as BaseModel;
+use Siravel\Models\SiravelModel as BaseModel;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;

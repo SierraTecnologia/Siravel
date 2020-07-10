@@ -2,12 +2,12 @@
 
 namespace Siravel\Repositories\Negocios;
 
-use Cms;
+use Siravel;
 use Config;
 use Crypto;
 use Facilitador\Models\UserMeta;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Repositories\CmsRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as BaseRepository;
 use Translation\Repositories\ModelTranslationRepository;
 
 class MemberRepository extends BaseRepository

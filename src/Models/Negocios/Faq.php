@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Negocios;
 
-use Siravel\Models\CmsModel as BaseModel;
+use Siravel\Models\SiravelModel as BaseModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 

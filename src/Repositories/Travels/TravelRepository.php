@@ -4,10 +4,10 @@ namespace Siravel\Repositories\Travels;
 
 use Carbon\Carbon;
 use Siravel\Models\Calendar\Travel;
-use Siravel\Repositories\CmsRepository;
+use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
 
-class TravelRepository extends CmsRepository
+class TravelRepository extends SiravelRepository
 {
     public $model;
 

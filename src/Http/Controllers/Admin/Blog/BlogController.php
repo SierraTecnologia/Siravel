@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Blog;
 
-use Cms;
+use Siravel;
 use Siravel\Models\Blog\Blog;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\BlogRequest;

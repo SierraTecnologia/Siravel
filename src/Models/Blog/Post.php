@@ -6,7 +6,7 @@ use Siravel\Models\Builders\PostBuilder;
 use App\Contants\Tables;
 use Carbon\Carbon;
 use Siravel\Models\Entities\PostEntity;
-use Siravel\Models\CmsModel as BaseModel;
+use Siravel\Models\SiravelModel as BaseModel;
 use Illuminate\Support\Collection;
 
 use Siravel\Contracts\Business\BusinessTrait;

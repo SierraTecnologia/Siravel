@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Writelabel;
 
 use Illuminate\Http\Request;
 use Siravel\Repositories\Negocios\PageRepository;
-use Cms;
+use Siravel;
 
 class PagesController extends Controller
 {

@@ -23,14 +23,14 @@ Route::get('site-map', 'SiteMapController@index');
 |--------------------------------------------------------------------------
 */
 
-Route::group(['namespace' => 'Features', 'middleware' => ['language', 'analytics']/*, 'as' => 'public.'*/], function () {
+Route::group(['namespace' => 'Features'/*, 'as' => 'public.'*/], function () {
 
     
     /**
      * Writelabel
      */
     Route::group(['namespace' => 'Writelabel', 'as' => 'writelabel.'], function () {
-        Route::get('', 'PagesController@home');
+        Route::get('/', 'PagesController@home');
         Route::get('home', 'PagesController@home');
         Route::get('pages', 'PagesController@all');
         Route::get('page/{url}', 'PagesController@show');

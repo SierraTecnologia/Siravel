@@ -2,12 +2,12 @@
 
 namespace Siravel\Models\Commerce;
 
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Siravel\Models\Commerce\OrderItem;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Refund extends CmsModel
+class Refund extends SiravelModel
 {
     use BusinessTrait;
     

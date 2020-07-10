@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
-use Cms;
+use Siravel;
 use Exception;
 use Siravel\Models\Negocios\Link;
 use Illuminate\Http\Request;

@@ -4,12 +4,12 @@ namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Exception;
 use Illuminate\Http\Request;
-use Cms;
+use Siravel;
 use Siravel\Models\Negocios\Menu;
 use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
-use Siravel\Services\CmsResponseService;
+use Siravel\Services\SiravelResponseService;
 use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -192,6 +192,6 @@ class MenuController extends BaseController
         $menu = $this->repository->find($id);
         $result = $this->repository->setOrder($menu, $request->except('_token'));
 
-        return app(CmsResponseService::class)->apiResponse('success', $result);
+        return app(SiravelResponseService::class)->apiResponse('success', $result);
     }
 }

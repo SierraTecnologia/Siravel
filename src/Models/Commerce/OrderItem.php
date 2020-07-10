@@ -5,12 +5,12 @@ namespace Siravel\Models\Commerce;
 use Siravel\Models\Commerce\Order;
 use Siravel\Models\Commerce\Product;
 use Siravel\Models\Commerce\Variant;
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Siravel\Models\Commerce\Transaction;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class OrderItem extends CmsModel
+class OrderItem extends SiravelModel
 {
     use BusinessTrait;
     

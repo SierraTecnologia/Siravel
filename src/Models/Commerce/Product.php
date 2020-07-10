@@ -4,14 +4,14 @@ namespace Siravel\Models\Commerce;
 
 use Facilitador\Models\Image;
 use App\Models\ProductImage;
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Stalker\Services\Midia\FileService;
 use Siravel\Services\Commerce\CartService;
 use Siravel\Services\Commerce\ProductService;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Product extends CmsModel
+class Product extends SiravelModel
 {
     use BusinessTrait;
     

@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin\Calendar;
 
 use URL;
-use Cms;
+use Siravel;
 use Casa\Models\Calendar\Event;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\EventRequest;

@@ -12,7 +12,6 @@ Route::group(
                         $loadingRoutes = [
                             'public',
                             'admin',
-                            'auth',
                             'features',
                             'recursos'
                         ];

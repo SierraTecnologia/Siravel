@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use Cms;
+use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
 use Siravel\Repositories\ImageRepository;

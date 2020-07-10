@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
-use Cms;
+use Siravel;
 use Siravel\Models\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;

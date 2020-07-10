@@ -2,12 +2,12 @@
 
 namespace Siravel\Models\Commerce;
 
-use App\Models\CmsModel;
+use Siravel\Models\SiravelModel;
 use Siravel\Services\Commerce\ProductService;
 
 use Siravel\Models\Traits\BusinessTrait;
 
-class Variant extends CmsModel
+class Variant extends SiravelModel
 {
     use BusinessTrait;
     

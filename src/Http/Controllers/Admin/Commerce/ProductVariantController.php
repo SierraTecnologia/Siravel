@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use Cms;
+use Siravel;
 use Response;
 use Illuminate\Http\Request;
 use Siravel\Models\Commerce\Products;

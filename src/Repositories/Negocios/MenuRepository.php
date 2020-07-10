@@ -1,7 +1,7 @@
 <?php
 namespace Siravel\Repositories\Negocios;
 
-use Siravel\Repositories\CmsRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as BaseRepository;
 use Siravel\Models\Negocios\Menu;
 use Cache;
 use Illuminate\Support\Facades\Schema;
