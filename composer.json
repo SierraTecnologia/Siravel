@@ -6,6 +6,7 @@
         "php": ">=7.2",
         "laravel/framework": "^6.0|^7.0|^8.0",
         "sierratecnologia/facilitador": "dev-master",
+        "sierratecnologia/casa": "dev-master",
         "sierratecnologia/locaravel": "dev-master"
     },
     "autoload": {

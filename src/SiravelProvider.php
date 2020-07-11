@@ -33,8 +33,7 @@ class SiravelProvider extends ServiceProvider
         \Siravel\Providers\SiravelRouteProvider::class,
         \Siravel\Providers\SiravelModuleProvider::class,
         \Facilitador\FacilitadorProvider::class,
-        
-
+        \Casa\CasaProvider::class,
     ];
 
     /**
