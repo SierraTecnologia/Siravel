@@ -5,10 +5,6 @@
     "require": {
         "php": ">=7.2",
         "laravel/framework": "^6.0|^7.0|^8.0",
-        "sierratecnologia/casa": "dev-master",
-        "sierratecnologia/trainner": "dev-master",
-        "sierratecnologia/finder": "dev-master",
-        "sierratecnologia/gamer": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
         "sierratecnologia/locaravel": "dev-master"
     },

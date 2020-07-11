@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 
-use App\Repositories\Negocios\PageRepository;
-use App\Repositories\Negocios\MenuRepository;
-use App\Repositories\Negocios\LinkRepository;
+use Siravel\Repositories\Negocios\PageRepository;
+use Siravel\Repositories\Negocios\MenuRepository;
+use Siravel\Repositories\Negocios\LinkRepository;
 
 trait MenuServiceTrait
 {

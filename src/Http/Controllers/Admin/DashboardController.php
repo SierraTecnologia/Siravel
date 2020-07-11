@@ -42,7 +42,7 @@ class DashboardController extends Controller
             'admin.dashboard.home', 
             compact(
                 'title',
-                'articles',
+                'blogs',
                 'pages',
                 'photos',
                 'members',

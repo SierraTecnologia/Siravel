@@ -4,7 +4,7 @@ namespace Siravel\Traits\Services;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use App\Repositories\WidgetRepository;
+use Siravel\Repositories\WidgetRepository;
 use Siravel\Services\Midia\FileService;
 
 trait DefaultModuleServiceTrait
