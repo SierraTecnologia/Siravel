@@ -6,7 +6,7 @@ use DB;
 use Auth;
 use Config;
 use Exception;
-use Siravel\Services\UserService;
+use Facilitador\Services\UserService;
 use Facilitador\Models\Role;
 use Illuminate\Support\Facades\Schema;
 

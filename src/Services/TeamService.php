@@ -5,7 +5,7 @@ namespace Siravel\Services;
 use DB;
 use Exception;
 use Illuminate\Support\Str;
-use Siravel\Services\UserService;
+use Facilitador\Services\UserService;
 use Siravel\Models\User;
 use Siravel\Models\Team;
 use Illuminate\Support\Facades\Schema;

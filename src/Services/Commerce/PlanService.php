@@ -3,7 +3,7 @@
 namespace Siravel\Services\Commerce;
 
 use App\Models\UserMeta;
-use Siravel\Services\UserService;
+use Facilitador\Services\UserService;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;

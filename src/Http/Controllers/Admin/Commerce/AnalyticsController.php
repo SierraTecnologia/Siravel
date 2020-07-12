@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Commerce;
 
-use Siravel\Services\UserService;
+use Facilitador\Services\UserService;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
 use Siravel\Services\Commerce\AnalyticsService;

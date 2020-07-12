@@ -3,7 +3,7 @@
 namespace Siravel\Services\System;
 
 use Siravel\Notifications\ActivateUserEmail;
-use Siravel\Services\UserService;
+use Facilitador\Services\UserService;
 use Illuminate\Support\Str;
 
 class ActivateService
