@@ -43,7 +43,8 @@ class SiravelService
             return base_path(__DIR__.'/../Assets/'.$path);
         }
 
-        return url($this->backendRoute.'/asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
+        return url('/asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
+        // return url($this->backendRoute.'/asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
     }
 
     /**

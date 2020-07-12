@@ -21,7 +21,7 @@ trait MenuServiceTrait
      */
     public function packageMenus()
     {
-        $packageViews = Config::get('Siravel.package-menus', []);
+        $packageViews = Config::get('siravel.package-menus', []);
 
         foreach ($packageViews as $view) {
             include $view;
@@ -54,10 +54,10 @@ trait MenuServiceTrait
             } else {
                 $page = Page::find($link->page_id);
                 if ($page) {
-                    if (config('app.locale') == config('Siravel.default-language', $this->config('Siravel.default-language'))) {
+                    if (config('app.locale') == config('siravel.default-language', $this->config('siravel.default-language'))) {
                         $response .= '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
                         $processedLinks[] = '<a href="'.URL::to('page/'.$page->url)."\">$link->name</a>";
-                    } elseif (config('app.locale') != config('Siravel.default-language', $this->config('Siravel.default-language'))) {
+                    } elseif (config('app.locale') != config('siravel.default-language', $this->config('siravel.default-language'))) {
                         if ($page->translation(config('app.locale'))) {
                             $response .= '<a href="'.URL::to('page/'.$page->translation(config('app.locale'))->data->url)."\">$link->name</a>";
                             $processedLinks[] = '<a href="'.URL::to('page/'.$page->translation(config('app.locale'))->data->url)."\">$link->name</a>";
@@ -86,7 +86,7 @@ trait MenuServiceTrait
         }
 
         if (Gate::allows('Siravel', Auth::user())) {
-            $response .= '<a href="'.url('Siravel/menus/'.$menu->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
+            $response .= '<a href="'.url('siravel/menus/'.$menu->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
         }
 
         return $response;

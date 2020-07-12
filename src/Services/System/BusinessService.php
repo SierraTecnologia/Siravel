@@ -21,7 +21,6 @@ class BusinessService
 
     public function __construct()
     {
-        Log::warning('PAUPAUPAU');
         $this->loadBusiness();
     }
 

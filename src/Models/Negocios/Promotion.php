@@ -6,7 +6,7 @@ use App\Models\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 use Illuminate\Support\Carbon;
-
+use Facilitador\Services\Normalizer;
 use Siravel\Models\Traits\BusinessTrait;
 
 /**

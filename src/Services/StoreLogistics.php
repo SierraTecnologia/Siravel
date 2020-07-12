@@ -3,7 +3,7 @@
 namespace Siravel\Services;
 
 use Illuminate\Support\Facades\Log;
-use App\Interfaces\LogisticServiceInterface;
+use Siravel\Interfaces\LogisticServiceInterface;
 use Siravel\Services\Commerce\CustomerProfileService;
 use Siravel\Services\Commerce\LogisticService;
 

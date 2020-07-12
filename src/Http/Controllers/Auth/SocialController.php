@@ -6,7 +6,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Siravel\Http\ControllersController;
-use Siravel\Services\Traits\ActivationTrait;
+use Facilitador\Traits\Services\ActivationTrait;
 use Siravel\Models\Social;
 use Siravel\Models\User;
 use Facilitador\Models\Role;

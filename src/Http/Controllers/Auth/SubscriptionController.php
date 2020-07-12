@@ -10,8 +10,8 @@ use Illuminate\Foundation\Auth\SubscriptsUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use Siravel\Services\Traits\CaptchaTrait;
-use Siravel\Services\Traits\ActivationTrait;
+use Facilitador\Traits\Services\CaptchaTrait;
+use Facilitador\Traits\Services\ActivationTrait;
 
 use Siravel\Http\Requests\SubscriptionRequest;
 
