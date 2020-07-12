@@ -12,6 +12,7 @@ use Crypto;
 use Siravel\Traits\Services\DefaultModuleServiceTrait;
 use Siravel\Traits\Services\MenuServiceTrait;
 use Siravel\Traits\Services\ModuleServiceTrait;
+use Siravel\Repositories\ImageRepository;
 
 class SiravelService
 {
@@ -19,14 +20,18 @@ class SiravelService
     use DefaultModuleServiceTrait;
     use ModuleServiceTrait;
 
+    public $backendRoute;
+
     public function __construct()
     {
-        $this->imageRepo = App::make('Siravel\Repositories\ImageRepository');
+        $this->imageRepo = app(ImageRepository::class);
+        $this->backendRoute = config('siravel.backend-route-prefix', 'siravel');
     }
 
     /**
      * Get a module's asset.
      *
+     * @param string $module      Module name
      * @param string $path        Path to module asset
      * @param string $contentType Asset type
      *
@@ -37,7 +42,60 @@ class SiravelService
         if (!$fullURL) {
             return base_path(__DIR__.'/../Assets/'.$path);
         }
-        return url('asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
+
+        return url($this->backendRoute.'/asset/'.Crypto::url_encode($path).'/'.Crypto::url_encode($contentType));
+    }
+
+    /**
+     * Get a file download response
+     *
+     * @param  string $fileName
+     * @param  string $realFileName
+     *
+     * @return Response
+     */
+    public function fileAsDownload($fileName, $realFileName)
+    {
+        return app(FileService::class)->fileAsDownload($fileName, $realFileName);
+    }
+
+    /**
+     * Check if default CMS language
+     *
+     * @return bool
+     */
+    public function isDefaultLanguage()
+    {
+        if (! is_null(request('lang')) && request('lang') !== config('siravel.default-language', 'en')) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Links for each supported language
+     *
+     * @param  string $linkClass
+     * @param  string $itemClass
+     *
+     * @return string
+     */
+    public function languageLinks($linkClass = 'nav-link', $itemClass = 'nav-item')
+    {
+        if (count(config('siravel.languages')) > 1) {
+            $languageLinks = [];
+            foreach (config('siravel.languages') as $key => $value) {
+                $url = url(config('siravel.backend-route-prefix', 'siravel').'/language/set/'.$key);
+                $languageLinks[] = '<li class="'.$itemClass.'"><a class="language-link '.$linkClass.'" href="'.$url.'">'.ucfirst($value).'</a></li>';
+            }
+
+            $languageLinkString = implode($languageLinks);
+
+            return $languageLinkString;
+        }
+
+        return '';
     }
 
     /**
@@ -70,10 +128,10 @@ class SiravelService
         foreach ($locations as $location) {
             if (is_array($location)) {
                 foreach ($location as $key => $value) {
-                    $trail .= '<li><a href="'.$value.'">'.ucfirst($key).'</a></li>';
+                    $trail .= '<li class="breadcrumb-item"><a href="'.$value.'">'.ucfirst($key).'</a></li>';
                 }
             } else {
-                $trail .= '<li>'.ucfirst($location).'</li>';
+                $trail .= '<li class="breadcrumb-item">'.ucfirst($location).'</li>';
             }
         }
 
@@ -156,20 +214,61 @@ class SiravelService
      *
      * @param string $type
      * @param int    $id
+     * @param string $class
      *
      * @return string
      */
-    public function editBtn($type = null, $id = null)
+    public function editBtn($type = null, $id = null, $class="btn-outline-secondary")
     {
         if (Gate::allows('siravel', Auth::user())) {
             if (!is_null($id)) {
-                return '<a href="'.url('admin/'.$type.'/'.$id.'/edit').'" class="btn btn-xs btn-default pull-right"><span class="fa fa-pencil"></span> Edit</a>';
+                return '<a href="'.url($this->backendRoute.'/'.$type.'/'.$id.'/edit').'" class="btn btn-sm '.$class.'"><span class="fa fa-edit"></span> Edit</a>';
             } else {
-                return '<a href="'.url('admin/'.$type).'" class="btn btn-xs btn-default pull-right"><span class="fa fa-pencil"></span> Edit</a>';
+                return '<a href="'.url($this->backendRoute.'/'.$type).'" class="btn btn-sm '.$class.'"><span class="fa fa-edit"></span> Edit</a>';
             }
         }
 
         return '';
+    }
+
+    /**
+     * SierraTecnologia CMS url generator - handles custom siravel url
+     *
+     * @param  string $string
+     *
+     * @return string
+     */
+    public function url($string)
+    {
+        $url = str_replace('.', '/', $string);
+
+        return url($this->backendRoute.'/'.$url);
+    }
+
+    /**
+     * SierraTecnologia CMS route generator
+     *
+     * @param  string $string
+     *
+     * @return string
+     */
+    public function route($string)
+    {
+        return $this->backendRoute.'.'.$string;
+    }
+
+    /**
+     * Another form of the edit button
+     *
+     * @param string $type
+     * @param int    $id
+     * @param string $class
+     *
+     * @return string
+     */
+    public function editBtnSecondary($type = null, $id = null)
+    {
+        return $this->editBtn($type, $id, 'btn-secondary');
     }
 
     /**
@@ -183,7 +282,7 @@ class SiravelService
     {
         $class = str_replace('\\', '_', get_class($object));
 
-        return url('admin/rollback/'.$class.'/'.$object->id);
+        return url($this->backendRoute.'/rollback/'.$class.'/'.$object->id);
     }
 
     /**
@@ -203,5 +302,42 @@ class SiravelService
         $until = strpos($matches, '-');
 
         return str_replace(']', '', substr($matches, 5, $until - 5));
+    }
+
+    /**
+     * Collect items for a site map
+     *
+     * @return array
+     */
+    public function collectSiteMapItems()
+    {
+        $itemCollection = [];
+        $modules = config('site-mapped-modules', [
+            'blog' => 'Siravel\Repositories\BlogRepository',
+            'page' => 'Siravel\Repositories\PageRepository',
+            'events' => 'Siravel\Repositories\EventRepository',
+        ]);
+
+        foreach ($modules as $module => $repository) {
+            try {
+                $items = collect([]);
+
+                if (method_exists($repository, 'arePublic')) {
+                    $items = app($repository)->arePublic();
+                }
+
+                foreach ($items as $item) {
+                    $itemCollection[] = [
+                        'url' => url($module.'/'.$item->url),
+                        'updated_at' => $item->updated_at->format('Y-m-d'),
+                    ];
+                }
+            } catch (ReflectionException $e) {
+                // It just means we couldn't find
+                // the Repository class
+            }
+        }
+
+        return collect($itemCollection);
     }
 }

@@ -40,6 +40,10 @@ class ScopeForBusinessInTables extends Migration
             $table->foreign('business_code')->references('code')->on('businesses');
 		});
 		
+        Schema::table('promotions', function (Blueprint $table) {
+			$table->string('business_code');
+            $table->foreign('business_code')->references('code')->on('businesses');
+		});
 		
 	}
 

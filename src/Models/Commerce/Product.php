@@ -77,7 +77,7 @@ class Product extends SiravelModel
 
     public function getHrefAttribute()
     {
-        return route('commerce.product', [$this->url]);
+        return route('siravel.commerce.product', [$this->url]);
     }
 
     public function getFileDownloadHrefAttribute()

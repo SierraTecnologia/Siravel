@@ -67,11 +67,11 @@ class Plan extends SiravelModel
 
     public function getHrefAttribute()
     {
-        return route('commerce.plan', [$this->uuid]);
+        return route('siravel.commerce.plan', [$this->uuid]);
     }
 
     public function subscribeBtn($content = '', $class = '')
     {
-        return '<form method="post" action="'.route('commerce.subscribe', [crypto_encrypt($this->id)]).'">'.csrf_field().'<button class="'.$class.'">'.$content.'</button></form>';
+        return '<form method="post" action="'.route('siravel.commerce.subscribe', [crypto_encrypt($this->id)]).'">'.csrf_field().'<button class="'.$class.'">'.$content.'</button></form>';
     }
 }

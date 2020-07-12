@@ -24,3 +24,11 @@ if (!function_exists('sortable')) {
         return '<a href="'.request()->url().'?'.http_build_query($newQuery).'">'.$label.' <span class="fa fa-sort"></span></a>';
     }
 }
+
+
+if (!function_exists('siravel')) {
+    function siravel()
+    {
+        return app(Siravel\Services\SiravelService::class);
+    }
+}
