@@ -63,6 +63,12 @@ class BusinessService
 
         return $business;
     }
+    
+    public function userAsSubscript($user)
+    {
+        // @todo Fazer
+        return false;
+    }
 
 
     public static function isBlockUrl()

@@ -7,7 +7,6 @@ use Population\Models\Identity\Actors\Business as Model;
 class Business extends Model
 {
 
-
     /**
      * Get all of the features for the post.
      */

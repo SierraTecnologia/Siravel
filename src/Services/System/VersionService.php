@@ -4,6 +4,7 @@ namespace Siravel\Services\System;
 
 use Illuminate\Support\Facades\Config;
 use SiPlugins\ProjectManager\ProjectManager;
+use SiWeapons\Manipuladores\Locations\Folder;
 
 class VersionService
 {
@@ -11,7 +12,7 @@ class VersionService
 
     public function __construct()
     {
-        $this->projectManager = new ProjectManager(base_path());
+        $this->projectManager = new ProjectManager(new Folder(base_path()));
     }
 
     public function getProjectManager()
