@@ -35,11 +35,11 @@ trait DefaultModuleServiceTrait
         $widget = WidgetRepository::getWidgetBySLUG($slug);
 
         if ($widget) {
-            if (Gate::allows('cms', Auth::user())) {
+            if (Gate::allows('siravel', Auth::user())) {
                 $widget->content .= '<a href="'.url('admin/widgets/'.$widget->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
             }
 
-            if (config('app.locale') !== config('cms.default-language') && $widget->translation(config('app.locale'))) {
+            if (config('app.locale') !== config('siravel.default-language') && $widget->translation(config('app.locale'))) {
                 return $widget->translationData(config('app.locale'))->content;
             } else {
                 return $widget->content;

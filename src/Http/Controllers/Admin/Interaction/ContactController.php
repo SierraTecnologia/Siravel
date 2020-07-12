@@ -16,7 +16,7 @@ class ContactController extends BaseController
         $this->contactsRepository = $contactsRepo;
         $this->contactService = $contactService;
 
-        if (!in_array('contacts', config('cms.active-core-features'))) {
+        if (!in_array('contacts', config('siravel.active-core-features'))) {
             return redirect('/')->send();
         }
     }

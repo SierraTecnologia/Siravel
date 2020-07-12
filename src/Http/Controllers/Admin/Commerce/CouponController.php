@@ -64,7 +64,7 @@ class CouponController extends SitecController
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(config('cms.backend-route-prefix', 'cms').'/coupons/'.$result->id)
+            return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons/'.$result->id)
                 ->with('success', 'Successfully created');
         }
 
@@ -98,11 +98,11 @@ class CouponController extends SitecController
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(config('cms.backend-route-prefix', 'cms').'/coupons')
+            return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons')
                 ->with('success', 'Successfully deleted');
         }
 
-        return redirect(config('cms.backend-route-prefix', 'cms').'/coupons')
+        return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons')
             ->with('error', 'Failed to delete');
     }
 }

@@ -13,10 +13,10 @@ class CartController extends Controller
 {
     protected $cartService;
 
-    public function __construct(CartService $cartService, SiravelResponseService $cmsResponseService)
+    public function __construct(CartService $cartService, SiravelResponseService $siravelResponseService)
     {
         $this->cart = $cartService;
-        $this->responseService = $cmsResponseService;
+        $this->responseService = $siravelResponseService;
     }
 
     /**

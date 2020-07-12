@@ -1,4 +1,4 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Plans: Create @stop
 
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-md-6 mt-4">
-            {!! Form::open(['route' => cms()->route('plans.store')]) !!}
+            {!! Form::open(['route' => siravel()->route('plans.store')]) !!}
 
             {!! FormMaker::setColumns(2)->fromTable("plans", \Illuminate\Support\Facades\Config::get('siravel.forms.plans')) !!}
 

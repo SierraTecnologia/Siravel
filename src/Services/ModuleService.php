@@ -6,7 +6,7 @@ class ModuleService
 {
     public function menus()
     {
-        $modulePath = base_path(config('cms.module-directory').'/');
+        $modulePath = base_path(config('siravel.module-directory').'/');
         $features = glob($modulePath.'*');
 
         $menu = '';
@@ -20,8 +20,8 @@ class ModuleService
             }
         }
 
-        if (is_array(config('cms.features'))) {
-            foreach (config('cms.features') as $module => $config) {
+        if (is_array(config('siravel.features'))) {
+            foreach (config('siravel.features') as $module => $config) {
                 if (!is_dir($modulePath.ucfirst($module))) {
                     $menu .= view('features.menu');
                 }

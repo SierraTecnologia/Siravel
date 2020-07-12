@@ -24,13 +24,13 @@ class FilesController extends BaseController
         FileRepository $repository,
         FileService $fileService,
         ValidationService $validationService,
-        SiravelResponseService $cmsResponseService
+        SiravelResponseService $siravelResponseService
     ) {
         parent::__construct();
         $this->repository = $repository;
         $this->fileService = $fileService;
         $this->validation = $validationService;
-        $this->responseService = $cmsResponseService;
+        $this->responseService = $siravelResponseService;
     }
 
     /**
@@ -211,7 +211,7 @@ class FilesController extends BaseController
         if (is_file(storage_path($files->location))) {
             Storage::delete($files->location);
         } else {
-            Storage::disk(config('cms.storage-location', 'local'))->delete($files->location);
+            Storage::disk(config('siravel.storage-location', 'local'))->delete($files->location);
         }
 
         $files->delete();
@@ -228,7 +228,7 @@ class FilesController extends BaseController
      */
     public function apiList(Request $request)
     {
-        if (config('cms.api-key') != $request->header('cms')) {
+        if (config('siravel.api-key') != $request->header('siravel')) {
             return $this->responseService->apiResponse('error', []);
         }
 

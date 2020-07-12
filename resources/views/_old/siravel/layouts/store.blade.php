@@ -1,4 +1,4 @@
-@extends('cms-frontend::layout.master')
+@extends('siravel-frontend::layout.master')
 
 @section('stylesheets')
     <link rel="stylesheet" href="{!! asset('css/store.css') !!}">

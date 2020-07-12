@@ -49,7 +49,7 @@ class ProductVariantController extends SitecController
         if (empty($product)) {
             Siravel::notification('Product not found', 'warning');
 
-            return redirect(route('cms.products.index'));
+            return redirect(route('siravel.products.index'));
         }
 
         if ($this->productVariantRepository->addVariant($product, $request->all())) {
@@ -58,7 +58,7 @@ class ProductVariantController extends SitecController
             Siravel::notification('Failed to add variant. Missing Key or Value.', 'warning');
         }
 
-        return redirect(route(config('cms.backend-route-prefix', 'cms').'.products.edit', $id).'?tab=variants');
+        return redirect(route(config('siravel.backend-route-prefix', 'siravel').'.products.edit', $id).'?tab=variants');
     }
 
     /**

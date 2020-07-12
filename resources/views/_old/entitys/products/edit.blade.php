@@ -1,4 +1,4 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('stylesheets')
     @parent

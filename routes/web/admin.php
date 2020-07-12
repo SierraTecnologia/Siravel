@@ -19,7 +19,7 @@
         Route::get('help', 'PageController@help');
         Route::get('changelog', 'PageController@changelog');
 
-        Route::get('cms'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
+        Route::get('siravel'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
         /*
         |--------------------------------------------------------------------------
         | Common Features

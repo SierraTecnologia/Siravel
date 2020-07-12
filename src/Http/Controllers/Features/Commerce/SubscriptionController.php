@@ -48,7 +48,7 @@ class SubscriptionController extends Controller
      */
     public function allSubscriptions()
     {
-        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
+        $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(config('siravel.pagination'));
 
         return view('features.commerce.subscriptions.all')->with('subscriptions', $subscriptions);
     }

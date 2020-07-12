@@ -50,7 +50,7 @@ class FaqRepository extends SiravelRepository
     {
         $payload['question'] = htmlentities($payload['question']);
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($item->id, 'Siravel\Models\Negocios\Faq', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

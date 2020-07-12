@@ -21,7 +21,7 @@ class BlogRepository extends SiravelRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'blogs';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'blogs';
     }
 
     /**
@@ -33,7 +33,7 @@ class BlogRepository extends SiravelRepository
     {
         return $this->model->where('is_published', 1)
             ->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))->orderBy('created_at', 'desc')
-            ->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 24));
+            ->paginate(\Illuminate\Support\Facades\Config::get('siravel.pagination', 24));
     }
 
     /**
@@ -48,7 +48,7 @@ class BlogRepository extends SiravelRepository
         return $this->model->where('is_published', 1)
             ->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))
             ->where('tags', 'LIKE', '%'.$tag.'%')->orderBy('created_at', 'desc')
-            ->paginate(\Illuminate\Support\Facades\Config::get('cms.pagination', 24));
+            ->paginate(\Illuminate\Support\Facades\Config::get('siravel.pagination', 24));
     }
 
     /**
@@ -60,7 +60,7 @@ class BlogRepository extends SiravelRepository
     {
         $tags = [];
 
-        if (app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (app()->getLocale() !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             $blogs = $this->translationRepo->getEntitiesByTypeAndLang(app()->getLocale(), 'Siravel\Models\Blog\Blog');
         } else {
             $blogs = $this->model->orderBy('published_at', 'desc')->get();
@@ -155,7 +155,7 @@ class BlogRepository extends SiravelRepository
             $payload['hero_image'] = $path['name'];
         }
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($blog->id, 'Siravel\Models\Blog\Blog', $payload['lang'], $payload);
         } else {
             $payload['url'] = Siravel::convertToURL($payload['url']);

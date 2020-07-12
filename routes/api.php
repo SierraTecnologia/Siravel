@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-$routePrefix = config('cms.backend-route-prefix', 'cms');
+$routePrefix = config('siravel.backend-route-prefix', 'siravel');
 
 Route::group(['middleware' => 'web'], function () use ($routePrefix) {
 
@@ -12,7 +12,7 @@ Route::group(['middleware' => 'web'], function () use ($routePrefix) {
     |--------------------------------------------------------------------------
     */
     Route::group(['prefix' => $routePrefix.'/api'], function () use ($routePrefix) {
-        Route::group(['middleware' => ['cms-api']], function () use ($routePrefix) {
+        Route::group(['middleware' => ['siravel-api']], function () use ($routePrefix) {
             Route::get('blog', 'ApiController@all');
             Route::get('blog/{id}', 'ApiController@find');
 

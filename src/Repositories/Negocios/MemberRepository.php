@@ -21,7 +21,7 @@ class MemberRepository extends BaseRepository
     public function __construct(UserMeta $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'user_metas';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'user_metas';
         $this->translationRepo = $translationRepo;
     }
 
@@ -73,7 +73,7 @@ class MemberRepository extends BaseRepository
     {
         $payload['external'] = isset($payload['external']) ? $payload['external'] : 0;
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($link->id, 'Siravel\Models\Negocios\Member', $payload['lang'], $payload);
         }
 

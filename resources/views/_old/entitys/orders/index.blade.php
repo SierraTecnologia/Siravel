@@ -1,16 +1,16 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Orders @stop
 
 @section('content')
 
-    @include('cms::layouts.module-header', [ 'module' => 'orders' ])
+    @include('siravel::layouts.module-header', [ 'module' => 'orders' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($orders->isEmpty())
-                    @include('cms::layouts.module-search', [ 'module' => 'orders' ])
+                    @include('siravel::layouts.module-search', [ 'module' => 'orders' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
@@ -26,8 +26,8 @@
 
                         @foreach($orders as $order)
                             <tr>
-                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.orders.edit', [$order->id]) !!}">Order #{!! $order->id !!}</a></td>
-                                <td class="m-hidden"><a href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.transactions.edit', [$order->transaction->id]) !!}">Transaction #{!! $order->transaction->id !!}</a></td>
+                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.orders.edit', [$order->id]) !!}">Order #{!! $order->id !!}</a></td>
+                                <td class="m-hidden"><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.transactions.edit', [$order->transaction->id]) !!}">Transaction #{!! $order->transaction->id !!}</a></td>
                                 <td class="m-hidden">{!! auth()->user()->find($order->user_id)->name !!}</td>
                                 <td class="m-hidden">{!! ucfirst($order->status) !!}</td>
                                 <td class="m-hidden text-center">
@@ -39,7 +39,7 @@
                                 </td>
                                 <td class="m-hidden">{!! $order->tracking_number !!}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.orders.edit', [$order->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
+                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.orders.edit', [$order->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
                                 </td>
                             </tr>
                         @endforeach

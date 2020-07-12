@@ -27,7 +27,7 @@ class PageRepository extends BaseRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'pages';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'pages';
     }
 
     /**
@@ -68,7 +68,7 @@ class PageRepository extends BaseRepository
 
         $page = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))->first();
 
-        if ($page && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
+        if ($page && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('siravel.default-language')) {
             $page = $this->translationRepo->findByEntityId($page->id, 'Siravel\Models\Negocios\Page');
         }
 
@@ -76,7 +76,7 @@ class PageRepository extends BaseRepository
             $page = $this->translationRepo->findByUrl($url, 'Siravel\Models\Negocios\Page');
         }
 
-        if ($url === 'home' && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
+        if ($url === 'home' && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('siravel.default-language')) {
             $page = $this->translationRepo->findByUrl($url, 'Siravel\Models\Negocios\Page');
         }
 
@@ -104,7 +104,7 @@ class PageRepository extends BaseRepository
 
         $payload['title'] = htmlentities($payload['title']);
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($page->id, 'Siravel\Models\Negocios\Page', $payload['lang'], $payload);
         } else {
             $payload['url'] = Siravel::convertToURL($payload['url']);

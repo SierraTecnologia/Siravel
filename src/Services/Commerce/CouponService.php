@@ -86,7 +86,7 @@ class CouponService
      */
     public function paginated()
     {
-        return $this->model->paginate(config('cms.pagination', 25));
+        return $this->model->paginate(config('siravel.pagination', 25));
     }
 
     /**
@@ -106,7 +106,7 @@ class CouponService
             $query->orWhere($attribute, 'LIKE', '%'.$payload.'%');
         }
 
-        return $query->paginate(config('cms.pagination', 25));
+        return $query->paginate(config('siravel.pagination', 25));
     }
 
     /**

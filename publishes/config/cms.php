@@ -188,7 +188,7 @@ return [
     */
 
     'api-key' => env('GPOWER_API_KEY', 'apis-are-cool'),
-    'api-token' => env('GPOWER_API_TOKEN', 'cms-token'),
+    'api-token' => env('GPOWER_API_TOKEN', 'siravel-token'),
 
     /*
      * --------------------------------------------------------------------------

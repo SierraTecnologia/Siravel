@@ -6,7 +6,7 @@
     |--------------------------------------------------------------------------
     */
 
-    Route::group(['namespace' => 'Cms', 'middleware' => ['cms-language', 'cms-analytics']], function () {
+    Route::group(['namespace' => 'Cms', 'middleware' => ['siravel-language', 'siravel-analytics']], function () {
         Route::get('', 'PagesController@home');
         Route::get('pages', 'PagesController@all');
         Route::get('page/{url}', 'PagesController@show');

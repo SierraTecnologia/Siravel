@@ -63,7 +63,7 @@ class PlanController extends Controller
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(config('cms.backend-route-prefix', 'cms').'/plans/'.$result->id.'/edit')->with('success', 'Successfully created');
+            return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans/'.$result->id.'/edit')->with('success', 'Successfully created');
         }
 
         return redirect('admin.commerce.plans')->with('error', 'Failed to create');
@@ -155,9 +155,9 @@ class PlanController extends Controller
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(config('cms.backend-route-prefix', 'cms').'/plans')->with('success', 'Successfully deleted');
+            return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans')->with('success', 'Successfully deleted');
         }
 
-        return redirect(config('cms.backend-route-prefix', 'cms').'/plans')->with('error', 'Failed to delete');
+        return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans')->with('error', 'Failed to delete');
     }
 }

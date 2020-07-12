@@ -19,7 +19,7 @@ class FileRepository extends SiravelRepository
     public function __construct(File $model)
     {
         $this->model = $model;
-        $this->table = config('cms.db-prefix').'files';
+        $this->table = config('siravel.db-prefix').'files';
     }
 
     /**

@@ -31,12 +31,12 @@ class SystemRolesTableSeeder extends Seeder
             Role::create([
                 'name' => 'admin',
                 'label' => 'Admin',
-                'permissions' => 'admin,sicms,regular',
+                'permissions' => 'admin,siravel,regular',
             ]);
             Role::create([
-                'name' => 'sicms',
-                'label' => 'Sicms',
-                'permissions' => 'sicms,regular',
+                'name' => 'siravel',
+                'label' => 'Siravel',
+                'permissions' => 'siravel,regular',
             ]);
         }
     }

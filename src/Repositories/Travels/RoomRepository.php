@@ -19,7 +19,7 @@ class RoomRepository extends SiravelRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'rooms';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'rooms';
     }
 
     /**
@@ -62,7 +62,7 @@ class RoomRepository extends SiravelRepository
     public function update($room, $payload)
     {
         $payload['title'] = htmlentities($payload['title']);
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($room->id, 'Siravel\Models\Calendar\Room', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

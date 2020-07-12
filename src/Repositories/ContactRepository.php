@@ -42,7 +42,7 @@ class ContactRepository
             $model = $model->orderBy('created_at', 'desc');
         }
 
-        return $model->paginate(\Illuminate\Support\Facades\Config::get('sicms.pagination', 25));
+        return $model->paginate(\Illuminate\Support\Facades\Config::get('siravel.pagination', 25));
     }
 
     /**
@@ -62,7 +62,7 @@ class ContactRepository
      */
     public function published()
     {
-        return Contact::where('is_published', 1)->where('published_at', '<=', Carbon::now()->format('Y-m-d h:i:s'))->orderBy('created_at', 'desc')->paginate(Config::get('sicms.pagination', 25));
+        return Contact::where('is_published', 1)->where('published_at', '<=', Carbon::now()->format('Y-m-d h:i:s'))->orderBy('created_at', 'desc')->paginate(Config::get('siravel.pagination', 25));
     }
 
     /**
@@ -83,7 +83,7 @@ class ContactRepository
             $query->orWhere($attribute, 'LIKE', '%'.$input['term'].'%');
         }
 
-        return [$query, $input['term'], $query->paginate(Config::get('sicms.pagination', 25))->render()];
+        return [$query, $input['term'], $query->paginate(Config::get('siravel.pagination', 25))->render()];
     }
 
     /**
@@ -123,7 +123,7 @@ class ContactRepository
      */
     public function update($contact, $payload)
     {
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('sicms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($contact->id, 'Siravel\Models\Contact', $payload['lang'], $payload);
         } else {
             $payload['is_published'] = (isset($payload['is_published'])) ? (bool) $payload['is_published'] : 0;

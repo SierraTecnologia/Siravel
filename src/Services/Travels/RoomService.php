@@ -103,7 +103,7 @@ class RoomService
                     if (is_array($content)) {
                         $itemString = '';
                         foreach ($content as $item) {
-                            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
+                            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('siravel.default-language')) {
                                 if ($item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))) {
                                     $itemString .= '<a href="'.URL::to('rooms/room/'.$item->id).'">'.$item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))->title.'</a><br>';
                                 }
@@ -146,10 +146,10 @@ class RoomService
     public function getTemplatesAsOptions()
     {
         $availableTemplates = ['show'];
-        $templates = glob(base_path('resources/themes/'.Config::get('cms.frontend-theme').'/rooms/*'));
+        $templates = glob(base_path('resources/themes/'.Config::get('siravel.frontend-theme').'/rooms/*'));
 
         foreach ($templates as $template) {
-            $template = str_replace(base_path('resources/themes/'.Config::get('cms.frontend-theme').'/rooms/'), '', $template);
+            $template = str_replace(base_path('resources/themes/'.Config::get('siravel.frontend-theme').'/rooms/'), '', $template);
             if (stristr($template, 'template')) {
                 $template = str_replace('-template.blade.php', '', $template);
                 if (!stristr($template, '.php')) {

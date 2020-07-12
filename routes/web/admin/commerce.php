@@ -19,7 +19,7 @@ Route::group(['middleware' => 'isAjax'], function () {
     Route::post('products/variant/delete', 'ProductVariantController@deleteVariant');
 });
 Route::get('products/{id}/delete', [
-    'as' => 'cms.products.delete',
+    'as' => 'siravel.products.delete',
     'uses' => 'ProductController@destroy',
 ]);
 

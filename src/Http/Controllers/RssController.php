@@ -26,7 +26,7 @@ class RssController extends SitecController
     {
         $module = $this->module;
 
-        $meta = config('cms.rss', [
+        $meta = config('siravel.rss', [
             'title' => config('app.name'),
             'link' => url('/'),
         ]);

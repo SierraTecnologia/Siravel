@@ -18,7 +18,7 @@ trait ModuleServiceTrait
      */
     public function moduleAsset($module, $path, $contentType = 'null')
     {
-        $assetPath = base_path(Config::get('cms.module-directory').'/'.ucfirst($module).'/Assets/'.$path);
+        $assetPath = base_path(Config::get('siravel.module-directory').'/'.ucfirst($module).'/Assets/'.$path);
 
         if (!is_file($assetPath)) {
             $assetPath = '/assets/'.$module.'/'.$path;
@@ -41,10 +41,10 @@ trait ModuleServiceTrait
      */
     public function moduleConfig($module, $path)
     {
-        $configArray = @include base_path(Config::get('cms.module-directory').'/'.ucfirst($module).'/config.php');
+        $configArray = @include base_path(Config::get('siravel.module-directory').'/'.ucfirst($module).'/config.php');
 
         if (!$configArray) {
-            return config('cms.features.'.$module.'.'.$path);
+            return config('siravel.features.'.$module.'.'.$path);
         }
 
         return self::assignArrayByPath($configArray, $path);
@@ -61,7 +61,7 @@ trait ModuleServiceTrait
     {
         $links = '';
 
-        $modules = config('cms.features', []);
+        $modules = config('siravel.features', []);
 
         foreach ($ignoredFeatures as $ignoredModule) {
             if (in_array(strtolower($ignoredModule), array_keys($modules))) {

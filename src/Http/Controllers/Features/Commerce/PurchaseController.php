@@ -20,7 +20,7 @@ class PurchaseController extends Controller
      */
     public function allPurchases()
     {
-        $purchases = $this->transactions->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
+        $purchases = $this->transactions->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('siravel.pagination'));
 
         return view('features.commerce.purchases.all')
             ->with('purchases', $purchases);

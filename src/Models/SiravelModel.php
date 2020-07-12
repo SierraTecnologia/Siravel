@@ -34,8 +34,8 @@ class SiravelModel extends Model
     {
         parent::__construct($attributes);
 
-        if (!empty(config('cms.db-prefix', ''))) {
-            $this->table = config('cms.db-prefix', '').$this->table;
+        if (!empty(config('siravel.db-prefix', ''))) {
+            $this->table = config('siravel.db-prefix', '').$this->table;
         }
     }
 

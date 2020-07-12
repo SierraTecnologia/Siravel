@@ -1,4 +1,4 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Analytics: Last {{ request()->months }} @if (request()->months > 1) Months @else Month @endif @stop
 

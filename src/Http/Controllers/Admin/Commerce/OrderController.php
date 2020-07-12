@@ -120,9 +120,9 @@ class OrderController extends SitecController
         $result = $this->service->cancel($request->id);
 
         if ($result) {
-            return redirect(config('cms.backend-route-prefix', 'cms').'/orders')->with('success', 'Successfully cancelled');
+            return redirect(config('siravel.backend-route-prefix', 'siravel').'/orders')->with('success', 'Successfully cancelled');
         }
 
-        return redirect(config('cms.backend-route-prefix', 'cms').'/orders')->with('error', 'Failed to cancel');
+        return redirect(config('siravel.backend-route-prefix', 'siravel').'/orders')->with('error', 'Failed to cancel');
     }
 }

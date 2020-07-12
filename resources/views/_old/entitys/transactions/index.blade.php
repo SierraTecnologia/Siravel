@@ -1,16 +1,16 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Transactions @stop
 
 @section('content')
 
-    @include('cms::layouts.module-header', [ 'module' => 'transactions' ])
+    @include('siravel::layouts.module-header', [ 'module' => 'transactions' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($transactions->isEmpty())
-                    @include('cms::layouts.module-search', [ 'module' => 'transactions' ])
+                    @include('siravel::layouts.module-search', [ 'module' => 'transactions' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
@@ -29,7 +29,7 @@
 
                         @foreach($transactions as $transaction)
                             <tr>
-                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.transactions.edit', [$transaction->id]) !!}">
+                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.transactions.edit', [$transaction->id]) !!}">
                                     Transaction #{!! $transaction->id !!}</a></td>
                                 <td class="m-hidden">{!! $transaction->state !!}</td>
                                 <td class="m-hidden">{!! $transaction->subtotal !!}</td>
@@ -52,7 +52,7 @@
                                     @endif
                                 </td>
                                 <td class="text-right">
-                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.transactions.edit', [$transaction->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
+                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.transactions.edit', [$transaction->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
                                 </td>
                             </tr>
                         @endforeach

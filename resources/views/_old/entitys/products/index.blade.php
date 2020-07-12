@@ -1,4 +1,4 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Products @stop
 
@@ -6,13 +6,13 @@
 
     @include('siravel::modals')
 
-    @include('cms::layouts.module-header', [ 'module' => 'products' ])
+    @include('siravel::layouts.module-header', [ 'module' => 'products' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($products->count() === 0)
-                    @include('cms::layouts.module-search', [ 'module' => 'products' ])
+                    @include('siravel::layouts.module-search', [ 'module' => 'products' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
@@ -29,7 +29,7 @@
 
                         @foreach($products as $product)
                             <tr>
-                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.products.edit', [$product->id]) !!}">{!! $product->name !!}</a></td>
+                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.products.edit', [$product->id]) !!}">{!! $product->name !!}</a></td>
                                 <td class="m-hidden">{!! $product->code !!}</td>
                                 <td class="m-hidden">${!! $product->price !!}</td>
                                 <td class="m-hidden">{!! $product->stock !!}</td>
@@ -52,8 +52,8 @@
                                 </td>
                                 <td class="text-right">
                                     <div class="btn-toolbar justify-content-between">
-                                        <a class="btn btn-sm btn-outline-primary mr-2" href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.products.edit', [$product->id]) !!}"><i class="fa fa-pencil"></i> Edit</a>
-                                        <form method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'/products/'.$product->id) !!}">
+                                        <a class="btn btn-sm btn-outline-primary mr-2" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.products.edit', [$product->id]) !!}"><i class="fa fa-pencil"></i> Edit</a>
+                                        <form method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/products/'.$product->id) !!}">
                                             {!! csrf_field() !!}
                                             {!! method_field('DELETE') !!}
                                             <button class="delete-btn btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i> Delete</button>

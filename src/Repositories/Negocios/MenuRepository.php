@@ -15,7 +15,7 @@ class MenuRepository extends BaseRepository
     public function __construct(Menu $model)
     {
         $this->model = $model;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'menus';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'menus';
     }
 
     /**
@@ -201,7 +201,7 @@ class MenuRepository extends BaseRepository
     // public function __construct(Menu $model)
     // {
     //     $this->model = $model;
-    //     $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'menus';
+    //     $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'menus';
     // }
 
     // /**

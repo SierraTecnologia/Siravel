@@ -17,6 +17,6 @@ abstract class SitecController extends BaseController
 
     public function __construct()
     {
-        $this->routeBase = config('cms.backend-route-prefix', 'cms');
+        $this->routeBase = config('siravel.backend-route-prefix', 'siravel');
     }
 }

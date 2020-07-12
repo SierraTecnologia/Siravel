@@ -17,7 +17,7 @@ class Siravel
      */
     public function handle($request, Closure $next)
     {
-        // if (Gate::allows('cms')) {
+        // if (Gate::allows('siravel')) {
             return $next($request);
         // }
 

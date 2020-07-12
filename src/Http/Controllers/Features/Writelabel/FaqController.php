@@ -14,7 +14,7 @@ class FaqController extends Controller
     {
         $this->repository = $repository;
 
-        if (!in_array('faqs', config('cms.active-core-features'))) {
+        if (!in_array('faqs', config('siravel.active-core-features'))) {
             return redirect('/')->send();
         }
     }

@@ -14,7 +14,7 @@ class BlogController extends Controller
     {
         $this->blogRepository = $blogRepo;
 
-        if (!in_array('blog', config('cms.active-core-features'))) {
+        if (!in_array('blog', config('siravel.active-core-features'))) {
             return redirect('/')->send();
         }
     }

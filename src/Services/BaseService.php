@@ -15,10 +15,10 @@ class BaseService
     {
         $availableTemplates = ['show'];
         
-        $templates = glob(base_path('resources/themes/'.config('cms.frontend-theme').'/'.$module.'/*'));
+        $templates = glob(base_path('resources/themes/'.config('siravel.frontend-theme').'/'.$module.'/*'));
 
         foreach ($templates as $template) {
-            $template = str_replace(base_path('resources/themes/'.config('cms.frontend-theme').'/'.$module.'/'), '', $template);
+            $template = str_replace(base_path('resources/themes/'.config('siravel.frontend-theme').'/'.$module.'/'), '', $template);
             if (stristr($template, 'template')) {
                 $template = str_replace('-template.blade.php', '', $template);
                 if (!stristr($template, '.php')) {

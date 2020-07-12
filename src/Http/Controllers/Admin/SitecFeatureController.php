@@ -102,7 +102,7 @@ class SitecFeatureController extends Controller
             $entity => $modelInstance,
         ];
 
-        if (config('app.locale') != config('cms.default-language', Siravel::config('cms.default-language'))) {
+        if (config('app.locale') != config('siravel.default-language', Siravel::config('siravel.default-language'))) {
             if ($modelInstance->translation(config('app.locale'))) {
                 $data = [
                     $entity => $modelInstance->translation(config('app.locale'))->data,
@@ -110,18 +110,18 @@ class SitecFeatureController extends Controller
             }
         }
 
-        $view = 'cms-frontend::'.$entity.'.show';
+        $view = 'siravel-frontend::'.$entity.'.show';
 
         if (!View::exists($view)) {
-            $view = 'cms-frontend::'.$entity.'s.show';
+            $view = 'siravel-frontend::'.$entity.'s.show';
         }
 
         if ($entity === 'page') {
-            $view = 'cms-frontend::pages.'.$modelInstance->template;
+            $view = 'siravel-frontend::pages.'.$modelInstance->template;
         }
 
         if ($entity === 'blog') {
-            $view = 'cms-frontend::blog.'.$modelInstance->template;
+            $view = 'siravel-frontend::blog.'.$modelInstance->template;
         }
 
         return view($view, $data);

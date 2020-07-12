@@ -1,4 +1,4 @@
-@extends('cms::layouts.navigation')
+@extends('siravel::layouts.navigation')
 
 @section('page-content')
 
@@ -13,7 +13,7 @@
     </div>
 
     <div class="raw100 raw-left navbar navbar-fixed-bottom">
-        <div class="raw100 raw-left cms-footer">
+        <div class="raw100 raw-left siravel-footer">
             <p class="raw-margin-left-20">Brought to you by: <a href="https://sierratecnologia.com.br">Sitec Inc.</a></p>
         </div>
     </div>

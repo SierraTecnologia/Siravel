@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{!! cms()->url('orders') !!}">Orders</a></li>
+        <li class="breadcrumb-item"><a href="{!! siravel()->url('orders') !!}">Orders</a></li>
             {!! Siravel::breadcrumbs($location) !!}
         <li class="active"></li>
     </ol>

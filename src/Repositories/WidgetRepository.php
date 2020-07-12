@@ -18,7 +18,7 @@ class WidgetRepository extends SiravelRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'widgets';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'widgets';
     }
 
     /**
@@ -47,7 +47,7 @@ class WidgetRepository extends SiravelRepository
     {
         $payload['name'] = htmlentities($payload['name']);
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($widget->id, 'Siravel\Models\Negocios\Widget', $payload['lang'], $payload);
         } else {
             unset($payload['lang']);

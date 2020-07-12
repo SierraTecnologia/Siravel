@@ -103,7 +103,7 @@ class ContactService
                     if (is_array($content)) {
                         $itemString = '';
                         foreach ($content as $item) {
-                            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('cms.default-language')) {
+                            if (\Illuminate\Support\Facades\Config::get('app.locale') !== \Illuminate\Support\Facades\Config::get('siravel.default-language')) {
                                 if ($item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))) {
                                     $itemString .= '<a href="'.URL::to('events/event/'.$item->id).'">'.$item->translationData(\Illuminate\Support\Facades\Config::get('app.locale'))->title.'</a><br>';
                                 }
@@ -146,10 +146,10 @@ class ContactService
     public function getTemplatesAsOptions()
     {
         $availableTemplates = ['show'];
-        $templates = glob(base_path('resources/themes/'.Config::get('cms.frontend-theme').'/events/*'));
+        $templates = glob(base_path('resources/themes/'.Config::get('siravel.frontend-theme').'/events/*'));
 
         foreach ($templates as $template) {
-            $template = str_replace(base_path('resources/themes/'.Config::get('cms.frontend-theme').'/events/'), '', $template);
+            $template = str_replace(base_path('resources/themes/'.Config::get('siravel.frontend-theme').'/events/'), '', $template);
             if (stristr($template, 'template')) {
                 $template = str_replace('-template.blade.php', '', $template);
                 if (!stristr($template, '.php')) {

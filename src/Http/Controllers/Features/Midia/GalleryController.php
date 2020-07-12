@@ -62,7 +62,7 @@ class GalleryController extends Controller
      */
     public function show($tag)
     {
-        $images = $this->repository->getImagesByTag($tag)->paginate(Config::get('cms.pagination'));
+        $images = $this->repository->getImagesByTag($tag)->paginate(Config::get('siravel.pagination'));
         $tags = $this->repository->allTags();
 
         if (empty($images)) {

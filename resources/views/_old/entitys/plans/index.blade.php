@@ -1,16 +1,16 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Subscription Plans @stop
 
 @section('content')
 
-    @include('cms::layouts.module-header', [ 'module' => 'plans' ])
+    @include('siravel::layouts.module-header', [ 'module' => 'plans' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($plans->isEmpty())
-                    @include('cms::layouts.module-search', [ 'module' => 'plans' ])
+                    @include('siravel::layouts.module-search', [ 'module' => 'plans' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
@@ -21,10 +21,10 @@
                         <tbody>
                         @foreach($plans as $plan)
                             <tr>
-                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.plans.edit', [$plan->id]) !!}">{{ $plan->name }}</a></td>
+                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.plans.edit', [$plan->id]) !!}">{{ $plan->name }}</a></td>
                                 <td>@if ($plan->enabled) <span class="fa fa-check"></span> @endif</td>
                                 <td class="text-right">
-                                    <a class="btn btn-outline-primary btn-sm pull-right" href="{!! route(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'.plans.edit', [$plan->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
+                                    <a class="btn btn-outline-primary btn-sm pull-right" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.plans.edit', [$plan->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
                                 </td>
                             </tr>
                         @endforeach

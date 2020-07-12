@@ -53,7 +53,7 @@ class DashboardController extends Controller
 
     public function analytics()
     {
-        if (!is_null(config('analytics.view_id')) && config('cms.analytics') == 'google') {
+        if (!is_null(config('analytics.view_id')) && config('siravel.analytics') == 'google') {
             $period = Period::days(7);
 
             foreach (app(Analytics::class)->fetchVisitorsAndPageViews($period) as $view) {
@@ -63,8 +63,8 @@ class DashboardController extends Controller
             }
 
             return view('admin.dashboard.analytics-google', compact('visitStats', 'period'));
-        } elseif (is_null(config('cms.analytics')) || config('cms.analytics') == 'internal') {
-            if (Schema::hasTable(config('cms.db-prefix', '').'analytics')) {
+        } elseif (is_null(config('siravel.analytics')) || config('siravel.analytics') == 'internal') {
+            if (Schema::hasTable(config('siravel.db-prefix', '').'analytics')) {
                 return view('admin.dashboard.analytics-internal')
                     ->with('stats', $this->service->getDays(15))
                     ->with('topReferers', $this->service->topReferers(15))

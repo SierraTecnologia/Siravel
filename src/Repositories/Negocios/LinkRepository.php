@@ -21,7 +21,7 @@ class LinkRepository extends BaseRepository
     public function __construct(Link $model, ModelTranslationRepository $translationRepo)
     {
         $this->model = $model;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'links';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'links';
         $this->translationRepo = $translationRepo;
     }
 
@@ -85,7 +85,7 @@ class LinkRepository extends BaseRepository
     {
         $payload['external'] = isset($payload['external']) ? $payload['external'] : 0;
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($link->id, 'Siravel\Models\Negocios\Link', $payload['lang'], $payload);
         }
 

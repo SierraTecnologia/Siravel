@@ -70,7 +70,7 @@ trait MenuServiceTrait
         /**
          * Features
          */
-        foreach (\Illuminate\Support\Facades\Config::get('cms.features', []) as $module => $config) {
+        foreach (\Illuminate\Support\Facades\Config::get('siravel.features', []) as $module => $config) {
             $link = $module;
 
             if (isset($config['url'])) {

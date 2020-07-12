@@ -11,10 +11,10 @@ class FavoriteController extends Controller
 {
     protected $favoriteService;
 
-    public function __construct(FavoriteService $favoriteService, SiravelResponseService $cmsResponseService)
+    public function __construct(FavoriteService $favoriteService, SiravelResponseService $siravelResponseService)
     {
         $this->service = $favoriteService;
-        $this->responseService = $cmsResponseService;
+        $this->responseService = $siravelResponseService;
     }
 
     /**

@@ -11,7 +11,7 @@
         var _url = '{!! url("/") !!}';
     </script>
     <script src="{{ asset('dist/js/vendor.js')}}"></script>
-    <script src="{{ asset('dist/js/cms.js')}}"></script>
+    <script src="{{ asset('dist/js/siravel.js')}}"></script>
     @stack('javascript')
     @yield('javascript')
 @stop

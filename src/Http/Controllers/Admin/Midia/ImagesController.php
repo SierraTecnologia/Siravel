@@ -202,7 +202,7 @@ class ImagesController extends BaseController
         if (is_file(storage_path($image->location))) {
             Storage::delete($image->location);
         } else {
-            Storage::disk(Config::get('cms.storage-location', 'local'))->delete($image->location);
+            Storage::disk(Config::get('siravel.storage-location', 'local'))->delete($image->location);
         }
 
         if (empty($image)) {
@@ -236,7 +236,7 @@ class ImagesController extends BaseController
             if (is_file(storage_path($image->location))) {
                 Storage::delete($image->location);
             } else {
-                Storage::disk(Config::get('cms.storage-location', 'local'))->delete($image->location);
+                Storage::disk(Config::get('siravel.storage-location', 'local'))->delete($image->location);
             }
 
             $image->delete();
@@ -260,7 +260,7 @@ class ImagesController extends BaseController
      */
     public function apiList(Request $request)
     {
-        if (config('cms.api-key') != $request->header('cms')) {
+        if (config('siravel.api-key') != $request->header('siravel')) {
             return app(SiravelResponseService::class)->apiResponse('error', []);
         }
 

@@ -17,7 +17,7 @@ class MenuRequest extends FormRequest
     public function authorize()
     {
         if (config('app.env') !== 'testing') {
-            return Gate::allows('cms', Auth::user());
+            return Gate::allows('siravel', Auth::user());
         }
 
         return true;

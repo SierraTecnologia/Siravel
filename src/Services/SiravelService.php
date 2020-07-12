@@ -138,7 +138,7 @@ class SiravelService
     {
         $files = glob($dir.'/*');
 
-        $packageViews = Config::get('cms.package-menus');
+        $packageViews = Config::get('siravel.package-menus');
 
         if (is_null($packageViews)) {
             $packageViews = [];
@@ -148,7 +148,7 @@ class SiravelService
             array_push($packageViews, $view);
         }
 
-        return Config::set('cms.package-menus', $packageViews);
+        return Config::set('siravel.package-menus', $packageViews);
     }
 
     /**
@@ -161,7 +161,7 @@ class SiravelService
      */
     public function editBtn($type = null, $id = null)
     {
-        if (Gate::allows('cms', Auth::user())) {
+        if (Gate::allows('siravel', Auth::user())) {
             if (!is_null($id)) {
                 return '<a href="'.url('admin/'.$type.'/'.$id.'/edit').'" class="btn btn-xs btn-default pull-right"><span class="fa fa-pencil"></span> Edit</a>';
             } else {

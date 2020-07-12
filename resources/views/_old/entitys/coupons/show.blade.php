@@ -1,4 +1,4 @@
-@extends('cms::layouts.dashboard')
+@extends('siravel::layouts.dashboard')
 
 @section('pageTitle') Coupons: Details @stop
 
@@ -11,7 +11,7 @@
             <div class="col-md-6 offset-md-3">
                 {!! FormMaker::fromObject($coupon, \Illuminate\Support\Facades\Config::get('siravel.forms.coupons')) !!}
 
-                <form id="deleteCouponForm" method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('cms.backend-route-prefix', 'cms').'/coupons/'.$coupon->id) !!}">
+                <form id="deleteCouponForm" method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/coupons/'.$coupon->id) !!}">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
                     <button class="btn delete-coupon-btn btn-danger pull-right" type="submit"><i class="fa fa-trash"></i> Delete</button>

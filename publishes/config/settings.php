@@ -22,7 +22,7 @@ return [
     'override' => [
         "app.locale" => "settings.locale",
         "app.name" => "app_name",
-        "cms.frontend-theme" => "theme",
+        "siravel.frontend-theme" => "theme",
         "services.botman.telegram_token" => "telegram_token",
         "services.botman.facebook_token" => "facebook_token",
         "services.botman.facebook_app_secret" => "facebook_app_secret",

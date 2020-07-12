@@ -12,8 +12,8 @@ class SiravelModuleProvider extends ServiceProvider
      */
     public function register()
     {
-        if (Config::get('cms.load-modules', false)) {
-            $modulePath = base_path(Config::get('cms.module-directory').'/');
+        if (Config::get('siravel.load-modules', false)) {
+            $modulePath = base_path(Config::get('siravel.module-directory').'/');
             $modules = glob($modulePath.'*');
 
             foreach ($modules as $module) {

@@ -184,10 +184,10 @@ class SiravelProvider extends ServiceProvider
         Blade::directive('markdown', function ($expression) {
             return "<?php echo Markdown::convertToHtml($expression); ?>";
         }); 
-        $theme = Config::get('cms.frontend-theme');
+        $theme = Config::get('siravel.frontend-theme');
         
         View::addLocation(base_path('resources/themes/'.$theme));
-        View::addNamespace('cms-frontend', base_path('resources/themes/'.$theme));
+        View::addNamespace('siravel-frontend', base_path('resources/themes/'.$theme));
 
         /*
         |--------------------------------------------------------------------------
@@ -200,7 +200,7 @@ class SiravelProvider extends ServiceProvider
                 $expression = substr($expression, 1, -1);
             }
 
-            $view = '"cms-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
+            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
 
             return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
         });

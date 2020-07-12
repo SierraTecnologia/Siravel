@@ -19,14 +19,14 @@ class ImageRepository extends SiravelRepository
     public function __construct(Image $model)
     {
         $this->model = $model;
-        $this->table = config('cms.db-prefix').'images';
+        $this->table = config('siravel.db-prefix').'images';
     }
 
     public function published()
     {
         return $this->model->where('is_published', 1)
             ->orderBy('created_at', 'desc')
-            ->paginate(Config::get('cms.pagination', 24));
+            ->paginate(Config::get('siravel.pagination', 24));
     }
 
     /**
@@ -82,7 +82,7 @@ class ImageRepository extends SiravelRepository
 
         $input['is_published'] = 1;
         $input['location'] = $savedFile['name'];
-        $input['storage_location'] = config('cms.storage-location');
+        $input['storage_location'] = config('siravel.storage-location');
         $input['original_name'] = $savedFile['original'];
 
         $image = $this->model->create($input);
@@ -115,7 +115,7 @@ class ImageRepository extends SiravelRepository
         }
 
         $input['location'] = Crypto::decrypt($savedFile['name']);
-        $input['storage_location'] = config('cms.storage-location');
+        $input['storage_location'] = config('siravel.storage-location');
         $input['original_name'] = $savedFile['original'];
         $input['tags'] = explode(',', $input['tags']);
         $image = $this->model->create($input);

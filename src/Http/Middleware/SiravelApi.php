@@ -17,7 +17,7 @@ class SiravelApi
      */
     public function handle($request, Closure $next)
     {
-        if (Config::get('cms.api-token') == $request->get('token')) {
+        if (Config::get('siravel.api-token') == $request->get('token')) {
             return $next($request);
         }
 
