@@ -9,7 +9,7 @@
             <span class="fa fa-close nav-close"></span>
         </button>
         <span class="navbar-brand">
-            <span class="siravel-logo"></span> {{ \Illuminate\Support\Facades\Config::get('siravel.backend-title', 'Cms') }}
+            <span class="siravel-logo"></span> {{ \Illuminate\Support\Facades\Config::get('siravel.backend-title', 'Siravel') }}
         </span>
         @if (Auth::user())
         <p class="navbar-text navbar-left raw-m-hide">{!! trans('features.signedInAs', ['authName' => Auth::user()->name]) !!}</p>

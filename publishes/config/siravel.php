@@ -1,6 +1,6 @@
 <?php
 /**
- * Cmst Configuration
+ * Siravel Configuration
  */
 
 return [
@@ -93,7 +93,7 @@ return [
      * Admin management
      * --------------------------------------------------------------------------
     */
-    'backend-title' => 'Cms',
+    'backend-title' => 'Siravel',
     'backend-route-prefix' => 'admin',
     'root-route-prefix' => 'root',
     'backend-theme' => 'adminlte', // cosmo, cyborg, flatly, lumen, paper, sandstone, simplex, united, yeti

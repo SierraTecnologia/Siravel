@@ -64,7 +64,7 @@ class Kernel extends HttpKernel
          */
         'activated' => CheckIsUserActivated::class,
         'siravel' => \Siravel\Http\Middleware\Siravel::class,
-        'siravel-api' => \Siravel\Http\Middleware\CmsApi::class,
+        'siravel-api' => \Siravel\Http\Middleware\SiravelApi::class,
         'business' => \Siravel\Http\Middleware\Business::class,
         'subscription' => \Siravel\Http\Middleware\Subscription::class,
         'admin' => \Siravel\Http\Middleware\Admin::class,

@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CalendarSeeder::class);
 
-        $this->call(CmsSeeder::class);
+        $this->call(SiravelSeeder::class);
 
         $this->call(CommerceSeeder::class);
         
