@@ -91,8 +91,9 @@ class CreateFeaturesHomeTables extends Migration
 	public function down()
 	{
         Schema::dropIfExists('promotions');
-        Schema::drop('contacts');
-		Schema::drop('identity_girls');
+        Schema::dropIfExists('links');
+        Schema::dropIfExists('faqs');
+		Schema::dropIfExists('contacts');
 	}
 
 }

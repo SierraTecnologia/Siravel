@@ -5,7 +5,7 @@ namespace Siravel\Services\System;
 use Siravel\Models\User;
 // use Siravel\Models\Order;
 use Siravel\Jobs\RoutineOrganizerCreateJob;
-use Population\Models\Identity\Actors\Business;
+use Siravel\Models\Negocios\Business;
 use Illuminate\Support\Facades\Config;
 use Log;
 use Illuminate\Support\Facades\Schema;
@@ -17,12 +17,8 @@ class BusinessService
 {
     private $business = false;
     public $features = [];
-    public $run = 1;
-
-    public function __construct()
-    {
-        $this->loadBusiness();
-    }
+    public $run = 0;
+    public $log = false;
 
     // Ignora as urls mencionadas
     public static $IGNORE_URLS = [
@@ -44,26 +40,32 @@ class BusinessService
     public static $BLOCK_PARTIAL_URLS = [
         'cgi-bin/webcm',
     ];
-
-    /**
-     * Identifica o negócio da empresa de acordo com o token secreto
-     */
-    public static function getBusinessUser()
-    {
-        //@todo Mudar
-        if (\App::runningInConsole() ) {
-            Log::notice('Rodando em Console');
-            return null;
-        }
-        $business = self::getViaParamsToken();
-
-        if (!$business && self::isBlockUrl()) {
-            return abort(403);
-        }
-
-        return $business;
-    }
     
+    public function __construct()
+    {
+        $this->log = new \Muleta\Services\LoggerService('Business');
+        $this->loadBusiness();
+    }
+
+    public function loadSettings()
+    {
+        if (Schema::hasTable('settings')) {
+            // Get Settings
+            $this->business->settings()->each(
+                function ($item) {
+                    if (!empty($item->getAppAtribute('config'))) {
+                        $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
+                        Config::set($item->getAppAtribute('config'), $item->value);
+                    }
+                }
+            );
+        }
+
+        if ($this->business->features) {
+            $this->features = $this->business->features->all();
+        }
+        return $this;
+    }
     public function userAsSubscript($user)
     {
         // @todo Fazer
@@ -88,92 +90,6 @@ class BusinessService
     }
 
 
-    /**
-     * Identifica o negócio da empresa de acordo com o token secreto
-     */
-    public static function getViaParamsToken()
-    {
-        if(!empty($_SERVER['HTTP_BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_SERVER['HTTP_BUSINESS_TOKEN'])->first();
-        }
-        
-        if(!empty($_POST['business_token'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_POST['business_token'])->first();
-        }
-        
-        if(!empty($_POST['BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_POST['BUSINESS_TOKEN'])->first();
-        }
-        
-        if(!empty($_GET['business_token'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_GET['business_token'])->first();
-        }
-        
-        if(!empty($_GET['BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_GET['BUSINESS_TOKEN'])->first();
-        }
-
-        return null;
-        //return User::where('token', \Illuminate\Support\Facades\Config::get('business.default'))->first();
-        // bilo -> 3a0cafad9715806584cf60bf6c04200a
-        // Passepague -> \Illuminate\Support\Facades\Config::get('business.default')
-    }
-
-    // /**
-    //  * Cria base de Organizações clientes do negócio da empresa
-    //  * em cima dos tokens públicos enviados pelos apps.
-    //  */
-    // public static function createIfNotExist(Order $order)
-    // {
-    //     if (empty($order->company_token)) {
-    //         return true;
-    //     }
-
-    //     if ($found = User::where('token_public', $order->company_token)->first()){
-    //         return true;
-    //     }
-
-    //     return RoutineOrganizerCreateJob::dispatch($order->user, $order->company_token);
-    // }
-
-    /**
-     * Retorna Serviço de acordo com o Usuario
-     */
-    public static function getBusinessServiceForUser(User $businessUser, $companyToken = false)
-    {
-        if (empty($businessUser->business) || empty($businessUser->businessUrl)) {
-            Log::notice('Business não configurado para usuário de negócio: '.$businessUser->id);
-            return false;
-        }
-
-        $class = "\\App\\Integrations\\Business\\".$businessUser->business;
-        return new $class($businessUser->businessUrl, $companyToken, $businessUser->token);
-    }
 
     public function hasBusiness()
     {
@@ -263,6 +179,21 @@ class BusinessService
 
 
 
+    private function getDefault()
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+
+        if (!$default = CacheService::getUniversal('business-default')) {
+            $default = 'HotelByNow';
+        }
+        if (!$business = \Siravel\Models\Negocios\Business::where('code', $default)->first()) {
+            return false;
+        }
+        return $business;
+    }
+
     private function loadBusiness()
     {
         if (!VersionService::isInstall()) {
@@ -273,23 +204,7 @@ class BusinessService
             return false;
             // throw new Exception('Não detectado o business');
         }
-
-        // @todo
-        // if (Schema::hasTable('settings')) {
-        //     // Get Settings
-        //     Setting::all()->each(
-        //         function ($item) {
-        //             Log::debug('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-        //             if (!empty($item->getAppAtribute('config'))) {
-        //                 Config::set($item->getAppAtribute('config'), $item->value);
-        //             }
-        //         }
-        //     );
-        // }
-
-        // if ($this->business->features) {
-        //     $this->features = $this->business->features->all();
-        // }
+        
         return true;
     }
 
@@ -308,25 +223,116 @@ class BusinessService
             return $this->getDefault();
         }
 
-        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $domainSlug)->first()) {
+        if (!$business = Business::where('code', $domainSlug)->first()) {
             // return $this->getDefault(); // @todo
             return false;
         }
+        $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
         return $business;
     }
 
-    private function getDefault()
+    // /**
+    //  * Cria base de Organizações clientes do negócio da empresa
+    //  * em cima dos tokens públicos enviados pelos apps.
+    //  */
+    // public static function createIfNotExist(Order $order)
+    // {
+    //     if (empty($order->company_token)) {
+    //         return true;
+    //     }
+
+    //     if ($found = User::where('token_public', $order->company_token)->first()){
+    //         return true;
+    //     }
+
+    //     return RoutineOrganizerCreateJob::dispatch($order->user, $order->company_token);
+    // }
+
+    /**
+     * Retorna Serviço de acordo com o Usuario
+     */
+    public static function getBusinessServiceForUser(User $businessUser, $companyToken = false)
     {
-        if (!$this->isHability()) {
+        if (empty($businessUser->business) || empty($businessUser->businessUrl)) {
+            Log::notice('Business não configurado para usuário de negócio: '.$businessUser->id);
             return false;
         }
 
-        if (!$default = CacheService::getUniversal('business-default')) {
-            $default = 'HotelByNow';
+        $class = "\\App\\Integrations\\Business\\".$businessUser->business;
+        return new $class($businessUser->businessUrl, $companyToken, $businessUser->token);
+    }
+
+    /**
+     * Identifica o negócio da empresa de acordo com o token secreto
+     */
+    public static function getBusinessUser()
+    {
+        //@todo Mudar
+        if (\App::runningInConsole() ) {
+            Log::notice('Rodando em Console');
+            return null;
         }
-        if (!$business = \Population\Models\Identity\Actors\Business::where('code', $default)->first()) {
-            return false;
+        $business = self::getViaParamsToken();
+
+        if (!$business && self::isBlockUrl()) {
+            return abort(403);
         }
+
         return $business;
+    }
+    /**
+     * Identifica o negócio da empresa de acordo com o token secreto
+     */
+    public static function getViaParamsToken()
+    {
+        if(!empty($_SERVER['HTTP_BUSINESS_TOKEN'])) {
+        
+            // Log::info(
+            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
+            //     . print_r($_SERVER, true)
+            // );
+            return User::where('token', $_SERVER['HTTP_BUSINESS_TOKEN'])->first();
+        }
+        
+        if(!empty($_POST['business_token'])) {
+        
+            // Log::info(
+            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
+            //     . print_r($_SERVER, true)
+            // );
+            return User::where('token', $_POST['business_token'])->first();
+        }
+        
+        if(!empty($_POST['BUSINESS_TOKEN'])) {
+        
+            // Log::info(
+            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
+            //     . print_r($_SERVER, true)
+            // );
+            return User::where('token', $_POST['BUSINESS_TOKEN'])->first();
+        }
+        
+        if(!empty($_GET['business_token'])) {
+        
+            // Log::info(
+            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
+            //     . print_r($_SERVER, true)
+            // );
+            return User::where('token', $_GET['business_token'])->first();
+        }
+        
+        if(!empty($_GET['BUSINESS_TOKEN'])) {
+        
+            // Log::info(
+            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
+            //     . print_r($_SERVER, true)
+            // );
+            return User::where('token', $_GET['BUSINESS_TOKEN'])->first();
+        }
+
+        return null;
+        //return User::where('token', \Illuminate\Support\Facades\Config::get('business.default'))->first();
+        // bilo -> 3a0cafad9715806584cf60bf6c04200a
+        // Passepague -> \Illuminate\Support\Facades\Config::get('business.default')
     }
 }

@@ -14,23 +14,6 @@ class CreateExtraWikiTables extends Migration
     public function up()
     {
         Schema::create(
-            'providers', function (Blueprint $table) {
-
-                // Set the storage engine and primary key
-                $table->engine = 'InnoDB';
-                $table->increments('id');
-
-                // Ordinary columns
-                $table->string('name')->unique();
-                $table->string('slug')->unique();
-                $table->unsignedInteger('login_count')->default(0);
-
-                // Automatic columns
-                $table->timestamps();
-                $table->softDeletes();
-            }
-        );
-        Schema::create(
             'wiki_roles', function (Blueprint $table) {
 
                 // Set the storage engine and primary key
@@ -159,6 +142,5 @@ class CreateExtraWikiTables extends Migration
         Schema::dropIfExists('wiki_roles');
         // Providers
         \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Schema::dropIfExists('providers');
     }
 }

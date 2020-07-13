@@ -90,6 +90,6 @@ class CreateFeaturesBlogsTables extends Migration
     {
         Schema::dropIfExists('articles');
         Schema::dropIfExists('posts');
-        Schema::drop('blogs');
+        Schema::dropIfExists('blogs');
     }
 }

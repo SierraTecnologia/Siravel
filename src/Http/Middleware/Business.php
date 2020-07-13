@@ -5,6 +5,7 @@ namespace Siravel\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
+use Siravel\Services\System\BusinessService;
 
 class Business
 {
@@ -18,7 +19,7 @@ class Business
      */
     public function handle($request, Closure $next)
     {
-        // @todo Fazer
+        app()->make(BusinessService::class)->loadSettings();
         
         return $next($request);
     }

@@ -9,7 +9,7 @@
 return [
 
     'models' => [
-        'business' => \Population\Models\Identity\Actors\Business::class,
+        'business' => \Siravel\Models\Negocios\Business::class,
     ],
 
 

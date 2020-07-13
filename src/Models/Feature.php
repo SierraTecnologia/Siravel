@@ -67,7 +67,7 @@ class Feature extends Base
      */
     public function businesses()
     {
-        return $this->morphedByMany('Population\Models\Identity\Actors\Business', 'featureable');
+        return $this->morphedByMany('Siravel\Models\Negocios\Business', 'featureable');
     }
 
     /**

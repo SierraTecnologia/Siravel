@@ -7,6 +7,13 @@
 // Route::get('midia-full/{encFileName}', 'MidiaController@asFull');
 // Route::get('midia-download/{encFileName}/{encRealFileName}', 'MidiaController@asDownload');
 
+/*
+|--------------------------------------------------------------------------
+| Basic WriteLabels Pages
+|--------------------------------------------------------------------------
+*/
+Route::get('{module}/rss', 'RssController@index');
+Route::get('site-map', 'SiteMapController@index');
 
 
 
