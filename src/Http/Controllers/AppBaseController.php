@@ -16,7 +16,7 @@ use Response;
  * This class should be parent class for other API controllers
  * Class AppBaseController
  */
-class AppBaseController extends Controller
+class AppBaseController extends SitecController
 {
     public function sendResponse($result, $message)
     {

@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers;
 use Siravel\Services\SiravelService;
 use Illuminate\Http\Response;
 
-class SiteMapController extends Controller
+class SiteMapController extends SitecController
 {
     protected $service;
 

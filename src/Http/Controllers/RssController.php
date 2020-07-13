@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class RssController extends Controller
+class RssController extends SitecController
 {
     protected $repo;
 
