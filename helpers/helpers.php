@@ -84,7 +84,7 @@ function signedInUser()
  * @param  Ownable $ownable
  * @return mixed
  */
-function userCan(string $permission, \Population\Models\Ownable $ownable = null)
+function userCan(string $permission, \Support\Models\Ownable $ownable = null)
 {
     if ($ownable === null) {
         return user() && user()->can($permission);

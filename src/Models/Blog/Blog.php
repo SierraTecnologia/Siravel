@@ -6,7 +6,7 @@ use Siravel\Models\SiravelModel;
 use Facilitador\Services\Normalizer;
 use Translation\Traits\HasTranslations;
 use Informate\Models\System\Archive;
-use Informate\Traits\ArchiveTrait;
+use Support\Traits\Models\ArchiveTrait;
 
 use Siravel\Contracts\Business\BusinessTrait;
 
