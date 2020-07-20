@@ -1,7 +1,26 @@
 {
     "name": "sierratecnologia/siravel",
     "description": "Recursos para Desenvolvimento Complexo",
+    "type": "library",
+    "keywords": [
+        "sierratecnologia",
+        "siravel"
+    ],
     "license": "MIT",
+    "homepage": "https://sierratecnologia.com/packages/siravel/",
+    "support": {
+        "email": "help@sierratecnologia.com",
+        "issues": "https://github.com/sierratecnologia/siravel/issues",
+        "source": "https://github.com/sierratecnologia/siravel",
+        "docs": "https://github.com/sierratecnologia/siravel/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "SierraTecnologia",
+            "homepage": "https://sierratecnologia.com.br",
+            "email": "help@sierratecnologia.com.br"
+        }
+    ],
     "require": {
         "php": ">=7.2",
         "laravel/framework": "^6.0|^7.0|^8.0",
