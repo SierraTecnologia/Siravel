@@ -2,8 +2,8 @@
 
 namespace Siravel\Models\Negocios;
 
-// use Population\Models\Identity\Actors\Business as Model;
-use Facilitador\Models\Base as Model;
+use Telefonica\Models\Actors\Business as Model;
+// use Facilitador\Models\Base as Model;
 
 class Business extends Model
 {
