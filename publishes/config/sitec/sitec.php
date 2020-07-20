@@ -24,7 +24,7 @@ return [
         'genders' => \Informate\Models\Entytys\About\Gender::class,
         'gostos' => \Informate\Models\Entytys\About\Gosto::class,
         'infos' => \Population\Models\Market\Abouts\Info::class,
-        'integrations' => \Population\Models\Components\Integrations\Integration::class,
+        'integrations' => \Integrations\Models\Integration::class,
         'items' => \Informate\Models\Entytys\Fisicos\Item::class,
         'pintinhas' => \Population\Models\Identity\Fisicos\Pintinha::class,
         'pincirgs' => \Population\Models\Identity\Fisicos\Pircing::class,
