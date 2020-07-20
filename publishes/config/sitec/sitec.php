@@ -13,7 +13,7 @@ return [
         'accounts' => \Population\Models\Identity\Digital\Account::class,
         'passwords' => \Population\Models\Identity\Digital\Password::class,
         'phones' => \Population\Models\Identity\Digital\Phone::class,
-        'dominios' => \Finder\Models\Digital\Infra\Domain::class,
+        'dominios' => \Fabrica\Models\Infra\Domain::class,
         'emails' => \Population\Models\Identity\Digital\Email::class,
         'bibliotecas' => \Population\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Informate\Models\Entytys\Category\BibliotecaType::class,
