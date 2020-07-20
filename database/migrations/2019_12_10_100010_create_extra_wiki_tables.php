@@ -47,7 +47,7 @@ class CreateExtraWikiTables extends Migration
                 // $table->string('language_code');
                 // $table->foreign('language_code')->references('code')->on('languages')->onUpdate('cascade')->onDelete('cascade');
                 $table->unsignedInteger('provider_id');
-                $table->foreign('provider_id')->references('id')->on('providers')->onUpdate('cascade')->onDelete('cascade');
+                // $table->foreign('provider_id')->references('id')->on('providers')->onUpdate('cascade')->onDelete('cascade');
                 $table->unsignedInteger('wiki_role_id');
                 // $table->foreign('role_id')->references('id')->on('wiki_roles')->onUpdate('cascade')->onDelete('restrict');
 

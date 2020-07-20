@@ -49,23 +49,26 @@ class BusinessService
 
     public function loadSettings()
     {
-        if (Schema::hasTable('settings')) {
-            // Get Settings
-            $this->business->settings()->each(
-                function ($item) {
-                    if (!empty($item->getAppAtribute('config'))) {
-                        $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-                        Config::set($item->getAppAtribute('config'), $item->value);
+        if ($this->business) {
+            if (Schema::hasTable('settings')) {
+                // Get Settings
+                $this->business->settings()->each(
+                    function ($item) {
+                        if (!empty($item->getAppAtribute('config'))) {
+                            $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
+                            Config::set($item->getAppAtribute('config'), $item->value);
+                        }
                     }
-                }
-            );
-        }
+                );
 
-        if ($this->business->features) {
-            $this->features = $this->business->features->all();
+                if ($this->business->features) {
+                    $this->features = $this->business->features->all();
+                }
+                return $this;
+            }
         }
-        return $this;
     }
+
     public function userAsSubscript($user)
     {
         // @todo Fazer

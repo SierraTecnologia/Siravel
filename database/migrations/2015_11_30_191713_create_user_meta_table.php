@@ -31,23 +31,6 @@ class CreateUserMetaTable extends Migration
 
             $table->timestamps();
         });
-        Schema::create(
-            'providers', function (Blueprint $table) {
-
-                // Set the storage engine and primary key
-                $table->engine = 'InnoDB';
-                $table->increments('id');
-
-                // Ordinary columns
-                $table->string('name')->unique();
-                $table->string('slug')->unique();
-                $table->unsignedInteger('login_count')->default(0);
-
-                // Automatic columns
-                $table->timestamps();
-                $table->softDeletes();
-            }
-        );
     }
 
     /**
@@ -57,7 +40,6 @@ class CreateUserMetaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('providers');
         Schema::dropIfExists('user_meta');
     }
 }

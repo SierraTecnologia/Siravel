@@ -5,7 +5,7 @@ namespace Siravel\Repositories\Negocios;
 use Siravel;
 use Config;
 use Crypto;
-use Facilitador\Models\UserMeta;
+use Siravel\Models\UserMeta;
 use Illuminate\Support\Facades\Schema;
 use Siravel\Repositories\SiravelRepository as BaseRepository;
 use Translation\Repositories\ModelTranslationRepository;
