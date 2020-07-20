@@ -39,8 +39,8 @@ class SiravelBusinessProvider extends ServiceProvider
 
         // BUsiness
         $loader = AliasLoader::getInstance();
-        $loader->alias('BusinessService', \Siravel\Facades\BusinessServiceFacade::class);
-        $this->app->singleton(BusinessService::class, function () {
+        $loader->alias('Business', \Siravel\Facades\BusinessServiceFacade::class);
+        $this->app->singleton('business', function () {
             return new BusinessService();
         });
         $this->app['events']->listen(

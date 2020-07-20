@@ -9,12 +9,12 @@ return [
         // 'users' => \Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class),
 
         // Identity
-        'persons' => \Population\Models\Identity\Actors\Person::class,
-        'accounts' => \Population\Models\Identity\Digital\Account::class,
-        'passwords' => \Population\Models\Identity\Digital\Password::class,
-        'phones' => \Population\Models\Identity\Digital\Phone::class,
+        'persons' => \Telefonica\Models\Actors\Person::class,
+        'accounts' => \Telefonica\Models\Digital\Account::class,
+        'passwords' => \Telefonica\Models\Digital\Password::class,
+        'phones' => \Telefonica\Models\Digital\Phone::class,
         'dominios' => \Fabrica\Models\Infra\Domain::class,
-        'emails' => \Population\Models\Identity\Digital\Email::class,
+        'emails' => \Telefonica\Models\Digital\Email::class,
         'bibliotecas' => \Population\Models\Market\Informacao\Biblioteca::class,
         'biblioteca_types' => \Informate\Models\Entytys\Category\BibliotecaType::class,
 
@@ -31,7 +31,7 @@ return [
         'positions' => \Informate\Models\Entytys\Relations\Position::class,
         'relations' => \Population\Models\Market\Relations\Relation::class,
         'skills' => \Informate\Models\Entytys\About\Skill::class,
-        'sitios' => \Population\Models\Identity\Digital\Sitio::class,
+        'sitios' => \Telefonica\Models\Digital\Sitio::class,
         'tatuages' => \Population\Models\Identity\Fisicos\Tatuage::class,
 
         // Internet

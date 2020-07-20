@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Negocios;
 
-use Population\Models\Identity\Actors\Person;
+use Telefonica\Models\Actors\Person;
 
 class Assinante extends Person
 {

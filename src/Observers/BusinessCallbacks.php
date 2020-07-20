@@ -6,7 +6,7 @@ use Event;
 use Log;
 use Illuminate\Support\Str;
 use Facilitador;
-use Population\Models\Identity\Digital\Email;
+use Telefonica\Models\Digital\Email;
 use Support\Models\Base;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Throwable;

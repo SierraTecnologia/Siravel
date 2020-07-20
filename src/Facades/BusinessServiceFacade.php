@@ -8,6 +8,6 @@ class BusinessServiceFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'BusinessService';
+        return 'business';
     }
 }
