@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 use Siravel\Models\Model;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
-use Support\Traits\Models\EloquentGetTableNameTrait;
+use Muleta\Traits\Models\EloquentGetTableNameTrait;
 
 trait BusinessTrait
 {

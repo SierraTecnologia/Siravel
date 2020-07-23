@@ -3,7 +3,7 @@
 namespace Siravel\Models;
 
 use Support\Models\Base;
-use Support\Traits\Models\ComplexRelationamentTrait;
+use Muleta\Traits\Models\ComplexRelationamentTrait;
 
 class Feature extends Base
 {

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Collection;
-use Support\Traits\Providers\ConsoleTools;
+use Muleta\Traits\Providers\ConsoleTools;
 use Siravel\Services\System\BusinessService;
 
 use Illuminate\Routing\Router;
