@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Controller;
-use Informate\Models\Comment;
+use Transmissor\Models\Comment;
 
 class CommentController extends Controller
 {

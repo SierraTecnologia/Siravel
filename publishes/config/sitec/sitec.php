@@ -3,7 +3,7 @@
 return [
 
     'models' => [
-        // 'comments' => \Informate\Models\Comment::class,
+        // 'comments' => \Transmissor\Models\Comment::class,
         // 'categorys' => \App\Models\Category::class,
         // 'weapons' => \Informate\Models\Entytys\Fisicos\Weapon::class,
         // 'users' => \Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class),
