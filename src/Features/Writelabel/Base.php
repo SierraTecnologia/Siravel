@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Writelabel;
+namespace Siravel\Features\Writelabel;
 
 class Base
 {

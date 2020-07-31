@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Request;
 use Facilitador\Models\Setting;
 use Exception;
+use Illuminate\Support\Facades\Session;
 
 class BusinessService
 {
@@ -99,14 +100,6 @@ class BusinessService
         return $this->business ? true : false;
     }
 
-    public function isHability()
-    {
-        $config = \Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
-        if (!$config) {
-            return false;
-        }
-        return true;
-    }
 
 
     /**
@@ -182,6 +175,14 @@ class BusinessService
 
 
 
+    public function isHability()
+    {
+        $config = \Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
+        if (!$config) {
+            return false;
+        }
+        return true;
+    }
     private function getDefault()
     {
         if (!$this->isHability()) {
@@ -213,12 +214,22 @@ class BusinessService
 
     private function detectedBusiness()
     {
-        // @todo
-        // if (!$this->isHability()) {
-        //     return false;
-        // }
-        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
+        if (!$this->isHability()) {
+            return false;
+        }
 
+
+        if ($business = Business::where('code', Session::get('business_force'))->first()) {
+            return $business;
+
+        }
+
+        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
+        if ($business = Business::where('code', $domainSlug)->first()) {
+            return $business;
+            $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
+
+        }
         /**
          * Localhost ou terminal, retorna o padrao
          */
@@ -226,12 +237,26 @@ class BusinessService
             return $this->getDefault();
         }
 
-        if (!$business = Business::where('code', $domainSlug)->first()) {
-            // return $this->getDefault(); // @todo
-            return false;
+        return false;
+    }
+    /**
+     * Switch user login.
+     *
+     * @param int $id
+     *
+     * @return bool
+     */
+    public function switchToBusiness($id)
+    {
+        try {
+            $user = $this->model->find($id);
+            Session::put('business_force', Auth::id());
+            Auth::login($user);
+
+            return true;
+        } catch (Exception $e) {
+            throw new Exception('Error logging in as user', 1);
         }
-        $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
-        return $business;
     }
 
     // /**

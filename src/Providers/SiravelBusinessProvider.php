@@ -9,15 +9,16 @@ use Siravel\Services\System\BusinessService;
 use Siravel\Http\Middleware\Business as BusinessMiddleware;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Contracts\Http\Kernel;
 
 class SiravelBusinessProvider extends ServiceProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
+    // /**
+    //  * Indicates if loading of the provider is deferred.
+    //  *
+    //  * @var bool
+    //  */
+    // protected $defer = false;
 
     /**
      * Bootstrap the application events.
@@ -27,7 +28,8 @@ class SiravelBusinessProvider extends ServiceProvider
     public function boot(Router $router)
     {
         Schema::defaultStringLength(191);
-        $router->pushMiddlewareToGroup('web', BusinessMiddleware::class);
+        $kernel = $this->app->make(Kernel::class);
+        $kernel->pushMiddleware(BusinessMiddleware::class);
     }
 
     /**

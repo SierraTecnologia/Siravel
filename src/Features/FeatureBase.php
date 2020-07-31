@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features;
+namespace Siravel\Features;
 
 class FeatureBase
 {

@@ -4,9 +4,9 @@ namespace Siravel\Http\Requests;
 
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
-use Facilitador\Models\Notification;
+use Siravel\Models\Feature;
 
-class NotificationUpdateRequest extends FormRequest
+class FeatureCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,6 +29,6 @@ class NotificationUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [];
+        return Feature::$rules;
     }
 }

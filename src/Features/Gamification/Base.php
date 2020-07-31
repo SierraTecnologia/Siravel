@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Gamification;
+namespace Siravel\Features\Gamification;
 
 class Base
 {

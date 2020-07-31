@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Blog;
+namespace Siravel\Features\Blog;
 
 class Base
 {

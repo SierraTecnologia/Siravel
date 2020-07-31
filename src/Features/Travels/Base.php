@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Travels;
+namespace Siravel\Features\Travels;
 
 class Base
 {

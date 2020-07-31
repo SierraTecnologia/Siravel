@@ -23,7 +23,7 @@ class ModuleController extends Controller
      */
     public function index($moduleName)
     {
-        $board = \Siravel\Logic\Features\Board($this->getModule($moduleName));
+        $board = \Siravel\Features\Board($this->getModule($moduleName));
         return view('features.home', compact('board'));
     }
     

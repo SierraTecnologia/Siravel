@@ -32,6 +32,7 @@ class CreateFeaturesTables extends Migration
                 $table->string('code')->unique();
                 $table->primary('code');
                 $table->string('name', 255);
+                $table->boolean('is_active')->default(true);
                 $table->timestamps();
                 $table->softDeletes();
             }

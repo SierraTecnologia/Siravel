@@ -6,29 +6,20 @@ use JeroenNoten\LaravelAdminLte\Menu\Builder;
 use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
 use Illuminate\Support\Facades\Auth;
 
+use Facilitador\Http\MenuFilter as MenuFilterBase;
 // use Laratrust;
 
-class MenuFilter implements FilterInterface
+class MenuFilter extends MenuFilterBase
 {
     public function transform($item, Builder $builder)
     {
-        $user = Auth::user();
-
-        if (!$this->verifyLevel($item, $user)) {
+        if (!$this->verifyFeature($item)) {
             return false;
         }
-
-        if (!$this->verifyFeature($item, $user)) {
-            return false;
-        }
-
-        // Translate
-        $item["text"] = _t($item["text"]);
-
-        return $item;
+        return parent::transform($item, $builder);
     }
 
-    private function verifyFeature($item, $user)
+    private function verifyFeature($item)
     {
         $feature = null;
         if (isset($item['feature'])) {
@@ -40,24 +31,5 @@ class MenuFilter implements FilterInterface
         }
 
         return app(\Siravel\Services\System\BusinessService::class)->hasFeature($feature);
-    }
-
-    private function verifyLevel($item, $user)
-    {
-        $level = 0;
-        if (isset($item['level'])) {
-            $level = (int) $item['level'];
-        }
-
-        // Possui level inteiro e usuario nao logado
-        if ($level>0 && !$user) {
-            return false;
-        }
-
-        if ($level > $user->getLevelForAcessInBusiness()) {
-            return false;
-        }
-
-        return true;
     }
 }

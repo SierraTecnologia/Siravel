@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Commerce;
+namespace Siravel\Features\Commerce;
 
 class Base
 {

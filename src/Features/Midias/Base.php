@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Midias;
+namespace Siravel\Features\Midias;
 
 class Base
 {

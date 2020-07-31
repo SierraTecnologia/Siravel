@@ -75,11 +75,6 @@ class BusinessCallbacks
         //     #forceDeleting: false
         //   }
 
-        // Ignore
-        if (!app()->bound(BusinessService::class)) {
-            return true;
-        }
-
         if (!Schema::hasColumn($model->getTable(), 'business_code'))
         {
             return true;
@@ -93,11 +88,17 @@ class BusinessCallbacks
         // If there is matching callback method on the model, call it, passing
         // any additional event arguments to it
         $method = 'on'.Str::studly($action);
-
         if ($method == 'onBooting') {
             $model::addGlobalScope(new BusinessScope);
             return true;
         }
+
+
+        // // Ignore
+        // if (!app()->bound(BusinessService::class)) {
+        //     dd('aa');
+        //     return true;
+        // }
 
         if ($method == 'onCreating') {
             $business = app()->make(BusinessService::class);

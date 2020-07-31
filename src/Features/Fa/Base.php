@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Logic\Features\Fa;
+namespace Siravel\Features\Fa;
 
 class Base
 {
