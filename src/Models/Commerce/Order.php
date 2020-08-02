@@ -31,7 +31,7 @@ class Order extends SiravelModel
         'status',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 
     public $with = [
         'transaction'

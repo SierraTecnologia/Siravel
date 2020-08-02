@@ -23,7 +23,7 @@ class Variant extends SiravelModel
         'value',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 
     public function getOptionsAttribute()
     {

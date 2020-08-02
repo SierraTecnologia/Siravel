@@ -26,7 +26,7 @@ class Widget extends Model
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'name' => 'required',
         'slug' => 'required',
     ];

@@ -18,7 +18,7 @@ class Team extends Model
         'name',
     ];
 
-    public static $rules = [
+    public $rules = [
         'name' => 'required|unique:teams'
     ];
 

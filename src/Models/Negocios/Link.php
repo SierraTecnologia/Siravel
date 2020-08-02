@@ -35,7 +35,7 @@ class Link extends Model
      *
      * @var array
      */
-    public static $rules = [
+    public $rules = [
         
     ];
 

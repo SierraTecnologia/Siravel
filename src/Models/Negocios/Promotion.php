@@ -27,7 +27,7 @@ class Promotion extends Model
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'slug' => 'required',
     ];
 

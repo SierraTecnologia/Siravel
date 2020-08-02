@@ -9,7 +9,7 @@ use Siravel\Models\Negocios\Menu;
 use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
-use Siravel\Services\SiravelResponseService;
+use Support\Services\RiCaResponseService;
 use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -192,6 +192,6 @@ class MenuController extends BaseController
         $menu = $this->repository->find($id);
         $result = $this->repository->setOrder($menu, $request->except('_token'));
 
-        return app(SiravelResponseService::class)->apiResponse('success', $result);
+        return app(RiCaResponseService::class)->apiResponse('success', $result);
     }
 }

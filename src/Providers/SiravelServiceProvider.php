@@ -9,9 +9,9 @@ use Siravel\Services\BlogService;
 use Siravel\Services\EventService;
 use Siravel\Services\ModuleService;
 use Siravel\Services\Negocios\PageService;
-use Siravel\Services\SiravelService;
+use Support\Services\RiCaService;
 
-class SiravelServiceProvider extends ServiceProvider
+class RiCaServiceProvider extends ServiceProvider
 {
     /**
      * Register the services.
@@ -20,16 +20,16 @@ class SiravelServiceProvider extends ServiceProvider
     {
         $loader = AliasLoader::getInstance();
 
-        $loader->alias('Siravel', \Siravel\Facades\SiravelServiceFacade::class);
-        $loader->alias('SiravelService', \Siravel\Facades\SiravelServiceFacade::class);
+        $loader->alias('Siravel', \Siravel\Facades\RiCaServiceFacade::class);
+        $loader->alias('RiCaService', \Siravel\Facades\RiCaServiceFacade::class);
         $loader->alias('PageService', \Siravel\Facades\PageServiceFacade::class);
         $loader->alias('EventService', \Siravel\Facades\EventServiceFacade::class);
         $loader->alias('ModuleService', \Siravel\Facades\ModuleServiceFacade::class);
         $loader->alias('BlogService', \Siravel\Facades\BlogServiceFacade::class);
         $loader->alias('FileService', \Stalker\Services\Midia\FileService::class);
 
-        $this->app->bind('SiravelService', function ($app) {
-            return new SiravelService();
+        $this->app->bind('RiCaService', function ($app) {
+            return new RiCaService();
         });
 
         $this->app->bind('PageService', function ($app) {

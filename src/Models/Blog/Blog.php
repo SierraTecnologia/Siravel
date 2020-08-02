@@ -22,7 +22,7 @@ class Blog extends SiravelModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'title' => 'required|string',
         'url' => 'required|string',
     ];

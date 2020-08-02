@@ -23,7 +23,7 @@ class Faq extends BaseModel
 
     protected $guarded = [];
     
-    public static $rules = [
+    public $rules = [
         'question' => 'required',
         'answer' => 'required',
     ];

@@ -35,7 +35,7 @@ class OrderItem extends SiravelModel
         'status',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 
     /**
      * Get the corresponding Order

@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
 use Siravel\Models\Commerce\Plan;
-use Siravel\Services\SiravelService;
+use Support\Services\RiCaService;
 
 class PlanService
 {
@@ -107,7 +107,7 @@ class PlanService
     public function create($payload)
     {
         try {
-            $name = app(SiravelService::class)->convertToURL($payload['name']);
+            $name = app(RiCaService::class)->convertToURL($payload['name']);
 
             $payload['sitecpayment_id'] = $name;
             $payload['uuid'] = crypto_uuid();

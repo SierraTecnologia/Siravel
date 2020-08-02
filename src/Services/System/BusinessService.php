@@ -102,40 +102,6 @@ class BusinessService
 
 
 
-    /**
-     * Faz o business padrão voltar a ser o original do sistema
-     *
-     * @return void
-     */
-    public function clearDefault()
-    {
-        CacheService::clearUniversal('business-default');
-        return true;
-    }
-
-    /**
-     * Transforma no Business padrão do Sistema
-     *
-     * @return void
-     */
-    public function makeDefault(Business $business)
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        CacheService::setUniversal('business-default', $business->code);
-        $this->business = $business;
-        return true;
-    }
-
-    public function isDefault(Business $business)
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        return $business->code === $this->getBusiness()->code;
-    }
-
     public function userAsColaborator(User $user)
     {
         // @todo Fazer 
@@ -238,25 +204,6 @@ class BusinessService
         }
 
         return false;
-    }
-    /**
-     * Switch user login.
-     *
-     * @param int $id
-     *
-     * @return bool
-     */
-    public function switchToBusiness($id)
-    {
-        try {
-            $user = $this->model->find($id);
-            Session::put('business_force', Auth::id());
-            Auth::login($user);
-
-            return true;
-        } catch (Exception $e) {
-            throw new Exception('Error logging in as user', 1);
-        }
     }
 
     // /**
@@ -362,5 +309,57 @@ class BusinessService
         //return User::where('token', \Illuminate\Support\Facades\Config::get('business.default'))->first();
         // bilo -> 3a0cafad9715806584cf60bf6c04200a
         // Passepague -> \Illuminate\Support\Facades\Config::get('business.default')
+    }
+
+    /**
+     * Faz o business padrão voltar a ser o original do sistema
+     *
+     * @return void
+     */
+    public function clearDefault()
+    {
+        CacheService::clearUniversal('business-default');
+        return true;
+    }
+
+
+    public function isDefault(Business $business)
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+        return $business->code === $this->getBusiness()->code;
+    }
+
+    /**
+     * Transforma no Business padrão do Sistema (Para Usuário Somente)
+     *
+     * @return void
+     */
+    public function switchToBusiness(Business $business)
+    {
+        try {
+            Session::put('business_force', $business->code);
+            $this->business = $business;
+
+            return true;
+        } catch (Exception $e) {
+            throw new Exception('Error switch to business', 1);
+        }
+    }
+
+    /**
+     * Transforma no Business padrão do Sistema (Para Todos)
+     *
+     * @return void
+     */
+    public function makeDefault(Business $business)
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+        CacheService::setUniversal('business-default', $business->code);
+        $this->business = $business;
+        return true;
     }
 }

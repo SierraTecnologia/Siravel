@@ -32,7 +32,7 @@ class Plan extends SiravelModel
         'is_featured',
     ];
 
-    public static $rules = [
+    public $rules = [
         'name' => 'required',
         'amount' => 'required',
         'interval' => 'required',

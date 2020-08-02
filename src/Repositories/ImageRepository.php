@@ -5,7 +5,7 @@ namespace Siravel\Repositories;
 use Siravel;
 use Config;
 use Crypto;
-use Facilitador\Models\Image;
+use Stalker\Models\Image;
 use Siravel\Models\Tag;
 use Stalker\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;

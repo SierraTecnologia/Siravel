@@ -19,7 +19,7 @@ class Page extends BaseModel
 
     protected $guarded = [];
 
-    public static $rules = [
+    public $rules = [
         'title' => 'required',
         'url' => 'required',
     ];

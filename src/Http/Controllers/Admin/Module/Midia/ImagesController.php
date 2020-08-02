@@ -11,7 +11,7 @@ use Storage;
 use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use Siravel\Services\SiravelResponseService;
+use Support\Services\RiCaResponseService;
 use Facilitador\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
@@ -127,9 +127,9 @@ class ImagesController extends BaseController
             $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
-            $response = app(SiravelResponseService::class)->apiResponse('success', $fileSaved);
+            $response = app(RiCaResponseService::class)->apiResponse('success', $fileSaved);
         } else {
-            $response = app(SiravelResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
+            $response = app(RiCaResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
         }
 
         return $response;
@@ -261,12 +261,12 @@ class ImagesController extends BaseController
     public function apiList(Request $request)
     {
         if (config('siravel.api-key') != $request->header('siravel')) {
-            return app(SiravelResponseService::class)->apiResponse('error', []);
+            return app(RiCaResponseService::class)->apiResponse('error', []);
         }
 
         $images =  $this->repository->apiPrepared();
 
-        return app(SiravelResponseService::class)->apiResponse('success', $images);
+        return app(RiCaResponseService::class)->apiResponse('success', $images);
     }
 
     /**
@@ -280,6 +280,6 @@ class ImagesController extends BaseController
     {
         $image = $this->repository->apiStore($request->all());
 
-        return app(SiravelResponseService::class)->apiResponse('success', $image);
+        return app(RiCaResponseService::class)->apiResponse('success', $image);
     }
 }

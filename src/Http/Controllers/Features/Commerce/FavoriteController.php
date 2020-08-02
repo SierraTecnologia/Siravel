@@ -5,13 +5,13 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\FavoriteService;
-use Siravel\Services\SiravelResponseService;
+use Support\Services\RiCaResponseService;
 
 class FavoriteController extends Controller
 {
     protected $favoriteService;
 
-    public function __construct(FavoriteService $favoriteService, SiravelResponseService $siravelResponseService)
+    public function __construct(FavoriteService $favoriteService, RiCaResponseService $siravelResponseService)
     {
         $this->service = $favoriteService;
         $this->responseService = $siravelResponseService;

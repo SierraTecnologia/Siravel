@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
-use Siravel\Services\SiravelService;
+use Support\Services\RiCaService;
 use Siravel\Models\Commerce\Coupon;
 
 class CouponService

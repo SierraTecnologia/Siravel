@@ -25,5 +25,5 @@ class Cart extends SiravelModel
         'quantity',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 }

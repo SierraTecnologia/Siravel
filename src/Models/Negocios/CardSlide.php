@@ -49,7 +49,7 @@ class CardSlide extends Model
      *
      * @var array
      */
-    public static $rules = [
+    public $rules = [
         
     ];
 }

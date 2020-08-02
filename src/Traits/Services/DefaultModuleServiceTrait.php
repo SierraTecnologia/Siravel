@@ -60,7 +60,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Facilitador\Models\Image')->find($id)) {
+        if ($image = app('Stalker\Models\Image')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 
@@ -78,7 +78,7 @@ trait DefaultModuleServiceTrait
     {
         $img = '';
 
-        if ($image = app('Facilitador\Models\Image')->find($id)) {
+        if ($image = app('Stalker\Models\Image')->find($id)) {
             $img = FileService::filePreview($image->location);
         }
 

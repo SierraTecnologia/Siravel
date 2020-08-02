@@ -28,11 +28,12 @@ class SiravelProvider extends ServiceProvider
     public static $providers = [
         \Siravel\Providers\HomeServiceProvider::class,
         \Siravel\Providers\SiravelBusinessProvider::class,
-        \Siravel\Providers\SiravelServiceProvider::class,
+        \Siravel\Providers\RiCaServiceProvider::class,
         \Siravel\Providers\SiravelEventProvider::class,
         \Siravel\Providers\SiravelRouteProvider::class,
         \Siravel\Providers\SiravelModuleProvider::class,
         \Facilitador\FacilitadorProvider::class,
+        \Bancario\BancarioProvider::class,
         \Transmissor\TransmissorProvider::class,
         \Integrations\IntegrationsProvider::class,
         \Telefonica\TelefonicaProvider::class,
@@ -186,34 +187,6 @@ class SiravelProvider extends ServiceProvider
         Blade::directive('markdown', function ($expression) {
             return "<?php echo Markdown::convertToHtml($expression); ?>";
         }); 
-        $theme = Config::get('siravel.frontend-theme');
-        
-        View::addLocation(base_path('resources/themes/'.$theme));
-        View::addNamespace('siravel-frontend', base_path('resources/themes/'.$theme));
-
-        /*
-        |--------------------------------------------------------------------------
-        | Blade Directives
-        |--------------------------------------------------------------------------
-        */
-
-        Blade::directive('theme', function ($expression) {
-            if (Str::startsWith($expression, '(')) {
-                $expression = substr($expression, 1, -1);
-            }
-
-            $view = '"siravel-frontend::'.str_replace('"', '', str_replace("'", '', $expression)).'"';
-
-            return "<?php echo \$__env->make($view, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>";
-        });
-
-        Blade::directive('themejs', function ($expression) use ($theme) {
-            return "<?php echo Minify::javascript('/../resources/themes/$theme/assets/js/'.$expression); ?>";
-        });
-
-        Blade::directive('themecss', function ($expression) use ($theme) {
-            return "<?php echo Minify::stylesheet('/../resources/themes/$theme/assets/css/'.$expression); ?>";
-        });
     }
 
     /**

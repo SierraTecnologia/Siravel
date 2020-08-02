@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Travels\Siravel;
+namespace Siravel\Http\Controllers\Admin\Blog\Siravel;
 
 use Siravel\Http\Controllers\Controller;
 use Siravel\Repositories\BlogRepository;

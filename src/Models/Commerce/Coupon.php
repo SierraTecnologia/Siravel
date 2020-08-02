@@ -30,7 +30,7 @@ class Coupon extends SiravelModel
         'sitecpayment_id',
     ];
 
-    public static $rules = [
+    public $rules = [
         'amount' => 'required',
         'limit' => 'required',
         'discount_type' => 'required',

@@ -23,7 +23,7 @@ class Menu extends Model
     const UPDATED_AT = 'updated_at';
 
 
-    public static $rules = [
+    public $rules = [
         'name' => 'required',
         'slug' => 'required',
     ];

@@ -4,10 +4,10 @@ namespace Siravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class SiravelServiceFacade extends Facade
+class RiCaServiceFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'SiravelService';
+        return 'RiCaService';
     }
 }

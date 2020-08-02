@@ -27,7 +27,7 @@ class Refund extends SiravelModel
         'currency',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 
     public function transaction()
     {

@@ -20,7 +20,14 @@ class ApiController extends SitecController
         $this->modelName = str_singular($url);
 
         if (! empty($this->modelName)) {
-            $this->model = app('Siravel\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName));
+            if (class_exists('App\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName))) {
+                $this->model = app('App\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName));
+            } else 
+            if (class_exists('Siravel\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName))) {
+                $this->model = app('Siravel\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName));
+            } else {
+                throw new Exception("Modelo não existe para Api: ".'App\Models\\'.$this->getFeature($this->modelName).'\\'.ucfirst($this->modelName)."!");
+            }
         }
     }
 

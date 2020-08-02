@@ -11,12 +11,12 @@ use Facilitador\Http\MenuFilter as MenuFilterBase;
 
 class MenuFilter extends MenuFilterBase
 {
-    public function transform($item, Builder $builder)
+    public function transform($item)
     {
         if (!$this->verifyFeature($item)) {
             return false;
         }
-        return parent::transform($item, $builder);
+        return parent::transform($item);
     }
 
     private function verifyFeature($item)

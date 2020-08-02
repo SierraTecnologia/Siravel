@@ -2,14 +2,14 @@
 
 namespace Siravel\Http\Controllers;
 
-use Siravel\Services\SiravelService;
+use Support\Services\RiCaService;
 use Illuminate\Http\Response;
 
 class SiteMapController extends SitecController
 {
     protected $service;
 
-    public function __construct(SiravelService $service)
+    public function __construct(RiCaService $service)
     {
         parent::__construct();
 

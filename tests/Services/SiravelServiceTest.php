@@ -2,16 +2,16 @@
 
 namespace Tests\Services;
 
-use Siravel\Services\SiravelService;
+use Support\Services\RiCaService;
 use Tests\TestCase;
 
-class SiravelServiceTest extends TestCase
+class RiCaServiceTest extends TestCase
 {
     public function setUp()
     {
         parent::setUp();
 
-        $this->service = app(SiravelService::class);
+        $this->service = app(RiCaService::class);
     }
 
     public function testDefaultLanguage()

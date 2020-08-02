@@ -55,7 +55,7 @@ class Contact extends Model
      *
      * @var array
      */
-    public static $rules = [
+    public $rules = [
         
     ];
 

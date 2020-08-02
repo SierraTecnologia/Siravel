@@ -27,6 +27,9 @@
         "sierratecnologia/telefonica": "dev-master",
         "sierratecnologia/integrations": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
+        "sierratecnologia/transmissor": "dev-master",
+        "sierratecnologia/stalker": "dev-master",
+        "sierratecnologia/bancario": "dev-master",
         "sierratecnologia/casa": "dev-master",
         "sierratecnologia/locaravel": "dev-master"
     },

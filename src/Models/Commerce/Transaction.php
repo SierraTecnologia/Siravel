@@ -38,7 +38,7 @@ class Transaction extends SiravelModel
         'response',
     ];
 
-    public static $rules = [];
+    public $rules = [];
 
     public function order()
     {

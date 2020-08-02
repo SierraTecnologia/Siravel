@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\Commerce;
 
-use Siravel\Facades\SiravelServiceFacade as Siravel;
+use Siravel\Facades\RiCaServiceFacade as Siravel;
 use Illuminate\Support\Facades\Config;
 use Stalker\Services\Midia\FileService;
 use Siravel\Repositories\Commerce\ProductRepository;

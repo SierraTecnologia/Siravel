@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Commerce;
 
-use Facilitador\Models\Image;
+use Stalker\Models\Image;
 use App\Models\ProductImage;
 use Siravel\Models\SiravelModel;
 use Stalker\Services\Midia\FileService;
@@ -45,7 +45,7 @@ class Product extends SiravelModel
         'seo_keywords',
     ];
 
-    public static $rules = [
+    public $rules = [
         'name' => [
             'required',
         ],
