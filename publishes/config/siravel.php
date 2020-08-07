@@ -179,7 +179,12 @@ return [
     'preview-image-size' => 800, // width - auto height
     'cloudfront' => null, // do not include http
 
-
+    /**
+     * Facilitador
+     */
+    'facilitador' => [
+        'login' => true,
+    ],
 
     /*
      * --------------------------------------------------------------------------
