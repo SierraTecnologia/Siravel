@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Siravel\Http\Controllers\Features\Controller as BaseController;
 

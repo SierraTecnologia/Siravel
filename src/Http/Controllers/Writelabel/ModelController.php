@@ -1,4 +1,4 @@
-<?php namespace Siravel\Http\Controllers\Features\Writelabel;
+<?php namespace Siravel\Http\Controllers\Writelabel;
 
 use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\Model;

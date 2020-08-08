@@ -21,6 +21,9 @@ class SiravelProvider extends ServiceProvider
 {
     use ConsoleTools;
 
+    public $packageName = 'siravel';
+    const pathVendor = 'sierratecnologia/siravel';
+
     public static $aliasProviders = [
 
     ];
@@ -37,6 +40,7 @@ class SiravelProvider extends ServiceProvider
         \Transmissor\TransmissorProvider::class,
         \Integrations\IntegrationsProvider::class,
         \Telefonica\TelefonicaProvider::class,
+        \Templeiro\TempleiroProvider::class,
     ];
 
     /**
@@ -187,6 +191,12 @@ class SiravelProvider extends ServiceProvider
         Blade::directive('markdown', function ($expression) {
             return "<?php echo Markdown::convertToHtml($expression); ?>";
         }); 
+
+
+        /**
+         * Siravel; Routes
+         */
+        $this->loadRoutesForRiCa(__DIR__.'/../routes');
     }
 
     /**

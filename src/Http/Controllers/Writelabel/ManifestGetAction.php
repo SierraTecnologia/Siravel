@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Siravel\Services\Manifest\Contracts\Manifest;
 use Illuminate\Routing\ResponseFactory;
@@ -8,7 +8,7 @@ use Illuminate\Routing\ResponseFactory;
 /**
  * Class ManifestGetAction.
  *
- * @package Siravel\Http\Controllers\Features\Writelabel
+ * @package Siravel\Http\Controllers\Writelabel
  */
 class ManifestGetAction extends Controller
 {

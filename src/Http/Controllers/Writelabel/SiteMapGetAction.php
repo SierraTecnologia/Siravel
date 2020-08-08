@@ -1,19 +1,19 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
-use Siravel\Services\Rss\Contracts\RssBuilder;
+use Siravel\Services\SiteMap\Contracts\SiteMapBuilder;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Response;
 use Illuminate\Routing\ResponseFactory;
 
 /**
- * Class RssGetAction.
+ * Class SiteMapGetAction.
  *
- * @package Siravel\Http\Controllers\Features\Writelabel
+ * @package Siravel\Http\Controllers\Writelabel
  */
-class RssGetAction extends Controller
+class SiteMapGetAction extends Controller
 {
     /**
      * @var ResponseFactory
@@ -21,9 +21,9 @@ class RssGetAction extends Controller
     private $responseFactory;
 
     /**
-     * @var RssBuilder
+     * @var SiteMapBuilder
      */
-    private $rssBuilder;
+    private $siteMapBuilder;
 
     /**
      * @var CacheManager
@@ -36,17 +36,17 @@ class RssGetAction extends Controller
     private $config;
 
     /**
-     * RssGetAction constructor.
+     * SiteMapGetAction constructor.
      *
      * @param ResponseFactory $responseFactory
-     * @param RssBuilder $rssBuilder
+     * @param SiteMapBuilder $siteMapBuilder
      * @param CacheManager $cacheManager
      * @param Config $config
      */
-    public function __construct(ResponseFactory $responseFactory, RssBuilder $rssBuilder, CacheManager $cacheManager, Config $config)
+    public function __construct(ResponseFactory $responseFactory, SiteMapBuilder $siteMapBuilder, CacheManager $cacheManager, Config $config)
     {
         $this->responseFactory = $responseFactory;
-        $this->rssBuilder = $rssBuilder;
+        $this->siteMapBuilder = $siteMapBuilder;
         $this->cacheManager = $cacheManager;
         $this->config = $config;
     }
@@ -56,14 +56,14 @@ class RssGetAction extends Controller
      */
     public function __invoke()
     {
-        $rss = $this->cacheManager
-            ->tags(['rss', 'posts', 'photos', 'tags'])
-            ->remember('rss', $this->config->get('cache.lifetime'), function () {
-                return $this->rssBuilder->build();
+        $siteMap = $this->cacheManager
+            ->tags(['siteMap', 'posts', 'photos', 'tags'])
+            ->remember('siteMap', $this->config->get('cache.lifetime'), function () {
+                return $this->siteMapBuilder->build();
             });
 
         return $this->responseFactory
-            ->view('features.app.rss.index', ['rss' => $rss])
+            ->view('features.app.site-map.index', ['siteMap' => $siteMap])
             ->header('Content-Type', 'text/xml');
     }
 }

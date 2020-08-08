@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

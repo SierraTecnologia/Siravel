@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Illuminate\Http\Request;
 use Siravel\Repositories\FaqRepository;

@@ -1,10 +1,11 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Illuminate\Http\Request;
 use Siravel\Repositories\Negocios\PageRepository;
 use Siravel;
+use Templeiro;
 
 class PagesController extends Controller
 {
@@ -27,13 +28,12 @@ class PagesController extends Controller
         Siravel::notification('Ola');
         $page = $this->repository->findPagesByURL('home');
 
-        $view = view('features.writelabel.pages.home');
-
-        if (is_null($page)) {
-            return $view;
+        $vars = [];
+        if (!is_null($page)) {
+            $vars = ['page' => $page];
         }
 
-        return $view->with('page', $page);
+        return Templeiro::populateView('writelabel.pages.home', $vars);
     }
 
     /**

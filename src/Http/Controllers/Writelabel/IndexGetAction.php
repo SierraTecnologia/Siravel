@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Writelabel;
+namespace Siravel\Http\Controllers\Writelabel;
 
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 /**
  * Class IndexGetAction.
  *
- * @package Siravel\Http\Controllers\Features\Writelabel
+ * @package Siravel\Http\Controllers\Writelabel
  */
 class IndexGetAction extends Controller
 {
