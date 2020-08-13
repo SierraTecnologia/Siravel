@@ -9,12 +9,6 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.', 'n
     Route::get('/', 'DashboardController@index');
     Route::get('/home', ['as' => 'home', 'uses' => 'DashboardController@index']);
 
-    /**
-     * Apoio Operacional
-     */
-    Route::get('help', 'PageController@help');
-    Route::get('changelog', 'PageController@changelog');
-
     Route::get('siravel'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
     /*
     |--------------------------------------------------------------------------
