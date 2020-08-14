@@ -11,6 +11,8 @@ return [
     // 'business' => Data\Negocios\Clients\CarolNovaes::class,
     'business' => Data\Negocios\Clients\Snowevo::class,
 
+    'influencia' => true,
+
     /**
      * Business Padrão
      */
