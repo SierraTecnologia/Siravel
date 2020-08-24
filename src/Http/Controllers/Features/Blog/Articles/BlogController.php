@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Blog\Articles;
 
-use App\Models\Post;
+use Siravel\Models\Blog\Post;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller

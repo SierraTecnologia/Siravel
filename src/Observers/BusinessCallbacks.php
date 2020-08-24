@@ -2,18 +2,18 @@
 
 namespace Siravel\Observers;
 
+use Auth;
+use Business;
 use Event;
-use Log;
-use Illuminate\Support\Str;
 use Facilitador;
-use Telefonica\Models\Digital\Email;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
+use Log;
+use Siravel\Scopes\BusinessScope;
 use Support\Models\Base;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Telefonica\Models\Digital\Email;
 use Throwable;
-use Illuminate\Support\Facades\Schema;
-use Auth;
-use Siravel\Services\System\BusinessService;
-use Siravel\Scopes\BusinessScope;
 /**
  * Call no-op classes on models for all event types.  This just simplifies
  * the handling of model events for models.
@@ -75,10 +75,19 @@ class BusinessCallbacks
         //     #forceDeleting: false
         //   }
 
-        if (!Schema::hasColumn($model->getTable(), 'business_code'))
+        // Ignore
+        if (!app()->bound(BusinessService::class)) {
+            return true;
+        }
+// dd(Schema::hasColumn($model->getTable(), 'business_code'));
+        if (!Schema::hasColumn($model->getTable(), 'business_code') || Business::isToIgnore())
         {
             return true;
         }
+        // if (!Business::isToApplyCodeBusiness($model))
+        // {
+        //     return true;
+        // }
           
 
         // Get the action from the event name
@@ -101,8 +110,10 @@ class BusinessCallbacks
         // }
 
         if ($method == 'onCreating') {
-            $business = app()->make(BusinessService::class);
-            $model->business_code = $business->getCode();
+            if (!empty($model->business_code) && $model->business_code!==Business::getCode()) {
+                throw new Exception('Erro de segurança');
+            }
+            $model->business_code = Business::getCode();
             if (Auth::check()) {
                 // @todo Verifica se tem acesso
             }

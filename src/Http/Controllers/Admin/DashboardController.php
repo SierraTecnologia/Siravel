@@ -2,15 +2,15 @@
 
 namespace Siravel\Http\Controllers\Admin;
 
-use Tracking\Services\AnalyticsService;
+use App\Models\UserMeta;
 use Illuminate\Support\Facades\Schema;
+use Siravel\Models\Blog\Blog;
+use Siravel\Models\Negocios\Page;
+use Siravel\Models\Negocios\Subscription;
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
-use Siravel\Models\Blog\Blog;
 use Stalker\Models\Photo;
-use Siravel\Models\Negocios\Subscription;
-use Siravel\Models\Negocios\Page;
-use Facilitador\Models\UserMeta;
+use Tracking\Services\AnalyticsService;
 
 class DashboardController extends Controller
 {

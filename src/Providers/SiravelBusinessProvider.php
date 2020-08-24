@@ -2,14 +2,14 @@
 
 namespace Siravel\Providers;
 
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\ServiceProvider;
-use Siravel\Services\System\BusinessService;
-use Siravel\Http\Middleware\Business as BusinessMiddleware;
-use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
+use Siravel\Http\Middleware\Business as BusinessMiddleware;
+use Siravel\Services\System\BusinessService;
 
 class SiravelBusinessProvider extends ServiceProvider
 {
@@ -45,6 +45,7 @@ class SiravelBusinessProvider extends ServiceProvider
         $this->app->singleton('business', function () {
             return new BusinessService();
         });
+
         $this->app['events']->listen(
             'eloquent.*',
             'Siravel\Observers\BusinessCallbacks'

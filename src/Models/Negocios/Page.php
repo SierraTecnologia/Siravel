@@ -2,12 +2,12 @@
 
 namespace Siravel\Models\Negocios;
 
+use Facilitador\Services\Normalizer;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Siravel\Models\SiravelModel as BaseModel;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use function key_exists;
-use Facilitador\Services\Normalizer;
 use Siravel\Models\Traits\BusinessTrait;
+use function key_exists;
 
 class Page extends BaseModel
 {

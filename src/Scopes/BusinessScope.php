@@ -2,11 +2,10 @@
 
 namespace Siravel\Scopes;
 
+use Business;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
-use Siravel\Services\System\BusinessService;
-use Illuminate\Support\Facades\Schema;
 
 class BusinessScope implements Scope
 {
@@ -20,10 +19,10 @@ class BusinessScope implements Scope
     */
     public function apply(Builder $builder, Model $model)
     {
-        if (Schema::hasColumn($model->getTable(), 'business_code'))
+        dd(Business::isToApplyCodeBusiness($model));
+        if (Business::isToApplyCodeBusiness($model))
         {
-            $business = app(BusinessService::class);
-            $builder->where('business_code',  $business->getCode());
+            $builder->where('business_code',  Business::getCode());
             // if (Auth::check()) {
             //     // @todo Verifica se tem acesso
             // }

@@ -2,17 +2,18 @@
 
 namespace Siravel\Services\System;
 
-use Siravel\Models\User;
+use Exception;
 // use Siravel\Models\Order;
+use Facilitador\Models\Setting;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Session;
+use Log;
 use Siravel\Jobs\RoutineOrganizerCreateJob;
 use Siravel\Models\Negocios\Business;
-use Illuminate\Support\Facades\Config;
-use Log;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Request;
-use Facilitador\Models\Setting;
-use Exception;
-use Illuminate\Support\Facades\Session;
+use Siravel\Models\User;
 
 class BusinessService
 {
@@ -139,31 +140,6 @@ class BusinessService
         
     }
 
-
-
-    public function isHability()
-    {
-        $config = \Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
-        if (!$config) {
-            return false;
-        }
-        return true;
-    }
-    private function getDefault()
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-
-        if (!$default = CacheService::getUniversal('business-default')) {
-            $default = 'HotelByNow';
-        }
-        if (!$business = \Siravel\Models\Negocios\Business::where('code', $default)->first()) {
-            return false;
-        }
-        return $business;
-    }
-
     private function loadBusiness()
     {
         if (!VersionService::isInstall()) {
@@ -180,26 +156,28 @@ class BusinessService
 
     private function detectedBusiness()
     {
-        if (!$this->isHability()) {
+        if ($this->isToIgnore()) {
             return false;
         }
 
-
-        if ($business = Business::where('code', Session::get('business_force'))->first()) {
+        if ($business = $this->isSwitchToBusiness()) {
             return $business;
-
         }
 
+        if ($this->isToForced()) {
+            return $this->getForced();
+        }
+        
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
         if ($business = Business::where('code', $domainSlug)->first()) {
-            return $business;
             $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
+            return $business;
 
         }
         /**
          * Localhost ou terminal, retorna o padrao
          */
-        if ($domainSlug == 'localhost' || app()->runningInConsole()) {
+        if ($domainSlug == 'localhost' || config('app.debug')) {
             return $this->getDefault();
         }
 
@@ -243,7 +221,7 @@ class BusinessService
     public static function getBusinessUser()
     {
         //@todo Mudar
-        if (\App::runningInConsole() ) {
+        if ($this->isToIgnore()) {
             Log::notice('Rodando em Console');
             return null;
         }
@@ -318,6 +296,7 @@ class BusinessService
      */
     public function clearDefault()
     {
+        CacheService::clearUniversal('business-console');
         CacheService::clearUniversal('business-default');
         return true;
     }
@@ -325,10 +304,41 @@ class BusinessService
 
     public function isDefault(Business $business)
     {
-        if (!$this->isHability()) {
+        if ($this->isToIgnore()) {
             return false;
         }
         return $business->code === $this->getBusiness()->code;
+    }
+
+    private function isSwitchToBusiness()
+    {
+        if (empty(Session::get('business_force'))) {
+            return false;
+        }
+        return Business::where('code', Session::get('business_force'))->first();
+    }
+
+    private function isToForced()
+    {
+
+        if (!$default = CacheService::getUniversal('business-console')) {
+            return false;
+        }
+        return true;
+    }
+    private function getForced()
+    {
+        if ($this->isToIgnore()) {
+            return false;
+        }
+
+        if (!$forced = CacheService::getUniversal('business-console')) {
+            return false;
+        }
+        if (!$business = \Siravel\Models\Negocios\Business::where('code', $forced)->first()) {
+            return false;
+        }
+        return $business;
     }
 
     /**
@@ -347,6 +357,37 @@ class BusinessService
             throw new Exception('Error switch to business', 1);
         }
     }
+    
+    public function isToIgnore()
+    {
+        if (!$this->isHability()) {
+            return true;
+        }
+
+        return \App::runningInConsole() && !$this->isToForced();
+    }
+    public function isHability()
+    {
+        $config = true; //\Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
+        if (!$config) {
+            return false;
+        }
+        return true;
+    }
+    private function getDefault()
+    {
+        if ($this->isToIgnore()) {
+            return false;
+        }
+
+        if (!$default = CacheService::getUniversal('business-default')) {
+            $default = 'HotelByNow';
+        }
+        if (!$business = \Siravel\Models\Negocios\Business::where('code', $default)->first()) {
+            return false;
+        }
+        return $business;
+    }
 
     /**
      * Transforma no Business padrão do Sistema (Para Todos)
@@ -361,5 +402,23 @@ class BusinessService
         CacheService::setUniversal('business-default', $business->code);
         $this->business = $business;
         return true;
+    }
+    public function forceBusiness(Business $business)
+    {
+        if (!$this->isHability()) {
+            return false;
+        }
+        CacheService::setUniversal('business-console', $business->code);
+        $this->business = $business;
+        return true;
+    }
+
+    public function isToApplyCodeBusiness(Model $model): bool
+    {
+        if ($this->isToIgnore())
+        {
+            return false;
+        }
+        return Schema::hasColumn($model->getTable(), 'business_code');
     }
 }

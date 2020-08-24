@@ -2,14 +2,14 @@
 
 namespace Siravel\Models\Blog;
 
-use Siravel\Models\Builders\PostBuilder;
 use App\Contants\Tables;
 use Carbon\Carbon;
-use Siravel\Models\Entities\PostEntity;
-use Siravel\Models\SiravelModel as BaseModel;
 use Illuminate\Support\Collection;
-
+use Siravel\Builders\PostBuilder;
 use Siravel\Contracts\Business\BusinessTrait;
+use Siravel\Entities\PostEntity;
+
+use Siravel\Models\SiravelModel as BaseModel;
 
 /**
  * Class Post.
@@ -30,6 +30,10 @@ use Siravel\Contracts\Business\BusinessTrait;
 class Post extends BaseModel
 {
     use BusinessTrait;
+
+    public static $classeBuilder = PostBuilder::class;
+
+    const PUBLISHED = 'PUBLISHED';
 
     /**
      * @inheritdoc
@@ -184,6 +188,11 @@ class Post extends BaseModel
             'published_at' => $this->published_at ? $this->published_at->toAtomString() : null,
         ]);
     }
+
+        public function scopePublished(PostBuilder $query)
+        {
+            return $query->where('status', '=', static::PUBLISHED);
+        }
 }
 
 // /**

@@ -8,7 +8,7 @@ class FeatureServiceTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $role = factory(Siravel\Models\Role::class)->create();

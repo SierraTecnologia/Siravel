@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Blog\Articles;
 
 use App\Models\Tag;
-use App\Models\Post;
+use Siravel\Models\Blog\Post;
 use Transmissor\Models\Comment;
 use App\Models\Category;
 use Illuminate\Http\Request;

@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class BlogServiceTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

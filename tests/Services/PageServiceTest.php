@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class PageServiceTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

@@ -2,11 +2,11 @@
 
 namespace Siravel\Http;
 
-use JeroenNoten\LaravelAdminLte\Menu\Builder;
-use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
-use Illuminate\Support\Facades\Auth;
-
 use Facilitador\Http\MenuFilter as MenuFilterBase;
+use Illuminate\Support\Facades\Auth;
+use JeroenNoten\LaravelAdminLte\Menu\Builder;
+
+use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
 // use Laratrust;
 
 class MenuFilter extends MenuFilterBase
@@ -16,7 +16,7 @@ class MenuFilter extends MenuFilterBase
         if (!$this->verifyFeature($item)) {
             return false;
         }
-        return parent::transform($item);
+        return $item; //parent::transform($item);
     }
 
     private function verifyFeature($item)

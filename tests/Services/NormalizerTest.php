@@ -7,7 +7,7 @@ use Facilitador\Services\Normalizer;
 
 class NormalizerTest extends TestCase
 {
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
