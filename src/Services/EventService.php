@@ -69,7 +69,7 @@ class EventService
 
     public function asHtml($config)
     {
-        Carbon::setLocale(app(\Translation\Services\LanguageService::class)->getActualLanguage());
+        Carbon::setLocale(app(\Translation\Services\Translation::class)->getActualLanguage());
 
         $class = $config['class'];
         $dates = $config['dates'];

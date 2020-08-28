@@ -53,9 +53,9 @@ class Business extends Model
      *
      * @return boolean
      */
-    public function isDefault()
+    public function isActived()
     {
-        return app(\Siravel\Services\System\BusinessService::class)->isDefault($this);
+        return app(\Siravel\Services\System\BusinessService::class)->isActived($this);
     }
 
 }

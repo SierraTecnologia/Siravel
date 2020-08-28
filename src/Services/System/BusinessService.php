@@ -174,12 +174,12 @@ class BusinessService
             return $business;
 
         }
-        /**
-         * Localhost ou terminal, retorna o padrao
-         */
-        if ($domainSlug == 'localhost' || config('app.debug')) {
-            return $this->getDefault();
-        }
+        // /**
+        //  * Localhost ou terminal, retorna o padrao
+        //  */
+        // if ($domainSlug == 'localhost' || config('app.debug')) {
+        //     return $this->getDefault();
+        // }
 
         return false;
     }
@@ -234,62 +234,6 @@ class BusinessService
         return $business;
     }
     /**
-     * Identifica o negócio da empresa de acordo com o token secreto
-     */
-    public static function getViaParamsToken()
-    {
-        if(!empty($_SERVER['HTTP_BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_SERVER['HTTP_BUSINESS_TOKEN'])->first();
-        }
-        
-        if(!empty($_POST['business_token'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_POST['business_token'])->first();
-        }
-        
-        if(!empty($_POST['BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_POST['BUSINESS_TOKEN'])->first();
-        }
-        
-        if(!empty($_GET['business_token'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_GET['business_token'])->first();
-        }
-        
-        if(!empty($_GET['BUSINESS_TOKEN'])) {
-        
-            // Log::info(
-            //     '[Aleluia] Consegui usar business' . print_r($_GET, true) . print_r($_POST, true)
-            //     . print_r($_SERVER, true)
-            // );
-            return User::where('token', $_GET['BUSINESS_TOKEN'])->first();
-        }
-
-        return null;
-        //return User::where('token', \Illuminate\Support\Facades\Config::get('business.default'))->first();
-        // bilo -> 3a0cafad9715806584cf60bf6c04200a
-        // Passepague -> \Illuminate\Support\Facades\Config::get('business.default')
-    }
-
-    /**
      * Faz o business padrão voltar a ser o original do sistema
      *
      * @return void
@@ -297,12 +241,29 @@ class BusinessService
     public function clearDefault()
     {
         CacheService::clearUniversal('business-console');
-        CacheService::clearUniversal('business-default');
+        CacheService::clearUniversal('business_switch');
         return true;
     }
 
 
-    public function isDefault(Business $business)
+    
+    public function isToIgnore()
+    {
+        if (!$this->isHability()) {
+            return true;
+        }
+
+        return \App::runningInConsole() && !$this->isToForced();
+    }
+    public function isHability()
+    {
+        $config = true; //\Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
+        if (!$config) {
+            return false;
+        }
+        return true;
+    }
+    public function isActived(Business $business)
     {
         if ($this->isToIgnore()) {
             return false;
@@ -312,10 +273,15 @@ class BusinessService
 
     private function isSwitchToBusiness()
     {
-        if (empty(Session::get('business_force'))) {
-            return false;
+        if (!empty(Session::get('business_switch'))) {
+            return Business::where('code', Session::get('business_switch'))->first();
         }
-        return Business::where('code', Session::get('business_force'))->first();
+
+        if (!empty(CacheService::getUniversal('business_switch'))) {
+            return Business::where('code', CacheService::getUniversal('business_switch'))->first();
+        }
+
+        return false;
     }
 
     private function isToForced()
@@ -349,59 +315,14 @@ class BusinessService
     public function switchToBusiness(Business $business)
     {
         try {
-            Session::put('business_force', $business->code);
+            Session::put('business_switch', $business->code);
+            CacheService::setUniversal('business_switch', $business->code);
             $this->business = $business;
 
             return true;
         } catch (Exception $e) {
             throw new Exception('Error switch to business', 1);
         }
-    }
-    
-    public function isToIgnore()
-    {
-        if (!$this->isHability()) {
-            return true;
-        }
-
-        return \App::runningInConsole() && !$this->isToForced();
-    }
-    public function isHability()
-    {
-        $config = true; //\Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
-        if (!$config) {
-            return false;
-        }
-        return true;
-    }
-    private function getDefault()
-    {
-        if ($this->isToIgnore()) {
-            return false;
-        }
-
-        if (!$default = CacheService::getUniversal('business-default')) {
-            $default = 'HotelByNow';
-        }
-        if (!$business = \Siravel\Models\Negocios\Business::where('code', $default)->first()) {
-            return false;
-        }
-        return $business;
-    }
-
-    /**
-     * Transforma no Business padrão do Sistema (Para Todos)
-     *
-     * @return void
-     */
-    public function makeDefault(Business $business)
-    {
-        if (!$this->isHability()) {
-            return false;
-        }
-        CacheService::setUniversal('business-default', $business->code);
-        $this->business = $business;
-        return true;
     }
     public function forceBusiness(Business $business)
     {
