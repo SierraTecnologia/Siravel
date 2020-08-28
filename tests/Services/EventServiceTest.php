@@ -2,8 +2,8 @@
 
 namespace Tests\Services;
 
-use Siravel\Services\EventService;
 use Facilitador\Services\Normalizer;
+use Siravel\Services\EventService;
 use Tests\TestCase;
 
 class EventServiceTest extends TestCase
@@ -43,13 +43,13 @@ class EventServiceTest extends TestCase
         ]);
 
         $this->assertTrue(is_string($result));
-        $this->assertEquals('<table class=""><thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead></table>', $result);
+        $this->assertEquals('<table class=""><thead><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th><th>Sábado</th><th>Domingo</th></thead></table>', $result);
     }
 
     public function testLinks()
     {
         $result = $this->service->generate('2018-03-22')->links('none');
 
-        $this->assertEquals('<div class="row calendar-links"><div class="col-12"><a class="previous none" href="http://localhost/events/2018-02-22">Previous Month</a><a class="next none" href="http://localhost/events/2018-04-22">Next Month</a></div></div>', $result);
+        $this->assertEquals('<div class="row calendar-links"><div class="col-12"><a class="previous none" href="'.config('app.url').'/events/2018-02-22">Mês Anterior</a><a class="next none" href="'.config('app.url').'/events/2018-04-22">Próximo Mês</a></div></div>', $result);
     }
 }

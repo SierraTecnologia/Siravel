@@ -2,7 +2,7 @@
 
 namespace Tests\Services;
 
-use App\Models\Page;
+use Siravel\Models\Negocios\Page;
 use Siravel\Services\Negocios\PageService;
 use Tests\TestCase;
 

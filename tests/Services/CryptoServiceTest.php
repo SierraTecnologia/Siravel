@@ -2,10 +2,10 @@
 
 namespace Tests\Services;
 
-use Tests\TestCase;
 use Crypto;
+use Tests\TestCase;
 
-class CryptoTest extends TestCase
+class CryptoServiceTest extends TestCase
 {
     protected function setUp(): void
     {

@@ -16,7 +16,7 @@ class MenuFilter extends MenuFilterBase
         if (!$this->verifyFeature($item)) {
             return false;
         }
-        return $item; //parent::transform($item);
+        return parent::transform($item); // $item; //
     }
 
     private function verifyFeature($item)
