@@ -2,9 +2,9 @@
 
 namespace Siravel\Policies;
 
-use Siravel\Models\User;
-use Siravel\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Siravel\Models\Blog\Post;
+use Siravel\Models\User;
 
 class PostPolicy
 {
