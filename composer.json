@@ -23,6 +23,7 @@
     ],
     "require": {
         "php": ">=7.4",
+        "tenancy/tenancy": "^1.0",
         "laravel/framework": "^6.0|^7.0",
         "sierratecnologia/telefonica": "dev-master",
         "sierratecnologia/integrations": "dev-master",

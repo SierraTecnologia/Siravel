@@ -3,19 +3,19 @@
 namespace Siravel;
 
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Collection;
-use Muleta\Traits\Providers\ConsoleTools;
-use Siravel\Services\System\BusinessService;
-
 use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Route;
+
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
+use Muleta\Traits\Providers\ConsoleTools;
+use Siravel\Services\System\BusinessService;
 
 class SiravelProvider extends ServiceProvider
 {
@@ -41,6 +41,27 @@ class SiravelProvider extends ServiceProvider
         \Integrations\IntegrationsProvider::class,
         \Telefonica\TelefonicaProvider::class,
         \Templeiro\TempleiroProvider::class,
+
+        \Tenancy\Affects\Broadcasts\Provider::class,
+        \Tenancy\Affects\Cache\Provider::class,
+        \Tenancy\Affects\Configs\Provider::class,
+        \Tenancy\Affects\Connections\Provider::class,
+        \Tenancy\Affects\Filesystems\Provider::class,
+        \Tenancy\Affects\Logs\Provider::class,
+        \Tenancy\Affects\Mails\Provider::class,
+        \Tenancy\Affects\Models\Provider::class,
+        \Tenancy\Affects\Routes\Provider::class,
+        \Tenancy\Affects\URLs\Provider::class,
+        \Tenancy\Affects\Views\Provider::class,
+
+        \Tenancy\Hooks\Database\Provider::class,
+        \Tenancy\Hooks\Migration\Provider::class,
+        \Tenancy\Hooks\Hostname\Provider::class,
+
+        \Tenancy\Database\Drivers\Mysql\Provider::class,
+        \Tenancy\Database\Drivers\Sqlite\Provider::class,
+         // ...
+    ]
     ];
 
     /**
@@ -120,19 +141,22 @@ class SiravelProvider extends ServiceProvider
             [
             $this->getPublishesPath('app/Controllers') => app_path('Http/Controllers/Siravel'),
             $this->getPublishesPath('app/Services') => app_path('Services'),
-            ], ['app',  'sitec', 'sitec-app', 'siravel', 'siravel-app']
+            ],
+            ['app',  'sitec', 'sitec-app', 'siravel', 'siravel-app']
         );
 
         $this->publishes(
             [
             $this->getPublishesPath('config') => base_path('config'),
-            ], ['config',  'sitec', 'sitec-config', 'siravel', 'siravel-config']
+            ],
+            ['config',  'sitec', 'sitec-config', 'siravel', 'siravel-config']
         );
 
         $this->publishes(
             [
             $this->getPublishesPath('routes') => base_path('routes'),
-            ], ['routes',  'sitec', 'sitec-routes', 'siravel', 'siravel-routes']
+            ],
+            ['routes',  'sitec', 'sitec-routes', 'siravel', 'siravel-routes']
         );
 
         $this->publishes(
@@ -140,63 +164,48 @@ class SiravelProvider extends ServiceProvider
             $this->getPublishesPath('public/js') => base_path('public/js'),
             $this->getPublishesPath('public/css') => base_path('public/css'),
             $this->getPublishesPath('public/img') => base_path('public/img'),
-            ], ['public',  'sitec', 'sitec-public', 'siravel', 'siravel-public']
+            ],
+            ['public',  'sitec', 'sitec-public', 'siravel', 'siravel-public']
         );
 
         $this->publishes(
             [
             $this->getPublishesPath('resources/tools') => base_path('resources/tools'),
-            ], ['tools',  'sitec', 'sitec-tools', 'siravel', 'siravel-tools']
+            ],
+            ['tools',  'sitec', 'sitec-tools', 'siravel', 'siravel-tools']
         );
 
         $this->publishes(
             [
             $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
-            ], ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']
+            ],
+            ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']
         );
-
-        /*
-        |--------------------------------------------------------------------------
-        | Blade Directives
-        |--------------------------------------------------------------------------
-        */
-        Blade::directive('menu', function ($expression) {
-            return "<?php echo Siravel::menu($expression); ?>";
-        });
-
-        Blade::directive('features', function () {
-            return '<?php echo Siravel::moduleLinks(); ?>';
-        });
-
-        Blade::directive('widget', function ($expression) {
-            return "<?php echo Siravel::widget($expression); ?>";
-        });
-
-        Blade::directive('image', function ($expression) {
-            return "<?php echo Siravel::image($expression); ?>";
-        });
-
-        Blade::directive('image_link', function ($expression) {
-            return "<?php echo Siravel::imageLink($expression); ?>";
-        });
-
-        Blade::directive('images', function ($expression) {
-            return "<?php echo Siravel::images($expression); ?>";
-        });
-
-        Blade::directive('edit', function ($expression) {
-            return "<?php echo Siravel::editBtn($expression); ?>";
-        });
-
-        Blade::directive('markdown', function ($expression) {
-            return "<?php echo Markdown::convertToHtml($expression); ?>";
-        }); 
 
 
         /**
          * Siravel; Routes
          */
         $this->loadRoutesForRiCa(__DIR__.'/../routes');
+
+
+        Config::set(
+            'connections.connections.system',
+            [
+                'driver' => env('TENANCY_CONNECTION', 'mysql'),
+                'host' => env('TENANCY_HOST', 'db'),
+                'port' => env('TENANCY_PORT', '3306'),
+                'database' => env('TENANCY_DATABASE', 'rica'),
+                'username' => env('TENANCY_USERNAME', 'root'),
+                'password' => env('TENANCY_PASSWORD', 'A123456'),
+                'unix_socket' => env('DB_SOCKET', ''),
+                'charset' => 'utf8mb4',
+                'collation' => 'utf8mb4_unicode_ci',
+                'prefix' => '',
+                'strict' => true,
+                'engine' => null,
+            ]
+        );
     }
 
     /**
@@ -216,7 +225,8 @@ class SiravelProvider extends ServiceProvider
         $this->publishes(
             [
             $viewsPath => base_path('resources/views/vendor/siravel'),
-            ], 'views'
+            ],
+            'views'
         );
 
         if (is_dir(base_path('resources/siravel'))) {
@@ -242,7 +252,5 @@ class SiravelProvider extends ServiceProvider
             base_path('vendor/sierratecnologia/siravel/src/Console/Commands') => '\Siravel\Console\Commands',
             ]
         );
-        
     }
-
 }
