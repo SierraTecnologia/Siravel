@@ -14,6 +14,7 @@ use Support\Models\Base;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Telefonica\Models\Digital\Email;
 use Throwable;
+
 /**
  * Call no-op classes on models for all event types.  This just simplifies
  * the handling of model events for models.
@@ -75,13 +76,13 @@ class BusinessCallbacks
         //     #forceDeleting: false
         //   }
 
-        // Ignore
-        if (!app()->bound(BusinessService::class)) {
-            return true;
-        }
-// dd(Schema::hasColumn($model->getTable(), 'business_code'));
-        if (!Schema::hasColumn($model->getTable(), 'business_code') || Business::isToIgnore())
-        {
+        // // Ignore
+        // if (!app()->bound(Business::class)) {
+        //     dd(app()->bound(Business::class));
+        //     return true;
+        // }
+        // dd(Schema::hasColumn($model->getTable(), 'business_code'));
+        if (!Schema::hasColumn($model->getTable(), 'business_code') || Business::isToIgnore()) {
             return true;
         }
         // if (!Business::isToApplyCodeBusiness($model))
@@ -121,12 +122,10 @@ class BusinessCallbacks
         }
         
         if ($method == 'onCreated') {
-            
             return true;
         }
         
         if ($method == 'onValidating' || $method == 'onValidated') {
-
             return true;
         }
 

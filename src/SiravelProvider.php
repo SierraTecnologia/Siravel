@@ -59,9 +59,8 @@ class SiravelProvider extends ServiceProvider
         \Tenancy\Hooks\Hostname\Provider::class,
 
         \Tenancy\Database\Drivers\Mysql\Provider::class,
-        \Tenancy\Database\Drivers\Sqlite\Provider::class,
-         // ...
-    ]
+        \Tenancy\Database\Drivers\Sqlite\Provider::class
+        
     ];
 
     /**

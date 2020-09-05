@@ -4,9 +4,9 @@ namespace Siravel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Controller;
-use Siravel\Services\FeatureService;
 use Siravel\Http\Requests\FeatureCreateRequest;
 use Siravel\Http\Requests\FeatureUpdateRequest;
+use Siravel\Services\FeatureService;
 
 class FeatureController extends Controller
 {
@@ -23,6 +23,7 @@ class FeatureController extends Controller
     public function index(Request $request)
     {
         $features = $this->service->paginated();
+        // dd($features);
         return view('admin.features.index')->with('features', $features);
     }
 

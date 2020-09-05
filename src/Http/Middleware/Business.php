@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
 use Siravel\Services\System\BusinessService;
+use Templeiro;
 
 class Business
 {
@@ -25,6 +26,9 @@ class Business
             throw new Exception('Negocio não existe');
         }
         $businessService->loadSettings();
+        // dd(Config::get('siravel.frontend-theme', 'default'));
+        Templeiro::setTheme(Config::get('siravel.frontend-theme', 'default'));
+        Templeiro::loadBoot();
         return $next($request);
     }
 }

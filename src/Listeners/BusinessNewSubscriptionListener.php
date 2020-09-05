@@ -2,8 +2,8 @@
 
 namespace Siravel\Listeners;
 
-use Siravel\Events\BusinessNewSubscription;
 use Facilitador\Models\Notification;
+use Siravel\Events\BusinessNewSubscription;
 use Siravel\Services\System\BusinessService;
 
 class BusinessNewSubscriptionListener

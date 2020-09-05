@@ -3,6 +3,7 @@
 namespace Siravel\Models\Negocios;
 
 use Telefonica\Models\Actors\Business as Model;
+
 // use Facilitador\Models\Base as Model;
 
 class Business extends Model
@@ -37,7 +38,7 @@ class Business extends Model
      */
     public function settings()
     {
-        return $this->hasMany('Facilitador\Models\Setting');
+        return $this->hasMany(\Facilitador\Models\Setting::class);
     }
 
     // /**
@@ -57,5 +58,4 @@ class Business extends Model
     {
         return app(\Siravel\Services\System\BusinessService::class)->isActived($this);
     }
-
 }

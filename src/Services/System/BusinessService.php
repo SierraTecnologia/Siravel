@@ -47,6 +47,7 @@ class BusinessService
     {
         $this->log = new \Muleta\Services\LoggerService('Business');
         $this->loadBusiness();
+        // $this->loadSettings();
     }
 
     public function loadSettings()
@@ -84,14 +85,14 @@ class BusinessService
             return null;
         }
         if (!empty(self::$BLOCK_PARTIAL_URLS)) {
-            foreach(self::$BLOCK_PARTIAL_URLS as $value) {
+            foreach (self::$BLOCK_PARTIAL_URLS as $value) {
                 // Verifica se a url começa com o path mencionado
                 if (substr(Request::path(), 0, strlen($value))==$value) {
                     return true;
                 }
             }
         }
-        return false; 
+        return false;
     }
 
 
@@ -105,7 +106,7 @@ class BusinessService
 
     public function userAsColaborator(User $user)
     {
-        // @todo Fazer 
+        // @todo Fazer
         return true;
     }
 
@@ -137,7 +138,6 @@ class BusinessService
 
     public function userHasPermission($user)
     {
-        
     }
 
     private function loadBusiness()
@@ -172,7 +172,6 @@ class BusinessService
         if ($business = Business::where('code', $domainSlug)->first()) {
             $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
             return $business;
-
         }
         // /**
         //  * Localhost ou terminal, retorna o padrao
@@ -286,7 +285,6 @@ class BusinessService
 
     private function isToForced()
     {
-
         if (!$default = CacheService::getUniversal('business-console')) {
             return false;
         }
@@ -336,8 +334,7 @@ class BusinessService
 
     public function isToApplyCodeBusiness(Model $model): bool
     {
-        if ($this->isToIgnore())
-        {
+        if ($this->isToIgnore()) {
             return false;
         }
         return Schema::hasColumn($model->getTable(), 'business_code');

@@ -19,10 +19,9 @@ class BusinessScope implements Scope
     */
     public function apply(Builder $builder, Model $model)
     {
-        dd(Business::isToApplyCodeBusiness($model));
-        if (Business::isToApplyCodeBusiness($model))
-        {
-            $builder->where('business_code',  Business::getCode());
+        // dd(Business::isToApplyCodeBusiness($model));
+        if (Business::isToApplyCodeBusiness($model)) {
+            $builder->where('business_code', Business::getCode());
             // if (Auth::check()) {
             //     // @todo Verifica se tem acesso
             // }
@@ -36,6 +35,4 @@ class BusinessScope implements Scope
         //  */
         // $builder->where('system_id', $userId);
     }
-
-
 }

@@ -9,14 +9,14 @@ return [
      * Business Ativo
      */
     // 'business' => Data\Negocios\Clients\CarolNovaes::class,
-    'business' => Data\Negocios\Clients\Snowevo::class,
+    'business' => Data\Negocios\Clients\RicaSolucoes::class,
 
     'influencia' => true,
 
     /**
      * Business Padrão
      */
-    'default' =>  env('TENANCY_DEFAULT_HOSTNAME', 'sierratecnologia'),
+    'default' =>  env('TENANCY_DEFAULT_HOSTNAME', 'ricasolucoes'),
 
     /**
      * Configurações Personalizadas
