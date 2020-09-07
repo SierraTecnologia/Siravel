@@ -83,6 +83,7 @@ class BusinessCallbacks
         // }
         // dd(Schema::hasColumn($model->getTable(), 'business_code'));
         if (!Schema::hasColumn($model->getTable(), 'business_code') || Business::isToIgnore()) {
+            // dd(Business::isToIgnore());
             return true;
         }
         // if (!Business::isToApplyCodeBusiness($model))

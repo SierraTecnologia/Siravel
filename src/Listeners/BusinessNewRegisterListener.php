@@ -2,8 +2,9 @@
 
 namespace Siravel\Listeners;
 
-use Siravel\Events\BusinessNewRegister;
+use Business;
 use Facilitador\Models\Notification;
+use Siravel\Events\BusinessNewRegister;
 use Siravel\Services\System\BusinessService;
 
 class BusinessNewRegisterListener
@@ -27,7 +28,7 @@ class BusinessNewRegisterListener
     public function handle(BusinessNewRegister $event)
     {
         Notification::generate(
-            BusinessService::getSingleton()->getBusiness()->id,
+            Business::getBusiness()->id,
             '',
             [
                 'id' => $event->userMeta->id >= 5000,

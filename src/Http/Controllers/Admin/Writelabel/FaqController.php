@@ -2,14 +2,14 @@
 
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
-use URL;
-use Siravel;
-use Siravel\Models\Negocios\Faq;
-use Illuminate\Http\Request;
-use Siravel\Http\Requests\FaqRequest;
-use Siravel\Repositories\FaqRepository;
 use Facilitador\Services\ValidationService;
+use Illuminate\Http\Request;
+use Siravel;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
+use Siravel\Http\Requests\FaqRequest;
+use Siravel\Models\Negocios\Faq;
+use Siravel\Repositories\FaqRepository;
+use URL;
 
 class FaqController extends BaseController
 {
@@ -72,7 +72,7 @@ class FaqController extends BaseController
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Faq::$rules);
+        $validation = app(ValidationService::class)->check($this->repository->rules());
 
         if (!$validation['errors']) {
             $faq = $this->repository->store($request->all());

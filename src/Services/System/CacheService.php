@@ -2,15 +2,14 @@
 
 namespace Siravel\Services\System;
 
+use Business;
 use Illuminate\Support\Facades\Cache;
-
 
 class CacheService
 {
-
     private static function getBusinessKey($key)
     {
-        return BusinessService::getSingleton()->getCode().$key;
+        return Business::getCode().$key;
     }
 
     public static function get($key)

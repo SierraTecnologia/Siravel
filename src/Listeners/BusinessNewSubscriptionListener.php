@@ -2,6 +2,7 @@
 
 namespace Siravel\Listeners;
 
+use Business;
 use Facilitador\Models\Notification;
 use Siravel\Events\BusinessNewSubscription;
 use Siravel\Services\System\BusinessService;
@@ -27,7 +28,7 @@ class BusinessNewSubscriptionListener
     public function handle(BusinessNewSubscription $event)
     {
         Notification::generate(
-            BusinessService::getSingleton()->getBusiness()->id,
+            Business::getBusiness()->id,
             '',
             [
                 'id' => $event->userMeta->id >= 5000,

@@ -64,9 +64,6 @@ class BusinessService
                     }
                 );
 
-                if ($this->business->features) {
-                    $this->features = $this->business->features->all();
-                }
                 return $this;
             }
         }
@@ -151,12 +148,16 @@ class BusinessService
             // throw new Exception('Não detectado o business');
         }
         
+        if ($this->business->features) {
+            $this->features = $this->business->features->all();
+        }
         return true;
     }
 
     private function detectedBusiness()
     {
-        if ($this->isToIgnore()) {
+        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
+        if ($this->isToIgnore() && $domainSlug !== 'localhost') {
             return false;
         }
 
@@ -168,17 +169,16 @@ class BusinessService
             return $this->getForced();
         }
         
-        $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
         if ($business = Business::where('code', $domainSlug)->first()) {
             $this->log->addLogger('[Negocio] Detectado Business por Dominio:'. print_r($business->code, true));
             return $business;
         }
-        // /**
-        //  * Localhost ou terminal, retorna o padrao
-        //  */
-        // if ($domainSlug == 'localhost' || config('app.debug')) {
-        //     return $this->getDefault();
-        // }
+        /**
+         * Localhost ou terminal, retorna o padrao
+         */
+        if ($domainSlug == 'localhost'/* || config('app.debug')*/) {
+            return Business::where('code', 'ricasolucoes')->first();
+        }
 
         return false;
     }
@@ -285,10 +285,10 @@ class BusinessService
 
     private function isToForced()
     {
-        if (!$default = CacheService::getUniversal('business-console')) {
-            return false;
+        if (CacheService::getUniversal('business-console')) {
+            return true;
         }
-        return true;
+        return false;
     }
     private function getForced()
     {

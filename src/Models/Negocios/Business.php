@@ -14,7 +14,7 @@ class Business extends Model
      */
     public function features()
     {
-        return $this->morphToMany('Siravel\Models\Feature', 'featureable');
+        return $this->morphToMany('Siravel\Models\Feature', 'featureable')->withoutGlobalScopes();
     }
 
     // /**
@@ -38,7 +38,7 @@ class Business extends Model
      */
     public function settings()
     {
-        return $this->hasMany(\Facilitador\Models\Setting::class);
+        return $this->hasMany(\Facilitador\Models\Setting::class)->withoutGlobalScopes();
     }
 
     // /**

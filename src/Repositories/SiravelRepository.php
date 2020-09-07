@@ -3,8 +3,8 @@
 namespace Siravel\Repositories;
 
 use Carbon\Carbon;
-use Translation\Repositories\ModelTranslationRepository;
 use Illuminate\Support\Facades\Schema;
+use Translation\Repositories\ModelTranslationRepository;
 
 class SiravelRepository
 {
@@ -17,6 +17,11 @@ class SiravelRepository
     public function __construct(ModelTranslationRepository $translationRepo)
     {
         $this->translationRepo = $translationRepo;
+    }
+
+    public function rules()
+    {
+        return $this->model->rules;
     }
 
     /**

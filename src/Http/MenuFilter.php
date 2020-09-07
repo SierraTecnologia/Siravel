@@ -7,12 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use JeroenNoten\LaravelAdminLte\Menu\Builder;
 
 use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
+
 // use Laratrust;
 
 class MenuFilter extends MenuFilterBase
 {
     public function transform($item)
     {
+        // dd(app(\Siravel\Services\System\BusinessService::class));
         if (!$this->verifyFeature($item)) {
             return false;
         }
@@ -26,7 +28,7 @@ class MenuFilter extends MenuFilterBase
             $feature = $item['feature'];
         }
 
-        if (empty($feature)){
+        if (empty($feature)) {
             return true;
         }
 
