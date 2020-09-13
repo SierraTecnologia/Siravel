@@ -42,3 +42,11 @@ Algumas ferramentas
 
 Location: /Funcs
 Funções classicas
+
+
+
+
+
+
+
+        "felixkiss/uniquewith-validator": "^3.4.0",
