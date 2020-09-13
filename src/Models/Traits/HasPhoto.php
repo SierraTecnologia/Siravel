@@ -6,12 +6,12 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Model;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 trait HasPhoto
 {
-    use HasMediaTrait;
+    use InteractsWithMedia;
 
     protected static function bootHasPhoto()                                                                                                                                                             
     {
