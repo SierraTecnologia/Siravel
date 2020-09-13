@@ -59,8 +59,8 @@ class CreateFeaturesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('featureables');
-        Schema::drop('features');
+        Schema::dropIfExists('featureables');
+        Schema::dropIfExists('features');
     }
 
 }
