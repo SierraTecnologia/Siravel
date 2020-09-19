@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Commerce;
 
-use Stalker\Models\Image;
+use MediaManager\Models\Image;
 use App\Models\ProductImage;
 use Siravel\Models\SiravelModel;
 use Stalker\Services\Midia\FileService;
