@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers;
 
-use Support\Services\RiCaService;
+use Pedreiro\Services\RiCaService;
 use Illuminate\Http\Response;
 
 class SiteMapController extends SitecController

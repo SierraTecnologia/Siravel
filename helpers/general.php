@@ -29,6 +29,6 @@ if (!function_exists('sortable')) {
 if (!function_exists('siravel')) {
     function siravel()
     {
-        return app(Support\Services\RiCaService::class);
+        return app(Pedreiro\Services\RiCaService::class);
     }
 }

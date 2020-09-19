@@ -9,7 +9,7 @@ use Siravel\Services\BlogService;
 use Siravel\Services\EventService;
 use Siravel\Services\ModuleService;
 use Siravel\Services\Negocios\PageService;
-use Support\Services\RiCaService;
+use Pedreiro\Services\RiCaService;
 
 class RiCaServiceProvider extends ServiceProvider
 {

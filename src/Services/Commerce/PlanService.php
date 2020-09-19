@@ -8,7 +8,7 @@ use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
 use Siravel\Models\Commerce\Plan;
-use Support\Services\RiCaService;
+use Pedreiro\Services\RiCaService;
 
 class PlanService
 {

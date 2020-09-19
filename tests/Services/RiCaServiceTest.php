@@ -2,7 +2,7 @@
 
 namespace Tests\Services;
 
-use Support\Services\RiCaService;
+use Pedreiro\Services\RiCaService;
 use Tests\TestCase;
 
 class RiCaServiceTest extends TestCase
