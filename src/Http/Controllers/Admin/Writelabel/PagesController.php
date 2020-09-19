@@ -6,7 +6,7 @@ use Siravel;
 use Siravel\Models\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\Negocios\PageRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 

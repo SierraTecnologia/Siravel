@@ -7,7 +7,7 @@ use Siravel;
 use Casa\Models\Calendar\Event;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\EventRequest;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\EventRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 

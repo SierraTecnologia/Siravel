@@ -6,7 +6,7 @@ use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Models\Promotion;
 use Siravel\Http\Requests\PromotionRequest;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\PromotionRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 

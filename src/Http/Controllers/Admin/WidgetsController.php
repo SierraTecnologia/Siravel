@@ -6,7 +6,7 @@ use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Models\Widget;
 use Siravel\Http\Requests\WidgetRequest;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\WidgetRepository;
 use theme;
 

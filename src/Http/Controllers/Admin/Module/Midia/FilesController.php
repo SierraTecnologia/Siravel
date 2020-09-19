@@ -13,7 +13,7 @@ use Stalker\Models\File;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\FileRequest;
 use Stalker\Services\Midia\FileService;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\FileRepository;
 use Support\Services\RiCaResponseService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;

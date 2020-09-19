@@ -10,7 +10,7 @@ use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
 use Support\Services\RiCaResponseService;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class MenuController extends BaseController

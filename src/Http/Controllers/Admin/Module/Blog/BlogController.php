@@ -6,7 +6,7 @@ use Siravel;
 use Siravel\Models\Blog\Blog;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\BlogRequest;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Repositories\BlogRepository;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 

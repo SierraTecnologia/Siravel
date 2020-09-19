@@ -12,7 +12,7 @@ use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
 use Support\Services\RiCaResponseService;
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController

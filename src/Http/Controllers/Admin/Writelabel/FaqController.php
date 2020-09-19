@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
-use Facilitador\Services\ValidationService;
+use Muleta\Services\ValidationService;
 use Illuminate\Http\Request;
 use Siravel;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
