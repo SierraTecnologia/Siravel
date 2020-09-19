@@ -33,9 +33,11 @@ class SiravelRouteProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
-            require __DIR__.'/../../routes/web.php';
-            require __DIR__.'/../../routes/api.php';
-        });
+        $router->group(
+            ['namespace' => $this->namespace], function ($router) {
+                include __DIR__.'/../../routes/web.php';
+                include __DIR__.'/../../routes/api.php';
+            }
+        );
     }
 }

@@ -26,7 +26,7 @@ class ProductVariantRepository
      * Adds variants to the product.
      *
      * @param Siravel\Models\Commerce\Product $products
-     * @param array                       $payload
+     * @param array                           $payload
      *
      * @return Siravel\Models\Commerce\Variant
      */

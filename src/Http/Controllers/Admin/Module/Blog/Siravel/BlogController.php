@@ -7,7 +7,9 @@ use Siravel\Repositories\BlogRepository;
 
 class BlogController extends Controller
 {
-    /** @var BlogRepository */
+    /**
+     * @var BlogRepository 
+     */
     private $blogRepository;
 
     public function __construct(BlogRepository $blogRepo)

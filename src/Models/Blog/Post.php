@@ -25,7 +25,7 @@ use Siravel\Models\SiravelModel as BaseModel;
  * @property Collection photos
  * @property Photo photo
  * @property Collection tags
- * @package Siravel\Models
+ * @package  Siravel\Models
  */
 class Post extends BaseModel
 {
@@ -79,10 +79,12 @@ class Post extends BaseModel
     {
         parent::boot();
 
-        static::deleting(function (self $post) {
-            $post->tags()->detach();
-            $post->photos()->detach();
-        });
+        static::deleting(
+            function (self $post) {
+                $post->tags()->detach();
+                $post->photos()->detach();
+            }
+        );
     }
 
     /**
@@ -138,7 +140,7 @@ class Post extends BaseModel
     }
 
     /**
-     * @param bool $isPublished
+     * @param  bool $isPublished
      * @return $this
      */
     public function setIsPublishedAttribute(bool $isPublished)
@@ -177,7 +179,8 @@ class Post extends BaseModel
      */
     public function toEntity(): PostEntity
     {
-        return new PostEntity([
+        return new PostEntity(
+            [
             'id' => $this->id,
             'created_by_user_id' => $this->created_by_user_id,
             'description' => $this->description,
@@ -186,13 +189,14 @@ class Post extends BaseModel
             'created_at' => $this->created_at->toAtomString(),
             'updated_at' => $this->updated_at->toAtomString(),
             'published_at' => $this->published_at ? $this->published_at->toAtomString() : null,
-        ]);
+            ]
+        );
     }
 
-        public function scopePublished(PostBuilder $query)
-        {
-            return $query->where('status', '=', static::PUBLISHED);
-        }
+    public function scopePublished(PostBuilder $query)
+    {
+        return $query->where('status', '=', static::PUBLISHED);
+    }
 }
 
 // /**

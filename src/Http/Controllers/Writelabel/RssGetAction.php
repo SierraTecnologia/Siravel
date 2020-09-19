@@ -39,9 +39,9 @@ class RssGetAction extends Controller
      * RssGetAction constructor.
      *
      * @param ResponseFactory $responseFactory
-     * @param RssBuilder $rssBuilder
-     * @param CacheManager $cacheManager
-     * @param Config $config
+     * @param RssBuilder      $rssBuilder
+     * @param CacheManager    $cacheManager
+     * @param Config          $config
      */
     public function __construct(ResponseFactory $responseFactory, RssBuilder $rssBuilder, CacheManager $cacheManager, Config $config)
     {
@@ -58,9 +58,11 @@ class RssGetAction extends Controller
     {
         $rss = $this->cacheManager
             ->tags(['rss', 'posts', 'photos', 'tags'])
-            ->remember('rss', $this->config->get('cache.lifetime'), function () {
-                return $this->rssBuilder->build();
-            });
+            ->remember(
+                'rss', $this->config->get('cache.lifetime'), function () {
+                    return $this->rssBuilder->build();
+                }
+            );
 
         return $this->responseFactory
             ->view('features.app.rss.index', ['rss' => $rss])

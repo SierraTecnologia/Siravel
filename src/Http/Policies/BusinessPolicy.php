@@ -34,7 +34,7 @@ class BusinessPolicy
     /**
      * Create a resource.
      *
-     * @param string $feature
+     * @param  string $feature
      * @return bool
      */
     public function hasFeature(string $feature)
@@ -45,7 +45,7 @@ class BusinessPolicy
     /**
      * Create a resource.
      *
-     * @param string $widget
+     * @param  string $widget
      * @return bool
      */
     public function hasWidget(string $widget)
@@ -56,7 +56,7 @@ class BusinessPolicy
     /**
      * Create a resource.
      *
-     * @param string $plugin
+     * @param  string $plugin
      * @return bool
      */
     public function hasPlugin(string $plugin)

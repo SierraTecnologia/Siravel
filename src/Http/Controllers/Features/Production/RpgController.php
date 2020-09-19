@@ -11,7 +11,8 @@ use App\Http\Requests\Admin\RpgRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class RpgController extends Controller {
+class RpgController extends Controller
+{
 
     public function __construct()
     {

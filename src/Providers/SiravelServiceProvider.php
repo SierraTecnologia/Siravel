@@ -28,24 +28,34 @@ class RiCaServiceProvider extends ServiceProvider
         $loader->alias('BlogService', \Siravel\Facades\BlogServiceFacade::class);
         $loader->alias('FileService', \Stalker\Services\Midia\FileService::class);
 
-        $this->app->bind('RiCaService', function ($app) {
-            return new RiCaService();
-        });
+        $this->app->bind(
+            'RiCaService', function ($app) {
+                return new RiCaService();
+            }
+        );
 
-        $this->app->bind('PageService', function ($app) {
-            return new PageService();
-        });
+        $this->app->bind(
+            'PageService', function ($app) {
+                return new PageService();
+            }
+        );
 
-        $this->app->bind('EventService', function ($app) {
-            return App::make(EventService::class);
-        });
+        $this->app->bind(
+            'EventService', function ($app) {
+                return App::make(EventService::class);
+            }
+        );
 
-        $this->app->bind('ModuleService', function ($app) {
-            return new ModuleService();
-        });
+        $this->app->bind(
+            'ModuleService', function ($app) {
+                return new ModuleService();
+            }
+        );
 
-        $this->app->bind('BlogService', function ($app) {
-            return new BlogService();
-        });
+        $this->app->bind(
+            'BlogService', function ($app) {
+                return new BlogService();
+            }
+        );
     }
 }

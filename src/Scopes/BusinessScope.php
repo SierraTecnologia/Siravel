@@ -11,12 +11,12 @@ class BusinessScope implements Scope
 {
 
     /**
-    * Apply the scope to a given Eloquent query builder.
-    *
-    * @param  \Illuminate\Database\Eloquent\Builder  $builder
-    * @param  \Illuminate\Database\Eloquent\Model  $model
-    * @return void
-    */
+     * Apply the scope to a given Eloquent query builder.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder $builder
+     * @param  \Illuminate\Database\Eloquent\Model   $model
+     * @return void
+     */
     public function apply(Builder $builder, Model $model)
     {
         // dd(Business::isToApplyCodeBusiness($model));

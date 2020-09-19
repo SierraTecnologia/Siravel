@@ -22,7 +22,7 @@ class BusinessNewSubscriptionListener
     /**
      * Handle the event.
      *
-     * @param  \App\Events\BusinessNewSubscription  $event
+     * @param  \App\Events\BusinessNewSubscription $event
      * @return void
      */
     public function handle(BusinessNewSubscription $event)

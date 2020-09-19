@@ -11,7 +11,8 @@ use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class Controller extends BaseController {
+class Controller extends BaseController
+{
 
     protected $menu = [];
 

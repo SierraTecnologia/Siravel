@@ -10,6 +10,7 @@ use Siravel\Models\Traits\BusinessTrait;
 
 /**
  * Class Faq
+ *
  * @package App\Models
  * @version December 18, 2016, 5:33 am UTC
  */

@@ -11,5 +11,8 @@ class Features extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'FeatureService'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'FeatureService'; 
+    }
 }

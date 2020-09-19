@@ -3,7 +3,8 @@ namespace Siravel\Http\Controllers\Features\Girl;
 
 use Siravel\Http\Controllers\Features\Controller as BaseController;
 
-class GirlController extends BaseController {
+class GirlController extends BaseController
+{
 
     /**
      * Initializer.

@@ -64,9 +64,9 @@ class TravelsController extends Controller
         $dateInit = Carbon::createFromFormat('d/m/Y', Input::get("date_init"))->toDateString();
         $dateEnd = Carbon::createFromFormat('d/m/Y', Input::get("date_end"))->toDateString();
         $destine = Input::get("destine");
-//        $adults = Input::get("adults");
-//        $chieldren = Input::get("chieldren");
-//        $rooms = Input::get("rooms");
+        //        $adults = Input::get("adults");
+        //        $chieldren = Input::get("chieldren");
+        //        $rooms = Input::get("rooms");
         $adults = 2;
         $chieldren = 1;
         $rooms = 1;

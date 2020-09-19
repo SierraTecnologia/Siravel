@@ -79,7 +79,7 @@ class SorteiosController extends FaController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param  $id
      * @return Response
      */
 
@@ -91,7 +91,7 @@ class SorteiosController extends FaController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param  $id
      * @return Response
      */
     public function destroy(ArticleCategory $articleCategory)
@@ -108,18 +108,22 @@ class SorteiosController extends FaController
     {
         $article_categories = ArticleCategory::with('language')
             ->get()
-            ->map(function ($article_category) {
-                return [
+            ->map(
+                function ($article_category) {
+                    return [
                     'id' => $article_category->id,
                     'title' => $article_category->title,
                     'language' => isset($article_category->language) ? $article_category->language->name : "",
                     'created_at' => $article_category->created_at->format('d.m.Y.'),
-                ];
-            });
+                    ];
+                }
+            );
         return Datatables::of($article_categories)
-            ->add_column('actions', '<a href="{{{ url(\'admin/articlecategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
+            ->add_column(
+                'actions', '<a href="{{{ url(\'admin/articlecategory/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
                 <a href="{{{ url(\'admin/articlecategory/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                <input type="hidden" name="row" value="{{$id}}" id="row">')
+                <input type="hidden" name="row" value="{{$id}}" id="row">'
+            )
             ->remove_column('id')
             ->make();
     }
@@ -127,7 +131,7 @@ class SorteiosController extends FaController
     /**
      * Reorder items
      *
-     * @param items list
+     * @param  items list
      * @return items from @param
      */
     public function getReorder(ReorderRequest $request)

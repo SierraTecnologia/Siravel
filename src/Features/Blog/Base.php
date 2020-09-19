@@ -19,7 +19,7 @@ class Base
 
     public function getAdminMenu()
     {
-        return function() {
+        return function () {
             Route::resource('/posts', 'PostController');
             Route::put('/posts/{post}/publish', 'PostController@publish')->middleware('admin');
             Route::resource('/categories', 'CategoryController', ['except' => ['show']]);
@@ -31,7 +31,7 @@ class Base
 
     public function getSiteMenu()
     {
-        return function() {
+        return function () {
             Route::get('/', 'BlogController@index');
             Route::get('/posts/{post}', 'BlogController@post');
             Route::post('/posts/{post}/comment', 'BlogController@comment')->middleware('auth');
@@ -44,18 +44,20 @@ class Base
 
     public function apis()
     {
-        return function() {
+        return function () {
             Route::post('/auth/token', 'Api\AuthController@getAccessToken');
             Route::post('/auth/reset-password', 'Api\AuthController@passwordResetRequest');
             Route::post('/auth/change-password', 'Api\AuthController@changePassword');
 
-            Route::group(['middleware' => 'auth:api', 'namespace' => 'Api'], function() {
-                Route::get('/tags', 'ListingController@tags');
-                Route::get('/categories', 'ListingController@categories');
-                Route::get('/users', 'ListingController@users')->middleware('admin');
+            Route::group(
+                ['middleware' => 'auth:api', 'namespace' => 'Api'], function () {
+                    Route::get('/tags', 'ListingController@tags');
+                    Route::get('/categories', 'ListingController@categories');
+                    Route::get('/users', 'ListingController@users')->middleware('admin');
 
-                Route::resource('/posts', 'PostController', ['only' => ['index', 'show']]);
-            });
+                    Route::resource('/posts', 'PostController', ['only' => ['index', 'show']]);
+                }
+            );
         };
     }
 }

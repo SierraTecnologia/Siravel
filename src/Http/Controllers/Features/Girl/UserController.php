@@ -44,7 +44,7 @@ class UserController extends GirlController
     public function store(UserRequest $request)
     {
 
-        $user = new User ($request->except('password','password_confirmation'));
+        $user = new User($request->except('password', 'password_confirmation'));
         $user->password = bcrypt($request->password);
         $user->confirmation_code = str_random(32);
         $user->save();
@@ -53,7 +53,7 @@ class UserController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $user
+     * @param  $user
      * @return Response
      */
     public function edit(User $user)
@@ -64,7 +64,7 @@ class UserController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param $user
+     * @param  $user
      * @return Response
      */
     public function update(UserRequest $request, User $user)
@@ -77,13 +77,13 @@ class UserController extends GirlController
                 $user->password = bcrypt($password);
             }
         }
-        $user->update($request->except('password','password_confirmation'));
+        $user->update($request->except('password', 'password_confirmation'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $user
+     * @param  $user
      * @return Response
      */
 
@@ -95,7 +95,7 @@ class UserController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param $user
+     * @param  $user
      * @return Response
      */
     public function destroy(User $user)
@@ -114,9 +114,11 @@ class UserController extends GirlController
 
         return Datatables::of($users)
             ->edit_column('confirmed', '@if ($confirmed=="1") <span class="glyphicon glyphicon-ok"></span> @else <span class=\'glyphicon glyphicon-remove\'></span> @endif')
-            ->add_column('actions', '@if ($id!="1")<a href="{{{ url(\'girl/user/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
+            ->add_column(
+                'actions', '@if ($id!="1")<a href="{{{ url(\'girl/user/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                     <a href="{{{ url(\'girl/user/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
-                @endif')
+                @endif'
+            )
             ->remove_column('id')
             ->make();
     }

@@ -12,7 +12,7 @@ use App\Models\Model;
  * @property int id
  * @property string email
  * @property string token
- * @package App\Models
+ * @package  App\Models
  */
 class Subscription extends Model
 {
@@ -50,10 +50,12 @@ class Subscription extends Model
      */
     public function toEntity(): SubscriptionEntity
     {
-        return new SubscriptionEntity([
+        return new SubscriptionEntity(
+            [
             'id' => $this->id,
             'email' => $this->email,
             'token' => $this->token,
-        ]);
+            ]
+        );
     }
 }

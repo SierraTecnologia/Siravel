@@ -11,6 +11,7 @@ use Siravel\Models\Traits\BusinessTrait;
 
 /**
  * Class Promotion
+ *
  * @package App\Models
  * @version December 18, 2016, 5:33 am UTC
  */

@@ -35,7 +35,8 @@ class HotelBeds
         );
     }
 
-    public function recheck($rateKey){
+    public function recheck($rateKey)
+    {
         //$rateKey = "20171115|20171120|W|1|1075|TPL.VM|CG-TODOS BB|BB||1~2~1|8|N@5897F2A3FEF5401B8A86C4A57DD34DD91542";
         //$paxes = [ new Pax(Pax::AD, 30, "Miquel", "Fiol",1), new Pax(Pax::AD, 27, "Margalida", "Soberats",1), new Pax(Pax::CH, 8, "Josep", "Fiol",1) ];
         $paxes = [ new Pax(Pax::AD, 30, "Mike", "Doe", 1), new Pax(Pax::AD, 27, "Jane", "Doe", 1), new Pax(Pax::CH, 8, "Mack", "Doe", 1) ];
@@ -54,21 +55,25 @@ class HotelBeds
         return $confirmRS;
     }
 
-    public function getRqBookingConfirm(){
+    public function getRqBookingConfirm()
+    {
         return $this->rqBookingConfirm->toArray();
     }
 
-    public function getRqCheckRate(){
+    public function getRqCheckRate()
+    {
         return $this->rqCheckRate->toArray();
     }
 
-    public function getRqData(){
+    public function getRqData()
+    {
         return $this->rqData->toArray();
     }
 
 
 
-    public function booking($rateKey){
+    public function booking($rateKey)
+    {
         $this->rqCheckRate = new \hotelbeds\hotel_api_sdk\helpers\CheckRate();
         $this->rqCheckRate->rooms = [ [ "rateKey" => $rateKey ] ];
 
@@ -90,12 +95,14 @@ class HotelBeds
     public function includeDateInterval($init = "2018-02-01", $end = "2018-02-10")
     {
         $this->rqData = new \hotelbeds\hotel_api_sdk\helpers\Availability();
-//        $this->rqData->stay = new Stay(
-//            \DateTime::createFromFormat("Y-m-d", $init),
-//            \DateTime::createFromFormat("Y-m-d", $end));
+        //        $this->rqData->stay = new Stay(
+        //            \DateTime::createFromFormat("Y-m-d", $init),
+        //            \DateTime::createFromFormat("Y-m-d", $end));
 
-        $this->rqData->stay = new Stay(\DateTime::createFromFormat("Y-m-d", "2018-12-15"),
-            \DateTime::createFromFormat("Y-m-d", "2018-12-20"));
+        $this->rqData->stay = new Stay(
+            \DateTime::createFromFormat("Y-m-d", "2018-12-15"),
+            \DateTime::createFromFormat("Y-m-d", "2018-12-20")
+        );
     }
 
     /**
@@ -106,7 +113,7 @@ class HotelBeds
      */
     public function includeDestine($destine = "PMI")
     {
-//        $this->rqData->destination = new Destination($destine);
+        //        $this->rqData->destination = new Destination($destine);
     }
 
     /**
@@ -144,7 +151,7 @@ class HotelBeds
             $this->availRS = $this->apiClient->Availability($this->rqData);
         } catch (\hotelbeds\hotel_api_sdk\types\HotelSDKException $e) {
             Log::emergency('Api HotelBeds Deu Ruim: '.$e->getMessage());
-//            $auditData = $e->getAuditData();
+            //            $auditData = $e->getAuditData();
             return false;
         } catch (Exception $e) {
             Log::emergency('Api HotelBeds Deu Ruim: '.$e->getMessage());
@@ -160,7 +167,7 @@ class HotelBeds
     }
 
     /**
-     * @param $availRS
+     * @param  $availRS
      * @return array
      */
     public function captureHotelsAndRooms($availRS)

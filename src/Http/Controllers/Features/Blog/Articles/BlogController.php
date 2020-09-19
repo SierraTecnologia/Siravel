@@ -9,12 +9,14 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        $posts = Post::when($request->search, function($query) use($request) {
+        $posts = Post::when(
+            $request->search, function ($query) use ($request) {
                         $search = $request->search;
                         
                         return $query->where('title', 'like', "%$search%")
                             ->orWhere('body', 'like', "%$search%");
-                    })->with('tags', 'category', 'user')
+            }
+        )->with('tags', 'category', 'user')
                     ->withCount('comments')
                     ->published()
                     ->simplePaginate(5);
@@ -33,9 +35,11 @@ class BlogController extends Controller
     {
         $this->validate($request, ['body' => 'required']);
 
-        $post->comments()->create([
+        $post->comments()->create(
+            [
             'body' => $request->body
-        ]);
+            ]
+        );
         flash()->overlay('Comment successfully created');
 
         return redirect("/posts/{$post->id}");

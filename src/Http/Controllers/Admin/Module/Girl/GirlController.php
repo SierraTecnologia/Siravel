@@ -1,7 +1,8 @@
 <?php 
 namespace Siravel\Http\Controllers\Girl;
 
-class GirlController extends Controller {
+class GirlController extends Controller
+{
 
     /**
      * Initializer.

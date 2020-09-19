@@ -14,7 +14,7 @@ class BusinessNewSubscription
     /**
      * Create a new event instance.
      *
-     * @param  \Siravel\Models\Negocios\Subscription  $subscription
+     * @param  \Siravel\Models\Negocios\Subscription $subscription
      * @return void
      */
     public function __construct(Subscription $subscription)

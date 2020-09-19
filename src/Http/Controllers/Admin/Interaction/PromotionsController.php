@@ -107,7 +107,7 @@ class PromotionsController extends BaseController
     /**
      * Update the specified Promotions in storage.
      *
-     * @param int            $id
+     * @param int              $id
      * @param PromotionRequest $request
      *
      * @return Response

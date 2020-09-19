@@ -8,7 +8,8 @@ use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class CustomerController extends Controller {
+class CustomerController extends Controller
+{
 
     public function __construct()
     {

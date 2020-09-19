@@ -54,7 +54,7 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\TeamCreateRequest  $request
+     * @param  \Illuminate\Http\TeamCreateRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(TeamCreateRequest $request)
@@ -75,7 +75,7 @@ class TeamController extends Controller
     /**
      * Display the specified team.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function showByName($name)
@@ -92,7 +92,7 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +104,8 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(TeamUpdateRequest $request, $id)
@@ -126,7 +126,7 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -147,7 +147,7 @@ class TeamController extends Controller
     /**
      * Invite a team member
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function inviteMember(UserInviteRequest $request, $id)
@@ -168,7 +168,7 @@ class TeamController extends Controller
     /**
      * Remove a team member
      *
-     * @param  int  $userId
+     * @param  int $userId
      * @return \Illuminate\Http\Response
      */
     public function removeMember($id, $userId)

@@ -108,7 +108,7 @@ class Product extends SiravelModel
     public function isFavorite()
     {
         if (auth()->user()) {
-           return (auth()->user()->favorites()->pluck('product_id')->contains($this->id));
+            return (auth()->user()->favorites()->pluck('product_id')->contains($this->id));
         }
 
         return false;

@@ -6,7 +6,8 @@
 
 namespace Siravel\Http\Controllers\Features\Fa;
 
-class RelationsController extends Controller {
+class RelationsController extends Controller
+{
 
     public function index()
     {
@@ -15,28 +16,28 @@ class RelationsController extends Controller {
         return view('features.fas.index', compact('dashboard'));
     }
 
-	public function babies()
-	{
+    public function babies()
+    {
         $babies = Fa::paginate(5);
         $babies->setPath('babies/');
 
-		return view('features.fas.babies', compact('babies'));
-	}
+        return view('features.fas.babies', compact('babies'));
+    }
 
-	public function slaves()
-	{
+    public function slaves()
+    {
         $slaves = Fa::paginate(5);
         $slaves->setPath('slaves/');
 
-		return view('features.fas.slaves', compact('slaves'));
-	}
+        return view('features.fas.slaves', compact('slaves'));
+    }
 
-	public function dommes()
-	{
+    public function dommes()
+    {
         $dommes = Fa::paginate(5);
         $dommes->setPath('dommes/');
 
-		return view('features.fas.dommes', compact('dommes'));
-	}
+        return view('features.fas.dommes', compact('dommes'));
+    }
 
 }

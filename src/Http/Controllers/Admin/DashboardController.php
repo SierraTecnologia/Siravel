@@ -28,8 +28,8 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-	public function index()
-	{
+    public function index()
+    {
         $title = "Home";
 
         $blogs = Blog::count();
@@ -38,7 +38,7 @@ class DashboardController extends Controller
         // $subscriptions = Subscription::count();
         $photos = Photo::count();
 
-		return view(
+        return view(
             'admin.dashboard.home', 
             compact(
                 'title',
@@ -49,7 +49,7 @@ class DashboardController extends Controller
                 // 'subscriptions'
             )
         );
-	}
+    }
 
     public function analytics()
     {

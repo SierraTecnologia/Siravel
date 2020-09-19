@@ -351,7 +351,7 @@ class LdapService
      * Sync the LDAP groups to the user roles for the current user
      *
      * @param  \Siravel\Models\User $user
-     * @param  string           $username
+     * @param  string               $username
      * @throws LdapException
      */
     public function syncGroups(User $user, string $username)
@@ -406,7 +406,7 @@ class LdapService
      * Checked against role 'external_auth_id' if set otherwise the name of the role.
      *
      * @param  \Facilitador\Models\Role $role
-     * @param  array            $groupNames
+     * @param  array                    $groupNames
      * @return bool
      */
     protected function roleMatchesGroupNames(Role $role, array $groupNames)

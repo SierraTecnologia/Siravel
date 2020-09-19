@@ -107,7 +107,7 @@ class WidgetsController extends Controller
     /**
      * Update the specified Widgets in storage.
      *
-     * @param int            $id
+     * @param int           $id
      * @param WidgetRequest $request
      *
      * @return Response

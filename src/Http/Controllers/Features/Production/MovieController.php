@@ -11,7 +11,8 @@ use App\Http\Requests\Admin\MovieRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class MovieController extends Controller {
+class MovieController extends Controller
+{
 
     public function __construct()
     {

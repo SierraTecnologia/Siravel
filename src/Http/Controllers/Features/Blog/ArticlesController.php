@@ -4,7 +4,8 @@ namespace Siravel\Http\Controllers\Features\Blog;
 
 use App\Models\Blog\Article;
 
-class ArticlesController extends Controller {
+class ArticlesController extends Controller
+{
 
     public function index()
     {
@@ -14,11 +15,11 @@ class ArticlesController extends Controller {
         return view('features.article.index', compact('articles'));
     }
 
-	public function show($slug)
-	{
-		$article = Article::findBySlugOrId($slug);
+    public function show($slug)
+    {
+        $article = Article::findBySlugOrId($slug);
 
-		return view('features.article.view', compact('article'));
-	}
+        return view('features.article.view', compact('article'));
+    }
 
 }

@@ -49,14 +49,14 @@ class Plan extends SiravelModel
     public function getFrequencyAttribute()
     {
         switch ($this->interval) {
-            case 'week':
-                return 'weekly';
-            case 'month':
-                return 'monthly';
-            case 'year':
-                return 'yearly';
-            default:
-                return $this->interval;
+        case 'week':
+            return 'weekly';
+        case 'month':
+            return 'monthly';
+        case 'year':
+            return 'yearly';
+        default:
+            return $this->interval;
         }
     }
 

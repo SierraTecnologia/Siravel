@@ -20,7 +20,7 @@ class AssetController extends Controller
 
     public function __construct()
     {
-        $this->mimeTypes = require __DIR__.'/Config/Mime.php';
+        $this->mimeTypes = include __DIR__.'/Config/Mime.php';
     }
 
     /**
@@ -51,10 +51,12 @@ class AssetController extends Controller
             } else {
                 $fileContent = Storage::disk(Config::get('sitec.storage-location', 'local'))->get($fileName);
 
-                return Response::make($fileContent, 200, [
+                return Response::make(
+                    $fileContent, 200, [
                     'Content-Type' => $contentType,
                     'Content-Disposition' => 'attachment; filename="'.$fileName.'"',
-                ]);
+                    ]
+                );
             }
         } catch (Exception $e) {
             return Response::make('file not found');
@@ -91,23 +93,27 @@ class AssetController extends Controller
                 } else {
                     $fileContent = Storage::disk(Config::get('sitec.storage-location', 'local'))->get($fileName);
 
-                    return Response::make($fileContent, 200, [
+                    return Response::make(
+                        $fileContent, 200, [
                         'Content-Type' => $contentType,
                         'Content-Disposition' => 'attachment; filename="'.$fileName.'"',
-                    ]);
+                        ]
+                    );
                 }
             } else {
                 $color = '#'.str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT);
                 $img = Image::make(__DIR__.'/../../../resources/assets/Images/blank.jpg');
                 $img->fill($color);
-                $img->text($ext, 145, 145, function ($font) {
-                    $font->file(__DIR__.'/../../../resources/assets/Fonts/SourceSansPro-Semibold.otf');
-                    $font->size(36);
-                    $font->color('#111111');
-                    $font->align('center');
-                    $font->valign('center');
-                    $font->angle(45);
-                });
+                $img->text(
+                    $ext, 145, 145, function ($font) {
+                        $font->file(__DIR__.'/../../../resources/assets/Fonts/SourceSansPro-Semibold.otf');
+                        $font->size(36);
+                        $font->color('#111111');
+                        $font->align('center');
+                        $font->valign('center');
+                        $font->angle(45);
+                    }
+                );
 
                 return $img->response('jpg');
             }
@@ -147,10 +153,12 @@ class AssetController extends Controller
             } else {
                 $fileContent = Storage::disk(Config::get('sitec.storage-location', 'local'))->get($realFileName);
 
-                return Response::make($fileContent, 200, [
+                return Response::make(
+                    $fileContent, 200, [
                     'Content-Type' => $contentType,
                     'Content-Disposition' => 'attachment; filename="'.$fileName.'"',
-                ]);
+                    ]
+                );
             }
         } catch (Exception $e) {
             sitec::notification('We encountered an error with that file', 'danger');

@@ -7,7 +7,7 @@ class BaseService
     /**
      * Get templates as options
      *
-     * @param  string $module
+     * @param string $module
      *
      * @return array
      */

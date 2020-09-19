@@ -39,20 +39,24 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(PostRequest $request)
     {
-        $post = Post::create([
+        $post = Post::create(
+            [
             'title'       => $request->title,
             'body'        => $request->body,
             'category_id' => $request->category_id
-        ]);
+            ]
+        );
 
-        $tagsId = collect($request->tags)->map(function($tag) {
-            return Tag::firstOrCreate(['name' => $tag])->id;
-        });
+        $tagsId = collect($request->tags)->map(
+            function ($tag) {
+                return Tag::firstOrCreate(['name' => $tag])->id;
+            }
+        );
 
         $post->tags()->attach($tagsId);
         flash()->overlay('Post created successfully.');
@@ -63,7 +67,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
@@ -76,7 +80,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post)
@@ -95,21 +99,25 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(PostRequest $request, Post $post)
     {
-        $post->update([
+        $post->update(
+            [
             'title'       => $request->title,
             'body'        => $request->body,
             'category_id' => $request->category_id
-        ]);
+            ]
+        );
 
-        $tagsId = collect($request->tags)->map(function($tag) {
-            return Tag::firstOrCreate(['name' => $tag])->id;
-        });
+        $tagsId = collect($request->tags)->map(
+            function ($tag) {
+                return Tag::firstOrCreate(['name' => $tag])->id;
+            }
+        );
 
         $post->tags()->sync($tagsId);
         flash()->overlay('Post updated successfully.');
@@ -120,7 +128,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(Post $post)

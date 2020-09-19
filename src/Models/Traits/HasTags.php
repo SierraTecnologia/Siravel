@@ -20,19 +20,23 @@ trait HasTags
 
     public static function bootHasTags()
     {
-        static::created(function (Model $taggableModel) {
-            if (count($taggableModel->queuedTags) > 0) {
-                $taggableModel->attachTags($taggableModel->queuedTags);
+        static::created(
+            function (Model $taggableModel) {
+                if (count($taggableModel->queuedTags) > 0) {
+                    $taggableModel->attachTags($taggableModel->queuedTags);
 
-                $taggableModel->queuedTags = [];
+                    $taggableModel->queuedTags = [];
+                }
             }
-        });
+        );
 
-        static::deleted(function (Model $deletedModel) {
-            $tags = $deletedModel->tags()->get();
+        static::deleted(
+            function (Model $deletedModel) {
+                $tags = $deletedModel->tags()->get();
 
-            $deletedModel->detachTags($tags);
-        });
+                $deletedModel->detachTags($tags);
+            }
+        );
     }
 
     public function tags(): MorphToMany
@@ -73,7 +77,7 @@ trait HasTags
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param array|\ArrayAccess|\\App\Models\Tag $tags
+     * @param array|\ArrayAccess|\\App\Models\Tag   $tags
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
@@ -81,18 +85,22 @@ trait HasTags
     {
         $tags = static::convertToTags($tags, $type);
 
-        collect($tags)->each(function ($tag) use ($query) {
-            $query->whereHas('tags', function (Builder $query) use ($tag) {
-                $query->where('tags.id', $tag ? $tag->id : 0);
-            });
-        });
+        collect($tags)->each(
+            function ($tag) use ($query) {
+                $query->whereHas(
+                    'tags', function (Builder $query) use ($tag) {
+                        $query->where('tags.id', $tag ? $tag->id : 0);
+                    }
+                );
+            }
+        );
 
         return $query;
     }
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param array|\ArrayAccess|\\App\Models\Tag $tags
+     * @param array|\ArrayAccess|\\App\Models\Tag   $tags
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
@@ -100,22 +108,28 @@ trait HasTags
     {
         $tags = static::convertToTags($tags, $type);
 
-        return $query->whereHas('tags', function (Builder $query) use ($tags) {
-            $tagIds = collect($tags)->pluck('id');
+        return $query->whereHas(
+            'tags', function (Builder $query) use ($tags) {
+                $tagIds = collect($tags)->pluck('id');
 
-            $query->whereIn('tags.id', $tagIds);
-        });
+                $query->whereIn('tags.id', $tagIds);
+            }
+        );
     }
 
     public function scopeWithAllTagsOfAnyType(Builder $query, $tags): Builder
     {
         $tags = static::convertToTagsOfAnyType($tags);
 
-        collect($tags)->each(function ($tag) use ($query) {
-            $query->whereHas('tags', function (Builder $query) use ($tag) {
-                $query->where('tags.id', $tag ? $tag->id : 0);
-            });
-        });
+        collect($tags)->each(
+            function ($tag) use ($query) {
+                $query->whereHas(
+                    'tags', function (Builder $query) use ($tag) {
+                        $query->where('tags.id', $tag ? $tag->id : 0);
+                    }
+                );
+            }
+        );
 
         return $query;
     }
@@ -124,18 +138,22 @@ trait HasTags
     {
         $tags = static::convertToTagsOfAnyType($tags);
 
-        return $query->whereHas('tags', function (Builder $query) use ($tags) {
-            $tagIds = collect($tags)->pluck('id');
+        return $query->whereHas(
+            'tags', function (Builder $query) use ($tags) {
+                $tagIds = collect($tags)->pluck('id');
 
-            $query->whereIn('tags.id', $tagIds);
-        });
+                $query->whereIn('tags.id', $tagIds);
+            }
+        );
     }
 
     public function tagsWithType(string $type = null): Collection
     {
-        return $this->tags->filter(function (Tag $tag) use ($type) {
-            return $tag->type === $type;
-        });
+        return $this->tags->filter(
+            function (Tag $tag) use ($type) {
+                return $tag->type === $type;
+            }
+        );
     }
 
     /**
@@ -175,9 +193,11 @@ trait HasTags
 
         collect($tags)
             ->filter()
-            ->each(function (Tag $tag) {
-                $this->tags()->detach($tag);
-            });
+            ->each(
+                function (Tag $tag) {
+                    $this->tags()->detach($tag);
+                }
+            );
 
         return $this;
     }
@@ -210,7 +230,7 @@ trait HasTags
 
     /**
      * @param array|\ArrayAccess $tags
-     * @param string|null $type
+     * @param string|null        $type
      *
      * @return $this
      */
@@ -227,32 +247,36 @@ trait HasTags
 
     protected static function convertToTags($values, $type = null, $locale = null)
     {
-        return collect($values)->map(function ($value) use ($type, $locale) {
-            if ($value instanceof Tag) {
-                if (isset($type) && $value->type != $type) {
-                    throw new InvalidArgumentException("Type was set to {$type} but tag is of type {$value->type}");
+        return collect($values)->map(
+            function ($value) use ($type, $locale) {
+                if ($value instanceof Tag) {
+                    if (isset($type) && $value->type != $type) {
+                        throw new InvalidArgumentException("Type was set to {$type} but tag is of type {$value->type}");
+                    }
+
+                    return $value;
                 }
 
-                return $value;
+                $className = static::getTagClassName();
+
+                return $className::findFromString($value, $type, $locale);
             }
-
-            $className = static::getTagClassName();
-
-            return $className::findFromString($value, $type, $locale);
-        });
+        );
     }
 
     protected static function convertToTagsOfAnyType($values, $locale = null)
     {
-        return collect($values)->map(function ($value) use ($locale) {
-            if ($value instanceof Tag) {
-                return $value;
+        return collect($values)->map(
+            function ($value) use ($locale) {
+                if ($value instanceof Tag) {
+                    return $value;
+                }
+
+                $className = static::getTagClassName();
+
+                return $className::findFromStringOfAnyType($value, $locale);
             }
-
-            $className = static::getTagClassName();
-
-            return $className::findFromStringOfAnyType($value, $locale);
-        });
+        );
     }
 
     /**
@@ -260,7 +284,7 @@ trait HasTags
      *
      * @param $ids
      * @param string|null $type
-     * @param bool $detaching
+     * @param bool        $detaching
      */
     protected function syncTagIds($ids, string $type = null, $detaching = true)
     {
@@ -271,17 +295,19 @@ trait HasTags
             ->newPivotStatement()
             ->where('taggable_id', $this->getKey())
             ->where('taggable_type', $this->getMorphClass())
-            ->when($type !== null, function ($query) use ($type) {
-                $tagModel = $this->tags()->getRelated();
+            ->when(
+                $type !== null, function ($query) use ($type) {
+                    $tagModel = $this->tags()->getRelated();
 
-                return $query->join(
-                    $tagModel->getTable(),
-                    'taggables.tag_id',
-                    '=',
-                    $tagModel->getTable().'.'.$tagModel->getKeyName()
-                )
-                    ->where('tags.type', $type);
-            })
+                    return $query->join(
+                        $tagModel->getTable(),
+                        'taggables.tag_id',
+                        '=',
+                        $tagModel->getTable().'.'.$tagModel->getKeyName()
+                    )
+                        ->where('tags.type', $type);
+                }
+            )
             ->pluck('tag_id')
             ->all();
 
@@ -295,9 +321,11 @@ trait HasTags
         // Attach any new ids
         $attach = array_diff($ids, $current);
         if (count($attach) > 0) {
-            collect($attach)->each(function ($id) {
-                $this->tags()->attach($id, []);
-            });
+            collect($attach)->each(
+                function ($id) {
+                    $this->tags()->attach($id, []);
+                }
+            );
             $isUpdated = true;
         }
 

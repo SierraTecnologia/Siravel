@@ -39,9 +39,9 @@ class SiteMapGetAction extends Controller
      * SiteMapGetAction constructor.
      *
      * @param ResponseFactory $responseFactory
-     * @param SiteMapBuilder $siteMapBuilder
-     * @param CacheManager $cacheManager
-     * @param Config $config
+     * @param SiteMapBuilder  $siteMapBuilder
+     * @param CacheManager    $cacheManager
+     * @param Config          $config
      */
     public function __construct(ResponseFactory $responseFactory, SiteMapBuilder $siteMapBuilder, CacheManager $cacheManager, Config $config)
     {
@@ -58,9 +58,11 @@ class SiteMapGetAction extends Controller
     {
         $siteMap = $this->cacheManager
             ->tags(['siteMap', 'posts', 'photos', 'tags'])
-            ->remember('siteMap', $this->config->get('cache.lifetime'), function () {
-                return $this->siteMapBuilder->build();
-            });
+            ->remember(
+                'siteMap', $this->config->get('cache.lifetime'), function () {
+                    return $this->siteMapBuilder->build();
+                }
+            );
 
         return $this->responseFactory
             ->view('features.app.site-map.index', ['siteMap' => $siteMap])

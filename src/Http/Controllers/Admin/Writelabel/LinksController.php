@@ -150,9 +150,11 @@ class LinksController extends BaseController
         $key = array_search($id, $order);
         unset($order[$key]);
 
-        $link->menu->update([
+        $link->menu->update(
+            [
             'order' => json_encode(array_values($order)),
-        ]);
+            ]
+        );
 
         $link->delete();
 

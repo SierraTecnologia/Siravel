@@ -15,7 +15,7 @@ class FeatureService
     /**
      * All features
      *
-     * @return  Collection
+     * @return Collection
      */
     public function getByKey($key)
     {
@@ -25,7 +25,7 @@ class FeatureService
     /**
      * All features
      *
-     * @return  Collection
+     * @return Collection
      */
     public function isActive($key)
     {
@@ -39,7 +39,7 @@ class FeatureService
     /**
      * Paginated features
      *
-     * @return  PaginatedCollection
+     * @return PaginatedCollection
      */
     public function paginated()
     {
@@ -49,9 +49,9 @@ class FeatureService
     /**
      * Search features
      *
-     * @param  string $input
+     * @param  string  $input
      * @param  integer $id
-     * @return  Collection
+     * @return Collection
      */
     public function search($input, $id)
     {
@@ -75,7 +75,7 @@ class FeatureService
      * Create a notification
      *
      * @param  array $input
-     * @return  boolean|exception
+     * @return boolean|exception
      */
     public function create($payload)
     {
@@ -96,7 +96,7 @@ class FeatureService
      * Find a notification
      *
      * @param  integer $id
-     * @return  Feature
+     * @return Feature
      */
     public function find($id)
     {
@@ -107,8 +107,8 @@ class FeatureService
      * Update a notification
      *
      * @param  integer $id
-     * @param  array $payload
-     * @return  Feature
+     * @param  array   $payload
+     * @return Feature
      */
     public function update($id, $payload)
     {
@@ -129,7 +129,7 @@ class FeatureService
      * Destroy a Feature
      *
      * @param  integer $id
-     * @return  boolean
+     * @return boolean
      */
     public function destroy($id)
     {

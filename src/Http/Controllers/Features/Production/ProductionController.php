@@ -10,7 +10,8 @@ use App\Http\Requests\Admin\ProductionRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class ProductionController extends Controller {
+class ProductionController extends Controller
+{
 
     public function __construct()
     {
@@ -51,8 +52,7 @@ class ProductionController extends Controller {
         $production -> user_id = Auth::id();
 
         $picture = "";
-        if(Input::hasFile('image'))
-        {
+        if(Input::hasFile('image')) {
             $file = Input::file('image');
             $filename = $file->getClientOriginalName();
             $extension = $file -> getClientOriginalExtension();
@@ -61,8 +61,7 @@ class ProductionController extends Controller {
         $production -> picture = $picture;
         $production -> save();
 
-        if(Input::hasFile('image'))
-        {
+        if(Input::hasFile('image')) {
             $destinationPath = public_path() . '/images/production/'.$production->id.'/';
             Input::file('image')->move($destinationPath, $picture);
         }

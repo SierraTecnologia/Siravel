@@ -45,16 +45,18 @@ class HomeServiceProvider extends ServiceProvider
             \Imagine\Imagick\Imagine::class
         );
 
-        $this->app->singleton('HTMLPurifier', function (Application $app) {
-            $filesystem = $app->make('filesystem')->disk('local');
-            $cacheDirectory = 'cache/HTMLPurifier_DefinitionCache';
-            if (!$filesystem->exists($cacheDirectory)) {
-                $filesystem->makeDirectory($cacheDirectory);
+        $this->app->singleton(
+            'HTMLPurifier', function (Application $app) {
+                $filesystem = $app->make('filesystem')->disk('local');
+                $cacheDirectory = 'cache/HTMLPurifier_DefinitionCache';
+                if (!$filesystem->exists($cacheDirectory)) {
+                    $filesystem->makeDirectory($cacheDirectory);
+                }
+                $config = \HTMLPurifier_Config::createDefault();
+                $config->set('Cache.SerializerPath', storage_path("app/{$cacheDirectory}"));
+                return new \HTMLPurifier($config);
             }
-            $config = \HTMLPurifier_Config::createDefault();
-            $config->set('Cache.SerializerPath', storage_path("app/{$cacheDirectory}"));
-            return new \HTMLPurifier($config);
-        });
+        );
     }
 
     /**
@@ -119,11 +121,13 @@ class HomeServiceProvider extends ServiceProvider
 
         $this->app->when(\Siravel\Services\Image\ImagineImageProcessor::class)
             ->needs('$config')
-            ->give(function (Application $app) {
-                return [
+            ->give(
+                function (Application $app) {
+                    return [
                     'thumbnails' => $app->make('config')->get('main.photo.thumbnails'),
-                ];
-            });
+                    ];
+                }
+            );
 
         $this->app->bind(
             \Siravel\Services\Manifest\Contracts\Manifest::class,

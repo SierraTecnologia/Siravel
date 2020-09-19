@@ -84,11 +84,13 @@ class ImagesController extends BaseController
             $validation = app(ValidationService::class)->check(['location' => 'required']);
             if (!$validation['errors']) {
                 foreach ($request->input('location') as $image) {
-                    $imageSaved = $this->repository->store([
+                    $imageSaved = $this->repository->store(
+                        [
                         'location' => $image,
                         'is_published' => $request->input('is_published'),
                         'tags' => $request->input('tags'),
-                    ]);
+                        ]
+                    );
                 }
 
                 Siravel::notification('Image saved successfully.', 'success');
@@ -117,9 +119,11 @@ class ImagesController extends BaseController
      */
     public function upload(Request $request)
     {
-        $validation = app(ValidationService::class)->check([
+        $validation = app(ValidationService::class)->check(
+            [
             'location' => ['required'],
-        ]);
+            ]
+        );
 
         if (!$validation['errors']) {
             $file = $request->file('location');
@@ -222,7 +226,7 @@ class ImagesController extends BaseController
     /**
      * Bulk image delete
      *
-     * @param  string $ids
+     * @param string $ids
      *
      * @return Redirect
      */

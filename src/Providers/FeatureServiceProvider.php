@@ -12,13 +12,17 @@ class FeatureServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('feature', function ($expression) {
-            return "<?php if (Features::isActive($expression)) : ?>";
-        });
+        Blade::directive(
+            'feature', function ($expression) {
+                return "<?php if (Features::isActive($expression)) : ?>";
+            }
+        );
 
-        Blade::directive('endfeature', function ($expression) {
-            return "<?php endif; ?>";
-        });
+        Blade::directive(
+            'endfeature', function ($expression) {
+                return "<?php endif; ?>";
+            }
+        );
     }
 
     /**
@@ -30,8 +34,10 @@ class FeatureServiceProvider extends ServiceProvider
 
         $loader->alias('Features', \App\Facades\Features::class);
 
-        $this->app->singleton('FeatureService', function ($app) {
-            return app(\App\Services\FeatureService::class);
-        });
+        $this->app->singleton(
+            'FeatureService', function ($app) {
+                return app(\App\Services\FeatureService::class);
+            }
+        );
     }
 }

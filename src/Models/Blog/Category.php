@@ -31,32 +31,32 @@ class Category extends Model
     }
 
 
-	/**
-	 * Returns a formatted post content entry,
-	 * this ensures that line breaks are returned.
-	 *
-	 * @return string
-	 */
-	public function description()
-	{
-		return nl2br($this->description);
-	}
+    /**
+     * Returns a formatted post content entry,
+     * this ensures that line breaks are returned.
+     *
+     * @return string
+     */
+    public function description()
+    {
+        return nl2br($this->description);
+    }
 
-	/**
-	 * Get the slider's images.
-	 *
-	 * @return array
-	 */
-	public function articles()
-	{
-		return $this->hasMany(Article::class, 'category_id');
-	}
+    /**
+     * Get the slider's images.
+     *
+     * @return array
+     */
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'category_id');
+    }
 
-	/**
-	 * Get the slider's images.
-	 *
-	 * @return array
-	 */
+    /**
+     * Get the slider's images.
+     *
+     * @return array
+     */
     public function posts()
     {
         return $this->hasMany(Facilitador::modelClass('Post'))

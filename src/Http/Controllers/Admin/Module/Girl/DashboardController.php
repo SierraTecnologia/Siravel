@@ -7,7 +7,8 @@ use Siravel\Models\User;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
 
-class DashboardController extends GirlController {
+class DashboardController extends GirlController
+{
 
     public function __construct()
     {
@@ -15,8 +16,8 @@ class DashboardController extends GirlController {
         view()->share('type', '');
     }
 
-	public function index()
-	{
+    public function index()
+    {
         $title = "Dashboard";
 
         $fas = '';
@@ -27,6 +28,6 @@ class DashboardController extends GirlController {
         $users = User::count();
         $photo = Photo::count();
         $photoalbum = PhotoAlbum::count();
-		return view('features.girl.dashboard.index',  compact('title','news','newscategory','photo','photoalbum','users'));
-	}
+        return view('features.girl.dashboard.index',  compact('title', 'news', 'newscategory', 'photo', 'photoalbum', 'users'));
+    }
 }

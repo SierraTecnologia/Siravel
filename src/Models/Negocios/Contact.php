@@ -10,6 +10,7 @@ use Siravel\Models\Traits\BusinessTrait;
 
 /**
  * Class Contact
+ *
  * @package App\Models
  * @version December 18, 2016, 5:33 am UTC
  */
@@ -163,7 +164,7 @@ class Contact extends Model
         $quartos = self::getQuartos();
 
         foreach ($quartos as $groupName => $tipoquarto) {
-            if (key_exists($index, $tipoquarto)){
+            if (key_exists($index, $tipoquarto)) {
                 return $groupName.' - '.$tipoquarto[$index];
             }
         }

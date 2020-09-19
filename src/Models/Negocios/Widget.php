@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Widget
+ *
  * @package App\Models
  * @version December 18, 2016, 5:33 am UTC
  */

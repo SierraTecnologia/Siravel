@@ -6,13 +6,14 @@ use Siravel\Models\Identity\Girl;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
 
-class GirlController extends Controller {
+class GirlController extends Controller
+{
 
 
-	public function index()
-	{
+    public function index()
+    {
 
         $girls = Girl::count();
-		return view('admin.girls.index',  compact('girls'));
-	}
+        return view('admin.girls.index',  compact('girls'));
+    }
 }

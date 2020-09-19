@@ -11,72 +11,73 @@ use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 
-class LanguageController extends GirlController {
+class LanguageController extends GirlController
+{
 
     public function __construct()
     {
         view()->share('type', 'language');
     }
     /**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
         // Show the page
         return view('features.girl.language.index');
-	}
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-       // Show the page
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+          // Show the page
         return view('features.girl/language/create_edit');
-	}
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store(LanguageRequest $request)
-	{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store(LanguageRequest $request)
+    {
         $language = new Language($request->all());
         $language -> user_id = Auth::id();
         $language -> save();
-	}
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit(Language $language)
-	{
-        return view('features.girl/language/create_edit',compact('language'));
-	}
+    }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit(Language $language)
+    {
+        return view('features.girl/language/create_edit', compact('language'));
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update(LanguageRequest $request, Language $language)
-	{
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update(LanguageRequest $request, Language $language)
+    {
         $language -> user_id_edited = Auth::id();
         $language -> update($request->all());
-	}
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param  $id
      * @return Response
      */
 
@@ -89,7 +90,7 @@ class LanguageController extends GirlController {
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
+     * @param  $id
      * @return Response
      */
     public function destroy(Language $language)
@@ -106,21 +107,25 @@ class LanguageController extends GirlController {
     {
         $languages = Language::whereNull('languages.deleted_at')
             ->orderBy('languages.position', 'ASC')
-			->get()
-			->map(function ($language) {
-				return [
-					'id' => $language->id,
-					'name' => $language->name,
-					'code' => $language->code,
-					'icon' => $language->code,
-				];
-			});
+            ->get()
+            ->map(
+                function ($language) {
+                        return [
+                        'id' => $language->id,
+                        'name' => $language->name,
+                        'code' => $language->code,
+                        'icon' => $language->code,
+                        ];
+                }
+            );
         return Datatables::of($languages)
             ->edit_column('icon', '<img src="blank.gif" class="flag flag-{{$icon}}" alt="" />')
 
-            ->add_column('actions', '<a href="{{{ url(\'girl/language/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span> {{ trans("admin/modal.edit") }}</a>
+            ->add_column(
+                'actions', '<a href="{{{ url(\'girl/language/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span> {{ trans("admin/modal.edit") }}</a>
                     <a href="{{{ url(\'admin/language/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
-                    <input type="hidden" name="row" value="{{$id}}" id="row">')
+                    <input type="hidden" name="row" value="{{$id}}" id="row">'
+            )
             ->remove_column('id')
 
             ->make();

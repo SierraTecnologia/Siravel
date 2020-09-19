@@ -8,13 +8,14 @@ use Siravel\Models\Negocios\Client;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
 
-class ClientController extends Controller {
+class ClientController extends Controller
+{
 
 
-	public function index()
-	{
+    public function index()
+    {
 
         $clients = Client::count();
-		return view('admin.clients.index',  compact('clients'));
-	}
+        return view('admin.clients.index',  compact('clients'));
+    }
 }

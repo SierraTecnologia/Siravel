@@ -26,7 +26,7 @@ class ManifestGetAction extends Controller
      * ManifestGetAction constructor.
      *
      * @param ResponseFactory $responseFactory
-     * @param Manifest $manifest
+     * @param Manifest        $manifest
      */
     public function __construct(ResponseFactory $responseFactory, Manifest $manifest)
     {

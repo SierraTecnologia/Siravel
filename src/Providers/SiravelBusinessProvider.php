@@ -59,9 +59,11 @@ class SiravelBusinessProvider extends ServiceProvider
         // BUsiness
         $loader = AliasLoader::getInstance();
         $loader->alias('Business', \Siravel\Facades\BusinessServiceFacade::class);
-        $this->app->singleton('business', function () {
-            return new BusinessService();
-        });
+        $this->app->singleton(
+            'business', function () {
+                return new BusinessService();
+            }
+        );
         $kernel = $this->app->make(Kernel::class);
         $kernel->pushMiddleware(BusinessMiddleware::class);
 
