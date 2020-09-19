@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Siravel\Interfaces\Helpers\StoreHelper;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\CartService;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 
 class CartController extends Controller
 {

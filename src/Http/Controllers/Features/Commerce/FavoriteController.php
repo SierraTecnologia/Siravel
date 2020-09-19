@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\FavoriteService;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 
 class FavoriteController extends Controller
 {

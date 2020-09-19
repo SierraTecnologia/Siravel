@@ -11,7 +11,7 @@ use Storage;
 use Facilitador\Models\Image;
 use Siravel\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 

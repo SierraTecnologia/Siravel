@@ -15,7 +15,7 @@ use Siravel\Http\Requests\FileRequest;
 use Stalker\Services\Midia\FileService;
 use Muleta\Services\ValidationService;
 use Siravel\Repositories\FileRepository;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class FilesController extends BaseController

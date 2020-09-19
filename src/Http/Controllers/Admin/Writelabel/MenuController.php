@@ -9,7 +9,7 @@ use Siravel\Models\Negocios\Menu;
 use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
