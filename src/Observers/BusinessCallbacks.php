@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Log;
 use Siravel\Scopes\BusinessScope;
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Telefonica\Models\Digital\Email;
 use Throwable;

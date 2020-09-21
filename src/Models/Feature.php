@@ -2,7 +2,7 @@
 
 namespace Siravel\Models;
 
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 use Muleta\Traits\Models\ComplexRelationamentTrait;
 
 class Feature extends Base

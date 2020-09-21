@@ -2,22 +2,20 @@
 
 namespace Siravel\Models\Blog;
 
-
-use Illuminate\Database\Eloquent\SoftDeletes;
-
 use App\Models\User;
-use Siravel\Models\SiravelModel as BaseModel;
-use Cviebrock\EloquentSluggable\Sluggable;
-use Overtrue\LaravelFollow\Traits\CanBeLiked;
-use Overtrue\LaravelFollow\Traits\CanBeFavorited;
-use Overtrue\LaravelFollow\Traits\CanBeVoted;
-use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
+use Overtrue\LaravelFollow\Traits\CanBeFavorited;
+use Overtrue\LaravelFollow\Traits\CanBeLiked;
+use Overtrue\LaravelFollow\Traits\CanBeVoted;
 use Siravel\Contracts\Business\BusinessTrait;
+
+use Siravel\Models\SiravelModel as BaseModel;
 
 class Article extends BaseModel
 {
-
     use SoftDeletes;
     use Sluggable;
     use BusinessTrait;
@@ -41,7 +39,7 @@ class Article extends BaseModel
      *
      * @return array
      */
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
@@ -92,5 +90,4 @@ class Article extends BaseModel
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
-
 }

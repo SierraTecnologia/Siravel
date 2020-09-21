@@ -13,7 +13,7 @@
 
 namespace Siravel\Models;
 
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 
 class Rrs extends Base
 {
