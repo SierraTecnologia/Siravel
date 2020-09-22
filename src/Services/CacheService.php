@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\System;
+namespace Siravel\Services;
 
 use Business;
 use Illuminate\Support\Facades\Cache;

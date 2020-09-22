@@ -11,7 +11,7 @@ use Illuminate\Support\ServiceProvider;
 use Siravel\Http\Middleware\Business as BusinessMiddleware;
 use Siravel\Listeners\NoTenantIdentified;
 use Siravel\Listeners\TenantRoutes;
-use Siravel\Services\System\BusinessService;
+use Siravel\Services\BusinessService;
 use Tenancy\Affects\Filesystems\Events\ConfigureDisk;
 use Tenancy\Identification\Events\NothingIdentified;
 

@@ -13,7 +13,7 @@ trait BusinessTrait
 
     protected static function bootBusinessTrait()                                                                                                                                                             
     {
-        if ($business = app(\Siravel\Services\System\BusinessService::class)->getBusiness()) {
+        if ($business = app(\Siravel\Services\BusinessService::class)->getBusiness()) {
 
             static::creating(
                 function ($model) use ($business) {

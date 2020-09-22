@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\System;
+namespace Siravel\Services;
 
 use Illuminate\Support\Facades\Config;
 use SiPlugins\ProjectManager\ProjectManager;

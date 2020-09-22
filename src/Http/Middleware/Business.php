@@ -6,7 +6,7 @@ use Closure;
 use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Cookie;
-use Siravel\Services\System\BusinessService;
+use Siravel\Services\BusinessService;
 use Templeiro;
 
 class Business

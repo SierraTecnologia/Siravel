@@ -7,7 +7,7 @@ use Siravel;
 use Siravel\Models\Blog\Blog;
 use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 
 class BlogRepository extends SiravelRepository
 {

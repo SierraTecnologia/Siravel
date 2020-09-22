@@ -56,6 +56,6 @@ class Business extends Model
      */
     public function isActived()
     {
-        return app(\Siravel\Services\System\BusinessService::class)->isActived($this);
+        return app(\Siravel\Services\BusinessService::class)->isActived($this);
     }
 }

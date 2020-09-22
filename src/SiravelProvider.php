@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Muleta\Traits\Providers\ConsoleTools;
-use Siravel\Services\System\BusinessService;
+use Siravel\Services\BusinessService;
 
 class SiravelProvider extends ServiceProvider
 {

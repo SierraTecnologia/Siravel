@@ -7,7 +7,7 @@ use Config;
 use Crypto;
 use Stalker\Models\File;
 use Siravel\Repositories\SiravelRepository;
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class FileRepository extends SiravelRepository

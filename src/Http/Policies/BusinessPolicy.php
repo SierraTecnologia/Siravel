@@ -39,7 +39,7 @@ class BusinessPolicy
      */
     public function hasFeature(string $feature)
     {
-        return app(\Siravel\Services\System\BusinessService::class)->hasFeature($feature);
+        return app(\Siravel\Services\BusinessService::class)->hasFeature($feature);
     }
 
     /**
@@ -50,7 +50,7 @@ class BusinessPolicy
      */
     public function hasWidget(string $widget)
     {
-        return app(\Siravel\Services\System\BusinessService::class)->hasWidget($widget);
+        return app(\Siravel\Services\BusinessService::class)->hasWidget($widget);
     }
 
     /**
@@ -61,6 +61,6 @@ class BusinessPolicy
      */
     public function hasPlugin(string $plugin)
     {
-        return app(\Siravel\Services\System\BusinessService::class)->hasPlugin($plugin);
+        return app(\Siravel\Services\BusinessService::class)->hasPlugin($plugin);
     }
 }

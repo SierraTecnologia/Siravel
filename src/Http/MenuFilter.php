@@ -14,7 +14,7 @@ class MenuFilter extends MenuFilterBase
 {
     public function transform($item)
     {
-        // dd(app(\Siravel\Services\System\BusinessService::class));
+        // dd(app(\Siravel\Services\BusinessService::class));
         if (!$this->verifyFeature($item)) {
             return false;
         }
@@ -32,6 +32,6 @@ class MenuFilter extends MenuFilterBase
             return true;
         }
 
-        return app(\Siravel\Services\System\BusinessService::class)->hasFeature($feature);
+        return app(\Siravel\Services\BusinessService::class)->hasFeature($feature);
     }
 }

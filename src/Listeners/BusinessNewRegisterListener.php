@@ -5,7 +5,7 @@ namespace Siravel\Listeners;
 use Business;
 use Facilitador\Models\Notification;
 use Siravel\Events\BusinessNewRegister;
-use Siravel\Services\System\BusinessService;
+use Siravel\Services\BusinessService;
 
 class BusinessNewRegisterListener
 {

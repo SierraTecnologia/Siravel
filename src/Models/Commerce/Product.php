@@ -5,7 +5,7 @@ namespace Siravel\Models\Commerce;
 use MediaManager\Models\Image;
 use App\Models\ProductImage;
 use Siravel\Models\SiravelModel;
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 use Siravel\Services\Commerce\CartService;
 use Siravel\Services\Commerce\ProductService;
 
