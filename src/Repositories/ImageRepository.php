@@ -7,7 +7,7 @@ use Config;
 use Crypto;
 use MediaManager\Models\Image;
 use Siravel\Models\Tag;
-use Stalker\Services\FileService;
+use MediaManager\Services\FileService;
 use Illuminate\Support\Facades\Schema;
 
 class ImageRepository extends SiravelRepository

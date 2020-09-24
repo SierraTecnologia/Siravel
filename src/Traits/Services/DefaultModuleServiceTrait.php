@@ -5,7 +5,7 @@ namespace Siravel\Traits\Services;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Siravel\Repositories\WidgetRepository;
-use Stalker\Services\FileService;
+use MediaManager\Services\FileService;
 
 trait DefaultModuleServiceTrait
 {

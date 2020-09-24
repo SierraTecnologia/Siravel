@@ -26,7 +26,7 @@ class RiCaServiceProvider extends ServiceProvider
         $loader->alias('EventService', \Siravel\Facades\EventServiceFacade::class);
         $loader->alias('ModuleService', \Siravel\Facades\ModuleServiceFacade::class);
         $loader->alias('BlogService', \Siravel\Facades\BlogServiceFacade::class);
-        $loader->alias('FileService', \Stalker\Services\FileService::class);
+        $loader->alias('FileService', \MediaManager\Services\FileService::class);
 
         $this->app->bind(
             'RiCaService', function ($app) {

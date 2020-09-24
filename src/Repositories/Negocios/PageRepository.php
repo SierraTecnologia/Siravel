@@ -5,7 +5,7 @@ namespace Siravel\Repositories\Negocios;
 use Carbon\Carbon;
 use Siravel\Repositories\SiravelRepository;
 use Translation\Repositories\ModelTranslationRepository;
-use Stalker\Services\FileService;
+use MediaManager\Services\FileService;
 
 use Siravel;
 use Config;

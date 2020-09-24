@@ -2,7 +2,7 @@
 
 namespace Siravel\Http\Controllers\Features\Travels;
 
-use Facilitador\Traits\Services\ActivationTrait;
+use Porteiro\Traits\ActivationTrait;
 use App\Models\Activation;
 
 class ActivateController extends Controller
