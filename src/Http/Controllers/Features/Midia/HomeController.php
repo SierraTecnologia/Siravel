@@ -14,7 +14,7 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $articles = Article::with('author')->orderBy('position', 'DESC')->orderBy('created_at', 'DESC')->limit(4)->get();
 

@@ -7,7 +7,7 @@ use App\Models\Blog\Article;
 class ArticlesController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $articles = Article::paginate(5);
         $articles->setPath('articles/');

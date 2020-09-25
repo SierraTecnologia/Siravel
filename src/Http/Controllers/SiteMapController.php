@@ -16,7 +16,7 @@ class SiteMapController extends SitecController
         $this->service = $service;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $items = $this->service->collectSiteMapItems();
 

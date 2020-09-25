@@ -9,7 +9,7 @@ namespace Siravel\Http\Controllers\Features\Fa;
 class RelationsController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $dashboard = [];
 

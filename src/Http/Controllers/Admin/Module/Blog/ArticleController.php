@@ -23,7 +23,7 @@ class ArticleController extends AdminController
     *
     * @return Response
     */
-    public function index()
+    public function index(Request $request)
     {
         // Show the page
         return view('features.girl.article.index');

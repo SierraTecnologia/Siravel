@@ -10,7 +10,7 @@ class GirlController extends Controller
 {
 
 
-    public function index()
+    public function index(Request $request)
     {
 
         $girls = Girl::count();

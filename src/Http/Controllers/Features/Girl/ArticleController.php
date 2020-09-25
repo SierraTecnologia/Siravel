@@ -23,7 +23,7 @@ class ArticleController extends GirlController
     *
     * @return Response
     */
-    public function index()
+    public function index(Request $request)
     {
         // Show the page
         return view('features.girl.article.index');

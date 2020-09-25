@@ -13,7 +13,7 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $tags = Tag::paginate(10);
 

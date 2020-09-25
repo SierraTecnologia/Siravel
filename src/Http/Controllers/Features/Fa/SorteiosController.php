@@ -24,7 +24,7 @@ class SorteiosController extends FaController
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('features.girl.articlecategory.index');
     }

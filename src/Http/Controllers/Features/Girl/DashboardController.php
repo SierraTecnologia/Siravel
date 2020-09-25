@@ -16,7 +16,7 @@ class DashboardController extends GirlController
         view()->share('type', '');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $title = "Dashboard";
 

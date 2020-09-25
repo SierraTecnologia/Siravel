@@ -20,7 +20,7 @@ class ModelController extends Controller
     *
     * @return Response
     */
-    public function index()
+    public function index(Request $request)
     {
         // Show the page
         return view('features.house.model.index');

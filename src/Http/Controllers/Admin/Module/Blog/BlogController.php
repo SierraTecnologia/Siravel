@@ -24,7 +24,7 @@ class BlogController extends BaseController
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $blogs = $this->repository->paginated();
 

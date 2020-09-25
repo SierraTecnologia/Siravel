@@ -22,7 +22,7 @@ class RssController extends SitecController
         }
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $module = $this->module;
 

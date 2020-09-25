@@ -23,7 +23,7 @@ class ProductionController extends Controller
     *
     * @return Response
     */
-    public function index()
+    public function index(Request $request)
     {
         // Show the page
         return view('features.admin.production.index');

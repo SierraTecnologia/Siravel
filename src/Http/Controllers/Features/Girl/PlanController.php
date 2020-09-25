@@ -20,7 +20,7 @@ class PlanController extends GirlController
     *
     * @return Response
     */
-    public function index()
+    public function index(Request $request)
     {
         // Show the page
         return view('features.girl.plan.index');

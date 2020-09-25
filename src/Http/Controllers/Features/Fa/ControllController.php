@@ -9,7 +9,7 @@ namespace Siravel\Http\Controllers\Features\Fa;
 class ControllController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         // Captura Pontos do Controll
         $points = Article::paginate(5);

@@ -15,7 +15,7 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $subscriptions = \Siravel\Models\Subscription::all();
 

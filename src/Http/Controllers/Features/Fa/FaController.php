@@ -11,7 +11,7 @@ use Siravel\Http\Controllers\Features\Controller as BaseController;
 class FaController extends BaseController
 {
 
-    public function index()
+    public function index(Request $request)
     {
         $dashboard = [];
 

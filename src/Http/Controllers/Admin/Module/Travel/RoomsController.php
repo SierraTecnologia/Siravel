@@ -16,7 +16,7 @@ class RoomsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $rooms = \Siravel\Models\Room::all();
 

@@ -23,7 +23,7 @@ class SupportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $myTickets = SitecPayment::getTickets();
 

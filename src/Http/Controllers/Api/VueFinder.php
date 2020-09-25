@@ -68,7 +68,7 @@ class VueFinder
     /**
      * @return JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
         $root = '.';
         $dirname = $this->request->get('path') ?? $root;
