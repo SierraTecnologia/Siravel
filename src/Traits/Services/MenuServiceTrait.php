@@ -86,7 +86,7 @@ trait MenuServiceTrait
         }
 
         if (Gate::allows('Siravel', Auth::user())) {
-            $response .= '<a href="'.url('siravel/menus/'.$menu->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span> Edit</a>';
+            $response .= '<a href="'.url('siravel/menus/'.$menu->id.'/edit').'" style="margin-left: 8px;" class="btn btn-xs btn-secondary"><span class="fa fa-pencil"></span> Edit</a>';
         }
 
         return $response;

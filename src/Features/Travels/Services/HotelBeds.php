@@ -275,9 +275,9 @@ class HotelBeds
     {
         if (Gate::allows('sitec', Auth::user())) {
             if (!is_null($id)) {
-                return '<a href="'.url('sitec/'.$type.'/'.$id.'/edit').'" class="btn btn-xs btn-default pull-right"><span class="fa fa-pencil"></span> Edit</a>';
+                return '<a href="'.url('sitec/'.$type.'/'.$id.'/edit').'" class="btn btn-xs btn-secondary float-right"><span class="fa fa-pencil"></span> Edit</a>';
             } else {
-                return '<a href="'.url('sitec/'.$type).'" class="btn btn-xs btn-default pull-right"><span class="fa fa-pencil"></span> Edit</a>';
+                return '<a href="'.url('sitec/'.$type).'" class="btn btn-xs btn-secondary float-right"><span class="fa fa-pencil"></span> Edit</a>';
             }
         }
 

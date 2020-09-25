@@ -10,7 +10,7 @@
                 <a class="btn btn-primary" href="{!! url('admin/features/create') !!}">Create Feature</a>
                 <form method="post" action="{!! url('admin/features/search') !!}">
                     {!! csrf_field() !!}
-                    <input class="form-control form-inline pull-right" value="{{ request('search') }}" name="search" placeholder="Search">
+                    <input class="form-control form-inline float-right" value="{{ request('search') }}" name="search" placeholder="Search">
                 </form>
             </div>
         </div>
