@@ -2,7 +2,6 @@
 
 use Population\Models\Components\Book\Permissions\PermissionService;
 
-
 if (!function_exists('redirect')) {
     /**
      * Get an instance of the redirector.
@@ -191,7 +190,8 @@ function icon($name, $attrs = [])
         [
         'class' => 'svg-icon',
         'data-icon' => $name
-        ], $attrs
+        ],
+        $attrs
     );
     $attrString = ' ';
     foreach ($attrs as $attrName => $attr) {
@@ -202,7 +202,7 @@ function icon($name, $attrs = [])
     $themeIconPath = theme_path('icons/' . $name . '.svg');
     if ($themeIconPath && file_exists($themeIconPath)) {
         $iconPath = $themeIconPath;
-    } else if (!file_exists($iconPath)) {
+    } elseif (!file_exists($iconPath)) {
         return '';
     }
 
@@ -284,8 +284,7 @@ function pagination_links($presenter)
 function tree(array $nodes, Closure $render = null)
 {
     $output = '<ul class="no-bullet">';
-    foreach($nodes as $node)
-    {
+    foreach ($nodes as $node) {
         // Get name
         $name = (is_null($render)) ? $node['name'] : $render($node);
 
@@ -293,7 +292,7 @@ function tree(array $nodes, Closure $render = null)
         $output .= '<li>' . $name;
 
         // Render children
-        if($node['children']) {
+        if ($node['children']) {
             $output .= tree($node['children'], $render);
         }
 
@@ -311,6 +310,20 @@ if (! function_exists('_')) {
      * @return string
      */
     function _($s)
+    {
+        return $s;
+    }
+}
+
+
+if (! function_exists('lang')) {
+    /**
+     * Dummy gettext alias. Workaround until HHVM supports Gettext PHP extension.
+     *
+     * @param  string
+     * @return string
+     */
+    function lang($s)
     {
         return $s;
     }
