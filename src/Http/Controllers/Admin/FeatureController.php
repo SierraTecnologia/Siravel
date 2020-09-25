@@ -73,7 +73,7 @@ class FeatureController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $feature = $this->service->find($id);
         return view('admin.features.edit')->with('feature', $feature);
@@ -103,7 +103,7 @@ class FeatureController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $result = $this->service->destroy($id);
 

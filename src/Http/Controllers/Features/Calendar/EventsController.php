@@ -85,7 +85,7 @@ class EventsController extends BaseController
      *
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $event = $this->eventsRepository->findEventById($id);
 

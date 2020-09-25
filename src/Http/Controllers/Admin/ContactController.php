@@ -51,7 +51,7 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $role = Contact::findOrFail($id);
 
@@ -83,7 +83,7 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $role = Contact::findOrFail($id);
 

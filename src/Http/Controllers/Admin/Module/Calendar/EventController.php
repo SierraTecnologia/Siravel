@@ -95,7 +95,7 @@ class EventController extends BaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $event = $this->repository->find($id);
 
@@ -143,7 +143,7 @@ class EventController extends BaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $event = $this->repository->find($id);
 

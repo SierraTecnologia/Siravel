@@ -146,7 +146,7 @@ class ImagesController extends BaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $images = $this->repository->find($id);
 
@@ -199,7 +199,7 @@ class ImagesController extends BaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $image = $this->repository->find($id);
 

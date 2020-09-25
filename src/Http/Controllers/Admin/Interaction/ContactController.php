@@ -85,7 +85,7 @@ class ContactController extends BaseController
      *
      * @return Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $contact = $this->contactsRepository->findContactById($id);
 

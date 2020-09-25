@@ -59,7 +59,7 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $subscription = \Siravel\Models\Subscription::findOrfail($id);
         $roles = Role::all()->pluck('name');
@@ -97,7 +97,7 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $subscription = \Siravel\Models\Subscription::findOrfail($id);
 

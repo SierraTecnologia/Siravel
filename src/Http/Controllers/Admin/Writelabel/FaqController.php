@@ -95,7 +95,7 @@ class FaqController extends BaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $faq = $this->repository->find($id);
 
@@ -149,7 +149,7 @@ class FaqController extends BaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $faq = $this->repository->find($id);
 

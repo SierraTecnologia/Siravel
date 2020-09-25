@@ -57,7 +57,7 @@ class MidiaController extends Controller
     }
 
 
-    // public function show($id)
+    // public function show(Request $request, $id)
     // {
     //     $photo_album = PhotoAlbum::find($id);
     //     $photos = Photo::where('photo_album_id', $id)->get();

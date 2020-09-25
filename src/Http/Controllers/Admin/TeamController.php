@@ -95,7 +95,7 @@ class TeamController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $team = $this->service->find($id);
         return view('team.edit')->with('team', $team);
@@ -129,7 +129,7 @@ class TeamController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         try {
             $result = $this->service->destroy(Auth::user(), $id);

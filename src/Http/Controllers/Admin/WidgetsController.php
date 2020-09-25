@@ -91,7 +91,7 @@ class WidgetsController extends Controller
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $widget = $this->repository->find($id);
 
@@ -136,7 +136,7 @@ class WidgetsController extends Controller
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $widgets = $this->repository->find($id);
 

@@ -83,7 +83,7 @@ class LinksController extends BaseController
      *
      * @return Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $links = $this->repository->find($id);
 
@@ -135,7 +135,7 @@ class LinksController extends BaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $link = $this->repository->find($id);
         $menu = $link->menu_id;

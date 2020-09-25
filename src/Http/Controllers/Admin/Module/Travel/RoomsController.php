@@ -67,7 +67,7 @@ class RoomsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $room = \Siravel\Models\Room::findOrfail($id);
 
@@ -108,7 +108,7 @@ class RoomsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $room = \Siravel\Models\Room::findOrfail($id);
 
