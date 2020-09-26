@@ -5,8 +5,10 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(App\Models\Tag::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    App\Models\Tag::class, function (Faker\Generator $faker) {
+        return [
         'value' => strtolower($faker->word),
-    ];
-});
+        ];
+    }
+);

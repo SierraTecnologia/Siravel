@@ -12,32 +12,42 @@ class SystemRolesTableSeeder extends Seeder
     {
         DB::table('roles')->delete();
 
-        Role::create([
+        Role::create(
+            [
             'name'   => 'user'
-        ]);
+            ]
+        );
 
-        Role::create([
+        Role::create(
+            [
             'name'   => 'administrator'
-        ]);
+            ]
+        );
 
 
 
         if (!Role::where('name', 'member')->first()) {
-            Role::create([
+            Role::create(
+                [
                 'name' => 'member',
                 'label' => 'Member',
                 'permissions' => 'regular',
-            ]);
-            Role::create([
+                ]
+            );
+            Role::create(
+                [
                 'name' => 'admin',
                 'label' => 'Admin',
                 'permissions' => 'admin,siravel,regular',
-            ]);
-            Role::create([
+                ]
+            );
+            Role::create(
+                [
                 'name' => 'siravel',
                 'label' => 'Siravel',
                 'permissions' => 'siravel,regular',
-            ]);
+                ]
+            );
         }
     }
 }

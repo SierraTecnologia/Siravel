@@ -17,13 +17,15 @@ class MidiaPhotoSeeder extends Seeder
      */
     public function run()
     {
-        factory(Photo::class, 20)->create()->each(function (Photo $photo) {
-            $photo->thumbnails()->save(factory(Thumbnail::class)->make());
-            $photo->thumbnails()->save(factory(Thumbnail::class)->make());
-            // @todo 
-            // $photo->tags()->save(factory(Tag::class)->make());
-            // $photo->tags()->save(factory(Tag::class)->make());
-            // $photo->tags()->save(factory(Tag::class)->make());
-        });
+        factory(Photo::class, 20)->create()->each(
+            function (Photo $photo) {
+                $photo->thumbnails()->save(factory(Thumbnail::class)->make());
+                $photo->thumbnails()->save(factory(Thumbnail::class)->make());
+                // @todo 
+                // $photo->tags()->save(factory(Tag::class)->make());
+                // $photo->tags()->save(factory(Tag::class)->make());
+                // $photo->tags()->save(factory(Tag::class)->make());
+            }
+        );
     }
 }

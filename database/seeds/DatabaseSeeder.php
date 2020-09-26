@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(BlogArticleSeeder::class);
         
-		// $this->call(WritelabelCardSeeder::class);
+        // $this->call(WritelabelCardSeeder::class);
         $this->call(WritelabelPageSeeder::class);
 
         $this->call(TravelsSeeder::class);

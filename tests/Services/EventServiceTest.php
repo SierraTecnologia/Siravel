@@ -33,14 +33,16 @@ class EventServiceTest extends TestCase
 
     public function testAsHtml()
     {
-        $result = $this->service->asHtml([
+        $result = $this->service->asHtml(
+            [
             'class' => '',
             'dates' => [
                 '23' => [
                     3 => 'content'
                 ]
             ]
-        ]);
+            ]
+        );
 
         $this->assertTrue(is_string($result));
         $this->assertEquals('<table class=""><thead><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th><th>Sábado</th><th>Domingo</th></thead></table>', $result);

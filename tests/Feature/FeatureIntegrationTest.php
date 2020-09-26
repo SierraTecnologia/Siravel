@@ -13,14 +13,18 @@ class FeatureIntegrationTest extends TestCase
     {
         parent::setUp();
 
-        $this->feature = factory(Siravel\Models\Feature::class)->make([
+        $this->feature = factory(Siravel\Models\Feature::class)->make(
+            [
             'id' => 1,
             'key' => 'signup'
-        ]);
-        $this->featureEdited = factory(Siravel\Models\Feature::class)->make([
+            ]
+        );
+        $this->featureEdited = factory(Siravel\Models\Feature::class)->make(
+            [
             'id' => 1,
             'key' => 'register',
-        ]);
+            ]
+        );
 
         $role = factory(Siravel\Models\Role::class)->create();
         $user = factory(Siravel\Models\User::class)->create();
@@ -65,10 +69,12 @@ class FeatureIntegrationTest extends TestCase
         $response = $this->actor->call('PATCH', 'admin/features/1', $this->featureEdited->toArray());
 
         $this->assertEquals(302, $response->getStatusCode());
-        $this->assertDatabaseHas('features', [
+        $this->assertDatabaseHas(
+            'features', [
             'id' => 1,
             'key' => 'register',
-        ]);
+            ]
+        );
         $response->assertRedirect('/');
     }
 

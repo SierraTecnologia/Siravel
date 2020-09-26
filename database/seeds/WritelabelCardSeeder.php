@@ -13,7 +13,8 @@ class WritelabelCardSeeder extends Seeder
      */
     public function run()
     {
-        $card = Card::create([
+        $card = Card::create(
+            [
             'title' => "{!! trans('snowevo.winter') !!} 2018",
             'description' => "{!! trans('snowevo.europe') !!}",
             'subtitle' => '',
@@ -28,7 +29,8 @@ class WritelabelCardSeeder extends Seeder
             'buttonName' => "{!! trans('snowevo.card_reserve') !!}",
             'buttonNewPage' => false,
             'buttonLink' => "#contact",
-        ]);
+            ]
+        );
 
 
 
@@ -70,7 +72,8 @@ class WritelabelCardSeeder extends Seeder
 
 
 
-        $card = Card::create([
+        $card = Card::create(
+            [
             'title' => "{!! trans('snowevo.winter') !!} 2018",
             'description' => "{!! trans('snowevo.europe') !!}",
             'subtitle' => '',
@@ -85,7 +88,8 @@ class WritelabelCardSeeder extends Seeder
             'buttonName' => "{!! trans('snowevo.card_reserve') !!}",
             'buttonNewPage' => false,
             'buttonLink' => "#contact",
-        ]);
+            ]
+        );
 
     }
 }

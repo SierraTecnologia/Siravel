@@ -6,16 +6,18 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Siravel\Models\Blog\Blog::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Siravel\Models\Blog\Blog::class, function (Faker\Generator $faker) {
+        return [
         'title' => 'dumb',
         'entry' => $faker->paragraph().' '.$faker->paragraph(),
         'is_published' => 1,
         'url' => 'dumb',
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 
 /*
@@ -73,12 +75,14 @@ $factory->define(\Siravel\Models\Blog\Blog::class, function (Faker\Generator $fa
 |
 */
 
-$factory->define(Siravel\Models\Blog\Category::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    Siravel\Models\Blog\Category::class, function (Faker\Generator $faker) {
+        return [
         'title' => $faker->sentence,
         'slug' => $faker->slug,
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -87,10 +91,12 @@ $factory->define(Siravel\Models\Blog\Category::class, function (Faker\Generator 
 */
 
 
-$factory->define(Facilitador\Models\Comment::class, function (Generator $faker) {
-    return [
+$factory->define(
+    Facilitador\Models\Comment::class, function (Generator $faker) {
+        return [
         'user_id' => rand(1, 10),
         'post_id' => rand(1, 25),
         'body'    => $faker->paragraph
-    ];
-});
+        ];
+    }
+);

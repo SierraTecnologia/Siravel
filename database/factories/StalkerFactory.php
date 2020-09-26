@@ -7,8 +7,9 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Stalker\Models\File::class, function (Faker\Generator $faker) {
+        return [
         'location' => 'files/dumb',
         'name' => 'dumbFile',
         'tags' => 'dumb, file',
@@ -20,8 +21,9 @@ $factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) 
         'order' => 1,
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +31,9 @@ $factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) 
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\MediaManager\Models\Image::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \MediaManager\Models\Image::class, function (Faker\Generator $faker) {
+        return [
         'location' => 'files/dumb',
         'name' => 'dumb',
         'original_name' => 'dumb',
@@ -39,8 +42,9 @@ $factory->define(\MediaManager\Models\Image::class, function (Faker\Generator $f
         'is_published' => 1,
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -53,19 +57,23 @@ $factory->define(\MediaManager\Models\Image::class, function (Faker\Generator $f
 |
 */
 
-$factory->define(\Stalker\Models\Photo::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Stalker\Models\Photo::class, function (Faker\Generator $faker) {
+        return [
         'created_by_user_id' => (new \App\Models\User)->newQuery()->inRandomOrder()->firstOrFail()->id,
         'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
         'avg_color' => $faker->hexColor,
         'metadata' => [],
-    ];
-});
+        ];
+    }
+);
 
-$factory->define(\Stalker\Models\Thumbnail::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Stalker\Models\Thumbnail::class, function (Faker\Generator $faker) {
+        return [
         'path' => sprintf('/%s/%s.%s', \Illuminate\Support\Str::random(12), \Illuminate\Support\Str::random(5), \Illuminate\Support\Str::random(3)),
         'width' => $faker->randomNumber(4),
         'height' => $faker->randomNumber(3),
-    ];
-});
+        ];
+    }
+);
