@@ -1,6 +1,6 @@
 <?php
 
-use Population\Models\Components\Book\Permissions\PermissionService;
+use Porteiro\Models\Permissions\PermissionService;
 
 if (!function_exists('redirect')) {
     /**
@@ -90,7 +90,7 @@ function userCan(string $permission, \Support\Models\Ownable $ownable = null)
     }
 
     // Check permission on ownable item
-    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
+    $permissionService = app(\Porteiro\Models\Permissions\PermissionService::class);
     return $permissionService->checkOwnableUserAccess($ownable, $permission);
 }
 
@@ -104,7 +104,7 @@ function userCan(string $permission, \Support\Models\Ownable $ownable = null)
  */
 function userCanOnAny(string $permission, string $entityClass = null)
 {
-    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
+    $permissionService = app(\Porteiro\Models\Permissions\PermissionService::class);
     return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
 }
 

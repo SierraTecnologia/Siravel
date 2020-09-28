@@ -6,7 +6,7 @@ return [
         // 'comments' => \Transmissor\Models\Comment::class,
         // 'categorys' => \App\Models\Category::class,
         // 'weapons' => \Informate\Models\Entytys\Fisicos\Weapon::class,
-        // 'users' => \Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class),
+        // 'users' => \Illuminate\Support\Facades\Config::get('application.directorys.models.users', \App\Models\User::class),
 
         // Identity
         'persons' => \Telefonica\Models\Actors\Person::class,
