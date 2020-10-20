@@ -216,7 +216,7 @@ class SiravelProvider extends ServiceProvider
         $this->setProviders();
         
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'migrations');
 
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
