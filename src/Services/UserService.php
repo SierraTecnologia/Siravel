@@ -8,13 +8,15 @@ use Session;
 use Exception;
 use App\Models\User;
 use Siravel\Models\UserMeta;
-use Facilitador\Models\Role;
+use Porteiro\Models\Role;
 use Siravel\Events\UserRegisteredEmail;
-use Facilitador\Notifications\ActivateUserEmail;
+use Porteiro\Notifications\ActivateUserEmail;
 use Illuminate\Support\Facades\Schema;
-use Facilitador\Services\UserService as UserServiceBase;
+use Transmissor\Services;
 
-class UserService extends UserServiceBase
+use Transmissor\Services\UserService as BaseUserService;
+
+class UserService extends BaseUserService
 {
 
     /**
