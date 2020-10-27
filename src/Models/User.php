@@ -2,7 +2,7 @@
 
 namespace Siravel\Models;
 
-class User extends \Facilitador\Models\User
+class User extends \Porteiro\Models\User
 {
 
     public function social()
