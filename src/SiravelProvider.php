@@ -176,7 +176,7 @@ class SiravelProvider extends ServiceProvider
 
         $this->publishes(
             [
-            $this->getResourcesPath('views') => base_path('resources/views/vendor/siravel'),
+            $this->getResourcesPath('views') => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'siravel'),
             ],
             ['views',  'sitec', 'sitec-views', 'siravel', 'siravel-views']
         );
@@ -185,7 +185,7 @@ class SiravelProvider extends ServiceProvider
         /**
          * Siravel; Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
 
 
         Config::set(
@@ -216,14 +216,14 @@ class SiravelProvider extends ServiceProvider
         $this->setProviders();
         
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'migrations');
 
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
         $this->loadViewsFrom($viewsPath, 'siravel');
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/siravel'),
+            $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'siravel'),
             ],
             'views'
         );
