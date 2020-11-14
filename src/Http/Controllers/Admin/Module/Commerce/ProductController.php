@@ -5,7 +5,7 @@ namespace Siravel\Http\Controllers\Admin\Commerce;
 use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
-use Siravel\Repositories\ImageRepository;
+use MediaManager\Repositories\ImageRepository;
 use Siravel\Repositories\Commerce\ProductVariantRepository;
 use Siravel\Http\Requests\Commerce\ProductRequest;
 use Siravel\Services\Commerce\ProductService;

@@ -4,7 +4,7 @@ namespace Siravel\Http\Controllers\Features\Midia;
 
 use Config;
 use Siravel\Http\Controllers\Features\Controller;
-use Siravel\Repositories\ImageRepository;
+use MediaManager\Repositories\ImageRepository;
 
 class GalleryController extends Controller
 {

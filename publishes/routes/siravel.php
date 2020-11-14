@@ -12,9 +12,6 @@
         Route::get('page/{url}', 'PagesController@show');
         Route::get('p/{url}', 'PagesController@show');
 
-        Route::get('gallery', 'GalleryController@all');
-        Route::get('gallery/{tag}', 'GalleryController@show');
-
         Route::get('blog', 'BlogController@all');
         Route::get('blog/{url}', 'BlogController@show');
         Route::get('blog/tags/{tag}', 'BlogController@tag');
