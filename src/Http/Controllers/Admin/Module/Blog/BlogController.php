@@ -76,7 +76,7 @@ class BlogController extends BaseController
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Blog::$rules);
+        $validation = app(ValidationService::class)->check(app(Blog::class)->rules);
 
         if (!$validation['errors']) {
             $blog = $this->repository->store($request->all());
@@ -130,7 +130,7 @@ class BlogController extends BaseController
             return redirect(route('admin.blog.index'));
         }
 
-        $validation = app(ValidationService::class)->check(Blog::$rules);
+        $validation = app(ValidationService::class)->check(app(Blog::class)->rules);
 
         if (!$validation['errors']) {
             $blog = $this->repository->update($blog, $request->all());

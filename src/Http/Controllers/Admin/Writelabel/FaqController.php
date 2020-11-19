@@ -126,7 +126,7 @@ class FaqController extends BaseController
             return redirect(route('admin.faqs.index'));
         }
 
-        $validation = app(ValidationService::class)->check(Faq::$rules);
+        $validation = app(ValidationService::class)->check(app(Faq::class)->rules);
 
         if (!$validation['errors']) {
             $faq = $this->repository->update($faq, $request->all());

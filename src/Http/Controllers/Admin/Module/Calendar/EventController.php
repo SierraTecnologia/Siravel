@@ -72,7 +72,7 @@ class EventController extends BaseController
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Event::$rules);
+        $validation = app(ValidationService::class)->check(app(Event::class)->rules);
 
         if (!$validation['errors']) {
             $event = $this->repository->store($request->all());

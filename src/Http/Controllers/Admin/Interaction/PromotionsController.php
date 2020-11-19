@@ -71,7 +71,7 @@ class PromotionsController extends BaseController
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Promotion::$rules);
+        $validation = app(ValidationService::class)->check(app(Promotion::class)->rules);
 
         if (!$validation['errors']) {
             $promotion = $this->repository->store($request->all());
