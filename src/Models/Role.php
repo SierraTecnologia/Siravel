@@ -2,7 +2,7 @@
 
 namespace Siravel\Models;
 
-use Facilitador\Models\Role as Base;
+use Porteiro\Models\Role as Base;
 
 class Role extends Base
 {
