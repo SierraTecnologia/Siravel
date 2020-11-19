@@ -9,6 +9,7 @@ use Telefonica\Models\Actors\Business as Model;
 class Business extends Model
 {
 
+    public $table = 'businesses';
     /**
      * Get all of the features for the post.
      */

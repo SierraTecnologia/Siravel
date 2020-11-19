@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Siravel;
 use Storage;
 use Facilitador\Models\Image;
-use Siravel\Repositories\ImageRepository;
+use MediaManager\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
 use Muleta\Services\RiCaResponseService;
 use Muleta\Services\ValidationService;
@@ -107,7 +107,7 @@ class ImagesController extends BaseController
             Siravel::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
         }
 
-        return redirect(route('admin.images.index'));
+        return redirect(route('admin.media-manager.images.index'));
     }
 
     /**
@@ -153,7 +153,7 @@ class ImagesController extends BaseController
         if (empty($images)) {
             Siravel::notification('Image not found', 'warning');
 
-            return redirect(route('admin.images.index'));
+            return redirect(route('admin.media-manager.images.index'));
         }
 
         return view('admin.features.midia.images.edit')->with('images', $images);
@@ -177,7 +177,7 @@ class ImagesController extends BaseController
             if (empty($images)) {
                 Siravel::notification('Image not found', 'warning');
 
-                return redirect(route('admin.images.index'));
+                return redirect(route('admin.media-manager.images.index'));
             }
 
             $images = $this->repository->update($images, $request->all());
@@ -189,7 +189,7 @@ class ImagesController extends BaseController
             Siravel::notification($e->getMessage() ?: 'Image could not be saved.', 'danger');
         }
 
-        return redirect(route('admin.images.edit', $id));
+        return redirect(route('admin.media-manager.images.edit', $id));
     }
 
     /**
@@ -212,7 +212,7 @@ class ImagesController extends BaseController
         if (empty($image)) {
             Siravel::notification('Image not found', 'warning');
 
-            return redirect(route('admin.images.index'));
+            return redirect(route('admin.media-manager.images.index'));
         }
 
         $image->forgetCache();
@@ -220,7 +220,7 @@ class ImagesController extends BaseController
 
         Siravel::notification('Image deleted successfully.', 'success');
 
-        return redirect(route('admin.images.index'));
+        return redirect(route('admin.media-manager.images.index'));
     }
 
     /**
@@ -248,7 +248,7 @@ class ImagesController extends BaseController
 
         Siravel::notification('Bulk Image deletes completed successfully.', 'success');
 
-        return redirect(route('admin.images.index'));
+        return redirect(route('admin.media-manager.images.index'));
     }
 
     /*

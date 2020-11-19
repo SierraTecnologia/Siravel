@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Facilitador\Services\UserService;
+use App\Services\UserService;
 use App\Models\User;
-use App\Models\Role;
+use Porteiro\Models\Role;
 
 class SystemUserTableSeeder extends Seeder {
 

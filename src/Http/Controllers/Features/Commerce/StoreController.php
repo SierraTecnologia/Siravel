@@ -5,6 +5,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Repositories\Commerce\ProductRepository;
 use Siravel\Services\Commerce\PlanService;
+use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {

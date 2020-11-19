@@ -5,6 +5,7 @@ use Siravel\Models\Blog\Category;
 use Siravel\Models\Identity\Girl;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
+use Illuminate\Http\Request;
 
 class GirlController extends Controller
 {

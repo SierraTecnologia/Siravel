@@ -7,6 +7,7 @@ use Siravel\Models\Blog\Category;
 use Siravel\Models\Negocios\Client;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
+use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {

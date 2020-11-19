@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

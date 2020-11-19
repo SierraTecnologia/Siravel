@@ -11,6 +11,7 @@ use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
 use Stalker\Models\Photo;
 use Tracking\Services\AnalyticsService;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

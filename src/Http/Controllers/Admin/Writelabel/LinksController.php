@@ -57,7 +57,7 @@ class LinksController extends BaseController
     public function store(LinksRequest $request)
     {
         try {
-            $validation = app(ValidationService::class)->check(Link::$rules);
+            $validation = app(ValidationService::class)->check(app(Link::class)->rules);
 
             if (!$validation['errors']) {
                 $links = $this->repository->store($request->all());

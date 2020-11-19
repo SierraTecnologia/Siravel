@@ -4,6 +4,7 @@ namespace Siravel\Http\Controllers\Features\Commerce;
 
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\PlanService;
+use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {

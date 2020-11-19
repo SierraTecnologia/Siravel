@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\DeleteRequest;
 use App\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
+use Illuminate\Http\Request;
 
 class LanguageController extends GirlController
 {

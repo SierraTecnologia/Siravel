@@ -71,7 +71,7 @@ class WidgetsController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Widget::$rules);
+        $validation = app(ValidationService::class)->check(app(Widget::class)->rules);
 
         if (!$validation['errors']) {
             $widgets = $this->repository->store($request->all());

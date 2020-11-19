@@ -5,6 +5,7 @@ namespace Siravel\Http\Controllers\Writelabel;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\EventService;
 use Siravel\Repositories\EventRepository;
+use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {

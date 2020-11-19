@@ -5,6 +5,7 @@ namespace Siravel\Http\Controllers\Features\Midia;
 use App\Models\Blog\Article;
 use Stalker\Models\PhotoAlbum;
 use DB;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

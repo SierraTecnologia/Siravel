@@ -19,14 +19,14 @@ class PersonagemController extends Controller
 
 
 
-    public function index(Request $request)
-    {
-        $links = [];
-        return view(
-            'siravel::pages.interact.index',
-            compact('links')
-        );
-    }
+    // public function index(Request $request)
+    // {
+    //     $links = [];
+    //     return view(
+    //         'siravel::pages.interact.index',
+    //         compact('links')
+    //     );
+    // }
 
     public function indexx(Request $request)
     {

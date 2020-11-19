@@ -6,6 +6,7 @@ use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\EventService;
 use Siravel\Repositories\EventRepository;
 use Siravel\Http\Controllers\Features\Controller as BaseController;
+use Illuminate\Http\Request;
 
 class EventsController extends BaseController
 {

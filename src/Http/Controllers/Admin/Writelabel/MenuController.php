@@ -78,7 +78,7 @@ class MenuController extends BaseController
     public function store(Request $request)
     {
         try {
-            $validation = app(ValidationService::class)->check(Menu::$rules);
+            $validation = app(ValidationService::class)->check(app(Menu::class)->rules);
 
             if (!$validation['errors']) {
                 $menu = $this->repository->store($request->all());
