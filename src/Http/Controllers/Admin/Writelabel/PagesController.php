@@ -71,7 +71,7 @@ class PagesController extends BaseController
      */
     public function store(Request $request)
     {
-        $validation = app(ValidationService::class)->check(Page::$rules);
+        $validation = app(ValidationService::class)->check(app(Page::class)->rules);
 
         if (!$validation['errors']) {
             $pages = $this->repository->store($request->all());

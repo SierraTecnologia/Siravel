@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\RpgRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
+use Illuminate\Http\Request;
 
 class RpgController extends Controller
 {

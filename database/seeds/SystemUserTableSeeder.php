@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Facilitador\Services\UserService;
+use App\Services\UserService;
 use App\Models\User;
 use Porteiro\Models\Role;
 

@@ -4,6 +4,7 @@ use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\Plan;
 use App\Http\Requests\Admin\PlanRequest;
 use Datatables;
+use Illuminate\Http\Request;
 
 
 class PlanController extends GirlController

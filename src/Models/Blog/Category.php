@@ -16,9 +16,9 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $translatable = ['slug', 'name'];
+    protected $translatable = ['slug', 'title'];
 
-    protected $fillable = ['slug', 'name'];
+    protected $fillable = ['slug', 'title'];
 
     protected $dates = ['deleted_at'];
 

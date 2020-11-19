@@ -7,6 +7,7 @@
 namespace Siravel\Http\Controllers\Features\Fa;
 
 use Siravel\Http\Controllers\Features\Controller as BaseController;
+use Illuminate\Http\Request;
 
 class FaController extends BaseController
 {

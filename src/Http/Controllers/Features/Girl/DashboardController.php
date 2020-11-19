@@ -6,6 +6,7 @@ use App\Models\Blog\Category;
 use App\Models\User;
 use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
+use Illuminate\Http\Request;
 
 class DashboardController extends GirlController
 {

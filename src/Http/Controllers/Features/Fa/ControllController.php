@@ -6,6 +6,8 @@
 
 namespace Siravel\Http\Controllers\Features\Fa;
 
+use Illuminate\Http\Request;
+
 class ControllController extends Controller
 {
 

@@ -6,6 +6,7 @@ use Stalker\Models\Photo;
 use Stalker\Models\PhotoAlbum;
 use Siravel\Services\Midia\MidiaService;
 use Siravel\Http\Controllers\Features\Controller;
+use Illuminate\Http\Request;
 
 class MidiaController extends Controller
 {

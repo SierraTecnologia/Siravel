@@ -3,6 +3,7 @@
 namespace Siravel\Http\Controllers\Features\Blog;
 
 use App\Models\Blog\Article;
+use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
