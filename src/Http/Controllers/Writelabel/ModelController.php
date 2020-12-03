@@ -3,7 +3,7 @@
 use Siravel\Http\Controllers\Features\Girl\GirlController;
 use App\Models\Model;
 use App\Http\Requests\Admin\ModelRequest;
-use Datatables;
+use DataTables as Datatables;
 use Illuminate\Http\Request;
 
 
@@ -114,13 +114,13 @@ class ModelController extends Controller
         $models = Model::select(array('models.id', 'models.name', 'models.email', 'models.confirmed', 'models.created_at'));
 
         return Datatables::of($models)
-            ->edit_column('confirmed', '@if ($confirmed=="1") <span class="glyphicon glyphicon-ok"></span> @else <span class=\'glyphicon glyphicon-remove\'></span> @endif')
-            ->add_column(
+            ->editColumn('confirmed', '@if ($confirmed=="1") <span class="glyphicon glyphicon-ok"></span> @else <span class=\'glyphicon glyphicon-remove\'></span> @endif')
+            ->addColumn(
                 'actions', '@if ($id!="1")<a href="{{{ url(\'girl/model/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                     <a href="{{{ url(\'girl/model/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
                 @endif'
             )
-            ->remove_column('id')
+            ->removeColumn('id')
             ->make();
     }
 

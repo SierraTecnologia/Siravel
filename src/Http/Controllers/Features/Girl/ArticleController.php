@@ -9,7 +9,7 @@ use Translation\Models\Language;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use DataTables as Datatables;
 use Illuminate\Http\Request;
 
 class ArticleController extends GirlController
@@ -37,8 +37,8 @@ class ArticleController extends GirlController
      */
     public function create(Request $request)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $articlecategories = Category::lists('title', 'id')->toArray();
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        $articlecategories = Category::all()->pluck('title', 'id')->toArray();
         return view('features.girl.article.create_edit', compact('languages', 'articlecategories'));
     }
 
@@ -75,8 +75,8 @@ class ArticleController extends GirlController
      */
     public function edit(Article $article)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $articlecategories = Category::lists('title', 'id')->toArray();
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        $articlecategories = Category::all()->pluck('title', 'id')->toArray();
         return view('features.girl.article.create_edit', compact('article', 'languages', 'articlecategories'));
     }
 
@@ -150,12 +150,12 @@ class ArticleController extends GirlController
                 }
             );
         return Datatables::of($articles)
-            ->add_column(
+            ->addColumn(
                 'actions', '<a href="{{{ url(\'girl/article/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("admin/modal.edit") }}</a>
                     <a href="{{{ url(\'admin/article/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
                     <input type="hidden" name="row" value="{{$id}}" id="row">'
             )
-            ->remove_column('id')
+            ->removeColumn('id')
 
             ->make();
     }

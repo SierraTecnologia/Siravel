@@ -8,7 +8,7 @@ use App\Models\Language;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\ProductionRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use DataTables as Datatables;
 use Illuminate\Http\Request;
 
 class ProductionController extends Controller
@@ -37,8 +37,8 @@ class ProductionController extends Controller
      */
     public function create(Request $request)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $productioncategories = Production::lists('title', 'id')->toArray();
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        $productioncategories = Production::all()->pluck('title', 'id')->toArray();
         return view('features.admin.production.create_edit', compact('languages', 'productioncategories'));
     }
 

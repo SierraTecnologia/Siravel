@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Siravel\Helpers\Thumbnail;
 use Illuminate\Support\Facades\DB;
-use Datatables;
+use DataTables as Datatables;
 
 class PhotoController extends GirlController
 {
@@ -32,7 +32,7 @@ class PhotoController extends GirlController
     public function index(Request $request)
     {
         // Show the page
-        return view('features.girl.photo.index');
+        return view('stalker::admin.photo.index');
     }
 
     /**
@@ -42,10 +42,10 @@ class PhotoController extends GirlController
      */
     public function create(Request $request)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        $photoalbums = PhotoAlbum::lists('name', 'id')->toArray();
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        $photoalbums = PhotoAlbum::all()->pluck('name', 'id')->toArray();
         // Show the page
-        return view('features.girl.photo.create_edit', compact('languages', 'photoalbums'));
+        return view('stalker::admin.photo.create_edit', compact('languages', 'photoalbums'));
     }
 
     /**
@@ -85,9 +85,9 @@ class PhotoController extends GirlController
     public function edit(int $id)
     {
         $photo = $this->findOrFail($id);
-        $languages = Language::lists('name', 'id')->toArray();
-        $photoalbums = PhotoAlbum::lists('name', 'id')->toArray();
-        return view('features.girl.photo.create_edit', compact('photo', 'languages', 'photoalbums'));
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        $photoalbums = PhotoAlbum::all()->pluck('name', 'id')->toArray();
+        return view('stalker::admin.photo.create_edit', compact('photo', 'languages', 'photoalbums'));
     }
 
     /**
@@ -126,7 +126,7 @@ class PhotoController extends GirlController
 
     public function delete(Photo $photo)
     {
-        return view('features.girl.photo.delete', compact('photo'));
+        return view('stalker::admin.photo.delete', compact('photo'));
     }
 
     /**
@@ -164,12 +164,12 @@ class PhotoController extends GirlController
                 }
             );
         return Datatables::of($photos)
-            ->add_column(
+            ->addColumn(
                 'actions', '<a href="{{{ url(\'girl/photo/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                 <a href="{{{ url(\'girl/photo/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
                 <input type="hidden" name="row" value="{{$id}}" id="row">'
             )
-            ->remove_column('id')
+            ->removeColumn('id')
             ->make();
     }
 }

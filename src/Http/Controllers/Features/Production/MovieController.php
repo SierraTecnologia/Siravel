@@ -9,7 +9,7 @@ use App\Language;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\Admin\MovieRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use DataTables as Datatables;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
