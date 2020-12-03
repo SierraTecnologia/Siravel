@@ -57,7 +57,7 @@ class WidgetsController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('admin.features.widgets.create');
     }

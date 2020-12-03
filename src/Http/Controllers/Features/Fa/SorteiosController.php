@@ -35,7 +35,7 @@ class SorteiosController extends FaController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $languages = Language::lists('name', 'id')->toArray();
         return view('features.girl.articlecategory.create_edit', compact('languages'));

@@ -35,7 +35,7 @@ class LanguageController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
           // Show the page
         return view('features.girl/language/create_edit');

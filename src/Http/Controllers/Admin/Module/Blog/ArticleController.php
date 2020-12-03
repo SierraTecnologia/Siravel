@@ -34,7 +34,7 @@ class ArticleController extends AdminController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $languages = Language::lists('name', 'id')->toArray();
         $articlecategories = Category::lists('title', 'id')->toArray();

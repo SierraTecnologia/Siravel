@@ -32,7 +32,7 @@ class PhotoAlbumController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $languages = Language::lists('name', 'id')->toArray();
         return view('features.girl.photoalbum.create_edit', compact('languages'));

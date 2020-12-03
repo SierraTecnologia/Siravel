@@ -73,7 +73,7 @@ class FilesController extends BaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('admin.features.midia.files.create');
     }

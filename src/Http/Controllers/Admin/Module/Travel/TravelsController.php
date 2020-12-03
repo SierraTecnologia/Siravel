@@ -28,7 +28,7 @@ class TravelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('admin.travels.create');
     }

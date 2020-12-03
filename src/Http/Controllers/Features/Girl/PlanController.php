@@ -32,7 +32,7 @@ class PlanController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('features.girl.plan.create_edit');
     }

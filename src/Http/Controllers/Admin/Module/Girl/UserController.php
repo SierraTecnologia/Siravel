@@ -31,7 +31,7 @@ class UserController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('features.girl.user.create_edit');
     }

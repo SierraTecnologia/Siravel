@@ -35,7 +35,7 @@ class ProductionController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $languages = Language::lists('name', 'id')->toArray();
         $productioncategories = Production::lists('title', 'id')->toArray();

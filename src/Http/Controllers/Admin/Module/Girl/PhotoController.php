@@ -1,4 +1,7 @@
-<?php namespace Siravel\Http\Controllers\Girl;
+<?php
+
+// @todo deletar
+namespace Siravel\Http\Controllers\Girl;
 
 use Siravel\Http\Controllers\AdminController;
 use Stalker\Models\Photo;
@@ -37,7 +40,7 @@ class PhotoController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $languages = Language::lists('name', 'id')->toArray();
         $photoalbums = PhotoAlbum::lists('name', 'id')->toArray();
@@ -79,8 +82,9 @@ class PhotoController extends GirlController
      * @param  int $id
      * @return Response
      */
-    public function edit(Photo $photo)
+    public function edit(int $id)
     {
+        $photo = $this->findOrFail($id);
         $languages = Language::lists('name', 'id')->toArray();
         $photoalbums = PhotoAlbum::lists('name', 'id')->toArray();
         return view('features.girl.photo.create_edit', compact('photo', 'languages', 'photoalbums'));
@@ -92,8 +96,9 @@ class PhotoController extends GirlController
      * @param  int $id
      * @return Response
      */
-    public function update(PhotoRequest $request, Photo $photo)
+    public function update(PhotoRequest $request, int $id)
     {
+        $photo = $this->findOrFail($id);
         $photo->user_id_edited = Auth::id();
         $picture = $photo->filename;
         if ($request->hasFile('image')) {
