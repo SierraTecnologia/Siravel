@@ -6,8 +6,6 @@
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => 'admin', 'prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
-    Route::get('/', 'DashboardController@index');
-    Route::get('/home', ['as' => 'home', 'uses' => 'DashboardController@index']);
 
     Route::get('siravel'.'/hero-images/delete/{entity}/{entity_id}', 'SitecFeatureController@deleteHero');
     /*
