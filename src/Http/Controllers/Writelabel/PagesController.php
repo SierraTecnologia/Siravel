@@ -33,7 +33,7 @@ class PagesController extends Controller
             $vars = ['page' => $page];
         }
 
-        return Templeiro::populateView('writelabel.pages.home', $vars);
+        return Templeiro::populateView('pages.home', $vars);
     }
 
     /**
@@ -49,7 +49,7 @@ class PagesController extends Controller
             abort(404);
         }
 
-        return view('features.writelabel.pages.all')->with('pages', $pages);
+        return view('features.pages.all')->with('pages', $pages);
     }
 
     /**
