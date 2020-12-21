@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use SierraTecnologia\Error\InvalidRequest;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Siravel\Models\Commerce\Refund;
-use Siravel\Repositories\Commerce\OrderItemRepository;
+use Market\Repositories\OrderItemRepository;
 use Siravel\Services\Commerce\CartService;
 use Siravel\Services\Commerce\LogisticService;
 use Siravel\Services\Commerce\TransactionService;

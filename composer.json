@@ -26,6 +26,7 @@
         "laravel/framework": "^7.0 || ^8.0",
         "sierratecnologia/telefonica": "dev-master",
         "sierratecnologia/integrations": "dev-master",
+        "sierratecnologia/porteiro": "dev-master",
         "sierratecnologia/facilitador": "dev-master",
         "sierratecnologia/transmissor": "dev-master",
         "sierratecnologia/stalker": "dev-master",

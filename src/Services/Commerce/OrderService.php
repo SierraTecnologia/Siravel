@@ -6,7 +6,7 @@ use Siravel\Models\Commerce\Refund;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\Config;
 use Siravel\Services\Commerce\TransactionService;
-use Siravel\Repositories\Commerce\OrderRepository;
+use Market\Repositories\OrderRepository;
 
 class OrderService
 {

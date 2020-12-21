@@ -35,6 +35,8 @@ class SiravelProvider extends ServiceProvider
         \Siravel\Providers\SiravelEventProvider::class,
         \Siravel\Providers\SiravelRouteProvider::class,
         \Siravel\Providers\SiravelModuleProvider::class,
+
+        \Porteiro\PorteiroProvider::class,
         \Facilitador\FacilitadorProvider::class,
         \Bancario\BancarioProvider::class,
         \Transmissor\TransmissorProvider::class,

@@ -6,7 +6,7 @@ use Siravel;
 use Illuminate\Http\Request;
 use Siravel\Http\Controllers\SitecController;
 use MediaManager\Repositories\ImageRepository;
-use Siravel\Repositories\Commerce\ProductVariantRepository;
+use Market\Repositories\ProductVariantRepository;
 use Siravel\Http\Requests\Commerce\ProductRequest;
 use Siravel\Services\Commerce\ProductService;
 

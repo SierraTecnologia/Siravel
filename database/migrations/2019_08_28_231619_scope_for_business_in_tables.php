@@ -72,6 +72,12 @@ class ScopeForBusinessInTables extends Migration
                 $table->foreign('business_code')->references('code')->on('businesses');
             });
         }
+        if (Schema::hasTable('products') && ! Schema::hasColumn('products', 'business_code')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->string('business_code');
+                $table->foreign('business_code')->references('code')->on('businesses');
+            });
+        }
         if (Schema::hasTable('settings') && ! Schema::hasColumn('settings', 'business_code')) {
             Schema::table('settings', function (Blueprint $table) {
                 $table->string('business_code');
