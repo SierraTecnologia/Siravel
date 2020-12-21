@@ -55,7 +55,7 @@ class BusinessService
         if ($this->business) {
             if (Schema::hasTable('settings')) {
                 // Get Settings
-                $this->business->datas()->each(
+                $this->business->settings()->each(
                     function ($item) {
                         if (!empty($item->getAppAtribute('config'))) {
                             $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
