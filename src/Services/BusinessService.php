@@ -53,6 +53,7 @@ class BusinessService
     public function loadSettings()
     {
         if ($this->business) {
+            \Website::setNegocio($this->business->code);
             if (Schema::hasTable('settings')) {
                 // Get Settings
                 $this->business->settings()->each(
@@ -64,8 +65,8 @@ class BusinessService
                     }
                 );
 
-                if (!$websiteData = $this->business->datas()->where('code', 'website')->get()->isEmpty()) {
-                    \Website::setData($websiteData);
+                if ($websiteData = $this->business->datas()->where('code', 'website')->first()) {
+                    \Website::setData($websiteData->value);
                 }
 
                 return $this;
