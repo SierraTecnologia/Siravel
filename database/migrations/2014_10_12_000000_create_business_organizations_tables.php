@@ -31,7 +31,7 @@ class CreateBusinessOrganizationsTables extends Migration
                 $table->string('subdominio')->nullable();
 
                 $table->string('type')->nullable();
-                $table->integer('status')->nullable();
+                $table->integer('status')->default(0);
             
                 $table->timestamps();
                 $table->softDeletes();

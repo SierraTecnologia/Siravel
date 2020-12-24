@@ -9,5 +9,5 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 trait SortableTrait
 {
-    use \Support\Models\SortableTrait;
+    use \Muleta\Traits\Models\SortableTrait;
 }
