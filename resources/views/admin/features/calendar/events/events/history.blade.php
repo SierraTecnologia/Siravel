@@ -6,7 +6,7 @@
         <h1 class="page-header">Event History</h1>
     </div>
 
-    @include('admin.features.calendar.events.breadcrumbs', ['location' => [[$event->title => url('admin/events/'.$event->id.'/edit')], 'history']])
+    @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => [[$event->title => url('admin/events/'.$event->id.'/edit')], 'history']])
 
     <div class="row">
         <table class="table table-striped">

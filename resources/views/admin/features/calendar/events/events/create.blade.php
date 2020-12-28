@@ -6,7 +6,7 @@
         <h1 class="page-header">Events</h1>
     </div>
 
-    @include('admin.features.calendar.events.breadcrumbs', ['location' => ['create']])
+    @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => ['create']])
 
     <div class="row">
         {!! Form::open(['route' => 'admin.events.store', 'class' => 'add']) !!}

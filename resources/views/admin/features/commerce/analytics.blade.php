@@ -34,7 +34,7 @@
                     <div class="card-body text-center">No Transactions found.</div>
                 </div>
             @else
-                @include('admin.features.commerce.analytics.transaction-table')
+                @include('siravel::admin.features.commerce.analytics.transaction-table')
             @endif
         </div>
     </div>
@@ -47,7 +47,7 @@
                     <div class="card-body text-center">No Subscriptions found.</div>
                 </div>
             @else
-                @include('admin.features.commerce.analytics.subscription-table')
+                @include('siravel::admin.features.commerce.analytics.subscription-table')
             @endif
         </div>
     </div>

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.writelabel.pages.breadcrumbs', ['location' => [[$page->title => url('admin/'.'pages/'.$page->id.'/edit')], 'history']])
+        @include('siravel::admin.features.writelabel.pages.breadcrumbs', ['location' => [[$page->title => url('admin/'.'pages/'.$page->id.'/edit')], 'history']])
     </div>
 
     <div class="col-md-12 mt-4">

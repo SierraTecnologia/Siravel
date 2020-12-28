@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.writelabel.faqs.breadcrumbs', ['location' => ['create']])
+        @include('siravel::admin.features.writelabel.faqs.breadcrumbs', ['location' => ['create']])
     </div>
 
     <div class="col-md-12">

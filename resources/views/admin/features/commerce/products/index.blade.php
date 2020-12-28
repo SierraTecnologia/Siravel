@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('admin.features.commerce.modals')
+    @include('siravel::admin.features.commerce.modals')
 
     @include('layouts.module-header', [ 'module' => 'products' ])
 

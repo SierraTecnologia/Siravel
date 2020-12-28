@@ -6,7 +6,7 @@
         <h1 class="page-header">{!! trans('features.blog') !!}</h1>
     </div>
 
-    @include('admin.features.blogs.blogs.breadcrumbs', ['location' => ['create']])
+    @include('siravel::admin.features.blogs.blogs.breadcrumbs', ['location' => ['create']])
 
     <div class="row">
         {!! Form::open(['route' => 'admin.blog.store', 'class' => 'add']) !!}

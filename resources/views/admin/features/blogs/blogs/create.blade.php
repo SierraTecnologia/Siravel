@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.blogs.blogs.breadcrumbs', ['location' => ['create']])
+        @include('siravel::admin.features.blogs.blogs.breadcrumbs', ['location' => ['create']])
     </div>
     <div class="col-md-12">
         {!! Form::open(['route' => 'admin.blog.store', 'class' => 'add', 'files' => true]) !!}

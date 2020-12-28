@@ -23,7 +23,7 @@
         <h1 class="page-header">{!! trans('features.blog') !!}</h1>
     </div>
 
-    @include('admin.features.blogs.blogs.breadcrumbs', ['location' => ['edit']])
+    @include('siravel::admin.features.blogs.blogs.breadcrumbs', ['location' => ['edit']])
 
     <div class="row raw-margin-bottom-24">
         <ul class="nav nav-tabs">

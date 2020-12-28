@@ -9,7 +9,7 @@
 
 @section('content')
 
-    @include('admin.features.commerce.modals')
+    @include('siravel::admin.features.commerce.modals')
 
     <div class="col-md-12 mt-4">
         <div class="row">

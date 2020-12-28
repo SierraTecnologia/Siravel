@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6 mt-2">
-                @include('admin.features.blogs.blogs.breadcrumbs', ['location' => ['edit']])
+                @include('siravel::admin.features.blogs.blogs.breadcrumbs', ['location' => ['edit']])
             </div>
             <div class="col-md-6">
                 <div class="btn-toolbar float-right mt-2 mb-4">
@@ -85,7 +85,7 @@
                     </div>
                     {!! FormMaker::setColumns(2)->fromObject($blog->asObject(), config('siravel.forms.blog.publish')) !!}
 
-                    @include('admin.features.blocks', ['item' => $blog->asObject()])
+                    @include('siravel::admin.features.blocks', ['item' => $blog->asObject()])
 
                     <div class="form-group text-right">
                         <a href="{!! url('admin/'.'blog') !!}" class="btn btn-secondary raw-left">Cancel</a>

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.commerce.products.breadcrumbs', ['location' => ['create']])
+        @include('siravel::admin.features.commerce.products.breadcrumbs', ['location' => ['create']])
 
         {!! Form::open(['route' => config('siravel.backend-route-prefix', 'siravel').'.products.store', 'files' => true]) !!}
 

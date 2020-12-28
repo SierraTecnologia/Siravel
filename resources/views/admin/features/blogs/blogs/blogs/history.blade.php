@@ -6,7 +6,7 @@
         <h1 class="page-header">Blog History</h1>
     </div>
 
-    @include('admin.features.writelabel.pages.breadcrumbs', ['location' => [[$blog->title => url('admin/blog/'.$blog->id.'/edit')], 'history']])
+    @include('siravel::admin.features.writelabel.pages.breadcrumbs', ['location' => [[$blog->title => url('admin/blog/'.$blog->id.'/edit')], 'history']])
 
     <div class="row">
         <table class="table table-striped">

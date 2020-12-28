@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.writelabel.pages.breadcrumbs', ['location' => ['create']])
+        @include('siravel::admin.features.writelabel.pages.breadcrumbs', ['location' => ['create']])
     </div>
     <div class="col-md-12 mt-4">
         {!! Form::open(['route' => 'admin.pages.store', 'class' => 'add', 'files' => true]) !!}

@@ -22,7 +22,7 @@
         <h1 class="page-header">Events</h1>
     </div>
 
-    @include('admin.features.calendar.events.breadcrumbs', ['location' => ['edit']])
+    @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => ['edit']])
 
     <div class="row raw-margin-bottom-24">
         <ul class="nav nav-tabs">

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.calendar.events.breadcrumbs', ['location' => ['create']])
+        @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => ['create']])
     </div>
 
     <div class="col-md-12">

@@ -24,25 +24,25 @@
 
 
 @if ((request('tab') == 'details') || isset($tabs['details']))
-    @include('admin.features.commerce.products.tabs.details')
+    @include('siravel::admin.features.commerce.products.tabs.details')
 @endif
 
 @if (request('tab') == 'variants')
-    @include('admin.features.commerce.products.tabs.variants')
+    @include('siravel::admin.features.commerce.products.tabs.variants')
 @endif
 
 @if (request('tab') == 'discount')
-    @include('admin.features.commerce.products.tabs.discount')
+    @include('siravel::admin.features.commerce.products.tabs.discount')
 @endif
 
 @if (request('tab') == 'download')
-    @include('admin.features.commerce.products.tabs.download')
+    @include('siravel::admin.features.commerce.products.tabs.download')
 @endif
 
 @if (request('tab') == 'dimensions')
-    @include('admin.features.commerce.products.tabs.dimensions')
+    @include('siravel::admin.features.commerce.products.tabs.dimensions')
 @endif
 
 @if (request('tab') == 'images')
-    @include('admin.features.commerce.products.tabs.images')
+    @include('siravel::admin.features.commerce.products.tabs.images')
 @endif

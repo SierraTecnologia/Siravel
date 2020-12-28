@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.calendar.events.breadcrumbs', ['location' => [[
+        @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => [[
             $event->title => url('admin/'.'events/'.$event->id.'/edit')], 'history'
         ]])
     </div>

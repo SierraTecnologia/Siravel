@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.writelabel.menus.breadcrumbs', ['location' => ['edit']])
+        @include('siravel::admin.features.writelabel.menus.breadcrumbs', ['location' => ['edit']])
     </div>
 
     <div class="col-md-12">
@@ -28,7 +28,7 @@
     <div class="col-md-12">
         <a class="btn btn-outline-primary float-right" href="{!! url('admin/'.'links/create?m='.$menu->id) !!}">Add Link</a>
         <h5 class="pt-2">Links <small>(Drag and drop to sort)</small></h5>
-        @include('admin.features.writelabel.links.index')
+        @include('siravel::admin.features.writelabel.links.index')
     </div>
 
 @endsection

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.blogs.blogs.breadcrumbs', ['location' => [[$blog->title => url('admin/'.'blog/'.$blog->id.'/edit')], 'history']])
+        @include('siravel::admin.features.blogs.blogs.breadcrumbs', ['location' => [[$blog->title => url('admin/'.'blog/'.$blog->id.'/edit')], 'history']])
 
         <div class="row mt-4">
             <div class="col-md-12">

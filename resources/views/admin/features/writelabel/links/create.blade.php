@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.writelabel.links.breadcrumbs', ['location' => [['Menu' => url('admin/'.'menus/'.request('m').'/edit')], 'links', 'create']])
+        @include('siravel::admin.features.writelabel.links.breadcrumbs', ['location' => [['Menu' => url('admin/'.'menus/'.request('m').'/edit')], 'links', 'create']])
     </div>
 
     <div class="col-md-12">

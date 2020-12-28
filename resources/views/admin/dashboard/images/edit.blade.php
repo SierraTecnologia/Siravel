@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('admin.features.midia.images.breadcrumbs', ['location' => ['edit']])
+        @include('siravel::admin.features.midia.images.breadcrumbs', ['location' => ['edit']])
     </div>
 
     <div class="col-md-12 mt-2">

@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6 mt-2">
-                @include('admin.features.writelabel.pages.breadcrumbs', ['location' => ['edit']])
+                @include('siravel::admin.features.writelabel.pages.breadcrumbs', ['location' => ['edit']])
             </div>
             <div class="col-md-6">
                 <div class="btn-toolbar float-right mt-2">
@@ -86,7 +86,7 @@
 
                     {!! FormMaker::setColumns(2)->fromObject($page->asObject(), config('siravel.forms.page.publish')) !!}
 
-                    @include('admin.features.blocks', ['item' => $page->asObject()])
+                    @include('siravel::admin.features.blocks', ['item' => $page->asObject()])
 
                     <div class="form-group text-right">
                         <a href="{!! url('admin/'.'pages') !!}" class="btn btn-secondary raw-left">Cancel</a>

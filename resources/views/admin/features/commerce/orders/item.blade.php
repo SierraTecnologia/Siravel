@@ -24,7 +24,7 @@
 
     <div class="col-md-12 mt-4">
 
-        @include('admin.features.commerce.orders.breadcrumbs', ['location' => [['Order' => url(config('siravel.backend-route-prefix', 'siravel').'/orders/'.$orderItem->order_id.'/edit')], 'item']])
+        @include('siravel::admin.features.commerce.orders.breadcrumbs', ['location' => [['Order' => url(config('siravel.backend-route-prefix', 'siravel').'/orders/'.$orderItem->order_id.'/edit')], 'item']])
 
         <div class="row">
             <div class="col-md-12 raw-margin-bottom-24">

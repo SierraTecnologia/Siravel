@@ -7,7 +7,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6 mt-2">
-                @include('admin.features.calendar.events.breadcrumbs', ['location' => ['edit']])
+                @include('siravel::admin.features.calendar.events.breadcrumbs', ['location' => ['edit']])
             </div>
             <div class="col-md-6">
                 <div class="btn-toolbar float-right mt-2 mb-4">
