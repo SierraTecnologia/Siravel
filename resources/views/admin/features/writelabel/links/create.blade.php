@@ -36,5 +36,8 @@
 @section('javascript')
 
     @parent
+    <?php /** @todo
     <script src="{!! SiravelService::asset('js/links-module.js', 'application/javascript') !!}"></script>
+     */
+    ?>
 @stop

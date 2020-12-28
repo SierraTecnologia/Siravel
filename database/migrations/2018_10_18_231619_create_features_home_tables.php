@@ -21,26 +21,24 @@ class CreateFeaturesHomeTables extends Migration
                 $table->string('subject');
                 $table->text('text')->nullable();
                 $table->string('business_code');
-                $table->foreign('business_code')->references('code')->on('businesses');
+                // $table->foreign('business_code')->references('code')->on('businesses');
                 $table->timestamps();
                 $table->softDeletes();
             });
         }
-
-        // @todo facilitador
-        // if (!Schema::hasTable('menus')) {
-        //     Schema::create('menus', function (Blueprint $table) {
-        //         $table->increments('id');
-        //         $table->string('name');
-        //         $table->string('slug');
-        //         $table->string('value');
-        //         $table->integer('user_id')->unsigned()->nullable();
-        //         $table->string('business_code');
-        //         $table->foreign('business_code')->references('code')->on('businesses');
-        //         $table->nullableTimestamps();
-        //         $table->softDeletes();
-        //     });
-        // }
+        if (!Schema::hasTable('menus')) {
+            Schema::create('menus', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('slug');
+                $table->string('value');
+                $table->integer('user_id')->unsigned()->nullable();
+                $table->string('business_code');
+                // $table->foreign('business_code')->references('code')->on('businesses');
+                $table->nullableTimestamps();
+                $table->softDeletes();
+            });
+        }
         if (!Schema::hasTable('links')) {
             Schema::create('links', function (Blueprint $table) {
                 $table->increments('id');
@@ -50,7 +48,7 @@ class CreateFeaturesHomeTables extends Migration
                 $table->integer('menu_id');
                 $table->string('external_url')->nullable();
                 $table->string('business_code');
-                $table->foreign('business_code')->references('code')->on('businesses');
+                // $table->foreign('business_code')->references('code')->on('businesses');
                 $table->nullableTimestamps();
                 $table->softDeletes();
             });
@@ -63,7 +61,7 @@ class CreateFeaturesHomeTables extends Migration
                 $table->boolean('is_published')->default(0);
                 $table->dateTime('published_at')->nullable();
                 $table->string('business_code');
-                $table->foreign('business_code')->references('code')->on('businesses');
+                // $table->foreign('business_code')->references('code')->on('businesses');
                 $table->nullableTimestamps();
                 $table->softDeletes();
             });
@@ -91,9 +89,8 @@ class CreateFeaturesHomeTables extends Migration
 	public function down()
 	{
         Schema::dropIfExists('promotions');
-        Schema::dropIfExists('links');
-        Schema::dropIfExists('faqs');
-		Schema::dropIfExists('contacts');
+        Schema::drop('contacts');
+		Schema::drop('identity_girls');
 	}
 
 }

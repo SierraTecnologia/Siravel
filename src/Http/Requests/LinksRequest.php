@@ -4,10 +4,10 @@ namespace Siravel\Http\Requests;
 
 use Auth;
 use Gate;
-use Siravel\Models\Negocios\Page;
+use Siravel\Models\Negocios\Link;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PagesRequest extends FormRequest
+class LinksRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -16,9 +16,10 @@ class PagesRequest extends FormRequest
      */
     public function authorize()
     {
-        if (\Illuminate\Support\Facades\Config::get('app.env') !== 'testing') {
-            return Gate::allows('siravel', Auth::user());
-        }
+        // @todo
+        // if (config('app.env') !== 'testing') {
+        //     return Gate::allows('siravel', Auth::user());
+        // }
 
         return true;
     }
@@ -30,6 +31,6 @@ class PagesRequest extends FormRequest
      */
     public function rules()
     {
-        return app(Page::class)->rules;
+        return app(Link::class)->rules;
     }
 }

@@ -30,6 +30,6 @@ class MenuRequest extends FormRequest
      */
     public function rules()
     {
-        return Menu::$rules;
+        return app(Menu::class)->rules;
     }
 }
