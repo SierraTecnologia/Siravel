@@ -30,6 +30,6 @@ class EventRequest extends FormRequest
      */
     public function rules()
     {
-        return Event::$rules;
+        return app(Event::class)->rules;
     }
 }

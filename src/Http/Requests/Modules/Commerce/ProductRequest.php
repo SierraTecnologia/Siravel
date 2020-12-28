@@ -13,6 +13,6 @@ class ProductRequest extends CommerceRequest
      */
     public function rules()
     {
-        return Product::$rules;
+        return app(Product::class)->rules;
     }
 }

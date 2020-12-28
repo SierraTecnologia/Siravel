@@ -29,6 +29,6 @@ class FeatureCreateRequest extends FormRequest
      */
     public function rules()
     {
-        return Feature::$rules;
+        return app(Feature::class)->rules;
     }
 }
