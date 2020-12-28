@@ -44,7 +44,7 @@ class FilesController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.midia.files.index')
+        return view('siravel::admin.features.midia.files.index')
             ->with('files', $result)
             ->with('pagination', $result->render());
     }
@@ -62,7 +62,7 @@ class FilesController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.midia.files.index')
+        return view('siravel::admin.features.midia.files.index')
             ->with('files', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -75,7 +75,7 @@ class FilesController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.midia.files.create');
+        return view('siravel::admin.features.midia.files.create');
     }
 
     /**
@@ -165,7 +165,7 @@ class FilesController extends BaseController
             return redirect(route('admin.files.index'));
         }
 
-        return view('admin.features.midia.files.edit')->with('files', $files);
+        return view('siravel::admin.features.midia.files.edit')->with('files', $files);
     }
 
     /**

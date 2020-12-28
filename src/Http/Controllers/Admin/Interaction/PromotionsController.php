@@ -28,7 +28,7 @@ class PromotionsController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.promotions.index')
+        return view('siravel::admin.features.writelabel.promotions.index')
             ->with('promotions', $result)
             ->with('pagination', $result->render());
     }
@@ -46,7 +46,7 @@ class PromotionsController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.writelabel.promotions.index')
+        return view('siravel::admin.features.writelabel.promotions.index')
             ->with('promotion', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -59,7 +59,7 @@ class PromotionsController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.writelabel.promotions.create');
+        return view('siravel::admin.features.writelabel.promotions.create');
     }
 
     /**
@@ -101,7 +101,7 @@ class PromotionsController extends BaseController
             return redirect(route('admin.promotions.index'));
         }
 
-        return view('admin.features.writelabel.promotions.edit')->with('promotion', $promotion);
+        return view('siravel::admin.features.writelabel.promotions.edit')->with('promotion', $promotion);
     }
 
     /**

@@ -49,7 +49,9 @@ class PagesController extends Controller
             abort(404);
         }
 
-        return view('features.pages.all')->with('pages', $pages);
+        return Templeiro::populateView('pages.all', [
+            'pages' => $pages
+        ]);
     }
 
     /**
@@ -69,9 +71,11 @@ class PagesController extends Controller
 
         $template = $page->template;
         if (empty($page->template)) {
-            $template = 'home';
+            $template = 'show';
         }
 
-        return view('features.writelabel.pages.'.$template)->with('page', $page);
+        return Templeiro::populateView('pages.'.$template, [
+            'page' => $page
+        ]);
     }
 }

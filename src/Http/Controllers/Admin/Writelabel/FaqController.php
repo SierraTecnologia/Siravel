@@ -29,7 +29,7 @@ class FaqController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.faqs.index')
+        return view('siravel::admin.features.writelabel.faqs.index')
             ->with('faqs', $result)
             ->with('pagination', $result->render());
     }
@@ -47,7 +47,7 @@ class FaqController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.writelabel.faqs.index')
+        return view('siravel::admin.features.writelabel.faqs.index')
             ->with('faqs', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -60,7 +60,7 @@ class FaqController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.writelabel.faqs.create');
+        return view('siravel::admin.features.writelabel.faqs.create');
     }
 
     /**
@@ -105,7 +105,7 @@ class FaqController extends BaseController
             return redirect(route('admin.faqs.index'));
         }
 
-        return view('admin.features.writelabel.faqs.edit')->with('faq', $faq);
+        return view('siravel::admin.features.writelabel.faqs.edit')->with('faq', $faq);
     }
 
     /**

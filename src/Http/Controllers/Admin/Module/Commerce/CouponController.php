@@ -25,7 +25,7 @@ class CouponController extends SitecController
         // $this->service->collectNewCoupons();
         $coupons = $this->service->paginated();
 
-        return view('admin.features.commerce.coupons.index')->with('coupons', $coupons);
+        return view('siravel::admin.features.commerce.coupons.index')->with('coupons', $coupons);
     }
 
     /**
@@ -37,7 +37,7 @@ class CouponController extends SitecController
     {
         $coupons = $this->service->search($request->term);
 
-        return view('admin.features.commerce.coupons.index')
+        return view('siravel::admin.features.commerce.coupons.index')
             ->with('term', $request->term)
             ->with('coupons', $coupons);
     }
@@ -49,7 +49,7 @@ class CouponController extends SitecController
      */
     public function create(Request $request)
     {
-        return view('admin.features.commerce.coupons.create');
+        return view('siravel::admin.features.commerce.coupons.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class CouponController extends SitecController
     {
         $coupon = $this->service->find($id);
 
-        return view('admin.features.commerce.coupons.show')
+        return view('siravel::admin.features.commerce.coupons.show')
             ->with('coupon', $coupon);
     }
 

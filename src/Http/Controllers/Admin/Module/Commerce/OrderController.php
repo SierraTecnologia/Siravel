@@ -23,7 +23,7 @@ class OrderController extends SitecController
     {
         $orders = $this->service->paginated();
 
-        return view('admin.features.commerce.orders.index')
+        return view('siravel::admin.features.commerce.orders.index')
             ->with('pagination', $orders->render())
             ->with('orders', $orders);
     }
@@ -37,7 +37,7 @@ class OrderController extends SitecController
     {
         $orders = $this->service->search($request->term);
 
-        return view('admin.features.commerce.orders.index')
+        return view('siravel::admin.features.commerce.orders.index')
             ->with('orders', $orders[0]->get())
             ->with('pagination', $orders[2])
             ->with('term', $orders[1]);
@@ -54,7 +54,7 @@ class OrderController extends SitecController
     {
         $order = $this->service->find($id);
 
-        return view('admin.features.commerce.orders.edit')->with('order', $order);
+        return view('siravel::admin.features.commerce.orders.edit')->with('order', $order);
     }
 
     /**
@@ -68,7 +68,7 @@ class OrderController extends SitecController
     {
         $orderItem = app(OrderItemService::class)->find($id);
 
-        return view('admin.features.commerce.orders.item')->with('orderItem', $orderItem);
+        return view('siravel::admin.features.commerce.orders.item')->with('orderItem', $orderItem);
     }
 
     /**

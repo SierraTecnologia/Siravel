@@ -37,7 +37,7 @@ class ImagesController extends BaseController
 
         $result = $this->repository->paginated();
 
-        return view('admin.features.midia.images.index')
+        return view('siravel::admin.features.midia.images.index')
             ->with('images', $result)
             ->with('pagination', $result->render());
     }
@@ -55,7 +55,7 @@ class ImagesController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.midia.images.index')
+        return view('siravel::admin.features.midia.images.index')
             ->with('images', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -68,7 +68,7 @@ class ImagesController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.midia.images.create');
+        return view('siravel::admin.features.midia.images.create');
     }
 
     /**
@@ -156,7 +156,7 @@ class ImagesController extends BaseController
             return redirect(route('admin.media-manager.images.index'));
         }
 
-        return view('admin.features.midia.images.edit')->with('images', $images);
+        return view('siravel::admin.features.midia.images.edit')->with('images', $images);
     }
 
     /**

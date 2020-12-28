@@ -29,7 +29,7 @@ class EventController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.calendar.events.index')
+        return view('siravel::admin.features.calendar.events.index')
             ->with('events', $result)
             ->with('pagination', $result->render());
     }
@@ -47,7 +47,7 @@ class EventController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.calendar.events.index')
+        return view('siravel::admin.features.calendar.events.index')
             ->with('events', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -60,7 +60,7 @@ class EventController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.calendar.events.create');
+        return view('siravel::admin.features.calendar.events.create');
     }
 
     /**
@@ -105,7 +105,7 @@ class EventController extends BaseController
             return redirect(route('admin.events.index'));
         }
 
-        return view('admin.features.calendar.events.edit')->with('event', $event);
+        return view('siravel::admin.features.calendar.events.edit')->with('event', $event);
     }
 
     /**
@@ -171,7 +171,7 @@ class EventController extends BaseController
     {
         $event = $this->repository->find($id);
 
-        return view('admin.features.calendar.events.history')
+        return view('siravel::admin.features.calendar.events.history')
             ->with('event', $event);
     }
 }

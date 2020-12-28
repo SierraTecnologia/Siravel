@@ -31,7 +31,7 @@ class ProductController extends SitecController
     {
         $products = $this->service->paginated();
 
-        return view('admin.features.commerce.products.index')
+        return view('siravel::admin.features.commerce.products.index')
             ->with('pagination', $products->render())
             ->with('products', $products);
     }
@@ -45,7 +45,7 @@ class ProductController extends SitecController
     {
         $products = $this->service->search($request->term);
 
-        return view('admin.features.commerce.products.index')
+        return view('siravel::admin.features.commerce.products.index')
             ->with('term', $request->term)
             ->with('pagination', $products->render())
             ->with('products', $products);
@@ -58,7 +58,7 @@ class ProductController extends SitecController
      */
     public function create(Request $request)
     {
-        return view('admin.features.commerce.products.create');
+        return view('siravel::admin.features.commerce.products.create');
     }
 
     /**
@@ -105,7 +105,7 @@ class ProductController extends SitecController
             'tabs' => $tabs,
         ];
 
-        return view('admin.features.commerce.products.edit', $data);
+        return view('siravel::admin.features.commerce.products.edit', $data);
     }
 
     /**

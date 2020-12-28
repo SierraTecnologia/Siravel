@@ -15,9 +15,9 @@ class MenuFilter extends MenuFilterBase
     public function transform($item)
     {
         // dd(app(\Siravel\Services\BusinessService::class));
-        if (!$this->verifyFeature($item)) {
-            return false;
-        }
+        // if (!$this->verifyFeature($item)) {
+        //     return false;
+        // }
         return parent::transform($item); // $item; //
     }
 

@@ -24,7 +24,7 @@ class PlanController extends Controller
         $this->service->collectNewPlans();
         $plans = $this->service->paginated();
 
-        return view('admin.features.commerce.plans.index')->with('plans', $plans);
+        return view('siravel::admin.features.commerce.plans.index')->with('plans', $plans);
     }
 
     /**
@@ -36,7 +36,7 @@ class PlanController extends Controller
     {
         $plans = $this->service->search($request->term);
 
-        return view('admin.features.commerce.plans.index')
+        return view('siravel::admin.features.commerce.plans.index')
             ->with('term', $request->term)
             ->with('plans', $plans);
     }
@@ -48,7 +48,7 @@ class PlanController extends Controller
      */
     public function create(Request $request)
     {
-        return view('admin.features.commerce.plans.create');
+        return view('siravel::admin.features.commerce.plans.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class PlanController extends Controller
         $plan = $this->service->find($id);
         $customers = $this->service->getSubscribers($plan);
 
-        return view('admin.features.commerce.plans.edit')
+        return view('siravel::admin.features.commerce.plans.edit')
             ->with('customers', $customers)
             ->with('plan', $plan);
     }

@@ -28,7 +28,7 @@ class WidgetsController extends Controller
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.widgets.index')
+        return view('siravel::admin.features.widgets.index')
             ->with('widgets', $result)
             ->with('pagination', $result->render());
     }
@@ -46,7 +46,7 @@ class WidgetsController extends Controller
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.widgets.index')
+        return view('siravel::admin.features.widgets.index')
             ->with('widgets', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -59,7 +59,7 @@ class WidgetsController extends Controller
      */
     public function create(Request $request)
     {
-        return view('admin.features.widgets.create');
+        return view('siravel::admin.features.widgets.create');
     }
 
     /**
@@ -101,7 +101,7 @@ class WidgetsController extends Controller
             return redirect(route('admin.widgets.index'));
         }
 
-        return view('admin.features.widgets.edit')->with('widget', $widget);
+        return view('siravel::admin.features.widgets.edit')->with('widget', $widget);
     }
 
     /**

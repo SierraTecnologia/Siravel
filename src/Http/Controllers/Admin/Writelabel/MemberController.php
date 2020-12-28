@@ -30,7 +30,7 @@ class MemberController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.members.index')
+        return view('siravel::admin.features.writelabel.members.index')
             ->with('members', $result)
             ->with('pagination', $result->render());
     }

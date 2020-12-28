@@ -34,7 +34,7 @@ class MenuController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.menus.index')
+        return view('siravel::admin.features.writelabel.menus.index')
             ->with('menus', $result)
             ->with('pagination', $result->render());
     }
@@ -52,7 +52,7 @@ class MenuController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.writelabel.menus.index')
+        return view('siravel::admin.features.writelabel.menus.index')
             ->with('menus', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -65,7 +65,7 @@ class MenuController extends BaseController
      */
     public function create(Request $request)
     {
-        return view('admin.features.writelabel.menus.create');
+        return view('siravel::admin.features.writelabel.menus.create');
     }
 
     /**
@@ -116,7 +116,7 @@ class MenuController extends BaseController
 
         $links = $this->linkRepository->getLinksByMenu($menu->id);
 
-        return view('admin.features.writelabel.menus.edit')->with('menu', $menu)->with('links', $links);
+        return view('siravel::admin.features.writelabel.menus.edit')->with('menu', $menu)->with('links', $links);
     }
 
     /**

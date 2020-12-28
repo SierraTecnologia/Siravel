@@ -66,7 +66,9 @@ class PageRepository extends BaseRepository
     {
         $page = null;
 
-        $page = $this->model->where('url', $url)->where('is_published', 1)->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))->first();
+        $page = $this->model->where('url', $url)->where('is_published', 1)
+            //->where('published_at', '<=', Carbon::now(\Illuminate\Support\Facades\Config::get('app.timezone'))->format('Y-m-d H:i:s'))
+            ->first();
 
         if ($page && app()->getLocale() !== \Illuminate\Support\Facades\Config::get('siravel.default-language')) {
             $page = $this->translationRepo->findByEntityId($page->id, 'Siravel\Models\Negocios\Page');
