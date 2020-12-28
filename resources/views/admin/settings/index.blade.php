@@ -17,12 +17,12 @@
 
         <div class="box card box-primary card-primary">
             <div class="box-body card-body">
-                    @include('admin.settings.table')
+                    @include('siravel::admin.settings.table')
             </div>
         </div>
         <div class="box card box-primary card-primary">
             <div class="box-body card-body">
-                    @include('admin.settings.table-others')
+                    @include('siravel::admin.settings.table-others')
             </div>
         </div>
     </div>

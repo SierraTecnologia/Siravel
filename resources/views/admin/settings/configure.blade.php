@@ -15,7 +15,7 @@
 
                     <form method="post" action="{{ route('rica.facilitador.facilitador.settings.store', ['codeSetting' => $codeSetting]) }}">
                         {!! csrf_field() !!}
-                        @include('admin.settings.fields')
+                        @include('siravel::admin.settings.fields')
                     </form>
 
                 </div>

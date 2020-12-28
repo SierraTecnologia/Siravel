@@ -113,10 +113,11 @@ return [
     'default-language' => 'pt-BR',
 
     'languages' => [
-        'en' => 'english',
+        'pt' => 'portuguese',
+        // 'en' => 'english',
         'en-US' => 'english',
         'pt-BR' => 'portuguese',
-        'fr' => 'french',
+        // 'fr' => 'french',
     ],
 
 

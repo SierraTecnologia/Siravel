@@ -31,6 +31,5 @@ class PagesRequest extends FormRequest
     public function rules()
     {
         return app(Page::class)->rules;
-        return app(Page::class)->rules;
     }
 }
