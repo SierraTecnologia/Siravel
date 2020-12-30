@@ -66,7 +66,7 @@
                     {!! FormMaker::setColumns(2)->fromObject($event->asObject(), config('siravel.forms.event.publish')) !!}
 
                     <div class="form-group text-right">
-                        <a href="{!! url('admin/'.'events') !!}" class="btn btn-secondary float-left">Cancel</a>
+                        <a href="{!! url('admin/'.'events') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                     </div>
 

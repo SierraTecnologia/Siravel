@@ -40,7 +40,7 @@
                     {!! FormMaker::setColumns(1)->fromObject($promotion->asObject(), \Illuminate\Support\Facades\Config::get('siravel.forms.promotion.content')) !!}
 
                     <div class="form-group text-right">
-                        <a href="{!! url('admin/'.'promotions') !!}" class="btn btn-secondary float-left">Cancel</a>
+                        <a href="{!! url('admin/'.'promotions') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                     </div>
 

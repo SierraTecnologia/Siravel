@@ -32,7 +32,7 @@
         </div>
 
         <div>
-            <a href="{{ URL::previous() }}">Cancel</a>
+            <a href="{{ URL::previous() }}">{{ __('pedreiro::generic.cancel') }}</a>
             <button type="submit">Save</button>
         </div>
     </form>

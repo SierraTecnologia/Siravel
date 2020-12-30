@@ -14,7 +14,7 @@
             {!! FormMaker::fromTable('widgets', config('siravel.forms.widget')) !!}
 
             <div class="form-group text-right">
-                <a href="{!! siravel()->url('widgets') !!}" class="btn btn-secondary raw-left">Cancel</a>
+                <a href="{!! siravel()->url('widgets') !!}" class="btn btn-secondary raw-left">{{ __('pedreiro::generic.cancel') }}</a>
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             </div>
 

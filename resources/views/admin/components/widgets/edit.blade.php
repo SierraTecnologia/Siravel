@@ -50,7 +50,7 @@
                     @endif
 
                     <div class="form-group text-right">
-                        <a href="{!! siravel()->url('widgets') !!}" class="btn btn-secondary float-left">Cancel</a>
+                        <a href="{!! siravel()->url('widgets') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                     </div>
 

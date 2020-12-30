@@ -14,7 +14,7 @@
             {!! FormMaker::fromTable('faqs', config('siravel.forms.faqs')) !!}
 
             <div class="form-group text-right">
-                <a href="{!! url('admin/'.'faqs') !!}" class="btn btn-secondary float-left">Cancel</a>
+                <a href="{!! url('admin/'.'faqs') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             </div>
 

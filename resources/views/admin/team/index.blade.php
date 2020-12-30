@@ -9,7 +9,7 @@
                 <input class="form-control" name="search" placeholder="Search">
             </form>
         </div>
-        <a href="{!! route('admin.teams.create') !!}">Add New</a>
+        <a href="{!! route('admin.teams.create') !!}">{{ __('pedreiro::media.add_new_folder') }}</a>
         <h1>Teams</h1>
     </div>
 

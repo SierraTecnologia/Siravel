@@ -17,7 +17,7 @@
             {!! FormMaker::fromTable('files', config('siravel.forms.images')) !!}
 
             <div class="form-group text-right">
-                <a href="{!! url('admin/'.'images') !!}" class="btn btn-secondary float-left">Cancel</a>
+                <a href="{!! url('admin/'.'images') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                 {!! Form::submit('Save', ['class' => 'btn btn-primary', 'id' => 'saveImagesBtn']) !!}
             </div>
 

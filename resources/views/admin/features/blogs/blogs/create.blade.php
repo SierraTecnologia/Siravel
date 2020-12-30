@@ -16,7 +16,7 @@
             {!! FormMaker::setColumns(2)->fromTable('blogs', config('siravel.forms.blog.publish')) !!}
 
             <div class="form-group text-right">
-                <a href="{!! url('admin/'.'blog') !!}" class="btn btn-secondary float-left">Cancel</a>
+                <a href="{!! url('admin/'.'blog') !!}" class="btn btn-secondary float-left">{{ __('pedreiro::generic.cancel') }}</a>
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
             </div>
 

@@ -43,7 +43,7 @@
     <div class="col-md-12">
         <nav class="navbar px-0 navbar-light justify-content-between">
             <div class="navbar-nav navbar-expand-md mr-auto justify-content-between">
-                <a class="nav-item btn btn-primary mr-1 mt-2" href="{!! route('admin.images.create') !!}">Add New</a>
+                <a class="nav-item btn btn-primary mr-1 mt-2" href="{!! route('admin.images.create') !!}">{{ __('pedreiro::media.add_new_folder') }}</a>
                 <button class="nav-item btn btn-danger bulk-image-delete mt-2"><span class="fa fa-trash"></span> Bulk Delete</button>
             </div>
             {!! Form::open(['url' => url('admin/'.'images/search'), 'class' => 'form-inline mt-2']) !!}

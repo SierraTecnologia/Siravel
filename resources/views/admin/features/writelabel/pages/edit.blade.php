@@ -89,7 +89,7 @@
                     @include('siravel::admin.features.blocks', ['item' => $page->asObject()])
 
                     <div class="form-group text-right">
-                        <a href="{!! url('admin/'.'pages') !!}" class="btn btn-secondary raw-left">Cancel</a>
+                        <a href="{!! url('admin/'.'pages') !!}" class="btn btn-secondary raw-left">{{ __('pedreiro::generic.cancel') }}</a>
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                     </div>
 

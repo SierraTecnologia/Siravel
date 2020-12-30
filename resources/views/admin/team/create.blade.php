@@ -7,7 +7,7 @@
 
         @form_maker_table("teams", ['name' => 'string'])
 
-        <a href="{{ URL::previous() }}">Cancel</a>
+        <a href="{{ URL::previous() }}">{{ __('pedreiro::generic.cancel') }}</a>
         <button type="submit">Create</button>
 
     </form>
