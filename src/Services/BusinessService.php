@@ -163,6 +163,8 @@ class BusinessService
     {
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
         if ($this->isToIgnore() && $domainSlug !== 'localhost') {
+
+            $this->log->addLogger('[Negocio] IsToIgnore, Slug: '. $domainSlug);
             return false;
         }
 
