@@ -162,6 +162,7 @@ class BusinessService
     private function detectedBusiness()
     {
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
+        \Log::warning($domainSlug);
         if ($this->isToIgnore() && $domainSlug !== 'localhost') {
             return false;
         }
