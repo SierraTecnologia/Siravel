@@ -9,7 +9,16 @@ return [
      * Business Ativo
      */
     // 'business' => Data\Negocios\Clients\CarolNovaes::class,
-    'business' => Data\Negocios\Clients\RicaSolucoes::class,
+    'business' => false,
+
+
+
+    'login' => true,
+    'packagesMenu' => true,
+    'packagesRoutes' => true,
+
+    'db-prefix' => '',
+    // 'db-prefix' => 'siravel_',
 
     'influencia' => true,
 
