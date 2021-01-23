@@ -42,14 +42,25 @@ return [
     'load-features' => true,
     'module-directory' => 'admin/features',
     'active-core-features' => [
-        'blog',
+        'writelabel',
         'menus',
+        'pages',
+        'faqs',
+
+        'blog',
         'files',
         'images',
-        'pages',
         'widgets',
         'events',
-        'faqs',
+
+        'gamification',
+        'casa',
+        'bancario',
+        'fa',
+        'commerce',
+        'marketing',
+        'midia',
+        'productions',
     ],
 
     /*
