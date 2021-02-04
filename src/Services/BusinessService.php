@@ -163,7 +163,6 @@ class BusinessService
     {
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
         if ($this->isToIgnore() && $domainSlug !== 'localhost') {
-
             $this->log->addLogger('[Negocio] IsToIgnore, Slug: '. $domainSlug);
             return false;
         }
@@ -184,7 +183,8 @@ class BusinessService
          * Localhost ou terminal, retorna o padrao
          */
         if ($domainSlug == 'localhost'/* || config('app.debug')*/) {
-            return Business::where('code', 'ricasolucoes')->first();
+            $this->log->addLogger('[Negocio] Usando default: '. config('siravel.default', 'ricasolucoes'));
+            return Business::where('code', config('siravel.default', 'ricasolucoes'))->first();
         }
 
         return false;

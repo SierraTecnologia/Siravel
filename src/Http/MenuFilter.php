@@ -32,6 +32,6 @@ class MenuFilter extends MenuFilterBase
             return true;
         }
 
-        return app(\Siravel\Services\BusinessService::class)->hasFeature($feature);
+        return \Feature::isActive($feature);
     }
 }

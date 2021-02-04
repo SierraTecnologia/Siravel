@@ -30,6 +30,7 @@ class SiravelProvider extends ServiceProvider
 
     public static $providers = [
         \Siravel\Providers\HomeServiceProvider::class,
+        \Siravel\Providers\FeatureServiceProvider::class,
         \Siravel\Providers\SiravelBusinessProvider::class,
         \Siravel\Providers\RiCaServiceProvider::class,
         \Siravel\Providers\SiravelEventProvider::class,
