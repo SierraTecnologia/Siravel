@@ -15,7 +15,7 @@ class PageService extends BaseService
 
     public function hasPage(string $page): bool
     {
-        return !empty($this->repo->findPagesByURL($url));
+        return !empty($this->repo->findPagesByURL($page));
     }
 
     /**
