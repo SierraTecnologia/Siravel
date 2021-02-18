@@ -32,6 +32,6 @@ class MenuFilter extends MenuFilterBase
             return true;
         }
 
-        return \Feature::isActive($feature);
+        return \Features::isActive($feature);
     }
 }
