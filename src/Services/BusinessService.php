@@ -59,11 +59,16 @@ class BusinessService
                 $this->business->settings()->each(
                     function ($item) {
                         if (!empty($item->getAppAtribute('config'))) {
+                            $eachConfig = explode('|', $item->getAppAtribute('config'));
                             $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-                            Config::set($item->getAppAtribute('config'), $item->value);
+                            foreach ($eachConfig as $replaceForConfig) {
+                                Config::set($replaceForConfig, $item->value);
+                            }
                         }
                     }
                 );
+
+                Config::set('adminlte.logo_img', \Website::getAsset('logo.png'));
 
                 if ($websiteData = $this->business->datas()->where('code', 'website')->first()) {
                     \Website::setData($websiteData->value);
