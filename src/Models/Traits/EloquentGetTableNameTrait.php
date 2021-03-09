@@ -1,4 +1,7 @@
 <?php
+/**
+ * @todo deletar, tem em muleta
+ */
 
 namespace Siravel\Models\Traits;
 
