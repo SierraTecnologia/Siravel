@@ -3,7 +3,7 @@
 namespace Siravel\Http\Resources;
 
 use Siravel\Models\Entities\LocationEntity;
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource as Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_float;
 

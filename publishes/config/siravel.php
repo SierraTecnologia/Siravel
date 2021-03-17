@@ -61,6 +61,9 @@ return [
         'marketing',
         'midia',
         'productions',
+
+        // Libera Equipamentos, Acessorios, etc..
+        'espolio'
     ],
 
     /*

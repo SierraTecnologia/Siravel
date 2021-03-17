@@ -2,8 +2,8 @@
 
 namespace Siravel\Models\Negocios;
 
-use App\Models\Builders\SubscriptionBuilder;
-use App\Models\Entities\SubscriptionEntity;
+use Siravel\Builders\SubscriptionBuilder;
+use Siravel\Entities\SubscriptionEntity;
 use App\Models\Model;
 
 /**
