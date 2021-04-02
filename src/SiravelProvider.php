@@ -70,66 +70,7 @@ class SiravelProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        // 'Siravel' => [
-        //     [
-        //         'text'        => 'Dash',
-        //         'route'       => 'siravel.sitec.dash',
-        //         'icon'        => 'fas fa-fw fa-gavel',
-        //         'icon_color'  => 'blue',
-        //         'label_color' => 'success',
-        //         // 'access' => \Porteiro\Models\Role::$ADMIN
-        //     ],
-        //     [
-        //         'text'        => 'Profile',
-        //         'route'       => 'siravel.sitec.profile',
-        //         'icon'        => 'fas fa-fw fa-gavel',
-        //         'icon_color'  => 'blue',
-        //         'label_color' => 'success',
-        //         // 'access' => \Porteiro\Models\Role::$ADMIN
-        //     ],
-        //     [
-        //         'text'        => 'Actors',
-        //         'route'       => 'siravel.components.actors.profile',
-        //         'icon'        => 'fas fa-fw fa-gavel',
-        //         'icon_color'  => 'blue',
-        //         'label_color' => 'success',
-        //         // 'access' => \Porteiro\Models\Role::$ADMIN
-        //     ],
-        // ],
-        // 'Painel|200' => [
-        //     [
-        //         'text' => 'User',
-        //         'icon' => 'fas fa-fw fa-bomb',
-        //         'icon_color' => "blue",
-        //         'label_color' => "success",
-        //     ],
-        //     'User' => [
-        //         [
-        //             'text'        => 'Home',
-        //             'url'       => '/',
-        //             'icon'        => 'fas fa-fw fa-industry',
-        //             'icon_color'  => 'blue',
-        //             'label_color' => 'success',
-        //             // 'access' => \Porteiro\Models\Role::$ADMIN
-        //         ],
-        //         [
-        //             'text'        => 'Profile',
-        //             'route'       => 'facilitador.profile',
-        //             'icon'        => 'fas fa-fw fa-industry',
-        //             'icon_color'  => 'blue',
-        //             'label_color' => 'success',
-        //             // 'access' => \Porteiro\Models\Role::$ADMIN
-        //         ],
-        //         [
-        //             'text'        => 'Logout',
-        //             'route'       => 'facilitador.logout',
-        //             'icon'        => 'fas fa-fw fa-industry',
-        //             'icon_color'  => 'blue',
-        //             'label_color' => 'success',
-        //             // 'access' => \Porteiro\Models\Role::$ADMIN
-        //         ],
-        //     ],
-        // ],
+        
     ];
 
     /**

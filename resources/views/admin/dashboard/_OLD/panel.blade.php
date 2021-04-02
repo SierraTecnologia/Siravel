@@ -10,9 +10,9 @@
     <a class="nav-link" href="{!! url(siravel()->backendRoute.'/help') !!}"><span class="fa fa-fw fa-info-circle"></span> Help</a>
 </li>
 
-@if (Route::get('user/settings'))
-    <li class="nav-item @if (Request::is('user/settings') || Request::is('user/password')) active @endif">
-        <a class="nav-link" href="{!! url('user/settings') !!}"><span class="fa fa-fw fa-wrench"></span> Settings</a>
+@if (Route::get('profile/settings'))
+    <li class="nav-item @if (Request::is('profile/settings') || Request::is('user/password')) active @endif">
+        <a class="nav-link" href="{!! url('profile/settings') !!}"><span class="fa fa-fw fa-wrench"></span> Settings</a>
     </li>
 @endif
 

@@ -17,6 +17,11 @@ return [
     'packagesMenu' => true,
     'packagesRoutes' => true,
 
+    /**
+     * Se vai aparecer ou nao sub divisoes do menu na barra superior
+     */
+    'habilityTopNav' => false,
+
     'db-prefix' => '',
     // 'db-prefix' => 'siravel_',
 
