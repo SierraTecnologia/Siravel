@@ -3,10 +3,7 @@
 namespace Siravel\Http;
 
 use Facilitador\Http\MenuFilter as MenuFilterBase;
-use Illuminate\Support\Facades\Auth;
-use JeroenNoten\LaravelAdminLte\Menu\Builder;
-
-use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
+use Log;
 
 // use Laratrust;
 
@@ -16,6 +13,7 @@ class MenuFilter extends MenuFilterBase
     {
         // dd(app(\Siravel\Services\BusinessService::class));
         if (!$this->verifyFeature($item)) {
+            Log::debug('Feature Desativada: '.$item['feature']. ' -> Menu: '.implode('|', $item));
             return false;
         }
         return parent::transform($item); // $item; //

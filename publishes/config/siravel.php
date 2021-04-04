@@ -12,7 +12,6 @@ return [
     'business' => false,
 
 
-
     'login' => true,
     'packagesMenu' => true,
     'packagesRoutes' => true,
@@ -25,7 +24,7 @@ return [
     'db-prefix' => '',
     // 'db-prefix' => 'siravel_',
 
-    'influencia' => true,
+    'influencia' => false,
 
     /**
      * Business Padrão
@@ -66,7 +65,7 @@ return [
         'marketing',
         'midia',
         'productions',
-
+        'locaravel',
         // Libera Equipamentos, Acessorios, etc..
         'espolio'
     ],
