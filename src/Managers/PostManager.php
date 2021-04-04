@@ -3,7 +3,7 @@
 namespace Siravel\Managers;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Siravel\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 
 /**
  * Interface PostManager.

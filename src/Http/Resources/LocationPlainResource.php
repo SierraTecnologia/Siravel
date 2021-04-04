@@ -1,8 +1,9 @@
 <?php
+// @todo Mudar Locaravel
 
 namespace Siravel\Http\Resources;
 
-use Siravel\Models\Entities\LocationEntity;
+use Locaravel\Entities\LocationEntity;
 use Illuminate\Http\Resources\Json\JsonResource as Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_float;

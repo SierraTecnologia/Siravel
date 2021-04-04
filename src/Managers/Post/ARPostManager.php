@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Guard as Auth;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;
 use Siravel\Builders\PostBuilder;
-use Siravel\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 use Siravel\Managers\PostManager;
 use Siravel\Models\Blog\Post;
 

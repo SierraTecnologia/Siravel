@@ -2,8 +2,8 @@
 namespace Siravel\Console\Abstracts;
 
 use League\CLImate\CLImate;
-use Finder\Components\Worker\Analyser\Output\AbstractOutput;
-use Finder\Components\Worker\Analyser\Output\Filter\DiffOutputFilter;
+use Operador\Components\Worker\Analyser\Output\AbstractOutput;
+use Operador\Components\Worker\Analyser\Output\Filter\DiffOutputFilter;
 use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
@@ -301,11 +301,11 @@ class AbstractExternalCommand
     protected function getOutputFormatClasses()
     {
         return [
-            'text' => 'Finder\Components\Worker\Analyser\Output\TextOutput',
-            'json' => 'Finder\Components\Worker\Analyser\Output\JsonOutput',
-            'xml' => 'Finder\Components\Worker\Analyser\Output\XmlOutput',
-            'csv' => 'Finder\Components\Worker\Analyser\Output\CsvOutput',
-            'html' => 'Finder\Components\Worker\Analyser\Output\HtmlOutput',
+            'text' => 'Operador\Components\Worker\Analyser\Output\TextOutput',
+            'json' => 'Operador\Components\Worker\Analyser\Output\JsonOutput',
+            'xml' => 'Operador\Components\Worker\Analyser\Output\XmlOutput',
+            'csv' => 'Operador\Components\Worker\Analyser\Output\CsvOutput',
+            'html' => 'Operador\Components\Worker\Analyser\Output\HtmlOutput',
         ];
     }
 
