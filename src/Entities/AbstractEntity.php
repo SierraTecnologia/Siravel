@@ -2,7 +2,7 @@
 
 namespace Siravel\Entities;
 
-use Muleta\Contracts\Objects\AbstractEntity as AbstractEntityBase;
+use Muleta\Modules\Eloquents\Displays\EntityAbstract as AbstractEntityBase;
 
 /**
  * Class AbstractEntity.

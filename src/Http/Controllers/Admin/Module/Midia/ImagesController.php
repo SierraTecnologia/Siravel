@@ -11,12 +11,14 @@ use Storage;
 use Facilitador\Models\Image;
 use MediaManager\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController
 {
+    use ApiControllerTrait;
+    
     public function __construct(ImageRepository $repository)
     {
         parent::__construct();
@@ -131,9 +133,9 @@ class ImagesController extends BaseController
             $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
-            $response = app(RiCaResponseService::class)->apiResponse('success', $fileSaved);
+            $response = $this->apiResponse('success', $fileSaved);
         } else {
-            $response = app(RiCaResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
+            $response = $this->apiErrorResponse($validation['errors'], $validation['inputs']);
         }
 
         return $response;
@@ -265,12 +267,12 @@ class ImagesController extends BaseController
     public function apiList(Request $request)
     {
         if (config('siravel.api-key') != $request->header('siravel')) {
-            return app(RiCaResponseService::class)->apiResponse('error', []);
+            return $this->apiResponse('error', []);
         }
 
         $images =  $this->repository->apiPrepared();
 
-        return app(RiCaResponseService::class)->apiResponse('success', $images);
+        return $this->apiResponse('success', $images);
     }
 
     /**
@@ -284,6 +286,6 @@ class ImagesController extends BaseController
     {
         $image = $this->repository->apiStore($request->all());
 
-        return app(RiCaResponseService::class)->apiResponse('success', $image);
+        return $this->apiResponse('success', $image);
     }
 }

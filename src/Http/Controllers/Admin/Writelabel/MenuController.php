@@ -9,12 +9,14 @@ use Siravel\Models\Negocios\Menu;
 use Siravel\Repositories\Negocios\LinkRepository;
 use Siravel\Repositories\Negocios\MenuRepository;
 use Siravel\Http\Requests\MenuRequest;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class MenuController extends BaseController
 {
+    use ApiControllerTrait;
+    
     protected $linkRepository;
 
     public function __construct(MenuRepository $repository, LinkRepository $linkRepository)
@@ -192,6 +194,6 @@ class MenuController extends BaseController
         $menu = $this->repository->find($id);
         $result = $this->repository->setOrder($menu, $request->except('_token'));
 
-        return app(RiCaResponseService::class)->apiResponse('success', $result);
+        return $this->apiResponse('success', $result);
     }
 }

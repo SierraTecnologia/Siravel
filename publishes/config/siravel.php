@@ -59,15 +59,28 @@ return [
 
         'gamification',
         'casa',
-        'bancario',
         'fa',
-        'commerce',
         'marketing',
         'midia',
         'productions',
         'locaravel',
         // Libera Equipamentos, Acessorios, etc..
-        'espolio'
+        'espolio',
+
+        /**
+         * Bancario
+         */
+        'bancario',
+        'bancos',
+        'crypto',
+        'tradding',
+
+        'propostas',
+
+        /**
+         * Market
+         */
+        'commerce',
     ],
 
     /*

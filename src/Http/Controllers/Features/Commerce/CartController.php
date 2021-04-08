@@ -7,16 +7,15 @@ use Illuminate\Http\Request;
 use Muleta\Interfaces\Helpers\StoreHelper;
 use Siravel\Http\Controllers\Features\Controller;
 use Siravel\Services\Commerce\CartService;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 
 class CartController extends Controller
 {
     protected $cartService;
 
-    public function __construct(CartService $cartService, RiCaResponseService $siravelResponseService)
+    public function __construct(CartService $cartService)
     {
         $this->cart = $cartService;
-        $this->responseService = $siravelResponseService;
     }
 
     /**
@@ -38,7 +37,7 @@ class CartController extends Controller
      */
     public function cart()
     {
-        return $this->responseService->apiResponse(
+        return $this->apiResponse(
             'success', [
             'count' => $this->cart->itemCount(),
             'contents' => $this->cart->contents(),
@@ -60,7 +59,7 @@ class CartController extends Controller
     {
         $count = $this->cart->itemCount();
 
-        return $this->responseService->apiResponse('success', $count);
+        return $this->apiResponse('success', $count);
     }
 
     /**
@@ -74,7 +73,7 @@ class CartController extends Controller
     {
         $count = $this->cart->changeItemQuantity($request->id, $request->count);
 
-        return $this->responseService->apiResponse('success', $count);
+        return $this->apiResponse('success', $count);
     }
 
     /**
@@ -89,10 +88,10 @@ class CartController extends Controller
         $result = $this->cart->addToCart($request->id, $request->type, $request->quantity, $request->variants);
 
         if ($result) {
-            return $this->responseService->apiResponse('success', 'Added to Cart');
+            return $this->apiResponse('success', 'Added to Cart');
         }
 
-        return $this->responseService->apiResponse('error', 'Could not be added to Cart');
+        return $this->apiResponse('error', 'Could not be added to Cart');
     }
 
     /**
@@ -106,7 +105,7 @@ class CartController extends Controller
     {
         $this->cart->removeFromCart($request->id, $request->type);
 
-        return $this->responseService->apiResponse('success', 'Removed from Cart');
+        return $this->apiResponse('success', 'Removed from Cart');
     }
 
     /**
