@@ -12,10 +12,10 @@ use Config;
 use Crypto;
 use Siravel\Models\Negocios\Page;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Repositories\SiravelRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as RepositoryAbstract;
 
 
-class PageRepository extends BaseRepository
+class PageRepository extends RepositoryAbstract
 {
     public $model;
 

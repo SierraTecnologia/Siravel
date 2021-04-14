@@ -1,12 +1,12 @@
 <?php
 namespace Siravel\Repositories\Negocios;
 
-use Siravel\Repositories\SiravelRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as RepositoryAbstract;
 use Siravel\Models\Negocios\Menu;
 use Cache;
 use Illuminate\Support\Facades\Schema;
 
-class MenuRepository extends BaseRepository
+class MenuRepository extends RepositoryAbstract
 {
     public $model;
 

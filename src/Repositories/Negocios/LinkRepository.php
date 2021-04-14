@@ -7,10 +7,10 @@ use Config;
 use Crypto;
 use Siravel\Models\Negocios\Link;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Repositories\SiravelRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as RepositoryAbstract;
 use Translation\Repositories\ModelTranslationRepository;
 
-class LinkRepository extends BaseRepository
+class LinkRepository extends RepositoryAbstract
 {
     public $model;
 
