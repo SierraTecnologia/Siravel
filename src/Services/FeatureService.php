@@ -33,15 +33,10 @@ class FeatureService
      */
     public function isActive($code)
     {
-        // VErifica se tem nas Configuracoes, se nao, ja cancela
-        if (config('cms.active-core-features', false)) {
-            if (!in_array($code, config('cms.active-core-features'))) {
-                return false;
-            }
-        } else {
-            if (!in_array($code, config('siravel.active-core-features'))) {
-                return false;
-            }
+        if (!\Muleta\Modules\Features\Resources\FeatureHelper::hasActiveFeature(
+            $code
+        )){
+            return false;
         }
 
         // VErifica se ta ativo no banco
