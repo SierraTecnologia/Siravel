@@ -2,7 +2,7 @@
 
 namespace Siravel\Services\Commerce;
 
-use Siravel\Repositories\Commerce\FavoriteRepository;
+use Market\Repositories\FavoriteRepository;
 
 class FavoriteService
 {

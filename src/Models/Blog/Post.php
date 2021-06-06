@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Siravel\Builders\PostBuilder;
 use Siravel\Contracts\Business\BusinessTrait;
-use Siravel\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 
 use Siravel\Models\SiravelModel as BaseModel;
 

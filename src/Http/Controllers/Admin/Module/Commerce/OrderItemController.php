@@ -25,7 +25,7 @@ class OrderItemController extends Controller
     {
         $orderItem = $this->service->find($id);
 
-        return view('admin.features.commerce.orders.item')->with('orderItem', $orderItem);
+        return view('siravel::admin.features.commerce.orders.item')->with('orderItem', $orderItem);
     }
 
     /**

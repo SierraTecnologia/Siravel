@@ -11,12 +11,14 @@ use Storage;
 use Facilitador\Models\Image;
 use MediaManager\Repositories\ImageRepository;
 use Siravel\Http\Requests\ImagesRequest;
-use Muleta\Services\RiCaResponseService;
+use Muleta\Modules\Controllers\Api\ApiControllerTrait;
 use Muleta\Services\ValidationService;
 use Siravel\Http\Controllers\Admin\Controller as BaseController;
 
 class ImagesController extends BaseController
 {
+    use ApiControllerTrait;
+    
     public function __construct(ImageRepository $repository)
     {
         parent::__construct();
@@ -37,7 +39,7 @@ class ImagesController extends BaseController
 
         $result = $this->repository->paginated();
 
-        return view('admin.features.midia.images.index')
+        return view('siravel::admin.features.midia.images.index')
             ->with('images', $result)
             ->with('pagination', $result->render());
     }
@@ -55,7 +57,7 @@ class ImagesController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.midia.images.index')
+        return view('siravel::admin.features.midia.images.index')
             ->with('images', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -66,9 +68,9 @@ class ImagesController extends BaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.features.midia.images.create');
+        return view('siravel::admin.features.midia.images.create');
     }
 
     /**
@@ -131,9 +133,9 @@ class ImagesController extends BaseController
             $fileSaved['name'] = Crypto::encrypt($fileSaved['name']);
             $fileSaved['mime'] = $file->getClientMimeType();
             $fileSaved['size'] = $file->getClientSize();
-            $response = app(RiCaResponseService::class)->apiResponse('success', $fileSaved);
+            $response = $this->apiResponse('success', $fileSaved);
         } else {
-            $response = app(RiCaResponseService::class)->apiErrorResponse($validation['errors'], $validation['inputs']);
+            $response = $this->apiErrorResponse($validation['errors'], $validation['inputs']);
         }
 
         return $response;
@@ -156,7 +158,7 @@ class ImagesController extends BaseController
             return redirect(route('admin.media-manager.images.index'));
         }
 
-        return view('admin.features.midia.images.edit')->with('images', $images);
+        return view('siravel::admin.features.midia.images.edit')->with('images', $images);
     }
 
     /**
@@ -265,12 +267,12 @@ class ImagesController extends BaseController
     public function apiList(Request $request)
     {
         if (config('siravel.api-key') != $request->header('siravel')) {
-            return app(RiCaResponseService::class)->apiResponse('error', []);
+            return $this->apiResponse('error', []);
         }
 
         $images =  $this->repository->apiPrepared();
 
-        return app(RiCaResponseService::class)->apiResponse('success', $images);
+        return $this->apiResponse('success', $images);
     }
 
     /**
@@ -284,6 +286,6 @@ class ImagesController extends BaseController
     {
         $image = $this->repository->apiStore($request->all());
 
-        return app(RiCaResponseService::class)->apiResponse('success', $image);
+        return $this->apiResponse('success', $image);
     }
 }

@@ -16,7 +16,7 @@ class EventsController extends Controller
         $this->eventsRepository = $eventsRepo;
         $this->eventService = $eventService;
 
-        if (!in_array('events', config('siravel.active-core-features'))) {
+        if (!\Features::isActive('events')) {
             return redirect('/')->send();
         }
     }

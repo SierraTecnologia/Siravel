@@ -3,7 +3,7 @@
 namespace Siravel\Http\Controllers\Admin\Writelabel;
 
 use Siravel;
-use Siravel\Models\Page;
+use Siravel\Models\Negocios\Page;
 use Illuminate\Http\Request;
 use Siravel\Http\Requests\PagesRequest;
 use Muleta\Services\ValidationService;
@@ -28,7 +28,7 @@ class PagesController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.pages.index')
+        return view('siravel::admin.features.writelabel.pages.index')
             ->with('pages', $result)
             ->with('pagination', $result->render());
     }
@@ -46,7 +46,7 @@ class PagesController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.writelabel.pages.index')
+        return view('siravel::admin.features.writelabel.pages.index')
             ->with('pages', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -57,9 +57,9 @@ class PagesController extends BaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.features.writelabel.pages.create');
+        return view('siravel::admin.features.writelabel.pages.create');
     }
 
     /**
@@ -104,7 +104,7 @@ class PagesController extends BaseController
             return redirect(route('admin.pages.index'));
         }
 
-        return view('admin.features.writelabel.pages.edit')->with('page', $page);
+        return view('siravel::admin.features.writelabel.pages.edit')->with('page', $page);
     }
 
     /**
@@ -170,7 +170,7 @@ class PagesController extends BaseController
     {
         $page = $this->repository->find($id);
 
-        return view('admin.features.writelabel.pages.history')
+        return view('siravel::admin.features.writelabel.pages.history')
             ->with('page', $page);
     }
 }

@@ -53,16 +53,26 @@ class BusinessService
     public function loadSettings()
     {
         if ($this->business) {
+            \Website::setNegocio($this->business->code);
             if (Schema::hasTable('settings')) {
                 // Get Settings
                 $this->business->settings()->each(
                     function ($item) {
                         if (!empty($item->getAppAtribute('config'))) {
+                            $eachConfig = explode('|', $item->getAppAtribute('config'));
                             $this->log->addLogger('[Negocio] Setting Configurado:'. print_r($item->getAppAtribute('config'), true). print_r($item->value, true));
-                            Config::set($item->getAppAtribute('config'), $item->value);
+                            foreach ($eachConfig as $replaceForConfig) {
+                                Config::set($replaceForConfig, $item->value);
+                            }
                         }
                     }
                 );
+
+                Config::set('adminlte.logo_img', \Website::getAsset('logo.png'));
+
+                if ($websiteData = $this->business->datas()->where('code', 'website')->first()) {
+                    \Website::setData($websiteData->value);
+                }
 
                 return $this;
             }
@@ -158,6 +168,7 @@ class BusinessService
     {
         $domainSlug = \SiUtils\Helper\General::getSlugForUrl(Request::root());
         if ($this->isToIgnore() && $domainSlug !== 'localhost') {
+            $this->log->addLogger('[Negocio] IsToIgnore, Slug: '. $domainSlug);
             return false;
         }
 
@@ -177,7 +188,8 @@ class BusinessService
          * Localhost ou terminal, retorna o padrao
          */
         if ($domainSlug == 'localhost'/* || config('app.debug')*/) {
-            return Business::where('code', 'ricasolucoes')->first();
+            $this->log->addLogger('[Negocio] Usando default: '. config('siravel.default', 'ricasolucoes'));
+            return Business::where('code', config('siravel.default', 'ricasolucoes'))->first();
         }
 
         return false;

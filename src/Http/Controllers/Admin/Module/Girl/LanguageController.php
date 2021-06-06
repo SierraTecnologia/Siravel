@@ -9,7 +9,7 @@ use Siravel\Http\Requests\Admin\LanguageRequest;
 use Siravel\Http\Requests\Admin\DeleteRequest;
 use Siravel\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use DataTables as Datatables;
 
 class LanguageController extends GirlController
 {
@@ -34,7 +34,7 @@ class LanguageController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
           // Show the page
         return view('features.girl/language/create_edit');
@@ -119,14 +119,14 @@ class LanguageController extends GirlController
                 }
             );
         return Datatables::of($languages)
-            ->edit_column('icon', '<img src="blank.gif" class="flag flag-{{$icon}}" alt="" />')
+            ->editColumn('icon', '<img src="blank.gif" class="flag flag-{{$icon}}" alt="" />')
 
-            ->add_column(
+            ->addColumn(
                 'actions', '<a href="{{{ url(\'girl/language/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span> {{ trans("admin/modal.edit") }}</a>
                     <a href="{{{ url(\'admin/language/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("admin/modal.delete") }}</a>
                     <input type="hidden" name="row" value="{{$id}}" id="row">'
             )
-            ->remove_column('id')
+            ->removeColumn('id')
 
             ->make();
     }

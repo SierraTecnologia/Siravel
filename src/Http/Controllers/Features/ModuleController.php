@@ -49,7 +49,7 @@ class ModuleController extends Controller
 
     public function getModule($name)
     {
-        $features = config('siravel.features');
-        return $features['travels'];
+        $features = config('siravel.active-core-features');
+        return $features[$name];
     }
 }

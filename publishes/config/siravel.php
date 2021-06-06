@@ -9,9 +9,22 @@ return [
      * Business Ativo
      */
     // 'business' => Data\Negocios\Clients\CarolNovaes::class,
-    'business' => Data\Negocios\Clients\RicaSolucoes::class,
+    'business' => false,
 
-    'influencia' => true,
+
+    'login' => true,
+    'packagesMenu' => true,
+    'packagesRoutes' => true,
+
+    /**
+     * Se vai aparecer ou nao sub divisoes do menu na barra superior
+     */
+    'habilityTopNav' => false,
+
+    'db-prefix' => '',
+    // 'db-prefix' => 'siravel_',
+
+    'influencia' => false,
 
     /**
      * Business Padrão
@@ -33,14 +46,41 @@ return [
     'load-features' => true,
     'module-directory' => 'admin/features',
     'active-core-features' => [
-        'blog',
+        'writelabel',
         'menus',
+        'pages',
+        'faqs',
+
+        'blog',
         'files',
         'images',
-        'pages',
         'widgets',
         'events',
-        'faqs',
+
+        'gamification',
+        'casa',
+        'fa',
+        'marketing',
+        'midia',
+        'productions',
+        'locaravel',
+        // Libera Equipamentos, Acessorios, etc..
+        'espolio',
+
+        /**
+         * Bancario
+         */
+        'bancario',
+        'bancos',
+        'crypto',
+        'tradding',
+
+        'propostas',
+
+        /**
+         * Market
+         */
+        'commerce',
     ],
 
     /*
@@ -113,10 +153,11 @@ return [
     'default-language' => 'pt-BR',
 
     'languages' => [
-        'en' => 'english',
+        'pt' => 'portuguese',
+        // 'en' => 'english',
         'en-US' => 'english',
         'pt-BR' => 'portuguese',
-        'fr' => 'french',
+        // 'fr' => 'french',
     ],
 
 

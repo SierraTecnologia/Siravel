@@ -30,6 +30,6 @@ class FaqRequest extends FormRequest
      */
     public function rules()
     {
-        return Faq::$rules;
+        return app(Faq::class)->rules;
     }
 }

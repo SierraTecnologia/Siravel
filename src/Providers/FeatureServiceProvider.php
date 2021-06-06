@@ -1,6 +1,6 @@
 <?php
 
-namespace SiravelProviders;
+namespace Siravel\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -32,12 +32,24 @@ class FeatureServiceProvider extends ServiceProvider
     {
         $loader = \Illuminate\Foundation\AliasLoader::getInstance();
 
-        $loader->alias('Features', \App\Facades\Features::class);
+        if (class_exists(\App\Facades\Features::class)) {
+            $loader->alias('Features', \App\Facades\Features::class);
+        } else {
+            $loader->alias('Features', \Siravel\Facades\Features::class);
+        }
 
-        $this->app->singleton(
-            'FeatureService', function ($app) {
-                return app(\App\Services\FeatureService::class);
-            }
-        );
+        if (class_exists(\App\Facades\Features::class)) {
+            $this->app->singleton(
+                'FeatureService', function ($app) {
+                    return app(\App\Services\FeatureService::class);
+                }
+            );
+        } else {
+            $this->app->singleton(
+                'FeatureService', function ($app) {
+                    return app(\Siravel\Services\FeatureService::class);
+                }
+            );
+        }
     }
 }

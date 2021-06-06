@@ -15,8 +15,8 @@ class SiravelEventServiceProvider extends ServiceProvider
         'eloquent.saved: Siravel\Models\Blog' => [
             'Siravel\Models\Blog@afterSaved',
         ],
-        'eloquent.saved: Siravel\Models\Page' => [
-            'Siravel\Models\Page@afterSaved',
+        'eloquent.saved: Siravel\Models\Negocios\Page' => [
+            'Siravel\Models\Negocios\Page@afterSaved',
         ],
         'eloquent.saved: Siravel\Models\Event' => [
             'Siravel\Models\Event@afterSaved',
@@ -34,8 +34,8 @@ class SiravelEventServiceProvider extends ServiceProvider
         'eloquent.created: Siravel\Models\Blog' => [
             'Siravel\Models\Blog@afterCreate',
         ],
-        'eloquent.created: Siravel\Models\Page' => [
-            'Siravel\Models\Page@afterCreate',
+        'eloquent.created: Siravel\Models\Negocios\Page' => [
+            'Siravel\Models\Negocios\Page@afterCreate',
         ],
         'eloquent.created: Siravel\Models\Event' => [
             'Siravel\Models\Event@afterCreate',
@@ -53,8 +53,8 @@ class SiravelEventServiceProvider extends ServiceProvider
         'eloquent.deleting: Siravel\Models\Blog' => [
             'Siravel\Models\Blog@beingDeleted',
         ],
-        'eloquent.deleting: Siravel\Models\Page' => [
-            'Siravel\Models\Page@beingDeleted',
+        'eloquent.deleting: Siravel\Models\Negocios\Page' => [
+            'Siravel\Models\Negocios\Page@beingDeleted',
         ],
         'eloquent.deleting: Siravel\Models\Event' => [
             'Siravel\Models\Event@beingDeleted',

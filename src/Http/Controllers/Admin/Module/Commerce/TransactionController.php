@@ -22,7 +22,7 @@ class TransactionController extends Controller
     {
         $transactions = $this->service->paginated();
 
-        return view('admin.features.commerce.transactions.index')
+        return view('siravel::admin.features.commerce.transactions.index')
             ->with('pagination', $transactions->render())
             ->with('transactions', $transactions);
     }
@@ -36,7 +36,7 @@ class TransactionController extends Controller
     {
         $transactions = $this->service->search($request->term);
 
-        return view('admin.features.commerce.transactions.index')
+        return view('siravel::admin.features.commerce.transactions.index')
             ->with('transactions', $transactions[0]->get())
             ->with('pagination', $transactions[2])
             ->with('term', $transactions[1]);
@@ -54,7 +54,7 @@ class TransactionController extends Controller
         $transaction = $this->service->find($id);
         $order = $this->service->getTransactionOrder($id);
 
-        return view('admin.features.commerce.transactions.edit')
+        return view('siravel::admin.features.commerce.transactions.edit')
             ->with('order', $order)
             ->with('transaction', $transaction);
     }

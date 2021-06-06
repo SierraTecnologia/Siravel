@@ -5,8 +5,8 @@ namespace Siravel\Services\Commerce;
 use Pedreiro\Facades\RiCaServiceFacade as RiCaService;
 use Illuminate\Support\Facades\Config;
 use MediaManager\Services\FileService;
-use Siravel\Repositories\Commerce\ProductRepository;
-use Siravel\Repositories\Commerce\ProductVariantRepository;
+use Market\Repositories\ProductRepository;
+use Market\Repositories\ProductVariantRepository;
 
 class ProductService
 {

@@ -30,7 +30,7 @@ class SupportController extends Controller
         return view('home', compact('myTickets'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
         $user = Auth::user();
         return view('home', compact('ticketInContent'));

@@ -120,7 +120,7 @@ class PlanService
 
             return $this->model->create($payload);
         } catch (Exception $e) {
-            dd($e->getMessage());
+            dd('LinksPedreiro', $e->getMessage());
             throw new Exception('Could not generate new plan', 1);
         }
 

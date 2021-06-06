@@ -30,6 +30,6 @@ class BlogRequest extends FormRequest
      */
     public function rules()
     {
-        return Blog::$rules;
+        return app(Blog::class)->rules;
     }
 }

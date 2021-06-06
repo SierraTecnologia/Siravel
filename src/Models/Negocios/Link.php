@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use function key_exists;
 
 use Siravel\Models\Traits\BusinessTrait;
+use Translation\Traits\HasTranslations;
 
 /**
  * Class Link
@@ -16,6 +17,7 @@ use Siravel\Models\Traits\BusinessTrait;
  */
 class Link extends Model
 {
+    use HasTranslations;
     use SoftDeletes, BusinessTrait;
 
     public $table = 'links';
@@ -28,8 +30,13 @@ class Link extends Model
 
 
     public $fillable = [
+        'name',
+        'external_url',
         'slug',
+        'page_id',
+        'menu_id',
     ];
+    protected $translatable = ['name'];
 
     /**
      * Validation rules

@@ -6,7 +6,7 @@ use Translation\Models\Language;
 use Siravel\Http\Controllers\GirlController;
 use Siravel\Http\Requests\Admin\PhotoAlbumRequest;
 use Illuminate\Support\Facades\Auth;
-use Datatables;
+use DataTables as Datatables;
 
 class PhotoAlbumController extends GirlController
 {
@@ -24,7 +24,7 @@ class PhotoAlbumController extends GirlController
     public function index(Request $request)
     {
         // Show the page
-        return view('features.girl.photoalbum.index');
+        return view('stalker::admin.photoalbum.index');
     }
 
     /**
@@ -32,10 +32,10 @@ class PhotoAlbumController extends GirlController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('features.girl.photoalbum.create_edit', compact('languages'));
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        return view('stalker::admin.photoalbum.create_edit', compact('languages'));
     }
 
     /**
@@ -59,8 +59,8 @@ class PhotoAlbumController extends GirlController
      */
     public function edit(PhotoAlbum $photoalbum)
     {
-        $languages = Language::lists('name', 'id')->toArray();
-        return view('features.girl.photoalbum.create_edit', compact('photoalbum', 'languages'));
+        $languages = Language::all()->pluck('name', 'id')->toArray();
+        return view('stalker::admin.photoalbum.create_edit', compact('photoalbum', 'languages'));
     }
 
     /**
@@ -84,7 +84,7 @@ class PhotoAlbumController extends GirlController
 
     public function delete(PhotoAlbum $photoalbum)
     {
-        return view('features.girl.photoalbum.delete', compact('photoalbum'));
+        return view('stalker::admin.photoalbum.delete', compact('photoalbum'));
     }
 
     /**
@@ -119,13 +119,13 @@ class PhotoAlbumController extends GirlController
             );
 
         return Datatables::of($photo_albums)
-            ->edit_column('images_count', '<a class="btn btn-primary btn-sm" >{{ \App\Photo::where(\'photo_album_id\', \'=\', $id)->count() }}</a>')
-            ->add_column(
+            ->editColumn('images_count', '<a class="btn btn-primary btn-sm" >{{ \App\Photo::where(\'photo_album_id\', \'=\', $id)->count() }}</a>')
+            ->addColumn(
                 'actions', '<a href="{{{ url(\'girl/photoalbum/\' . $id . \'/edit\' ) }}}" class="btn btn-success btn-sm iframe" ><span class="glyphicon glyphicon-pencil"></span>  {{ trans("girl/modal.edit") }}</a>
                     <a href="{{{ url(\'girl/photoalbum/\' . $id . \'/delete\' ) }}}" class="btn btn-sm btn-danger iframe"><span class="glyphicon glyphicon-trash"></span> {{ trans("girl/modal.delete") }}</a>
                     <input type="hidden" name="row" value="{{$id}}" id="row">'
             )
-            ->remove_column('id')
+            ->removeColumn('id')
             ->make();
     }
 

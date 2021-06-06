@@ -28,7 +28,7 @@ class BlogController extends BaseController
     {
         $blogs = $this->repository->paginated();
 
-        return view('admin.features.blogs.blogs.index')
+        return view('siravel::admin.features.blogs.blogs.index')
             ->with('blogs', $blogs)
             ->with('pagination', $blogs->render());
     }
@@ -51,7 +51,7 @@ class BlogController extends BaseController
 
         $result = $this->repository->search($input);
 
-        return view('admin.features.blogs.blogs.index')
+        return view('siravel::admin.features.blogs.blogs.index')
             ->with('blogs', $result[0]->get())
             ->with('pagination', $result[2])
             ->with('term', $result[1]);
@@ -62,9 +62,9 @@ class BlogController extends BaseController
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.features.blogs.blogs.create');
+        return view('siravel::admin.features.blogs.blogs.create');
     }
 
     /**
@@ -109,7 +109,7 @@ class BlogController extends BaseController
             return redirect(route('admin.blog.index'));
         }
 
-        return view('admin.features.blogs.blogs.edit')->with('blog', $blog);
+        return view('siravel::admin.features.blogs.blogs.edit')->with('blog', $blog);
     }
 
     /**
@@ -182,7 +182,7 @@ class BlogController extends BaseController
     {
         $blog = $this->repository->find($id);
 
-        return view('admin.features.blogs.blogs.history')
+        return view('siravel::admin.features.blogs.blogs.history')
             ->with('blog', $blog);
     }
 }

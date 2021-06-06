@@ -30,7 +30,7 @@ class LinksController extends BaseController
     {
         $result = $this->repository->paginated();
 
-        return view('admin.features.writelabel.links.index')
+        return view('siravel::admin.features.writelabel.links.index')
             ->with('links', $result)
             ->with('pagination', $result->render());
     }
@@ -44,7 +44,7 @@ class LinksController extends BaseController
     {
         $menu = $request->get('m');
 
-        return view('admin.features.writelabel.links.create')->with('menu_id', $menu);
+        return view('siravel::admin.features.writelabel.links.create')->with('menu_id', $menu);
     }
 
     /**
@@ -93,7 +93,7 @@ class LinksController extends BaseController
             return redirect(route('admin.links.index'));
         }
 
-        return view('admin.features.writelabel.links.edit')->with('links', $links);
+        return view('siravel::admin.features.writelabel.links.edit')->with('links', $links);
     }
 
     /**

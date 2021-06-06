@@ -7,22 +7,22 @@ use Response;
 use Illuminate\Http\Request;
 use Siravel\Models\Commerce\Products;
 use Siravel\Http\Controllers\SitecController;
-use Siravel\Repositories\Commerce\ProductRepository;
-use Siravel\Repositories\Commerce\ProductVariantRepository;
+use Market\Repositories\ProductRepository;
+use Market\Repositories\ProductVariantRepository;
 
 class ProductVariantController extends SitecController
 {
     /**
      * Product Repository.
      *
-     * @var Siravel\Repositories\Commerce\ProductRepository
+     * @var Market\Repositories\ProductRepository
      */
     public $productRepository;
 
     /**
      * Product Variant Repository.
      *
-     * @var Siravel\Repositories\Commerce\ProductVariantRepository
+     * @var Market\Repositories\ProductVariantRepository
      */
     public $productVariantRepository;
 

@@ -7,10 +7,10 @@ use Config;
 use Crypto;
 use Siravel\Models\UserMeta;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Repositories\SiravelRepository as BaseRepository;
+use Siravel\Repositories\SiravelRepository as RepositoryAbstract;
 use Translation\Repositories\ModelTranslationRepository;
 
-class MemberRepository extends BaseRepository
+class MemberRepository extends RepositoryAbstract
 {
     public $model;
 

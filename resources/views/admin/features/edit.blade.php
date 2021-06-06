@@ -24,7 +24,7 @@
                 <div class="raw-margin-top-24 form-group">
                     <div class="btn-toolbar justify-content-between">
                         <button type="submit" class="btn btn-primary float-right">Update</button>
-                        <a href="/admin/features" class="btn btn-secondary">Cancel</a>
+                        <a href="/admin/features" class="btn btn-secondary">{{ __('pedreiro::generic.cancel') }}</a>
                     </div>
                 </div>
 

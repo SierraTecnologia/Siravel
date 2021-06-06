@@ -24,7 +24,7 @@ class FeatureController extends Controller
     {
         $features = $this->service->paginated();
         // dd($features);
-        return view('admin.features.index')->with('features', $features);
+        return view('siravel::admin.features.index')->with('features', $features);
     }
 
     /**
@@ -35,7 +35,7 @@ class FeatureController extends Controller
     public function search(Request $request)
     {
         $features = $this->service->search($request->search, null);
-        return view('admin.features.index')->with('features', $features);
+        return view('siravel::admin.features.index')->with('features', $features);
     }
 
     /**
@@ -43,9 +43,9 @@ class FeatureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.features.create');
+        return view('siravel::admin.features.create');
     }
 
     /**
@@ -76,7 +76,7 @@ class FeatureController extends Controller
     public function edit(Request $request, $id)
     {
         $feature = $this->service->find($id);
-        return view('admin.features.edit')->with('feature', $feature);
+        return view('siravel::admin.features.edit')->with('feature', $feature);
     }
 
     /**

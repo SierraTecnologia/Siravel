@@ -3,7 +3,7 @@
 namespace Siravel\Services;
 
 use Illuminate\Support\Facades\Log;
-use Siravel\Interfaces\LogisticServiceInterface;
+use Muleta\Interfaces\LogisticServiceInterface;
 use Siravel\Services\Commerce\CustomerProfileService;
 use Siravel\Services\Commerce\LogisticService;
 
