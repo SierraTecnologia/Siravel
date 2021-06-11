@@ -90,7 +90,7 @@ if (!function_exists('signedInUser')) {
  * @return mixed
  */
 if (!function_exists('userCan')) {
-    function userCan(string $permission, \Support\Models\Ownable $ownable = null)
+    function userCan(string $permission, \Population\Models\Ownable $ownable = null)
     {
         if ($ownable === null) {
             return user() && user()->can($permission);
