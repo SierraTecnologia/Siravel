@@ -21,7 +21,7 @@ class SupportController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -30,12 +30,18 @@ class SupportController extends Controller
         return view('home', compact('myTickets'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function create(Request $request)
     {
         $user = Auth::user();
         return view('home', compact('ticketInContent'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function new($toId)
     {
         $user = Auth::user();
@@ -43,6 +49,9 @@ class SupportController extends Controller
         return view('home', compact('ticketInContent'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function show($ticketId)
     {
         $ticketInContent = SitecPayment::showTicket($ticketId);

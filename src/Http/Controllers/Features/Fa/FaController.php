@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 class FaController extends BaseController
 {
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         $dashboard = [];
@@ -19,6 +22,9 @@ class FaController extends BaseController
         return view('features.fas.index', compact('dashboard'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function babies()
     {
         $babies = Fa::paginate(5);
@@ -27,6 +33,9 @@ class FaController extends BaseController
         return view('features.fas.babies', compact('babies'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function slaves()
     {
         $slaves = Fa::paginate(5);
@@ -35,6 +44,9 @@ class FaController extends BaseController
         return view('features.fas.slaves', compact('slaves'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function dommes()
     {
         $dommes = Fa::paginate(5);

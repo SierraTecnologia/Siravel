@@ -55,7 +55,7 @@ class PagesController extends BaseController
     /**
      * Show the form for creating a new Pages.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -113,7 +113,7 @@ class PagesController extends BaseController
      * @param int          $id
      * @param PagesRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, PagesRequest $request)
     {
@@ -140,7 +140,7 @@ class PagesController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

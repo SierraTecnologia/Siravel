@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\View;
 
 class SitecFeatureController extends Controller
 {
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function sendHome()
     {
         return redirect('/');
@@ -21,7 +24,7 @@ class SitecFeatureController extends Controller
      *
      * @param int $id
      *
-     * @return Redirect
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function revert($id)
     {
@@ -46,7 +49,7 @@ class SitecFeatureController extends Controller
      * @param string $entity
      * @param int    $id
      *
-     * @return Redirect
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function rollback($entity, $id)
     {
@@ -85,7 +88,7 @@ class SitecFeatureController extends Controller
      * @param string $entity
      * @param int    $id
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function preview($entity, $id)
     {
@@ -133,9 +136,9 @@ class SitecFeatureController extends Controller
      * @param string $entity
      * @param int    $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function deleteHero($entity, $id)
+    public function deleteHero($entity, $id): \Illuminate\Http\RedirectResponse
     {
         $entity = app('Siravel\Models\\'.ucfirst($entity))->find($id);
 

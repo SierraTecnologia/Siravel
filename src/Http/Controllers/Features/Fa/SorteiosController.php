@@ -23,7 +23,7 @@ class SorteiosController extends FaController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -33,7 +33,7 @@ class SorteiosController extends FaController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -44,9 +44,9 @@ class SorteiosController extends FaController
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(ArticleCategoryRequest $request)
+    public function store(ArticleCategoryRequest $request): void
     {
         $articlecategory = new ArticleCategory($request->all());
         $articlecategory->user_id = Auth::id();
@@ -56,8 +56,9 @@ class SorteiosController extends FaController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(ArticleCategory $articlecategory)
     {
@@ -68,10 +69,11 @@ class SorteiosController extends FaController
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return void
      */
-    public function update(ArticleCategoryRequest $request, ArticleCategory $articlecategory)
+    public function update(ArticleCategoryRequest $request, ArticleCategory $articlecategory): void
     {
         $articlecategory->user_id_edited = Auth::id();
         $articlecategory->update($request->all());
@@ -80,10 +82,10 @@ class SorteiosController extends FaController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(ArticleCategory $articlecategory)
     {
         return view('features.girl.articlecategory.delete', compact('articlecategory'));
@@ -92,10 +94,11 @@ class SorteiosController extends FaController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return void
      */
-    public function destroy(ArticleCategory $articleCategory)
+    public function destroy(ArticleCategory $articleCategory): void
     {
         $articleCategory->delete();
     }

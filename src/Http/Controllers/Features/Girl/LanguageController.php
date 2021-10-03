@@ -22,7 +22,7 @@ class LanguageController extends GirlController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -33,7 +33,7 @@ class LanguageController extends GirlController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -44,9 +44,9 @@ class LanguageController extends GirlController
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(LanguageRequest $request)
+    public function store(LanguageRequest $request): void
     {
         $language = new Language($request->all());
         $language -> user_id = Auth::id();
@@ -55,8 +55,9 @@ class LanguageController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Language $language)
     {
@@ -66,10 +67,11 @@ class LanguageController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return void
      */
-    public function update(LanguageRequest $request, Language $language)
+    public function update(LanguageRequest $request, Language $language): void
     {
         $language -> user_id_edited = Auth::id();
         $language -> update($request->all());
@@ -78,10 +80,10 @@ class LanguageController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(Language $language)
     {
         // Show the page
@@ -91,10 +93,11 @@ class LanguageController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return void
      */
-    public function destroy(Language $language)
+    public function destroy(Language $language): void
     {
         $language->delete();
     }

@@ -12,8 +12,10 @@ class Business extends Model
     public $table = 'businesses';
     /**
      * Get all of the features for the post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function features()
+    public function features(): self
     {
         return $this->morphToMany('Siravel\Models\Feature', 'featureable')->withoutGlobalScopes();
     }
@@ -36,8 +38,10 @@ class Business extends Model
 
     /**
      * Get all of the settings for the post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function settings()
+    public function settings(): self
     {
         return $this->hasMany(\Facilitador\Models\Setting::class)->withoutGlobalScopes();
     }

@@ -21,6 +21,9 @@ class PlanController extends GirlController
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
@@ -30,7 +33,7 @@ class PlanController extends GirlController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -40,9 +43,9 @@ class PlanController extends GirlController
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(PlanRequest $request)
+    public function store(PlanRequest $request): void
     {
 
         $plan = new Plan($request->except('password', 'password_confirmation'));
@@ -54,8 +57,9 @@ class PlanController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  $plan
-     * @return Response
+     * @param $plan
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Plan $plan)
     {
@@ -65,10 +69,11 @@ class PlanController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param  $plan
-     * @return Response
+     * @param $plan
+     *
+     * @return void
      */
-    public function update(PlanRequest $request, Plan $plan)
+    public function update(PlanRequest $request, Plan $plan): void
     {
         $password = $request->password;
         $passwordConfirmation = $request->password_confirmation;
@@ -84,10 +89,10 @@ class PlanController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $plan
-     * @return Response
+     * @param $plan
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(Plan $plan)
     {
         return view('features.girl.plan.delete', compact('plan'));
@@ -96,10 +101,11 @@ class PlanController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $plan
-     * @return Response
+     * @param $plan
+     *
+     * @return void
      */
-    public function destroy(Plan $plan)
+    public function destroy(Plan $plan): void
     {
         $plan->delete();
     }

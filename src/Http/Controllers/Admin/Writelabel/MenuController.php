@@ -63,7 +63,7 @@ class MenuController extends BaseController
     /**
      * Show the form for creating a new Menu.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -127,7 +127,7 @@ class MenuController extends BaseController
      * @param int         $id
      * @param MenuRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, MenuRequest $request)
     {
@@ -158,7 +158,7 @@ class MenuController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {
@@ -187,9 +187,9 @@ class MenuController extends BaseController
     /**
      * Set the order
      *
-     * @return Response
+     * @return \Response
      */
-    public function setOrder($id, Request $request)
+    public function setOrder($id, Request $request): \Response
     {
         $menu = $this->repository->find($id);
         $result = $this->repository->setOrder($menu, $request->except('_token'));

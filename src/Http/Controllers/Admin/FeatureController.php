@@ -41,7 +41,7 @@ class FeatureController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -51,7 +51,8 @@ class FeatureController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\FeatureCreateRequest $request
+     * @param FeatureCreateRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(FeatureCreateRequest $request)
@@ -82,11 +83,12 @@ class FeatureController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\FeatureUpdateRequest $request
-     * @param  int                                   $id
-     * @return \Illuminate\Http\Response
+     * @param FeatureUpdateRequest $request
+     * @param int                                   $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(FeatureUpdateRequest $request, $id)
+    public function update(FeatureUpdateRequest $request, $id): self
     {
         $result = $this->service->update($id, $request->except('_token'));
 

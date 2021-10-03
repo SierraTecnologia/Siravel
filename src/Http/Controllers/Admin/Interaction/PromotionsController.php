@@ -55,7 +55,7 @@ class PromotionsController extends BaseController
     /**
      * Show the form for creating a new Promotions.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -65,7 +65,7 @@ class PromotionsController extends BaseController
     /**
      * Store a newly created Promotions in storage.
      *
-     * @param PromotionRequest $request
+     * @param Request $request
      *
      * @return Response
      */
@@ -110,7 +110,7 @@ class PromotionsController extends BaseController
      * @param int              $id
      * @param PromotionRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, PromotionRequest $request)
     {
@@ -134,7 +134,7 @@ class PromotionsController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

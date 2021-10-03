@@ -16,7 +16,10 @@ class StoreHelperService
         $this->cartService = $cartService;
     }
 
-    public function storeUrl($url)
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    public function storeUrl(string $url)
     {
         return url(config('commerce.store_url_prefix').'/'.$url);
     }
@@ -26,6 +29,9 @@ class StoreHelperService
         return app(CustomerProfileService::class);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public function customerSubscriptionUrl($subscription)
     {
         return $this->storeUrl('/account/subscription/'.crypto_encrypt($subscription->name));
@@ -56,12 +62,15 @@ class StoreHelperService
         return Cache::get($key);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public function subscriptionUrl($subscription)
     {
         return $this->storeUrl('/plan/'.crypto_encrypt($subscription->id));
     }
 
-    public function cancelSubscriptionBtn($subscription, $class = 'btn btn-danger', $buttonContent = 'Cancel Subscription')
+    public function cancelSubscriptionBtn($subscription, $class = 'btn btn-danger', $buttonContent = 'Cancel Subscription'): string
     {
         return '<form method="post" action="'.$this->storeUrl('/account/subscription/'.crypto_encrypt($subscription->name)).'/cancel">'
         .csrf_field()
@@ -69,32 +78,32 @@ class StoreHelperService
         .'<button class="'.$class.'">'.$buttonContent.'</button></form>';
     }
 
-    public function moneyFormat($amount)
+    public function moneyFormat($amount): string
     {
         return number_format(round($amount, 2), 2);
     }
 
-    public function checkoutTax()
+    public function checkoutTax(): string
     {
         return $this->moneyFormat($this->cartService->getCartTax());
     }
 
-    public function checkoutTotal()
+    public function checkoutTotal(): string
     {
         return $this->moneyFormat($this->cartService->getCartTotal());
     }
 
-    public function checkoutSubtotal()
+    public function checkoutSubtotal(): string
     {
         return $this->moneyFormat($this->cartService->getCartSubtotal());
     }
 
-    public function couponValue()
+    public function couponValue(): string
     {
         return $this->moneyFormat($this->cartService->getCurrentCouponValue());
     }
 
-    public function checkoutShipping()
+    public function checkoutShipping(): string
     {
         return $this->moneyFormat(app(LogisticService::class)->shipping(auth()->user()));
     }

@@ -49,28 +49,32 @@ class Assinante extends Person
         ],
     );
 
-    public function orders()
+    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\Order', 'customer_id', 'id');
     }
 
-    public function analysis()
+    public function analysis(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\Analysi', 'analysi_id', 'id');
     }
 
     /**
      * Get the tokens record associated with the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function customerTokens()
+    public function customerTokens(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\CustomerToken', 'customer_id', 'id');
     }
 
     /**
      * Recupera os tokens de gateways desse usuário
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function gatewayCustomers()
+    public function gatewayCustomers(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\GatewayCustomer', 'customer_id', 'id');
     }

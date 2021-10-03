@@ -20,7 +20,7 @@ abstract class SitecController extends BaseController
         $this->routeBase = config('siravel.backend-route-prefix', 'siravel');
     }
 
-    protected function getFeature($model)
+    protected function getFeature(string $model): string
     {
         $isModels = [
             'page',

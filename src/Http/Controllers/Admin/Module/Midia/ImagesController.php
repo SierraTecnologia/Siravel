@@ -66,7 +66,7 @@ class ImagesController extends BaseController
     /**
      * Show the form for creating a new Images.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -115,11 +115,11 @@ class ImagesController extends BaseController
     /**
      * Store a newly created Files in storage.
      *
-     * @param FileRequest $request
+     * @param Request $request
      *
-     * @return Response
+     * @return \Response
      */
-    public function upload(Request $request)
+    public function upload(Request $request): \Response
     {
         $validation = app(ValidationService::class)->check(
             [
@@ -167,7 +167,7 @@ class ImagesController extends BaseController
      * @param int           $id
      * @param ImagesRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, ImagesRequest $request)
     {
@@ -199,7 +199,7 @@ class ImagesController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {
@@ -230,7 +230,7 @@ class ImagesController extends BaseController
      *
      * @param string $ids
      *
-     * @return Redirect
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function bulkDelete($ids)
     {
@@ -262,9 +262,9 @@ class ImagesController extends BaseController
     /**
      * Display the specified Images.
      *
-     * @return Response
+     * @return \Response
      */
-    public function apiList(Request $request)
+    public function apiList(Request $request): \Response
     {
         if (config('siravel.api-key') != $request->header('siravel')) {
             return $this->apiResponse('error', []);
@@ -280,9 +280,9 @@ class ImagesController extends BaseController
      *
      * @param ImagesRequest $request
      *
-     * @return Response
+     * @return \Response
      */
-    public function apiStore(Request $request)
+    public function apiStore(Request $request): \Response
     {
         $image = $this->repository->apiStore($request->all());
 

@@ -25,9 +25,9 @@ class Favorite extends SiravelModel
     /**
      * Get the corresponding Product
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function product()
+    public function product(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Product::class);
     }

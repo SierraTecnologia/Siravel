@@ -11,7 +11,7 @@ trait BusinessTrait
 {
     use EloquentGetTableNameTrait;
 
-    protected static function bootBusinessTrait()                                                                                                                                                             
+    protected static function bootBusinessTrait(): void                                                                                                                                                             
     {
         if ($business = app(\Siravel\Services\BusinessService::class)->getBusiness()) {
 

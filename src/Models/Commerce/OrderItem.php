@@ -40,9 +40,9 @@ class OrderItem extends SiravelModel
     /**
      * Get the corresponding Order
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function order()
+    public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Order::class);
     }
@@ -50,9 +50,9 @@ class OrderItem extends SiravelModel
     /**
      * Get the corresponding Refund
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function refund()
+    public function refund(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Refund::class);
     }
@@ -60,9 +60,9 @@ class OrderItem extends SiravelModel
     /**
      * Get the corresponding Product
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function product()
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
@@ -70,9 +70,9 @@ class OrderItem extends SiravelModel
     /**
      * Get the corresponding transaction, if there is one
      *
-     * @return Relationship
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function transaction()
+    public function transaction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Transaction::class);
     }
@@ -90,9 +90,9 @@ class OrderItem extends SiravelModel
     /**
      * Get the variants of the product
      *
-     * @return Attribute
+     * @return array
      */
-    public function getProductVariantsAttribute()
+    public function getProductVariantsAttribute(): array
     {
         $itemVariants = [];
         $variants = json_decode($this->variants);
@@ -114,22 +114,22 @@ class OrderItem extends SiravelModel
         return $this->total / 100;
     }
 
-    public function getTotalAttribute($value)
+    public function getTotalAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getSubtotalAttribute($value)
+    public function getSubtotalAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getShippingAttribute($value)
+    public function getShippingAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }
 
-    public function getTaxAttribute($value)
+    public function getTaxAttribute($value): string
     {
         return number_format($value * 0.01, 2, '.', '');
     }

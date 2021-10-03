@@ -16,7 +16,7 @@ class Controller extends BaseController
 
     protected $menu = [];
 
-    public function menuProduction()
+    public function menuProduction(): void
     {
         $this->menu[0][Stage::$ESBOCO] = [
             'items',

@@ -22,13 +22,16 @@ class HomeController extends Controller
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
         return view('features.gp.home.index');
     }
 
-    public function menu()
+    public function menu(): void
     {
         $this->menu[] = 'Agendamentos';
         $this->menu[] = 'Historico';

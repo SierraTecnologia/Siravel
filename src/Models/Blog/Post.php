@@ -193,7 +193,10 @@ class Post extends BaseModel
         );
     }
 
-    public function scopePublished(PostBuilder $query)
+    /**
+     * @return PostBuilder
+     */
+    public function scopePublished(PostBuilder $query): self
     {
         return $query->where('status', '=', static::PUBLISHED);
     }
