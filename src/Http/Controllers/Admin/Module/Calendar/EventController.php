@@ -56,7 +56,7 @@ class EventController extends BaseController
     /**
      * Show the form for creating a new Event.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -114,7 +114,7 @@ class EventController extends BaseController
      * @param int          $id
      * @param EventRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, EventRequest $request)
     {
@@ -141,7 +141,7 @@ class EventController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

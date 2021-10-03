@@ -24,6 +24,9 @@ class ProductionController extends Controller
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
@@ -33,7 +36,7 @@ class ProductionController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -45,9 +48,9 @@ class ProductionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(ProductionRequest $request)
+    public function store(ProductionRequest $request): void
     {
         $production = new Production($request->except('image'));
         $production -> user_id = Auth::id();

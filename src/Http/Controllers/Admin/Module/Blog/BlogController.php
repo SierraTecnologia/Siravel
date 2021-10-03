@@ -33,7 +33,7 @@ class BlogController extends BaseController
             ->with('pagination', $blogs->render());
     }
 
-    public function all()
+    public function all(): Response
     {
         return $this->index();
     }
@@ -60,7 +60,7 @@ class BlogController extends BaseController
     /**
      * Show the form for creating a new Blog.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -152,7 +152,7 @@ class BlogController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

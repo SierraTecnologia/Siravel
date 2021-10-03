@@ -11,7 +11,7 @@ class CommentController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -23,8 +23,9 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Comment $comment)
     {

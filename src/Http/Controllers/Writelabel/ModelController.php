@@ -21,6 +21,9 @@ class ModelController extends Controller
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
@@ -30,7 +33,7 @@ class ModelController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -40,9 +43,9 @@ class ModelController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(ModelRequest $request)
+    public function store(ModelRequest $request): void
     {
 
         $model = new Model($request->except('password', 'password_confirmation'));
@@ -54,8 +57,9 @@ class ModelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  $model
-     * @return Response
+     * @param $model
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Model $model)
     {
@@ -65,10 +69,11 @@ class ModelController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  $model
-     * @return Response
+     * @param $model
+     *
+     * @return void
      */
-    public function update(ModelRequest $request, Model $model)
+    public function update(ModelRequest $request, Model $model): void
     {
         $password = $request->password;
         $passwordConfirmation = $request->password_confirmation;
@@ -84,10 +89,10 @@ class ModelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $model
-     * @return Response
+     * @param $model
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(Model $model)
     {
         return view('features.house.model.delete', compact('model'));
@@ -96,10 +101,11 @@ class ModelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $model
-     * @return Response
+     * @param $model
+     *
+     * @return void
      */
-    public function destroy(Model $model)
+    public function destroy(Model $model): void
     {
         $model->delete();
     }

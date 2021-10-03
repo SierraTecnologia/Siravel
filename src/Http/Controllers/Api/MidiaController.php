@@ -25,9 +25,9 @@ class MidiaController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function index(Request $request)
+    public function index(Request $request): void
     {
         $midias = [];
 

@@ -71,7 +71,7 @@ class FilesController extends BaseController
     /**
      * Show the form for creating a new Files.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -198,7 +198,7 @@ class FilesController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

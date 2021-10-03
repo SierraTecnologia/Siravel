@@ -24,6 +24,9 @@ class ArticleController extends GirlController
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
@@ -33,7 +36,7 @@ class ArticleController extends GirlController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -45,9 +48,9 @@ class ArticleController extends GirlController
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(ArticleRequest $request)
+    public function store(ArticleRequest $request): void
     {
         $article = new Article($request->except('image'));
         $article -> user_id = Auth::id();
@@ -70,8 +73,9 @@ class ArticleController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Article $article)
     {
@@ -83,10 +87,11 @@ class ArticleController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return Response
+     * @param int $id
+     *
+     * @return void
      */
-    public function update(ArticleRequest $request, Article $article)
+    public function update(ArticleRequest $request, Article $article): void
     {
         $article -> user_id = Auth::id();
         $picture = "";
@@ -108,10 +113,10 @@ class ArticleController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(Article $article)
     {
         return view('features.girl.article.delete', compact('article'));
@@ -120,10 +125,11 @@ class ArticleController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
-     * @return Response
+     * @param $id
+     *
+     * @return void
      */
-    public function destroy(Article $article)
+    public function destroy(Article $article): void
     {
         $article->delete();
     }

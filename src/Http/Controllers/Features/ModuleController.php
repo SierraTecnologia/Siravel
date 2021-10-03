@@ -19,7 +19,7 @@ class ModuleController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index($moduleName)
     {
@@ -30,7 +30,7 @@ class ModuleController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($moduleName)
     {
@@ -40,7 +40,7 @@ class ModuleController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($moduleName)
     {

@@ -48,8 +48,10 @@ class VueFinder
     }
     /**
      * @param $config
+     *
+     * @return void
      */
-    public function init($config)
+    public function init($config): void
     {
         $this->config = $config;
         $query = $this->request->get('q');

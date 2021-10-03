@@ -21,6 +21,9 @@ class UserController extends GirlController
     *
     * @return Response
     */
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         // Show the page
@@ -30,7 +33,7 @@ class UserController extends GirlController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -40,9 +43,9 @@ class UserController extends GirlController
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @return void
      */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request): void
     {
 
         $user = new User($request->except('password', 'password_confirmation'));
@@ -54,8 +57,9 @@ class UserController extends GirlController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  $user
-     * @return Response
+     * @param $user
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(User $user)
     {
@@ -65,10 +69,11 @@ class UserController extends GirlController
     /**
      * Update the specified resource in storage.
      *
-     * @param  $user
-     * @return Response
+     * @param $user
+     *
+     * @return void
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, User $user): void
     {
         $password = $request->password;
         $passwordConfirmation = $request->password_confirmation;
@@ -84,10 +89,10 @@ class UserController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $user
-     * @return Response
+     * @param $user
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function delete(User $user)
     {
         return view('features.girl.user.delete', compact('user'));
@@ -96,10 +101,11 @@ class UserController extends GirlController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $user
-     * @return Response
+     * @param $user
+     *
+     * @return void
      */
-    public function destroy(User $user)
+    public function destroy(User $user): void
     {
         $user->delete();
     }

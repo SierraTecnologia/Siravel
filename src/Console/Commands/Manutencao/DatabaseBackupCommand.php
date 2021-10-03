@@ -94,10 +94,11 @@ class DatabaseBackupCommand extends Command
     /**
      * Get the database connection.
      *
-     * @param  string $name
-     * @return array|string
+     * @param string $name
+     *
+     * @return bool
      */
-    protected function getConnection($name)
+    protected function getConnection($name): bool
     {
         // Make sure connection exists
         if(! $connection = \Illuminate\Support\Facades\Config::get("database.connections.$name")) {

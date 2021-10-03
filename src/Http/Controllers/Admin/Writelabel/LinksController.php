@@ -102,7 +102,7 @@ class LinksController extends BaseController
      * @param int          $id
      * @param LinksRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, LinksRequest $request)
     {
@@ -133,7 +133,7 @@ class LinksController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

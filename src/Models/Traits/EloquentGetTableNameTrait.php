@@ -8,7 +8,7 @@ namespace Siravel\Models\Traits;
 trait EloquentGetTableNameTrait
 {
 
-    public static function getTableName()
+    public static function getTableName(): string
     {
         return ((new self)->getTable());
     }

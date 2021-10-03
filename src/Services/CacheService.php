@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class CacheService
 {
-    private static function getBusinessKey($key)
+    private static function getBusinessKey($key): string
     {
         return Business::getCode().$key;
     }
@@ -27,17 +27,26 @@ class CacheService
         return Cache::clear(self::getBusinessKey($key));
     }
 
-    public static function getUniversal($key)
+    /**
+     * @param string $key
+     */
+    public static function getUniversal(string $key)
     {
         return Cache::get($key);
     }
 
-    public static function setUniversal($key, $value)
+    /**
+     * @param string $key
+     */
+    public static function setUniversal(string $key, $value)
     {
         return Cache::set($key, $value);
     }
 
-    public static function clearUniversal($key)
+    /**
+     * @param string $key
+     */
+    public static function clearUniversal(string $key)
     {
         return Cache::clear($key);
     }

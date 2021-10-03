@@ -55,7 +55,7 @@ class WidgetsController extends Controller
     /**
      * Show the form for creating a new Widgets.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -65,7 +65,7 @@ class WidgetsController extends Controller
     /**
      * Store a newly created Widgets in storage.
      *
-     * @param WidgetRequest $request
+     * @param Request $request
      *
      * @return Response
      */
@@ -110,7 +110,7 @@ class WidgetsController extends Controller
      * @param int           $id
      * @param WidgetRequest $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, WidgetRequest $request)
     {
@@ -134,7 +134,7 @@ class WidgetsController extends Controller
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

@@ -170,8 +170,10 @@ class UserService extends BaseUserService
      * Set and send the user activation token via email.
      *
      * @param void
+     *
+     * @return void
      */
-    public function setAndSendUserActivationToken($user)
+    public function setAndSendUserActivationToken(User $user): void
     {
         $token = md5(\Illuminate\Support\Str::random(40));
 

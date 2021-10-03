@@ -56,7 +56,7 @@ class FaqController extends BaseController
     /**
      * Show the form for creating a new Faq.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -147,7 +147,7 @@ class FaqController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Request $request, $id)
     {

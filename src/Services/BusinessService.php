@@ -50,6 +50,9 @@ class BusinessService
         // $this->loadSettings();
     }
 
+    /**
+     * @return null|static
+     */
     public function loadSettings()
     {
         if ($this->business) {
@@ -79,14 +82,17 @@ class BusinessService
         }
     }
 
-    public function userAsSubscript($user)
+    /**
+     * @return false
+     */
+    public function userAsSubscript($user): bool
     {
         // @todo Fazer
         return false;
     }
 
 
-    public static function isBlockUrl()
+    public static function isBlockUrl(): ?bool
     {
         if (in_array(Request::path(), self::$IGNORE_URLS)) {
             return null;
@@ -104,20 +110,23 @@ class BusinessService
 
 
 
-    public function hasBusiness()
+    public function hasBusiness(): bool
     {
         return $this->business ? true : false;
     }
 
 
 
-    public function userAsColaborator(User $user)
+    /**
+     * @return true
+     */
+    public function userAsColaborator(User $user): bool
     {
         // @todo Fazer
         return true;
     }
 
-    public function hasFeature(string $key)
+    public function hasFeature(string $key): bool
     {
         if (!empty($this->features)) {
             foreach ($this->features as $feature) {
@@ -143,11 +152,11 @@ class BusinessService
         return $this->business;
     }
 
-    public function userHasPermission($user)
+    public function userHasPermission($user): void
     {
     }
 
-    private function loadBusiness()
+    private function loadBusiness(): bool
     {
         if (!VersionService::isInstall()) {
             return false;
@@ -214,6 +223,8 @@ class BusinessService
 
     /**
      * Retorna Serviço de acordo com o Usuario
+     *
+     * @return false|object
      */
     public static function getBusinessServiceForUser(User $businessUser, $companyToken = false)
     {
@@ -247,9 +258,9 @@ class BusinessService
     /**
      * Faz o business padrão voltar a ser o original do sistema
      *
-     * @return void
+     * @return true
      */
-    public function clearDefault()
+    public function clearDefault(): bool
     {
         CacheService::clearUniversal('business-console');
         CacheService::clearUniversal('business_switch');
@@ -258,7 +269,7 @@ class BusinessService
 
 
     
-    public function isToIgnore()
+    public function isToIgnore(): bool
     {
         if (!$this->isHability()) {
             return true;
@@ -266,7 +277,7 @@ class BusinessService
 
         return \App::runningInConsole() && !$this->isToForced();
     }
-    public function isHability()
+    public function isHability(): bool
     {
         $config = true; //\Illuminate\Support\Facades\Config::get('app.multi-tenant', true);
         if (!$config) {
@@ -274,7 +285,7 @@ class BusinessService
         }
         return true;
     }
-    public function isActived(Business $business)
+    public function isActived(Business $business): bool
     {
         if ($this->isToIgnore()) {
             return false;
@@ -295,7 +306,7 @@ class BusinessService
         return false;
     }
 
-    private function isToForced()
+    private function isToForced(): bool
     {
         if (CacheService::getUniversal('business-console')) {
             return true;
@@ -320,9 +331,9 @@ class BusinessService
     /**
      * Transforma no Business padrão do Sistema (Para Usuário Somente)
      *
-     * @return void
+     * @return true
      */
-    public function switchToBusiness(Business $business)
+    public function switchToBusiness(Business $business): bool
     {
         try {
             Session::put('business_switch', $business->code);
@@ -334,7 +345,7 @@ class BusinessService
             throw new Exception('Error switch to business', 1);
         }
     }
-    public function forceBusiness(Business $business)
+    public function forceBusiness(Business $business): bool
     {
         if (!$this->isHability()) {
             return false;

@@ -44,7 +44,7 @@ class TeamController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create(Request $request)
     {
@@ -54,7 +54,8 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\TeamCreateRequest $request
+     * @param TeamCreateRequest $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(TeamCreateRequest $request)
@@ -104,11 +105,12 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     * @return \Illuminate\Http\Response
+     * @param TeamUpdateRequest $request
+     * @param int                      $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(TeamUpdateRequest $request, $id)
+    public function update(TeamUpdateRequest $request, $id): self
     {
         try {
             $result = $this->service->update($id, $request->except('_token'));
@@ -147,10 +149,11 @@ class TeamController extends Controller
     /**
      * Invite a team member
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function inviteMember(UserInviteRequest $request, $id)
+    public function inviteMember(UserInviteRequest $request, $id): self
     {
         try {
             $result = $this->service->invite(Auth::user(), $id, $request->email);
@@ -168,10 +171,11 @@ class TeamController extends Controller
     /**
      * Remove a team member
      *
-     * @param  int $userId
-     * @return \Illuminate\Http\Response
+     * @param int $userId
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function removeMember($id, $userId)
+    public function removeMember($id, $userId): self
     {
         try {
             $result = $this->service->remove(Auth::user(), $id, $userId);

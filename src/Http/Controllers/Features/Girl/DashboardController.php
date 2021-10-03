@@ -17,6 +17,9 @@ class DashboardController extends GirlController
         view()->share('type', '');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         $title = "Dashboard";

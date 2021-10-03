@@ -41,7 +41,7 @@ class Coupon extends SiravelModel
         return $this->where('sitecpayment_id', $id)->first();
     }
 
-    public function expired()
+    public function expired(): bool
     {
         $now = Carbon::now(config('app.timezone'));
 
@@ -66,7 +66,7 @@ class Coupon extends SiravelModel
         return $this->amount;
     }
 
-    public function getValueStringAttribute()
+    public function getValueStringAttribute(): string
     {
         if ($this->discount_type == 'dollar') {
             return '$'.$this->value;

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class PersonagemController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         $links = [];
@@ -28,6 +31,9 @@ class PersonagemController extends Controller
     //     );
     // }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function indexx(Request $request)
     {
         $links = [];
@@ -37,6 +43,9 @@ class PersonagemController extends Controller
         );
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function indexxx(Request $request)
     {
         $links = [];
@@ -49,6 +58,9 @@ class PersonagemController extends Controller
 
 
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function insertData(Request $request)
     {
         $links = [];
@@ -65,8 +77,9 @@ class PersonagemController extends Controller
 
     /**
      * Interacao
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-
     public function question(Request $request)
     {
         $links = [];

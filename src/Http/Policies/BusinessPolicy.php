@@ -12,7 +12,7 @@ use Siravel\Models\User;
 class BusinessPolicy
 {
 
-    public static function hasAccess($type, $target)
+    public static function hasAccess($type, $target): bool
     {
         $policy = new self;
 
