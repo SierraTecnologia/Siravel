@@ -4,13 +4,13 @@
 
 @section('content')
 
-    @include('layouts.module-header', [ 'module' => 'plans' ])
+    @include('pedreiro::layouts.module-header', [ 'module' => 'plans' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($plans->isEmpty())
-                    @include('layouts.module-search', [ 'module' => 'plans' ])
+                    @include('pedreiro::layouts.module-search', [ 'module' => 'plans' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
