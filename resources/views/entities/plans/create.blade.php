@@ -21,7 +21,7 @@
                     <p><span class="plan-slogan">&nbsp;</span></p>
                     <p><span class="plan-description">&nbsp;</span></p>
                 </div>
-                <div class="card-footer">
+                <div class="box-footer panel-footer card-footer">
                     <span class="plan-descriptor">&nbsp;</span>
                 </div>
             </div>
