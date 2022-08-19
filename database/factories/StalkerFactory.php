@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Stalker\Models\File::class, function (Faker\Generator $faker) {
+$factory->define(\MediaManager\Models\File::class, function (Faker\Generator $faker) {
     return [
         'location' => 'files/dumb',
         'name' => 'dumbFile',
